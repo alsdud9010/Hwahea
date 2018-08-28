@@ -9,19 +9,19 @@
           <div class="carousel slide carousel-v1 margin-bottom-40" id="myCarousel-1">
             <div class="carousel-inner">
               <div class="item active">
-                <img alt="" src="assets/img/sliders/10.jpg">
+                <img alt="" src="${pageContext.request.contextPath}/assets/img/sliders/10.jpg">
                 <div class="carousel-caption">
                   <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
                 </div>
               </div>
               <div class="item">
-                <img alt="" src="assets/img/sliders/4.jpg">
+                <img alt="" src="${pageContext.request.contextPath}/assets/img/sliders/4.jpg">
                 <div class="carousel-caption">
                   <p>Cras justo odio, dapibus ac facilisis into egestas.</p>
                 </div>
               </div>
               <div class="item">
-                <img alt="" src="assets/img/sliders/11.jpg">
+                <img alt="" src="${pageContext.request.contextPath}/assets/img/sliders/11.jpg">
                 <div class="carousel-caption">
                   <p>Justo cras odio apibus ac afilisis lingestas de.</p>
                 </div>
@@ -43,7 +43,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img1.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
                   <span class="magazine-badge label-red">Travel</span>
                 </div>
                 <h3>
@@ -57,7 +57,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img2.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img2.jpg" alt=""> </a>
                   <span class="magazine-badge label-blue">Event</span>
                 </div>
                 <h3>
@@ -72,7 +72,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img1.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
                   <span class="magazine-badge label-red">Travel</span>
                 </div>
                 <h3>
@@ -87,7 +87,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img1.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
                   <span class="magazine-badge label-red">Travel</span>
                 </div>
                 <h3>
@@ -102,7 +102,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img1.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
                   <span class="magazine-badge label-red">Travel</span>
                 </div>
                 <h3>
@@ -125,7 +125,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img26.jpg" alt=""> </a>
                   <span class="magazine-badge label-yellow">Media</span>
                 </div>
                 <h3>
@@ -140,7 +140,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img24.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">Relax</span>
                 </div>
                 <h3>
@@ -155,7 +155,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img24.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">Relax</span>
                 </div>
                 <h3>
@@ -170,7 +170,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img24.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">Relax</span>
                 </div>
                 <h3>
@@ -185,7 +185,7 @@
               <div class="col-md-2">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img24.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">Relax</span>
                 </div>
                 <h3>
@@ -208,7 +208,7 @@
               <div class="col-md-6">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img3.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img3.jpg" alt=""> </a>
                   <span class="magazine-badge label-purple">Design</span>
                 </div>
                 <h3>
@@ -223,7 +223,7 @@
               <div class="col-md-6">
                 <div class="magazine-news-img">
                   <a href="#">
-                    <img class="img-responsive" src="assets/img/main/img16.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img16.jpg" alt=""> </a>
                   <span class="magazine-badge label-dark-blue">Interior</span>
                 </div>
                 <h3>
@@ -243,7 +243,7 @@
             <div class="carousel slide carousel-v1 margin-bottom-40" id="myCarousel-1">
               <div class="carousel-inner">
                 <div class="item active">
-                  <img alt="" src="assets/img/sliders/10.jpg"> </div>
+                  <img alt="" src="${pageContext.request.contextPath}/assets/img/sliders/10.jpg"> </div>
               </div>
             </div>
           </div>
