@@ -28,6 +28,7 @@
 				<beans:value>/WEB-INF/tiles-def/shop.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/ranking.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/dictionary.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/plus.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -62,5 +63,6 @@
 	<!-- 데이터 작업 없이 뷰 호출 - 메인페이지 -->
 	<view-controller path="/main/main.do" view-name="main"/>
 	<view-controller path="/shop/shopMain.do" view-name="shopMain"/>
-	
+	<view-controller path="/plus/plusMain.do" view-name="plusMain"/>
+	<view-controller path="/plus/plusTrend.do" view-name="plusTrend"/>
 </beans:beans>

@@ -1,0 +1,467 @@
+/*==================화해플러스=======================*/
+
+.plusHead{
+	padding-bottom:15px;
+	font-face:bold;
+}
+
+.plusComments{
+	width:20px;
+	height:20px;
+}
+
+.plusLike{
+	width:15px;
+	height:15px;
+}
+
+.plusLC{
+	align:left;
+	margin-right:20;
+	margin-left:0;
+}
+
+.plusWriter{
+	align:right;
+	margin-left:140px;
+	margin-right:0;
+}
+
+/*화해플러스 메인*/
+.plusBanner{
+	margin-left:30px;
+	margin-right:30px;
+	margin-bottom:20px;
+	float:left;
+}
+.plusBanner, .plusBanner img{
+	width:600px;
+	height:280px;
+}
+
+.plusMember{
+	float:left;
+}
+
+.plusProfile{
+	width:40px;
+	height:40px;
+}
+
+.plusGrade input[type="button"]{
+	width:40px;
+	height:20px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	background-color:#f0ad4e;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+}
+
+.plusBannerDate{
+	margin-top:5px;
+}
+
+.plusBannerText{
+	margin-top:35px;
+	height:115px;
+}
+
+.bannerIcon{
+	margin-right:35px;
+	margin-left:35px;
+}
+
+/*화해플러스 카테고리별 세부페이지*/
+.r_menu_1 th{
+   border:#acacac solid 1px;
+   width:166.6666666666667px;
+   height:30px;
+   font-size:15px;
+   text-align:center;
+   text-decoration:none;
+}
+
+.r_title .r_title1{
+   font-size:18px;
+   font-weight: bold;
+   margin:0 0 5px 0;
+}
+
+.r_title dt{
+   float: left;
+}
+
+.r_title .r_title2{
+   font-size:30px;
+   font-weight: bold;
+}
+
+.r_title .r_title3{
+   padding:20px 0 0 30px;
+   font-weight: bold;
+   color:#008200;
+}
+
+.r_title .r_r_title2{
+   font-size:30px;
+   font-weight: bold;
+}
+
+li{
+   list-style: none;
+}
+
+.r_menu_2 li{
+   border:#acacac solid 1px;
+   float: left;
+   width:16.66666666666667%;
+   height:30px;
+   font-size:15px;
+   color:#83B14E;
+   font-weight:bold;
+   text-align:center;
+   padding: 2px 0 10px 0;
+}
+
+.r_menu_2 .r_thistap{
+   background-color: #83B14E;
+   color:#fff;
+}
+
+.plusTitle{
+	padding-top:10px;
+	padding-bottom:15px;
+	text-align:center;
+	font-size:17px;
+}
+
+.plusTitle a{
+	color:#645753;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.plusTitle a:hover{
+	color:#72c02c;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+.thisinPlus{
+	color:#fff;
+	background-color:#72c02c;
+}
+
+.plusBest{
+	margin-right:-10px !important;
+	margin-left:15px;
+}
+
+.plusBest img{
+	width:740px;
+	height:320px;
+}
+
+.plusCategory{
+	padding-left:15px;
+}
+
+.plusThumbnail img{
+	width:360px;
+	height:200px;
+}
+
+.plusBanner2 {
+	float:right;
+	padding-left:5px;
+}
+
+.plusBanner2 input[type="button"]{
+	padding:5px !important;
+	width:170px;
+	height:38px;
+	margin-top:5px;
+	border-color:#72c02c;
+	border-radius:15px;
+	text-align:center;
+	font-size:17px;
+	font-weight:bold;
+	background-color:#fff;
+	color:#113f1f;
+	outline:none;
+	cursor:default;
+	box-shadow:none;
+}
+
+.lineforPlus{
+	width:365px;
+	height:10px;
+	background:#72c02c;
+}
+
+.spaceforPlus{
+	height:140px;
+}
+
+.plusBanner2 span{
+	font-size:15px;
+	color:#777777;
+	font-weight:bold;
+}
+
+.hrinPlus{
+	width:10%;
+	margin-top:15px;
+	margin-bottom:3px;
+	color:#999da0;
+}
+
+.plusDetail{
+	color:#999da0;
+}
+
+.plusUser{
+	padding-left:43%;
+}
+
+.plusTable th{
+	width:28.1%;
+}
+
+/*화해플러스 모달*/
+.plusModalimg{
+	width:500px;
+	height:410px;
+}
+
+.modalCategory{
+	margin-top:10px;
+	margin-left:345px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.modalCategory a{
+	color:#777777;
+}
+
+.modalCategory a:hover{
+	color:#000000;
+	text-decoration:none;
+}
+
+.plusThumbnail3{
+	width:600px;
+	height:300px;
+}
+
+.pmodal_title{
+	margin-top:10px;
+	font-size:30px;
+	font-weight:bold;
+}
+
+.pmodal_profile img{
+	width:26px;
+	height:26px;
+}
+
+.pmodal_profile{
+	padding-right:30px;
+	text-align:right;
+	font-size:16px;
+	color:#999da0;
+}
+
+.pmodal_icon{
+	text-align:left;
+	font-size:14px;
+}
+
+.pmodal_icon span{
+	margin-left:28px;
+	margin-right:10px;
+}
+
+.pmodal_icon .pmodal_regDate{
+	margin-left:440px !important;
+	color:#999da0;
+}
+
+.pmodal_reply{
+	padding-bottom:17px;
+	margin-left:43px;
+	margin-top:20px;
+	padding-top:10px;
+	background:#d9dcdd;
+	width:780px;
+}
+
+.pmodal_ud{
+	margin-top:10px;
+	padding-right:15px;
+	text-align:right;
+}
+
+.pmodal_lrs {width:700px; margin-left:65px;}
+.pmodal_lrs img{width:23px; height:23px;}
+.pmodal_lrs li{
+	border:#acacac solid 1px;
+   display:inline;
+   width:16.66666666666667%;
+   height:30px;
+   font-size:15px;
+   color:#83B14E;
+   font-weight:bold;
+   text-align:center;
+   padding:10px 40px 10px 40px;
+   margin-left:-5px;
+}
+.pmodal_lrs li:hover{
+	background-color:#83B14E;
+	color:#fff;
+	cursor:pointer;
+}
+
+.pmodal_scrap{}
+
+.pmodal_re{}
+
+.pmodal_rform{padding-top:15px;}
+
+.pmodal_rtext{
+	margin-left:120px;
+	margin-right:-10px;
+	margin-bottom:7px;
+	float:left;
+}
+
+.pmodal_rform input[type="submit"]{
+	width:65px;
+	height:75px;
+}
+
+.pmodal_wpro {
+	float:left;
+	font-size:18px;
+	margin:15px -80px 0 30px;
+}
+
+.pmodal_wpro img{width:60px; height:60px;}
+
+.pmodal_rcount {
+	text-align:right;
+	margin:17px 135px 27px 0;
+	font-size:12px;
+}
+
+.pmodal_reback{
+	background:#fff;
+	margin-left:65px;
+	margin-top:-20px;
+	width:630px;
+}
+
+.pmodal_rere{
+	padding-top:10px;
+}
+
+.pmodal_rpro {width:230px; margin-right:438px; margin-left:20px; text-align:left;}
+
+.pmodal_rpro img{
+	width:35px;
+	height:35px;
+}
+
+.pmodal_rpro .plusGrade{font-size:12px;}
+
+.pmodal_wrere{font-size:14px; font-weight:bold; margin:0 3px 0 3px;}
+
+.pmodal_drere{font-size:11px; color:#999da0; margin-left:3px;}
+
+.pmodal_trere{font-size:14px; margin:12px 0 15px 40px; text-align:left;}
+
+.pmodal_same{margin-right:410px; cursor:pointer;}
+.pmodal_diff{margin-right:501px; cursor:pointer;}
+
+/*화플 모달 대댓글*/
+/*대댓글 폼*/
+.pmodal_reback2{
+	background:#d9dcdd;
+	margin-left:24px;
+	margin-top:15px;
+	width:580px;
+	padding-bottom:39px;
+}
+
+.pmodal_rpro2 img{
+	width:26px;
+	height:30px;
+}
+
+.pmodal_rpro2{margin-right:400px; padding-top:13px;} .pmodal_rpro2 .plusGrade{font-size:11px;}
+
+.pmodal_rtext2{
+	margin:15px 3px 15px 50px;
+	float:left;
+}
+
+#prere_first{
+	margin:18px 0 9px 0;
+}
+
+/*대댓글 목록폼*/
+
+.prere_back{
+	background:#f7fffb;
+	margin-left:65px;
+	margin-top:-20px;
+	width:630px;
+}
+
+.prere_depth{
+	margin-left:25px;
+}
+
+.prere_grade input[type="button"]{
+	width:46px;
+	height:20px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	font-size:12px;
+	background-color:#00c63c;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+}
+
+.prere_time{
+	font-size:11px; color:#999da0; width:30px;
+}
+
+.prere_text{font-size:14px; margin:12px 0 15px 80px; text-align:left;}
+
+.rere_writer{font-size:14px; font-weight:bold; color:#ff7280; margin:0 13px 0 10px;}
+
+.prere_grade2 input[type="button"]{
+	width:61px;
+	height:20px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	font-size:12px;
+	background-color:#3881ff;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+}
+
+/*==================화해플러스=======================*/
