@@ -526,7 +526,7 @@
 					<li><a href="javascript:void(0);" class="dropdown-toggle"
 						data-toggle="dropdown"> 이벤트</a></li>
 					<!-- 이벤트 끝 -->
-					<!-- 어워드 -->
+					<!-- 어워드 --> 
 					<li class="dropdown"><a href="javascript:void(0);"
 						class="dropdown-toggle" data-toggle="dropdown"> 어워드</a>
 						<ul class="dropdown-menu">
