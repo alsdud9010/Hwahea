@@ -72,7 +72,7 @@
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="javascript:void(0);">스킨케어</a>
 										<ul class="dropdown-menu">
-											<li><a href="index.hmtl">스킨/토너</a></li>
+											<li><a href="${pageContext.request.contextPath}/review/productInfo.do">스킨/토너</a></li>
 											<li><a href="index.hmtl">로션/에멀젼</a></li>
 											<li><a href="index.hmtl">에센스/앰플/세럼</a></li>
 											<li><a href="index.hmtl">페이스 오일</a></li>
