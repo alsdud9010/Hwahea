@@ -33,6 +33,8 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/footers/footer-v1.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/footers/footer-v1.css">
   <link rel="icon" href="${pageContext.request.contextPath}/assets/css/footers/footer-v1.css">
+  <!-- CSS shopping page -->
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/shop.css">
   
 <!-- JS Global Compulsory -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/plugins/jquery/jquery.min.js"></script>

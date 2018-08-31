@@ -8,6 +8,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan base-package="kr.spring.shop.controller" />
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -24,6 +25,7 @@
 		<beans:property name="definitions">
 			<beans:list>
 				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/shop.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -57,5 +59,6 @@
 	
 	<!-- 데이터 작업 없이 뷰 호출 - 메인페이지 -->
 	<view-controller path="/main/main.do" view-name="main"/>
+	<view-controller path="/shop/shopMain.do" view-name="shopMain"/>
 	
 </beans:beans>
