@@ -5,22 +5,16 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="ranking" template="/WEB-INF/views/template/layout.jsp">
+	<definition name="ranking_main" extends="main">
 		<put-attribute name="title" value="화해 - 화장품을 해석하다"/>
-		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/views/ranking/ranking_main.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
 	</definition>
-	<definition name="r_category" template="/WEB-INF/views/template/layout.jsp">
+	<definition name="r_category" extends="main">
 		<put-attribute name="title" value="화해 - 화장품을 해석하다"/>
-		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/views/ranking/r_category.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
 	</definition>
-	<definition name="r_skinType" template="/WEB-INF/views/template/layout.jsp">
+	<definition name="r_skinType" extends="main">
 		<put-attribute name="title" value="화해 - 화장품을 해석하다"/>
-		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/views/ranking/r_skinType.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
 	</definition>
 </tiles-definitions>

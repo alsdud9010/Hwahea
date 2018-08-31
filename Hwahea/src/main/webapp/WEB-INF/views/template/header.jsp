@@ -66,9 +66,11 @@
 			<div class="container">
 				<ul class="nav navbar-nav">
 					<!-- 랭킹 -->
-					<li class="dropdown"><a href="#">랭킹</a>
+					<li class="dropdown"><a href="#"
+						onclick="location.href='${pageContext.request.contextPath}/ranking/ranking_main.do'"
+						class="dropdown-toggle" data-toggle="dropdown">랭킹</a>
 						<ul class="dropdown-menu">
-							<li class="dropdown-submenu"><a href="javascript:void(0);">카테고리별</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/ranking/r_category.do">카테고리별</a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="javascript:void(0);">스킨케어</a>
 										<ul class="dropdown-menu">
@@ -176,7 +178,7 @@
 											<li><a href="index.hmtl">기타</a></li>
 										</ul></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">피부타입&amp;고민별</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/ranking/r_skinType.do">피부타입&amp;고민별</a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="javascript:void(0);">복합성</a>
 										<ul class="dropdown-menu">
@@ -557,8 +559,11 @@
 								</ul></li>
 						</ul></li>
 					<!-- 어워드 끝 -->
-					<li><a href="javascript:void(0);" class="dropdown-toggle"
-						data-toggle="dropdown"> 성분사전</a></li>
+					<!-- 성분사전 시작 -->
+					<li><a href="#"
+						onclick="location.href='${pageContext.request.contextPath}/dictionary/dictionary.do'"
+						class="dropdown-toggle" data-toggle="dropdown">성분사전</a></li>
+					<!-- 성분사전 끝 -->
 					<!-- 공지사항 -->
 					<li class="dropdown"><a href="javascript:void(0);"
 						class="dropdown-toggle" data-toggle="dropdown"> 공지사항</a>

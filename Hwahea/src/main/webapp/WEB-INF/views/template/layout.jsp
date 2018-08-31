@@ -54,6 +54,9 @@
 		App.init();
 	});
 </script>
+<!-- ranking&dictionary JS -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/ranking.js"></script>
+<!-- ranking&dictionary JS -->
 </head>
 <body>
 	<div class="wrapper">

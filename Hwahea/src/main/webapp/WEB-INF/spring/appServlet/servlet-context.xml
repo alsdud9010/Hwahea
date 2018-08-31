@@ -65,4 +65,8 @@
 	<view-controller path="/shop/shopMain.do" view-name="shopMain"/>
 	<view-controller path="/plus/plusMain.do" view-name="plusMain"/>
 	<view-controller path="/plus/plusTrend.do" view-name="plusTrend"/>
+	<view-controller path="/ranking/ranking_main.do" view-name="ranking_main"/>
+	<view-controller path="/ranking/r_category.do" view-name="r_category"/>
+	<view-controller path="/ranking/r_skinType.do" view-name="r_skinType"/>
+	<view-controller path="/dictionary/dictionary.do" view-name="dictionary"/>
 </beans:beans>
