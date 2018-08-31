@@ -510,11 +510,12 @@
 						</ul></li>
 					<!-- 쇼핑 끝 -->
 					<!-- 화플 -->
-					<li class="dropdown"><a href="javascript:void(0);"
+					<li class="dropdown"><a href="#"
+						onclick="location.href='${pageContext.request.contextPath}/plus/plusMain.do'"
 						class="dropdown-toggle" data-toggle="dropdown"> 화플</a>
 						<ul class="dropdown-menu">
-							<li><a href="javascript:void(0);">화해플러스</a></li>
-							<li><a href="javascript:void(0);">신상&amp;트렌드</a></li>
+							<li><a href="${pageContext.request.contextPath}/plus/plusMain.do">화해플러스</a></li>
+							<li><a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a></li>
 							<li><a href="javascript:void(0);">인기템 리뷰</a></li>
 							<li><a href="javascript:void(0);">화장품 팩트체크</a></li>
 							<li><a href="blog_masonry_3col.html">뷰티팁</a></li>
@@ -556,6 +557,8 @@
 								</ul></li>
 						</ul></li>
 					<!-- 어워드 끝 -->
+					<li><a href="javascript:void(0);" class="dropdown-toggle"
+						data-toggle="dropdown"> 성분사전</a></li>
 					<!-- 공지사항 -->
 					<li class="dropdown"><a href="javascript:void(0);"
 						class="dropdown-toggle" data-toggle="dropdown"> 공지사항</a>
