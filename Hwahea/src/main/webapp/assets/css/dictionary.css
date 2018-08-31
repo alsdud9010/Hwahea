@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*===성분 사전===*/
+
+.EWG-1{
+	height: 100px;
+	font-weight:bold;
+	font-size:15px;
+	text-align: center;
+	border:#0080ff solid 1px;
+}
+	
+
+.EWG{
+	height: 300px;
+	font-weight:bold;
+	font-size:15px;
+	text-align: center;
+	border:#000 solid 1px;
+}
+	
+.EWG2{
+	height: 100px;
+	text-align: center;
+	border:#ff0000 solid 3px;
+}
+
+.navbar-brand2 {
+    float: left;
+    height: 50px;
+    padding: 10px 10px;
+    color: #83B14E;
+    font-size: 18px;
+    font-weight:bold;
+    line-height: 20px;
+}

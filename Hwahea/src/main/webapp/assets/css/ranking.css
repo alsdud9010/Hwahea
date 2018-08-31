@@ -1,0 +1,136 @@
+@charset "UTF-8";
+li{
+	list-style: none;
+}
+
+.r_menu_1 li{
+	border:#acacac solid 1px;
+	float: left;
+	width:16.66666666666667%;
+	height:30px;
+	color: #83B14E;
+	font-size:15px;
+	line-height:30px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.r_menu_1 li:hover{
+	background-color: #83B14E;
+	color:#fff;
+}
+
+.r_menu_1 div{
+	cursor:pointer;
+}
+.r_menu_skinType{
+	margin-left:250px;
+}
+.r_menu_skinType li{
+	float: left;
+}
+.r_title .r_title1{
+	font-size:18px;
+	font-weight: bold;
+	margin:0 0 5px 0;
+}
+
+.r_title dt{
+	float: left;
+}
+
+.r_title .r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+
+.r_title .r_title3{
+	padding:20px 0 0 30px;
+	font-weight: bold;
+	color:#008200;
+}
+
+.r_title .r_r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+
+/*ranking-top5*/
+.ranking-top5{
+	margin-bottom: 20px;
+}
+
+.ranking-top5 .r_brandName{
+	width:100%;
+	text-align:center;
+	color:#a0a0a0;
+	font-size:13px;
+	font-weight:bold;
+	margin: 10px 0 10px;
+}
+
+.ranking-top5 .r_productName{
+	width:100%;
+	font-size:15px;
+	font-weight:bold;
+	margin: 10px 0 10px;
+}
+
+.ranking-top5 .r_by-author strong {
+	font-size:15px;
+	color: #ff8000;
+}
+
+.ranking-top5 .r_productName span {
+	color: #777;
+}
+
+.ranking-top5 .r_by-author {
+	width:100%;
+	text-align:center;
+	margin-bottom: 8px;
+}
+.ranking-top5 .r_by-author span{
+	color: #777;
+}
+
+.ranking-top5-img {
+	overflow: hidden;
+	max-height: 200px;
+	position: relative;
+}
+
+.r_Number{
+	width:50px;
+	text-align: center;
+	
+}
+
+.r_list_brandName{
+	color:#a0a0a0;
+	font-size:13px;
+	font-weight:bold;
+	margin: 10px 0 10px;
+}
+
+.r_list_productName{
+	font-size:15px;
+	font-weight:bold;
+	margin: 10px 0 10px;
+}
+
+.r_list_by-author {
+	margin-top:60px;
+	margin-bottom:-10px;
+}
+.ranking-list-img {
+	overflow: hidden;
+	max-height: 200px;
+	position: relative;
+}
+.stars{
+	font-size:18px;
+	margin:50px 0 0 35px;
+	color:#ff8040;
+	font-weight:bold;
+}
