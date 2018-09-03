@@ -25,4 +25,7 @@ $(document).ready(function(){
 	$('.nav-item').click(function(){
 		$('#hidee').hide();
 	});
+	$('.navbar-brand2').click(function(){
+		location.href='dictionary.do';
+	});
 });

@@ -1,27 +1,35 @@
 @charset "UTF-8";
+
+/*==타이틀===*/
+.r_title .r_title1{
+	font-size:18px;
+	font-weight: bold;
+	margin:0 0 5px 0;
+}
+
+.r_title dt{
+	float: left;
+}
+
+.r_title .r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+
+.r_title .r_title3{
+	padding:20px 0 0 30px;
+	font-weight: bold;
+	color:#008200;
+}
+
+.r_title .r_r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+
 /*===성분 사전===*/
-
-.EWG-1{
-	height: 100px;
-	font-weight:bold;
-	font-size:15px;
-	text-align: center;
-	border:#0080ff solid 1px;
-}
-	
-
-.EWG{
-	height: 300px;
-	font-weight:bold;
-	font-size:15px;
-	text-align: center;
-	border:#000 solid 1px;
-}
-	
-.EWG2{
-	height: 100px;
-	text-align: center;
-	border:#ff0000 solid 3px;
+li{
+	list-style: none;
 }
 
 .navbar-brand2 {
@@ -32,4 +40,69 @@
     font-size: 18px;
     font-weight:bold;
     line-height: 20px;
+    cursor:pointer;
+}
+
+.EWG1{
+	width:50%;
+	height: 100px;
+	font-weight:bold;
+	font-size:15px;
+	line-height:100px;
+	text-align: center;
+	float:left;
+}
+
+.EWG2{
+	width:50%;
+	height: 100px;
+	padding-top:20px;
+	padding-left:20px;
+	float:right;
+}
+	
+.EWG3{
+	padding:160px 70px 0 70px;
+	text-align: left;
+}
+
+.tab_left{
+	float:left;
+	width:40%;
+	height: 500px;
+	font-size:15px;
+	text-align: center;
+	padding-top:30px;
+	border:#c0c0c0 solid 1px;
+}
+
+.tab_left span,
+.EWG1 span{
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.tap_right_li{
+	margin-left:-30px;
+}
+
+.tap_right{
+	float:left;
+	width:60%;
+	height: 500px;
+	font-size:14px;
+	border:#c0c0c0 solid 1px;
+}
+
+.tap_right_img{	
+	float:left;
+	margin-right:20px;
+}
+
+.tap_right_name{
+	border-bottom: #c0c0c0 solid 1px;
+}
+
+.borderr{
+	border:#000 solid 1px;
 }

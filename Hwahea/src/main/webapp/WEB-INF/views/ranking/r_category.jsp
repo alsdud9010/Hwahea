@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/ranking.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/ranking.js"></script>
 <!--=== Content Part ===-->
 	<div class="container content">
 	  <div class="row magazine-page">
