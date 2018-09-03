@@ -525,7 +525,7 @@
 						</ul></li>
 					<!-- 화플 끝 -->
 					<!-- 이벤트 -->
-					<li><a href="javascript:void(0);" class="dropdown-toggle"
+					<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/event/eventMain.do'" class="dropdown-toggle"
 						data-toggle="dropdown"> 이벤트</a></li>
 					<!-- 이벤트 끝 -->
 					<!-- 어워드 --> 

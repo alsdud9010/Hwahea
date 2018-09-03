@@ -234,6 +234,13 @@ li{
 }
 
 /*화해플러스 모달*/
+.pmodal_close{
+	width:15px;
+	height:15px;
+	cursor:pointer;
+	margin-bottom:20px;
+}
+
 .plusModalimg{
 	width:500px;
 	height:410px;
@@ -311,7 +318,7 @@ li{
 .pmodal_lrs {width:700px; margin-left:65px;}
 .pmodal_lrs img{width:23px; height:23px;}
 .pmodal_lrs li{
-	border:#acacac solid 1px;
+   border:#acacac solid 1px;
    display:inline;
    width:16.66666666666667%;
    height:30px;
@@ -328,10 +335,6 @@ li{
 	cursor:pointer;
 }
 
-.pmodal_scrap{}
-
-.pmodal_re{}
-
 .pmodal_rform{padding-top:15px;}
 
 .pmodal_rtext{
@@ -339,6 +342,8 @@ li{
 	margin-right:-10px;
 	margin-bottom:7px;
 	float:left;
+	resize:none;
+	overflow-y:scroll;
 }
 
 .pmodal_rform input[type="submit"]{
@@ -400,7 +405,7 @@ li{
 }
 
 .pmodal_rpro2 img{
-	width:26px;
+	width:30px;
 	height:30px;
 }
 
@@ -409,6 +414,8 @@ li{
 .pmodal_rtext2{
 	margin:15px 3px 15px 50px;
 	float:left;
+	overflow-y:scroll;
+	resize:none;
 }
 
 #prere_first{

@@ -31,6 +31,7 @@
 				<beans:value>/WEB-INF/tiles-def/dictionary.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/plus.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/review.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/event.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -72,4 +73,5 @@
 	<view-controller path="/ranking/r_skinType.do" view-name="r_skinType"/>
 	<view-controller path="/dictionary/dictionary.do" view-name="dictionary"/>
 	<view-controller path="/review/productInfo.do" view-name="productInfo"/>
+	<view-controller path="/event/eventMain.do" view-name="event"/>
 </beans:beans>
