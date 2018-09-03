@@ -41,7 +41,9 @@
 .magazine-news {
 	margin-bottom: 20px;
 }
-
+.hrtag hr{
+	color : black;
+}
 .magazine-news h3 {
 	margin: 15px 0 10px;
 }

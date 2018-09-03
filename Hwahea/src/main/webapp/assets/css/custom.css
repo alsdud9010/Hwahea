@@ -1,1 +1,10 @@
 /* Add here all your css styles (customizations) */
+div.mypage{
+	align : center;
+}
+hr{
+	color : black;
+}
+.first_form_info div{
+	padding : 10px;
+}

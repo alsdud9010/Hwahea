@@ -87,4 +87,11 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="kr.spring.shop.dao"/>
 	</bean>
+	
+	<!-- 암호화,복호화 알고리즘 처리 -->
+	<bean id="cipherAES" class="kr.spring.util.CipherTemplate">
+		<property name="algorithm" value="AES"/>                                     
+		<property name="secretKey" value="nd6uz4t7wzfevtsqiycpxkxng"/>
+	</bean>
+	
 </beans>

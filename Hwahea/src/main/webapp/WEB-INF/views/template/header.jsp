@@ -28,7 +28,7 @@
 						</c:if>
 						<li><a href="#"> <i class="fa fa-heart"> 회원가입</i>
 						</a></li>
-						<li><a href="#"> <i class="fa fa-inbox"> 마이 페이지</i>
+						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do"> <i class="fa fa-inbox"> 마이 페이지</i>
 						</a></li>
 					</ul>
 				</div>
