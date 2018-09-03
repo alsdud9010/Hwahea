@@ -1,0 +1,194 @@
+#title{
+	color:black;
+	text-align:center;
+}
+#product{
+	text-align:center;
+}
+#product table{
+	width:50%;
+	margin:0 auto;
+	border-spacing:0;
+	margin-bottom:30px;
+}
+#propic{
+	width:10%;
+}
+#propic img{
+	vertical-align:bottom;
+	float:center;
+	width:200px;
+}
+#brand{
+	height:25px;
+	vertical-align:bottom;
+}
+#proname{
+	vertical-align:top;
+	font-weight:bold;
+	font-size:30px;
+}
+#writer{
+	width:40%;
+	margin:30px auto ;
+}
+#writer table{
+	margin:0 auto;
+	border-collapse: collapse;
+}
+#w_profile img{
+	padding-top:0;
+	margin:0 auto;
+	width:70px;
+}
+#nick{
+	font-size:21px;
+	width:150px;
+	font-weight:bold;
+	padding-left:7px;
+}
+#type{
+	font-size:15px;
+	padding-left:7px;
+}
+#recnt{
+	font-size:15px;
+	padding-left:7px;
+	color:gray;
+	vertical-align:top;
+}
+#bookmark{
+	width:200px;
+}
+#bookmark img{
+	float:right;
+	width:40px;
+}
+#rate {
+	width:40%;
+	margin:10px auto 0 auto;
+	text-align:center;
+}
+#rate img{
+	width:20px;
+}
+#reg_date{
+	margin-left:20px;
+	color:gray;
+}
+
+/*¸®ºä*/
+#review{
+	text-align:center;
+}
+#review table{
+	margin:20px auto 30px auto;
+	align:center;
+}
+#g_icon, #b_icon, #t_icon{
+	width:150px;
+	vertical-align:top;
+	padding-top:15px;
+}
+#content{
+	width:700px;
+	/* padding-left:20px; */
+	padding-top:10px;
+	text-align:left;
+	vertical-align:top;
+}
+#photos img{
+	width:150px;
+	align:left;
+}
+#like table{
+	margin:20px auto 30px auto;
+	align:center;
+}
+#like td{
+	height:40px;
+	padding-bottom:5px;
+}
+#like img{
+	margin-top:10px;
+	width:25px;
+	margin-right:10px;
+}
+#likes{
+	padding-right:100px;
+}
+#all_comment{
+	width:50%;
+	margin:0 auto;
+}
+#comments{
+	margin:0 auto;
+}
+ul{
+	vertical-align:top;
+	list-style:none;
+}
+ul li{
+	display:inline-block;
+}
+
+#c_profile img{
+	width:30px;
+}
+#nickname{
+	vertical-align:top;
+	padding-top:3px;
+}
+#more{
+	float:right;
+}
+#more img{
+	width:20px;
+	padding-bottom:5px;
+}
+#comm_content{
+	width:95%;
+	padding-left:30px;
+}
+#comm_comm{
+	float:right;
+	color:gray;
+	padding-right:10px;
+}
+#comm_regdate{
+	padding-left:30px;
+	color:gray;
+}
+#re_comm{
+	margin:0 auto;
+}
+#arrow img{
+	width:30px;
+}
+#write_comm{
+	width:50%;
+	margin:0 auto;
+	padding-left:10%;
+}
+#write_comm textarea{
+	border-color:#3a3a3a;
+	border-radius:3px;
+	resize:none;
+	width:80%;
+	height:40px;
+	margin: 10px auto 0 auto;	
+	outline:#3a3a3a;
+}
+#write_comm input{
+	width:60px;
+	height:30px;
+	margin:auto 0;
+	border-radius:5px;
+	outline:#3a3a3a;
+	border:1px solid #b1b1b0;
+	cursor:pointer;
+}
+
+
+
+
