@@ -35,8 +35,6 @@
   <link rel="icon" href="${pageContext.request.contextPath}/assets/css/footers/footer-v1.css">
   <!-- CSS shopping page -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/shop.css">
-  <!-- CSS mypage -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <!-- JS Global Compulsory -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript"
@@ -62,6 +60,7 @@
 <body>
 	<div class="wrapper">
 		<tiles:insertAttribute name="header" />
+		<%-- <tiles:insertAttribute name="menu" /> --%>
 		<tiles:insertAttribute name="body" />
 		<tiles:insertAttribute name="footer" />
 	</div>
