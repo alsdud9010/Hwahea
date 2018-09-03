@@ -1,0 +1,401 @@
+/***********[START] - 메뉴 바**************************************************************/
+.wrap_tab>ul>li {
+    margin: -6.8px;
+}
+
+.wrap_tab .on .link_tab {
+    border: 1px solid #000;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+}
+
+.wrap_tab .link_tab {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 148px;
+    height: 38px;
+    border-top: 1px solid #fafbfd;
+    border-left: 1px solid #fafbfd;
+    border-right: 1px solid #fafbfd;
+    border-bottom: 1px solid #000;
+    font-size: 14px;
+    line-height: 38px;
+    text-decoration: none;
+    text-align: center;
+}
+.menu_bar{
+	margin-top: -6em;
+	margin-left: 3%;
+	margin-bottom: 5%;
+}
+
+/***********[END] - 메뉴 바**************************************************************/
+
+/*-------------------------my_info---------------------------*/
+.top_about{
+	font-size: 13px;
+	font-weight: 900;
+	margin-left: 220px;
+	color: #83b14e;
+}
+ul,li{
+	list-style:none;
+}
+.form_info{
+	width:60%;
+	height: 150px;
+	border: 1px solid #83b14e;
+	margin-left: 200px;
+}
+.second_form_info{
+	width:60%;
+	height: 220px;
+	border: 1px solid #83b14e;
+	margin-left: 200px;
+}
+.form_top{
+	margin-top: 20px;
+}
+.myinfo_form{
+	float:left;
+	margin-top: 20px;
+}
+.info_img img{
+	float: right;
+	margin-right: 15px;
+	margin-bottom : 8px;
+	margin-top: 8px;
+	position: relative;
+    display: inline-block;
+    border-radius: 50%;
+	width: 100px;
+    height: 100px;
+}
+.mypage{
+	text-align: center !important;
+	margin-bottom: 30px !important;
+}
+.button {
+    background-color: #e7e7e7; 
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+}
+.btn_name{
+	margin-left: 50px;
+}
+div.info_choice{
+	margin-bottom: 5px;
+	width:100%;
+}
+.num_phone{
+	width:45px;
+	font-size: 12px;
+	text-align: center;
+}
+.address{
+	margin-left: 38px;
+	width:300px !important;
+	font-size: 12px;
+}
+.ranking{
+	width:100%;
+	margin-top: 12px;
+	margin-bottom: 20px;
+}
+b{
+	font-size: 30px;
+	margin-left: 15%;
+}
+.first_form{
+	font-size: 16px;
+	margin-left: 10px;
+}
+.zipcode{
+	width:50px;
+}
+.bnt_set_last{
+	margin-left: 45%;
+}
+.choose_me{
+	font-size: 13px;
+	color: #d3d3d3;
+	margin-top: 90px;
+	margin-left: 20px;
+}
+/*-------------------------my_point---------------------------*/
+.first_form{
+	width: 100%;
+	margin-left: 10%;
+	text-align:center;
+	margin-top: 5%;
+}
+.now_point{
+	float: left;
+}
+.point{
+	display: inline-block;
+	float: center;
+}
+b.po_number{
+	font-size: 35px;
+	color: #fc9494;
+}
+.P{
+	float: right;
+	font-size: 16px;
+	margin-right: 60%;
+}
+b.p{
+	font-size: 25px;
+}
+b.po_dangerous2{
+	font-size: 10px;
+}
+div.box{
+	width:100%;
+	display: inline-block;
+}
+div.po_de{
+	float: left;
+}
+div.po_dangerous{
+	float: right;
+	margin-right: 10%;
+}
+
+div.point_detail{
+	background-color: #d3d3d3;
+	margin-left:8%;
+	width:70%;
+	height: 100px;
+}
+div.po_date{
+	float:right;
+	color: #ffffff;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+div.po_Y{
+	color: #ffffff;
+	margin-left: 10px;
+	margin-top: 5%;
+	float: left;
+}
+div.po_many{
+	margin-left: 70%;
+	font-size: 30px;
+}
+/*-------------------------my_point---------------------------*/
+/***********[START] - 내리뷰(남의 리뷰)**************************************************************/
+.otherreview_info{
+	background-color:#d3d3d3;
+	width:90%;
+	height:120px;
+}
+.otherreview_info_img{
+	float:left;
+	margin-left: 10px;
+	margin-right: 20px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.user_detail{
+	float:left;
+	width:80%;
+	height:120px;
+}
+.otherreview_info_name{
+	margin-top: 15px;
+	margin-bottom: 8px;
+}
+.otherreview_info_detail{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.otherreview_info_follow{
+	float:right;
+	margin-bottom: 15px;
+}
+.otherreview_info_img img{
+	position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.use_brand{
+	width:90%;
+	height:60px;
+}
+.use_brand_detail{
+	margin-top: 8px;
+	margin-bottom : 8px;
+	float:left;
+	width:50%;
+}
+.otherreview_brand{
+	color: #d3d3d3;
+	font-size: 10px;
+	margin-top: 8px;
+}
+.otherreview_name{
+	font-size: 15px;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.otherreview_img img{
+	float: right;
+	margin-right: 15px;
+	margin-bottom : 8px;
+	margin-top: 8px;
+	position: relative;
+    display: inline-block;
+    border-radius: 50%;
+	width: 100px;
+    height: 100px;
+}
+.otherreview_second{
+	width:90%;
+	height:60px;
+}
+.review_set1{
+	float:left;
+}
+.grade,.otherreview_date{
+	float: left;
+}
+.otherreview_date{
+	margin-left: 5px;
+	color: #d3d3d3;
+}
+.otherreview_second .button{
+	float: right;
+	margin-right: 10px;
+}
+/***************리뷰 내용**********************/
+.otherreview_thurth{
+	boarder:1px;
+	width:90%;
+	height: 400px;
+}
+.review_like{
+	width:90%;
+	height: 200px;
+	margin-left: 100px;
+}
+.likeimg img{
+	float: left;
+	position: relative;
+    display: inline-block;
+    border-radius: 50%;
+	width: 50px;
+    height: 50px;
+}
+.otherreview_content{
+	width: 60%;
+	height: 200px;
+	float: left;
+	margin-left: 20px;
+}
+/***********[END] - 내리뷰(남의 리뷰)**************************************************************/
+/***********[START] - 즐겨찾기(브랜드)**************************************************************/
+/* .favorite_body{
+	width: 100%;
+	height: 100%;
+}
+.favorite_box1,.favorite_box3{
+	width: 450px;
+	margin-left: 5%;
+	border: 1px solid #83b14e;
+	margin-top: 50px;
+	margin-bottom: 5%;
+	float: left;
+}
+.favorite_box2,.favorite_box4{
+	width: 450px;
+	border: 1px solid #83b14e;
+	margin-top: 50px;
+	margin-bottom: 5%;
+	margin-right: 13%;
+	float: right;
+}
+.favorite_brand_name{
+	width: 100%;
+	height: 30px;
+}
+.favorite_detail{
+	width: 100%;
+	height: 100%;
+} */
+.paging{
+	margin-top: 40%;
+	margin-left: 42%;
+}
+/***********[END] - 즐겨찾기(브랜드)**************************************************************/
+/***********[START] - 즐겨찾기**************************************************************/
+div ul li{
+	list-style: none;
+}
+.favorite_form{
+	width:100%;
+	height: auto;
+	margin-top: 5%;
+}
+.favorite_list{
+	width:80%;
+	padding: 10px 8px 10px 8px;
+}
+#f_list{
+	border: 1px solid #83b14e;
+    border-radius: 5px;
+    width: 25%;
+    padding: 35px;
+}
+#center{
+	text-align: center;
+}
+.favorite_img img{
+	width:150px;
+	height: 200px;
+	padding: 12px 5px 12px 5px;
+	display: inline-block;
+}
+.favorite_brand{
+	font-size: 12px;
+	color: #d3d3d3;
+	text-align: center;
+}
+.favorite_name{
+	font-size: 16px;
+	font-weight: 900;
+	text-align: center;
+}
+.favorite_price{
+	text-align: center;
+}
+.favorite_grade{
+	text-align: center;
+}
+/***********[END] - 즐겨찾기**************************************************************/
+/***********[START] - 화해쇼핑(주문현황보기)**************************************************************/
+
+
+.table-head th{
+	text-align: center;
+}
+.table-body th{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+
+
+/***********[END] - 화해쇼핑(주문현황보기)**************************************************************/
+/***********[START] - 즐겨찾기(성분)**************************************************************/
+/***********[END] - 즐겨찾기(성분)**************************************************************/
