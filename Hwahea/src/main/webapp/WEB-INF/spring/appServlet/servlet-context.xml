@@ -9,6 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="kr.spring.shop.controller" />
+	<context:component-scan base-package="kr.spring.member.controller" />
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -65,6 +66,7 @@
 	
 	<!-- 데이터 작업 없이 뷰 호출 - 메인페이지 -->
 	<view-controller path="/main/main.do" view-name="main"/>
+	<view-controller path="/mypage/my_info.do" view-name="my_info"/>
 	<view-controller path="/shop/shopMain.do" view-name="shopMain"/>
 	<view-controller path="/plus/plusMain.do" view-name="plusMain"/>
 	<view-controller path="/plus/plusTrend.do" view-name="plusTrend"/>
