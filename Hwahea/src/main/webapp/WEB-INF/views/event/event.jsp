@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/plus.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/plus.reply.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/event.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/event.js"></script>
 <!--=== Content Part ===-->
 <div class="container content">
 	<div class="row magazine-page">
-		<!-- Begin Content -->
 		<div class="col-md-12">
-			<!-- 이벤트 상단 메뉴바 시작-->
+			<!-- 이벤트 타이틀 시작-->
 			<div class="magazine-news">
 				<div class="r_title">
 					<div class="r_title1">EVENT</div>
@@ -20,319 +19,99 @@
 					<hr class="hr-md">
 				</div>
 			</div>
-			<div class="margin-bottom-35">
-				<hr class="hr-md">
-			</div>
-			<!-- 이벤트 상단 메뉴바 끝 -->
+			<!-- 이벤트 타이틀 끝 -->
 
 			<!-- 이벤트 시작-->
-			<div class="magazine-news">
-				<div class="row">
-					<div class="plusCategory">
-						<h2>
-							<strong>신상&amp;트렌드</strong>
-						</h2>
-					</div>
-					<div class="col-md-4">
-						<div class="plusThumbnail">
-							<!-- magazine-news-img -->
-							<a href="#"><img src="${pageContext.request.contextPath}/assets/img/plus/plusThumbnail.PNG"
-								data-target="#modal01" data-toggle="modal"
-								data-backdrop="static" alt=""></a>
-						</div>
-						<div class="plusTitle">
-							<a data-target="#modal01" data-toggle="modal">눈화장에서 가장 중요한데
-								의외로 모르는 것</a>
-						</div>
-						<table class="plusTable">
-							<tr>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 135</th>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap"> 56</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply"> 77</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply"> 4631</th>
-							</tr>
-						</table>
-						<div class="plusDetail">
-							<hr class="hrinPlus">
-							<span>신상&amp;트렌드</span> 
-							<span class="plusUser">dragon
-								&nbsp;&nbsp;2시간 전</span>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="magazine-news-img">
-							<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-						</div>
-						<div class="plusTitle">
-							<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-						</div>
-						<table class="plusTable">
-							<tr>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-							</tr>
-						</table>
-						<div class="plusDetail">
-							<hr class="hrinPlus">
-							<span>신상&amp;트렌드</span> 
-							<span class="plusUser">hwahae
-								&nbsp;&nbsp;2018-08-25</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="magazine-news-img">
-							<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-						</div>
-						<div class="plusTitle">
-							<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-						</div>
-						<table class="plusTable">
-							<tr>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-							</tr>
-						</table>
-						<div class="plusDetail">
-							<hr class="hrinPlus">
-							<span>신상&amp;트렌드</span> 
-							<span class="plusUser">hwahae
-								&nbsp;&nbsp;2018-08-25</span>
-						</div>
-					</div>
+			<div class="col-md-12">
+          		<div class="navbar-header2">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar custom-icon-bar"></span>
+						<span class="icon-bar custom-icon-bar"></span>
+						<span class="icon-bar custom-icon-bar"></span>
+					</button>
 				</div>
-				<!-- 첫번재줄 끝 -->
-				<div class="margin-bottom-35">
-					<hr class="hr-md">
-				</div>
-				<div class="magazine-news">
-					<div class="row">
-						<div class="col-md-4">
-						<div class="magazine-news-img">
-							<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-						</div>
-						<div class="plusTitle">
-							<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-						</div>
-						<table class="plusTable">
-							<tr>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-							</tr>
-						</table>
-						<div class="plusDetail">
-							<hr class="hrinPlus">
-							<span>신상&amp;트렌드</span> 
-							<span class="plusUser">hwahae
-								&nbsp;&nbsp;2018-08-25</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="magazine-news-img">
-							<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-						</div>
-						<div class="plusTitle">
-							<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-						</div>
-						<table class="plusTable">
-							<tr>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-							</tr>
-						</table>
-						<div class="plusDetail">
-							<hr class="hrinPlus">
-							<span>신상&amp;트렌드</span> 
-							<span class="plusUser">hwahae
-								&nbsp;&nbsp;2018-08-25</span>
-						</div>
-					</div>
-						<div class="col-md-4">
-						<div class="magazine-news-img">
-							<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-						</div>
-						<div class="plusTitle">
-							<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-						</div>
-						<table class="plusTable">
-							<tr>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-							</tr>
-						</table>
-						<div class="plusDetail">
-							<hr class="hrinPlus">
-							<span>신상&amp;트렌드</span> 
-							<span class="plusUser">hwahae
-								&nbsp;&nbsp;2018-08-25</span>
-						</div>
-					</div>
-					</div>
-				</div>
-				<!-- 두번재줄 끝 -->
-				<div class="margin-bottom-35">
-					<hr class="hr-md">
-				</div>
-				<div class="magazine-news">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="magazine-news-img">
-								<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-							</div>
-							<div class="plusTitle">
-								<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-							</div>
-							<table class="plusTable">
-								<tr>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-								</tr>
-							</table>
-							<div class="plusDetail">
-								<hr class="hrinPlus">
-								<span>신상&amp;트렌드</span> 
-								<span class="plusUser">hwahae
-									&nbsp;&nbsp;2018-08-25</span>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="magazine-news-img">
-								<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-							</div>
-							<div class="plusTitle">
-								<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-							</div>
-							<table class="plusTable">
-								<tr>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-								</tr>
-							</table>
-							<div class="plusDetail">
-								<hr class="hrinPlus">
-								<span>신상&amp;트렌드</span> 
-								<span class="plusUser">hwahae
-									&nbsp;&nbsp;2018-08-25</span>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="magazine-news-img">
-								<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-							</div>
-							<div class="plusTitle">
-								<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-							</div>
-							<table class="plusTable">
-								<tr>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-								</tr>
-							</table>
-							<div class="plusDetail">
-								<hr class="hrinPlus">
-								<span>신상&amp;트렌드</span> 
-								<span class="plusUser">hwahae
-									&nbsp;&nbsp;2018-08-25</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- 세번째줄 끝 -->
-				<div class="margin-bottom-35">
-					<hr class="hr-md">
-				</div>
-				<div class="magazine-news">
-					<div class="row">
-						<div class="col-md-4">
-						<div class="magazine-news-img">
-							<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-						</div>
-						<div class="plusTitle">
-							<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-						</div>
-						<table class="plusTable">
-							<tr>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-								<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-								<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-							</tr>
-						</table>
-						<div class="plusDetail">
-							<hr class="hrinPlus">
-							<span>신상&amp;트렌드</span> 
-							<span class="plusUser">hwahae
-								&nbsp;&nbsp;2018-08-25</span>
-						</div>
-						</div>
-						<div class="col-md-4">
-							<div class="magazine-news-img">
-								<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-							</div>
-							<div class="plusTitle">
-								<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-							</div>
-							<table class="plusTable">
-								<tr>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-								</tr>
-							</table>
-							<div class="plusDetail">
-								<hr class="hrinPlus">
-								<span>신상&amp;트렌드</span> 
-								<span class="plusUser">hwahae
-									&nbsp;&nbsp;2018-08-25</span>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="magazine-news-img">
-								<a href="#"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""></a>
-							</div>
-							<div class="plusTitle">
-								<a href="#">곰손도 이것만 있으면 트렌디함 UP</a>
-							</div>
-							<table class="plusTable">
-								<tr>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 200</th>
-									<th><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">78</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">143</th>
-									<th><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">5784</th>
-								</tr>
-							</table>
-							<div class="plusDetail">
-								<hr class="hrinPlus">
-								<span>신상&amp;트렌드</span> 
-								<span class="plusUser">hwahae
-									&nbsp;&nbsp;2018-08-25</span>
-							</div>
-						</div>
-					</div>
-				</div>
+	            <ul class="nav nav-tabs navbar-collapse aa">
+	                <li class="nav-item">
+	                  <a href="nav-link" class="active nav-link" data-toggle="tab" data-target="#tabone">진행중인 이벤트</a>
+	                </li>
+	                <li class="nav-item">
+	                  <a class="nav-link" href="" data-toggle="tab" data-target="#tabtwo">종료된 이벤트</a>
+	                </li>
+	              </ul>
+	              
+	              <div class="tab-content mt-2">
+	              <!-- 진행중인 이벤트 시작 -->
+	                <div class="tab-pane fade" id="tabone" role="tabpanel">
+	                  	<ul class="event_list">
+		                  	<li>
+		                  		<div class="event_img">
+		                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb.PNG">
+		                  		<a href="${pageContext.request.contextPath}/event/eventDetail.do" class="event_hover"><span>상세 보기</span></a>
+		                  		</div>
+		                  		<div class="event_info">
+		                  			<div class="event_deadline">2018.08.27 ~</div>
+		                  			<span class="event_kind">[첫 구매 지원]</span> 
+		                  			<span class="event_left">남은 시간 119일 6시간 56분</span>
+		                  		</div>
+		                  	</li>
+		                  	<li>
+		                  		<div class="event_img">
+		                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb2.PNG">
+		                  		<a href="#" class="event_hover"><span>상세 보기</span></a>
+		                  		</div>
+		                  		<div class="event_info">
+		                  			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
+		                  			<span class="event_kind">[화해 화장품설문회]</span> 
+		                  			<span class="event_left">남은 시간 6시간 56분</span>
+		                  		</div>
+		                  	</li>
+		                  	<li>
+		                  		<div class="event_img">
+		                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb3.PNG">
+		                  		<a href="#" class="event_hover"><span>상세 보기</span></a>
+		                  		</div>
+		                  		<div class="event_info">
+		                  			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
+		                  			<span class="event_kind">[화장품 유목민]</span> 
+		                  			<span class="event_left">남은 시간 6시간 56분</span>
+		                  		</div>
+		                  	</li>
+		                  	<li>
+		                  		<div class="event_img">
+		                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb4.PNG">
+		                  		<a href="#" class="event_hover"><span>상세 보기</span></a>
+		                  		</div>
+		                  		<div class="event_info" >
+		                  			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
+		                  			<span class="event_kind">[꼼꼼한 뷰티평가단]</span>
+		                  			<span class="event_left">남은 시간 6시간 56분</span>
+		                  		</div>
+		                  	</li>
+	                  	</ul>
+	                </div>
+	                <!-- 진행중인 이벤트 끝 -->
+	                <!-- 종료된 이벤트 시작 -->
+	                <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+	                	<ul class="event_list">
+	                   		<li>
+		                  		<div class="event_img">
+		                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb4.PNG">
+		                  		</div>
+		                  		<div class="event_info">
+		                  			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
+		                  			<span class="event_kind">[꼼꼼한 뷰티평가단]</span>
+		                  			<span class="event_left">이벤트가 종료되었습니다.</span>
+		                  		</div>
+		                  	</li>
+		                 </ul>
+	                  </div>
+	                </div>
+	                <!-- 종료된 이벤트 끝 -->
+	              </div>
 			</div>
-			<!-- End Content -->
-			<!-- Begin Sidebar -->
-			<!-- End Sidebar -->
+			<!-- 이벤트 끝 -->
 		</div>
 	</div>
 	<!--/container-->
-</div>
 <!-- End Content Part -->
