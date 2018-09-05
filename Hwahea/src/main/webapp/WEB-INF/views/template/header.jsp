@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/loginmodal.css">
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(event){
+        $("#loginform").modal();
+    });
+});
+</script>
 <!--=== Header v4 ===-->
 <div class="header-v4">
 	<!-- Topbar -->
@@ -19,7 +27,7 @@
 						<li><a href="#"> <i class="fa fa-home"> 홈</i>
 						</a></li>
 						<c:if test="${empty user_id}">
-							<li><a href="#"> <i class="fa fa-user"> 로그인</i>
+							<li><a href="#" id="myBtn"> <i class="fa fa-user"> 로그인</i>
 							</a></li>
 						</c:if>
 						<c:if test="${!empty user_id}">
@@ -615,3 +623,35 @@
 	<!-- End Navbar -->
 </div>
 <!--=== End Header v4 ===-->
+<!-- modal -->
+<div class="modal fade" id="loginform" role="dialog">
+    <div class="dialog-m">
+    
+      <!-- Modal content-->
+      <div class="content-m-back">
+        <div class="header-m">
+          <button type="button" class="close-m" data-dismiss="modal">&times;</button>
+          <h4 class="h4-m"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="body-m">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
+              <input type="text" class="form-control" id="usrname" placeholder="아이디를 입력하세요!!">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> 비밀번호</label>
+              <input type="text" class="form-control" id="psw" placeholder="비밀번호를 입력하세요!!">
+            </div>
+
+              <button type="button" class="btn-m1 btn-success1 btn-block-m1">회원가입</button>
+              <button type="submit" class="btn-m2 btn-success2 btn-block-m2">로그인</button>
+
+          </form>
+        </div>
+        <div class="footer-m">
+         <a href="#" class="a-coler">아이디/비밀번호 찾기</a>
+        </div>
+      </div>
+    </div>
+  </div> 
