@@ -31,8 +31,8 @@
 						<span class="icon-bar custom-icon-bar"></span>
 					</button>
 				</div>
-	            <ul class="nav nav-tabs navbar-collapse aa">
-	                <li class="nav-item">
+	            <ul class="nav nav-tabs event_nav">
+	                <li class="nav-item active">
 	                  <a href="nav-link" class="active nav-link" data-toggle="tab" data-target="#tabone">진행중인 이벤트</a>
 	                </li>
 	                <li class="nav-item">
@@ -42,12 +42,12 @@
 	              
 	              <div class="tab-content mt-2">
 	              <!-- 진행중인 이벤트 시작 -->
-	                <div class="tab-pane fade" id="tabone" role="tabpanel">
+	                <div class="tab-pane active" id="tabone" role="tabpanel">
 	                  	<ul class="event_list">
 		                  	<li>
 		                  		<div class="event_img">
 		                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb.PNG">
-		                  		<a href="${pageContext.request.contextPath}/event/eventDetail.do" class="event_hover"><span>상세 보기</span></a>
+		                  		<a href="${pageContext.request.contextPath}/event/eventView.do" class="event_hover"><span>상세 보기</span></a>
 		                  		</div>
 		                  		<div class="event_info">
 		                  			<div class="event_deadline">2018.08.27 ~</div>
@@ -77,10 +77,10 @@
 		                  			<span class="event_left">남은 시간 6시간 56분</span>
 		                  		</div>
 		                  	</li>
-		                  	<li>
+		                  	<li class="active">
 		                  		<div class="event_img">
 		                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb4.PNG">
-		                  		<a href="#" class="event_hover"><span>상세 보기</span></a>
+		                  		<a href="${pageContext.request.contextPath}/event/eventDetail.do" class="event_hover"><span>상세 보기</span></a>
 		                  		</div>
 		                  		<div class="event_info" >
 		                  			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
@@ -111,6 +111,56 @@
 	              </div>
 			</div>
 			<!-- 이벤트 끝 -->
+			
+			
+			<%-- <div id="hide_event">
+				<ul class="event_list">
+                 	<li>
+                 		<div class="event_img">
+                 		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb.PNG">
+                 		<a href="${pageContext.request.contextPath}/event/eventDetail.do" class="event_hover"><span>상세 보기</span></a>
+                 		</div>
+                 		<div class="event_info">
+                 			<div class="event_deadline">2018.08.27 ~</div>
+                 			<span class="event_kind">[첫 구매 지원]</span> 
+                 			<span class="event_left">남은 시간 119일 6시간 56분</span>
+                 		</div>
+                 	</li>
+                 	<li>
+                 		<div class="event_img">
+                 		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb2.PNG">
+                 		<a href="#" class="event_hover"><span>상세 보기</span></a>
+                 		</div>
+                 		<div class="event_info">
+                 			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
+                 			<span class="event_kind">[화해 화장품설문회]</span> 
+                 			<span class="event_left">남은 시간 6시간 56분</span>
+                 		</div>
+                 	</li>
+                 	<li>
+                 		<div class="event_img">
+                 		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb3.PNG">
+                 		<a href="#" class="event_hover"><span>상세 보기</span></a>
+                 		</div>
+                 		<div class="event_info">
+                 			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
+                 			<span class="event_kind">[화장품 유목민]</span> 
+                 			<span class="event_left">남은 시간 6시간 56분</span>
+                 		</div>
+                 	</li>
+                 	<li>
+                 		<div class="event_img">
+                 		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb4.PNG">
+                 		<a href="#" class="event_hover"><span>상세 보기</span></a>
+                 		</div>
+                 		<div class="event_info" >
+                 			<div class="event_deadline">2018.08.27 ~ 2018.09.03</div>
+                 			<span class="event_kind">[꼼꼼한 뷰티평가단]</span>
+                 			<span class="event_left">남은 시간 6시간 56분</span>
+                 		</div>
+                 	</li>
+               	</ul>
+			</div> --%>
 		</div>
 	</div>
 	<!--/container-->

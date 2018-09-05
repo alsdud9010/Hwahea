@@ -13,4 +13,8 @@
       <put-attribute name="title" value="화해 | 신상&amp;트렌드"/>
       <put-attribute name="body" value="/WEB-INF/views/plus/plusTrend.jsp"/>
    </definition>
+   <definition name="plusReview" extends="main">
+      <put-attribute name="title" value="화해 | 인기템리뷰"/>
+      <put-attribute name="body" value="/WEB-INF/views/plus/plusReview.jsp"/>
+   </definition>
 </tiles-definitions>
