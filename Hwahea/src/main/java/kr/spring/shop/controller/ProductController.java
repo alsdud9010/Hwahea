@@ -32,4 +32,18 @@ public class ProductController {
 
 		return "shopProductView";
 	}
+
+	//========= 주문하기
+	@RequestMapping("/shop/orderProduct.do")
+	public String processs() {
+
+		return "orderProduct";
+	}
+
+	//========= 주문완료
+	@RequestMapping("/shop/orderComplete.do")
+	public String processss() {
+
+		return "orderComplete";
+	}
 }

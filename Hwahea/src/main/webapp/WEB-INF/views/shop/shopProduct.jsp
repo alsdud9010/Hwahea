@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/shop.css">
 <!-- 쇼핑 리스트 타이틀 시작 -->
 <div class="product-category-title">
 	<div class="category-title">

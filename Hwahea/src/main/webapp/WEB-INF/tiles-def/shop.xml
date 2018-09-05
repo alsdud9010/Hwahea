@@ -17,4 +17,16 @@
       <put-attribute name="title" value="화해 - 쇼핑"/>
       <put-attribute name="body" value="/WEB-INF/views/shop/shopProductView.jsp"/>
    </definition>
+   <definition name="orderProduct" template="/WEB-INF/views/template/layout.jsp">
+		<put-attribute name="title" value="화해 - 쇼핑"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/shopHeader.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/shop/orderProduct.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+	</definition>
+	<definition name="orderComplete" template="/WEB-INF/views/template/layout.jsp">
+      <put-attribute name="title" value="화해 - 쇼핑"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/shopHeader.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/shop/orderComplete.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+   </definition>
 </tiles-definitions>
