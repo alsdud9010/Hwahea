@@ -235,7 +235,7 @@
 							</div>
 							<div class="classified-brand-product">
 								<p>지금 구매 가능한 <span style="font-weight:bold;">브랜드 상품</span></p>
-								<div>;
+								<div>
 								</div>
 							</div>
 						</div>

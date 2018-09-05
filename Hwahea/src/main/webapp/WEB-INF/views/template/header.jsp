@@ -637,11 +637,11 @@ $(document).ready(function(){
           <form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
-              <input type="text" class="form-control" id="usrname" placeholder="아이디를 입력하세요!!">
+              <input type="text" class="form-control" id="usrname" placeholder="아이디를 입력해주세요.">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> 비밀번호</label>
-              <input type="text" class="form-control" id="psw" placeholder="비밀번호를 입력하세요!!">
+              <input type="text" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요.">
             </div>
 
               <button type="button" class="btn-m1 btn-success1 btn-block-m1">회원가입</button>
