@@ -5,11 +5,25 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/graph.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/review.js"></script>
 	<div id="wrap">
-		<!-- 제품 사진, 제품 정보 시작 -->
+	<div>
+		<div class="r_title">
+			<div class="r_title1">PRODUCT</div>
+			<dl>
+				<dt class="r_title2">제품 상세정보</dt>
+				<dt class="r_title3">제품의 전체 성분을 확인해보세요!</dt>
+			</dl>
+		</div>
+		<div class="margin-bottom-20">
+			<hr class="hr-md">
+		</div>
+	</div>
+	<!-- 제품 사진, 제품 정보 시작 -->
 		<div id="info">
 			<!-- 제품 사진 시작 -->
 			<div id="propic">
+				<div>
 				<img src="${pageContext.request.contextPath}/assets/img/sample.jpg">
+				</div>
 			</div>
 			<!-- 제품 사진 끝 -->
 			<!-- 제품 정보 시작 -->
@@ -101,7 +115,7 @@
 			</div>
 			<div id="edit">
 				<div>
-				<input type="button" value="정보 수정 요청하기">
+					<input type="button" value="정보 수정 요청하기">
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,36 @@
 #wrap{
-	width:55%;
+	width:60%;
 	margin:20px auto;
 }
+.r_title{
+	margin-top:40px; 
+}
+.r_title .r_title1{
+	font-size:18px;
+	font-weight: bold;
+	margin:0 0 5px 0;
+}
+
+.r_title dt{
+	float: left;
+}
+
+.r_title .r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+
+.r_title .r_title3{
+	padding:20px 0 0 30px;
+	font-weight: bold;
+	color:#008200;
+}
+
+.r_title .r_r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+
 hr{
 	margin-top:20px;
 }
@@ -21,7 +50,10 @@ hr{
 }
 #propic img{
 	width:350px;
-	margin-left:70px;
+}
+#propic div{
+	display:table;
+	margin:0 auto;
 }
 #proinfo{
 	width:50%;
@@ -42,11 +74,13 @@ hr{
 	margin-bottom:20px;
 }
 #brand input{
-	border-radius:10px;
+	font-weight:bold;
+	background-color:#72c02c;
+	color:#ffffff;
 	outline:#3a3a3a;
-	border:1px solid #b1b1b0;
+	border:none;
 	cursor:pointer;
-	margin:5px 0 5px 10px;
+	margin:5px 0 5px 40px;
 	padding:5px 7px;
 }
 #spec{
@@ -65,13 +99,21 @@ hr{
 #spec_rate img{
 	width:20px;
 }
+#buttons{
+	display:table;
+	margin:0 auto;
+}
 #buttons input {
+	font-size:15px;
+	font-weight:bold;
 	border-radius:5px;
 	outline:#3a3a3a;
-	border:1px solid #b1b1b0;
+	background-color:#72c02c;
+	color:#ffffff;
+	border:none;
 	cursor:pointer;
-	margin-left:30px;
 	padding:10px 30px;
+	margin-right:30px;
 }
 
 /* 力前 己盒 */
@@ -106,7 +148,7 @@ hr{
 }
 #twenty, #allergy{
 	width:40px;
-	margin-left:19%;
+	margin-left:18%;
 	font-size:15px;
 	margin-top:5px;
 }
@@ -179,6 +221,17 @@ hr{
 	margin-left:450px;
 	margin-bottom:20px;
 }
+#edit input {
+	font-size:15px;
+	font-weight:bold;
+	border-radius:5px;
+	outline:#3a3a3a;
+	background-color:#72c02c;
+	color:#ffffff;
+	border:none;
+	cursor:pointer;
+	padding:10px 30px;
+}
 
 
 
@@ -222,16 +275,21 @@ hr{
 	margin:0 auto; 
 }
 #write div{
+	display:table;
 	margin:0 auto;
 }
 #write input {
-	vertical-align:center;
+	font-size:15px;
+	font-weight:bold;
 	border-radius:5px;
 	outline:#3a3a3a;
-	border:1px solid #b1b1b0;
+	background-color:#72c02c;
+	color:#ffffff;
+	border:none;
 	cursor:pointer;
-	margin:20px 70px;
 	padding:10px 30px;
+	margin-right:30px;
+	margin-bottom:20px;
 }
 
 /* -------- 傈眉 府轰 ------- */
