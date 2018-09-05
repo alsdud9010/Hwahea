@@ -18,10 +18,9 @@
 	<div id="propic">
 		<img src="${pageContext.request.contextPath}/assets/img/sample.jpg">
 	</div>
-	<div id="product"> 
-		<div id="brand">메이크업 포에버(MAKEUP FOREVER)</div>
-		<div id="name">HD 프레스드 파우더</div>
-	</div>
+	<div id="brand">메이크업 포에버(MAKEUP FOREVER)</div>
+	<div id="name">HD 프레스드 파우더</div>
+	
 	<hr id="re_hr">
 	<div id="rate">
 		<div id="help">

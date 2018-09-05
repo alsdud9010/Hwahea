@@ -20,4 +20,11 @@ public class ReviewController {
 		
 		return "writeReview";
 	}
+	
+	//==============================정보 수정요청 폼
+	@RequestMapping("/review/editRequest.do")
+	public String editForm() {
+		
+		return "editRequest";
+	}
 }

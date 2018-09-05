@@ -31,24 +31,23 @@
 	font-weight: bold;
 }
 #propic{
-	width:250px;
-	display:inline-block;
+	display:table;
+	margin:0 auto;
 }
 #propic img{
 	width:250px;
-}
-#product{
-	width:500px;
-	display:inline-block;
-	vertical-align:middle;
-	margin-bottom:10px;
+	margin-bottom:0;
 }
 #brand{
 	font-size:15px;
+	display:table;
+	margin:0 auto;
 }
 #name{
 	font-size:35px; 
 	font-weight:bold;
+	display:table;
+	margin:0 auto 20px auto;
 }
 #re_hr{
 	height:3px;

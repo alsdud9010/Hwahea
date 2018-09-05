@@ -115,7 +115,7 @@
 			</div>
 			<div id="edit">
 				<div>
-					<input type="button" value="정보 수정 요청하기">
+					<a href="${pageContext.request.contextPath}/review/editRequest.do"><input type="button" value="정보 수정 요청하기"></a>
 				</div>
 			</div>
 		</div>

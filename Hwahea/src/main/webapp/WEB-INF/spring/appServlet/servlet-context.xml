@@ -76,4 +76,5 @@
 	<view-controller path="/dictionary/dictionary.do" view-name="dictionary"/>
 	<view-controller path="/review/productInfo.do" view-name="productInfo"/>
 	<view-controller path="/review/writeReview.do" view-name="writeReview"/>
+	<view-controller path="/review/editRequest.do" view-name="editRequest"/>
 </beans:beans>
