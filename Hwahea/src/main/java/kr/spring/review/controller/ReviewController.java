@@ -2,6 +2,7 @@ package kr.spring.review.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ReviewController {
@@ -11,5 +12,12 @@ public class ReviewController {
 	public String process(){
 		
 		return "productInfo";
+	}
+	
+	//==============================¸®ºä ÀÛ¼º Æû
+	@RequestMapping("/review/writeReview.do")
+	public String form() {
+		
+		return "writeReview";
 	}
 }

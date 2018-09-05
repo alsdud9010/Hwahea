@@ -1,0 +1,97 @@
+#wrap{
+	width:59.5%;
+	margin:0 auto
+}
+#title{
+ 	display:table;
+	margin:0 auto;
+	font-size:30px;
+	font-weight:bold; 
+}
+#title p{
+	
+}
+#propic{
+	width:250px;
+	display:inline-block;
+}
+#propic img{
+	width:250px;
+}
+#product{
+	width:500px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-bottom:10px;
+}
+#brand{
+	font-size:15px;
+}
+#name{
+	font-size:35px; 
+	font-weight:bold;
+}
+#re_hr{
+	height:3px;
+	color:#ff0000;
+	margin:5px;
+}
+#rate{
+	display:table;
+	margin:0 auto;
+}
+#help{
+	font-size:20px;
+	font-weight:bold;
+}
+#star img{
+	width:30px;
+}
+#good img{
+	margin-right:5px;
+	margin-bottom:10px;
+}
+#bad img{
+	margin-top:10px;
+	margin-right:5px;
+	margin-bottom:10px;
+}
+#tips img{
+	margin-top:10px;
+	margin-right:5px;
+	margin-bottom:10px;
+}
+#retitle{
+	font-size:20px;
+	font-weight:bold;
+}
+#source{
+	font-size:15px;
+}
+#count{
+	margin-right:10px;
+	font-size:15px;
+	float:right;
+}
+#option{
+	margin-left:30px;
+	background-color:#cbf8e1; 
+	padding:5px; 
+}
+textarea{
+	padding:10px;
+	border:1px solid #ffe6e6;
+	resize:vertical;
+}
+#camera{
+	width:35px;
+}
+#preview {
+	margin:10px 5px 10px 5px;
+}
+#preview img{
+	width:150px;
+}
+#re_btn input{
+	width:80px; 
+}

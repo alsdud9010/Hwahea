@@ -1,9 +1,9 @@
 #wrap{
 	width:55%;
-	margin:0 auto;
+	margin:20px auto;
 }
 hr{
-	margin-top:30px;
+	margin-top:20px;
 }
 
 /* 제품 사진, 제품 정보 */
@@ -15,19 +15,18 @@ hr{
 #propic{
 	width:50%;
 	height:400px;
-	border:1px solid #808080;
+	border:1px solid #efefef;
 	margin:10px;
 	align:center;
 }
 #propic img{
-	position:absolute;
-	width:400px;
-	margin-left:30px;
+	width:350px;
+	margin-left:70px;
 }
 #proinfo{
 	width:50%;
 	height:400px;
-	border:1px solid #808080;
+	border:1px solid #efefef;
  	vertical-align:middle;
  	margin:10px;
  	padding:0 20px;
@@ -35,33 +34,35 @@ hr{
 #name{
 	font-weight:bold;
 	font-size:30px;
-	padding-bottom:5px;
 	padding-top:30px;
 }
 #brand{
-	font-size:20px;
-	padding-top:0;
-	margin-bottom:40px;
+	font-size:17px;
+	padding-top:-5px;
+	margin-bottom:20px;
 }
 #brand input{
-	border-radius:5px;
+	border-radius:10px;
 	outline:#3a3a3a;
 	border:1px solid #b1b1b0;
 	cursor:pointer;
-	margin:5px 0 5px 50px;
-	padding:5px 10px;
+	margin:5px 0 5px 10px;
+	padding:5px 7px;
 }
 #spec{
-	margin-top:30px;
+	margin-top:20px;
 }
 #spec div{
 	width:60%;
-	margin:0 auto;
+	margin-left:15px;
+	font-size:15px;
 }
 #title{
 	margin-right:10px;
 }
-#rate img{
+#spec_rate{
+}
+#spec_rate img{
 	width:20px;
 }
 #buttons input {
@@ -69,7 +70,6 @@ hr{
 	outline:#3a3a3a;
 	border:1px solid #b1b1b0;
 	cursor:pointer;
-	margin-top:20px;
 	margin-left:30px;
 	padding:10px 30px;
 }
@@ -77,7 +77,7 @@ hr{
 /* 제품 성분 */
 #ingre{
 	margin-top:30px;
-	border:1px solid #808080;
+	border:1px solid #efefef;
 }
 #ingre hr{
 	margin: 15px 30px;
@@ -85,49 +85,87 @@ hr{
 #head {
 	margin-top:5px;
 	margin-left:10px;
-	/* margin-bottom:20px; */
 	font-size:25px;
 	font-weight:bold;
 }
 #head img{
-	margin-top:15px;
-	margin-right:5px;
+	margin-bottom:5px;
+	margin-right:10px;
 	width:30px;
 }
 #subhead{
 	width:150px;
-	font-size:18px;
+	font-size:20px;
 	margin-left:35px;
 	margin-top:5px;
-	display:inline-block;
 }
 #chart_div{
+	float:left;
 	width:100%;
+	padding-left:-50px;
+}
+#twenty, #allergy{
+	width:40px;
+	margin-left:19%;
+	font-size:15px;
+	margin-top:5px;
+}
+#twenty img, #allergy img{
+	width:30px;
+}
+#how{
+	margin-left:38%;
+	font-size:18px;
+	font-weight:bold;
+}
+#how span{
+	margin-left:3px;
+	font-size:13px;
+	font-weight:normal;
+}
+#more{
+	float:right;
+	margin-right:22%;
+}
+#more img{
+	margin-top:5px;
+	width:20px;
+}
+#tchart{
+	height:200px;
+}
+#tmore img{
+	float:right;
+	margin-right:22%;
+	margin-top:70px;
+	width:20px;
 }
 #type_chart_div{
-	float:right;
-	width:100%;
+	float:left;
+	width:760;
+	height:200px;
 }
 #option {
 	margin-top:15px;
+	font-size:15px;
+	margin-left:60px;
 }
 #option img{
 	width:20px;
 	margin-left:5px;
 }
-#option span{
-	margin-left:60px;
-}
-#option a{
-	margin-left:60px;
-	vertical-align:top;
-	margin-top:3px;
-}
 #detail_option{
 	margin-top:10px;
 	margin-left:70px;
-	font-size:15px;
+	font-size:14px;
 	color:gray;
+}
+#dmore img{
+	vertical-aling:top;
+	float:right;
+	margin-right:23%;
+	margin-bottom:30px;
+	width:20px;
 }
 #caution{
 	background-color:#f5f5f5;
@@ -136,16 +174,30 @@ hr{
 	padding:10px 0 10px 5px;
 	margin-bottom:15px;
 }
+#edit div{
+	width:100px;
+	margin-left:450px;
+	margin-bottom:20px;
+}
+
+
 
 /* ------- 리뷰 통계 시작 -------*/
 #review_stat{
 	margin-top:30px;
-	border:1px solid #808080;
+	border:1px solid #efefef;
+}
+#review_stat hr{
+	margin: 15px 30px;
 }
 #all_rate{
 	width:25%;
 	display:inline-block;
 	vertical-align:top;
+	padding-bottom:0;
+}
+#all_rate img{
+	width:20px;
 }
 #score{
 	font-size:50px;
@@ -153,8 +205,14 @@ hr{
 	float:right;
 	margin-top:40%;
 	margin-right:10px;
+	margin-bottom:0;
 }
-
+#rate{
+	height:21px;
+	float:right;
+	margin-left:20%;
+	padding-top:0;
+}
 #review_chart{
 	display:inline-block;
 	padding:0;
@@ -163,22 +221,23 @@ hr{
 	width:55%;
 	margin:0 auto; 
 }
+#write div{
+	margin:0 auto;
+}
 #write input {
+	vertical-align:center;
 	border-radius:5px;
 	outline:#3a3a3a;
 	border:1px solid #b1b1b0;
 	cursor:pointer;
-	margin:10px 60px;
+	margin:20px 70px;
 	padding:10px 30px;
 }
-
-
-
 
 /* -------- 전체 리뷰 ------- */
 #review_list{
 	margin-top:30px;
-	border:1px solid #808080;
+	border:1px solid #efefef;
 }
 #writer{
 	width:40%;
@@ -195,7 +254,7 @@ hr{
 }
 #nick{
 	font-size:21px;
-	width:150px;
+	width:200px;
 	font-weight:bold;
 	padding-left:7px;
 }
@@ -213,6 +272,15 @@ hr{
 #reg_date{
 	margin-left:20px;
 }
+#singo{
+	margin:1000px auto;
+	width:400px;
+	text-align:left;
+}
+
+
+
+
 /*------리뷰 내용--------*/
 #review{
 	text-align:center;
@@ -221,7 +289,11 @@ hr{
 	margin:20px 10px 30px 10px;
 	align:center;
 }
+#mid_hr{
+	margin:15px 60px;
+}
 #re_hr{
+	border-color:#808080;
 	margin: 15px 30px;
 }
 #g_icon, #b_icon, #t_icon{
@@ -231,7 +303,7 @@ hr{
 }
 #content{
 	width:750px;
-	/* padding-left:20px; */
+	font-size:14px;
 	padding-top:10px;
 	text-align:left;
 	vertical-align:top;
@@ -240,21 +312,359 @@ hr{
 	width:150px;
 	align:left;
 }
-#like table{
-	margin:20px auto 30px auto;
-	align:center;
+#like {
+	width:700px; 
+	margin:30px auto;
 }
-#like td{
-	height:40px;
-	padding-bottom:5px;
+
+#like img{width:23px; height:23px;}
+#like li{
+   border:#acacac solid 1px;
+   display:inline;
+   width:16.66666666666667%;
+   height:30px;
+   font-size:15px;
+   color:#83B14E;
+   font-weight:bold;
+   text-align:center;
+   padding:10px 40px 10px 40px;
+   margin-left:-5px;
 }
-#like img{
+#like li:hover{
+	background-color:#83B14E;
+	color:#fff;
+	cursor:pointer;
+}
+
+
+/*------- 댓글 모달로 보기 --------*/
+#plusLike{
+	width:15px;
+	height:15px;
+}
+#modalCategory{
 	margin-top:10px;
-	width:25px;
+	margin-left:345px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+
+/*화해플러스 모달*/
+.pmodal_close{
+	width:15px;
+	height:15px;
+	cursor:pointer;
+	margin-bottom:20px;
+}
+
+.plusModalimg{
+	width:500px;
+	height:410px;
+}
+
+.modalCategory{
+	margin-top:10px;
+	margin-left:345px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.modalCategory a{
+	color:#777777;
+}
+
+.modalCategory a:hover{
+	color:#000000;
+	text-decoration:none;
+}
+
+.plusThumbnail3{
+	width:300px;
+	height:300px;
+}
+.brand{
+	vertical-align:bottom;
+}
+.pmodal_product{
+	font-size:30px;
+	font-weight:bold;
+	vertical-align:top;
+}
+.writer{
+	width:40%;
+	margin:30px auto ;
+}
+.writer table{
+	margin:0 auto;
+	border-collapse: collapse;
+}
+#w_profile img{
+	padding-top:0;
+	margin:0 auto;
+	width:70px;
+}
+#nick{
+	font-size:21px;
+	width:150px;
+	font-weight:bold;
+	padding-left:7px;
+}
+#type{
+	width:300px;
+	font-size:15px;
+	padding-left:7px;
+}
+#recnt{
+	font-size:15px;
+	padding-left:7px;
+	color:gray;
+	vertical-align:top;
+}
+#bookmark{
+	width:500px;
+}
+#bookmark img{
+	float:right;
+	width:40px;
+}
+#alrm img{
+	float:right;
+	width:40px;
+	padding-bottom:20px;
+}
+.rate {
+	width:40%;
+	margin:10px auto 0 auto;
+	text-align:center;
+}
+.rate img{
+	width:20px;
+}
+.reg_date{
+	margin-left:20px;
+	color:gray;
+	padding-top:5px;
+}
+
+
+
+.pmodal_profile img{
+	width:26px;
+	height:26px;
+}
+
+.pmodal_profile{
+	padding-right:30px;
+	text-align:right;
+	font-size:16px;
+	color:#999da0;
+}
+
+.pmodal_icon{
+	text-align:left;
+	font-size:14px;
+}
+
+.pmodal_icon span{
+	margin-left:28px;
 	margin-right:10px;
 }
-#likes{
-	padding-right:100px;
+
+.pmodal_icon .pmodal_regDate{
+	margin-left:440px !important;
+	color:#999da0;
 }
+
+.pmodal_reply{
+	padding-bottom:17px;
+	margin-left:43px;
+	margin-top:20px;
+	padding-top:10px;
+	background:#d9dcdd;
+	width:780px;
+}
+
+.pmodal_ud{
+	margin-top:10px;
+	padding-right:15px;
+	text-align:right;
+}
+
+.pmodal_lrs {width:700px; margin-left:65px;}
+.pmodal_lrs img{width:23px; height:23px;}
+.pmodal_lrs li{
+   border:#acacac solid 1px;
+   display:inline;
+   width:16.66666666666667%;
+   height:30px;
+   font-size:15px;
+   color:#83B14E;
+   font-weight:bold;
+   text-align:center;
+   padding:10px 40px 10px 40px;
+   margin-left:-5px;
+}
+.pmodal_lrs li:hover{
+	background-color:#83B14E;
+	color:#fff;
+	cursor:pointer;
+}
+.pmodal_alarm img{
+	margin-bottom:5px;
+}
+
+.pmodal_rform{padding-top:15px;}
+
+.pmodal_rtext{
+	margin-left:120px;
+	margin-right:-10px;
+	margin-bottom:7px;
+	float:left;
+	resize:none;
+	overflow-y:scroll;
+}
+
+.pmodal_rform input[type="submit"]{
+	width:65px;
+	height:75px;
+}
+
+.pmodal_wpro {
+	float:left;
+	font-size:18px;
+	margin:15px -80px 0 30px;
+}
+
+.pmodal_wpro img{width:60px; height:60px;}
+
+.pmodal_rcount {
+	text-align:right;
+	margin:17px 135px 27px 0;
+	font-size:12px;
+}
+
+.pmodal_reback{
+	background:#fff;
+	margin-left:65px;
+	margin-top:-20px;
+	width:630px;
+}
+
+.pmodal_rere{
+	padding-top:10px;
+}
+
+.pmodal_rpro {width:230px; margin-right:438px; margin-left:20px; text-align:left;}
+
+.pmodal_rpro img{
+	width:35px;
+	height:35px;
+}
+
+.pmodal_rpro .plusGrade{font-size:12px;}
+
+.pmodal_wrere{font-size:14px; font-weight:bold; margin:0 3px 0 3px;}
+
+.pmodal_drere{font-size:11px; color:#999da0; margin-left:3px;}
+
+.pmodal_trere{font-size:14px; margin:12px 0 15px 40px; text-align:left;}
+
+.pmodal_same{margin-right:410px; cursor:pointer;}
+.pmodal_diff{margin-right:501px; cursor:pointer;}
+
+/*화플 모달 대댓글*/
+/*대댓글 폼*/
+.pmodal_reback2{
+	background:#d9dcdd;
+	margin-left:24px;
+	margin-top:15px;
+	width:580px;
+	padding-bottom:39px;
+}
+
+.pmodal_rpro2 img{
+	width:30px;
+	height:30px;
+}
+
+.pmodal_rpro2{margin-right:400px; padding-top:13px;} .pmodal_rpro2 .plusGrade{font-size:11px;}
+
+.pmodal_rtext2{
+	margin:15px 3px 15px 50px;
+	float:left;
+	overflow-y:scroll;
+	resize:none;
+}
+
+#prere_first{
+	margin:18px 0 9px 0;
+}
+
+/*대댓글 목록폼*/
+
+.prere_back{
+	background:#f7fffb;
+	margin-left:65px;
+	margin-top:-20px;
+	width:630px;
+}
+
+.prere_depth{
+	margin-left:25px;
+}
+
+.plusGrade input[type="button"]{
+	width:40px;
+	height:20px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	background-color:#f0ad4e;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+}
+
+
+.prere_grade input[type="button"]{
+	width:46px;
+	height:20px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	font-size:12px;
+	background-color:#00c63c;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+}
+
+.prere_time{
+	font-size:11px; color:#999da0; width:30px;
+}
+
+.prere_text{font-size:14px; margin:12px 0 15px 80px; text-align:left;}
+
+.rere_writer{font-size:14px; font-weight:bold; color:#ff7280; margin:0 13px 0 10px;}
+
+.prere_grade2 input[type="button"]{
+	width:61px;
+	height:20px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	font-size:12px;
+	background-color:#3881ff;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+}
+
+
+
 
 

@@ -10,13 +10,13 @@ function drawStacked() {
 
       var options = {
         width:1000,
-        height:100,
+        height:90,
         bar : {groupWidth:"100%"},
         chartArea: {width: '60%'},
         legend: { position: "none" },
         isStacked: true,
         colors: ['silver', '#3fa8ff', '#ffd400', '#ff0000'],
-        opacitiy : 0.1
+        display:'inline'
       };
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
       chart.draw(data, options);
@@ -37,15 +37,16 @@ function drawAnnotations() {
       ]);
 
       var options = {
-        title: '피부타입별 성분',
+        title: '*숫자 = 해당 성분 개수',
         chartArea: {width: '50%'},
-        width:1000,
+        width:770,
         annotations: {
           alwaysOutside: true,
           textStyle: {
             fontSize: 12,
             auraColor: 'none',
-            color: '#555'
+            color: '#555',
+            display:'inline'
           }
         },
         hAxis: {

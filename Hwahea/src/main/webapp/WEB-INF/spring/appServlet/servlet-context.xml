@@ -75,6 +75,7 @@
 	<view-controller path="/ranking/r_skinType.do" view-name="r_skinType"/>
 	<view-controller path="/dictionary/dictionary.do" view-name="dictionary"/>
 	<view-controller path="/review/productInfo.do" view-name="productInfo"/>
+	<view-controller path="/review/writeReview.do" view-name="writeReview"/>
 	<view-controller path="/event/eventMain.do" view-name="event"/>
 	<view-controller path="/event/eventDetail.do" view-name="eventView"/>
 </beans:beans>
