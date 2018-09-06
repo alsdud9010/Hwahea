@@ -34,7 +34,7 @@ $(document).ready(function(){
 							<li><a href="#"> <i class="fa fa-user"> 로그아웃</i>
 							</a></li>
 						</c:if>
-						<li><a href="#"> <i class="fa fa-heart"> 회원가입</i>
+						<li><a href="${pageContext.request.contextPath}/signin/m_signin.do"> <i class="fa fa-heart"> 회원가입</i>
 						</a></li>
 						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do"> <i class="fa fa-inbox"> 마이 페이지</i>
 						</a></li>
@@ -644,7 +644,7 @@ $(document).ready(function(){
               <input type="text" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요.">
             </div>
 
-              <button type="button" class="btn-m1 btn-success1 btn-block-m1">회원가입</button>
+              <button type="button" class="btn-m1 btn-success1 btn-block-m1" onclick = "location.href ='${pageContext.request.contextPath}/signin/m_signin.do'">회원가입</button>
               <button type="submit" class="btn-m2 btn-success2 btn-block-m2">로그인</button>
 
           </form>
