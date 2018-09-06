@@ -5,54 +5,73 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="my_info" extends="main">
+	 <definition name="my_info" template="/WEB-INF/views/template/layout_mypage.jsp">
 		<put-attribute name="title" value="회원정보수정"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
 		<put-attribute name="menu" value="/WEB-INF/views/mypage-menubar/mypage-menubar.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/views/mypage/my_info.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
 	</definition>
-	<definition name="my_point" extends="main">
+	<definition name="my_point" extends="my_info">
 		<put-attribute name="title" value="포인트내역"/>
-		<put-attribute name="menu" value="/WEB-INF/views/mypage-menubar/mypage-menubar.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/views/mypage/my_point.jsp"/>
 	</definition>
-	<definition name="my_review(myreview)" extends="main">
+	
+	<!-- ********************내리뷰/스크랩*************************** -->
+	<definition name="my_reviewmyreview" extends="my_info">
 		<put-attribute name="title" value="내리뷰/스크랩"/>
-		<put-attribute name="menu" value="/WEB-INF/views/mypage-menubar/mypage-menubar.jsp"/>
-		<put-attribute name="body" value="/WEB-INF/views/mypage/my_review(myreview).jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_reviewmyreview.jsp"/>
 	</definition>
-	<definition name="my_favorite(brand)" extends="main">
+	<definition name="my_reviewscrap" extends="my_info">
+		<put-attribute name="title" value="내리뷰/스크랩"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_reviewscrap.jsp"/>
+	</definition>
+	<definition name="my_reviewreview" extends="my_info">
+		<put-attribute name="title" value="내리뷰/스크랩"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_reviewreview.jsp"/>
+	</definition>
+	<!-- ********************내리뷰/스크랩*************************** -->
+	
+	<!-- *******************즐겨찾기******************************* -->
+	<definition name="my_favoritebrand" extends="my_info">
 		<put-attribute name="title" value="즐겨찾기"/>
-		<put-attribute name="menu" value="/WEB-INF/views/mypage-menubar/mypage-menubar.jsp"/>
-		<put-attribute name="body" value="/WEB-INF/views/mypage/my_favorite(brand).jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_favoritebrand.jsp"/>
 	</definition>
-	<definition name="my_cart(order)" extends="main">
+	<definition name="my_favoriteproduct" extends="my_info">
+		<put-attribute name="title" value="즐겨찾기"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_favoriteproduct.jsp"/>
+	</definition>
+	<definition name="my_favoriteuser" extends="my_info">
+		<put-attribute name="title" value="즐겨찾기"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_favoriteuser.jsp"/>
+	</definition>
+	<definition name="my_favoriteingredient" extends="my_info">
+		<put-attribute name="title" value="즐겨찾기"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_favoriteingredient.jsp"/>
+	</definition>
+	<!-- *******************즐겨찾기******************************* -->
+	<!-- *******************화해쇼핑******************************* -->
+	<definition name="my_cartorder" extends="my_info">
 		<put-attribute name="title" value="화해쇼핑"/>
-		<put-attribute name="menu" value="/WEB-INF/views/mypage-menubar/mypage-menubar.jsp"/>
-		<put-attribute name="body" value="/WEB-INF/views/mypage/my_cart(order).jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_cartorder.jsp"/>
 	</definition>
-	<definition name="my_event(doing)" extends="main">
+	<definition name="my_cartzzim" extends="my_info">
+		<put-attribute name="title" value="화해쇼핑"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_cartzzim.jsp"/>
+	</definition>
+	<!-- *******************화해쇼핑******************************* -->
+	<!-- *******************화해이벤트******************************* -->
+	<definition name="my_eventdoing" extends="my_info">
 		<put-attribute name="title" value="화해이벤트"/>
-		<put-attribute name="menu" value="/WEB-INF/views/mypage-menubar/mypage-menubar.jsp"/>
-		<put-attribute name="body" value="/WEB-INF/views/mypage/my_event(doing).jsp"/>
-	</definition>
-	<definition name="my_QnA" extends="main">
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_eventdoing.jsp"/>
+	</definition> 
+	<definition name="my_eventnotyet" extends="my_info">
+		<put-attribute name="title" value="화해이벤트"/>
+		<put-attribute name="body" value="/WEB-INF/views/mypage/my_eventnotyet.jsp"/>
+	</definition> 
+	<!-- *******************화해이벤트******************************* -->
+	<definition name="my_QnA" extends="my_info">
 		<put-attribute name="title" value="문의하기"/>
-		<put-attribute name="menu" value="/WEB-INF/views/mypage-menubar/mypage-menubar.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/views/mypage/my_QnA.jsp"/>
-	</definition>
+	</definition> 
 </tiles-definitions>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
