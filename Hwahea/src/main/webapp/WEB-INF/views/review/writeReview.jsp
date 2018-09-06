@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/writeReview.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/writeReview.js"></script>
 <div id="wrap">
 	<div>
 		<div class="r_title">
@@ -20,18 +22,17 @@
 	</div>
 	<div id="brand">메이크업 포에버(MAKEUP FOREVER)</div>
 	<div id="name">HD 프레스드 파우더</div>
-	
 	<hr id="re_hr">
 	<div id="rate">
 		<div id="help">
 		평점을 선택해주세요.
 		</div>
 		<div id="star">
-			<img src="${pageContext.request.contextPath}/assets/img/starno.png">
-			<img src="${pageContext.request.contextPath}/assets/img/starno.png">
-			<img src="${pageContext.request.contextPath}/assets/img/starno.png">
-			<img src="${pageContext.request.contextPath}/assets/img/starno.png">
-			<img src="${pageContext.request.contextPath}/assets/img/starno.png">
+			<img id="nstar1" title="1" src="${pageContext.request.contextPath}/assets/img/starno.png">
+			<img id="nstar2" title="2" src="${pageContext.request.contextPath}/assets/img/starno.png">
+			<img id="nstar3" title="3" src="${pageContext.request.contextPath}/assets/img/starno.png">
+			<img id="nstar4" title="4" src="${pageContext.request.contextPath}/assets/img/starno.png">
+			<img id="nstar5" title="5" src="${pageContext.request.contextPath}/assets/img/starno.png">
 		</div>
 		<span id="startext">별을 눌러주세요!</span>
 	</div> 

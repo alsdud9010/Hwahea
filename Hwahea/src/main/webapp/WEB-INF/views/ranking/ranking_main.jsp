@@ -52,7 +52,7 @@
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
                 <div class="r_productName">
-                  <a href="#"><strong>컬러피스 아이섀도우 프리즘</strong></a>
+                  <a href="${pageContext.request.contextPath}/review/productInfo.do"><strong>컬러피스 아이섀도우 프리즘</strong></a>
                 </div>
                 <div class="r_by-author">
                   <strong>22,000원</strong>

@@ -1,0 +1,130 @@
+#wrap{
+	width:60%;
+	margin:0 auto;
+}
+.r_title{
+	margin-top:40px; 
+}
+.r_title .r_title1{
+	font-size:18px;
+	font-weight: bold;
+	margin:0 0 5px 0;
+}
+
+.r_title dt{
+	float: left;
+}
+
+.r_title .r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+
+.r_title .r_title3{
+	padding:20px 0 0 30px;
+	font-weight: bold;
+	color:#008200;
+}
+
+.r_title .r_r_title2{
+	font-size:30px;
+	font-weight: bold;
+}
+/*제품 정보*/
+#propic{
+	display:table;
+	margin:0 auto;
+}
+#propic img{
+	width:250px;
+	margin-bottom:0;
+}
+#brand{
+	font-size:15px;
+	display:table;
+	margin:0 auto;
+}
+#name{
+	font-size:35px; 
+	font-weight:bold;
+	display:table;
+	margin:0 auto 20px auto;
+}
+#re_hr{
+	height:3px;
+	color:#ff0000;
+	margin:5px;
+}
+#guide{
+	display:table;
+	margin:20px auto 0 auto;
+}
+#g_title{
+	font-size:20px;
+	font-weight:bold;
+	color:#fb4213; 
+	margin-bottom:20px;
+}
+#g_title2{
+	font-size:14px; 
+}
+#g_title3{
+	font-size:15px;
+	margin-bottom:20px;
+}
+#g_title4{
+	font-size:15px;
+	font-weight:bold;
+	color:#fb4213; 
+	margin-bottom:20px;
+}
+#selectbox{
+	display:table;
+	margin:20px auto 20px auto;
+}
+select{
+	width:300px;
+	height:35px;
+	background: url(../img/review/down.png) 265px center no-repeat;
+  	border: 1px solid #72c02c;
+  	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+  	-moz-appearance: none;
+  	appearance: none;
+  	padding-left:5px; 
+}
+select:focus{
+	outline:none;
+}
+#txtarea{
+	display:table;
+	margin:0 auto;
+}
+textarea{
+	padding-left:5px;
+	padding-top:5px;
+	resize:none;
+	border:1px solid #1e3724;
+}
+textarea::placeholder{
+	padding:0 auto;
+	font-size:15px;
+}
+textarea:focus{
+	outline:none;
+}
+#submit{
+	display:table;
+	margin:20px auto;
+}
+#submit input{
+	background-color:#72c02c;
+	font-weight:bold; 
+	color:#ffffff;
+	border:none;
+	width:280px; 
+	padding:10px;
+	font-size:20px;
+}
+input:focus{
+	outline:none;
+}

@@ -69,6 +69,32 @@
 	font-size:20px;
 	font-weight:bold;
 }
+.rating-widget {
+  font-family:"Open Sans", Helvetica, Arial, sans-serif;
+  color:#555;
+  max-width:680px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.clearfix {
+  clear:both;
+}
+
+.text-center {text-align:center;}
+
+.success-box {
+  display:table;
+  margin:0 auto;
+  padding:10px 10px;
+}
+
+.success-box > div {
+  vertical-align:top;
+  display:inline-block;
+  color:#888;
+}
+
 #star{
 	display:table;
 	margin:0 auto;
@@ -117,6 +143,12 @@ textarea{
 	padding:10px;
 	border:1px solid #1e3724; 
 	resize:vertical;
+}
+textarea:focus{
+	outline:none;
+}
+input:focus{
+	outline:none;
 }
 #camera{
 	width:35px;
