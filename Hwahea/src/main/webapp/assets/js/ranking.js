@@ -1,7 +1,7 @@
 /* Write here your custom javascript codes */
 $(document).ready(function(){
-		
-	/*===링크 연결===*/
+
+	//링크 연결
 	$('#r_category').click(function(){
 		location.href='r_category.do';
 	});
@@ -10,7 +10,7 @@ $(document).ready(function(){
 		location.href='r_skinType.do';
 	});
 	
-	/*===좌측메뉴===*/
+	//좌측메뉴
 	$(".accordion_banner .accordion_sub").hide();
 	$(".accordion_banner .accordion_title").click(function() {
         if($(this).next("div").is(":visible")){
@@ -20,4 +20,5 @@ $(document).ready(function(){
             $(this).next("div").slideToggle("fast");
         }
     });
+	
 });

@@ -17,4 +17,5 @@ $(document).ready(function(){
 		$('.d_info').show();
 		$('.d_list_detail').hide();
 	});
+		
 });

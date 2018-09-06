@@ -5,6 +5,7 @@ li{
 
 .r_menu_1 li{
 	border:#acacac solid 1px;
+	border-radius: 10px 10px 10px 10px;	
 	float: left;
 	width:16.66666666666667%;
 	height:30px;
@@ -59,6 +60,7 @@ li{
 /*ranking-top5*/
 .ranking-top5{
 	margin-bottom: 20px;
+	cursor: pointer;
 }
 
 .ranking-top5 .r_brandName{
@@ -73,6 +75,7 @@ li{
 .ranking-top5 .r_productName{
 	width:100%;
 	font-size:15px;
+	text-align:center;
 	font-weight:bold;
 	margin: 10px 0 10px;
 }
@@ -117,6 +120,7 @@ li{
 .r_list_productName{
 	font-size:15px;
 	font-weight:bold;
+	height:30px;
 	margin: 10px 0 10px;
 }
 
