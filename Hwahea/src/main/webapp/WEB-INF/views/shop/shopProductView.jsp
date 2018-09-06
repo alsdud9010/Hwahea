@@ -115,13 +115,11 @@
 					<div class="productView-middle-select">
 						<div class="middle-select-tab">
 							<ul>
-								<li class="select-tab-intro tab-selected"
-									style="border-left: 1px solid #717171;"><a href="#">상품
+								<li class="select-tab-intro tab-selected"><a href="#">상품
 										소개</a></li>
 								<li class="select-tab-ask tab-unselected"><a
 									href="#">상품 문의 (212)</a></li>
-								<li class="select-tab-brand tab-unselected"
-									style="border-right: 1px solid #717171;"><a href="#">
+								<li class="select-tab-brand tab-unselected"><a href="#">
 									상품 정보</a></li>
 							</ul>
 						</div>
@@ -244,7 +242,7 @@
 									<div class="brand-product">
 										<ul>
 											<li>
-												<img src="${pageContext.request.contextPath}/assets/img/main/img1.jpg">
+												<img src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg">
 											</li>
 											<li class="brand-product-name" style="font-weight:bold;">언센티드 위치하젤 토너</li>
 											<li class="brand-product-price">26,000원</li>

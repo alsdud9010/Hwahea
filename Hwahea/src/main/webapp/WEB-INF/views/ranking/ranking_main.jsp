@@ -4,25 +4,23 @@
 	href="${pageContext.request.contextPath}/assets/css/ranking.css">
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/assets/js/ranking.js"></script>
+<!--=== Title ===-->
+<div class="container-background">
+	<div class="container content r_title">
+		<ul>
+			<li>
+				<p class="r_title1">RANKING</p>
+			</li>
+			<li><span class="r_title2">화해 랭킹</span>
+			<span class="r_title3">화해유저들이 뽑은 테마별 랭킹을 확인해보세요! :)</span></li>
+		</ul>
+	</div>
+</div>
 <!--=== Content Part ===-->
 <div class="container content">
-	<div class="row magazine-page">
+	<div class="row magazine-page white">
 		<!-- Begin Content -->
 		<div class="col-md-12">
-			<!-- 랭킹 메뉴 -->
-			<div class="magazine-news">
-				<div class="r_title">
-					<div class="r_title1">RANKING</div>
-					<dl>
-						<dt class="r_title2">화해 랭킹</dt>
-						<dt class="r_title3">화해유저들이 뽑은 테마별 랭킹을 확인해보세요! :)</dt>
-					</dl>
-				</div>
-			</div>
-			<div class="margin-bottom-35">
-				<hr class="hr-md">
-			</div>
-
 			<!-- 랭킹 메뉴 시작 -->
 			<div class="col-md-12">
 				<ul id="r_menu_1" class="r_menu_1 margin-bottom-35 col-md-12">

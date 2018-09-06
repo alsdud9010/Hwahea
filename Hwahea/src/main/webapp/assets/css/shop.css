@@ -1,5 +1,57 @@
 /*================shopMain=================*/
+/*타이틀 부분 시작*/
+.container-background{
+	background-image:url('/Hwahea/assets/img/bg_top/bg_shopping_top.png');
+	background-repeat:no-repeat;
+	width:100%;
+	height:240px;
+	position:relative;
+}
+
+.white{
+	background:white;
+	position:relative;
+	top:-170px;
+	padding-top:15px;
+	border-radius:3px !important;
+}
+
 /* 쇼핑 메인 소제목 */
+.r_title{
+   padding-top:30px;
+   padding-bottom:10px;
+}
+
+.r_title ul{
+   padding:0;
+}
+
+.r_title ul li{
+	list-style:none;
+}
+
+.r_title1, .r_title3{
+	margin:0;
+}
+
+.r_title .r_title1{
+   font-size:18px;
+   font-weight: bold;
+}
+
+.r_title .r_title2{
+   font-size:30px;
+   font-weight: bold;
+   margin:0 10px 0 0;
+}
+
+.r_title .r_title3{
+   font-weight: bold;
+   color:#008200;
+}
+
+/*타이틀 부분 끝*/
+
 .shopping-label{
 	padding-top:15px;
 	margin-bottom:8px;
@@ -627,7 +679,7 @@ ul.list-search-detail li, ul.materialSearchList li{
 }
 
 .middle-select-tab .tab-unselected{
-	background:#eeeeee;
+	background:#f4f4f4;
 	color:#717171;;
 	border-bottom:1px solid #555555;
 	margin-top:3px;
@@ -659,7 +711,7 @@ ul.list-search-detail li, ul.materialSearchList li{
 .declare-table th{
 	width:15%;
 	padding:10px 7px 10px 7px;
-	background:#eeeeee;
+	background:#f4f4f4;
 }
 
 .declare-table td{

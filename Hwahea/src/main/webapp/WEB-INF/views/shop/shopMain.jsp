@@ -1,8 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/shop.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/shop.css">
+<div class="container-background">
+	<div class="container content r_title">
+		<ul>
+			<li>
+				<p class="r_title1">SHOPPING</p>
+			</li>
+			<li><span class="r_title2">쇼핑</span> <span class="r_title3">꼭
+					갖고 싶은 그 상품들♥ 화해쇼핑에서 다양한 혜택받고 득템하자!</span></li>
+		</ul>
+	</div>
+</div>
 <div class="container content">
-	<div class="row magazine-page">
+	<div class="row magazine-page white">
 		<!-- Begin Content -->
 		<div class="col-md-12">
 			<!-- Slider -->
@@ -57,7 +69,8 @@
 			<!-- 화해유저 추천템 시작 -->
 			<div class="shopping-label">
 				<h3>
-					<span>#</span> 화해유저 추천템 <hr>
+					<span>#</span> 화해유저 추천템
+					<hr>
 				</h3>
 			</div>
 			<div class="shopping-recommend">
@@ -153,52 +166,47 @@
 			<!-- 화해유저 인기템 시작 -->
 			<div class="shopping-label">
 				<h3>
-					<span>#</span> 입소문난 화해 인기템 모았어<span>♥</span><hr>
+					<span>#</span> 입소문난 화해 인기템 모았어<span>♥</span>
+					<hr>
 				</h3>
 			</div>
 			<div class="shopping-hot">
 				<div class="shopping-hot-detail">
-				<span class="shopping-hot-explain">
-					<span>1</span>		
-					<a href="#" class="shopping-hot-content">평점 4.2 믿고사는 아이소이 수딩 젤♥</a>
-				</span>
-					<a href="#"><img class="shopping-hot-img"
+					<span class="shopping-hot-explain"> <span>1</span> <a
+						href="#" class="shopping-hot-content">평점 4.2 믿고사는 아이소이 수딩 젤♥</a>
+					</span> <a href="#"><img class="shopping-hot-img"
 						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
-				<span class="shopping-hot-explain">
-					<span>2</span>		
-					<a href="#" class="shopping-hot-content">칙칙 잡티에 딱!민감성도 만족하는 비타민C에센스 60%!</a>
-				</span>
-					<a href="#"><img class="shopping-hot-img"
+					<span class="shopping-hot-explain"> <span>2</span> <a
+						href="#" class="shopping-hot-content">칙칙 잡티에 딱!민감성도 만족하는
+							비타민C에센스 60%!</a>
+					</span> <a href="#"><img class="shopping-hot-img"
 						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
-				<span class="shopping-hot-explain">
-					<span>3</span>		
-					<a href="#" class="shopping-hot-content">끈적임 없는 에센스 가-득! 진정효과 팩 10매 6000원♥</a>
-				</span>
-					<a href="#"><img class="shopping-hot-img"
+					<span class="shopping-hot-explain"> <span>3</span> <a
+						href="#" class="shopping-hot-content">끈적임 없는 에센스 가-득! 진정효과 팩
+							10매 6000원♥</a>
+					</span> <a href="#"><img class="shopping-hot-img"
 						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
-				<span class="shopping-hot-explain">
-					<span>4</span>		
-					<a href="#" class="shopping-hot-content">3400명이 리뷰한 평점 4.1 리얼 진정 수딩 젤 단독특가!</a>
-				</span>
-					<a href="#"><img class="shopping-hot-img"
+					<span class="shopping-hot-explain"> <span>4</span> <a
+						href="#" class="shopping-hot-content">3400명이 리뷰한 평점 4.1 리얼 진정
+							수딩 젤 단독특가!</a>
+					</span> <a href="#"><img class="shopping-hot-img"
 						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
-				<span class="shopping-hot-explain">
-					<span>5</span>		
-					<a href="#" class="shopping-hot-content">평점 4.1 스테디셀러 에센스! 1+1 한정기간 추가 할인♥</a>
-				</span>
-					<a href="#"><img class="shopping-hot-img"
+					<span class="shopping-hot-explain"> <span>5</span> <a
+						href="#" class="shopping-hot-content">평점 4.1 스테디셀러 에센스! 1+1
+							한정기간 추가 할인♥</a>
+					</span> <a href="#"><img class="shopping-hot-img"
 						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
 						alt=""> </a>
 				</div>
