@@ -113,72 +113,111 @@
 	        </div>
 	        <!-- 카테고리별 top5 끝 -->
 	        
-	        <div class="margin-bottom-15">
-	          <hr class="hr-md"> </div>
-	          
-	          <div class="col-md-12">
-	          	<h2><b> 스킨케어 랭킹 </b></h2>
-	          </div>
-	          
-	        <div class="margin-bottom-15">
-	          <hr class="hr-md"> </div>
 	        
+	        
+	        <div class="margin-bottom-15">
+	          <hr class="hr-md"> </div>
+	      
+	      
 	      <!-- 랭킹 메뉴 시작 -->
-	       <div class="col-md-3">
+	          <div class="col-md-12">
+		          <ul id="r_menu_1" class="r_menu_1 margin-bottom-35 col-md-12">
+		          	<li><div id="r_category">카테고리별</div></li>
+		          	<li><div id="r_skinType">피부타입&amp;고민별</div></li>
+		          	<li><div id="r_brand">브랜드별</div></li>
+		          	<li><div id="age">연령별</div></li>
+		          	<li><div id="baby">베이비&amp;임산부별</div></li>
+		          	<li><div id="man">남성</div></li>
+		          </ul>
+	          </div>
+	          <!-- 랭킹 메뉴 끝 -->
+	          
+	          
+	          
+	          
+	      <!-- 랭킹 메뉴 시작 -->
+	       <div class="r_left col-md-3">
 	       		<div class="accordion_banner">
-					<div class="r_menu accordion_title">
+					<div class="r_left_menu accordion_title">
 						<ul>
-							<li class="accor_title"><div>카테고리별</div></li>
+							<li class="accor_title"><div>스킨케어</div></li>
 						</ul>
 					</div>
 					<div class="accordion_sub">
-						<ul class="r_menu_category">
+						<ul class="r_left_menu_1">
+							<li class="accor_content"> 
+							<li>스킨/토너</li>
+							<li>로션/에멀젼</li>
+							<li>에센스/앰플 새럼</li>
+							<li>페이스오일</li>
+							<li>크림/젤</li>
+							<li>아이케어</li>
+							<li>미스트</li>
+					      </ul>
+					</div>
+					<div class="r_left_menu accordion_title">
+						<ul>
+							<li class="accor_title"><div>클렌징/필링</div></li>
+						</ul>
+					</div>
+					<div class="accordion_sub">
+						<ul class="r_left_menu_1">
+							<li class="accor_content"> 
+							<li>클렌징 폼</li>
+							<li>클렌징 워터</li>
+							<li>클렌징 젤</li>
+							<li>클렌징 오일</li>
+							<li>클렌징 로션/크림</li>
+							<li>클렌징 비누</li>
+							<li>클렌징 티슈</li>
+							<li>립/아이 리무버</li>
+							<li>스크럽/필링</li>
+					      </ul>
+					</div>
+					<div class="r_left_menu accordion_title">
+						<ul>
+				          	<li class="accor_title"><div>마스크/팩</div></li>
+						</ul>
+					</div>
+					<div class="accordion_sub">
+						<ul class="r_left_menu_1">
 							<li class="accor_content">
 								<ul>
-								<li>스킨케어</li>
-					          	<li>클렌징</li>
-					          	<li>마스크/팩</li>
-					          	<li>선케어</li>
-					          	<li>베이스메이크업</li>
-					          	<li>아이메이크업</li>
-					          	<li>립메이크업</li>
-					          	<li>바디</li>
-					          	<li>헤어</li>
-					          	<li>네일</li>
-					          	<li>향수</li>
-					          	<li>기타</li>
+								<li>시트마스크</li>
+					          	<li>부분마스크/팩</li>
+					          	<li>워시오프 팩</li>
+					          	<li>필오프 팩</li>
+					          	<li>슬리핑팩</li>
 					          	</ul>
 							</li>
 						</ul>
 					</div>
-					<div class="r_menu accordion_title">
-						<ul>
-				          	<li class="accor_title"><div>피부타입&amp;고민별</div></li>
-						</ul>
-					</div>
-					<div class="accordion_sub">
-				<ul class="r_menu_category">
-					<li class="accor_content">
-						<ul>
-						<li>스킨케어</li>
-			          	<li>복합성</li>
-			          	<li>건성</li>
-			          	<li>지성</li>
-			          	<li>지성</li>
-			          	<li>중성</li>
-			          	<li>민감성</li>
-			          	<li>여드름</li>
-			          	<li>아토피</li>
-			          	</ul>
-					</li>
-				</ul>
-			</div>
 				</div>
 			</div>
-			<!-- 랭킹 메뉴 끝 -->
-
-	      <!-- 랭킹 리스트 시작 -->
+			<!--랭킹 메뉴 끝-->
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
 			<div class="col-md-9 ranking-list">
+	          
+	          <div class="col-md-9">
+	          	<div class="r_second_title">
+	          	<h2><b> 스킨케어 랭킹 </b></h2>
+	          	</div>
+	          </div>
+	          
+	        <div class="margin-bottom-15">
+	          <hr class="hr-md"> </div>
+			
 		        <div class="row">
 		        <div>
 			        <div class="col-md-1">

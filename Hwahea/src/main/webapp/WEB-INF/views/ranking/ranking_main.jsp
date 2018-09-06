@@ -38,23 +38,21 @@
           <div class="margin-bottom-35">
             <hr class="hr-md"> </div>
             
-          <!-- 카테고리별 top5 시작 -->
+          <!-- 카테고리별 top5 시작 --> 
           <div class="ranking-top5">
             <div class="row">
-              <div class="col-md-12">
-                <h3>
-                  	카테고리별
-                </h3>
+              <div class="col-md-12 margin-bottom-15">
+                <h2><b> 카테고리별 </b></h2>
               </div>
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-yellow">1</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
                 <div class="r_productName">
-                  <a href="${pageContext.request.contextPath}/review/productInfo.do"><strong>컬러피스 아이섀도우 프리즘</strong></a>
+                  <a href="#"><strong>컬러피스 아이섀도우 프리즘</strong></a>
                 </div>
                 <div class="r_by-author">
                   <strong>22,000원</strong>
@@ -64,7 +62,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">2</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -77,7 +75,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">3</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -90,7 +88,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">4</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -103,7 +101,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">5</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -123,13 +121,13 @@
           <!-- 피부타입&고민별 top5 시작 -->
           <div class="ranking-top5">
             <div class="row">
-              <div class="col-md-12">
-                <h3 >피부타입&amp;고민별</h3>
+              <div class="col-md-12 margin-bottom-15">
+                <h2><b> 피부타입&amp;고민별 </b></h2>
               </div>
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">1</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -144,7 +142,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">2</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -157,7 +155,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">3</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -170,7 +168,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">4</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -183,7 +181,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">5</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -203,13 +201,13 @@
           <!-- 브랜드별 top5 시작 -->
           <div class="ranking-top5">
             <div class="row">
-              <div class="col-md-12">
-                <h3>브랜드별</h3>
+              <div class="col-md-12 margin-bottom-15">
+                <h2><b> 브랜드별 </b></h2>
               </div>
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">1</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -224,7 +222,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">2</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -237,7 +235,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">3</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -250,7 +248,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">4</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -263,7 +261,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">5</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -283,13 +281,13 @@
           <!-- 연령별 top5 시작 -->
           <div class="ranking-top5">
             <div class="row">
-              <div class="col-md-12">
-                <h3>연령별</h3>
+              <div class="col-md-12 margin-bottom-15">
+                <h2><b> 연령별 </b></h2>
               </div>
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">1</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -304,7 +302,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">2</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -317,7 +315,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">3</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -330,7 +328,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">4</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -343,7 +341,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">5</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -363,13 +361,13 @@
           <!-- 베이비&임산부별 top5 시작 -->
           <div class="ranking-top5">
             <div class="row">
-              <div class="col-md-12">
-                <h3>베이비&amp;임산부별</h3>
+              <div class="col-md-12 margin-bottom-15">
+                <h2><b> 베이비&amp;임산부별 </b></h2>
               </div>
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">1</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -384,7 +382,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">2</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -397,7 +395,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">3</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -410,7 +408,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">4</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -423,7 +421,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">5</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -443,13 +441,13 @@
           <!-- 남성 top5 시작 -->
           <div class="ranking-top5">
             <div class="row">
-              <div class="col-md-12">
-                <h3>남성</h3>
+              <div class="col-md-12 margin-bottom-15">
+                <h2><b> 남성 </b></h2>
               </div>
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">1</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -464,7 +462,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">2</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -477,7 +475,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">3</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -490,7 +488,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">4</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>
@@ -503,7 +501,7 @@
               <div class="col-md-2">
                 <div class="ranking-top5-img">
                   <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/img24.jpg" alt=""> </a>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg" alt=""> </a>
                   <span class="magazine-badge label-green">5</span>
                 </div>
                 <div class="r_brandName"> 정샘물 </div>

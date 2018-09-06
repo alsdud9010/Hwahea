@@ -135,3 +135,19 @@ li{
 	color:#ff8040;
 	font-weight:bold;
 }
+
+/*===카테고리별===*/
+.r_left{
+	font-size:15px;
+	margin-top:50px;
+}
+
+.r_left_menu{
+	font-size:15px;
+	font-weight: bold;
+}
+
+.r_left_menu_1{
+	font-size:13px;
+	font-weight: bold;
+}

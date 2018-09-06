@@ -15,17 +15,9 @@ $(document).ready(function(){
 	$(".accordion_banner .accordion_title").click(function() {
         if($(this).next("div").is(":visible")){
         $(this).next("div").slideUp("fast");
-        } else {
+        }else {
             $(".accordion_banner .accordion_sub").slideUp("fast");
             $(this).next("div").slideToggle("fast");
         }
     });
-	
-	/*===성분 사전===*/
-	$('.nav-item').click(function(){
-		$('#hidee').hide();
-	});
-	$('.navbar-brand2').click(function(){
-		location.href='dictionary.do';
-	});
 });

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/*==타이틀===*/
+/*====================공통 타이틀====================*/
 .r_title .r_title1{
 	font-size:18px;
 	font-weight: bold;
@@ -26,16 +26,18 @@
 	font-size:30px;
 	font-weight: bold;
 }
-
-/*===성분 사전===*/
 li{
 	list-style: none;
 }
+.bold{
+	font-weight: bold;
+}
+
+/*====================성분 사전=========================*/
 
 .navbar-brand2 {
     float: left;
-    height: 50px;
-    padding: 10px 10px;
+    padding: 10px 10px 0 0;
     color: #83B14E;
     font-size: 18px;
     font-weight:bold;
@@ -43,7 +45,8 @@ li{
     cursor:pointer;
 }
 
-.EWG1{
+/*===EWG===*/
+.EWG-header{
 	width:50%;
 	height: 100px;
 	font-weight:bold;
@@ -53,7 +56,7 @@ li{
 	float:left;
 }
 
-.EWG2{
+.EWG-img{
 	width:50%;
 	height: 100px;
 	padding-top:20px;
@@ -61,48 +64,132 @@ li{
 	float:right;
 }
 	
-.EWG3{
+.EWG-detail{
 	padding:160px 70px 0 70px;
 	text-align: left;
 }
 
+/*===tab===*/
+.tab-header span,
+.EWG-header span,
+.skinType-header span{
+	font-weight: bold;
+	color: #cc0000;
+}
+
 .tab_left{
 	float:left;
-	width:40%;
-	height: 500px;
+	width:49.5%;
 	font-size:15px;
-	text-align: center;
+	height: 650px;
 	padding-top:30px;
-	border:#c0c0c0 solid 1px;
+	margin-right:5px;
+	background-color: #f4f4f4;
 }
 
-.tab_left span,
-.EWG1 span{
-	font-weight: bold;
-	color: #ff0000;
+
+.d_list li{
+	padding-top:3px;
+	padding-bottom:3px;
+	display:block;
+	cursor:pointer;
 }
 
-.tap_right_li{
-	margin-left:-30px;
+.tab-header{
+	text-align: center;
 }
 
 .tap_right{
 	float:left;
-	width:60%;
-	height: 500px;
+	width:50%;
+	height: 650px;
+	padding-top:10px;
 	font-size:14px;
-	border:#c0c0c0 solid 1px;
+	background-color: #f4f4f4;
+	overflow-y:scroll;
 }
 
-.tap_right_img{	
+.tap_right_img{
 	float:left;
-	margin-right:20px;
+	margin:0 10px 0 10px;
 }
 
 .tap_right_name{
-	border-bottom: #c0c0c0 solid 1px;
+	border-bottom: #ffffff solid 1px;
 }
 
-.borderr{
-	border:#000 solid 1px;
+.d_list{
+	margin-left:-40px;
+}
+
+.d_info{
+	text-align:center;
+	font-weight:bold;
+	padding-top:30px;
+	color:#008200;
+}
+
+/*============================================================*/
+.d_list_detail{
+	width: 80%;
+	margin: 0 auto;
+	padding:15px;
+	display: none;
+}
+.d_list_detail-close{
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .5;
+}
+/*===================피부타입별 성분=====================*/
+.tab-header{
+	text-align: center;
+	font-size:15px;
+	padding : 20px 0px 20px 0;
+	margin-top:5px;
+	margin-bottom:5px;
+	background-color: #f4f4f4;
+}
+
+
+/*=======================리스트 팝업=======================*/
+.d_list_detail_title{
+	text-align: center;
+	padding-top:30px;
+	padding-bottom:10px;
+	border-bottom: #c0c0c0 solid 1px;	
+}
+
+.d_KOname{
+	font-size:20px;
+	font-weight: bold;
+}
+.d_ENname{
+	color:#808080;
+}
+
+.d_list_detail_content{
+	padding-left:-40px;
+}
+
+.d_list_detail_li{
+	padding:10px 0 10px 20px;
+	margin-left:-40px;
+	border-top: #c0c0c0 solid 1px;
+}
+
+.d_list_detail_img{
+	margin-right:10px;
+	display: inline-block;
+}
+.d_list_detail_name{
+	display: inline-block;
 }
