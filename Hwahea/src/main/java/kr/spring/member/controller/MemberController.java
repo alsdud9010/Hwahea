@@ -27,6 +27,11 @@ public class MemberController {
 	private CipherTemplate cipherAES;
 	
 	//회원가입 폼 호출
+	@RequestMapping(value="/signin/service_agree.do")
+		public String service_agree() {
+		return "service_agree";
+	}
+	//회원가입 폼 호출
 	@RequestMapping(value="/signin/m_signin.do",
 	        method=RequestMethod.GET)
 		public String m_signin() {

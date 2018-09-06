@@ -11,4 +11,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/signin/m_signin.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
 	</definition>
+	<definition name="service_agree" extends="m_signin">
+		<put-attribute name="title" value="내리뷰/스크랩"/>
+		<put-attribute name="body" value="/WEB-INF/views/signin/service_agree.jsp"/>
+	</definition>
 </tiles-definitions>
