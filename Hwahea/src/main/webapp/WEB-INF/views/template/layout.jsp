@@ -21,6 +21,7 @@
   <!-- CSS Header and Footer -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/headers/header-v4.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/footers/footer-v1.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal/loginmodal.css">
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/animate.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/line-icons/line-icons.css">

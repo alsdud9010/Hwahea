@@ -1,0 +1,130 @@
+.dialog-m {
+    width: 600px;
+    margin: 142px auto;
+}
+
+
+.content-m-back {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    /* background: #83B14E; */
+}
+
+.header-m {
+    min-height: 16.42857143px;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    padding:10px 25px;
+}
+
+h4.h4-m {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 25px;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+button.close-m {
+    -webkit-appearance: none;
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+.close-m {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.body-m {
+    position: relative;
+    padding: 30px 50px;
+}
+
+a.a-coler {
+    color: #555;
+    text-decoration: none;
+}
+
+.btn-block-m1 {
+    display: block;
+    width: 49.55%;
+}
+.btn-block-m2 {
+    display: block;
+    width: 49.55%;
+}
+.btn-success1 {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    
+}.btn-success2 {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-m1 {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-m2 {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.footer-m {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}

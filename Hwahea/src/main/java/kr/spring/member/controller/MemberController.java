@@ -121,33 +121,27 @@ public class MemberController {
 		public String my_QnA() {
 		return "my_QnA";
 	}
-}
-	/*//자바빈 초기화
+
+	
 	@ModelAttribute("command")
 	public MemberCommand initCommand() {
 		return new MemberCommand();
 	}
-	//====================회원가입=================//
-	//회원등록 폼 호출
-	@RequestMapping(value="/member/write.do",
-			        method=RequestMethod.GET)
-	public String form() {
-		return "memberWrite";
-	}
 	//회원 가입 데이터 전송
-	@RequestMapping(value="/member/write.do",
+	@RequestMapping(value="/signin/m_signin.do",
 	        method=RequestMethod.POST)
 	public String submit(@ModelAttribute("command")
-	                     @Valid MemberCommand memberCommand,
+	                     MemberCommand memberCommand,
 	                     BindingResult result) {
+		
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<memberCommand>> : " + memberCommand);
 		}
 		
-		if(result.hasErrors()) {
-			return form();
-		}
+		/*if(result.hasErrors()) {
+			return m_signin();
+		}*/
 		//CipherTemplate을 이용한 암호화
 		memberCommand.setM_passwd(
 				cipherAES.encrypt(
@@ -222,16 +216,16 @@ public class MemberController {
 			return formLogin();
 		}
 	}
-	//====================회원로그인=================//
-	@RequestMapping("/member/logout.do")
+	//====================회원로그아웃=================//
+	/*@RequestMapping("/member/logout.do")
 	public String processLogin(HttpSession session) {
 		//로그아웃
 		session.invalidate();
 		
 		return "redirect:/main/main.do";
-	}
+	}*/
 	//====================회원상세정보=================//
-	@RequestMapping("/mypage/my_info.do")
+	/*@RequestMapping("/mypage/my_info.do")
 	public String process(HttpSession session,
 			              Model model) {
 		
@@ -248,10 +242,10 @@ public class MemberController {
 		model.addAttribute("member", member);
 		
 		return "my_info";
-	}
+	}*/
 	//====================회원상세수정=================//
 	//수정폼
-	@RequestMapping(value="/mypage/my_info.do",
+	/*@RequestMapping(value="/mypage/my_info.do",
 	        method=RequestMethod.GET)
 	public String formUpdate(HttpSession session,
 			                 Model model) {
@@ -287,10 +281,10 @@ public class MemberController {
 		memberService.update(memberCommand);
 		
 		return "redirect:/mypage/my_info.do";
-	}
+	}*/
 	//====================회원삭제=================//
 	//회원 삭제 폼
-	@RequestMapping(value="/member/delete.do",
+	/*@RequestMapping(value="/member/delete.do",
 	        method=RequestMethod.GET)
 	public String formDelete(HttpSession session,
 			                 Model model) {
@@ -302,9 +296,9 @@ public class MemberController {
 		model.addAttribute("command",member);
 		
 		return "memberDelete";
-	}
+	}*/
 	//회원 데이터 삭제
-	@RequestMapping(value="/member/delete.do",
+	/*@RequestMapping(value="/member/delete.do",
 	        method=RequestMethod.POST)
 	public String submitDelete(@ModelAttribute("command")
 	                           @Valid MemberCommand memberCommand,
@@ -346,10 +340,10 @@ public class MemberController {
 		}catch(Exception e) {
 			result.rejectValue("passwd", "invalidPassword");
 			return "memberDelete";
-		}
+		}*/
 	}
-}
-*/
+
+
 
 
 
