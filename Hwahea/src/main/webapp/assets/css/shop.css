@@ -277,7 +277,7 @@ ul.list-search-detail li, ul.materialSearchList li{
 	width:100%;
 	height:100%;
 	display:inline-block;	
-	text-align:center;
+	text-align:left;
 	margin-top:10px;
 }
 
@@ -300,6 +300,16 @@ ul.list-search-detail li, ul.materialSearchList li{
 .shopItem .shopItemExplain p a{
 	font-weight:bold;
 	color:#555555;
+}
+
+.shopItemPrice{
+	margin-bottom:2px;
+}
+
+.shopItemBuying{
+	cursor:pointer;
+	margin:3px 10px 0 0;
+	font-size:20px;
 }
 
 .shopItem .shopItemExplain .shopItemName{
@@ -580,7 +590,6 @@ ul.list-search-detail li, ul.materialSearchList li{
 
 .productView-middle-select{
 	width: 100%;
-    hegiht: 100%;
     display: inline-block;	
 	margin-bottom:30px;
 }
@@ -608,12 +617,20 @@ ul.list-search-detail li, ul.materialSearchList li{
 	font-weight:bold;
 	text-align:center;
 	float:left;
-	border-top:3px solid #555555;
 }
 
-.middle-select-tab-center{
+.middle-select-tab .tab-selected{
+	border-top:3px solid #555555;
 	border-left:1px solid #717171;
 	border-right:1px solid #717171;
+	background:white;
+}
+
+.middle-select-tab .tab-unselected{
+	background:#eeeeee;
+	color:#717171;;
+	border-bottom:1px solid #555555;
+	margin-top:3px;
 }
 
 .productView-middle-declare{
@@ -684,7 +701,7 @@ ul.list-search-detail li, ul.materialSearchList li{
 	width:20%;
 	text-align:right;
 	margin-top:5px;
-	padding-left:80px;
+	padding-left:110px;
 }
 
 .ask-content-title{
@@ -708,7 +725,7 @@ ul.list-search-detail li, ul.materialSearchList li{
 }
 
 .ask-content-top-right input[type="button"]:hover{
-	background:#d9d9d9;
+	background:#eaeaea;
 }
 
 .ask-content-middle{
@@ -794,6 +811,8 @@ ul.list-search-detail li, ul.materialSearchList li{
 
 .productView-middle-brand{
 	padding-top:100px;
+	margin-bottom:40px;
+	border-bottom:1px solid #c9c9c9;
 }
 
 .brand-info-title{
@@ -830,7 +849,7 @@ ul.list-search-detail li, ul.materialSearchList li{
 	width:150px;
 	height:150px;
 	border-radius:75px !important;
-	border:3px solid #c9c9c9;
+	border:2px solid #c9c9c9;
 	margin-top:25px;
 }
 
@@ -842,9 +861,90 @@ ul.list-search-detail li, ul.materialSearchList li{
 }
 
 .classified-brand-product{
-	margin:10px 0;
+	margin:20px 0 10px 0;
 	padding:10px 40px;
 	background:#c9c9c9;
+	border-radius:3px !important;
+}
+
+.classified-brand-product p{
+	font-size:15px;
+}
+
+.brand-products{
+	display:inline-block;
+	width:100%;
+	margin-bottom:20px;
+}
+
+.brand-product{
+	background:white;
+	width:28%;
+	padding:10px;
+	margin-right:10px;
+	display:inline-block;
+}
+
+.brand-product img{
+	width:180px;
+	height:230px;
+	margin-bottom:5px;
+}
+
+.brand-product ul, .brand-add-product ul{
+	padding:0;
+	margin:0;
+}
+
+.brand-product li, .brand-add-product li{
+	list-style:none;
+	margin-bottom:3px;
+}
+
+.brand-product-name, .brand-product-price{
+	font-size:15px;
+}
+
+.brand-product-name a:hover, .middle-select-tab ul li a:hover{
+	color:#717171;
+}
+
+.brand-add-product{
+	width:10%;
+	height:100%;
+	display:inline-block;
+	padding-left:10px;
+}
+
+.brand-product-go img{
+	width:30px;
+	height:30px;
+	margin-bottom:5px;
+	cursor:pointer;
+}
+
+.brand-product-name p{
+	margin:0;
+}
+
+.middle-guide-shipping-info, .middle-guide-cancle-info, .middle-guide-refund-info{
+	margin-bottom:30px;
+}
+
+.guide-title{
+	font-size:20px;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+
+.guide-content li{
+	list-style:decimal;
+}
+
+.guide-content li.guide-addition{
+	list-style:none;
+	color:#9d9d9d;
+	font-size:11px;
 }
 
 /*================shopHeader=================*/
@@ -1378,3 +1478,93 @@ li.destination-content-zipcode, li.content-address1{
 .orderComplete-button input[type="button"]{
 	margin:0 5px;
 }
+
+/*================상품문의 modal=================*/
+.form-group #product-ask-content{
+	resize:none;
+	height:200px;
+}
+
+.form-group #select-ask-kind{
+	width:150px;
+}
+
+.ask-lock-area{
+	margin-bottom:25px;
+}
+
+.ask-lock-area #ask-lock{
+	width:17px;
+	height:17px;
+	padding-top:10px;
+	border-radius:0 !important;
+	background:white;
+}
+
+.ask-lock-text{
+	margin:10px 5px 10px 0;
+}
+
+.ask-cancle{
+    color: #fff;
+    background-color: #404040;
+    font-weight:bold;
+    border-radius:1px !important;
+}
+
+.ask-submit{
+    color: #fff;
+    background-color: #83b14e;
+    font-weight:bold;
+    border-radius:1px !important;
+}
+
+/*체크박스 CSS*/
+.ask-lock-area {position: relative;} 
+
+.ask-lock-area input[type="checkbox"] { /* 실제 체크박스는 화면에서 숨김 */ 
+	position: absolute; 
+	width: 1px; 
+	height: 1px; 
+	padding: 0; 
+	margin: -1px; 
+	overflow: hidden; 
+	clip:rect(0,0,0,0); 
+	border: 0 ;
+} 
+
+.ask-lock-area input[type="checkbox"] + label { 
+	display: inline-block; 
+	position: relative; 
+	padding-left: 30px; /* 글자와 체크박스 사이의 간격을 변경 */ 
+	cursor: pointer;
+} 
+
+.ask-lock-area input[type="checkbox"] + label:before { /* 가짜 체크박스 */ 
+	content: ''; 
+	position: absolute; 
+	left: 0; 
+	top: -4px; /* 이 값을 변경해서 글자와의 정렬 */ 
+	width: 21px; /* 체크박스의 너비를 지정 */ 
+	height: 21px; /* 체크박스의 높이를 지정 */ 
+	line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */ 
+	text-align: center; 
+	background: #fff; 
+	border: 1px solid #ccc; 
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05); 
+} 
+
+.ask-lock-area input[type="checkbox"] + label:active:before, .ask-lock-area input[type="checkbox"]:checked + label:active:before { 
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); 
+} 
+
+.ask-lock-area input[type="checkbox"]:checked + label:before { /* 체크박스를 체크했을때 */ 
+	content: '\2714'; /* 체크표시 유니코드 사용 */ 
+	color: #99a1a7; 
+	text-shadow: 1px 1px #fff; 
+	background: #fff; 
+	border-color: #ccc; 
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1); 
+}
+
+/*체크박스 CSS 끝*/

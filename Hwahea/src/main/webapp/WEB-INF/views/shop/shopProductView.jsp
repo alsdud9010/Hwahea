@@ -13,13 +13,18 @@
 				$(this).next("div").slideToggle("fast");
 			}
 		});
+		
+		$("#go-ask-write").click(function(event){
+	        $("#product_board_form").modal();
+	    });
 	});
 </script>
 <div class="container content">
 	<div class="col-md-12 shop-productView">
 		<div class="shop-productView-category">
-			<a href="#">쇼핑 홈 </a>> <a href="#"> 쇼핑 카테고리 </a>> <a href="#"> 세부
-				카테고리</a>
+			<a href="${pageContext.request.contextPath}/shop/shopMain.do">쇼핑 홈 </a>> 
+			<a href="${pageContext.request.contextPath}/shop/shopProduct.do"> 쇼핑 카테고리 </a>> 
+			<a href="#"> 세부 카테고리</a>
 		</div>
 		<form>
 			<div class="col-md-10 shop-productView-explain">
@@ -27,7 +32,7 @@
 				<div class="productView-contents-top">
 					<div class="col-md-2 productView-img">
 						<img
-							src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+							src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg"
 							alt="">
 					</div>
 					<div class="col-md-8 productView-intro">
@@ -110,14 +115,14 @@
 					<div class="productView-middle-select">
 						<div class="middle-select-tab">
 							<ul>
-								<li class="select-tab-intro"
+								<li class="select-tab-intro tab-selected"
 									style="border-left: 1px solid #717171;"><a href="#">상품
 										소개</a></li>
-								<li class="select-tab-ask middle-select-tab-center"><a
+								<li class="select-tab-ask tab-unselected"><a
 									href="#">상품 문의 (212)</a></li>
-								<li class="select-tab-brand"
-									style="border-right: 1px solid #717171;"><a href="#">브랜드
-										정보</a></li>
+								<li class="select-tab-brand tab-unselected"
+									style="border-right: 1px solid #717171;"><a href="#">
+									상품 정보</a></li>
 							</ul>
 						</div>
 					</div>
@@ -182,7 +187,7 @@
 										답변해드려요 :)</p>
 								</div>
 								<div class="col-md-4 ask-content-top-right">
-									<input type="button" value="문의하기" onclick="location.href='#'">
+									<input id="go-ask-write" type="button" value="문의하기">
 								</div>
 							</div>
 							<div class="col-md-12 ask-content-middle">
@@ -235,8 +240,64 @@
 							</div>
 							<div class="classified-brand-product">
 								<p>지금 구매 가능한 <span style="font-weight:bold;">브랜드 상품</span></p>
-								<div>
+								<div class="brand-products">
+									<div class="brand-product">
+										<ul>
+											<li>
+												<img src="${pageContext.request.contextPath}/assets/img/main/img1.jpg">
+											</li>
+											<li class="brand-product-name" style="font-weight:bold;">언센티드 위치하젤 토너</li>
+											<li class="brand-product-price">26,000원</li>
+										</ul>
+									</div>
+									<div class="brand-add-product">
+										<ul>
+											<li class="brand-product-go">
+												<img src="${pageContext.request.contextPath}/assets/img/shop/plus.png"
+												onclick="location.href='#'">
+											</li>
+											<li class="brand-product-name" style="font-weight:bold;">
+												<a href="#">더 보기</a>
+											</li>
+										</ul>
+									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+					<div class="productView-middle-guide">
+						<div class="middle-guide-shipping-info">
+							<div class="guide-title">배송 정보</div>
+							<div class="guide-content">
+								<ul>
+									<li>배송방식 : 택배배송</li>
+									<li>배송비용 : 기본 2,500원. 15,000원 이상 구매 시 배송비용이 없습니다.</li>
+									<li>배송예정일 : 결제완료 후 1~3일 후 출고됩니다. 단, 상품의 재고 상황 및 운송업체 사정에 따라 배송이 지연될 수 있습니다.</li>
+									<li class="guide-addition">* 제주도를 포함한 도서산간 지역은 추가 배송일과 추가 배송비 입금 요청이 있을 수 있습니다.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="middle-guide-cancle-info">
+							<div class="guide-title">취소/교환</div>
+							<div class="guide-content">
+								<ul>
+									<li>주문취소 : 상품 출고 이전까지만 가능하며, 출고 이후는 환불 규정에 따라 처리됩니다.</li>
+									<li>상품교환 : 기 구매한 상품을 반품/환불 요청 후 새 상품을 재구매해주셔야 합니다.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="middle-guide-refund-info">
+							<div class="guide-title">반품/환불</div>
+							<div class="guide-content">
+								<ul>
+									<li>환불 가능 기한 : 단순변심에 의한 사유는 상품 수령일(배송완료일)로부터 7일 이내.</li>
+									<li>환불 가능 조건 : 재판매가 가능한 상품 및 포장상태로 반품. (개봉 시 환불 불가)</li>
+									<li>반품 배송비 : 단순 변심에 의한 환불은 고객이 부담, 상품 불량 및 오배송에 의한 환불은 판매자 부담</li>
+									<li>환불 시 반품 배송지 주소 : 서울특별시 중구 남대문로 120 대일빌딩 2층, 3층 </li>
+									<li>교환/환불 및 기타문의는 고객센터 혹은 상품문의 게시판으로 문의해주세요.</li>
+									<li>단, 상품상세설명에 별도로 기입된 환불 기준이 있을 경우 그 기준이 우선합니다.</li>
+									<li class="guide-addition">* 미성년자가 체결한 계약은 법정대리인이 동의하지 않는 경우 본인 또는 법정대리인이 취소할 수 있습니다.</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -246,3 +307,41 @@
 		</form>
 	</div>
 </div>
+<!-- modal -->
+<div class="modal fade" id="product_board_form" role="dialog">
+    <div class="dialog-m">  
+      <!-- Modal content-->
+      <div class="content-m-back">
+        <div class="header-m">
+          <button type="button" class="close-m" data-dismiss="modal">&times;</button>
+          <h4 class="h4-m"><span class="glyphicon glyphicon-pencil"></span> 문의하기</h4>
+        </div>
+        <div class="body-m">
+          <form role="form">
+            <div class="form-group">
+            	<select class="form-control" id="select-ask-kind">
+					  <option value="unselect" selected>문의 유형 선택</option>
+					  <option value="상품문의">상품문의</option>
+					  <option value="배송문의">배송문의</option>
+					  <option value="반품/취소">반품/취소</option>
+					  <option value="기타">기타</option>
+				</select>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="product-ask-content" 
+              placeholder="※ 이메일, 연락처와 같은 개인정보 입력 또는 상품과 관련없는 글(비방,광고,도배 등)은 삭제 조치 될 수 있어요 :("></textarea>
+              <div class="ask-lock-area">
+              	<input type="checkbox" id="ask-lock" name="ask-lock" value="1">
+              	<label class="ask-lock-text" for="ask-lock">비밀글로 문의하기</label>
+              </div>
+            </div>
+              <button type="button" class="btn-m1 ask-cancle btn-block-m1">취소</button>
+              <button type="submit" class="btn-m2 ask-submit btn-block-m2">등록</button>
+          </form>
+        </div>
+        <div class="footer-m">
+         	
+        </div>
+      </div>
+    </div>
+</div> 

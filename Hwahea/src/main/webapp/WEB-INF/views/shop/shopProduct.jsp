@@ -95,44 +95,8 @@
 						<p class="shopItemPrice">
 							<a href="${pageContext.request.contextPath}/shop/shopProductView.do">8,000&nbsp;원</a>
 						</p>
-						<p class="shopItemBuying">
-							<a href="${pageContext.request.contextPath}/shop/shopProductView.do">♥</a>
-						</p>
-					</div>
-				</div>
-				<div class="shopItem">
-					<div>
-						<a href="#"><img class="shopItem-img"
-							src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
-							alt=""> </a>
-					</div>
-					<div class="shopItemExplain">
-						<p class="shopItemName">
-							<a href="#">클레이 마스크 70ml</a>
-						</p>
-						<p class="shopItemPrice">
-							<a href="#">8,000원</a>
-						</p>
-						<p class="shopItemBuying">
-							<a href="#">♥</a>
-						</p>
-					</div>
-				</div>
-				<div class="shopItem">
-					<div>
-						<a href="#"><img class="shopItem-img"
-							src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
-							alt=""> </a>
-					</div>
-					<div class="shopItemExplain">
-						<p class="shopItemName">
-							<a href="#">클레이 마스크 70ml</a>
-						</p>
-						<p class="shopItemPrice">
-							<a href="#">8,000원</a>
-						</p>
-						<p class="shopItemBuying">
-							<a href="#">♥</a>
+						<p class="shopItemBuying glyphicon glyphicon-shopping-cart"
+						onclick="location.href='${pageContext.request.contextPath}/shop/shopProductView.do'">
 						</p>
 					</div>
 				</div>
