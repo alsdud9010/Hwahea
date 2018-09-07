@@ -116,9 +116,16 @@ $(document).ready(function(){
 		$('.pmodal_rtext').val('');
 		$('.pmodal_rtext').focus();
 	});
+	//댓글쓰기 창 비우기
 	$(document).on('click','.pmodal_rtext',function(){
 		if($('.pmodal_rtext').val()=='내용을 입력해 주세요'){
 			$('.pmodal_rtext').val('');
+		}
+	});
+	//댓글쓰기 창 문구 다시 채우기
+	$(document).on('blur','.pmodal_rtext',function(){
+		if($('.pmodal_rtext').val()==''){
+			$('.pmodal_rtext').val('내용을 입력해 주세요');
 		}
 	});
 	

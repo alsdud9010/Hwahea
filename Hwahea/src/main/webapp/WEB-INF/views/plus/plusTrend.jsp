@@ -2,39 +2,23 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/plus.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/plus.reply.js"></script>
+<!--=== Title Part ===-->
+<div class="container-background">
+	<div class="container content r_title">
+       	<ul>
+			<li>
+				<p class="r_title1">PLUS+</p>
+			</li>
+			<li><span class="r_title2">화해플러스</span>
+			<span class="r_title3">화해유저들과 함께 뷰티팁을 공유해주세요 :)</span></li>
+		</ul>
+	</div>
+</div>
 <!--=== Content Part ===-->
 <div class="container content">
-	<div class="row magazine-page">
+	<div class="row magazine-page white">
 		<!-- Begin Content -->
 		<div class="col-md-12">
-			<!-- 화해플러스 상단 메뉴바 시작-->
-			<div class="magazine-news">
-				<div class="r_title">
-					<div class="r_title1">PLUS+</div>
-					<dl>
-						<dt class="r_title2">화해플러스</dt>
-						<dt class="r_title3">화해유저들과 함께 팁을 공유해주세요!</dt>
-					</dl>
-				</div>
-				<div class="margin-bottom-20">
-					<hr class="hr-md">
-				</div>
-				<div class="col-md-12">
-					<ul class="r_menu_2 col-md-12 margin-bottom-20">
-						<li onclick="location.href='${pageContext.request.contextPath}/plus/plusMain.do'">화해플러스</li>
-						<li class="r_thistap">신상&amp;트렌드</li>
-						<li>인기템리뷰</li>
-						<li>화장품 팩트체크</li>
-						<li>뷰티팁</li>
-						<li>쇼핑팁</li>
-					</ul>
-				</div>
-			</div>
-			<div class="margin-bottom-10">
-				<hr class="hr-md">
-			</div>
-			<!-- 화해플러스 상단 메뉴바 끝 -->
-
 			<!-- 화해플러스 배너2 시작 -->
 			<div class="magazine-news">
 				<table class="plusBest">
@@ -64,6 +48,25 @@
 			<div class="margin-bottom-10">
 				<hr class="hr-md">
 			</div>
+			
+			<!-- 화해플러스 상단 메뉴바 시작-->
+			<div class="magazine-news">
+				<div class="col-md-12">
+					<ul class="r_menu_2 col-md-12 margin-bottom-20">
+						<li onclick="location.href='${pageContext.request.contextPath}/plus/plusMain.do'">화해플러스</li>
+						<li class="r_thistap">신상&amp;트렌드</li>
+						<li>인기템리뷰</li>
+						<li>화장품 팩트체크</li>
+						<li>뷰티팁</li>
+						<li>쇼핑팁</li>
+					</ul>
+				</div>
+			</div>
+			<div class="margin-bottom-10">
+				<hr class="hr-md">
+			</div>
+			<!-- 화해플러스 상단 메뉴바 끝 -->
+			
 			<!-- 화해플러스  신상&트렌드 시작-->
 			<div class="magazine-news">
 				<div class="row">

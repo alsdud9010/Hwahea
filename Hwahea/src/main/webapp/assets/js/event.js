@@ -37,7 +37,7 @@ $(document).ready(function(){
 		//이벤트 찜하기
 		if(flag == 0){
 			if($('img',this).attr('data-num') == 1){
-				//flag == 0, data-num ==1 이면 하트 변경 -> flag = 1로 바꿔줌  return false는 노상관
+				//flag == 0, data-num ==1 이면 하트 변경 -> flag = 1로 바꿔줌
 				$('img',this).attr('src',$('img',this).attr('src').replace('not_wish.png','wish.png'));
 				event_wish = $(this);
 				
@@ -62,5 +62,17 @@ $(document).ready(function(){
 			$(this).next("div").slideToggle("fast");
 		}
 	});
-
+	
+	//댓글쓰기 창 비우기
+	$(document).on('click','.event_rtext',function(){
+		if($('.event_rtext').val()=='내용을 입력해주세요. (최대 100자)'){
+			$('.event_rtext').val('');
+		}
+	});
+	//댓글쓰기 창 문구 다시 채우기
+	$(document).on('blur','.event_rtext',function(){
+		if($('.event_rtext').val()==''){
+			$('.event_rtext').val('내용을 입력해주세요. (최대 100자)');
+		}
+	});
 });

@@ -2,24 +2,22 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/event.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/event.js"></script>
+<!--=== Title Part ===-->
+<div class="event-background">
+	<div class="container content r_title">
+       	<ul>
+			<li>
+				<p class="r_title1">EVENT</p>
+			</li>
+			<li><span class="r_title2">이벤트</span>
+			<span class="r_title3">차원이 다른 꿀혜택! 화해 이벤트</span></li>
+		</ul>
+	</div>
+</div>
 <!--=== Content Part ===-->
-<div class="container content">
+<div class="container content ev-top">
 	<div class="row magazine-page">
 		<div class="col-md-12">
-			<!-- 이벤트 타이틀 시작-->
-			<div class="magazine-news">
-				<div class="r_title">
-					<div class="r_title1">EVENT</div>
-					<dl>
-						<dt class="r_title2">화해 이벤트</dt>
-						<dt class="r_title3">차원이 다른 꿀혜택! 화해 이벤트</dt>
-					</dl>
-				</div>
-				<div class="margin-bottom-20">
-					<hr class="hr-md">
-				</div>
-			</div>
-			<!-- 이벤트 타이틀 끝 -->
 			<!-- 이벤트 상세페이지 -->
 			<div class="col-md-12">
 			<!-- 이벤트 상단 이미지 시작 -->
@@ -42,22 +40,24 @@
 					<div>
 						<span class="step_no">01</span>
 						<span class="step_txt">모집기간</span>
-						09.01 ~ 09.15
-						<p class="step_under"></p>
+						<div class="step_date">09.01 ~ 09.15</div>
 					</div>
 				</li>
-				<li>
+				<li class="event_on">
 					<div>
 						<span class="step_no">02</span>
-						<span class="step_txt">당첨자발표</span>
-						09.19
+						<span class="step_txt">당첨자발표
+							<span class="step_who"><a href="${pageContext.request.contextPath}/notice/noticeView.do">당첨자 보기</a></span>
+						</span>
+						<div class="step_date">09.19</div>
+						<!-- <p class="step_under"></p> -->
 					</div>
 				</li>
 				<li>
 					<div>
 						<span class="step_no">03</span>
 						<span class="step_txt">배송 및 후기작성</span>
-						10.01 ~ 10.14
+						<div class="step_date">10.01 ~ 10.14</div>
 					</div>
 				</li>
 			</ul>
@@ -138,7 +138,7 @@
 			<!-- 이벤트 댓글 시작-->
 			<h3 class="event_reply_tit">댓글 응모하기</h3>
 			<div class="event_reply_box">
-				<textarea class="" id="inpTxBox" placeholder="내용을 입력해주세요. (최대 100자)" data-ref-length="100"></textarea>
+				<textarea class="event_rtext" id="event_rbox">내용을 입력해주세요. (최대 100자)</textarea>
 				<input type="submit" value="응모하기" />
 			</div>
 			<div class="reply_sub_title" >

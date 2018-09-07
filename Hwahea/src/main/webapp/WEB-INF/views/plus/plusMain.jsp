@@ -11,8 +11,9 @@
 			
 			if(a>32){
 				$('.ex-header').css({
-					top:(a-36)+'px'
-				});4
+					top:(a-36)+'px',
+					position:'fixed'
+				});
 			}else{
 				$('.ex-header').css({
 					top:'10px'
@@ -21,19 +22,23 @@
 		});
 	});
 </script>
+<!--=== Title Part ===-->
+<div class="container-background">
+	<div class="container content r_title">
+       	<ul>
+			<li>
+				<p class="r_title1">PLUS+</p>
+			</li>
+			<li><span class="r_title2">화해플러스</span>
+			<span class="r_title3">화해유저들과 함께 뷰티팁을 공유해주세요 :)</span></li>
+		</ul>
+	</div>
+</div>
 <!--=== Content Part ===-->
     <div class="container content">
-      <div class="row magazine-page">
+      <div class="row magazine-page white">
         <!-- Begin Content -->
         <div class="col-md-12">
-        <div class="r_title">
-               <div class="r_title1">PLUS+</div>
-               <dl>
-                  <dt class="r_title2">화해플러스</dt>
-                  <dt class="r_title3">화해유저들과 함께 팁을 공유해주세요!</dt>
-               </dl>
-        </div>
-        <div class="margin-bottom-20"><hr class="hr-md"> </div>
           <!-- 화해플러스 슬라이드배너 시작 -->
           <div class="carousel slide carousel-v1 margin-bottom-40" id="myCarousel-1">
             <div class="carousel-inner">
@@ -208,8 +213,8 @@
                 </span>
               </div>
               <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
+                <div class="pm_thumb">
+                  <a href="#" data-toggle="modal" data-target="#plus_modal">
                     <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/plusBest.PNG" alt=""> </a>
                   <span class="magazine-badge label-red">3</span>
                 </div>
@@ -556,7 +561,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 		<!-- 모달 헤더 -->
-		<div class="modal-header ex-header" >
+		<div class="modal-header ex-header">
 			<img class="pmodal_close" src="${pageContext.request.contextPath}/assets/img/plus/modalLeft.png" data-dismiss="modal"> 
 			<span class="modalCategory"> <a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a> </span>
 			<button class="close" data-dismiss="modal">&times;</button>
@@ -645,6 +650,12 @@
 					<div class="pmodal_rcount"><span class="letter-count">300 / 300</span></div>
 				<div style="margin-top:-23px;margin-bottom:5px;"><hr class="hr-lg"></div>
 				<div class="pmodal_reback">
+					<div class="pre_total">
+						전체(4)
+					</div>
+					<div class="pmodal-bottom-10">
+						<hr class="hr-md">
+					</div>
 					<div class="pmodal_rere">
 						<div class="pmodal_rpro">
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 

@@ -573,12 +573,12 @@ $(document).ready(function(){
 						class="dropdown-toggle" data-toggle="dropdown">성분사전</a></li>
 					<!-- 성분사전 끝 -->
 					<!-- 공지사항 -->
-					<li class="dropdown"><a href="javascript:void(0);"
+					<li class="dropdown"><a href="javascript:void(0);" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList.do'"
 						class="dropdown-toggle" data-toggle="dropdown"> 공지사항</a>
 						<ul class="dropdown-menu">
-							<li><a href="shortcode_compo_messages.html">공지사항</a></li>
-							<li><a href="shortcode_compo_messages.html">FAQ</a></li>
-							<li><a href="shortcode_compo_messages.html">1:1 문의</a></li>
+							<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList.do'">공지사항</a></li>
+							<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/notice/frequent_question.do'">FAQ</a></li>
+							<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/notice/my_question.do'">1:1 문의</a></li>
 						</ul></li>
 					<!-- 공지사항 끝 -->
 					<!-- Misc Pages -->

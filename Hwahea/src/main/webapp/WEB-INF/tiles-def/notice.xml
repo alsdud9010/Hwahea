@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+   <definition name="noticeList" extends="main">
+      <put-attribute name="title" value="화해 | 공지사항"/>
+      <put-attribute name="body" value="/WEB-INF/views/notice/noticeList.jsp"/>
+   </definition>
+   <definition name="noticeView" extends="main">
+      <put-attribute name="title" value="화해 | 공지사항 상세페이지"/>
+      <put-attribute name="body" value="/WEB-INF/views/notice/noticeView.jsp"/>
+   </definition>
+   <definition name="frequentQuestion" extends="main">
+      <put-attribute name="title" value="화해 | 자주하는질문"/>
+      <put-attribute name="body" value="/WEB-INF/views/notice/frequentQuestion.jsp"/>
+   </definition>
+   <definition name="myQuestion" extends="main">
+      <put-attribute name="title" value="화해 | 1:1문의"/>
+      <put-attribute name="body" value="/WEB-INF/views/notice/myQuestion.jsp"/>
+   </definition>
+</tiles-definitions>

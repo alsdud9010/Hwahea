@@ -1,4 +1,56 @@
 /*==================화해플러스=======================*/
+/*타이틀*/
+.container-background{
+	background-image:url('/Hwahea/assets/img/bg_top/bg_event_top.png');
+	background-repeat:no-repeat;
+	width:100%;
+	height:240px;
+	position:relative;
+}
+
+.white{
+	background:white;
+	position:relative;
+	top:-170px;
+	padding-top:15px;
+	border-radius:3px !important;
+}
+
+/*타이틀 소제목*/
+.r_title{
+   padding-top:30px;
+   padding-bottom:10px;
+}
+
+.r_title ul{
+   padding:0;
+}
+
+.r_title ul li{
+	list-style:none;
+}
+
+.r_title1, .r_title3{
+	margin:0;
+}
+
+.r_title .r_title1{
+   font-size:18px;
+   font-weight: bold;
+}
+
+.r_title .r_title2{
+   font-size:30px;
+   font-weight: bold;
+   margin:0 10px 0 0;
+}
+
+.r_title .r_title3{
+   font-weight: bold;
+   color:#72c02c;
+}
+/*타이틀 끝*/
+
 .plusHead{
 	padding-bottom:15px;
 	font-face:bold;
@@ -28,20 +80,20 @@
 
 /*화해플러스 메인*/
 .plusBanner{
-	margin-left:30px;
+	margin-left:3px;
 	margin-right:30px;
 	margin-bottom:20px;
 	float:left;
 }
 .plusBanner, .plusBanner img{
-	width:600px;
-	height:280px;
+	width:615px;
+	height:300px;
 }
 
 .pBanner_con{
 	position: absolute;
     width: 500px;
-    height: 280px;
+    height: 300px;
     border: 1px solid #eee;
     padding: 10px;
     margin-left: 636px;
@@ -77,7 +129,7 @@
 .plusBannerText{
 	margin-top: 1px;
     margin-bottom: 5px;
-    height: 115px;
+    height: 130px;
     overflow: hidden;
 }
 
@@ -132,34 +184,8 @@
 }
 
 /*화해플러스 카테고리별 세부페이지*/
-.r_title .r_title1{
-   font-size:18px;
-   font-weight: bold;
-   margin:0 0 5px 0;
-}
-
-.r_title dt{
-   float: left;
-}
-
-.r_title .r_title2{
-   font-size:30px;
-   font-weight: bold;
-}
-
-.r_title .r_title3{
-   padding:20px 0 0 30px;
-   font-weight: bold;
-   color:#008200;
-}
-
-.r_title .r_r_title2{
-   font-size:30px;
-   font-weight: bold;
-}
-
 li{
-   list-style: none;
+	list-style:none;
 }
 
 .r_menu_2 li{
@@ -444,6 +470,18 @@ li{
 	font-size:12px;
 }
 
+.pre_total{
+	top:0;
+	bottom:0;
+	text-align:left;
+	font-size: 14.5px;
+    font-weight: 700;
+}
+
+.pmodal-bottom-10{
+	margin-bottom:10px;
+}
+
 .pmodal_reback{
 	background:#fff;
 	margin-left:65px;
@@ -571,10 +609,10 @@ li{
 
 /*모달 헤더*/
 .ex-header{
-	position: fixed;
+	/* position: fixed; */
 	top:5px;
-	left:10px;
-	right:10px;
+	left:15px;
+	right:15px;
 	z-index: 1;
 	background-color:#FFFFFF;
 }

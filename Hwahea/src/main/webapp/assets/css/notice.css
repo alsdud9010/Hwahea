@@ -1,0 +1,196 @@
+/*===notice.jsp 추가 css===*/
+.list-content{
+	margin-top:50px;
+}
+.page-title{
+	margin-left:55px;
+}
+.list-grid_4{
+	width:250px;
+	margin-left:80px;
+}
+.list-left{
+	width:170px;
+	background-color:#efefef
+}
+.current-tab{
+	background-color:#89cce9;
+	color:#fff;
+	font-weight:bold;
+}
+.other-tab:hover{
+	background-color:#89cce9;
+	color:#fff;
+	font-weight:bold;
+}
+.other-tab a:hover{
+	color:#fff;
+}
+.list-left tr{
+	height:30px;
+	text-align:center;
+}
+.list-left td{
+	font-size:15px;
+	line-height:40px;
+}
+.list-grid_7,.list_title{
+	width:820px;
+}
+.list_header{
+	background-color:#89cce9;
+	height:30px;
+	color:#fff;
+	font-size:15px;
+	line-height:50px;
+	font-weight: 700;
+}
+.list-tr{
+	text-align:center;
+	height:40px;
+	font-size:15px;
+	line-height:40px;
+}
+
+.list-btns{
+	width:150px;
+	margin-left:600px;
+	position: relative;
+	right: 0px;
+}
+.list-btn {
+    border: 1px solid #969696;
+    color: #969696;
+    margin-top: 24px;
+    padding: 5px 30px 10px;
+    font: bold 15px/15px 'Economica', sans-serif;
+}
+.list-btn:hover {
+    color: #fff;
+    border-color: #aaccaa;
+    background-color: #aaccaa;
+}
+.paging{
+	position:relative;
+	
+}
+.memberList_title{
+  padding-top:50px;
+  font-size:30px;
+  color:#535151;
+  font-weight:bold;
+  padding-bottom:15px;
+  margin-left:5px;
+}
+.btn2 {
+	margin:15px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #969696;
+    color: #969696;
+    padding: 3px 12px 3px;
+    font: bold 20px/20px 'Economica', sans-serif;
+}
+.btn2:hover{
+	background-color:#89cce9;
+	color:#fff;
+}
+.notice-btns{
+	width:200px;
+	margin-left:650px;
+	position: relative;
+}
+.emptybox{
+	width:800px;
+	height: 20px;
+}
+/*===1:1문의*/
+.base{
+	width:650px;
+	margin-top:20px;
+	margin-left:50px;
+	font-weight: 700;
+}
+.question{
+	width:700px;
+}
+.question tr{
+	height:50px;
+	line-height:50px;
+	border-bottom:#e3e3e3 solid 1px;
+}
+.question td{
+	font-size:18px;
+	box-sizing: border-box;
+}
+.question th{
+	font-size:15px;
+	text-align:center;
+	width:150px;
+	background-color:#f3f3f3;
+}
+.question textarea{
+	margin-top:15px;
+}
+
+/*===writeNoticeForm.jsp===*/
+.wn-table{
+	width:700px;
+	height:400px;
+}
+.wn-table th{
+	font-size:18px;
+	width:20%;
+	text-align:center;
+	font-weight:bold;
+	color:#fff;
+	background-color:#89cce9;
+}
+.wn-table td{
+	background-color:#f5f5f5;
+}
+.subtitle{
+	height:50px;
+	line-height: 50px;
+}
+.wn-table td{
+	padding:10px;
+}
+#notice_title{
+	display:inline-block;
+	width:560px;
+	font-size:15px;
+	font-weight:bold;
+	color:#2D2C2C;
+	padding:7px;
+}
+/*===detailNotice.jsp*/
+.dt-table{
+	width:700px;
+}
+.container.left{
+	padding-left:30px;
+}
+.dt-table .dt-content{
+	height: 500px;
+}
+.dt-table th{
+	font-size:18px;
+	width:15%;
+	padding-top:10px;
+	text-align:center;
+	font-weight:bold;
+	color:#fff;
+	background-color:#89cce9;
+}
+.dt-table td{
+	background-color:#f5f5f5;
+	padding: 10px;
+    border: 1px solid #ACABAB;
+}
+#dt-notice{
+	margin-top:20px;
+}
+.detail-btns{
+	width:700px;
+	border: 0;
+}
