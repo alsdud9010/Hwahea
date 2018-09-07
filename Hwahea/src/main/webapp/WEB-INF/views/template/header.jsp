@@ -36,7 +36,7 @@ $(document).ready(function(){
 						</c:if>
 						<li><a href="${pageContext.request.contextPath}/signin/service_agree.do"> <i class="fa fa-heart"> 회원가입</i>
 						</a></li>
-						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do"> <i class="fa fa-inbox"> 마이 페이지</i>
+						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do?bc=0"> <i class="fa fa-inbox"> 마이 페이지</i>
 						</a></li>
 					</ul>
 				</div>
