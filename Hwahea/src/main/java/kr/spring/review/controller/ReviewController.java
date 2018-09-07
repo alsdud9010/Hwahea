@@ -27,4 +27,13 @@ public class ReviewController {
 		
 		return "editRequest";
 	}
+	
+	//==============================¼ººÐ ÆË¾÷
+	@RequestMapping("/review/ingreSpec.do")
+	public String ingreProcess() {
+		
+		return "/review/ingreSpec";
+	}
+	
+	
 }

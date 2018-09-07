@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/editRequest.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/editRequest.js"></script>
 <div id="wrap">
 	<div>
 		<div class="r_title">
@@ -47,7 +48,8 @@
 		</select>
 	</div>
 	<div id="txtarea">
-		<textarea rows="10" cols="100" placeholder="구체적인 수정 요청사항을 적어주시면, 더 원활하게 처리가 가능해요. :)"></textarea>
+		<textarea id="editarea" rows="10" cols="100" placeholder="구체적인 수정 요청사항을 적어주시면, 더 원활하게 처리가 가능해요. :)"></textarea>
+		<div id="editcount"><span class="count">0/300</span></div> 
 	</div>
 	<div id="submit">
 		<input type="submit" value="화해운영진에게 전송하기">

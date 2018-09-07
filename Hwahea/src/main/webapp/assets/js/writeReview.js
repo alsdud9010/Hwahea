@@ -1,40 +1,29 @@
 $(document).ready(function(){
+	/*--------------------------------------------------글자수 체크 */
+	$(document).on('keyup','textarea',function(){
+		//입력한 글자수 구하기
+		var inputLength = $(this).val().length;
 
-	var flag = 0;
-	var txt = document.getElementById('startext');
-	var Msg;
+		if(inputLength>5000){//5000자 초과하는 경우
+			$(this).val($(this).val().substring(0,5000));//300자를 초과하는 글자는 잘라냄
+		}else{//5000자 이하인 경우
+			var remain = inputLength;
+			remain += '/5000';
+			
+			if($(this).attr('id')=='gre'){
+				//좋았던 점 글자수 제어
+				$('#g_count').text(remain);
+			}else if($(this).attr('id')=='bre'){
+				//아쉬운 점 글자수 제어
+				$('#b_count').text(remain);
+			}else if($(this).attr('id')=='tre'){
+				//꿀팁 글자수 제어
+				$('#t_count').text(remain);
+			}
 
-	for(i=1;i<=5;i++){
-		$('#nstar'+i).click(function(){
-			if(flag==1){//별 제거하기 
-				$(this).attr({
-					src:"../assets/img/starno.png",
-					width:30,
-					height:30
-				}).show();
-				flag =0;
-				return false;
-			}
-			
-			$(this).attr({
-				src:"../assets/img/star.png",
-				width:30,
-				height:30
-			}).show();
-			flag = 1;	
-			
-			switch(i){
-				case 1: Msg = "최악이에요!";break;
-				case 2: Msg = "별로예요!";break;
-				case 3: Msg = "무난했어요!";break;
-				case 4: Msg = "괜찮았어요!";break;
-				case 5: Msg = "완전 추천합니다!";break;
-				default: "";
-			
-			}
-			txt.innerHTML = Msg;
-			
-		});
-	}
+		}
+
+	});
+
 
 });

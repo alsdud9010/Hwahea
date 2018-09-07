@@ -82,10 +82,10 @@
 	<bean id="sqlSessionFactory"
 	      class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="typeAliasesPackage" value="kr.spring.shop.domain,kr.spring.member.domain,kr.spring.event.domain,kr.spring.plus.domain"/>           
+		<property name="typeAliasesPackage" value="kr.spring.shop.domain,kr.spring.member.domain,kr.spring.event.domain,kr.spring.plus.domain,kr.spring.review.domain"/>           
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="kr.spring.shop.dao, kr.spring.member.dao, kr.spring.event.dao,kr.spring.plus.dao"/>
+		<property name="basePackage" value="kr.spring.shop.dao, kr.spring.member.dao, kr.spring.event.dao,kr.spring.plus.dao,kr.spring.review.dao"/>
 	</bean>
 	
 	<!-- 암호화,복호화 알고리즘 처리 -->

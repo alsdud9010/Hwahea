@@ -1,62 +1,35 @@
 $(document).ready(function(){
+	var flag=0;
+	$('.like_like').on('click',function(){
+		if(flag==1){//좋아요 취소하기(하트 비우기)
+			if($(this).attr('data-num')==0){
+				//flag==1 이고 data-num==0이면 하트를 비우고, flag 0으로 변경. 
+				$('img',this).attr('src','../assets/img/plus/heart2.png');
+				
+				$(this).attr('data-num','1');
+				flag=0;
+				return false;
+			}else{
+				//flag==1 이고 data-num==1이면 좋아요 눌린 상태가 아니므로 아무 것도 변하지 않음.
+				flag=0;
+			}
+		}
+		
+		if(flag==0){//좋아요 누르기(하트 채우기)
+			if($(this).attr('data-num')==1){
+				//flag==0 이고 data-num==1이면 하트를 채우고, flag=1로 변경
+				$('img',this).attr('src','../assets/img/plus/heart.png');
+				
+				$(this).attr('data-num','0'); 
+				flag=1;
+			}else{
+				//flag==0, data-num==0 이면 아무 것도 변하지 않음.
+				flag=1;
+			}
+		}
+	});	
 	
-	var flag = 0;
-	
-	//좋아요 누르면 사진 변화
-	$(document).on('click','#like_like',function(){
-		var like = document.getElementById('like_l');
-		
-		if(flag == 1){
-			//좋아요 해제
-			like.src = '../assets/img/plus/heart2.png';
-			$('#like_like').css({
-				backgroundColor:'#fff',
-				color:'#83B14E'
-			});
-			flag = 0;
-			return false;
-		}
-		
-		like.src = '../assets/img/plus/heart.png';
-		$('#like_like').css({
-			backgroundColor:'#83B14E',
-			color:'#fff'
-		});
-		
-		flag = 1;
-	});
-	//좋아요, 스크랩 hover 설정
-	$('#like_like').hover(function(){
-		if(flag == 0){
-			$('#like_like').css({
-				backgroundColor:'#83B14E',
-				color:'#fff',
-				cursor:'pointer'
-			});
-		}else{
-			$('#like_like').css({
-				backgroundColor:'#fff',
-				color:'#83B14E',
-				cursor:'pointer'
-			});
-		}
-		
-	},function(){
-		if(flag == 0){
-			$('#like_like').css({
-				backgroundColor:'#fff',
-				color:'#83B14E',
-				cursor:'pointer'
-			});
-		}else{
-			$('#like_like').css({
-				backgroundColor:'#83B14E',
-				color:'#fff',
-				cursor:'pointer'
-			});
-		}
-		
-	});
+
 	
 	//모달창 좋아요 누를 때 색상 변화
 	$(document).on('click','.pmodal_like',function(){
@@ -66,7 +39,6 @@ $(document).ready(function(){
 			//좋아요 해제
 			like.src = '../assets/img/plus/heart2.png';
 			$('.pmodal_like').css({
-				backgroundColor:'#fff',
 				color:'#83B14E'
 			});
 			flag = 0;
@@ -75,8 +47,7 @@ $(document).ready(function(){
 		
 		like.src = '../assets/img/plus/heart.png';
 		$('.pmodal_like').css({
-			backgroundColor:'#83B14E',
-			color:'#fff'
+			color:'#83B14E'
 		});
 		
 		flag = 1;
@@ -129,7 +100,8 @@ $(document).ready(function(){
 		rereply += '</form>';
 		
 		//문서 객체에 추가
-		$('#pmodal_reform').append(rereply);
+		/*$('#pmodal_reform').append(rereply);*/
+		$(this).parents('.pmodal_brere').append(rereply);
 
 		flag = 1
 	});
@@ -169,9 +141,39 @@ $(document).ready(function(){
 	}
 	
 
+	/*----------------성분 상세보기 팝업*/
+	var win;
+	
+	$('#ingreimg').on('click',function(){
+		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
+		win.moveTo(600, 600);
+	});
+	
+	$('#ingreimg2').on('click',function(){
+		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
+		win.moveTo(600, 600);
+	});
+	
+	$('#pibuimg').on('click',function(){
+		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
+		win.moveTo(600, 600);
+	});
+	
+	$('#giimg').on('click',function(){
+		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
+		win.moveTo(600, 600);
+	});
 
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

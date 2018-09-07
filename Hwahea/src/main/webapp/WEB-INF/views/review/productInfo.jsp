@@ -59,9 +59,35 @@
 				<hr>
 				<div id="buttons">
 					<input type="button" value="즐겨찾기">
-					<input type="button" value="비교함 담기">
+					<input type="button" value="비교함 담기" data-target="#comModal" data-toggle="modal">
 					<input type="button" value="쇼핑">
 				</div>
+				<!-- 비교함 모달 시작 -->
+				<div class="modal fade" id="comModal" tabindex="-1">
+						<div class="modal-dialog">
+							<div class="modal-content" id="compare">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h4 class="modal-title comtitle">						
+										<img src="${pageContext.request.contextPath}/assets/img/review/searcher.png">
+										<strong>제품 비교하기</strong> 
+									</h4>
+								</div>
+								<div class="modal-body">
+									<div id="cimg">
+										<div id="com_img"><img src="${pageContext.request.contextPath}/assets/img/photo.PNG"><div>제품 이름</div></div>
+										<div id="com_img"><img src="${pageContext.request.contextPath}/assets/img/photo.PNG"><div>제품 이름</div></div>
+										<div id="com_img"><img src="${pageContext.request.contextPath}/assets/img/photo.PNG"><div>제품 이름</div></div>
+									</div>
+								</div>
+								<div class="modal-footer"> 
+									<a href="#" data-dismiss="modal" class="btn">취소</a> 
+									<input id="sinbtn" type="button" value="비교하기">
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- 비교함 모달 끝 -->
 			</div>
 			<!-- 제품 정보 끝 -->
 		</div>
@@ -77,12 +103,12 @@
 			<div>
 				<span id="twenty"><img src="${pageContext.request.contextPath}/assets/img/review/20.PNG"> 20가지 주의성분 </span>
 				<span id="how">3<span>개</span></span>
-				<span id="more"><a href="#"><img src="${pageContext.request.contextPath}/assets/img/review/more.png"></a></span>
-			</div>
+				<span id="more"><img id="ingreimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span>
+			</div> 
 			<div>
 				<span id="allergy"><img src="${pageContext.request.contextPath}/assets/img/review/allergyon.PNG"> 알러지 주의성분 </span>
 				<span id="how">1<span>개</span></span>
-				<span id="more"><a href="#"><img src="${pageContext.request.contextPath}/assets/img/review/more.png"></a></span>
+				<span id="more"><img id="ingreimg2" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span>
 			</div> 
 			<hr>
 			<div id="subhead">
@@ -90,7 +116,7 @@
 			</div>
 			<div id="tchart">
 				<span id="type_chart_div"></span>
-				<span id="tmore"><a href="#"><img src="${pageContext.request.contextPath}/assets/img/review/more.png"></a></span> 
+				<span id="tmore"><img id="pibuimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span> 
 			</div>
 			<hr>
 			<div id="subhead">
@@ -100,7 +126,7 @@
 				<img src="${pageContext.request.contextPath}/assets/img/sun.png"> 자외선 차단
 				<img src="${pageContext.request.contextPath}/assets/img/bulb.png"> 미백 개선
 				<img src="${pageContext.request.contextPath}/assets/img/cancel.png"> 주름 개선
-				<span id="dmore"><a href="#"><img src="${pageContext.request.contextPath}/assets/img/review/more.png"></a></span> 
+				<span id="dmore"><img id="giimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span> 
 			</div>
 			<div id="detail_option">
 				<span>
@@ -204,11 +230,13 @@
 				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> <img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> 
 				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 			</div>
-			<div id="like">    
+			<div id="like">   
+				<!-- <input type="button" value="좋아요">
+				<input type="button" value="댓글 달기" data-target="#modal01" data-toggle="modal">  -->
 				<ul>
-					<li id="like_like"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" id="like_l"> 좋아요</li>
+					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
 					<li id="like_re" data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png"> 댓글달기</li>
-				</ul> 
+				</ul>
 			</div>
 			</div>
 		<hr id="re_hr">
@@ -277,10 +305,12 @@
 				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 			</div>
 			<div id="like">    
+				<!-- <input type="button" value="좋아요">
+				<input type="button" value="댓글 달기">  -->
 				<ul>
-					<li id="like_like"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" id="like_l"> 좋아요</li>
+					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
 					<li id="like_re"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
-				</ul> 
+				</ul>
 			</div>
 		</div>
 		</div>
@@ -296,7 +326,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<img id="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/modalLeft.png" data-dismiss="modal"> 
-					<span id="modalCategory"> 리뷰 상세보기 </span>
+					<span id="modalCategory"> <img src="${pageContext.request.contextPath}/assets/img/review/review.png">리뷰 상세보기 </span>
 					<button class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body pmodal_c" style="text-align: center;">
@@ -322,7 +352,7 @@
 						</table>
 					</div>
 					<!-- 별점, 작성일 -->
-					<div class="rate">
+					<div id="r_rate">
 						<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png">
 						<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png">
 						<img src="${pageContext.request.contextPath}/assets/img/star.png"> 
@@ -392,18 +422,19 @@
 								</div>
 								<div class="modal-body">
 									<div id="momo">
-									<div><input type="radio">광고, 홍보 / 거래 시도</div>
-									<div><input type="radio">과도한 오타, 반복적 표현 사용</div>
-									<div><input type="radio">욕설, 음란어 사용</div>
-									<div><input type="radio">제품 미사용 / 리뷰 내용과 다른 제품 선택</div>
-									<div><input type="radio">리뷰 내용과 무관한 사진 첨부</div>
-									<div><input type="radio">개인 정보 노출</div>
-									<div><input type="radio">명예훼손 / 저작권 침해</div>
-									<div><input type="radio">기타 (에티켓 위반 등)</div>
+									<div><input type="radio" name="radio"><label>광고, 홍보 / 거래 시도</label></div>
+									<div><input type="radio" name="radio"><label>과도한 오타, 반복적 표현 사용</label></div>
+									<div><input type="radio" name="radio"><label>욕설, 음란어 사용</label></div>
+									<div><input type="radio" name="radio"><label>제품 미사용 / 리뷰 내용과 다른 제품 선택</label></div>
+									<div><input type="radio" name="radio"><label>리뷰 내용과 무관한 사진 첨부</label></div>
+									<div><input type="radio" name="radio"><label>개인 정보 노출</label></div>
+									<div><input type="radio" name="radio"><label>명예훼손 / 저작권 침해</label></div>
+									<div><input type="radio" name="radio"><label>기타 (에티켓 위반 등)</label></div>
 									</div>
 								</div>
 								<div class="modal-footer"> 
-									<a href="#" data-dismiss="modal" class="btn">취소</a> <input type="button" value="신고하기">
+									<a href="#" data-dismiss="modal" class="btn">취소</a> 
+									<input id="sinbtn" type="button" value="신고하기">
 								</div>
 							</div>
 						</div>
@@ -435,9 +466,8 @@
 									<span>
 									<input type="button" value="수정">
 									<input type="button" value="삭제"></span>
-									<div id="pmodal_reform"></div>
-									<div class="margin-bottom-20"><hr class="hr-md"> </div>
 								</div>
+								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
 						</div>
 						<div class="pmodal_reback">
@@ -450,12 +480,12 @@
 								</div>
 								<div class="pmodal_trere">집에 보내주어아ㅓㄹㅇ닐ㄴ알ㅇ나ㅣㄴ</div>
 								<div class="pmodal_brere">
-									<a class="pmodal_same" href="#">댓글달기</a>
+									<a class="pmodal_same" id="rere_write">댓글달기</a>
 									<span>
 									<input type="button" value="수정">
 									<input type="button" value="삭제"></span>
-									<div class="margin-bottom-20"><hr class="hr-md"> </div>
 								</div>
+								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
 						</div>
 						<!-- 대댓글 -->
@@ -470,12 +500,12 @@
 								</div>
 								<div class="prere_text">대댓글~~</div>
 								<div class="pmodal_brere">
-									<a class="pmodal_same" href="#">댓글달기</a>
+									<a class="pmodal_same" id="rere_write">댓글달기</a>
 									<span>
 									<input type="button" value="수정">
 									<input type="button" value="삭제"></span>
-									<div class="margin-bottom-20"><hr class="hr-md"> </div>
 								</div>
+								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
 						</div>
 						<div class="prere_back">
@@ -489,9 +519,9 @@
 								</div>
 								<div class="prere_text"><span class="rere_writer">white</span>대댓글~~</div>
 								<div class="pmodal_brere">
-									<a class="pmodal_diff" href="#">댓글달기</a>
-									<div class="margin-bottom-20"><hr class="hr-md"> </div>
+									<a class="pmodal_diff" id="rere_write">댓글달기</a>
 								</div>
+								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
 						</div>
 					</div>
