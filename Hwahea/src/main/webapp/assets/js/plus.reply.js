@@ -148,10 +148,9 @@ $(document).ready(function(){
 		rereply += '<img src="../assets/img/plus/profile.png">';
 		rereply += '<span class="pmodal_wrere">blue</span>';
 		rereply += '<span class="plusGrade"><input type="button" value="VIP"></span>';
-		rereply += '<span class="pmodal_drere"></span></div>';
-		rereply += '	<textarea rows="3" cols="55" name="re_content" id="prere_content" class="pmodal_rtext2"></textarea>';
+		rereply += '	<div id="pre_second"><textarea rows="4" cols="55" name="re_content" id="prere_content" class="pmodal_rtext2"></textarea>';
+		rereply += '	<span class="prere_btn"><input type="submit" value="등록"> <input type="button" value="취소" class="prere_reset"></span></div>';
 		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';
-		rereply += '	<div id="pre_second"><input type="submit" value="등록"> <input type="button" value="취소" class="prere_reset"></div>';
 		rereply += '</div>';
 		rereply += '</form>';
 		
@@ -194,5 +193,4 @@ $(document).ready(function(){
 	function initReForm(){
 		$('#pre_form').remove();
 	}
-	
 });

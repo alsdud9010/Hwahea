@@ -38,8 +38,18 @@
 	height:280px;
 }
 
+.pBanner_con{
+	position: absolute;
+    width: 500px;
+    height: 280px;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-left: 636px;
+}
+
 .plusMember{
-	float:left;
+    float: left;
+    text-align: center;
 }
 
 .plusProfile{
@@ -65,8 +75,15 @@
 }
 
 .plusBannerText{
-	margin-top:35px;
-	height:115px;
+	margin-top: 1px;
+    margin-bottom: 5px;
+    height: 115px;
+    overflow: hidden;
+}
+
+.pBanner_more {
+    text-align: right;
+    padding-right: 10px;
 }
 
 .bannerIcon{
@@ -74,16 +91,47 @@
 	margin-left:35px;
 }
 
-/*화해플러스 카테고리별 세부페이지*/
-.r_menu_1 th{
-   border:#acacac solid 1px;
-   width:166.6666666666667px;
-   height:30px;
-   font-size:15px;
-   text-align:center;
-   text-decoration:none;
+.pm_thumb img{
+	width:210px;
+	height:135px;
 }
 
+.pm_thumb span{
+	left: 15px !important;
+}
+
+.pm_lrs{
+	margin-left:6px;
+}
+
+.pm_lrs span{
+	margin-right:21px;
+}
+
+.pmain_tit{
+	margin:7px 0;
+}
+
+.pmain_tit a{
+	color:#000;
+	font-size:14px;
+	letter-spacing:-0.03em;
+}
+
+.best a{
+	color:#000;
+	font-size:14px;
+	font-weight:bold;
+	letter-spacing:-0.03em;
+}
+
+.pmain_tit a:hover{
+	color:#72c02c;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+/*화해플러스 카테고리별 세부페이지*/
 .r_title .r_title1{
    font-size:18px;
    font-weight: bold;
@@ -120,14 +168,20 @@ li{
    width:16.66666666666667%;
    height:30px;
    font-size:15px;
-   color:#83B14E;
+   color:#72c02c;
    font-weight:bold;
    text-align:center;
    padding: 2px 0 10px 0;
+   cursor:pointer;
+}
+
+.r_menu_2 li:hover{
+   background-color: #72c02c;
+   color:#fff;
 }
 
 .r_menu_2 .r_thistap{
-   background-color: #83B14E;
+   background-color: #72c02c;
    color:#fff;
 }
 
@@ -162,8 +216,8 @@ li{
 }
 
 .plusBest img{
-	width:740px;
-	height:320px;
+	width:730px;
+	height:354px;
 }
 
 .plusCategory{
@@ -176,19 +230,33 @@ li{
 }
 
 .plusBanner2 {
-	float:right;
+	padding-left:5px;
+	height:354px;
+}
+
+.plusBanner2 p{
 	padding-left:5px;
 }
 
-.plusBanner2 input[type="button"]{
+.plusBanner2 a{
+	color:#333;
+}
+
+.plusBanner2 a:hover{
+	text-decoration:none;
+	color:#72c02c;
+}
+
+.plusBanner2 button{
+    letter-spacing:-0.02em;
+    border: 2px solid #72c02c;
 	padding:5px !important;
-	width:170px;
+	width:150px;
 	height:38px;
 	margin-top:5px;
-	border-color:#72c02c;
-	border-radius:15px;
+	border-radius:15px !important;
 	text-align:center;
-	font-size:17px;
+	font-size:18px;
 	font-weight:bold;
 	background-color:#fff;
 	color:#113f1f;
@@ -204,7 +272,7 @@ li{
 }
 
 .spaceforPlus{
-	height:140px;
+	height:174px;
 }
 
 .plusBanner2 span{
@@ -299,12 +367,13 @@ li{
 	color:#999da0;
 }
 
+/*모달 댓글*/
 .pmodal_reply{
 	padding-bottom:17px;
 	margin-left:43px;
 	margin-top:20px;
 	padding-top:10px;
-	background:#d9dcdd;
+	border:1px solid #d9dcdd;
 	width:780px;
 }
 
@@ -337,7 +406,7 @@ li{
 .pmodal_rform{padding-top:15px;}
 
 .pmodal_rtext{
-	margin-left:120px;
+	margin-left:105px;
 	margin-right:-10px;
 	margin-bottom:7px;
 	float:left;
@@ -346,8 +415,19 @@ li{
 }
 
 .pmodal_rform input[type="submit"]{
-	width:65px;
-	height:75px;
+    top: 0;
+    right: 0;
+    margin-left:-5px;
+    width: 85px;
+    height: 85px;
+    color: #fff;
+    font-size: 18px;
+    background: #72c02c;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    cursor: pointer;
 }
 
 .pmodal_wpro {
@@ -360,7 +440,7 @@ li{
 
 .pmodal_rcount {
 	text-align:right;
-	margin:17px 135px 27px 0;
+	margin:17px 135px 13px 0;
 	font-size:12px;
 }
 
@@ -396,11 +476,11 @@ li{
 /*화플 모달 대댓글*/
 /*대댓글 폼*/
 .pmodal_reback2{
-	background:#d9dcdd;
-	margin-left:24px;
-	margin-top:15px;
-	width:580px;
-	padding-bottom:39px;
+	background: #eff0f1;
+    margin-left: 24px;
+    margin-top: 15px;
+    width: 580px;
+    padding-bottom: 15px;
 }
 
 .pmodal_rpro2 img{
@@ -411,14 +491,26 @@ li{
 .pmodal_rpro2{margin-right:400px; padding-top:13px;} .pmodal_rpro2 .plusGrade{font-size:11px;}
 
 .pmodal_rtext2{
-	margin:15px 3px 15px 50px;
-	float:left;
-	overflow-y:scroll;
-	resize:none;
+	overflow-y: scroll;
+    resize: none;
+    float: left;
+    margin-right: 4px;
 }
 
 #prere_first{
-	margin:18px 0 9px 0;
+	width: 458px;
+    text-align: right;
+    margin-top: 5px;
+}
+
+#pre_second{
+	width: 500px;
+    margin: 15px 60px 0px 50px;
+}
+
+.prere_btn{
+	display: block;
+    padding-top: 60px;
 }
 
 /*대댓글 목록폼*/
@@ -432,6 +524,11 @@ li{
 
 .prere_depth{
 	margin-left:25px;
+}
+
+.prere_depth img{
+	width:17px;
+	height:15px;
 }
 
 .prere_grade input[type="button"]{
@@ -471,3 +568,18 @@ li{
 }
 
 /*==================화해플러스=======================*/
+
+/*모달 헤더*/
+.ex-header{
+	position: fixed;
+	top:5px;
+	left:10px;
+	right:10px;
+	z-index: 1;
+	background-color:#FFFFFF;
+}
+
+.ex-body{
+	position:relative;
+	margin-top: 65px; 
+}

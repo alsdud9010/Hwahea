@@ -82,8 +82,25 @@
 	border:#e4eaed solid 1px;
 	padding-top:10px;
 	padding-bottom:10px;
+	padding-left:33px;
 	margin-bottom:10px;
-	text-align:center;
+}
+
+.event_wish{
+	width:500px;
+	position:absolute;
+	margin-top:-7px;
+	padding-right:40px;
+	text-align:right;
+}
+
+.event_wish img{
+	width:50px !important;
+	height:50px !important;
+}
+
+.ewish_img{
+	cursor:pointer;
 }
 
 .event_deadline{
@@ -150,6 +167,42 @@
 
 .event_tname span{
 	display:block;
+}
+
+.event_tit1{
+    margin-left:101px;
+    color:#fff;
+    background-color: #72c02c;
+    border:1px solid #72c02c;
+    border-radius:3px !important;
+    padding:5px;
+    font-size: 23px;
+}
+
+.event_tit2{
+	margin-left:10px;
+	color:#333;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.event_tit3{
+	margin-left:525px;
+	color:#666;
+}
+
+.event1_tname{
+    width: 820px;
+    margin-left:30px;
+    color: #333;
+    font-size: 20px;
+    word-break: break-all;
+}
+
+.event1_tname span{
+	display:block;
+	font-size:24px;
+	margin-bottom:5px;
 }
 
 .event_tinfo{
@@ -221,13 +274,24 @@
 	width:1000px;
 }
 
+.event_content2{
+	margin-top:-26px;
+	padding-top:30px;
+	padding-left:80px;
+	width:1000px;
+}
+
 .event_content img{
+	width:930px;
+}
+
+.event_content2 img{
 	width:930px;
 }
 
 .event_notice{
 	background: #f5f5f5;
-    margin-top:30px;
+    margin-top:60px;
     padding: 25px 0;
     color: #666;
     font-size: 14px;
@@ -252,27 +316,22 @@
     font-size: 12px;
 }
 
-.event_agree .event_inner{
-	float: left;
-    width: 50%;
-    height:auto;
-}
-
 .event_inner ul{
-	position:relative;
-	padding:15px 0 20px 15px;
-	width:100%;
-	height:130px;
+	width:49.911%;
+	height:140px;
 	border: 1px solid #e5e5e5;
 	border-top:none;
+	float:left;
 }
 
 .event_inner li{
 	list-style:none;
-	padding-left:20px;
+	padding-left:15px;
+	padding-top:12px;
+	line-height:12px;
 }
 
-.agree_tit{
+.agree_tit1, .agree_tit2{
     position: relative;
     padding: 13px 20px 13px;
     line-height: 14px;
@@ -315,6 +374,22 @@
     border: 2px solid #72c02c;
     background: #fff;
     color: #72c02c;
+}
+
+.elist_btn{
+	text-align:right;
+}
+
+.elist_btn button{
+	width:120px;
+	height:33px;
+	font-size: 15px;
+    font-weight:bold;
+    letter-spacing:-0.02em;
+    padding-bottom: 4px;
+    border: 2px solid #888888;
+    background: #fff;
+    color: #888888;
 }
 
 /*=====¿Ã∫•∆Æ ¥Ò±€======*/

@@ -26,10 +26,10 @@ public class PlusController {
 
 		return "plusMain";
 	}
-
+	
 	//========= ½Å»ó&Æ®·»µå
 	@RequestMapping("/plus/plusTrend.do")
-	public String process() {
+	public String process2() {
 
 		return "plusTrend";
 	}

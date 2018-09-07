@@ -32,4 +32,10 @@ public class EventController {
 
 		return "eventView";
 	}
+
+	@RequestMapping("/event/eventView2.do")
+	public String process2() {
+		
+		return "eventView2";
+	}
 }

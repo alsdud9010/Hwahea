@@ -22,108 +22,51 @@
 			<!-- 이벤트 타이틀 끝 -->
 			<!-- 이벤트 상세페이지 -->
 			<div class="col-md-12">
-			<!-- 이벤트 상단 이미지 시작 -->
-			<div class="event_top">
-				<img src="${pageContext.request.contextPath}/assets/img/event/event_product.png">
-				<p class="event_tname">
-					<span><b>코스알엑스(COSRX)</b></span>
-					365일 내 피부를 위한 그린 히어로 그린패드</p>
-				<p class="event_tinfo">
-					<span class="event_txt">모집인원 |</span>
-					<span class="event_many">30명</span>
-					<span class="event_txt">신청인원 |</span>
-					<span class="event_many">501명</span>
-				</p>
+			<!-- 이벤트 타이틀 시작 -->
+			<div class="event_tit" >
+					<span class="event_tit1"><b>화해 쇼핑</b></span>
+					<span class="event_tit2">첫 구매 포인트 지급 이벤트</span>
+					<span class="event_tit3">18.08.27 ~ </span>
 			</div>
-			<!-- 이벤트 상단 이미지 끝 -->
-			<!-- 이벤트 단계 시작 -->
-			<ul class="event_step col-md-12 margin-bottom-15">
-				<li>
-					<div>
-						<span class="step_no">01</span>
-						<span class="step_txt">모집기간</span>
-						09.01 ~ 09.15
-						<p class="step_under"></p>
-					</div>
-				</li>
-				<li>
-					<div>
-						<span class="step_no">02</span>
-						<span class="step_txt">당첨자발표</span>
-						09.19
-					</div>
-				</li>
-				<li>
-					<div>
-						<span class="step_no">03</span>
-						<span class="step_txt">배송 및 후기작성</span>
-						10.01 ~ 10.14
-					</div>
-				</li>
-			</ul>
-			<!-- 이벤트 단계 끝 -->
+			<hr class="hr-md">
+			<!-- 이벤트 타이틀 끝 -->
 			<!-- 이벤트 컨텐츠 시작 -->
-			<div class="event_content">
-				<img src="${pageContext.request.contextPath}/assets/img/event/event_content.jpg">
+			<div class="event_content2">
+				<img src="${pageContext.request.contextPath}/assets/img/event/event_content2.jpg">
 			</div>
 			<!-- 이벤트 컨텐츠 끝 -->
-			<!-- 이벤트 유의사항,개인정보동의 시작 -->
+			<!-- 이벤트 유의사항 시작 -->
 			<div class="event_notice">
 			<p class="enotice_tit">
-				<img src="${pageContext.request.contextPath}/assets/img/event/event_exclamation.png"><br>유의사항</p>
-			<ul>
-				<li>본 이벤트 당첨자 발표 및 배송 일정 등은 부득이한 사유로 변동될 수 있습니다.</li>
-				<li>이벤트 신청 후에는 배송지 변경이 절대 불가합니다.</li>
-				<li>당첨 물품은 신청시 등록하신 주소로 발송되며, 부정확한 정보 기입으로 생긴 배송 문제에 대해서는 재발송이 불가합니다.</li>
-				<li>당첨자로 선정되었으나, 리뷰를 미작성하실 경우 향후 당첨자 선정 과정에서 불이익을 받을 수 있습니다.</li>
-				<li>이벤트에 참여하는 경우, 위 유의사항에 대해 인지하고 동의하는 것으로 간주합니다.</li>
+				<img src="${pageContext.request.contextPath}/assets/img/event/event_exclamation.png"><br>쿠폰 유의사항</p>
+			<ul >
+				<li>쿠폰은 지급받은 날로부터 7일 이내에 사용하지 않으면 자동 소멸됩니다.(소멸 후 복구 불가)</li>
+				<li>배송비를 제외한 실제 상품결제 금액이 1만원이 넘는 경우에 한해, 결제 금액의 20%까지만 사용 가능합니다.
+					<br><span style="font-size:12px">(5,000포인트를 모두 사용하려면 최종 상품 금액이 2만 5천원을 넘어야합니다. *배송비 별도)</span></li>
+				<li>해당 이벤트는 당사 사정에 따라 별도의 고지 없이 변경 혹은 종료될 수 있습니다.</li>
+				<li>주문한 상품의 부분 취소로 최소 구매금액 조건 미달 시, 포인트 할인 금액 차감 후 환불됩니다.</li>
+				<li>사용기한이 만료된 포인트는 판매자 귀책사유로 구매가 취소되는 경우에만 환급해드립니다. (구매자 변심시 포인트 환급 불가)</li>
 			</ul>
-			</div>
-			<div class="event_agree">
-				<div class="event_inner">
-					<div class="agree_tit">
-						<label for="chk_agree1">개인정보 수집 이용 동의</label>
-						<span>(필수)</span>
-						<input type="checkbox" id="chk_agree1">
-						<span class="event_open"><img id="agree_img1" src="${pageContext.request.contextPath}/assets/img/event/event_open.png"></span>
-					</div>
-					<ul id="agree_txt1">
-						<li>- 수집항목 : 성명, 휴대폰번호, 주소</li>
-						<li>- 수집 이용 및 목적 : 이벤트 응모, 추첨, 경품발송(배송)및 이벤트 운영</li>
-						<li>- 보유 및 이용기간 : 이벤트 종료 후 3개월 이내 파기</li>
-						<li>- 개인정보 수집이용에 동의하지 않을 수 있으나, 미동의 시 이벤트 참여가 불가합니다.</li>
-					</ul>
-				</div>
-				<div class="event_inner">
-					<div class="agree_tit">
-						<label for="chk_agree2">개인정보 취급 위탁 동의</label>
-						<span>(필수)</span>
-						<input type="checkbox" id="chk_agree2">
-						<span class="event_open"><img id="agree_img2" src="${pageContext.request.contextPath}/assets/img/event/event_open.png"></span>
-					</div>
-					<ul id="agree_txt2">
-						<li>- 개인정보 처리 위탁사 : 이엘씨에이한국(유)_랩시리즈 </li>
-						<li>- 개인정보 위탁 항목 : 성명, 휴대폰번호, 주소 </li>
-						<li>- 개인정보 처리 위탁 내용 : 이벤트 대행을 통한 개인정보 처리 및 경품 배송 </li>
-						<li>- 개인정보 처리 위탁 기간 : 이벤트 경품 발송 후 3개월 이내 파기 </li>
-						<li>- 개인정보 위탁 이용에 동의하지 않을 수 있으나, 미동의 시 이벤트 참여가 불가합니다. </li>
-					</ul>
-				</div>
 			</div>
 			<div class="margin-bottom-20 padding-top">
 					<hr class="hr-lg">
 			</div>
-			<!-- 이벤트 유의사항,개인정보동의 끝 -->
-			<!-- 이벤트 참여 버튼 시작 -->
+			<!-- 이벤트 유의사항 끝 -->
+			<!-- 이벤트 버튼 시작 -->
 			<div class="event_apply">
-				<button type="button" class="e_apply">내 정보 수정</button>
+				<button type="button" class="e_apply">쿠폰받기</button>
+				<button type="button" onclick="location.href='${pageContext.request.contextPath}/shop/shopMain.do'">쇼핑하러가기</button>
 			</div>
-			<!-- 이벤트 참여버튼 끝 -->
+			<!-- 이벤트 목록으로 -->
+			<div class="elist_btn">
+				<button type="button" onclick="location.href='${pageContext.request.contextPath}/event/eventMain.do'">목록</button>
+			</div >
+			<!-- 이벤트 버튼 끝 -->
 			<!-- 이벤트 댓글 시작-->
-			<h3 class="event_reply_tit">댓글 응모하기</h3>
+			<h3 class="event_reply_tit">댓글</h3>
 			<div class="event_reply_box">
 				<textarea class="" id="inpTxBox" placeholder="내용을 입력해주세요. (최대 100자)" data-ref-length="100"></textarea>
-				<input type="submit" value="응모하기" />
+				<input type="submit" value="댓글달기" />
 			</div>
 			<div class="reply_sub_title" >
 				<p>전체(3)</p>
@@ -132,19 +75,19 @@
 			<ul class="event_reply_list">
 				<li>
 					<span class="ereply_no">1</span>
-					<p class="ereply_txt">남친 선물로 꼭 주고싶네요 엄청난 지성이라서 ㅎㅎ 효과 궁금하네요</p>
+					<p class="ereply_txt">잘 쓰겠습니다.</p>
 					<span class="ereply_user">dragon</span>
 					<span class="ereply_date">2018-09-03</span>
 				</li>
 				<li>
 					<span class="ereply_no">2</span>
-					<p class="ereply_txt">티존에 기름이 있는데 이것을 쓰고 지인들에게 널리 퍼트릴테니 저 주세요.</p>
+					<p class="ereply_txt">감사합니다.</p>
 					<span class="ereply_user">blue</span>
 					<span class="ereply_date">2018-09-02</span>
 				</li>
 				<li>
 					<span class="ereply_no">3</span>
-					<p class="ereply_txt">꼭 써보고 싶어요</p>
+					<p class="ereply_txt">ㄳㄳ</p>
 					<span class="ereply_user">white</span>
 					<span class="ereply_date">2018-08-31</span>
 				</li>
