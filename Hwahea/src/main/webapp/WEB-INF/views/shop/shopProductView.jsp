@@ -23,8 +23,8 @@
 	<div class="col-md-12 shop-productView">
 		<div class="shop-productView-category">
 			<a href="${pageContext.request.contextPath}/shop/shopMain.do">쇼핑 홈 </a>> 
-			<a href="${pageContext.request.contextPath}/shop/shopProduct.do"> 쇼핑 카테고리 </a>> 
-			<a href="#"> 세부 카테고리</a>
+			<a href="${pageContext.request.contextPath}/shop/shopProduct.do"> 스킨케어 </a>> 
+			<a href="#"> 스킨/토너</a>
 		</div>
 		<form>
 			<div class="col-md-10 shop-productView-explain">
@@ -232,9 +232,9 @@
 							<p class="brand-info-KRTitle">브랜드 정보 및 교환/반품 안내</p>
 						</div>
 						<div class="brand-info-content">
-							<div class="brand-info">
-								<img src="${pageContext.request.contextPath}/assets/img/logo2.png">
-								<p class="brand-info-name">세이어스</p>
+							<div class="brand-info"><a href="#">
+								<img src="${pageContext.request.contextPath}/assets/img/logo2.png"></a>
+								<p class="brand-info-name"><a href="#">세이어스</a></p>
 							</div>
 							<div class="classified-brand-product">
 								<p>지금 구매 가능한 <span style="font-weight:bold;">브랜드 상품</span></p>

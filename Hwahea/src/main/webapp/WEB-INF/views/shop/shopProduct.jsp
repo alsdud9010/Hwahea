@@ -1,111 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/shop.css">
-<!-- 쇼핑 리스트 타이틀 시작 -->
-<div class="product-category-title">
-	<div class="category-title">
-		<span class="category-title-kr">스킨케어</span> <span
-			class="category-title-en">SKINCARE</span>
-	</div>
-</div>
-<!-- 쇼핑 리스트 타이틀 끝 -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/shop.css">
 <!-- 쇼핑 리스트 내용 시작 -->
 <div class="container content">
 	<div class="productListArea">
-		<!-- left menu start -->
-		<div class="col-md-4 product-lmArea">
-			<form>
-				<!-- 히든값? -->
-				<div class="shopping-select-category">
-					<p class="productList-title">스킨케어</p>
-					<ul class="list-category-detail" id="shoppingMore">
-						<li class="on"><a href="#">전체(제품수)</a></li>
-						<li><a href="#"> 스킨/토너(30)</a></li>
-						<li><a href="#"> 로션/에멀젼(21)</a></li>
-						<li><a href="#"> 에센스/앰플/세럼(32)</a></li>
-						<li><a href="#"> 페이스오일(37)</a></li>
-						<li><a href="#"> 크림/젤(7)</a></li>
-						<li><a href="#"> 아이케어(7)</a></li>
-						<li><a href="#"> 미스트(11)</a></li>
-					</ul>
-				</div>
-				<div class="product-search" id="product-search">
-					<p class="productList-title-search">상세검색</p>
-					<div class="skin-trouble-sort">
-						<p class="pdtSortSTit">피부 고민별</p>
-						<ul class="list-search-detail">
-							<li><div class="inputCheck">
-									<input type="checkbox" /> <label for="skin1">아토피</label>
-								</div></li>
-							<li><div class="inputCheck">
-									<input type="checkbox" /> <label for="skin1">여드름</label>
-								</div></li>
-							<li><div class="inputCheck">
-									<input type="checkbox" /> <label for="skin1">민감성</label>
-								</div></li>
-						</ul>
-					</div>
-					<div class="ingredient-sort">
-						<p class="pdtSortSTit">성분별 검색</p>
-						<ul class="materialSearchList">
-							<li><div class="inputCheck">
-									<input type="checkbox" /> <label for="material1">글리세린</label>
-								</div></li>
-							<li><div class="inputCheck">
-									<input type="checkbox" /> <label for="material1">글리세린</label>
-								</div></li>
-							<li><div class="inputCheck">
-									<input type="checkbox" /> <label for="material1">글리세린</label>
-								</div></li>
-							<li><div class="inputCheck">
-									<input type="checkbox" /> <label for="material1">글리세린</label>
-								</div></li>
-						</ul>
-					</div>
-				</div>
-			</form>
+		<div class="shop-productView-category">
+			<a href="${pageContext.request.contextPath}/shop/shopMain.do">쇼핑
+				홈 </a>> <a href="${pageContext.request.contextPath}/shop/shopProduct.do">
+				스킨케어 </a>
 		</div>
-		<!-- left menu end -->
-		<!-- product list start -->
-		<div class="col-md-8 product-contents">
-			<div class="sortCon">
-				<div class="listCount">
-					총 <span>164</span>개
+		<div class="shopProduct-title">
+			<h1>스킨케어</h1>
+		</div>
+			<ul class="col-md-12 shopList-category" id="shoppingMore">
+				<li class="category-first cate-on"><a href="#">전체</a></li>
+				<li><a href="#"> 스킨/토너</a></li>
+				<li><a href="#"> 로션/에멀젼</a></li>
+				<li><a href="#"> 에센스/앰플/세럼</a></li>
+				<li><a href="#"> 페이스오일</a></li>
+				<li><a href="#"> 크림/젤</a></li>
+				<li><a href="#"> 아이케어</a></li>
+				<li><a href="#"> 미스트</a></li>
+				<li><a href="#"> </a></li>
+				<li><a href="#"> </a></li>
+				<li><a href="#"> </a></li>
+				<li><a href="#"> </a></li>
+			</ul>
+			<div class="col-md-12 shopList-search">
+				<div class="shopList-search-title">
+					<strong>BRAND</strong>
+					<span>브랜드 별 검색 :)</span>
 				</div>
-				<div class="shopping-sort">
-					<select id="shopping-sort-keyfield">
-						<option value="least" selected>신상품 순</option>
-						<option value="lowPrice">낮은 가격 순</option>
-						<option value="highPrice">높은 가격 순</option>
-						<option value="manyReview">리뷰 많은 순</option>
-					</select>
-				</div>
-			</div>
-			<div class="productListArea2">
-				<div class="shopItem">
-					<div>
-						<a href="${pageContext.request.contextPath}/shop/shopProductView.do">
-						<img class="shopItem-img" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
-							alt=""> </a>
-					</div>
-					<div class="shopItemExplain">
-						<p class="shopItemName">
-							<a href="${pageContext.request.contextPath}/shop/shopProductView.do">클레이 마스크 70ml</a>
-						</p>
-						<p class="shopItemPrice">
-							<a href="${pageContext.request.contextPath}/shop/shopProductView.do">8,000&nbsp;원</a>
-						</p>
-						<p class="shopItemBuying glyphicon glyphicon-shopping-cart"
-						onclick="location.href='${pageContext.request.contextPath}/shop/shopProductView.do'">
-						</p>
-					</div>
-				</div>
-				
+				<ul class="shopList-search-content">
+					<li class="ask-lock-area">
+						<input type="checkbox" id="aaa" name="shop-search-brand" value="건성"/>
+						<label for="aaa">건성</label>
+					</li>
+				</ul>
+				<button class="shop-brand-more">더보기</button>
+				<div class="shopList-reset"><button id="onBrandReSet">선택 초기화</button></div>
+		</div>
+		<p class="col-md-12 shopList-cateCnt"> 스킨케어 카테고리에<span> 1,090 </span>개의 상품이 등록되어 있습니다.</p>
+		<div class="col-md-12 shopList-cate-align">
+			<div class="align-sort">
+				<ul>
+					<li><a class="align-on" href="javascript:;" data-prdSoting="02">최근등록순</a></li>
+					<li><a href="javascript:;" data-prdSoting="03">리뷰많은순</a></li>
+					<li><a href="javascript:;" data-prdSoting="05">낮은 가격순</a></li>
+					<li><a href="javascript:;" data-prdSoting="06">높은 가격순</a></li>
+				</ul>
 			</div>
 		</div>
-		<!-- product list end -->
+		<ul class="col-md-12 shopList-product-list">
+			<li class="pl-flag">
+				<div class="pl-info">
+					<a href="javascript:;" class="pl-thumb productsList">
+						<img src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg" 
+						alt="메이케이티드 위치하젤 아스트린젠트 355ml" onerror="common.errorImg(this);">
+					</a>
+					<div class="pl-name">
+						<a href="javascript:;" class="goodsList">
+							<span class="pl-brand">세이어스</span>
+							<p class="pl-product-name">메이케이티드 위치하젤 아스트린젠트 355ml</p>
+						</a>
+					</div>
+					<button class="shop-wish">찜하기</button>
+					<p class="pl-price">
+						<span class="pl-product-tx">
+							<span class="pl-product-price">15,000</span>원 
+						</span>
+						<span class="pl-product-sale">
+							<span class="pl-product-price">12,000</span>원 
+						</span>
+					</p>
+				</div>
+			</li>
+		</ul>
 		<!-- 페이징 처리 -->
-		
+		<div class="col-md-12 pageing">
+			
+		</div>
 		<!-- 페이징 처리 끝 -->
 	</div>
 </div>
