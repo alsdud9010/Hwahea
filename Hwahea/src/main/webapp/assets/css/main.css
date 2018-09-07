@@ -1,0 +1,9 @@
+/*∏ﬁ¿Œ*/
+.carousel-inner {
+	height:400px;
+}
+
+.carousel-inner .item img{
+	height:400px;
+	width:100%;
+}

@@ -18,55 +18,40 @@
 		<!-- Begin Content -->
 		<div class="col-md-12">
 			<!-- Slider -->
-			<div class="carousel slide carousel-v1 margin-bottom-40"
-				id="myCarousel-1">
-				<div class="carousel-inner">
-					<div class="item active">
-						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/beauty_trap.jpg">
-						<div class="carousel-caption">
-							<p>화해 앱들고 전국 뷰티매장으로 떠나요! ♥</p>
-						</div>
-					</div>
-					<div class="item">
-						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/lala.jpg">
-						<div class="carousel-caption">
-							<p>화해와 랄라블라가 함께하는 FRIST BIG SALE!!</p>
-						</div>
-					</div>
-					<div class="item">
-						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/mask.jpg">
-						<div class="carousel-caption">
-							<p>실키 마스크 구매 시 로즈 골드 마스크팩 증정!</p>
-						</div>
-					</div>
-					<div class="item">
-						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/clio_event.jpg">
-						<div class="carousel-caption">
-							<p>클럽 클리오 최대 40%!</p>
-						</div>
-					</div>
-					<div class="item">
-						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/shop_sasim.jpg">
-						<div class="carousel-caption">
-							<p>사심 쏙~ 뺀! 똑똑한 추천 화해 쇼핑템</p>
-						</div>
-					</div>
-				</div>
-				<div class="carousel-arrow">
-					<a data-slide="prev" href="#myCarousel-1"
-						class="left carousel-control"> <i class="fa fa-angle-left"></i>
-					</a> <a data-slide="next" href="#myCarousel-1"
-						class="right carousel-control"> <i class="fa fa-angle-right"></i>
-					</a>
-				</div>
-			</div>
+<div class="carousel slide carousel-v1 margin-bottom-40" id="myCarousel-1">
+	<div class="carousel-inner">
+		<div class="item active">
+			<img alt=""
+				src="${pageContext.request.contextPath}/assets/img/sliders/10.jpg">
+		</div>
+		<div class="item">
+			<img alt=""
+				src="${pageContext.request.contextPath}/assets/img/sliders/4.jpg">
+		</div>
+		<div class="item">
+			<img alt=""
+				src="${pageContext.request.contextPath}/assets/img/sliders/11.jpg">
+		</div>
+	</div>
+	<div class="carousel-arrow">
+		<a data-slide="prev" href="#myCarousel-1"
+			class="left carousel-control"> <i class="fa fa-angle-left"></i>
+		</a> <a data-slide="next" href="#myCarousel-1"
+			class="right carousel-control"> <i class="fa fa-angle-right"></i>
+		</a>
+	</div>
+</div>
 			<!-- End Slider -->
 			<!-- 화해유저 추천템 시작 -->
+			<div class="main_cate_wrap">
+			<ul class="main_cate_list">
+				<li class="first">
+					<a href="javascript:;" class="sub_menu mDispCatNo">스킨케어</a>
+				</li>
+				<li><a href="javascript:;" class="sub_menu mDispCatNo">스킨케어</a></li>
+			</ul>
+	</div>
+	<div class="row magazine-page">
 			<div class="shopping-label">
 				<h3>
 					<span>#</span> 화해유저 추천템

@@ -52,6 +52,74 @@
 
 /*타이틀 부분 끝*/
 
+/*슬라이더 시작*/
+.carousel-inner {
+	height:400px;
+}
+
+.carousel-inner .item img{
+	height:400px;
+	width:100%;
+}
+
+.carousel-v1 .carousel-arrow a i{
+	background:none;
+	opacity:0.6;
+	color:rgba(51, 51, 51, .5);
+}
+
+.carousel-arrow{
+	
+}
+
+.main_cate_wrap{
+	position: absolute;
+    top: 1px;
+    left: 55%;
+    height: 400px;
+    margin-left: -510px;
+    background: rgba(51, 51, 51, .5);
+    z-index: 2;
+}
+
+.main_cate_list{
+	width: 170px;
+	list-style:none;
+	padding-left:20px;
+}
+
+.first{
+	margin-top: 15px;
+}
+
+.main_cate_list{
+	list-style:none;
+	padding:0;
+}
+
+.main_cate_list li{
+    margin-bottom:5px;
+} 
+
+.main_cate_list li a{
+	display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    padding-left:20px;
+} 
+
+
+.main_cate_list li a:hover{
+	position:relative;
+	z-index:1;
+	background:#2f3030;
+	text-decoration:none;
+} 
+/*슬라이더 끝*/
+
 .shopping-label{
 	padding-top:15px;
 	margin-bottom:8px;

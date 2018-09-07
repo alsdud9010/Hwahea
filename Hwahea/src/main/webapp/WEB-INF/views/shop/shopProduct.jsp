@@ -55,12 +55,12 @@
 		<ul class="col-md-12 shopList-product-list">
 			<li class="pl-flag">
 				<div class="pl-info">
-					<a href="javascript:;" class="pl-thumb productsList">
+					<a href="${pageContext.request.contextPath}/shop/shopProductView.do" class="pl-thumb productsList">
 						<img src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg" 
 						alt="메이케이티드 위치하젤 아스트린젠트 355ml" onerror="common.errorImg(this);">
 					</a>
 					<div class="pl-name">
-						<a href="javascript:;" class="goodsList">
+						<a href="${pageContext.request.contextPath}/shop/shopProductView.do" class="goodsList">
 							<span class="pl-brand">세이어스</span>
 							<p class="pl-product-name">메이케이티드 위치하젤 아스트린젠트 355ml</p>
 						</a>
