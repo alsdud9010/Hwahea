@@ -131,10 +131,10 @@
 		          </ul>
 	          </div>
 	          <!-- 랭킹 메뉴 끝 -->
-	          
-	          
-	          
-	          
+
+
+
+
 	      <!-- 랭킹 메뉴 시작 -->
 	       <div class="r_left col-md-3">
 	       		<div class="accordion_banner">
@@ -163,53 +163,48 @@
 					<div class="accordion_sub">
 						<ul class="r_left_menu_1">
 							<li class="accor_content"> 
-							<li>스킨/토너</li>
-							<li>로션/에멀젼</li>
-							<li>에센스/앰플 새럼</li>
-							<li>페이스오일</li>
-							<li>크림/젤</li>
-							<li>아이케어</li>
-							<li>미스트</li>
+							<li>클렌징 폼</li>
+							<li>클렌징 워터</li>
+							<li>클렌징 젤</li>
+							<li>클렌징 오일</li>
+							<li>클렌징 로션/크림</li>
+							<li>클렌징 비누</li>
+							<li>클렌징 티슈</li>
+							<li>립/아이 리무버</li>
+							<li>스크럽/필링</li>
 					      </ul>
 					</div>
-					<div class="r_left_menu accordion_title">
+					<div class="r_left_menu accordion_title"> 
 						<ul>
-				          	<li class="accor_title"><div>피부타입&amp;고민별</div></li>
+							<li class="accor_title"><div>마스크/팩</div></li>
 						</ul>
 					</div>
 					<div class="accordion_sub">
 						<ul class="r_left_menu_1">
-							<li class="accor_content">
-								<ul>
-								<li>스킨케어</li>
-					          	<li>복합성</li>
-					          	<li>건성</li>
-					          	<li>지성</li>
-					          	<li>지성</li>
-					          	<li>중성</li>
-					          	<li>민감성</li>
-					          	<li>여드름</li>
-					          	<li>아토피</li>
-					          	</ul>
-							</li>
-						</ul>
+							<li class="accor_content"> 
+								<li>시트마스크</li>
+					          	<li>부분마스크/팩</li>
+					          	<li>워시오프 팩</li>
+					          	<li>필오프 팩</li>
+					          	<li>슬리핑팩</li>
+					      </ul>
 					</div>
 				</div>
 			</div>
 			<!--랭킹 메뉴 끝-->
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-			<div class="col-md-9 ranking-list">
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="col-md-9 ranking-list">
 	          
 	          <div class="col-md-9">
 	          	<div class="r_second_title">

@@ -21,4 +21,9 @@ $(document).ready(function(){
         }
     });
 	
+	$('#example .dropdown-menu li > a').bind('click', function (e) {
+	    var html = $(this).html();
+	    $('#example button.dropdown-toggle').html(html + ' <span class="caret"></span>');
+	});
+
 });
