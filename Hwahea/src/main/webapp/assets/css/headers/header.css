@@ -1,0 +1,57 @@
+/*Çì´õ*/
+.header-v4 .navbar-header{
+	margin:0;
+}
+.header-box{
+	margin:0 0 30px 0;
+}
+.navbar-brand {
+	padding:0;
+}
+.navbar-brand img#logo-header{
+	width:150px;
+	height:80px;
+}
+
+.header-v4 .topbar-v1 .top-v1-data li:first-child, .header-v4 .topbar-v1 .top-v1-data li{
+	border:0;
+	background-image:url('/Hwahea/assets/img/bar.png');
+	background-repeat:no-repeat;
+	background-position:0 50%;
+}
+
+.header-v4 .navbar-default .navbar-nav li a.dropdown-title{
+	line-height:27px;
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+	width:140px;
+}
+
+.container .navbar-header{
+	float: left;
+    position: relative;
+    left: 44%;
+}
+
+.header-v4 .navbar-nav{
+	float: left;
+    position: relative;
+}
+
+.header-v4 .navbar .nav li i.search{
+	margin:5px 0 0 25px;
+}
+
+span.logo-text{
+	font-size:13px;
+	color:#aaa;
+	margin-bottom:0;
+	margin-left:20px;
+	font-style:italic;
+}
+
+.dropdown-menu{
+}
+

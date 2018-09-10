@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/loginmodal.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/headers/header.css">
 <script>
 $(document).ready(function(){
     $("#myBtn").click(function(event){
@@ -17,26 +18,26 @@ $(document).ready(function(){
 			<div class="row">
 				<div class="col-md-6">
 					<ul class="list-inline top-v1-contacts">
-						<li><i class="fa fa-envelope"></i> Email : <a
-							href="mailto:hwahea@hwahea.com">hwahea@hwahea.com</a></li>
 						<li><i class="fa fa-phone"></i> 고객센터 : 1577 - 1577</li>
 					</ul>
 				</div>
 				<div class="col-md-6">
 					<ul class="list-inline top-v1-data">
-						<li><a href="#"> <i class="fa fa-home"> 홈</i>
-						</a></li>
 						<c:if test="${empty user_id}">
+							</li>
 							<li><a href="#" id="myBtn"> <i class="fa fa-user"> 로그인</i>
 							</a></li>
 						</c:if>
 						<c:if test="${!empty user_id}">
+							<li><i style="font-style:normal;">[등급] 홍길동 님</i>
 							<li><a href="#"> <i class="fa fa-user"> 로그아웃</i>
 							</a></li>
 						</c:if>
 						<li><a href="${pageContext.request.contextPath}/signin/service_agree.do"> <i class="fa fa-heart"> 회원가입</i>
 						</a></li>
-						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do?bc=0"> <i class="fa fa-inbox"> 마이 페이지</i>
+						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do?bc=0"> <i class="fa fa-inbox"> 마이페이지</i>
+						</a></li>
+						<li><a href="${pageContext.request.contextPath}/notice/noticeList.do"> <i class="fa fa-bullhorn"> 공지사항</i>
 						</a></li>
 					</ul>
 				</div>
@@ -50,12 +51,12 @@ $(document).ready(function(){
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<div class="row">
-					<div class="col-md-2">
+					<div class="col-md-4 header-box">
 						<a class="navbar-brand"
 							href="${pageContext.request.contextPath}/main/main.do"> <img
 							id="logo-header"
-							src="${pageContext.request.contextPath}/assets/img/logo1-default.png"
-							alt="Logo">
+							src="${pageContext.request.contextPath}/assets/img/logo2.png"
+							alt="Logo"><!--<span class="logo-text">&quot;화장품을 해석하다&quot;</span>-->
 						</a>
 					</div>
 				</div>
@@ -76,7 +77,7 @@ $(document).ready(function(){
 					<!-- 랭킹 -->
 					<li class="dropdown"><a href="#"
 						onclick="location.href='${pageContext.request.contextPath}/ranking/ranking_main.do'"
-						class="dropdown-toggle" data-toggle="dropdown">랭킹</a>
+						class="dropdown-toggle dropdown-title" data-toggle="dropdown">랭킹</a>
 						<ul class="dropdown-menu">
 							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/ranking/r_category.do">카테고리별</a>
 								<ul class="dropdown-menu">
@@ -428,7 +429,7 @@ $(document).ready(function(){
 					<!-- 쇼핑 -->
 					<li class="dropdown"><a href="#"
 						onclick="location.href='${pageContext.request.contextPath}/shop/shopMain.do'"
-						class="dropdown-toggle" data-toggle="dropdown">쇼핑</a>
+						class="dropdown-toggle dropdown-title" data-toggle="dropdown">쇼핑</a>
 						<ul class="dropdown-menu">
 							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do">스킨케어</a>
 								<ul class="dropdown-menu">
@@ -522,7 +523,7 @@ $(document).ready(function(){
 					<!-- 화플 -->
 					<li class="dropdown"><a href="#"
 						onclick="location.href='${pageContext.request.contextPath}/plus/plusMain.do'"
-						class="dropdown-toggle" data-toggle="dropdown"> 화플</a>
+						class="dropdown-toggle dropdown-title" data-toggle="dropdown"> 화플</a>
 						<ul class="dropdown-menu">
 							<li><a href="${pageContext.request.contextPath}/plus/plusMain.do">화해플러스</a></li>
 							<li><a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a></li>
@@ -533,54 +534,20 @@ $(document).ready(function(){
 						</ul></li>
 					<!-- 화플 끝 -->
 					<!-- 이벤트 -->
-					<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/event/eventMain.do'" class="dropdown-toggle"
-						data-toggle="dropdown"> 이벤트</a></li>
+					<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/event/eventMain.do'" 
+					class="dropdown-toggle dropdown-title" data-toggle="dropdown"> 이벤트</a></li>
 					<!-- 이벤트 끝 -->
 					<!-- 어워드 --> 
 					<li class="dropdown"><a href="javascript:void(0);"
-						class="dropdown-toggle" data-toggle="dropdown"> 어워드</a>
+						class="dropdown-toggle dropdown-title" data-toggle="dropdown"> 어워드</a>
 						<ul class="dropdown-menu">
-							<li class="dropdown-submenu"><a href="javascript:void(0);">2018</a>
-								<ul class="dropdown-menu">
-									<li><a href="feature_header_default.html">상반기 베스트</a></li>
-								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">2017</a>
-								<ul class="dropdown-menu">
-									<li><a href="feature_footer_default.html#footer-default">화해
-											뷰티 어워드</a></li>
-									<li><a href="feature_footer_v1.html#footer-v1">하반기 베스트
-											신제품</a></li>
-									<li><a href="feature_footer_v2.html#footer-v2">베스트 신제품</a>
-									</li>
-								</ul></li>
-							<li class="dropdown-submenu"><a href="feature_gallery.html">2016</a>
-								<ul class="dropdown-menu">
-									<li><a href="feature_animations.html">화해 뷰티 어워드</a></li>
-									<li><a href="feature_parallax_counters.html">상반기 베스트
-											신제품</a></li>
-									<li><a href="feature_parallax_blocks.html">상반기 화해 뷰티
-											어워드</a></li>
-								</ul></li>
-							<li class="dropdown-submenu"><a href="feature_gallery.html">2015</a>
-								<ul class="dropdown-menu">
-									<li><a href="feature_animations.html">화해 뷰티 어워드</a></li>
-								</ul></li>
+							<li><a href="javascript:void(0);">2018</a>
+							<li><a href="javascript:void(0);">2017</a>
+							<li><a href="javascript:void(0);">2016</a>
+							<li><a href="javascript:void(0);">2015</a>
 						</ul></li>
 					<!-- 어워드 끝 -->
 					<!-- 성분사전 시작 -->
-					<li><a href="#"
-						onclick="location.href='${pageContext.request.contextPath}/dictionary/dictionary.do'"
-						class="dropdown-toggle" data-toggle="dropdown">성분사전</a></li>
-					<!-- 성분사전 끝 -->
-					<!-- 공지사항 -->
-					<li class="dropdown"><a href="javascript:void(0);" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList.do'"
-						class="dropdown-toggle" data-toggle="dropdown"> 공지사항</a>
-						<ul class="dropdown-menu">
-							<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList.do'">공지사항</a></li>
-							<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/notice/frequent_question.do'">FAQ</a></li>
-							<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/notice/my_question.do'">1:1 문의</a></li>
-						</ul></li>
-					<!-- 공지사항 끝 -->
 					<!-- Misc Pages -->
 					<li class="dropdown">
 						<ul class="dropdown-menu pull-right">
@@ -604,7 +571,12 @@ $(document).ready(function(){
 				</ul>
 				<!-- Search Block -->
 				<ul class="nav navbar-nav navbar-border-bottom navbar-right">
-					<li><i class="search fa fa-search search-btn"></i>
+					<li><i class="search fa fa-book search-btn"
+							onclick="location.href='${pageContext.request.contextPath}/dictionary/dictionary.do'">
+						 성분사전
+						</i></a>
+						</li>
+					<li><i class="search fa fa-search search-btn"> 검색</i>
 						<div class="search-open">
 							<div class="input-group animated fadeInDown">
 								<input type="text" class="form-control" placeholder="Search">

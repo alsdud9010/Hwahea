@@ -18,9 +18,8 @@
 /*Top Bar v1 (login, search etc.)
 ------------------------------------*/
 .header-v4 .topbar-v1 {
-	background: #fdfdfd;
+	background: #fff;
 	border-top: solid 1px #f0f0f0;
-	border-bottom: solid 1px #f0f0f0;
 }
 
 /*Top Contacts*/
@@ -389,15 +388,15 @@
 
 	.header-v4 .navbar-collapse {
 		border-top: 1px solid #eee;
-		border-bottom: 1px solid #eee;
+		border-bottom: 2px solid #717171;
 	}
 
 	/*Navbar Nav*/
-	.header-v4 .navbar-default .navbar-nav > li {
+	/* .header-v4 .navbar-default .navbar-nav > li {
 		margin-left: -1px;
 		border-left: 1px solid #eee;
 		border-right: 1px solid #eee;
-	}
+	} */
 
 	.header-v4 .navbar-default .navbar-nav > li.no-border,
 	.header-v4 .navbar-default .navbar-nav > li.no-border:first-child {
@@ -455,8 +454,7 @@
 		color: #687074; 
 		font-size: 13px; 
 		font-weight: 400; 
-		padding: 6px 15px; 
-		border-bottom: solid 1px #eee;
+		padding: 9px 15px; 
 	}
 
 	.header-v4 .dropdown-menu .active > a,
@@ -597,7 +595,7 @@
 	display: none;
 	padding: 14px; 
 	position: absolute;
-	background: #fcfcfc; 
+	background: #fff; 
 	border-top: solid 1px #eee;
 	box-shadow: 0 1px 3px #ddd; 
 }
@@ -657,7 +655,7 @@
 
 /*Mega Menu
 ------------------------------------*/
-.header-v4 .mega-menu .nav,
+/*.header-v4 .mega-menu .nav,*/
 .header-v4 .mega-menu .dropup,
 .header-v4 .mega-menu .dropdown,
 .header-v4 .mega-menu .collapse {
