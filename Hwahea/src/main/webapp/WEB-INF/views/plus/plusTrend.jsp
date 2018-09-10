@@ -474,7 +474,7 @@
 						<div class="pmodal_rpro">
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
 							<span class="pmodal_wrere">blue</span>
-							<span class="plusGrade"><input type="button" value="VIP"></span>
+							<span class="grade_vip"><input type="button" value="VIP"></span>
 							<span class="pmodal_drere">2018-08-28</span>
 						</div>
 						<div class="pmodal_trere">전 무쌍같은 속쌍이라 하면 다 들어가서 살에 묻혀요ㅠ</div>
@@ -492,11 +492,11 @@
 					<div class="pmodal_rere">
 						<div class="pmodal_rpro">
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-							<span class="pmodal_wrere">blue</span>
-							<span class="plusGrade"><input type="button" value="VIP"></span>
+							<span class="pmodal_wrere">black</span>
+							<span class="grade_vvip"><input type="button" value="VVIP"></span>
 							<span class="pmodal_drere">1시간 전</span>
 						</div>
-						<div class="pmodal_trere">ㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ</div>
+						<div class="pmodal_trere">2</div>
 						<div class="pmodal_brere">
 							<a class="pmodal_same" href="#">댓글달기</a>
 							<span>
@@ -513,10 +513,10 @@
 							<span class="prere_depth"><img src="${pageContext.request.contextPath}/assets/img/shop/answer-point.png"></span>
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
 							<span class="pmodal_wrere">white</span>
-							<span class="prere_grade"><input type="button" value="Family"></span>
+							<span class="grade_family"><input type="button" value="Family"></span>
 							<span class="prere_time">1시간 전</span>
 						</div>
-						<div class="prere_text">ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ</div>
+						<div class="prere_text">3</div>
 						<div class="pmodal_brere">
 							<a class="pmodal_same" href="#">댓글달기</a>
 							<span>
@@ -532,10 +532,10 @@
 							<span class="prere_depth"><img src="${pageContext.request.contextPath}/assets/img/shop/answer-point.png"></span>
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
 							<span class="pmodal_wrere">red</span>
-							<span class="prere_grade2"><input type="button" value="Welcome"></span>
+							<span class="grade_welcome"><input type="button" value="Welcome"></span>
 							<span class="prere_time">1시간 전</span>
 						</div>
-						<div class="prere_text"><span class="rere_writer">white</span>ㅠ.ㅠ</div>
+						<div class="prere_text"><span class="rere_writer">white</span>4</div>
 						<div class="pmodal_brere">
 							<a class="pmodal_diff" href="#">댓글달기</a>
 							<div class="margin-bottom-20"><hr class="hr-md"> </div>

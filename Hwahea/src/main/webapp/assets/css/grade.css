@@ -1,0 +1,61 @@
+/*등급 표시*/
+
+/*welcome*/
+.grade_welcome input[type="button"]{
+	font-size:12px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+	width:61px;
+	height:20px;
+	background-color:#3881ff;
+}
+
+/*family*/
+.grade_family input[type="button"]{
+	font-size:12px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+	width:46px;
+	height:20px;
+	background-color:#00c63c;
+}
+
+/*vip*/
+.grade_vip input[type="button"]{
+	font-size:12px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+	width:40px;
+	height:20px;
+	background-color:#f0ad4e;
+}
+
+/*vvip*/
+.grade_vvip input[type="button"]{
+	font-size:12px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+	width:43px;
+	height:20px;
+	background-color:#f20d29;
+}

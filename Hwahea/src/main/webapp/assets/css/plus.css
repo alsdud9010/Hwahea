@@ -569,41 +569,11 @@ li{
 	height:15px;
 }
 
-.prere_grade input[type="button"]{
-	width:46px;
-	height:20px;
-	margin-top:5px;
-	border-radius:10px !important;
-	text-decoration:center;
-	font-size:12px;
-	background-color:#00c63c;
-	color:#fff;
-	border:none;
-	outline:none;
-	cursor:default;
-}
-
-.prere_time{
-	font-size:11px; color:#999da0; width:30px;
-}
+.prere_time{font-size:11px; color:#999da0; width:30px;}
 
 .prere_text{font-size:14px; margin:12px 0 15px 80px; text-align:left;}
 
 .rere_writer{font-size:14px; font-weight:bold; color:#ff7280; margin:0 13px 0 10px;}
-
-.prere_grade2 input[type="button"]{
-	width:61px;
-	height:20px;
-	margin-top:5px;
-	border-radius:10px !important;
-	text-decoration:center;
-	font-size:12px;
-	background-color:#3881ff;
-	color:#fff;
-	border:none;
-	outline:none;
-	cursor:default;
-}
 
 /*==================화해플러스=======================*/
 
