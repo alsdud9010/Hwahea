@@ -30,7 +30,7 @@ $(document).ready(function(){
 						</c:if>
 						<c:if test="${!empty user_id}">
 							<li><i style="font-style:normal;">[등급] 회원 님</i>
-							<li><a href="${pageContext.request.contextPath}/member/logout.do"> <i class="fa fa-user"> 로그아웃</i>
+							<li><a href="${pageContext.request.contextPath}/main/logout.do"> <i class="fa fa-user"> 로그아웃</i>
 							</a></li>
 						</c:if>
 						<li><a href="${pageContext.request.contextPath}/signin/service_agree.do"> <i class="fa fa-heart"> 회원가입</i>
@@ -606,18 +606,18 @@ $(document).ready(function(){
           <h4 class="h4-m"><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="body-m">
-          <form:form role="form" commandName="command" action="singup.do">
+          <form role="form" action="singup.do">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
-              <form:input path="m_id" class="form-control" id="usrname" placeholder="아이디를 입력해주세요."/>
+              <input type="text" name="m_id" class="form-control" id="usrname" placeholder="아이디를 입력해주세요."/>
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> 비밀번호</label>
-              <form:password path="m_passwd" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요."/>
+              <input type="password" name="m_passwd" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요."/>
             </div>
               <button type="button" class="btn-m1 btn-success1 btn-block-m1" onclick = "location.href ='${pageContext.request.contextPath}/signin/service_agree.do'">회원가입</button>
               <button type="submit" class="btn-m2 btn-success2 btn-block-m2">로그인</button>
-          </form:form>
+          </form>
         </div>
         <div class="footer-m">
          <a href="#" class="a-coler">아이디/비밀번호 찾기</a>
