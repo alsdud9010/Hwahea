@@ -615,10 +615,8 @@ $(document).ready(function(){
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> 비밀번호</label>
               <form:password path="m_passwd" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요."/>
             </div>
-
               <button type="button" class="btn-m1 btn-success1 btn-block-m1" onclick = "location.href ='${pageContext.request.contextPath}/signin/service_agree.do'">회원가입</button>
               <button type="submit" class="btn-m2 btn-success2 btn-block-m2">로그인</button>
-
           </form:form>
         </div>
         <div class="footer-m">

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/plugin/jquery.validate.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js" ></script>
 <style type="text/css">
 input.error, textarea.error { /* INPUT 박스 */
@@ -13,27 +12,18 @@ p.error { /* 에러메시지 */
 	font-weight: normal;
 	text-align: right;
 }
+.agreebutton{
+	width:100%;
+	font-weight:bold;
+	font-size:15px;
+	padding:10px 0px 10px 0px;
+	background:#eeeeee;
+	color:#555555;
+	cursor:pointer;
+	border-radius:4px !important;
+	border:1px solid rgba(0,0,0,0.08);
+}
 </style>
-<script type="text/javascript">
-    $(function() {
-        // 유효성 검사 지원
-        $("#joinForm").validate({
-            rules: {
-                join_user_agree: { required:true },
-                join_priv_agree: { required:true }
-            },
-            messages: {
-                join_user_agree: { required:'회원가입 약관에 동의하셔야 회원가입 하실 수 있습니다.' },
-                join_priv_agree: { required:'개인정보 처리방침에 동의하셔야 회원가입 하실 수 있습니다.' }
-            },
-            errorPlacement: function(error, element) {
-                element.parent("label").parent(".checkbox").parent("div").after(error);
-                error.addClass("col-xs-12");
-            },
-            errorClass: "error",
-            errorElement: "p"
-        });
-</script>
 <div class="container content">
 	<div class="row">
 		<div class="col-sm-offset-2 col-sm-8">
@@ -433,15 +423,33 @@ p.error { /* 에러메시지 */
 							</div>
 						</div>
 					</div>
-					<div class="panel-footer">
-						<div style="overflow: hidden">
-							<div class="col-sm-offset-3 col-sm-6">
-								<button class="btn btn-lg btn-primary btn-block" type="submit" onclick = "location.href ='${pageContext.request.contextPath}/signin/m_signin.do'">회원가입</button>
-                            </div>
-						</div>
+					<div style="overflow: hidden">
+						<button class="panel-footer col-sm-offset-3 col-sm-6 agreebutton" 
+						style="margin-left: 0em;">회원가입</button>
 					</div>
 				</div>
 			</form>	
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+    $(function() {
+        // 유효성 검사 지원
+        $("#joinForm").validate({
+            rules: {
+                join_user_agree: { required:true },
+                join_priv_agree: { required:true }
+            },
+            messages: {
+                join_user_agree: { required:'회원가입 약관에 동의하셔야 회원가입 하실 수 있습니다.' },
+                join_priv_agree: { required:'개인정보 처리방침에 동의하셔야 회원가입 하실 수 있습니다.' }
+            },
+            errorPlacement: function(error, element) {
+                element.parent("label").parent(".checkbox").parent("div").after(error);
+                error.addClass("col-xs-12");
+            },
+            errorClass: "error",
+            errorElement: "p"
+        });
+    });
+</script>

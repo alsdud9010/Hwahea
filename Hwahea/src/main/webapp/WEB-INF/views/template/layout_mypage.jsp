@@ -35,7 +35,6 @@
   <link rel="icon" href="${pageContext.request.contextPath}/assets/css/footers/footer-v1.css">
 <!-- JS Global Compulsory -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script type="text/javascript"

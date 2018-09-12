@@ -24,124 +24,40 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@Resource
+	
 	private CipherTemplate cipherAES;
-	
-	//회원가입 폼 호출
-	@RequestMapping(value="/signin/service_agree.do")
-		public String service_agree() {
-		return "service_agree";
-	}
-	//회원가입 폼 호출
-	@RequestMapping(value="/signin/m_signin.do",
-	        method=RequestMethod.GET)
-		public String m_signin() {
-		return "m_signin";
-	}
-	//회원수정 폼 호출
-	@RequestMapping(value="/mypage/my_info.do",
-	        method=RequestMethod.GET)
-		public String my_info() {
-		return "my_info";
-	}
-	//회원포인트  호출
-	@RequestMapping(value="/mypage/my_point.do",
-	        method=RequestMethod.GET)
-		public String my_point() {
-		return "my_point";
-	}
-	//내리뷰/스트랩(내리뷰)  호출
-	@RequestMapping(value="/mypage/my_reviewmyreview.do",
-	        method=RequestMethod.GET)
-		public String my_reviewmyreview() {
-		return "my_reviewmyreview";
-	}
-	//내리뷰/스트랩(스크랩)  호출
-	@RequestMapping(value="/mypage/my_reviewscrap.do",
-	        method=RequestMethod.GET)
-		public String my_reviewscrap() {
-		return "my_reviewscrap";
-	}
-	//내리뷰/스트랩(타유저리뷰)  호출
-	@RequestMapping(value="/mypage/my_reviewreview.do",
-	        method=RequestMethod.GET)
-		public String my_reviewreview() {
-		return "my_reviewreview";
-	}
-	//즐겨찾기(브랜드)  호출
-	@RequestMapping(value="/mypage/my_favoritebrand.do",
-	        method=RequestMethod.GET)
-		public String my_favoritebrand() {
-		return "my_favoritebrand";
-	}
-	//즐겨찾기(제품)  호출
-	@RequestMapping(value="/mypage/my_favoriteproduct.do",
-	        method=RequestMethod.GET)
-		public String my_favoriteproduct() {
-		return "my_favoriteproduct";
-	}
-	//즐겨찾기(유저)  호출
-	@RequestMapping(value="/mypage/my_favoriteuser.do",
-	        method=RequestMethod.GET)
-		public String my_favoriteuser() {
-		return "my_favoriteuser";
-	}
-	//즐겨찾기(성분)  호출
-	@RequestMapping(value="/mypage/my_favoriteingredient.do",
-	        method=RequestMethod.GET)
-		public String my_favoriteingredient() {
-		return "my_favoriteingredient";
-	}
-	//화해쇼핑(주문)  호출
-	@RequestMapping(value="/mypage/my_cartorder.do",
-	        method=RequestMethod.GET)
-		public String my_cartorder() {
-		return "my_cartorder";
-	}
-	//화해쇼핑(찜)  호출
-	@RequestMapping(value="/mypage/my_cartzzim.do",
-	        method=RequestMethod.GET)
-		public String my_cartzzim() {
-		return "my_cartzzim";
-	}
-	//이벤트(참여)  호출
-	@RequestMapping(value="/mypage/my_eventdoing.do",
-	        method=RequestMethod.GET)
-		public String my_eventdoing() {
-		return "my_eventdoing";
-	}
-	//이벤트(참여)  호출
-	@RequestMapping(value="/mypage/my_eventnotyet.do",
-	        method=RequestMethod.GET)
-		public String my_eventnotyet() {
-		return "my_eventnotyet";
-	}
-	//문의하기  호출
-	@RequestMapping(value="/mypage/my_QnA.do",
-	        method=RequestMethod.GET)
-		public String my_QnA() {
-		return "my_QnA";
-	}
-
-	
+	//자바빈 초기화
 	@ModelAttribute("command")
 	public MemberCommand initCommand() {
 		return new MemberCommand();
 	}
-	//회원 가입 데이터 전송
+	//약관동의 폼 호출
+	@RequestMapping(value="/signin/service_agree.do")
+		public String service_agree() {
+		return "service_agree";
+	}
+	//회원등록 폼 호출
+	@RequestMapping(value="/signin/m_signin.do",
+			        method=RequestMethod.GET)
+	public String m_signin() {
+		return "m_signin";
+	}
+	//*******************************************************회원 가입 데이터 전송
 	@RequestMapping(value="/signin/m_signin.do",
 	        method=RequestMethod.POST)
-	public String submit(@ModelAttribute("command")
-	                     MemberCommand memberCommand,
-	                     BindingResult result) {
-		
+	public String m_signin(@ModelAttribute("command")
+						 MemberCommand memberCommand,
+	                     @Valid BindingResult result)throws Exception {
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<memberCommand>> : " + memberCommand);
 		}
 		
-		/*if(result.hasErrors()) {
+		if(result.hasErrors()) {
 			return m_signin();
-		}*/
+		}
+		
+		
 		//CipherTemplate을 이용한 암호화
 		memberCommand.setM_passwd(
 				cipherAES.encrypt(
@@ -151,70 +67,138 @@ public class MemberController {
 		
 		return "redirect:/main/main.do";
 	}
-	//====================회원로그인=================//
-	//로그인 폼
-	@RequestMapping(value="/member/login.do",
-			        method=RequestMethod.GET)
-	public String formLogin() {
-		return "memberLogin";
+	//회원수정 폼 호출
+	@RequestMapping(value="/mypage/my_info.do",
+	        method=RequestMethod.GET)
+		public String my_info(String bc, HttpSession session,Model model) {
+		
+		String m_id = (String)session.getAttribute("m_id");
+		MemberCommand member = memberService.selectMember(m_id);
+		model.addAttribute("command",member);
+		
+		//현재 메뉴바 처리
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		
+		return "my_info";
 	}
-	//로그인 폼에 전송된 데이터 처리
-	@RequestMapping(value="/member/login.do",
-	        method=RequestMethod.POST)
-	public String submitLogin(@ModelAttribute("command")
-	                          @Valid MemberCommand memberCommand,
-	                          BindingResult result,
-	                          HttpSession session) {
-		
-		if(log.isDebugEnabled()) {
-			log.debug("<<memberCommand>> : " + memberCommand);
+	//회원포인트  호출
+	@RequestMapping(value="/mypage/my_point.do",
+	        method=RequestMethod.GET)
+		public String my_point(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
 		}
-		
-		//id와 passwd 필드만 체크
-		if(result.hasFieldErrors("id") || 
-				result.hasFieldErrors("passwd")) {
-			return formLogin();
+		return "my_point";
+	}
+	//내리뷰/스트랩(내리뷰)  호출
+	@RequestMapping(value="/mypage/my_reviewmyreview.do",
+	        method=RequestMethod.GET)
+		public String my_reviewmyreview(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
 		}
-		
-		//로그인 체크(id,비밀번호 일치 여부 체크)
-		try {
-			MemberCommand member = 
-					memberService.selectMember(
-							memberCommand.getM_id());
-			boolean check = false;
-			
-			if(member!=null) {
-				//비밀번호 일치 여부 체크
-				check = member.isCheckedPasswd(
-						cipherAES.encrypt(
-								memberCommand.getM_passwd()));
-			}
-			if(check) {
-				//인증 성공, 로그인 처리
-				session.setAttribute("user_id", member.getM_id());
-				session.setAttribute("user_auth", member.getAuth());
-			
-				if(log.isDebugEnabled()) {
-					log.debug("<<인증 성공>>");
-					log.debug("<<user_id>> : " + member.getM_id());
-					log.debug("<<user_auth>> : " + member.getAuth());
-				}
-				
-				return "redirect:/main/main.do";
-			}else {
-				//인증실패
-				throw new Exception();
-			}
-		}catch(Exception e) {
-			//인증 실패로 폼 호출
-			result.reject("invalidIdOrPassword");
-			
-			if(log.isDebugEnabled()) {
-				log.debug("<<인증 실패>>");
-			}
-			
-			return formLogin();
+		return "my_reviewmyreview";
+	}
+	//내리뷰/스트랩(스크랩)  호출
+	@RequestMapping(value="/mypage/my_reviewscrap.do",
+	        method=RequestMethod.GET)
+		public String my_reviewscrap(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		return "my_reviewscrap";
+	}
+	//내리뷰/스트랩(타유저리뷰)  호출
+	@RequestMapping(value="/mypage/my_reviewreview.do",
+	        method=RequestMethod.GET)
+		public String my_reviewreview(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_reviewreview";
+	}
+	//즐겨찾기(브랜드)  호출
+	@RequestMapping(value="/mypage/my_favoritebrand.do",
+	        method=RequestMethod.GET)
+		public String my_favoritebrand(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_favoritebrand";
+	}
+	//즐겨찾기(제품)  호출
+	@RequestMapping(value="/mypage/my_favoriteproduct.do",
+	        method=RequestMethod.GET)
+		public String my_favoriteproduct(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_favoriteproduct";
+	}
+	//즐겨찾기(유저)  호출
+	@RequestMapping(value="/mypage/my_favoriteuser.do",
+	        method=RequestMethod.GET)
+		public String my_favoriteuser(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_favoriteuser";
+	}
+	//즐겨찾기(성분)  호출
+	@RequestMapping(value="/mypage/my_favoriteingredient.do",
+	        method=RequestMethod.GET)
+		public String my_favoriteingredient(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_favoriteingredient";
+	}
+	//화해쇼핑(주문)  호출
+	@RequestMapping(value="/mypage/my_cartorder.do",
+	        method=RequestMethod.GET)
+		public String my_cartorder(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_cartorder";
+	}
+	//화해쇼핑(찜)  호출
+	@RequestMapping(value="/mypage/my_cartzzim.do",
+	        method=RequestMethod.GET)
+		public String my_cartzzim(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_cartzzim";
+	}
+	//이벤트(참여)  호출
+	@RequestMapping(value="/mypage/my_eventdoing.do",
+	        method=RequestMethod.GET)
+		public String my_eventdoing(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_eventdoing";
+	}
+	//이벤트(참여)  호출
+	@RequestMapping(value="/mypage/my_eventnotyet.do",
+	        method=RequestMethod.GET)
+		public String my_eventnotyet(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_eventnotyet";
+	}
+	//문의하기  호출
+	@RequestMapping(value="/mypage/my_QnA.do",
+	        method=RequestMethod.GET)
+		public String my_QnA(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_QnA";
 	}
 	//====================회원로그아웃=================//
 	/*@RequestMapping("/member/logout.do")

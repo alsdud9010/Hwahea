@@ -1,0 +1,433 @@
+drop table member_detail CASCADE CONSTRAINTS;
+drop table member CASCADE CONSTRAINTS;
+drop table bookmark CASCADE CONSTRAINTS;
+drop table notice CASCADE CONSTRAINTS;
+drop table faq CASCADE CONSTRAINTS;
+drop table event_reply CASCADE CONSTRAINTS;
+drop table event CASCADE CONSTRAINTS;
+drop table onetoone CASCADE CONSTRAINTS;
+drop table category_detail CASCADE CONSTRAINTS;
+drop table category CASCADE CONSTRAINTS;
+drop table cosmetic CASCADE CONSTRAINTS;
+drop table ingredient CASCADE CONSTRAINTS;
+drop table review_reply CASCADE CONSTRAINTS;
+drop table review CASCADE CONSTRAINTS;
+drop table product CASCADE CONSTRAINTS;
+drop table product_board CASCADE CONSTRAINTS;
+drop table product_board_reply CASCADE CONSTRAINTS;
+drop table cart_detail CASCADE CONSTRAINTS;
+drop table cart CASCADE CONSTRAINTS;
+drop table order_detail CASCADE CONSTRAINTS;
+drop table product_order CASCADE CONSTRAINTS;
+drop table award CASCADE CONSTRAINTS;
+drop table brand CASCADE CONSTRAINTS;
+drop table plus_reply CASCADE CONSTRAINTS;
+drop table plus_board CASCADE CONSTRAINTS;
+drop table scrap CASCADE CONSTRAINTS;
+drop table wish CASCADE CONSTRAINTS;
+drop table event_request CASCADE CONSTRAINTS;
+drop table cosmetic_ask CASCADE CONSTRAINTS;
+drop table review_report CASCADE CONSTRAINTS;
+drop sequence notice_seq;
+drop sequence faq_seq;
+drop sequence event_seq;
+drop sequence event_reply_seq;
+drop sequence one_to_one_seq;
+drop sequence category_seq;
+drop sequence category_detail_seq;
+drop sequence brand_seq;
+drop sequence ingredient_seq;
+drop sequence review_seq;
+drop sequence review_reply_seq;
+drop sequence product_seq;
+drop sequence product_board_seq;
+drop sequence product_board_reply_seq;
+drop sequence cart_seq;
+drop sequence product_order_seq;
+drop sequence plus_board_seq;
+drop sequence plus_board_reply_seq;
+
+
+create table member(
+  m_id varchar2(12) not null,
+  m_auth number(1) default 1 not null,
+  constraint member_pk primary key (m_id)
+);
+
+create table member_detail(
+  m_id varchar2(12) not null,
+  m_passwd varchar2(64) not null,
+  m_name varchar2(30) not null,
+  m_profile blob,
+  m_nickname varchar2(30) not null,
+  m_email varchar2(50) not null,
+  m_gender number(1) not null,
+  m_havechild number(1) not null,
+  m_age number(4) not null,
+  m_skintype number(1) ,
+  m_atopy number(1),
+  m_pimple number(1),
+  m_susceptilbility number(1),
+  m_takename varchar2(30) ,
+  m_phone1 varchar2(4) not null,
+  m_phone2 varchar2(5) not null,
+  m_phone3 varchar2(5) not null,
+  m_zipphone1 varchar2(4),
+  m_zipphone2 varchar2(5),
+  m_zipphone3 varchar2(5),
+  m_zipcode varchar2(5) not null,
+  m_address1 varchar2(120) not null,
+  m_address2 varchar2(60),
+  m_point number(20) default 0 ,
+  m_reg_date date not null,
+  constraint member_detail_pk primary key(m_id),
+  constraint member_detail_fk foreign key (m_id) references member (m_id)
+);
+
+create table bookmark(
+  bookmark_kind number(1) not null,
+  bookmark_detail clob not null,
+  m_id varchar2(12) not null,
+  constraint bookmark_fk foreign key (m_id) references member (m_id)
+);
+
+create table notice(
+  notice_num number not null,
+  notice_title varchar2(150) not null,
+  notice_content clob not null,
+  notice_hit number not null,
+  notice_reg_date date not null,
+  notice_filename varchar2(100),
+  notice_id varchar2(12) not null,
+  constraint notice_pk primary key(notice_num),
+  constraint notice_fk foreign key (notice_id) references member(m_id)
+);
+create sequence notice_seq;
+
+create table faq(
+  faq_num number not null,
+  faq_title varchar2(30) not null,
+  faq_content clob not null,
+  faq_date date not null,
+  constraint faq_pk primary key(faq_num)
+);
+create sequence faq_seq;
+
+create table event(
+  event_num number not null,
+  event_name varchar2(20) not null,
+  event_status varchar2(40) not null,
+  event_image1 varchar2(30) not null,
+  event_image2 varchar2(30),
+  event_image3 varchar2(30),
+  event_hit number default 0 not null,
+  constraint event_pk primary key(event_num)
+);
+create sequence event_seq;
+
+create table event_reply(
+  ere_num number not null,
+  ere_content varchar2(900) not null,
+  ere_date date not null,
+  event_num number not null,
+  m_id varchar2(12) not null,
+  constraint event_reply_pk primary key(ere_num),
+  constraint event_reply_fk1 foreign key (event_num) references event(event_num),
+  constraint event_reply_fk2 foreign key(m_id) references member(m_id)
+);
+create sequence event_reply_seq;
+
+create table onetoone(
+  one_num number not null,
+  one_kind varchar2(100) not null,
+  one_content clob not null,
+  one_reg_date date not null,
+  one_email varchar2(50) not null,
+  m_id varchar2(12) not null,
+  constraint onetoone_pk primary key(one_num),
+  constraint onetoone_fk foreign key(m_id) references member(m_id)
+);
+create sequence one_to_one_seq;
+
+create table category(
+  category_num number not null,
+  category_name varchar2(80) not null,
+  constraint category_pk primary key(category_num)
+);
+create sequence category_seq;
+
+create table category_detail(
+  category_detail_num number not null,
+  category_detail_Kname varchar2(120) not null,
+  category_detail_Ename varchar2(120) not null,
+  head_category number not null,
+  constraint category_datail_pk primary key (category_detail_num),
+  constraint category_detail_fk foreign key(head_category) references category(category_num)
+);
+
+create sequence category_detail_seq;
+
+create table brand(
+  brand_num number not null,
+  brand_name varchar2(80) not null,
+  brand_reg_date date not null,
+  brand_image varchar2(50) not null,
+  constraint brand_pk primary key(brand_num)
+);
+create sequence brand_seq;
+
+create table cosmetic(
+  c_code varchar2(10) not null,
+  c_brand number not null,
+  c_name varchar2(50) not null,
+  c_photo varchar2(50) not null,
+  c_capacity number(10) not null,
+  c_price number(10) not null,
+  c_ingre varchar2(50) not null,
+  c_rate varchar2(12),
+  c_rank number(3) not null,
+  c_shopping number(1) not null,
+  c_reg_date date not null,
+  constraint cosmetic_pk primary key(c_code),
+  constraint consmetic_fk foreign key(c_brand) references brand(brand_num)
+);
+
+create table ingredient(
+  i_num number(10) not null,
+  i_KName varchar2(80) not null,
+  i_EName varchar2(30) not null,
+  i_prop varchar2(30) not null,
+  i_grade varchar2(3) not null,
+  i_oilly varchar2(3),
+  i_dry varchar2(3),
+  i_sensitive varchar2(3),
+  i_func varchar2(3) not null,
+  i_allergie varchar2(3),
+  constraint ingredient_pk primary key(i_num)
+);
+create sequence ingredient_seq;
+
+create table review(
+  re_num number(10) not null,
+  cosmetic varchar2(10) not null,
+  re_id varchar2(12) not null,
+  re_rate number not null,
+  re_good clob not null,
+  re_bad clob not null,
+  re_tip clob not null,
+  re_uploadfile1 blob,
+  re_uploadfile2 blob,
+  re_uploadfile3 blob,
+  re_filename varchar2(100),
+  re_report number default 0 not null,
+  re_like number default 0 not null,
+  re_ip varchar2(40) not null,
+  re_regdate date not null,
+  constraint reivew_pk primary key (re_num),				
+  constraint review_fk1 foreign key (re_id) references member(m_id),			
+  constraint review_fk2 foreign key (cosmetic) references cosmetic (c_code)				
+);
+create sequence review_seq;
+
+create table review_reply(
+  rere_num number(8) not null,
+  re_id varchar2(12) not null,
+  rere_ip varchar2(40) not null,
+  rere_content clob not null,
+  rere_regdate date not null,
+  rere_depth number not null,
+  rere_parentnum number not null,
+  re_num number(10) not null,
+  constraint reivew_reply_pk primary key (rere_num),			
+  constraint review_reply_fk1 foreign key (re_id) references member(m_id),				
+  constraint review_reply_fk2 foreign key (re_num) references review (re_num)			
+);
+
+create sequence review_reply_seq;
+
+create table product(
+  p_num number not null,
+  p_name varchar2(150) not null,
+  p_price number(15) not null,
+  p_capacity number(10) not null,
+  p_brand number not null,
+  p_photo1 varchar2(50) not null,
+  p_photo2 varchar2(50),
+  p_photo3 varchar2(50) not null,
+  p_reg_date date not null,
+  p_main_spec varchar2(100) not null,
+  p_expiry_date varchar2(100) not null,
+  p_how_to varchar2(500) not null,
+  p_manufacturer varchar2(150) not null,
+  p_made_in varchar2(50) not null,
+  p_main_ingredient varchar2(150) not null,
+  p_test_exist number(1) not null,
+  p_attention clob not null,
+  p_content clob not null,
+  constraint product_pk primary key(p_num),
+  constraint product_fk foreign key(p_brand) references brand(brand_num)
+);
+create sequence product_seq;
+
+create table product_board(
+  pb_num number not null,
+  pb_id varchar2(12) not null, 
+  pb_date date not null,
+  pb_kind varchar2(50) not null,
+  pb_content clob not null,
+  pb_lock number(1) not null,
+  constraint product_board_pk primary key(pb_num),
+  constraint product_board_fk foreign key(pb_id) references member(m_id)
+);
+create sequence product_board_seq;
+
+create table product_board_reply(
+  pbr_num number not null,
+  pbr_date date not null,
+  pbr_time timestamp not null,
+  pb_content clob not null,
+  pbr_id varchar2(12) not null,
+  pb_num number not null,
+  constraint product_board_reply_pk primary key(pbr_num),
+  constraint product_board_reply_fk1 foreign key(pbr_id) references member(m_id),
+  constraint product_board_reply_fk2 foreign key(pb_num) references product_board(pb_num)
+);
+create sequence product_board_reply_seq;
+
+
+create table cart(
+  cart_num number not null,
+  cart_id varchar2(12) not null,
+  quantity number(5) not null,
+  total_price number(15) not null,
+  constraint cart_pk primary key(cart_num),
+  constraint cart_fk foreign key(cart_id) references member(m_id)
+);
+create sequence cart_seq;
+
+create table cart_detail(
+  cart_num number,
+  cart_product number,
+  constraint cart_detail_fk1 foreign key(cart_num) references cart(cart_num),
+  constraint cart_detail_fk2 foreign key(cart_product) references product(p_num)
+);
+
+create table product_order(
+  order_num number not null,
+  order_id varchar2(12) not null,
+  order_date date not null,
+  quantity number(5) not null,
+  total_price number(15) not null,
+  buyer_name varchar2(30) not null,
+  buyer_phone1 number(4) not null,
+  buyer_phone2 number(5) not null,
+  buyer_phone3 number(5) not null,
+  buyer_email varchar2(50) not null,
+  buyer_zipcode number(5) not null,
+  buyer_address1 varchar2(60) not null,
+  buyer_address2 varchar2(60),
+  how varchar2(25) not null,
+  order_msg varchar2(150),
+  constraint product_order_pk primary key(order_num),
+  constraint product_order_fk foreign key(order_id) references member(m_id)
+);
+create sequence product_order_seq;
+
+create table order_detail(
+  order_num number not null,
+  order_product number not null,
+  constraint order_detail_fk1 foreign key(order_num) references product_order(order_num),
+  constraint order_detail_fk2 foreign key(order_product) references product(p_num)
+);
+
+create table award(
+  award_kind number(1) not null,
+  award_year number(5) not null,
+  award_half number(1),
+  award_category number not null,
+  winner varchar2(10) not null,
+  rank number(2) not null,
+  constraint award_fk1 foreign key(award_category) references category(category_num),
+  constraint award_fk2 foreign key(winner) references cosmetic(c_code)
+);
+
+create table plus_board(
+  hp_num number(8) not null,
+  hp_kind number(1) not null,
+  hp_title varchar2(100) not null,
+  hp_content clob not null,
+  hp_hit number(10) default 0 not null,
+  hp_like number(10) default 0 not null,
+  hp_scrap number default 0 not null,
+  hp_reg_date date not null,
+  hp_uploadfile1 blob,
+  hp_uploadfile2 blob,
+  hp_uploadfile3 blob,
+  hp_uploadfile4 blob,
+  hp_filename varchar2(100),
+  hp_ip varchar2(40) not null,  
+  id varchar2(12) not null,
+  constraint plus_board_pk primary key(hp_num),
+  constraint plus_board_fk foreign key(id) references member(m_id)
+);
+create sequence plus_board_seq;
+
+create table plus_reply(
+  hpre_num number(8) not null,
+  hpre_content varchar2(900) not null,
+  hpre_date date not null,
+  hpre_ip varchar2(40) not null,
+  hpre_depth number(8) not null,
+  hpre_parent number(8) not null,
+  hp_num number(8) not null, 
+  id varchar2(12) not null,
+  constraint plus_reply_pk primary key(hpre_num),
+  constraint plus_reply_fk1 foreign key(hp_num) references plus_board(hp_num),
+  constraint plus_reply_fk2 foreign key(id) references member(m_id)
+);
+create sequence plus_board_reply_seq;
+
+create table scrap(
+  m_id varchar2(12) not null,
+  scrap_kind number(1) not null,
+  scrap_object number not null,
+  constraint scrap_fk foreign key(m_id) references member(m_id)
+);
+
+create table wish(
+  m_id varchar2(12) not null,
+  wish_product number,
+  wish_event number,
+  constraint wish_fk1 foreign key(m_id) references member(m_id),
+  constraint wish_fk2 foreign key(wish_product) references product(p_num),
+  constraint wish_fk3 foreign key(wish_event) references event(event_num)
+);
+
+create table event_request(
+  event_id varchar2(12) not null,
+  my_event number not null,m_id varchar2(12) not null,
+  constraint event_request_fk1 foreign key(event_id) references member(m_id),
+  constraint event_request_fk2 foreign key(my_event) references event(event_num)
+);
+
+create table cosmetic_ask(
+  m_id varchar2(12) not null,
+  ask_category varchar2(120) not null,
+  ask_brand varchar2(120) not null,
+  ask_name varchar2(120) not null,
+  ask_etc varchar2(120) not null,
+  ask_time varchar2(120) not null,
+  ask_photo varchar2(50) not null,
+  constraint cosmetic_aks_fk foreign key(m_id) references member(m_id)
+);
+
+create table review_report(
+  re_num number(10) not null,
+  report_content varchar2(180) not null,
+  m_id varchar2(12) not null,
+  report_date date not null,
+  constraint review_report_fk1 foreign key(re_num) references review(re_num),
+  constraint review_report_fk2 foreign key(m_id) references member(m_id)
+);
+
+ALTER TABLE category_detail ADD(shopping_exist number(1) not null);
