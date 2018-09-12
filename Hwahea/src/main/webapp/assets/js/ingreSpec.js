@@ -1,0 +1,17 @@
+$(document).ready(function(){
+	$('.ingrebtn').on('click',function(){
+		$('#ingre').show();
+		$('#pibu').hide();
+		$('#ginung').hide();
+	});
+	$('.pibubtn').on('click',function(){
+		$('#ingre').hide();
+		$('#pibu').show();
+		$('#ginung').hide();
+	});
+	$('.ginungbtn').on('click',function(){
+		$('#ingre').hide();
+		$('#pibu').hide();
+		$('#ginung').show();
+	});
+});

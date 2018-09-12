@@ -1,0 +1,189 @@
+#wrap{
+	width:70%;
+	display:table;
+	margin:0 auto;
+}
+.tab-content{
+	width:70%;
+}
+.nav-tabs{
+	margin:0 auto;
+	font-size:18px;
+	font-weight:bold;
+	width:70%;
+}
+#ingre{
+	width:70%; 
+	display:table;
+	margin:0 auto;
+}
+#pibu{
+	width:70%;
+	display:table;
+	margin:0 auto;
+}
+#ginung{
+	width:125%;
+	display:table;
+	margin:0 auto;
+}
+#subhead{
+	width:200px;
+	font-size:17px;
+	font-weight:bold;
+	margin-left:70px;
+	margin-top:5px;
+}
+#chart_div{
+	float:left;
+	width:100%;
+	padding-left:-80px;
+}
+#twenty, #allergy{
+	width:40px;
+	margin-left:20%;
+	font-size:15px;
+	margin-top:5px;
+}
+#twenty img, #allergy img{
+	width:30px;
+}
+#how{
+	margin-left:43%;
+	font-size:18px;
+	font-weight:bold;
+}
+#how span{
+	margin-left:3px;
+	font-size:13px;
+	font-weight:normal;
+}
+#allgrade{
+	display:table;
+	margin:0 auto;
+}
+#allgrade img{
+	margin-top:-10px;
+	height:60px;
+}
+#guide{
+	display:table;
+	margin:-10px auto 10px auto;
+	font-size:15px;
+	font-weight:bold;
+	color:#fb4213; 
+}
+#ingres{
+	width:90%;
+	margin-left:50px;
+}
+ul{
+	list-style:none;
+}
+#grade{
+	width:40px;
+	margin-right:10px;
+	margin-top:-20px;
+}
+#ingres_img{
+	display:inline-block;
+}
+#ingres hr{
+	margin:4px 0;
+}
+#ingres_name{
+	display:inline-block;
+}
+#ingres_name div{
+	margin-bottom:-7px;
+}
+#name_kr{
+	font-size:15px;
+	font-weight:bold;
+}
+#name_en{
+	font-size:14px;
+}
+
+#pibu_ingre{
+	width:90%;
+	font-size:15px;
+	margin-top:10px;
+	margin-left:40px;
+}
+#pibu_ingre img{
+	width:35px; 
+	margin-right:10px;
+} 
+#pibu_name{
+	display:inline-block;
+	font-size:14px; 
+	font-weight:bold;
+	width:350px;
+}
+#pibu_ingre hr{
+	margin:4px 0;  
+}
+#gi_subhead{
+	width:600px;
+	font-size:17px;
+	font-weight:bold;
+	margin-left:50px;
+	margin-top:5px;
+}
+#option {
+	width:90%;
+	margin-left:70px;
+	font-size:15px;
+	margin-top:10px;
+	margin-bottom:15px;
+}
+#option img{
+	width:25px;
+	margin-left:10px;
+}
+#ginung_ingre{
+	width:100%;
+	font-size:15px;
+	margin-top:10px;
+	margin-left:40px;
+}
+#ginung_ingre img{
+	width:30px;
+	margin-right:5px;
+	margin-left:-5px;
+	vertical-align:top;
+}
+#ginung_ingre span{
+	display:inline-block;
+}
+#ginung_ingre hr{
+	width:90%;
+	margin-left:-5px;
+}
+#ginung_name{
+	display:inline-block;
+	font-size:14px; 
+	font-weight:bold;
+	width:250px;
+	vertical-align:top;
+}
+#ginung_how{
+	display:inline-block;
+	width:200px;
+	font-size:13px;
+}
+#caution{
+	background-color:#f5f5f5;
+	margin-left:70px;
+	width:90%;
+	padding:10px 0 10px 5px;
+	margin-bottom:15px;
+	font-size:14px;
+}
+#none{
+	display:table;
+	margin-left:170px;
+	font-weight:bold;
+	
+}

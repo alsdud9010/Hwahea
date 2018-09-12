@@ -627,9 +627,21 @@ hr{
 .pmodal_ud{
 	margin-top:10px;
 	padding-right:15px;
-	text-align:right;
+	text-align:center;
 }
-
+.pmodal_ud input{
+	width:70px; 
+	margin:10px 3px 30px 3px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#72c02c;
+	border:1px solid #72c02c;
+	border-radius:4px !important; 
+	padding:5px;
+}
+.pmodal_ud input:focus{
+	outline:none;
+}
 .pmodal_lrs {width:700px; margin-left:65px;}
 .pmodal_lrs img{width:23px; height:23px;}
 .pmodal_lrs li{
@@ -653,6 +665,22 @@ hr{
 .pmodal_alarm img{
 	margin-bottom:5px;
 }
+
+
+/* ´ñ±Û ¼öÁ¤Æû */
+#mre_content{
+	margin-top:10px;
+}
+#mre_first{
+	margin-right:25px;
+	float:right;
+}
+#mre_second{
+	margin-right:25px;
+	float:right;
+}
+
+
 /* ½Å°í ¸ð´Þ */
 
 .pmodal_rform{padding-top:15px;}
@@ -665,10 +693,20 @@ hr{
 	resize:none;
 	overflow-y:scroll;
 }
+.pmodal_rform textarea{
+	margin-left:10px;
+	resize:none;
+}
 
 .pmodal_rform input[type="submit"]{
-	width:65px;
-	height:75px;
+	width:75px;
+	height:70px;
+	vertical-align:top;
+	margin-top:10px;
+	background-color:#ffffff;
+	border:1px solid #72c02c;
+	font-weight:bold; 
+	color:#72c02c;
 }
 
 .pmodal_wpro {
@@ -681,7 +719,7 @@ hr{
 
 .pmodal_rcount {
 	text-align:right;
-	margin:17px 135px 27px 0;
+	margin:3px 160px 27px 0;
 	font-size:12px;
 }
 
@@ -711,6 +749,11 @@ hr{
 
 .pmodal_trere{font-size:14px; margin:12px 0 15px 40px; text-align:left;}
 
+.dadat{
+	font-size:14px; 
+	margin:12px 0 15px 80px; 
+	text-align:left;
+}
 .pmodal_same{margin-right:410px; cursor:pointer;}
 .pmodal_diff{margin-right:501px; cursor:pointer;}
 

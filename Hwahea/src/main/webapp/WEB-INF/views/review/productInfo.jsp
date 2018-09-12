@@ -447,12 +447,21 @@
 						</div>
 						<div class="pmodal_rform">
 							<form>
-								<textarea class="pmodal_rtext" cols="71" rows="4">내용을 입력해 주세요</textarea>
+								<%-- <input type="hidden" name="num" value="${board.num}" id="num">
+								<input type="hidden" name="id" value="${user_id}" id="user_id"> --%>
+								<textarea id="pmodal_rtext" cols="70" rows="4" placeholder="내용을 입력해 주세요."></textarea>
 								<input type="submit" value="댓글달기">
 							</form>
+							<div class="pmodal_rcount"><span class="letter-count">0 / 300</span></div>
 						</div>
-							<div class="pmodal_rcount">0 / 300</div>
-						<div class="pmodal_reback">
+						<div class="pmodal_reback"></div> <!-- 댓글 출력하는 div -->
+						<div class="paging-button" style="display: none;">
+							<input type="button" value="다음글 보기">
+						</div>
+						<div id="loading" style="display: none;">
+							<img src="${pageContext.request.contextPath}/assets/img/review/ajax-loader.gif">
+						</div>
+						<%-- <div class="pmodal_reback">
 							<div class="pmodal_rere">
 								<div class="pmodal_rpro">
 									<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
@@ -460,17 +469,18 @@
 									<span class="plusGrade"><input type="button" value="VIP"></span>
 									<span class="pmodal_drere">2018-08-28</span>
 								</div>
-								<div class="pmodal_trere">리뷰 이런 식으로 쓰지 마십쇼.</div>
 								<div class="pmodal_brere">
-									<a class="pmodal_same" id="rere_write">댓글달기</a>
-									<span>
-									<input type="button" value="수정">
-									<input type="button" value="삭제"></span>
+									<div class="replyview">
+										<div class="pmodal_trere">리뷰 이런 식으로 쓰지 마십쇼.</div>
+										<a class="pmodal_same" id="rere_write">댓글달기</a>
+										<input type="button" value="수정" class="modify-btn">
+										<input type="button" value="삭제">
+									</div>
 								</div>
 								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
-						</div>
-						<div class="pmodal_reback">
+						</div> --%>
+						<%-- <div class="pmodal_reback">
 							<div class="pmodal_rere">
 								<div class="pmodal_rpro">
 									<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
@@ -478,16 +488,17 @@
 									<span class="plusGrade"><input type="button" value="VIP"></span>
 									<span class="pmodal_drere">1시간 전</span>
 								</div>
-								<div class="pmodal_trere">집에 보내주어아ㅓㄹㅇ닐ㄴ알ㅇ나ㅣㄴ</div>
 								<div class="pmodal_brere">
-									<a class="pmodal_same" id="rere_write">댓글달기</a>
-									<span>
-									<input type="button" value="수정">
-									<input type="button" value="삭제"></span>
+									<div class="replyview">
+										<div class="pmodal_trere">두번째 댓그을흐르르를를ㄹ를ㄹ를</div>
+										<a class="pmodal_same" id="rere_write">댓글달기</a>
+										<input type="button" value="수정" class="modify-btn">
+										<input type="button" value="삭제">
+									</div>
 								</div>
 								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
-						</div>
+						</div> --%>
 						<!-- 대댓글 -->
 						<div class="prere_back">
 							<div class="pmodal_rere">
@@ -498,12 +509,13 @@
 									<span class="prere_grade"><input type="button" value="Family"></span>
 									<span class="prere_time">1시간 전</span>
 								</div>
-								<div class="prere_text">대댓글~~</div>
 								<div class="pmodal_brere">
-									<a class="pmodal_same" id="rere_write">댓글달기</a>
-									<span>
-									<input type="button" value="수정">
-									<input type="button" value="삭제"></span>
+									<div class="replyview">
+										<div class="pmodal_trere dadat">대댓글~~~~~~~~~~~~1</div>
+										<a class="pmodal_same" id="rere_write">댓글달기</a>
+										<input type="button" value="수정" class="modify-btn">
+										<input type="button" value="삭제">
+									</div>
 								</div>
 								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
@@ -517,9 +529,13 @@
 									<span class="prere_grade2"><input type="button" value="Welcome"></span>
 									<span class="prere_time">1시간 전</span>
 								</div>
-								<div class="prere_text"><span class="rere_writer">white</span>대댓글~~</div>
 								<div class="pmodal_brere">
-									<a class="pmodal_diff" id="rere_write">댓글달기</a>
+									<div class="replyview">
+										<div class="pmodal_trere dadat">대댓글~~~2222</div>
+										<a class="pmodal_same" id="rere_write">댓글달기</a>
+										<input type="button" value="수정" class="modify-btn">
+										<input type="button" value="삭제">
+									</div>
 								</div>
 								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>

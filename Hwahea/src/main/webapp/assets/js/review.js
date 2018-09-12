@@ -53,6 +53,87 @@ $(document).ready(function(){
 		flag = 1;
 	});
 	
+	var currentPage;
+	var count;
+	var rowCount;
+	
+	//댓글 목록
+	function selectData(pageNum, num){
+		currentPage = pageNum;
+		
+		if(pageNum==1){
+			//처음 호출시는 해당 ID의 div의 내부 내용물을 제거
+			$('.pmodal_reback').empty();
+		}
+		//로딩 이미지 노출
+		$('#loading').show();
+		
+		$.ajax({
+			type:'post',
+			data:{pageNum:pageNum,num:num},
+			url:'listReply.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				//로딩이미지 감추기
+				$('#loading').hide();
+				count = data.count;
+				rowCount = data.rowCount;
+				var list = data.list;
+				
+				if(count < 0 || list == null){
+					alert('목록 호출 오류 발생!');
+				}else{
+					$(list).each(function(index,item){
+						var output = '<div class="pmodal_rere"><div class="pmodal_rpro">';
+						//이미지 변경하기!!!!!!!!!!!!!!!!!
+						output += '<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png">';
+						output += '<span class="pmodal_wrere">'+item.re_id+'</span>';
+						//등급 변경하기!!!!!!!!!!!!!!!!!!!!!!!!!!!
+						output += '<span class="plusGrade"><input type="button" value="VIP"></span>';
+						output += '<span class="pmodal_drere">'+item.rere_regdate+'</span>';
+						output += '</div><div class="pmodal_brere"><div class="replyview">';
+						output += '<div class="pmodal_trere">'+item.rere_content+'</div>';
+						output += '<a class="pmodal_same" id="rere_write">댓글달기</a>';
+						output += '<input type="button" value="수정" class="modify-btn">';
+						output += '<input type="button" value="삭제">';
+						output += '</div></div><div class="margin-bottom-20"><hr class="hr-md"></div></div>';
+					
+						if($('#user_id').val()==item.id){
+							//로그인 한 아이디가 댓글 작성자 아이디와 같을 때
+							output += '<input type="button" data-num="'+item.re_num+'" data-id="'+item.id+'" value="수정" class="modify-btn">';
+							output += '<input type="button" data-num="'+item.re_num+'" data-id="'+item.id+'" value="삭제" class="delete-btn">';
+						}
+						/*output += 		'<hr size="1" noshade>';
+						output += 	'</div>';
+						output += '</div>';*/
+						
+						//문서 객체에 추가
+						$('.pmodal_reback').append(output);
+					});
+					//paging button 처리
+					if(currentPage>=Math.ceil(count/rowCount)){
+						//다음 페이지가 없음.
+						$('.paging-button').hide();
+					}else{
+						//다음페이지 존재
+						$('.paging-button').show();
+					}
+				}
+				
+			},
+			error:function(){
+				//로딩 이미지 감추기
+				$('#loading').hide();
+				alert('네트워크 오류!');
+			}			
+		});
+	}
+	
+	
+	
+	
 	
 	
 	//댓글쓰기 버튼 누르면 댓글창으로 커서 이동
@@ -118,14 +199,17 @@ $(document).ready(function(){
 			remain += '/300';
 			if($(this).attr('id')=='pre_content'){
 				//등록폼 글자수
+				$('.letter-count').text(remain);
+			}else if($(this).attr('id')=='pmodal_rtext'){
+				//댓글등록폼 글자수
 				$('.pmodal_rcount .letter-count').text(remain);
 			}else if($(this).attr('id')=='prere_content'){
 				//댓글폼 글자수
 				$('#prere_first .letter-count').text(remain);
-			}/*else{
+			}else if($(this).attr('id')=='mre_content'){
 				//수정폼 글자수(id==mre_content)
-				$('#pre_first .letter-count').text(remain);
-			}*/
+				$('#mre_first .letter-count').text(remain);
+			}
 		}
 			
 	});
@@ -140,28 +224,87 @@ $(document).ready(function(){
 		$('#pre_form').remove();
 	}
 	
+	
+	//댓글 수정 버튼 클릭시 수정폼 노출
+	$(document).on('click','.modify-btn',function(){
+		/*//댓글 글번호
+		var re_num = $(this).attr('data-num');
+		//작성자 아이디
+		var id = $(this).attr('data-id');*/
+		//댓글 내용
+		var content = $(this).parent().find('.pmodal_trere').text();
+		
+		
+		//댓글 수정폼 UI
+		var modifyUI = '<form id="mre_form">';
+			/*modifyUI += '<input type="hidden" name="re_num" id="mre_num" value="'+re_num+'">';
+			modifyUI += '<input type="hidden" name="id" id="id" value="'+id+'">';*/
+			modifyUI += '<textarea rows="3" cols="75" name="re_content" id="mre_content" class="rep-content">'+content+'</textarea><br>';
+			modifyUI += '<div id="mre_first"><span class="letter-count">300/300</span></div><br>';
+			modifyUI += '<div id="mre_second">';
+			modifyUI += '	<input type="submit" value="수정">';
+			modifyUI += '	<input type="button" value="취소" class="re-reset">';
+			modifyUI += '</div>';
+			modifyUI += '</form>';
+			
+			//이전에 이미 수정하는 댓글이 있을 경우 수정버튼을 클릭하면 숨김 sub-item을 환원시키고 
+			//수정폼을 초기화함.
+			initModifyForm();
+			
+			//지금 클릭해서 수정하고자 하는 데이터는 감추기
+			//수정버튼을 감싸고 있는 div
+			$(this).parent().hide();
+			
+			//수정폼을 수정하고자 하는 데이터가 있는 div에 노출
+			$(this).parents('.pmodal_brere').append(modifyUI);
+			
+			//입력한 글자수 셋팅
+			var inputLength = $('#mre_content').val().length;
+			var remain = 300-inputLength;
+			remain += '/300';
+			
+			//문서객체에 반영
+			$('#mre_first .letter-count').text(remain);
+			
+			
+	});
+	
+	
+	//댓글 수정폼 취소 버튼 클릭시 수정폼 초기화
+	$(document).on('click','.re-reset',function(){
+		initModifyForm();
+	});
+	
+	
+	//댓글 수정폼 초기화
+	function initModifyForm(){
+		$('.replyview').show();
+		$('#mre_form').remove();
+	}
+	
+	
 
 	/*----------------성분 상세보기 팝업*/
 	var win;
 	
 	$('#ingreimg').on('click',function(){
-		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
-		win.moveTo(600, 600);
+		win = window.open('ingreSpec.do','성분','width=950,height=1000,toolbar=no,location=no');
+		win.moveTo(200, 200);
 	});
 	
 	$('#ingreimg2').on('click',function(){
-		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
-		win.moveTo(600, 600);
+		win = window.open('ingreSpec.do','성분','width=950,height=1000,toolbar=no,location=no');
+		win.moveTo(200, 200);
 	});
 	
 	$('#pibuimg').on('click',function(){
-		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
-		win.moveTo(600, 600);
+		win = window.open('ingreSpec.do','성분','width=950,height=1000,toolbar=no,location=no');
+		win.moveTo(200, 200);
 	});
 	
 	$('#giimg').on('click',function(){
-		win = window.open('ingreSpec.do','성분','width=700,height=1300,toolbar=no,location=no');
-		win.moveTo(600, 600);
+		win = window.open('ingreSpec.do','성분','width=950,height=1000,toolbar=no,location=no');
+		win.moveTo(200, 200);
 	});
 
 	
