@@ -160,9 +160,11 @@ $(document).ready(function(){
 		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';
 		rereply += '</div>';
 		rereply += '</form>';
+		rereply += '<div class="margin-bottom-20"><hr class="hr-md"> </div> ';
 		
 		//문서 객체에 추가
-		$('#pmodal_reform').append(rereply);
+		/*$('#pmodal_reform').append(rereply);*/
+		$(this).parents('.pmodal_brere').append(rereply);
 
 		flag = 1
 	});

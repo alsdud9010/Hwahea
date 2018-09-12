@@ -377,18 +377,20 @@
 </div>
 <!-- End Content Part -->
 <!--============= 화해플러스 모달 시작 ==============-->
-<div class="modal fade" id="plus_modal" tabindex="-1">
+<div class="modal fade" id="plus_modal" tabindex="-1" role="dialog">
+    <!-- 모달 헤더 -->
+	<div id="fixed-header" class="fixed-header-noscroll">
+		<span class="pmodal_left"><img class="pmodal_close" src="${pageContext.request.contextPath}/assets/img/plus/modalLeft.png" data-dismiss="modal"></span>
+		<span class="pmodal_header">
+		<a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a>
+		</span>
+		<button class="close" data-dismiss="modal">&times;</button>
+	</div>
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
-		<!-- 모달 헤더 -->
-		<div class="modal-header ex-header" >
-			<img class="pmodal_close" src="${pageContext.request.contextPath}/assets/img/plus/modalLeft.png" data-dismiss="modal"> 
-			<span class="modalCategory"> <a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a> </span>
-			<button class="close" data-dismiss="modal">&times;</button>
-		</div>
-		
 		<!-- 모달 바디 -->
 		<div class="modal-body pmodal_c ex-body" style="text-align: center;">
+		    <br><br>
 			<img class="plusThumbnail3" src="${pageContext.request.contextPath}/assets/img/plus/plusThumbnail.PNG" alt="">
 			<div class="pmodal_title">홀리카홀리카 2018 F/W 섀도우 전색상 발색</div>
 			<div class="pmodal_profile">
@@ -463,13 +465,19 @@
 				</div>
 				<div class="pmodal_rform">
 					<form>
-						<textarea class="pmodal_rtext" id="pre_content" cols="75" rows="4">내용을 입력해 주세요</textarea>
+						<textarea class="pmodal_rtext" id="pre_content" cols="71" rows="4">내용을 입력해 주세요</textarea>
 						<input type="submit" value="댓글달기">
 					</form>
 				</div>
 					<div class="pmodal_rcount"><span class="letter-count">300 / 300</span></div>
 				<div style="margin-top:-23px;margin-bottom:5px;"><hr class="hr-lg"></div>
 				<div class="pmodal_reback">
+					<div class="pre_total">
+						전체(4)
+					</div>
+					<div class="pmodal-bottom-10">
+						<hr class="hr-md">
+					</div>
 					<div class="pmodal_rere">
 						<div class="pmodal_rpro">
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
@@ -547,8 +555,8 @@
 		</div>
 		<!-- 모달 푸터 -->
 		<div class="modal-footer">
-			<input type="button" value="목록" data-dismiss="modal">
-			<input type="button" value="닫기" data-dismiss="modal">				
+			<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/plus/plusTrend.do'">
+			<input type="button" value="닫기" data-dismss="modal">				
 		</div>
 		</div>
 	</div>

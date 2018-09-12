@@ -90,12 +90,41 @@ li{
     position: absolute;
     content: '';
     bottom: -5px;
-    left: 17.7%;
     width: 12px;
     height: 5px;
-    margin-left: -6px;
+    margin-left:20px;
     background: url('/Hwahea/assets/img/notice/notice_tab_arrow.png') no-repeat 0 0;
 }
+
+.notice_sub{
+	margin-left:7px;
+	margin-top:5px;
+}
+
+.notice_sub li{
+	float:left;
+	border:1px solid #e6e6e6;
+	padding-top:5px;
+	width:24.6666%;
+	height:35px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+	color:#83B14E;
+	letter-spacing:-0.04em;
+	cursor:pointer;
+}
+
+.notice_sub li:hover{
+	background: #83B14E;
+    color: #fff;
+}
+
+.notice_subOn{
+	background: #83B14E;
+    color: #fff !important;
+}
+
 /*상단 메뉴바 끝*/
 
 /*공지사항 목록 시작*/
@@ -160,7 +189,7 @@ li{
 }
 
 .NK01{
-	background: #969937;
+	background: #72c02c;
 	display: inline-block;
     width: 70px;
     height: 20px;
@@ -190,4 +219,650 @@ li{
     line-height: 20px;
 }
 
+.notice_list td > a{
+	color:#333 !important;
+}
+
+.notice_list > td > a:hover{
+	color:#333;
+	text-decoration:none !important;
+}
 /*공지사항 목록 끝*/
+
+/*공지사항 글 세부사항 시작*/
+.notice_view{
+	table-layout: fixed;
+    width: 100%;
+    border-top: 2px solid #888;
+    border-bottom: 2px solid #888;
+}
+
+.notice_view td{
+	padding: 30px 20px;
+    line-height: 26px;
+}
+
+.nv_tit{
+    display: inline-block;
+    color: #333;
+    font-size: 22px;
+    line-height: 28px;
+    margin-left:9px;
+}
+
+.nv_date{
+	color: #888;
+    font-size: 14px;
+    text-align: right;
+    line-height: 18px;
+}
+
+.nv_txt{
+	background:url('/Hwahea/assets/img/notice/bar_dot.gif') repeat-x 0 0;
+	word-break: break-all;
+	font-size:12px !important;
+}
+/*공지사항 글 세부사항 끝*/
+
+/*다음글, 이전글 보기 시작*/
+.notice_pn{
+	width: 104%;
+    margin-left: -45px;
+}
+
+.notice_pn li{
+    overflow: hidden;
+    padding: 20px 0 20px 20px;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 0;
+    line-height: 0;
+}
+
+.notice_pn li a{
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration:none;
+    padding-left: 10px;
+}
+
+button{
+    box-shadow: none;
+    cursor: pointer;
+    border:0;
+}
+
+.notice_pn li:first-child button{
+	margin: 0 40px 0 0;
+    padding: 0 0 0 27px;
+    background: url('/Hwahea/assets/img/notice/arrow_top.png') no-repeat 0 3px;
+    color: #666;
+    font-size: 14px;
+	font-weight:700;
+    line-height: 18px;
+}
+
+.notice_pn li button{
+	margin: 0 40px 0 0;
+    padding: 0 0 0 27px;
+    background: url('/Hwahea/assets/img/notice/arrow_btm.png') no-repeat 0 3px;
+    color: #666;
+    font-size: 14px;
+    font-weight:700;
+    line-height: 18px;
+}
+
+.nv_btn{
+	text-align:center;
+	padding-top:20px;
+}
+
+.nv_btn input[type="button"]{
+	width: 150px;
+    height: 50px;
+	color: #fff;
+	background:#83B14E;
+	font-size: 18px;
+	font-weight:bold;
+    line-height: 30px;
+    border-radius: 5px !important;
+    border:0;
+}
+/*다음글, 이전글 보기 끝*/
+
+/*자주하는질문 시작*/
+legend{
+    position: absolute;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    z-index: -1;
+}
+
+.faq_style{
+    overflow: hidden;
+    width: 92%;
+    height: 110px;
+    margin: 15px 44px 15px;
+    padding: 30px 0 0;
+    background: #f6f6f6;
+    text-align: center;
+}
+
+.faq_style label{
+	display: inline-block;
+    margin: 0 20px 0 0;
+    color: #222;
+    font-size: 20px;
+    line-height: 38px;
+    vertical-align: middle;
+}
+
+.faq_style .faq_input{
+	display: inline-block;
+    overflow: hidden;
+    width: 420px;
+    height: 48px;
+    border-radius: 30px !important;
+    border: 1px solid #ccc;
+    background: #fff;
+    vertical-align: middle;
+}
+
+.faq_input input[type="text"]{
+	float: left;
+    width: 75%;
+    height: 44px;
+    padding: 8px 10px 8px 18px;
+    border: 0;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.faq_input input[type="submit"]{
+	float: right;
+    width: 25px;
+    height: 27px;
+    margin: 10px 19px 0 0;
+    background: url('/Hwahea/assets/img/notice/search_faq.png') no-repeat 0 0;
+    font-size: 0;
+    text-indent: -99999px;
+    line-height: 0;
+    border:0;
+}
+
+.faq_on{
+	background: #cced87!important;  
+}
+
+.faq_icon li{
+	float: left;
+    width: 50%;
+    height: 40px;
+    margin: 0 0 0 -1px;
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+.faq_iconList{
+	height: 120px;
+    margin-bottom: 170px;
+    margin-left: 18px;
+}
+
+.faq_iconList li:first-child{
+	margin-left: 0;
+    width: 144px;
+}
+
+.faq_iconList li{
+    width: 147px;
+    height: 120px;
+}
+
+.faq_iconList li > button{
+	width: 100%;
+    height: 38px;
+    color: #666;
+    background: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.faq_icon .faq_iconList li > button{
+	width: 100%;
+    height: 118px;
+    padding-top: 60px;
+    color: #222;
+    background: url('/Hwahea/assets/img/notice/faq_icon.png') no-repeat 0 0;
+    font-weight: 400;
+}
+
+.faq_iconList > li > button.faq_icon1 {background-position:50px 24px}
+.faq_iconList > li > button.faq_icon2 {background-position:-95px 24px}
+.faq_iconList > li > button.faq_icon3 {background-position:-239px 24px}
+.faq_iconList > li > button.faq_icon4 {background-position:-385px 24px}
+.faq_iconList > li > button.faq_icon5 {background-position:-532px 24px}
+.faq_iconList > li > button.faq_icon6 {background-position:-675px 24px}
+.faq_iconList > li > button.faq_icon7 {background-position:-823px 24px}
+
+.faq_inner{
+	width:1020px;
+	border-top: 2px solid #888;
+	margin-left:58px;
+}
+
+.faq_list{
+    width: 1020px;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.faq_list li{
+	height:50px;
+	word-spacing: -1px;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+    border-bottom: 1px solid #888;
+    padding-top: 13px;
+}
+
+/* .faq_list {
+    
+    text-align:center;
+    height:63px;
+} */
+
+.faq_open img{
+	width:20px;
+	height:20px;
+}
+
+.faq_q{
+	width:50px;
+	color:#83B14E;
+	font-size:17px;
+	margin-left:10px;
+}
+
+.faq_category{
+	width:120px;
+	font-weight:bold;
+	margin:0 20px;
+}
+
+.faq_tit{
+	width:805px;
+	margin-left:43px;
+}
+
+.faq_txt {
+    width: 1020px;
+    margin: 0 auto;
+    background:#f7f7f7;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 28px 30px 25px 62px;
+}
+
+span.faq_arrow {
+    position: absolute;
+    width: 85%;
+    text-align: right;
+}
+
+.faq_none{
+    margin: 0;
+    padding: 58px 0 0;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    line-height: 22px;
+    letter-spacing:-0.04em;
+}
+/*자주하는질문 끝*/
+
+/*1:1문의 시작*/
+.myq-period{
+	overflow: hidden;
+    position: relative;
+    width: 94.6%;
+    height: 100px;
+    margin: 20px 30px 0;
+    padding: 20px;
+    background: #ececec;
+    box-sizing: border-box;
+    border-radius: 5px !important;
+}
+
+.myq-period .myq-select li:first-child{
+	margin:0;
+}
+
+.myq-period .myq-select li{
+	float: left;
+    width: 70px;
+    height: 28px;
+    margin: 0 0 0 -1px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.myq-period .myq-select li:first-child button{
+	border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+
+.myq-period .myq-select li:last-child button{
+	border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.myq-period .myq-select li.myq-on button{
+	border: 1px solid #848484;
+    background: #848484;
+    color: #fff;
+}
+
+.myq-period .myq-select button{
+	width: 100%;
+    height: 28px;
+    border: 1px solid #d0d0d0;
+    background: #fff;
+    color: #222;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.myq-range{
+	padding: 10px 0 0;
+    line-height: 38px;
+    position: absolute;
+    margin-left: 39px;
+    margin-top: 10px;
+}
+
+.myq-period .myq-range select{
+	height: 28px;
+    padding-right: 0;
+    color: #222;
+    font-size: 12px;
+    line-height: 16px;
+    vertical-align: middle;
+    padding: 0 0 0 8px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px !important;
+}
+
+select:disabled, input:disabled{
+	background-color: #f8f8f8;
+    color: #888;
+}
+
+.myq-period .myq-range label{
+	display: inline-block;
+    margin: 0 11px 0 1px;
+    color: #222;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.myq-lookup{
+	display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85px;
+    height: 100%;
+    background: #83B14E;
+    border-radius: 0;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.myq-list{
+	width:94.6%;
+	margin-top:20px;
+    margin-left:30px;
+    border-top: 2px solid #888;
+}
+
+.myq-list ul{
+	overflow: hidden;
+	width: 100%;
+}
+
+.myq-inner{
+	overflow: hidden;
+	width: 105.8%;
+    margin-left:30px;
+}
+
+.myq-list li.myq-nodata{
+	padding: 200px 15px 80px;
+    background: url('/Hwahea/assets/img/notice/nodata.png') no-repeat center 80px;
+    color: #888;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.myq-list li{
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.QS01{
+	background:#888;
+}
+
+.QS02{
+	background:#83B14E;
+}
+
+.myq-status > .QS01, .QS02{
+	display: inline-block;
+    width: 70px;
+    height: 20px;
+    border-radius: 10px !important;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.myq-q{
+	color: #666;
+	display: block;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 25px;
+}
+
+.myq_tit{
+	height:16px;
+	overflow:hidden;
+}
+
+.myq_txt{
+	width: 100%;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 28px 30px 25px 62px;
+}
+
+span.myq_arrow {
+    position: absolute;
+    width: 90%;
+    text-align: right;
+}
+
+span.myq-date{
+	position: absolute;
+    width: 86%;
+    text-align: right;
+}
+
+.myq_arrow img{
+	width:25px;
+	height:25px;
+}
+
+.myq-a{
+	background:#fff;
+	margin-top:10px;
+	padding:20px;
+	width:96%;
+}
+
+.myq-a img{
+	width:20px;
+	height:15px;
+}
+/*1:1문의 끝*/
+/*1:1문의 작성폼 시작*/
+td{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.myq-table{
+	table-layout: fixed;
+    width: 1020px;
+    margin:0 auto;
+    border-top: 2px solid #888;
+}
+
+.myq-table tbody tr th{
+    padding: 30px 0 30px 20px;
+    vertical-align: top;
+}
+
+.myq-table tbody tr th, .myq-table tbody tr td{
+	border-bottom: 1px solid #e6e6e6;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+    line-height: 18px;
+}
+
+.myq-table select{
+	width: 100%;
+    height: 38px;
+    padding: 0 0 0 8px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px !important;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'AppleGothic', 'Roboto', 'montserrat', 'noto', sans-serif;
+    color: #333;
+    vertical-align: middle;
+    outline: none;
+}
+
+.myq-table textarea{
+	border: 1px solid #ccc;
+    padding: 10px 8px;
+    margin-top:20px;
+    border-radius: 5px !important;
+    resize: none;
+    font-size: 14px;
+    line-height: 20px;
+    box-shadow: none;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.myq-table tbody tr.myq-textarea td button.myq-file{
+	width: 85px;
+    height: 38px;
+    margin: 10px 0 0;
+    border-radius: 5px !important;
+    border: 1px solid #ccc;
+    background: #f6f6f6;
+    color: #666;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.myq-table tbody tr.myq-textarea td span.myq-fileName{
+    padding: 20px 0 0 10px;
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.myq-deleteBtn{
+	width: 19px;
+    height: 19px;
+    background: url('/Hwahea/assets/img/notice/delete.png') no-repeat 0 0;
+    font-size: 0;
+    text-indent: -99999px;
+    line-height: 0;
+}
+
+.myq-table tbody tr.myq-textarea td span.myq-direction{
+	display: inline-block;
+    padding: 22px 0 0 10px;
+    color: #666;
+    font-size: 12px;
+    line-height: 18px;
+    vertical-align: -2px;
+}
+
+.myq-alarm td label{
+    display: inline-block;
+    width: 75px;
+    vertical-align: middle;
+}
+
+.myq-alarm li{
+	margin-bottom:10px;
+}
+
+input[type="tel"],input[type="text"]{
+	height: 38px;
+	padding: 0 10px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    color: #888;
+    border: 1px solid #d0d0d0;
+    border-radius:5px !important;
+}
+
+.myq_btn{
+	text-align:center;
+	padding-top:20px;
+}
+
+.myq_btn input[type="submit"]{
+	width: 150px;
+    height: 50px;
+	color: #fff;
+	background:#83B14E;
+	font-size: 18px;
+	font-weight:bold;
+    line-height: 30px;
+    border-radius: 5px !important;
+    border:0;
+}
+
+.myq_btn input[type="button"]{
+	width: 150px;
+    height: 50px;
+	color: #fff;
+	background-color: #888;
+	font-size: 18px;
+	font-weight:bold;
+    line-height: 30px;
+    border-radius: 5px !important;
+    border:0;
+}
+/*1:1문의 작성폼 끝*/

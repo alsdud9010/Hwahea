@@ -21,4 +21,8 @@
       <put-attribute name="title" value="화해 | 1:1문의"/>
       <put-attribute name="body" value="/WEB-INF/views/notice/myQuestion.jsp"/>
    </definition>
+   <definition name="myQuestionWrite" extends="main">
+      <put-attribute name="title" value="화해 | 1:1문의하기"/>
+      <put-attribute name="body" value="/WEB-INF/views/notice/myQuestionWrite.jsp"/>
+   </definition>
 </tiles-definitions>

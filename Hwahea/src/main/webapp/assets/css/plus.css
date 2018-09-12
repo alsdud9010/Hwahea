@@ -339,20 +339,24 @@ li{
 	height:410px;
 }
 
-.modalCategory{
-	margin-top:10px;
-	margin-left:345px;
+.pmodal_header{
 	font-size:20px;
 	font-weight:bold;
 }
 
-.modalCategory a{
+.pmodal_header a{
 	color:#777777;
 }
 
-.modalCategory a:hover{
+.pmodal_header a:hover{
 	color:#000000;
 	text-decoration:none;
+}
+
+.pmodal_left{
+	position:absolute;
+	margin-left:-372px;
+	padding-top:3px;
 }
 
 .plusThumbnail3{
@@ -518,7 +522,7 @@ li{
     margin-left: 24px;
     margin-top: 15px;
     width: 580px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 .pmodal_rpro2 img{
@@ -578,16 +582,45 @@ li{
 /*==================화해플러스=======================*/
 
 /*모달 헤더*/
-.ex-header{
-	/* position: fixed; */
-	top:5px;
-	left:15px;
-	right:15px;
-	z-index: 1;
-	background-color:#FFFFFF;
+#fixed-header{
+	border-bottom:1px solid #eff0f1;
 }
 
-.ex-body{
-	position:relative;
-	margin-top: 65px; 
+.fixed-header-noscroll{
+	position:absolute;
+	z-index:1;
+	background-color:#FFFFFF;
+	width:889px;
+	height:50px;
+	top:32px;
+	left:50%;
+	margin-left:-449px;
+	text-align: center;
+}
+.fixed-header-scroll{
+	position:fixed;
+	z-index:1;
+	background-color:#FFFFFF;
+	width:888px;
+	height:50px;
+	top:0px;
+	left:50%;
+	margin-left:-448px;
+	text-align: center;
+}
+@media (max-width: 767px) {
+ 		.fixed-header-noscroll{
+		width:100%;
+		margin-left:0px;
+		padding:0 5px 0 5px;
+		left:0;
+		right:50%;
+	}
+	.fixed-header-scroll{
+		width:100%;
+		margin-left:0px;
+		padding:0 25px 0 5px;
+		left:0;
+		right:50%;
+	}
 }

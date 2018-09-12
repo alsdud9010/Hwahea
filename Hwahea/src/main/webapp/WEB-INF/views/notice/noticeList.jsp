@@ -18,26 +18,26 @@
 <div class="container content">
 	<div class="row magazine-page white">
 		<div class="col-md-12">
-			<!-- 화해플러스 상단 메뉴바 시작-->
+			<!-- 공지사항 상단 메뉴바 시작-->
 			<div class="magazine-news">
 				<div class="col-md-12">
 					<ul class="notice_kind col-md-12 margin-bottom-20">
-						<li class="notice_on">공지사항</li>
-						<li>FAQ</li>
-						<li>1:1문의</li>
+						<li class="notice_on" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList.do'">공지사항</li>
+						<li onclick="location.href='${pageContext.request.contextPath}/notice/frequent_question.do'">FAQ</li>
+						<li onclick="location.href='${pageContext.request.contextPath}/notice/my_question.do'">1:1문의</li>
 					</ul>
 				</div>
 			</div>
-			<!-- 화해플러스 상단 메뉴바 끝 -->
+			<!-- 공지사항 상단 메뉴바 끝 -->
 			<!-- 공지사항 상단 메뉴바2 시작 -->
 			<div class="magazine-news">
 				<div class="col-md-12">
-					<!-- <ul class="r_menu_2 col-md-12 margin-bottom-20">
-						<li>전체</li>
+					<ul class="notice_sub col-md-12 margin-bottom-20">
+						<li class="notice_subOn">전체</li>
 						<li>일반</li>
 						<li>블라인드</li>
 						<li>이벤트</li>
-					</ul> -->
+					</ul>
 				</div>
 			</div>
 			<div class="margin-bottom-10">
@@ -51,7 +51,7 @@
 						<tr>
 							<th class="notice_num">번호</th>
 							<th class="notice_tit">제목</th>
-							<th class="notice_date">등록일/당첨자 발표일</th>
+							<th class="notice_date">등록일 / 당첨자 발표일</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -59,7 +59,7 @@
 							<td>55</td>
 							<td class="notice_txt">
 								<strong class="NK01">일반</strong>
-								결제서비스 시스템 작업 안내</td>
+								<a href="${pageContext.request.contextPath}/notice/noticeView.do">결제서비스 시스템 작업 안내</a></td>
 							<td>2018.09.07</td>
 						</tr>
 						<tr>

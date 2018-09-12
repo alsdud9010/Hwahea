@@ -1,9 +1,13 @@
 $(document).ready(function(){
 	/*상단 메뉴바*/
-	$(document).on('click','.notice_kind li',function(){
+	/*$(document).on('click','.notice_kind li',function(){
 		var num = $('.notice_kind li').index(this);
-		$('.notice_kind li').removeClass('notice_on');
-		
-		$('.notice_kind li').eq(num).addClass('notice_on');
-	});
+		if(num == 0){
+			$(this).addClass('m-left0');
+		}else if(num == 1){
+			$(this).addClass('m-left1');
+		}else{
+			$(this).addClass('m-left2');
+		}
+	});*/
 });

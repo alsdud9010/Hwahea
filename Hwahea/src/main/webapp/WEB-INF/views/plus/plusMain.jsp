@@ -8,17 +8,14 @@
 		$('#plus_modal').scroll(function(){
 			var a = $('#plus_modal').scrollTop();
 			console.log(a);
-			
 			if(a>32){
-				$('.ex-header').css({
-					top:(a-36)+'px',
-					position:'fixed'
-				});
+				$('#fixed-header').removeClass('fixed-header-noscroll');
+				$('#fixed-header').addClass('fixed-header-scroll');
 			}else{
-				$('.ex-header').css({
-					top:'10px'
-				});
+				$('#fixed-header').removeClass('fixed-header-scroll');
+				$('#fixed-header').addClass('fixed-header-noscroll');
 			}
+			
 		});
 	});
 </script>
@@ -49,7 +46,7 @@
                 <div class="pBanner_con" >
 	                	<div class="plusMember">
 	                	<img class="plusProfile" src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>
-	                	<span class="plusGrade"><input type="button" value="VIP"></span>
+	                	<span class="grade_vip"><input type="button" value="VIP"></span>
 	                	</div>
 	                	<div class="plusBannerTitle text-right"><h3><a href="#" data-toggle="modal" data-target="#plus_modal"><strong>축축 쳐진 머리도 살려내는 기적의 헤어템!</strong></a></h3></div>
 	                	<div class="plusBannerDate text-right">2018-08-27 <strong>dragon</strong></div>
@@ -81,7 +78,7 @@
                 <div class="pBanner_con">
 	                	<div class="plusMember">
 	                		<img class="plusProfile" src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>
-	                	<span class="prere_grade"><input type="button" value="Family"></span>
+	                	<span class="grade_family"><input type="button" value="Family"></span>
 	                	</div>
 	                	<div class="plusBannerTitle text-right"><h3><a href="#" data-toggle="modal" data-target="#plus_modal"><strong>트위드에 코랄 컬러를★ 지금 가장 핫한 네일 보기!</strong></a></h3></div>
 	                	<div class="plusBannerDate text-right">2018-08-31 <strong>blue</strong></div>
@@ -113,7 +110,7 @@
                 <div class="pBanner_con">
 	                	<div class="plusMember">
 	                	<img class="plusProfile" src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>
-	                	<span class="prere_grade2"><input type="button" value="Welcome"></span>
+	                	<span class="grade_welcome"><input type="button" value="Welcome"></span>
 	                	</div>
 	                	<div class="plusBannerTitle text-right"><h3><a href="#" data-toggle="modal" data-target="#plus_modal"><strong>곰손도 이것만 있으면 트렌디함 UP #주간신상템</strong></a></h3></div>
 	                	<div class="plusBannerDate text-right">2018-09-01 <strong>red</strong></div>
@@ -558,17 +555,19 @@
     <!-- End Content Part -->
 <!--====================== 화해플러스 모달 시작 =======================-->
 <div class="modal fade" id="plus_modal" tabindex="-1" role="dialog">
+    <!-- 모달 헤더 -->
+	<div id="fixed-header" class="fixed-header-noscroll">
+		<span class="pmodal_left"><img class="pmodal_close" src="${pageContext.request.contextPath}/assets/img/plus/modalLeft.png" data-dismiss="modal"></span>
+		<span class="pmodal_header">
+		<a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a>
+		</span>
+		<button class="close" data-dismiss="modal">&times;</button>
+	</div>
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
-		<!-- 모달 헤더 -->
-		<div class="modal-header ex-header">
-			<img class="pmodal_close" src="${pageContext.request.contextPath}/assets/img/plus/modalLeft.png" data-dismiss="modal"> 
-			<span class="modalCategory"> <a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a> </span>
-			<button class="close" data-dismiss="modal">&times;</button>
-		</div>
-		
 		<!-- 모달 바디 -->
 		<div class="modal-body pmodal_c ex-body" style="text-align: center;">
+		    <br><br>
 			<img class="plusThumbnail3" src="${pageContext.request.contextPath}/assets/img/plus/plusThumbnail.PNG" alt="">
 			<div class="pmodal_title">홀리카홀리카 2018 F/W 섀도우 전색상 발색</div>
 			<div class="pmodal_profile">
@@ -684,10 +683,11 @@
 						</div>
 						<div class="pmodal_trere">2</div>
 						<div class="pmodal_brere">
-							<a class="pmodal_same" href="#">댓글달기</a>
+							<a class="pmodal_same" id="rere_write">댓글달기</a>
 							<span>
 							<input type="button" value="수정">
 							<input type="button" value="삭제"></span>
+							<div id="pmodal_reform"></div>
 							<div class="margin-bottom-20"><hr class="hr-md"> </div>
 						</div>
 					</div>
@@ -704,10 +704,11 @@
 						</div>
 						<div class="prere_text">3</div>
 						<div class="pmodal_brere">
-							<a class="pmodal_same" href="#">댓글달기</a>
+							<a class="pmodal_same" id="rere_write">댓글달기</a>
 							<span>
 							<input type="button" value="수정">
 							<input type="button" value="삭제"></span>
+							<div id="pmodal_reform"></div>
 							<div class="margin-bottom-20"><hr class="hr-md"> </div>
 						</div>
 					</div>
@@ -723,7 +724,8 @@
 						</div>
 						<div class="prere_text"><span class="rere_writer">white</span>4</div>
 						<div class="pmodal_brere">
-							<a class="pmodal_diff" href="#">댓글달기</a>
+							<a class="pmodal_diff" id="rere_write">댓글달기</a>
+							<div class="pmodal_reform" data-num="1"></div>
 							<div class="margin-bottom-20"><hr class="hr-md"> </div>
 						</div>
 					</div>

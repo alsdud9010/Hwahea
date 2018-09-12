@@ -46,4 +46,11 @@ public class NoticeController {
 		
 		return "myQuestion";
 	}
+	
+	//========= 1:1¹®ÀÇ
+	@RequestMapping("/notice/my_questionWrite.do")
+	public String process4() {
+		
+		return "myQuestionWrite";
+	}
 }
