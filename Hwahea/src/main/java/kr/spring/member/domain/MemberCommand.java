@@ -1,35 +1,41 @@
 package kr.spring.member.domain;
 
+import java.sql.Blob;
 import java.sql.Date;
+import java.util.Arrays;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 
 public class MemberCommand {
 	@Pattern(regexp="^[A-Za-z0-9+]{4,12}$")
 	private String m_id;
-	private int auth;
+	private int m_auth;
 	@NotEmpty
 	private String m_name;
-	@Size(min=4,max=16)
+	@Min(value=8)@Max(value=64)
+	@Pattern(regexp="^[A-Za-z0-9+]{8,16}$")
 	private String m_passwd;
-	@NotEmpty
-	private String m_profile;
+	private Blob m_profile;
 	@NotEmpty
 	private String m_nickname;
-	@NotEmpty
-	private String m_gender;
-	@NotEmpty
-	private String m_havechild;
-	@NotEmpty
-	private String m_age;
-	@NotEmpty
-	private String m_skintype;
+	
+	private int m_gender;
+	
+	private int m_havechild;
+	@Range(min=1950,max=2018)
+	private int m_age;
+	
+	private int m_skintype;
 	private int m_atopy;
 	private int m_pimple;
 	private int m_susceptilbility;
@@ -47,32 +53,21 @@ public class MemberCommand {
 	@Email
 	@NotEmpty
 	private String m_email;
-	@Size(min=5,max=5)
+	@Range(min=5,max=5)
 	private String m_zipcode;
 	@NotEmpty
 	private String m_address1;
 	private String m_address2;
 	private int m_point;
 	private Date m_reg_date;
-	
+	private String m_grade;
+
 	//비밀번호 일치 여부 체크
 	public boolean isCheckedPasswd(String userPasswd) {
-		if(auth > 0 && m_passwd.equals(userPasswd)) {
+		if(m_auth > 0 && m_passwd.equals(userPasswd)) {
 			return true;
 		}
 		return false;
-	}
-
-	@Override
-	public String toString() {
-		return "MemberCommand [m_id=" + m_id + ", auth=" + auth + ", m_name=" + m_name + ", m_passwd=" + m_passwd
-				+ ", m_profile=" + m_profile + ", m_nickname=" + m_nickname + ", m_gender=" + m_gender
-				+ ", m_havechild=" + m_havechild + ", m_age=" + m_age + ", m_skintype=" + m_skintype + ", m_atopy="
-				+ m_atopy + ", m_pimple=" + m_pimple + ", m_susceptilbility=" + m_susceptilbility + ", m_takename="
-				+ m_takename + ", m_phone1=" + m_phone1 + ", m_phone2=" + m_phone2 + ", m_phone3=" + m_phone3
-				+ ", m_zipphone1=" + m_zipphone1 + ", m_zipphone2=" + m_zipphone2 + ", m_zipphone3=" + m_zipphone3
-				+ ", m_email=" + m_email + ", m_zipcode=" + m_zipcode + ", m_address1=" + m_address1 + ", m_address2="
-				+ m_address2 + ", m_point=" + m_point + ", m_reg_date=" + m_reg_date + "]";
 	}
 
 	public String getM_id() {
@@ -83,12 +78,12 @@ public class MemberCommand {
 		this.m_id = m_id;
 	}
 
-	public int getAuth() {
-		return auth;
+	public int getM_auth() {
+		return m_auth;
 	}
 
-	public void setAuth(int auth) {
-		this.auth = auth;
+	public void setM_auth(int m_auth) {
+		this.m_auth = m_auth;
 	}
 
 	public String getM_name() {
@@ -107,11 +102,11 @@ public class MemberCommand {
 		this.m_passwd = m_passwd;
 	}
 
-	public String getM_profile() {
+	public Blob getM_profile() {
 		return m_profile;
 	}
 
-	public void setM_profile(String m_profile) {
+	public void setM_profile(Blob m_profile) {
 		this.m_profile = m_profile;
 	}
 
@@ -123,35 +118,35 @@ public class MemberCommand {
 		this.m_nickname = m_nickname;
 	}
 
-	public String getM_gender() {
+	public int getM_gender() {
 		return m_gender;
 	}
 
-	public void setM_gender(String m_gender) {
+	public void setM_gender(int m_gender) {
 		this.m_gender = m_gender;
 	}
 
-	public String getM_havechild() {
+	public int getM_havechild() {
 		return m_havechild;
 	}
 
-	public void setM_havechild(String m_havechild) {
+	public void setM_havechild(int m_havechild) {
 		this.m_havechild = m_havechild;
 	}
 
-	public String getM_age() {
+	public int getM_age() {
 		return m_age;
 	}
 
-	public void setM_age(String m_age) {
+	public void setM_age(int m_age) {
 		this.m_age = m_age;
 	}
 
-	public String getM_skintype() {
+	public int getM_skintype() {
 		return m_skintype;
 	}
 
-	public void setM_skintype(String m_skintype) {
+	public void setM_skintype(int m_skintype) {
 		this.m_skintype = m_skintype;
 	}
 
@@ -282,6 +277,28 @@ public class MemberCommand {
 	public void setM_reg_date(Date m_reg_date) {
 		this.m_reg_date = m_reg_date;
 	}
+
+	public String getM_grade() {
+		return m_grade;
+	}
+
+	public void setM_grade(String m_grade) {
+		this.m_grade = m_grade;
+	}
+	
+	@Override
+	public String toString() {
+		return "MemberCommand [m_id=" + m_id + ", m_auth=" + m_auth + ", m_name=" + m_name + ", m_passwd=" + m_passwd
+				+ ", m_profile=" + m_profile + ", m_nickname=" + m_nickname + ", m_gender=" + m_gender
+				+ ", m_havechild=" + m_havechild + ", m_age=" + m_age + ", m_skintype=" + m_skintype
+				+ ", m_atopy=" + m_atopy + ", m_pimple=" + m_pimple + ", m_susceptilbility=" + m_susceptilbility
+				+ ", m_takename=" + m_takename + ", m_phone1=" + m_phone1 + ", m_phone2=" + m_phone2 + ", m_phone3="
+				+ m_phone3 + ", m_zipphone1=" + m_zipphone1 + ", m_zipphone2=" + m_zipphone2 + ", m_zipphone3="
+				+ m_zipphone3 + ", m_email=" + m_email + ", m_zipcode=" + m_zipcode + ", m_address1=" + m_address1
+				+ ", m_address2=" + m_address2 + ", m_point=" + m_point + ", m_reg_date=" + m_reg_date + ", m_grade="
+				+ m_grade + "]";
+	}
+
 }
 
 
