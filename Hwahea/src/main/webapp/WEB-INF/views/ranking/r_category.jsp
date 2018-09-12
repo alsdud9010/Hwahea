@@ -26,97 +26,120 @@
 			<!-- 카테고리별 top5 시작 -->
 			<div class="ranking-top5">
 				<div class="row">
-					<div class="col-md-12 margin-bottom-10">
+					<div class="col-md-12 margin-bottom-15">
 						<h2>
 							<b> 카테고리별 </b>
 						</h2>
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-2" onclick="location.href='${pageContext.request.contextPath}/review/productInfo.do'">
 						<div class="ranking-top5-img">
-							<a href="#"> <img class="img-responsive"
-								src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-								alt="">
-							</a> <span class="magazine-badge label-yellow">1</span>
-						</div>
-						<div class="r_label">
-							<div class="r_brandName">네이처리퍼블릭</div>
-							<div class="r_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong> <br>
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									alt="">
 							</div>
+							<span>
+						 		<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
+									alt="">
+							</span>
+						</div>
+						<div class="r_brandName">정샘물</div>
+						<div class="r_productName">
+							<strong>컬러피스 아이섀도우 프리즘</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>22,000원</strong> <span>/ 2.6g</span>
+		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+						</div>
+					</div>
+					
+					<div class="col-md-2">
+						<div class="ranking-top5-img">
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									alt="">
+							</div>
+							<span>
+						 		<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/second.png"
+									alt="">
+							</span>
+						</div>
+						<div class="r_brandName">정샘물</div>
+						<div class="r_productName">
+							<strong>컬러피스 아이섀도우 프리즘</strong>
+						</div>
+						<div class="r_by-author">
+		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
-							<a href="#"> <img class="img-responsive"
-								src="${pageContext.request.contextPath}/assets/img/ranking/cc.jpg"
-								alt="">
-							</a> <span class="magazine-badge label-green">2</span>
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									alt="">
+							</div>
+							<span>
+						 		<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/third.png"
+									alt="">
+							</span>
 						</div>
-						<div class="r_label">
-							<div class="r_brandName">네이처리퍼블릭</div>
-							<div class="r_productName">플렌티 오브 파우트 플럼핑 립스틱</div>
+						<div class="r_brandName">정샘물</div> 
+						<div class="r_productName">
+							<strong>컬러피스 아이섀도우 프리즘</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>22,000원</strong> <span>/ 2.6g</span>
+		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+						</div>
+					</div> 
+					<div class="col-md-2">
+						<div class="ranking-top5-img">
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									alt="">
+							</div>
+							<span>
+						 		<img class="non_thorphy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/four.jpg"
+									alt="">
+							</span>
+						</div>
+						<div class="r_brandName">정샘물</div>
+						<div class="r_productName">
+							<strong>컬러피스 아이섀도우 프리즘</strong>
+						</div>
+						<div class="r_by-author">
+		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
-							<a href="#"> <img class="img-responsive"
-								src="${pageContext.request.contextPath}/assets/img/ranking/brush.jpg"
-								alt="">
-							</a> <span class="magazine-badge label-green">3</span>
-						</div>
-						<div class="r_label">
-							<div class="r_brandName">정샘물</div>
-							<div class="r_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong> <br>
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									alt="">
 							</div>
+							<span>
+						 		<img class="non_thorphy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/five.png"
+									alt="">
+							</span>
+						</div> 
+						<div class="r_brandName">정샘물</div>
+						<div class="r_productName">
+							<strong>컬러피스 아이섀도우 프리즘</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>22,000원</strong> <span>/ 2.6g</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<a href="#"> <img class="img-responsive"
-								src="${pageContext.request.contextPath}/assets/img/ranking/cc.jpg"
-								alt="">
-							</a> <span class="magazine-badge label-green">4</span>
-						</div>
-						<div class="r_label">
-							<div class="r_brandName">정샘물</div>
-							<div class="r_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong> <br>
-							</div>
-						</div>
-						<div class="r_by-author">
-							<strong>22,000원</strong> <span>/ 2.6g</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<a href="#"> <img class="img-responsive"
-								src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-								alt="">
-							</a> <span class="magazine-badge label-green">5</span>
-						</div>
-						<div class="r_label">
-							<div class="r_brandName">정샘물</div>
-							<div class="r_productName">
-								<strong>컬러피스 아이섀도우 프리즘 2.6g</strong> <span>/</span>
-							</div>
-						</div>
-						<div class="r_by-author">
-							<strong>22,000원</strong>
+		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- 카테고리별 top5 끝 -->
+			<!-- 카테고리별별 top5 끝 -->
 
 
 
@@ -314,130 +337,147 @@
 				<div class="margin-bottom-15"> 
 					<hr class="hr-md">
 				</div>
-
-				<div class="row">
-					<div>
-						<div class="col-md-1">
-							<h1>1</h1>
-						</div>
-						<div class="col-md-2">
-							<div class="ranking-list-img">
+				
+				<div class="ranking col-md-12">
+					<div class="row">
+						<ul>
+							<li class="ranking_num"><h1>1</h1></li>
+							<li class="col-md-2 ranking-img">
 								<a href="#"> <img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/brush.jpg"
-									alt="">
+										src="${pageContext.request.contextPath}/assets/img/ranking/ausome.jpg"
+										alt="">
 								</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="r_list_brandName">정샘물</div>
-							<div class="r_list_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong>
-							</div>
-							<div class="r_list_by-author">
-								<strong> 22,000원</strong> <span>/ 2.6g</span>
-							</div>
-						</div>
-						<div class="col-md-4 stars">5.0 ★★★★★ (4,000)</div>
+							</li>
+							<li class="ranking_names">
+								<div class="ranking_brandName">오우썸 </div>
+								<div class="ranking_productName">
+									<strong>오가닉 딥모이스처라이징 더블미스트 기획세트</strong>
+								</div>
+								<div class="r_list_by-author">
+									<strong> 18,500원</strong> <span>/ 2.6g</span>
+								</div>
+							</li>
+							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
+							<li class="ranking_shopping"> 
+								<ul>
+									<li class="buy">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
+										alt="">
+									</li>
+									<li class="cart">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
+										alt="">
+									</li>
+								</ul>  
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="row">
-					<div>
-						<div class="col-md-1">
-							<h1>2</h1>
-						</div>
-						<div class="col-md-2">
-							<div class="ranking-list-img">
+					<div class="row">
+						<ul>
+							<li class="ranking_num"><h1>2</h1></li>
+							<li class="col-md-2 ranking-img">
 								<a href="#"> <img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/brush.jpg"
-									alt="">
+										src="${pageContext.request.contextPath}/assets/img/ranking/isandtree.jpg"
+										alt="">
 								</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="r_list_brandName">정샘물</div>
-							<div class="r_list_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong>
-							</div>
-							<div class="r_list_by-author">
-								<strong> 22,000원</strong> <span>/ 2.6g</span>
-							</div>
-						</div>
-						<div class="col-md-4 stars">5.0 ★★★★★ (4,000)</div>
+							</li>
+							<li class="ranking_names">
+								<div class="ranking_brandName">이지앤트리</div>
+								<div class="ranking_productName">
+									<strong>히아루론산 토너</strong>
+								</div>
+								<div class="r_list_by-author">
+									<strong> 12,000원</strong> <span>/ 200ml</span>
+								</div>
+							</li>
+							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
+							<li class="ranking_shopping"> 
+								<ul>
+									<li class="buy">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
+										alt="">
+									</li>
+									<li class="cart">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
+										alt="">
+									</li>
+								</ul> 
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="row">
-					<div>
-						<div class="col-md-1">
-							<h1>3</h1>
-						</div>
-						<div class="col-md-2">
-							<div class="ranking-list-img">
+					<div class="row">
+						<ul>
+							<li class="ranking_num"><h1>3</h1></li>
+							<li class="col-md-2 ranking-img">
 								<a href="#"> <img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/brush.jpg"
-									alt="">
+										src="${pageContext.request.contextPath}/assets/img/ranking/uriage.jpg"
+										alt="">
 								</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="r_list_brandName">정샘물</div>
-							<div class="r_list_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong>
-							</div>
-							<div class="r_list_by-author">
-								<strong> 22,000원</strong> <span>/ 2.6g</span>
-							</div>
-						</div>
-						<div class="col-md-4 stars">5.0 ★★★★★ (4,000)</div>
+							</li>
+							<li class="ranking_names">
+								<div class="ranking_brandName">유리아쥬</div>
+								<div class="ranking_productName">
+									<strong>제모스 토너</strong>
+								</div>
+								<div class="ranking_by-author">
+									<strong> 38,000원</strong> <span>/ 200ml</span>
+								</div>
+							</li>
+							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
+							<li class="ranking_shopping"> 
+								<ul>
+									<li class="buy">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
+										alt="">
+									</li>
+									<li class="cart">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
+										alt="">
+									</li>
+								</ul> 
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="row">
-					<div>
-						<div class="col-md-1">
-							<h1>4</h1>
-						</div>
-						<div class="col-md-2">
-							<div class="ranking-list-img">
+					<div class="row">
+						<ul>
+							<li class="ranking_num"><h1>4</h1></li>
+							<li class="col-md-2 ranking-img">
 								<a href="#"> <img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/brush.jpg"
-									alt="">
+										src="${pageContext.request.contextPath}/assets/img/ranking/cc.jpg"
+										alt="">
 								</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="r_list_brandName">정샘물</div>
-							<div class="r_list_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong>
-							</div>
-							<div class="r_list_by-author">
-								<strong> 22,000원</strong> <span>/ 2.6g</span>
-							</div>
-						</div>
-						<div class="col-md-4 stars">5.0 ★★★★★ (4,000)</div>
-					</div>
-				</div>
-				<div class="row">
-					<div>
-						<div class="col-md-1">
-							<h1>5</h1>
-						</div>
-						<div class="col-md-2">
-							<div class="ranking-list-img">
-								<a href="#"> <img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/brush.jpg"
-									alt="">
-								</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="r_list_brandName">정샘물</div>
-							<div class="r_list_productName">
-								<strong>컬러피스 아이섀도우 프리즘</strong>
-							</div>
-							<div class="r_list_by-author">
-								<strong> 22,000원</strong> <span>/ 2.6g</span>
-							</div>
-						</div>
-						<div class="col-md-4 stars">5.0 ★★★★★ (4,000)</div>
+							</li>
+							<li class="ranking_names">
+								<div class="ranking_brandName">정샘물</div>
+								<div class="ranking_productName">
+									<strong>컬러피스 아이섀도우 프리즘</strong>
+								</div>
+								<div class="r_list_by-author">
+									<strong> 22,000원</strong> <span>/ 2.6g</span>
+								</div>
+							</li>
+							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
+							<li class="ranking_shopping"> 
+								<ul>
+									<li class="buy">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
+										alt="">
+									</li>
+									<li class="cart">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
+										alt="">
+									</li>
+								</ul> 
+							</li>
+						</ul>
 					</div>
 				</div>
 				<!-- 랭킹 리스트 끝 -->
@@ -445,6 +485,6 @@
 			<!-- End Content -->
 		</div>
 	</div>
-</div>
+	</div>
 <!--/container-->
 <!-- End Content Part -->

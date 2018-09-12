@@ -40,7 +40,7 @@
 					<!-- 성분사전 메인 끝-->
 					<!-- navbar tap 시작 -->
 					<ul class="nav nav-tabs navbar-collapse aa">
-						<li class="nav-item"><a href="nav-link" class="active"
+						<li class="nav-item"><a href="nav-link" id="warnings" class="active"
 							data-toggle="tab" data-target="#tabone">20가지 주의성분</a></li>
 						<li class="nav-item"><a class="nav-link" href=""
 							data-toggle="tab" data-target="#tabtwo">알레르기 주의성분</a></li>

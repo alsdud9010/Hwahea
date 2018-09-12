@@ -2,11 +2,11 @@
 $(document).ready(function(){
 
 	//링크 연결
-	$('#r_category').click(function(){
+	$('#category').click(function(){
 		location.href='r_category.do';
 	});
 	
-	$('#r_skinType').click(function(){
+	$('#skinType').click(function(){
 		location.href='r_skinType.do';
 	});
 	

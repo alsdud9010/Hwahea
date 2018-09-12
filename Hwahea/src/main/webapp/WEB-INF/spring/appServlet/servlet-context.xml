@@ -15,6 +15,7 @@
 	<context:component-scan base-package="kr.spring.review.controller" />
 	<context:component-scan base-package="kr.spring.notice.controller" />
 	<context:component-scan base-package="kr.spring.main.controller" />
+	<context:component-scan base-package="kr.spring.dictionary.controller" />
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -78,5 +79,4 @@
 	<view-controller path="/ranking/ranking_main.do" view-name="ranking_main"/>
 	<view-controller path="/ranking/r_category.do" view-name="r_category"/>
 	<view-controller path="/ranking/r_skinType.do" view-name="r_skinType"/>
-	<view-controller path="/dictionary/dictionary.do" view-name="dictionary"/>
 </beans:beans>

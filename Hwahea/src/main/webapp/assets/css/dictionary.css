@@ -157,6 +157,8 @@ li{
 	margin-top:5px;
 	margin-bottom:5px;
 	background-color: #f4f4f4;
+	box-shadow: -1px 1px 40px 0px #c0c0c0b0 inset;
+    background-color: white;
 }
 
 
