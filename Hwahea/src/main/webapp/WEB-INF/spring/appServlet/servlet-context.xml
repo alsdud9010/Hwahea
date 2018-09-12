@@ -14,6 +14,7 @@
 	<context:component-scan base-package="kr.spring.plus.controller" />
 	<context:component-scan base-package="kr.spring.review.controller" />
 	<context:component-scan base-package="kr.spring.notice.controller" />
+	<context:component-scan base-package="kr.spring.main.controller" />
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -71,7 +72,6 @@
 	</beans:bean>
 	
 	<!-- 데이터 작업 없이 뷰 호출 - 메인페이지 -->
-	<view-controller path="/main/main.do" view-name="main"/>
 	<view-controller path="/mypage/my_info.do" view-name="my_info"/>
 	<view-controller path="/signin/m_signin.do" view-name="m_signin"/>
 	<view-controller path="/shop/shopMain.do" view-name="shopMain"/>

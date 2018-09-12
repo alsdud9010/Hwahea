@@ -91,7 +91,7 @@
 	<!-- 암호화,복호화 알고리즘 처리 -->
 	<bean id="cipherAES" class="kr.spring.util.CipherTemplate">
 		<property name="algorithm" value="AES"/>                                     
-		<property name="secretKey" value="k6cfbpwfx49ik9vqapooyhwdg"/>
+		<property name="secretKey" value="g08iydjlizp9g2588heq32rds"/>
 	</bean>
 	
 </beans>
