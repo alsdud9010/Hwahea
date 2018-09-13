@@ -35,6 +35,158 @@ $(document).ready(function(){
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
-
+	
+	
+	//----------------------------------사진 업로드 시 미리보기
+	var upload1 = $('#ex_file1');
+	var upload2 = $('#ex_file2');
+	var upload3 = $('#ex_file3');
+    var preview1 = $('#preview1');
+    var preview2 = $('#preview2');
+    var preview3 = $('#preview3');
+    var deletefile1 = $('#deletefile1');
+    var deletefile2 = $('#deletefile2');
+    var deletefile3 = $('#deletefile3');
+       
+    upload1.on('change',function (e) {
+        var get_file = e.target.files;
+ 
+        var image = document.createElement('img');
+ 
+        /* FileReader 객체 생성 */
+        var reader = new FileReader();
+ 
+        /* reader 시작시 함수 구현 */
+        reader.onload = (function (aImg) {
+            console.log(1);
+ 
+            return function (e) {
+                console.log(3);
+                /* base64 인코딩 된 스트링 데이터 */
+                aImg.src = e.target.result
+            }
+        })(image)
+ 
+        if(get_file){
+            /* 
+                get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
+                onload 에 설정했던 return 으로 넘어간다.
+                이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
+            */
+            reader.readAsDataURL(get_file[0]);
+            console.log(2);
+        }
+ 
+        preview1.append(image);
+        
+        var deletebtn1='';
+        deletebtn1 += '<input type="button" value="사진1 삭제" id="delete1">'
+        deletefile1.append(deletebtn1);
+        
+        $('#delete1').on('click',function(){
+        	preview1.empty();
+        	deletefile1.empty();
+        	$('#ex_file1').val('');
+        });
+        
+    })
+    
+    upload2.on('change',function (e) {
+        var get_file = e.target.files;
+ 
+        var image = document.createElement('img');
+ 
+        /* FileReader 객체 생성 */
+        var reader = new FileReader();
+ 
+        /* reader 시작시 함수 구현 */
+        reader.onload = (function (aImg) {
+            console.log(1);
+ 
+            return function (e) {
+                console.log(3);
+                /* base64 인코딩 된 스트링 데이터 */
+                aImg.src = e.target.result
+            }
+        })(image)
+ 
+        if(get_file){
+            /* 
+                get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
+                onload 에 설정했던 return 으로 넘어간다.
+                이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
+            */
+            reader.readAsDataURL(get_file[0]);
+            console.log(2);
+        }
+ 
+        preview2.append(image);
+        
+        var deletebtn2='';
+        deletebtn2 += '<input type="button" value="사진2 삭제" id="delete2">'
+        deletefile2.append(deletebtn2);
+        
+        $('#delete2').on('click',function(){
+        	preview2.empty();
+        	deletefile2.empty();
+        	$('#ex_file2').val('');
+        });
+    })
+    
+    upload3.on('change',function (e) {
+        var get_file = e.target.files;
+ 
+        var image = document.createElement('img');
+ 
+        /* FileReader 객체 생성 */
+        var reader = new FileReader();
+ 
+        /* reader 시작시 함수 구현 */
+        reader.onload = (function (aImg) {
+            console.log(1);
+ 
+            return function (e) {
+                console.log(3);
+                /* base64 인코딩 된 스트링 데이터 */
+                aImg.src = e.target.result
+            }
+        })(image)
+ 
+        if(get_file){
+            /* 
+                get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
+                onload 에 설정했던 return 으로 넘어간다.
+                이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
+            */
+            reader.readAsDataURL(get_file[0]);
+            console.log(2);
+        }
+        preview3.append(image);
+        
+        var deletebtn3='';
+        deletebtn3 += '<input type="button" value="사진3 삭제" id="delete3">'
+        deletefile3.append(deletebtn3);
+        
+        $('#delete3').on('click',function(){
+        	preview3.empty();
+        	deletefile3.empty();
+        	$('#ex_file3').val('');
+        });
+    })
+    
+    
+    //----------------------------------------------사진 업로드 갯수 제한하기
+    
+    
+    
+    
+    
+    
+    //---------------------------------------------업로드 한 사진 삭제하기
+    
+    
+    
+    
+    
 
 });

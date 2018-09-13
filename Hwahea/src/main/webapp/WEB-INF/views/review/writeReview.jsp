@@ -94,13 +94,13 @@
 	<div id="re_tip">
 		<img src="${pageContext.request.contextPath}/assets/img/tip.png"> 
 		<span id="retitle">꿀팁</span> <span id="source">(선택)</span> <br> 
-		<form:textarea path="re_tip"  id="re_tip" rows="10" cols="155" placeholder="*나만의 사용법, 이 제품에 대해 도움이 되는 정보 등을 품성하게 남겨주세요♡"/>
+		<form:textarea path="re_tip"  id="re_tip" rows="10" cols="155" placeholder="*나만의 사용법, 이 제품에 대해 도움이 되는 정보 등을 풍성하게 남겨주세요♡"/>
 		<div id="tcount"><span id="t_count">0/5000</span></div> 
 	</div>
 	<div id="photos">
 		<img src="${pageContext.request.contextPath}/assets/img/review/camera.png" id="camera"> 
 		<span id="retitle">사진등록 </span> 
-		<span id="source">(선택)</span> 
+		<span id="source">(선택)(최대 3장까지 업로드 가능)</span> 
 		<span id="option">사진 등록시 화해 포인트 500P 지급!</span><br> 
 		<div id="caution">
 			* 제품과 무관한 사진일 경우, 리뷰 수정 요청을 드리게 됩니다.
@@ -111,18 +111,24 @@
 			<img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 			<img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 		</div> --%>
-		<div class="filebox">
+		<div class="preview">
+			<span id="preview1"></span>
+			<span id="preview2"></span>
+			<span id="preview3"></span>
+		</div>
+		<div class="deletefile">
+			<span id="deletefile1"></span>
+			<span id="deletefile2"></span>
+			<span id="deletefile3"></span>
+		</div>
+		<span class="filebox">
 			<label for="ex_file1">업로드1</label> 
 			<input name="re_uploadfile1" type="file" id="ex_file1">
-		</div>
-		<div class="filebox">
 			<label for="ex_file2">업로드2</label> 
 			<input name="re_uploadfile2" type="file" id="ex_file2">
-		</div>
-		<div class="filebox">
 			<label for="ex_file3">업로드3</label> 
 			<input name="re_uploadfile3" type="file" id="ex_file3">
-		</div>
+		</span>
 	</div>
 	</div>
 	<hr id="re_hr">

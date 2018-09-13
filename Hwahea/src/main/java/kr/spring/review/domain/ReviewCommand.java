@@ -39,6 +39,38 @@ public class ReviewCommand {
 	private String re_ip; //리뷰 작성자 IP
 	private Date re_regdate; //리뷰 작성 날짜 
 	
+	//-------------------------------------------------리뷰 수정 요청
+	private String edit_cate;
+	private String edit_content;
+	private String m_id;
+	
+	
+	public String getEdit_cate() {
+		return edit_cate;
+	}
+	public void setEdit_cate(String edit_cate) {
+		this.edit_cate = edit_cate;
+	}
+	public String getEdit_content() {
+		return edit_content;
+	}
+	public void setEdit_content(String edit_content) {
+		this.edit_content = edit_content;
+	}
+	public String getM_id() {
+		return m_id;
+	}
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
+	public Date getEdit_date() {
+		return edit_date;
+	}
+	public void setEdit_date(Date edit_date) {
+		this.edit_date = edit_date;
+	}
+	private Date edit_date;
+	
 	public int getRe_num() {
 		return re_num;
 	}
@@ -166,13 +198,16 @@ public class ReviewCommand {
 	public void setRe_filename3(String re_filename3) {
 		this.re_filename3 = re_filename3;
 	}
+	
 	@Override
 	public String toString() {
-		return "ReviewCommand [re_num=" + re_num + ", c_code=" + c_code + ", re_id=" + re_id + ", re_rate="
-				+ re_rate + ", re_good=" + re_good + ", re_bad=" + re_bad + ", re_tip=" + re_tip + ", re_uploadfile1="
+		return "ReviewCommand [re_num=" + re_num + ", c_code=" + c_code + ", re_id=" + re_id + ", re_rate=" + re_rate
+				+ ", re_good=" + re_good + ", re_bad=" + re_bad + ", re_tip=" + re_tip + ", re_uploadfile1="
 				+ re_uploadfile1 + ", re_uploadfile2=" + re_uploadfile2 + ", re_uploadfile3=" + re_uploadfile3
 				+ ", re_filename1=" + re_filename1 + ", re_filename2=" + re_filename2 + ", re_filename3=" + re_filename3
 				+ ", re_report=" + re_report + ", re_like=" + re_like + ", re_ip=" + re_ip + ", re_regdate="
-				+ re_regdate + "]";
+				+ re_regdate + ", edit_cate=" + edit_cate + ", edit_content=" + edit_content + ", m_id=" + m_id
+				+ ", edit_date=" + edit_date + "]";
 	}
+	
 }

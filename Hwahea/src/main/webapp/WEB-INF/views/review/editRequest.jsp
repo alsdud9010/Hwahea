@@ -33,25 +33,27 @@
 		2. 브랜드사는 hwahea@hwahea.com 로 수정요청을 해주시면, 별도의 과정을 안내해드립니다.</div>
 	</div>
 	<hr id="re_hr"> 
+	<form action="editSuccess.do" id="edit_form">
 	<div id="selectbox">
-		<select>
-			<option selected="selected">카테고리를 선택해주세요.</option>
-			<option value="">1. 단종됐어요!
-			<option value="">2. 브랜드명 수정해주세요!
-			<option value="">3. 카테고리명 수정해주세요!
-			<option value="">4. 제품명 수정해주세요!
-			<option value="">5. 가격정보 수정해주세요!
-			<option value="">6. 용량정보 수정해주세요!!
-			<option value="">7. 전성분 목록 수정해주세요!
-			<option value="">8. 이미지 수정해주세요!!
-			<option value="">9. 기타
+		<select id="edit_cate">
+			<option value="0" selected="selected">카테고리를 선택해주세요.</option>
+			<option value="1">1. 단종됐어요!</option>
+			<option value="2">2. 브랜드명 수정해주세요!</option>
+			<option value="3">3. 카테고리명 수정해주세요!</option>
+			<option value="4">4. 제품명 수정해주세요!</option>
+			<option value="5">5. 가격정보 수정해주세요!</option>
+			<option value="6">6. 용량정보 수정해주세요!!</option>
+			<option value="7">7. 전성분 목록 수정해주세요!</option>
+			<option value="8">8. 이미지 수정해주세요!!</option>
+			<option value="9">9. 기타
 		</select>
 	</div>
 	<div id="txtarea">
-		<textarea id="editarea" rows="10" cols="100" placeholder="구체적인 수정 요청사항을 적어주시면, 더 원활하게 처리가 가능해요. :)"></textarea>
+		<textarea id="edit_content" rows="10" cols="100" placeholder="구체적인 수정 요청사항을 적어주시면, 더 원활하게 처리가 가능해요. :)"></textarea>
 		<div id="editcount"><span class="count">0/300</span></div> 
 	</div>
 	<div id="submit">
 		<input type="submit" value="화해운영진에게 전송하기">
 	</div>
+	</form>
 </div>

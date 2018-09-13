@@ -167,6 +167,24 @@ input:focus{
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+  margin-right:10px;
+}
+.preview{
+	display:table;
+	margin:0 auto;
+}
+.deletefile{
+	display:table;
+	margin:10px auto 20px auto;
+}
+.deletefile span{
+	margin-right:5px;
+}
+.deletefile input{
+	background-color:#ffffff;
+	border:1px solid #72c02c;
+	padding:5px;
+	
 }
 #caution{
 	height:30px;

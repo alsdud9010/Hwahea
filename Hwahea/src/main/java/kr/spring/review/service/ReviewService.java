@@ -44,4 +44,15 @@ public interface ReviewService {
 	
 	//부모글 삭제시 댓글이 존재하면 부모글 삭제 전 댓글 삭제
 	public void deleteReplyByNum(Integer num);
+	
+	
+	
+	//------------------------------------정보 수정 요청 
+	//수정 요청 전송하기 
+	public void insertEdit(ReviewCommand review);
+	
+	
+	
+	
+	
 }

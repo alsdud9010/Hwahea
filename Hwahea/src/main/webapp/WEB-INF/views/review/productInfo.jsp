@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/productInfo.css">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/graph.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/review.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/review.reply.js"></script>
 	<div id="wrap">
 	<div>
 		<div class="r_title">
@@ -235,7 +237,7 @@
 				<input type="button" value="댓글 달기" data-target="#modal01" data-toggle="modal">  -->
 				<ul>
 					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
-					<li id="like_re" data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png"> 댓글달기</li>
+					<li class="like_re" data-num="2" data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png"> 댓글달기</li>
 				</ul>
 			</div>
 			</div>
@@ -309,7 +311,7 @@
 				<input type="button" value="댓글 달기">  -->
 				<ul>
 					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
-					<li id="like_re"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
+					<li class="like_re"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
 				</ul>
 			</div>
 		</div>
@@ -329,7 +331,7 @@
 					<span id="modalCategory"> <img src="${pageContext.request.contextPath}/assets/img/review/review.png">리뷰 상세보기 </span>
 					<button class="close" data-dismiss="modal">&times;</button>
 				</div>
-				<div class="modal-body pmodal_c" style="text-align: center;">
+				<div class="modal-body pmodal_c" style="text-align: center;" data-num="2">
 					<!-- 제품 사진 -->
 					<img class="plusThumbnail3" src="${pageContext.request.contextPath}/assets/img/sample.jpg">
 					<div class="brand">메이크업 포에버(MAKEUP FOREVER)</div>
@@ -446,14 +448,15 @@
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>내 아이디
 						</div>
 						<div class="pmodal_rform">
-							<form>
-								<%-- <input type="hidden" name="num" value="${board.num}" id="num">
-								<input type="hidden" name="id" value="${user_id}" id="user_id"> --%>
-								<textarea id="pmodal_rtext" cols="70" rows="4" placeholder="내용을 입력해 주세요."></textarea>
-								<input type="submit" value="댓글달기">
+							<form id="reply_form" action="writeReply.do">
+								<input type="hidden" name="re_num" value="1" id="re_num">
+								<input type="hidden" name="id" value="${user_id}" id="user_id">
+								<textarea name="rere_content" id="re_content" cols="70" rows="4" placeholder="내용을 입력해 주세요."></textarea>
+								<input type="submit" value="댓글달기" >
 							</form>
-							<div class="pmodal_rcount"><span class="letter-count">0 / 300</span></div>
+							<div class="pmodal_rcount"><span class="letter-count">0 / 300</span></div> 
 						</div>
+						<!-- 댓글 출력 시작 -->
 						<div class="pmodal_reback"></div> <!-- 댓글 출력하는 div -->
 						<div class="paging-button" style="display: none;">
 							<input type="button" value="다음글 보기">
@@ -461,44 +464,7 @@
 						<div id="loading" style="display: none;">
 							<img src="${pageContext.request.contextPath}/assets/img/review/ajax-loader.gif">
 						</div>
-						<%-- <div class="pmodal_reback">
-							<div class="pmodal_rere">
-								<div class="pmodal_rpro">
-									<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-									<span class="pmodal_wrere">blue</span>
-									<span class="plusGrade"><input type="button" value="VIP"></span>
-									<span class="pmodal_drere">2018-08-28</span>
-								</div>
-								<div class="pmodal_brere">
-									<div class="replyview">
-										<div class="pmodal_trere">리뷰 이런 식으로 쓰지 마십쇼.</div>
-										<a class="pmodal_same" id="rere_write">댓글달기</a>
-										<input type="button" value="수정" class="modify-btn">
-										<input type="button" value="삭제">
-									</div>
-								</div>
-								<div class="margin-bottom-20"><hr class="hr-md"> </div>
-							</div>
-						</div> --%>
-						<%-- <div class="pmodal_reback">
-							<div class="pmodal_rere">
-								<div class="pmodal_rpro">
-									<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-									<span class="pmodal_wrere">blue</span>
-									<span class="plusGrade"><input type="button" value="VIP"></span>
-									<span class="pmodal_drere">1시간 전</span>
-								</div>
-								<div class="pmodal_brere">
-									<div class="replyview">
-										<div class="pmodal_trere">두번째 댓그을흐르르를를ㄹ를ㄹ를</div>
-										<a class="pmodal_same" id="rere_write">댓글달기</a>
-										<input type="button" value="수정" class="modify-btn">
-										<input type="button" value="삭제">
-									</div>
-								</div>
-								<div class="margin-bottom-20"><hr class="hr-md"> </div>
-							</div>
-						</div> --%>
+						<!-- 댓글 출력 끝 -->
 						<!-- 대댓글 -->
 						<div class="prere_back">
 							<div class="pmodal_rere">

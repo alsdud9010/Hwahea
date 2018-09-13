@@ -1,8 +1,9 @@
 package kr.spring.review.domain;
 
 import java.sql.Date;
-
+import kr.spring.util.DurationFromNow;
 import org.hibernate.validator.constraints.NotEmpty;
+
 
 public class ReviewReplyCommand {
 	private int rere_num;//댓글 식별 번호
@@ -10,13 +11,10 @@ public class ReviewReplyCommand {
 	private String rere_ip;//댓글 작성자IP
 	@NotEmpty
 	private String rere_content;//댓글 내용
-	private Date rere_regdate;//댓글 작성일
+	private String rere_regdate;//댓글 작성일
 	private int rere_depth;//대댓글의 깊이(대댓글의 앞 여백)
 	private int rere_parentnum;//부모 댓글 번호, 부모 댓글일 경우 0
 	private int re_num;//해당 댓글의 부모 리뷰 글 번호
-	
-	
-	
 	public int getRere_num() {
 		return rere_num;
 	}
@@ -41,11 +39,11 @@ public class ReviewReplyCommand {
 	public void setRere_content(String rere_content) {
 		this.rere_content = rere_content;
 	}
-	public Date getRere_regdate() {
+	public String getRere_regdate() {
 		return rere_regdate;
 	}
-	public void setRere_regdate(Date rere_regdate) {
-		this.rere_regdate = rere_regdate;
+	public void setRere_regdate(String rere_regdate) {
+		this.rere_regdate = DurationFromNow.getTimeDiffLabel(rere_regdate);
 	}
 	public int getRere_depth() {
 		return rere_depth;

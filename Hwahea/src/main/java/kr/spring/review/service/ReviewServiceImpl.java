@@ -30,9 +30,8 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public ReviewCommand selectReview(Integer num) {
-		// TODO Auto-generated method stub
-		return null;
+	public ReviewCommand selectReview(Integer re_num) {
+		return reviewMapper.selectReview(re_num);
 	}
 
 	@Override
@@ -59,25 +58,31 @@ public class ReviewServiceImpl implements ReviewService{
 
 	@Override
 	public void insertReply(ReviewReplyCommand reviewReply) {
-		/*reviewMapper.insertReply(reviewReply);*/
+		reviewMapper.insertReply(reviewReply);
 		
 	}
 
 	@Override
 	public void updateReply(ReviewReplyCommand reviewReply) {
-		// TODO Auto-generated method stub
+		reviewMapper.updateReply(reviewReply);
 		
 	}
 
 	@Override
-	public void deleteReply(Integer re_num) {
-		// TODO Auto-generated method stub
+	public void deleteReply(Integer rere_num) {
+		reviewMapper.deleteReply(rere_num);
 		
 	}
 
 	@Override
 	public void deleteReplyByNum(Integer num) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertEdit(ReviewCommand review) {
+		reviewMapper.insertEdit(review);
 		
 	}
 }
