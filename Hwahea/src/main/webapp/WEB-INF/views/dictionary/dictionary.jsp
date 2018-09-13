@@ -40,9 +40,9 @@
 					<!-- 성분사전 메인 끝-->
 					<!-- navbar tap 시작 -->
 					<ul class="nav nav-tabs navbar-collapse aa">
-						<li class="nav-item"><a href="nav-link" id="warnings" class="active"
+						<li class="nav-item"><a href="nav-link" id="warnings" class="active" data-num="1"
 							data-toggle="tab" data-target="#tabone">20가지 주의성분</a></li>
-						<li class="nav-item"><a class="nav-link" href=""
+						<li class="nav-item"><a class="nav-link" href="" id="allergie"
 							data-toggle="tab" data-target="#tabtwo">알레르기 주의성분</a></li>
 						<li class="nav-item"><a class="nav-link" href=""
 							data-toggle="tab" data-target="#tabthree">피부타입별 성분</a></li>
@@ -61,8 +61,9 @@
 								<div class="d_info">
 									성분을 선택하시면 정보를 확인하실 수 있습니다 :)  
 								</div>
-
-								<div class="d_list_detail">
+								
+								<div class="detail">
+								<%-- <div class="d_list_detail">
 									<button class="d_list_detail-close">&times;</button>
 									<div class="d_list_detail_title">
 										<div class="d_KOname">디아졸리디닐우레아</div>
@@ -140,333 +141,33 @@
 												</div>
 											</div>
 										</li>
-									</ul>
+									</ul> 
+								</div>--%>
 								</div>
 							</div>
 							<div class="tap_right">
-								<ul class="d_list">
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div class="d_list_name">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_5.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div class="d_list_name">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_5.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div class="d_list_name">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_7.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_7.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_5.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_7.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_7.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_5.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal01" data-toggle="modal">
-												<div>
-													<b>디아졸리디닐우레아</b>
-												</div>
-												<div>Diazolidinyl Urea</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="tap_right_img">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div class="tap_right_name">
-											<div data-target="#modal02" data-toggle="modal">
-												<div>
-													<b>하이드록시이소헥실3-사이클로헥센카복스알데하이드</b>
-												</div>
-												<div>Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde</div>
-											</div>
-										</div>
-									</li>
-								</ul>
+								<div id="loading">
+									<img src="${pageContext.request.contextPath}/assets/img/ajax-loader.gif">
+								</div>
+								<ul class="d_list"></ul>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="tabtwo" role="tabpanel">
-							<p class="tab_left">
+							<div class="tab-header">
 								<span>20가지 주의성분</span>은 화장품 계열 베스트 셀러 도서인<br> '대한민국 화장품의
-								비밀'에 수록되어 있는<br> <span>'가장 피해야할 20가지 성분'</span>의 목록입니다.
-							</p>
+									비밀'에 수록되어 있는<br> <span>'가장 피해야할 20가지 성분'</span>의 목록입니다.
+							</div>
+							<div class="tab_left">
+								<div class="d_info">
+									성분을 선택하시면 정보를 확인하실 수 있습니다 :)  
+								</div>
+								<div class="detail"></div>
+							</div>
 							<div class="tap_right">
-								<ul class="borderr">
-									<li class="tap_right_li">
-										<div class="tap_right_li_div">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div>
-											<div>디아졸리디닐우레아</div>
-											<div>Diazolidinyl Urea</div>
-										</div>
-									</li>
-								</ul>
+								<div id="loading">
+									<img src="${pageContext.request.contextPath}/assets/img/ajax-loader.gif">
+								</div>
+								<ul class="d_list"></ul>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="tabthree" role="tabpanel">
@@ -475,8 +176,18 @@
 								발표한 <span>'피부타입별 화장품 선택 가이드'</span>를 기준으로 하였습니다.
 							</div>
 							<div class="tab_left">
-								<div clss="tap_left_content">
-								지성 건성 민감성
+								<div class="tap_left_content">
+									<ul>
+										<li>
+											지성 
+										</li>
+										<li>
+											건성 
+										</li>
+										<li>
+											민감성
+										</li>
+									</ul>
 								</div>
 							</div> 
 							<div class="tap_right">

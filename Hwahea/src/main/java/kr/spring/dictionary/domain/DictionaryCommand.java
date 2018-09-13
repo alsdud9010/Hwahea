@@ -12,15 +12,15 @@ public class DictionaryCommand {
 	private String i_EName;
 	@NotEmpty
 	private String i_prop; //배합목적
-	@NotEmpty
 	private String i_grade; //EWG 등급
+	private String i_datagrade;
 	private String i_warning; //20가지 주의성분
 	private String i_oilly;
 	private String i_dry;
 	private String i_sensitive;
-	@NotEmpty
 	private String i_func; //기능성여부
 	private String i_allergie; //알러지성분여부
+	
 	public int getI_num() {
 		return i_num;
 	}
@@ -50,6 +50,12 @@ public class DictionaryCommand {
 	}
 	public void setI_grade(String i_grade) {
 		this.i_grade = i_grade;
+	}
+	public String getI_datagrade() {
+		return i_datagrade;
+	}
+	public void setI_datagrade(String i_datagrade){
+		this.i_datagrade = i_datagrade;
 	}
 	public String getI_warning() {
 		return i_warning;
@@ -90,8 +96,8 @@ public class DictionaryCommand {
 	@Override
 	public String toString() {
 		return "DictionaryCommand [i_num=" + i_num + ", i_KName=" + i_KName + ", i_EName=" + i_EName + ", i_prop="
-				+ i_prop + ", i_grade=" + i_grade + ", i_warning=" + i_warning + ", i_oilly=" + i_oilly + ", i_dry="
-				+ i_dry + ", i_sensitive=" + i_sensitive + ", i_func=" + i_func + ", i_allergie=" + i_allergie + "]";
+				+ i_prop + ", i_grade=" + i_grade + ", i_datagrade=" + i_datagrade + ", i_warning=" + i_warning
+				+ ", i_oilly=" + i_oilly + ", i_dry=" + i_dry + ", i_sensitive=" + i_sensitive + ", i_func=" + i_func
+				+ ", i_allergie=" + i_allergie + "]";
 	}
-	
 }

@@ -86,7 +86,12 @@ li{
 	margin-right:5px;
 	background-color: #f4f4f4;
 }
-
+.tab_left .detail{
+	overflow-y: auto;
+    margin-top: -20px;
+    height: 100%;
+    font-size: 13px;
+}
 
 .d_list li{
 	padding-top:3px;
@@ -106,7 +111,12 @@ li{
 	padding-top:10px;
 	font-size:14px;
 	background-color: #f4f4f4;
-	overflow-y:scroll;
+	overflow-y: auto;
+}
+#loading{
+	margin-left: 250px;
+    margin-top: 250px;
+    display:none;
 }
 
 .tap_right_img{
@@ -148,6 +158,7 @@ li{
     text-shadow: 0 1px 0 #fff;
     filter: alpha(opacity=20);
     opacity: .5;
+    margin-right: -30px;
 }
 /*===================피부타입별 성분=====================*/
 .tab-header{
@@ -191,7 +202,9 @@ li{
 .d_list_detail_img{
 	margin-right:10px;
 	display: inline-block;
+	float:left;
 }
 .d_list_detail_name{
 	display: inline-block;
+	width: 80%;
 }

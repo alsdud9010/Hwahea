@@ -5,8 +5,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import com.sun.javafx.collections.MappingChange.Map;
-
 import kr.spring.dictionary.dao.DictionaryMapper;
 import kr.spring.dictionary.domain.DictionaryCommand;
 
@@ -17,14 +15,12 @@ public class DictionaryServiceImpl implements DictionaryService{
 	private DictionaryMapper dictionaryMapper;
 
 	@Override
-	public List<DictionaryCommand> selectWarnings(Map<String,Object> map) {
-		return dictionaryMapper.selectWarnings(map);
+	public List<DictionaryCommand> selectWarning() {
+		return dictionaryMapper.selectWarning();
 	}
 
 	@Override
-	public int selectRowCountWarnings(Map<String, Object> map) {
-		return dictionaryMapper.selectRowCountWarnings(map);
+	public List<DictionaryCommand> selectAllergie() {
+		return dictionaryMapper.selectAllergie();
 	}
-
-	
 }
