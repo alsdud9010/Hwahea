@@ -103,22 +103,22 @@ function maxLengthCheck(object){
 		<div class="form-group">
 			<label for="skintype" class="col-sm-2 control-label">피부타입  </label>
 			<div class="col-sm-6">
-			  <form:radiobutton path="m_skintype" id="dry" class="radio"/>
+			  <form:radiobutton path="m_skintype" id="dry" class="radio" value="0"/>
 				  <label for="dry" class="radio-label">
 				    <i class="fa fa-check"></i>
 				    <span>건성</span>
 				  </label>
-			  <form:radiobutton path="m_skintype" id="middle" class="radio"/>
+			  <form:radiobutton path="m_skintype" id="middle" class="radio" value="1"/>
 				  <label for="middle" class="radio-label">
 				    <i class="fa fa-check"></i>
 				    <span>중성</span>
 				  </label>
-			  <form:radiobutton path="m_skintype" id="oily" class="radio"/>
+			  <form:radiobutton path="m_skintype" id="oily" class="radio" value="2"/>
 				  <label for="oily" class="radio-label">
 				    <i class="fa fa-check"></i>
 				    <span>지성</span>
 				  </label>
-			  <form:radiobutton path="m_skintype" id="mixed" class="radio"/>
+			  <form:radiobutton path="m_skintype" id="mixed" class="radio" value="3"/>
 				  <label for="mixed" class="radio-label">
 				    <i class="fa fa-check"></i>
 				    <span>복합성</span>
@@ -128,22 +128,22 @@ function maxLengthCheck(object){
 		<div class="form-group">
 			<label for="skintrouble" class="col-sm-2 control-label">피부고민  </label>
 			<div class="col-sm-6">
-			  <input type="checkbox" name="trouble" id="z" class="checkbox">
+			  <input type="checkbox" name="trouble" id="z" class="checkbox" value="0">
 			  <label for="z" class="checkbox-label">
 			    <i class="fa fa-check"></i>
 			    <span>해당없음</span>
 			  </label>
-			  <input type="checkbox" name="m_atopic" id="atopic" class="checkbox">
+			  <input type="checkbox" name="m_atopic" id="atopic" class="checkbox" value="1">
 			  <label for="atopic" class="checkbox-label">
 			    <i class="fa fa-check"></i>
 			    <span>아토피</span>
 			  </label>
-			  <input type="checkbox" name="m_pimple" id="pimple" class="checkbox">
+			  <input type="checkbox" name="m_pimple" id="pimple" class="checkbox" value="1">
 			  <label for="pimple" class="checkbox-label">
 			    <i class="fa fa-check"></i>
 			    <span>여드름</span>
 			  </label>
-			  <input type="checkbox" name="m_susceptilbility" id="susceptilbility" class="checkbox">
+			  <input type="checkbox" name="m_susceptilbility" id="susceptilbility" class="checkbox" value="1">
 			  <label for="susceptilbility" class="checkbox-label">
 			    <i class="fa fa-check"></i>
 			    <span>민감성</span>

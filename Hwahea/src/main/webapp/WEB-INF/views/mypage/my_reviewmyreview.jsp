@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <div class="container content">
 	<div class="row magazine-page">
 		<div class="col-md-12" style="margin-left: 5%;">
 			<div class="mypage_form">
+			<form action="">
 				<div class="menu_bar">
 					<ul class="list-inline top-v1-contacts">
-						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewmyreview.do">내 리뷰</a></li>
+						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewmyreview.do?bc=2">내 리뷰</a></li>
 						<li>|</li>
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewscrap.do">스크랩</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewscrap.do?bc=2">스크랩</a></li>
 						<li>|</li>
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewreview.do">리뷰</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewreview.do?bc=2">리뷰</a></li>
 					</ul>
 				</div>
 				<div class="card mb-3" style="margin-left: 5%;">
@@ -47,6 +47,7 @@
 					  </ul>
 					</nav>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>

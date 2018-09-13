@@ -29,7 +29,7 @@ $(document).ready(function(){
 							</a></li>
 						</c:if>
 						<c:if test="${!empty user_id}">
-							<li><i style="font-style:normal;">[등급] 회원 님</i>
+							<li><i style="font-style:normal;">[등급] ${user_id}회원 님</i>
 							<li><a href="${pageContext.request.contextPath}/main/logout.do"> <i class="fa fa-user"> 로그아웃</i>
 							</a></li>
 						</c:if>
@@ -603,10 +603,10 @@ $(document).ready(function(){
       <div class="content-m-back">
         <div class="header-m">
           <button type="button" class="close-m" data-dismiss="modal">&times;</button>
-          <h4 class="h4-m"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+          <h4 class="h4-m"><span class="glyphicon glyphicon-lock"></span>Login</h4>
         </div>
         <div class="body-m">
-          <form role="form" action="singup.do">
+          <form role="form" action="singup.do" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
               <input type="text" name="m_id" class="form-control" id="usrname" placeholder="아이디를 입력해주세요."/>

@@ -23,7 +23,12 @@ public class MemberServiceImpl implements MemberService{
 	public MemberCommand selectMember(String m_id) {
 		return memberMapper.selectMember(m_id);
 	}
-
+	
+	@Override
+	public MemberCommand selectCart(String m_id) {
+		return memberMapper.selectCart(m_id);
+	}
+	
 	@Override
 	public void update(MemberCommand member) {
 		memberMapper.update(member);

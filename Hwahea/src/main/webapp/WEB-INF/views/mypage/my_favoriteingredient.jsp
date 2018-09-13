@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <div class="container content">
 	<div class="row magazine-page">
@@ -9,13 +8,13 @@
 			<div class="mypage_form">
 				<div class="menu_bar">
 					<ul class="list-inline top-v1-contacts">
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoritebrand.do">브랜드</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoritebrand.do?bc=3">브랜드</a></li>
 						<li>|</li>
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoriteproduct.do">제품</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoriteproduct.do?bc=3">제품</a></li>
 						<li>|</li>
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoriteuser.do">사용자</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoriteuser.do?bc=3">사용자</a></li>
 						<li>|</li>
-						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoriteingredient.do">성분</a></li>
+						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_favoriteingredient.do?bc=3">성분</a></li>
 					</ul>
 				</div>
 				<div class="favorite" style="margin-left: -1em;">

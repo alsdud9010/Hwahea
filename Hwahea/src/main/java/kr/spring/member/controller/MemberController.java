@@ -68,14 +68,15 @@ public class MemberController {
 		return "redirect:/main/main.do";
 	}
 	//회원수정 폼 호출
-	@RequestMapping(value="/mypage/my_info.do",
-	        method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/my_info.do")
 		public String my_info(String bc, HttpSession session,Model model) {
 		
-		String m_id = (String)session.getAttribute("m_id");
+		String m_id = (String)session.getAttribute("user_id");
 		MemberCommand member = memberService.selectMember(m_id);
 		model.addAttribute("command",member);
-		
+		if(log.isDebugEnabled()) {
+			log.debug("<<memberCommand>> : " + member);
+		}
 		//현재 메뉴바 처리
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
@@ -84,21 +85,38 @@ public class MemberController {
 		return "my_info";
 	}
 	//회원포인트  호출
-	@RequestMapping(value="/mypage/my_point.do",
-	        method=RequestMethod.GET)
-		public String my_point(String bc) {
+	@RequestMapping(value="/mypage/my_point.do")
+		public String my_point(String bc, HttpSession session, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		String id = 
+			(String)session.getAttribute("user_id");
+			
+			MemberCommand member = 
+					memberService.selectMember(id);
+			
+			if(log.isDebugEnabled()) {
+				log.debug("<<memberCommand>> : " + member);
+			}
+			
+			model.addAttribute("member", member);
+			
 		return "my_point";
 	}
 	//내리뷰/스트랩(내리뷰)  호출
-	@RequestMapping(value="/mypage/my_reviewmyreview.do",
-	        method=RequestMethod.GET)
-		public String my_reviewmyreview(String bc) {
+	@RequestMapping(value="/mypage/my_reviewmyreview.do")
+		public String my_reviewmyreview(String bc,HttpSession session, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		String m_id = (String)session.getAttribute("user_id");
+		MemberCommand member = memberService.selectMember(m_id);
+		if(log.isDebugEnabled()) {
+			log.debug("<<memberCommand>> : " + member);
+		}
+		model.addAttribute("member", member);
+		
 		return "my_reviewmyreview";
 	}
 	//내리뷰/스트랩(스크랩)  호출
@@ -156,9 +174,17 @@ public class MemberController {
 		return "my_favoriteingredient";
 	}
 	//화해쇼핑(주문)  호출
-	@RequestMapping(value="/mypage/my_cartorder.do",
-	        method=RequestMethod.GET)
-		public String my_cartorder(String bc) {
+	@RequestMapping(value="/mypage/my_cartorder.do")
+		
+		public String my_cartorder(String bc, HttpSession session, Model model) {
+		
+		String m_id = (String)session.getAttribute("user_id");
+		MemberCommand member = memberService.selectCart(m_id);
+		if(log.isDebugEnabled()) {
+			log.debug("<<memberCommand>> : " + member);
+		}
+		model.addAttribute("member", member);
+		
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}

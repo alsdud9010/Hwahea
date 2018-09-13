@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <div class="container content">
 	<div class="row magazine-page">
@@ -9,15 +8,16 @@
 			<div class="mypage_form">
 				<div class="menu_bar">
 					<ul class="list-inline top-v1-contacts">
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewmyreview.do">내 리뷰</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewmyreview.do?bc=2">내 리뷰</a></li>
 						<li>|</li>
-						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewscrap.do">스크랩</a></li>
+						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewscrap.do?bc=2">스크랩</a></li>
 						<li>|</li>
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewreview.do">리뷰</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewreview.do?bc=2">리뷰</a></li>
 					</ul>
 				</div>
 				<div class="card mb-3" style="margin-left: 5%;">
 				  <h2 class="card-header"style="font-weight: 400;">스크립 타이틀</h2>
+				  <form action="">
 				  <div class="card-body">
 				    <h5 class="card-title">별점 ★★★★</h5>
 				    <h6 class="card-subtitle text-muted">2018.00.00</h6>
@@ -33,6 +33,7 @@
 				    <a href="#" class="card-link">좋아요</a>
 				    <a href="#" class="card-link">댓글</a>
 				  </div>
+				  </form>
 				</div>
 			</div>
 			<nav aria-label="Page navigation example"  style="margin-left: 34%;">

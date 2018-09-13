@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <div class="container content">
 	<div class="row magazine-page">
 		<div class="col-md-12" style="margin-left: 5%;">
+			<form action="">
 			<div class="mypage_form">
 				<div class="first_form">
 						<!-- now_point,P클래스 서로 같은 CSS사용 -->
 						<div class="now_point">사 용 가 능 포 인 트 : </div>
-						<div class="point"><b class="po_number">10,000</b></div>
+						<div class="point"><b class="po_number">${member.m_point}</b></div>
 						<div class="P"><b class="p">P</b></div>
 				</div>
 				<hr width="100%">
@@ -74,6 +74,7 @@
 					  </ul>
 					</nav>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>

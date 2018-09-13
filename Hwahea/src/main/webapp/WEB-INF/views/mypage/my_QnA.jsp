@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <div class="container content">
 	<div class="row magazine-page">
@@ -18,6 +17,7 @@
 						</div>
 					</div>
 				</div>
+				<form action="">
 				<div class="col-md-12">
 					<br><br>
 					<h2>문의 유형</h2>
@@ -44,6 +44,7 @@
 				<div class="QnAbutton col-md-12">
 					<input type="button" value="전송하기">
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
