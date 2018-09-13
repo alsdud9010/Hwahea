@@ -44,9 +44,9 @@
 							data-toggle="tab" data-target="#tabone">20가지 주의성분</a></li>
 						<li class="nav-item"><a class="nav-link" href="" id="allergie"
 							data-toggle="tab" data-target="#tabtwo">알레르기 주의성분</a></li>
-						<li class="nav-item"><a class="nav-link" href=""
+						<li class="nav-item"><a class="nav-link" href="" id="skinType"
 							data-toggle="tab" data-target="#tabthree">피부타입별 성분</a></li>
-						<li class="nav-item"><a class="nav-link" href=""
+						<li class="nav-item"><a class="nav-link" href="" id="function"
 							data-toggle="tab" data-target="#tabfour">기능성 성분</a></li>
 					</ul>
 					<!-- navbar tap 끝 -->
@@ -56,94 +56,15 @@
 							<div class="tab-header">
 									<span>20가지 주의성분</span>은 화장품 계열 베스트 셀러 도서인<br> '대한민국 화장품의
 									비밀'에 수록되어 있는<br> <span>'가장 피해야할 20가지 성분'</span>의 목록입니다.
-								</div>
+							</div>
 							<div class="tab_left">
 								<div class="d_info">
-									성분을 선택하시면 정보를 확인하실 수 있습니다 :)  
-								</div>
-								
-								<div class="detail">
-								<%-- <div class="d_list_detail">
-									<button class="d_list_detail-close">&times;</button>
-									<div class="d_list_detail_title">
-										<div class="d_KOname">디아졸리디닐우레아</div>
-										<div class="d_ENname">Diazolidinyl Urea</div>
-										<div>
-											배합목적 : <span>살균 보존제</span>
-										</div>
+									<div class="notice">
+									성분을 선택하시면 정보를 확인하실 수 있습니다 :)
 									</div>
-									<ul class="d_list_detail_content">
-										<li>
-											<div class="d_list_detail_li">
-												<div class="d_list_detail_img">
-													<img class="img-responsive"
-														src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-														alt="">
-												</div>
-												<div class="d_list_detail_name">
-													<div>EWG등급</div>
-													<div>위험도 등급 : 중간 위험도</div>
-													<div>데이터 등급 : 적음(Limited)</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="d_list_detail_li">
-												<div class="d_list_detail_img">
-													<img class="img-responsive"
-														src="${pageContext.request.contextPath}/assets/img/dictionary/level_7.png"
-														alt="">
-												</div>
-												<div class="d_list_detail_name">
-													<div>20가지 주의성분</div>
-													<div>포름알데히드 방출, 접촉성 피부염의 주요원인</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="d_list_detail_li">
-												<div class="d_list_detail_img">
-													<img class="img-responsive"
-														src="${pageContext.request.contextPath}/assets/img/dictionary/level_5.png"
-														alt="">
-												</div>
-												<div class="d_list_detail_name">
-													<div>20가지 주의성분</div>
-													<div>포름알데히드 방출, 접촉성 피부염의 주요원인</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="d_list_detail_li">
-												<div class="d_list_detail_img">
-													<img class="img-responsive"
-														src="${pageContext.request.contextPath}/assets/img/dictionary/level_5.png"
-														alt="">
-												</div>
-												<div class="d_list_detail_name">
-													<div>EWG등급</div>
-													<div>위험도 등급 : 중간 위험도</div>
-													<div>데이터 등급 : 적음(Limited)</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="d_list_detail_li">
-												<div class="d_list_detail_img">
-													<img class="img-responsive"
-														src="${pageContext.request.contextPath}/assets/img/dictionary/level_7.png"
-														alt="">
-												</div>
-												<div class="d_list_detail_name">
-													<div>EWG등급</div>
-													<div>위험도 등급 : 중간 위험도</div>
-													<div>데이터 등급 : 적음(Limited)</div>
-												</div>
-											</div>
-										</li>
-									</ul> 
-								</div>--%>
+									<img src="${pageContext.request.contextPath}/assets/img/dictionary/bear.png" class="bear">
 								</div>
+								<div class="detail"></div>
 							</div>
 							<div class="tap_right">
 								<div id="loading">
@@ -159,7 +80,10 @@
 							</div>
 							<div class="tab_left">
 								<div class="d_info">
-									성분을 선택하시면 정보를 확인하실 수 있습니다 :)  
+									<div class="notice">
+									성분을 선택하시면 정보를 확인하실 수 있습니다 :)
+									</div>
+									<img src="${pageContext.request.contextPath}/assets/img/dictionary/bear.png" class="bear">
 								</div>
 								<div class="detail"></div>
 							</div>
@@ -175,61 +99,57 @@
 								<span>피부타입별 성분</span>은 대한피부과 의사회에서 2008년 10월 23일에<br>
 								발표한 <span>'피부타입별 화장품 선택 가이드'</span>를 기준으로 하였습니다.
 							</div>
+							
 							<div class="tab_left">
-								<div class="tap_left_content">
+								<div class="left_content">
 									<ul>
-										<li>
-											지성 
+										<li> 
+											<span>[지성]</span>
+											<div class="oilly" data-type="Y">도움이 되는 성분<span>></span></div> 
+											<div class="oilly" data-type="N">주의해야 할 성분<span>></span></div>
 										</li>
 										<li>
-											건성 
+											<span>[건성]</span>
+											<div class="dry" data-type="Y">도움이 되는 성분<span>></span></div>
+											<div class="dry" data-type="N">주의해야 할 성분<span>></span></div>
 										</li>
 										<li>
-											민감성
+											<span>[민감성]</span>
+											<div class="sensitive" data-type="Y">도움이 되는 성분<span>></span></div>
+											<div class="sensitive" data-type="N">주의해야 할 성분<span>></span></div>
 										</li>
 									</ul>
 								</div>
+								<div class="detail"></div>
 							</div> 
 							<div class="tap_right">
-								<ul class="borderr">
-									<li class="tap_right_li">
-										<div class="tap_right_li_div">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div>
-											<div>디아졸리디닐우레아</div>
-											<div>Diazolidinyl Urea</div>
-										</div>
-									</li>
-								</ul>
+								<div id="loading">
+									<img src="${pageContext.request.contextPath}/assets/img/ajax-loader.gif">
+								</div>
+								<ul class="d_list"></ul>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="tabfour" role="tabpanel">
-							<div class="col-md-12">
-								<span>피부타입별 성분</span>은 대한피부과 의사회에서 2008년 10월 23일에<br>
-								발표한 <span>'피부타입별 화장품 선택 가이드'</span>를 기준으로 하였습니다.
+							<div class="tab-header">
+									<span>20가지 주의성분</span>은 화장품 계열 베스트 셀러 도서인<br> '대한민국 화장품의
+									비밀'에 수록되어 있는<br> <span>'가장 피해야할 20가지 성분'</span>의 목록입니다.
 							</div>
-							<p class="tab_left">
-								<span>피부타입별 성분</span>은 대한피부과 의사회에서 2008년 10월 23일에<br>
-								발표한 <span>'피부타입별 화장품 선택 가이드'</span>를 기준으로 하였습니다.
-							</p>
+							<div class="tab_left">
+								<div class="d_info">
+									<div class="notice">
+									성분을 선택하시면 정보를 확인하실 수 있습니다 :)
+									</div>
+									<img src="${pageContext.request.contextPath}/assets/img/dictionary/bear.png" class="bear">
+								</div>
+								<div class="detail"></div>
+							</div>
 							<div class="tap_right">
-								<ul class="borderr">
-									<li class="tap_right_li">
-										<div class="tap_right_li_div">
-											<img class="img-responsive"
-												src="${pageContext.request.contextPath}/assets/img/dictionary/level_2.png"
-												alt="">
-										</div>
-										<div>
-											<div>디아졸리디닐우레아</div>
-											<div>Diazolidinyl Urea</div>
-										</div>
-									</li>
-								</ul>
+								<div id="loading">
+									<img src="${pageContext.request.contextPath}/assets/img/ajax-loader.gif">
+								</div>
+								<ul class="d_list"></ul>
 							</div>
+						</div>
 						</div>
 					</div>
 					<!-- navbar content 끝-->

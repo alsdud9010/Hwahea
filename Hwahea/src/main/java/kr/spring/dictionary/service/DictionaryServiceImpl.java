@@ -23,4 +23,24 @@ public class DictionaryServiceImpl implements DictionaryService{
 	public List<DictionaryCommand> selectAllergie() {
 		return dictionaryMapper.selectAllergie();
 	}
+
+	@Override
+	public List<DictionaryCommand> selectOilly(String oilly) {
+		return dictionaryMapper.selectOilly(oilly);
+	}
+
+	@Override
+	public List<DictionaryCommand> selectDry(String dry) {
+		return dictionaryMapper.selectDry(dry);
+	}
+
+	@Override
+	public List<DictionaryCommand> selectSensitive(String sensitive) {
+		return dictionaryMapper.selectSensitive(sensitive);
+	}
+
+	@Override
+	public List<DictionaryCommand> selectFunc() {
+		return dictionaryMapper.selectFunc();
+	}
 }

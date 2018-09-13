@@ -86,11 +86,43 @@ li{
 	margin-right:5px;
 	background-color: #f4f4f4;
 }
+
 .tab_left .detail{
 	overflow-y: auto;
     margin-top: -20px;
     height: 100%;
     font-size: 13px;
+}
+
+.tab_left .left_content{
+	margin-top:20px;
+	font-weight: bold;
+}
+.raditu{
+	background-color: rgba(215, 215, 215, 0.8);
+	border-radius: 10px;
+}
+.tab_left .left_content li > div{
+	cursor: pointer;
+	background-color: rgba(215, 215, 215, 0.8);
+	width:80%;
+	margin:10px 0 10px 0;
+	padding:8px;
+	color:#333;
+	border-radius: 10px 10px 10px 10px !important;
+}
+
+.tab_left .left_content li > div:hover{
+	background-color: #83B14E;
+	color:#fff;
+}
+
+.tab_left .left_content div > span{
+    float: right;
+    font-weight: bold;
+}
+.tab_left .left_content li{
+	margin-bottom:30px;
 }
 
 .d_list li{
@@ -138,7 +170,18 @@ li{
 	padding-top:30px;
 	color:#008200;
 }
-
+.d_info .notice{
+    font-size: 18px;
+    width: 420px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid rgba(215, 215, 215, 1);
+    box-shadow: 7px 5px 5px 2px rgba(215, 215, 215, 1);
+}
+.d_info .bear{
+	width: 200px;
+    margin-top: 60px;
+}
 /*============================================================*/
 .d_list_detail{
 	width: 80%;
