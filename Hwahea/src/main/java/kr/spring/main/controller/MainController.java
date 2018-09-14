@@ -43,7 +43,7 @@ public class MainController {
 	}
 	//====================회원로그인=================//
 	//로그인 폼에 전송된 데이터 처리
-	@RequestMapping(value="/main/singup.do",
+	@RequestMapping(value= {"/main/signup.do","/event/signup.do","/shop/signup.do","/plus/signup.do","/review/signup.do","/notice/signup.do","/dictionary/signup.do"},
 			method=RequestMethod.POST)
 	public String submitLogin(@ModelAttribute("command")
 	@Valid MemberCommand memberCommand,
@@ -108,5 +108,4 @@ public class MainController {
 			return main();
 		}
 	}
-
 }

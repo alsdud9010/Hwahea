@@ -35,8 +35,12 @@ $(document).ready(function(){
 						</c:if>
 						<li><a href="${pageContext.request.contextPath}/signin/service_agree.do"> <i class="fa fa-heart"> 회원가입</i>
 						</a></li>
+						<c:if test="${empty user_id}"><li><form:errors/><a href="#" id="myBtn"> <i class="fa fa-inbox"> 마이페이지</i>
+						</a></li></c:if>
+						<c:if test="${!empty user_id}">
 						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do?bc=0"> <i class="fa fa-inbox"> 마이페이지</i>
 						</a></li>
+						</c:if>
 						<li><a href="${pageContext.request.contextPath}/notice/noticeList.do"> <i class="fa fa-bullhorn"> 공지사항</i>
 						</a></li>
 					</ul>
@@ -606,7 +610,7 @@ $(document).ready(function(){
           <h4 class="h4-m"><span class="glyphicon glyphicon-lock"></span>Login</h4>
         </div>
         <div class="body-m">
-          <form role="form" action="singup.do" method="post">
+          <form role="form" action="signup.do" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
               <input type="text" name="m_id" class="form-control" id="usrname" placeholder="아이디를 입력해주세요."/>
