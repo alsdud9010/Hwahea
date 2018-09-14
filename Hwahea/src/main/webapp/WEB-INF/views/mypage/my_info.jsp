@@ -61,7 +61,7 @@
 		<div class="col-md-12" style="margin-left: 5%;">
 			<form:form action="my_info.do" commandName="command">
 			<div class="ranking">
-				<b>내 등급  : ${member.m_grade} </b>
+				<b>내 등급  : ${command.m_grade} </b>
 			</div>
 			<div class="top_about">
 				기본 정보 수정하기
@@ -69,8 +69,8 @@
 			<div class="form_info">
 				<div class="myinfo_form">
 					<ul>
-						<li><div class="col-md-12"><label>이메일 : ${member.m_email}</label></div></li>
-						<li><div class="col-md-12"><label>닉네임 : ${member.m_nickname}</label><input type="submit" value="수정하기"></div></li>
+						<li><div class="col-md-12"><label>이메일 : ${command.m_email}</label></div></li>
+						<li><div class="col-md-12"><label>닉네임 : ${command.m_nickname}</label><input type="submit" value="수정하기"></div></li>
 					</ul>
 				</div>
 				<div class="info_img">
@@ -95,12 +95,12 @@
 						<li>
 							<div class="info_choice col-md-8">
 								<label>성별 : </label>
-							  <input name="gender" type="radio" id="woman" class="radio" value="0">
+							  <input name="gender" type="radio" id="woman" class="radio" value="0" <c:if test="${command.m_gender == 0}">checked</c:if>>
 							  <label for="woman" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>여</span>
 							  </label>
-							  <input name="gender" type="radio" id="man" class="radio" value="1">
+							  <input name="gender" type="radio" id="man" class="radio" value="1" <c:if test="${command.m_gender == 1}">checked</c:if>>
 							  <label for="man" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>남</span>
@@ -115,7 +115,8 @@
 								<div class="col-md-9" style="margin-left: -8.7em;margin-bottom: 0.3em">
 									<select name="age" class="form-control" style="width: 30%;">
 										<% for (int i=2018 ; i>=1950 ; i--) { %>
-										<option value="<%= i %>"><%= i %>년도</option>
+										<c:set var="idx" value="<%= i %>"/>
+										<option value="<%= i %>"<c:if test="${command.m_age == idx}">selected</c:if>><%= i %>년도</option>
 										<% } %>
 									</select>
 								</div>
@@ -124,12 +125,12 @@
 						<li>
 							<div class="info_choice col-md-8">
 								<label>자녀유무 : </label>
-							  <input name="havechlid" type="radio" id="havechlid" class="radio" value="0">
-							  <label for="havechlid" class="radio-label">
+							  <input name="havechild" type="radio" id="havechidd" class="radio" value="0" <c:if test="${command.m_havechild == 0}">checked</c:if>>
+							  <label for="havechild" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>유</span>
 							  </label>
-							  <input name="havechlid" type="radio" id="donthave" class="radio" value="1">
+							  <input name="havechild" type="radio" id="donthave" class="radio" value="1" <c:if test="${command.m_havechild == 1}">checked</c:if>>
 							  <label for="donthave" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>무</span>
@@ -139,22 +140,22 @@
 						<li>
 							<div class="info_choice col-md-8">
 								<label>피부타입 : </label>
-							  <input name="skintype" type="radio" id="dry" class="radio" value="0">
+							  <input name="skintype" type="radio" id="dry" class="radio" value="0" <c:if test="${command.m_skintype == 0}">checked</c:if>>
 							  <label for="dry" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>건성</span>
 							  </label>
-							  <input name="skintype" type="radio" id="middle" class="radio" value="1">
+							  <input name="skintype" type="radio" id="middle" class="radio" value="1" <c:if test="${command.m_skintype == 1}">checked</c:if>>
 							  <label for="middle" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>중성</span>
 							  </label>
-							  <input name="skintype" type="radio" id="oily" class="radio" value="2">
+							  <input name="skintype" type="radio" id="oily" class="radio" value="2" <c:if test="${command.m_skintype == 2}">checked</c:if>>
 							  <label for="oily" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>지성</span>
 							  </label>
-							  <input name="skintype" type="radio" id="mixed" class="radio" value="3">
+							  <input name="skintype" type="radio" id="mixed" class="radio" value="3" <c:if test="${command.m_skintype == 3}">checked</c:if>>
 							  <label for="mixed" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>복합성</span>
@@ -198,27 +199,27 @@
 					<ul style="margin-left: -4em;">
 						<li class="col-md-12">
 							<div class="info_choice col-md-12">
-								<label class="col-md-3">수령인 : ${member.m_name}</label>
+								<label class="col-md-3">수령인 : </label>
 								<div class="col-md-9" style="margin-left: -7.5em; margin-top: -0.5em;">
-									<input type="text" name="address_name" placeholder="백원일" class="form-control getname">
+									<input type="text" name="address_name" placeholder="${command.m_name}" class="form-control getname">
 								</div>
 							</div>
 						</li>
 						<li class="col-md-12">
 							<div class="info_choice col-md-12">
 								<label class="col-md-3" style="margin-top:3px;">휴대전화 : </label>
-								<input type="number" name="phone1" placeholder="${member.m_phone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;">
-								<input type="number" name="phone2" placeholder="${member.m_phone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
-								<input type="number" name="phone3" placeholder="${member.m_phone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
+								<input type="number" name="phone1" placeholder="${command.m_phone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;">
+								<input type="number" name="phone2" placeholder="${command.m_phone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
+								<input type="number" name="phone3" placeholder="${command.m_phone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
 							</div>
 						</li>
 						<!-- null값 허용 -->
 						<li class="col-md-12">
 							<div class="info_choice col-md-12">
 								<label class="col-md-3" style="margin-top:3px;">일반전화 : </label>
-								<input type="number" name="num_phone" placeholder="${member.m_zipphone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;">
-								<input type="number" name="num_phone" placeholder="${member.m_zipphone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
-								<input type="number" name="num_phone" placeholder="${member.m_zipphone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
+								<input type="number" name="num_phone" placeholder="${command.m_zipphone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;">
+								<input type="number" name="num_phone" placeholder="${command.m_zipphone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
+								<input type="number" name="num_phone" placeholder="${command.m_zipphone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
 							</div>
 						</li>
 						<li class="col-md-12" style="margin-left: 14px;">

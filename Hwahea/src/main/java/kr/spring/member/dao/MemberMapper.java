@@ -22,7 +22,6 @@ public interface MemberMapper {
 	@Select("SELECT * FROM CART INNER JOIN MEMBER ON CART.CART_ID = MEMBER.M_ID WHERE CART.CART_ID = #{m_id}")
 	public MemberCommand selectCart(String m_id);
 	
-	@Update("UPDATE member_detail SET m_name=#{m_name},m_passwd=#{m_passwd},m_profile=#{m_profile},m_nickname=#{m_nickname},m_gender=#{m_gender},m_havechild=#{m_havechild},m_age=#{m_age},m_skintype=#{m_skintype},m_atopy=#{m_atopy},m_pimple=#{m_pimple},m_susceptilbility=#{m_susceptilbility},m_takename=#{m_takename},m_phone1=#{m_phone1},m_phone2=#{m_phone2},m_phone3=#{m_phone3},m_zipphone1=#{m_zipphone1},m_zipphone2=#{m_zipphone2},m_zipphone3=#{m_zipphone3},m_zipcode=#{m_zipcode},m_address1=#{m_address1},m_address2=#{m_address2} WHERE m_id=#{m_id}")
 	public void update(MemberCommand member);
 	
 	@Update("UPDATE member SET auth=0 WHERE m_id=#{m_id")

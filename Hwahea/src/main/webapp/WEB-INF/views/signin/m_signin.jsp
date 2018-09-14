@@ -23,8 +23,8 @@ function maxLengthCheck(object){
     	<div class="form-group">
 		    <label for="m_id" class="col-sm-2 control-label">아이디</label>
 		    <div class="col-sm-6">
-				<form:input path="m_id" class="form-control" id="m_id" placeholder="아이디"/>
-				<input type="button" id="join-submit" value="ID중복체크"> <span id="message_id"></span>
+				<form:input path="m_id" class="form-control2" id="m_id" placeholder="아이디"/>
+				<input type="button" id="join-submit" value="ID중복체크" class="cfid"> <span id="message_id"></span>
 		    </div>
 	    </div>
 	    <div class="form-group">
@@ -170,7 +170,7 @@ function maxLengthCheck(object){
 			<label for="address" class="col-sm-2 control-label">주소지</label>
 			<div class="col-sm-6">
 				<form:input path="m_zipcode" id="sample6_postcode" class="form-control col-md-4" style="width: 70px !important;"/>
-				<input type="button" name="m_zipcode" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="col-md-4" style="width: 110px !important;">
+				<input type="button" name="m_zipcode" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="zipcood-bt" style="width: 110px !important;">
 			</div>
 		</div>
 		<div class="form-group">

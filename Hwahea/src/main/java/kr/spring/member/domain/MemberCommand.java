@@ -1,19 +1,16 @@
 package kr.spring.member.domain;
 
-import java.sql.Blob;
+import java.io.IOException;
 import java.sql.Date;
 import java.util.Arrays;
 
-import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
 import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
+import org.springframework.web.multipart.MultipartFile;
 
 
 public class MemberCommand {
@@ -25,7 +22,8 @@ public class MemberCommand {
 	@Min(value=8)@Max(value=64)
 	@Pattern(regexp="^[A-Za-z0-9+]{8,16}$")
 	private String m_passwd;
-	private Blob m_profile;
+	private MultipartFile upload;
+	private byte[] m_profile;
 	@NotEmpty
 	private String m_nickname;
 	
@@ -61,6 +59,9 @@ public class MemberCommand {
 	private int m_point;
 	private Date m_reg_date;
 	private String m_grade;
+	private String m_filename;
+	
+	
 
 	//비밀번호 일치 여부 체크
 	public boolean isCheckedPasswd(String userPasswd) {
@@ -69,6 +70,12 @@ public class MemberCommand {
 		}
 		return false;
 	}
+	
+	public void setUpload(MultipartFile upload) throws IOException {
+		this.upload = upload;
+		setM_profile(upload.getBytes());
+		setM_filename(upload.getOriginalFilename());
+	}	
 
 	public String getM_id() {
 		return m_id;
@@ -102,11 +109,15 @@ public class MemberCommand {
 		this.m_passwd = m_passwd;
 	}
 
-	public Blob getM_profile() {
+	public MultipartFile getUpload() {
+		return upload;
+	}
+
+	public byte[] getM_profile() {
 		return m_profile;
 	}
 
-	public void setM_profile(Blob m_profile) {
+	public void setM_profile(byte[] m_profile) {
 		this.m_profile = m_profile;
 	}
 
@@ -285,20 +296,27 @@ public class MemberCommand {
 	public void setM_grade(String m_grade) {
 		this.m_grade = m_grade;
 	}
-	
+
+	public String getM_filename() {
+		return m_filename;
+	}
+
+	public void setM_filename(String m_filename) {
+		this.m_filename = m_filename;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberCommand [m_id=" + m_id + ", m_auth=" + m_auth + ", m_name=" + m_name + ", m_passwd=" + m_passwd
-				+ ", m_profile=" + m_profile + ", m_nickname=" + m_nickname + ", m_gender=" + m_gender
-				+ ", m_havechild=" + m_havechild + ", m_age=" + m_age + ", m_skintype=" + m_skintype
-				+ ", m_atopy=" + m_atopy + ", m_pimple=" + m_pimple + ", m_susceptilbility=" + m_susceptilbility
-				+ ", m_takename=" + m_takename + ", m_phone1=" + m_phone1 + ", m_phone2=" + m_phone2 + ", m_phone3="
-				+ m_phone3 + ", m_zipphone1=" + m_zipphone1 + ", m_zipphone2=" + m_zipphone2 + ", m_zipphone3="
-				+ m_zipphone3 + ", m_email=" + m_email + ", m_zipcode=" + m_zipcode + ", m_address1=" + m_address1
-				+ ", m_address2=" + m_address2 + ", m_point=" + m_point + ", m_reg_date=" + m_reg_date + ", m_grade="
-				+ m_grade + "]";
+				+ ", upload=" + upload + ", m_nickname=" + m_nickname + ", m_gender=" + m_gender + ", m_havechild="
+				+ m_havechild + ", m_age=" + m_age + ", m_skintype=" + m_skintype + ", m_atopy=" + m_atopy
+				+ ", m_pimple=" + m_pimple + ", m_susceptilbility=" + m_susceptilbility + ", m_takename=" + m_takename
+				+ ", m_phone1=" + m_phone1 + ", m_phone2=" + m_phone2 + ", m_phone3=" + m_phone3 + ", m_zipphone1="
+				+ m_zipphone1 + ", m_zipphone2=" + m_zipphone2 + ", m_zipphone3=" + m_zipphone3 + ", m_email=" + m_email
+				+ ", m_zipcode=" + m_zipcode + ", m_address1=" + m_address1 + ", m_address2=" + m_address2
+				+ ", m_point=" + m_point + ", m_reg_date=" + m_reg_date + ", m_grade=" + m_grade + ", m_filename="
+				+ m_filename + "]";
 	}
-
 }
 
 
