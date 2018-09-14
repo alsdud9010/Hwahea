@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var flag=0;
 	
 
 	//=============================================================================리뷰 댓글 부분
@@ -10,10 +11,10 @@ $(document).ready(function(){
 	function selectData(pageNum, re_num){
 		currentPage = pageNum;
 		
-		/*if(pageNum==1){
+		if(pageNum==1){
 			//처음 호출시는 해당 ID의 div의 내부 내용물을 제거
 			$('.pmodal_reback').empty();
-		}*/
+		}
 		//로딩 이미지 노출
 		$('#loading').show();
 		
@@ -47,14 +48,12 @@ $(document).ready(function(){
 						output += '<span class="pmodal_drere">'+item.rere_regdate+'</span>';
 						output += '</div><div class="pmodal_brere"><div class="replyview">';
 						output += '<div class="pmodal_trere">'+item.rere_content+'</div>';
-						output += '<a class="pmodal_same" id="rere_write">댓글달기</a>';
-						
 						if($('#user_id').val()==item.re_id){
 							//로그인 한 아이디가 댓글 작성자 아이디와 같을 때
 							output += '<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="수정" class="modify-btn">';
 							output += '<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="삭제" class="delete-btn">';
 						}
-						
+						output += '<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-id="'+item.re_id+'">답글달기</a>';
 						output += '</div></div><div class="margin-bottom-20"><hr class="hr-md"></div></div>';
 					
 						
@@ -170,42 +169,41 @@ $(document).ready(function(){
 	
 	
 	
-	//댓글달기 글씨 누르면 대댓글 폼 나타내기
+	//답글달기 글씨 누르면 대댓글 폼 나타내기
 	$(document).on('click','#rere_write',function(){
-		//댓글쓰기 버튼 다시 눌렀을 때,대댓글 작성폼 초기화
+		
+		//답글쓰기 버튼 다시 눌렀을 때,대댓글 작성폼 초기화
 		if(flag == 1){
-			initReForm();
 			flag = 0;
 			return false;
 		}
-		//댓글 글번호
-		/*var re_num = $(this).attr('data-num');
-		//작성자 아이디
+		//부모댓글 글번호
+		var re_num = $(this).attr('data-num');
+		//부모댓글의 작성자 아이디
 		var id = $(this).attr('data-id');
-		//댓글 내용
-		var content = $(this).parent().find('p').text(); */
 		
 		//댓글쓰기폼 UI
 		var rereply = '<form id="pre_form">';
-		/*rereply += '	<input type="hidden" name="num" value="'+re_num+'" id="num">';
-		rereply += '	<input type="hidden" name="id" value="'+id+'" id="user_id">';
-		rereply += '';
-		rereply += $('#user_id').val(); */
+		rereply += '<hr>';
+		rereply += '	<input type="hidden" name="re_num" value="'+re_num+'" id="re_num">';//부모 댓글 번호
+		rereply += '	<input type="hidden" name="user_id" value="'+$('#user_id').val()+'" id="user_id">';//현재 로그인된 아이디 (대댓글 쓰려는 아이디)
 		rereply += '<div class="pmodal_reback2">';
 		rereply += '<div class="pmodal_rpro2">';
 		rereply += '<img src="../assets/img/plus/profile.png">';
-		rereply += '<span class="pmodal_wrere">blue</span>';
+		rereply += '<span class="pmodal_wrere">'+$('#user_id').val()+'</span>';
 		rereply += '<span class="plusGrade"><input type="button" value="VIP"></span>';
-		rereply += '<span class="pmodal_drere"></span></div>';
-		rereply += '	<textarea rows="3" cols="55" name="re_content" id="prere_content" class="pmodal_rtext2"></textarea>';
+		rereply += '</div>';
+		rereply += '	<textarea rows="3" cols="75" name="re_content" id="prere_content" class="pmodal_rtext2" placeholder="내용을 입력해주세요."></textarea>';
 		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';
 		rereply += '	<div id="pre_second"><input type="submit" value="등록"> <input type="button" value="취소" class="prere_reset"></div>';
 		rereply += '</div>';
 		rereply += '</form>';
 		
+		$(this).text('');
 		//문서 객체에 추가
 		/*$('#pmodal_reform').append(rereply);*/
-		$(this).parents('.pmodal_brere').append(rereply);
+		/*$(this).parents('.pmodal_brere').append(rereply);*/
+		$(this).append(rereply);
 
 		flag = 1
 	});
@@ -240,6 +238,7 @@ $(document).ready(function(){
 	//대댓글 작성폼 취소 버튼 클릭시 대댓글 작성폼 초기화
 	$(document).on('click','.prere_reset',function(){
 		initReForm();
+		$('.pmodal_same').text('답글달기');
 	});
 	
 	//대댓글 작성폼 초기화
@@ -262,7 +261,7 @@ $(document).ready(function(){
 		var modifyUI = '<form id="mre_form">';
 			modifyUI += '<input type="hidden" name="rere_num" id="rere_num" value="'+re_num+'">';
 			modifyUI += '<input type="hidden" name="re_id" id="re_id" value="'+re_id+'">';
-			modifyUI += '<textarea rows="3" cols="75" name="re_content" id="rere_content" class="rep-content">'+content+'</textarea><br>';
+			modifyUI += '<textarea rows="3" cols="75" name="rere_content" id="rere_content" class="rep-content">'+content+'</textarea><br>';
 			modifyUI += '<div id="mre_first"><span class="letter-count">300/300</span></div><br>';
 			modifyUI += '<div id="mre_second">';
 			modifyUI += '	<input type="submit" value="수정" id="'+re_id+'">';
@@ -317,9 +316,7 @@ $(document).ready(function(){
 		
 		//폼에 입력한 데이터 반환
 		var data = $(this).serialize();
-		
-		alert(data);
-		
+
 		//수정
 		$.ajax({
 			url:'updateReply.do',
@@ -332,10 +329,11 @@ $(document).ready(function(){
 				if(data.result == 'logout'){
 					alert('로그인해야 수정할 수 있습니다.');
 				}else if(data.result == 'success'){
-					$('#mre_form').parent().find('p').text($('#rere_content').val());
-					
+					$('#mre_form').parent().find('p').text($('#rere_content').val());				
 					//수정폼 초기화
 					initModifyForm();
+					selectData(1,21);
+					
 				}else if(data.result == 'wrongAccess'){
 					alert('타인의 글은 수정할 수 없습니다.');
 				}

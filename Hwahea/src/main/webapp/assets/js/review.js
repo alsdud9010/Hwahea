@@ -84,14 +84,42 @@ $(document).ready(function(){
 		//리뷰 번호
 		var re_num = $(this).attr('data-num');
 		
+		var data = $(this).serialize();
+		
 		$.ajax({
-			
-			
-			
-			
-			
-			
-		});
+			type:'post',
+			data:data,
+			url:'oneReview.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				var review = '';
+				review += '<div id="good"><table><tr>';
+				review += '<td id="g_icon"><img src="${pageContext.request.contextPath}/assets/img/like.png"></td>';
+				review += '<td id="content">'+data.re_good+'</td>';
+				review += '</tr></table></div><hr size="1" width="50%" noshade>';
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				$('#modal01').find('#review').append(review);
+				
+			},
+			error:function(){
+				alert('네트워크 오류 발생!');
+			}
+		});	
 		
 	});
 	

@@ -10,11 +10,17 @@ public interface ReviewService {
 	//리뷰 리스트
 	public List<ReviewCommand> selectList(Map<String,Object> map);
 	
+	//리뷰 목록들 페이징하기
+	public int selectRowCount (Map<String,Object> map);
+	
+	//회원 정보 가져오기
+	public List<ReviewCommand> selectMember(Map<String,Object> map);
+	
 	//리뷰 작성
 	public void insert(ReviewCommand review);
 	
 	//리뷰 상세보기
-	public ReviewCommand selectReview(Integer num);
+	public ReviewCommand selectReview(Integer re_num);
 	
 	//리뷰 수정하기
 	public void update(ReviewCommand review);

@@ -15,14 +15,20 @@ public interface ReviewMapper {
 	//리뷰 리스트
 	public List<ReviewCommand> selectList(Map<String,Object> map);
 	
+	//리뷰목록들 페이징하기 
+	public int selectRowCount (Map<String,Object> map);
+	
+	//회원 정보 가져오기
+	public List<ReviewCommand> selectMember(Map<String,Object> map);
+	
 	//리뷰 작성
 	@Insert("INSERT INTO review (re_num, c_code, re_id, re_rate, re_good, re_bad, re_tip, re_uploadbyte1, re_uploadbyte2, re_uploadbyte3, re_filename1,re_filename2,re_filename3, re_ip, re_regdate) VALUES "
 			+ "(review_seq.nextval, 1, #{re_id}, #{re_rate}, #{re_good}, #{re_bad}, #{re_tip}, #{re_uploadbyte1}, #{re_uploadbyte2}, #{re_uploadbyte3}, #{re_filename1}, #{re_filename2}, #{re_filename3}, #{re_ip}, SYSDATE)")
 	public void insert(ReviewCommand review);
 	
 	//리뷰 상세보기
-	@Select("SELECT * FROM review WHERE num=2")
-	public ReviewCommand selectReview(Integer num);
+	@Select("SELECT * FROM review WHERE num=21")
+	public ReviewCommand selectReview(Integer re_num);
 	
 	//리뷰 수정하기
 	public void update(ReviewCommand review);

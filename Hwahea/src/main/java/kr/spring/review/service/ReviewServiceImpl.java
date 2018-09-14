@@ -19,8 +19,17 @@ public class ReviewServiceImpl implements ReviewService{
 
 	@Override
 	public List<ReviewCommand> selectList(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return null;
+		return reviewMapper.selectList(map);
+	}
+	
+	@Override
+	public int selectRowCount(Map<String, Object> map) {
+		return reviewMapper.selectRowCount(map);
+	}
+	
+	@Override
+	public List<ReviewCommand> selectMember(Map<String, Object> map) {
+		return reviewMapper.selectMember(map);
 	}
 
 	@Override
@@ -85,4 +94,6 @@ public class ReviewServiceImpl implements ReviewService{
 		reviewMapper.insertEdit(review);
 		
 	}
+
+
 }

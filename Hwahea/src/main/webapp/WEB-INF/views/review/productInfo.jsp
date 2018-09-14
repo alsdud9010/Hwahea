@@ -6,6 +6,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/graph.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/review.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/review.reply.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/rating.js"></script>
 	<div id="wrap">
 	<div>
 		<div class="r_title">
@@ -172,12 +174,17 @@
 		<!-- 리뷰 전체 시작 -->
 		<div id="review_list">
 		<!-- 리뷰 1개 시작 -->
+		<c:if test="${count == 0 }">
+			<div class="review">등록된 게시물이 없습니다.</div>
+		</c:if>
+		<c:if test="${count>0 }">
+		<c:forEach var="review" items="${list }">
 		<div class="review">
 			<div id="writer">
 				<table>
 					<tr>
 						<td rowspan="3" id="w_profile"><img src="${pageContext.request.contextPath}/assets/img/user.png"></td>
-						<td id="nick">닉네임</td>
+						<td id="nick">${review.re_id }</td>
 					</tr>
 					<tr>
 						<td id="type">나이/피부타입</td>
@@ -186,83 +193,26 @@
 			</div>
 			<!-- 별점, 작성일 시작 -->
 			<div id="re_rate">
-				<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-				<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-				<img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-				<span id="reg_date"> 2018.08.20</span>
-			</div>
-			<!-- 별점, 작성일 끝 -->
-			<div id="review">
-				<div id="good">
-					<table>
-						<tr>
-							<td id="g_icon"><img src="${pageContext.request.contextPath}/assets/img/like.png" alt="좋았던 점"></td>
-							<td id="content">우아아아아아아아아아아아ㅏ아아앙<br> 난ㅇ러ㅣㄴ얼ㄴ이ㅏㅇㄹㄴ<br>
-							ㅇㄴ란어링너ㅣㄹㅇ닐ㅇㄴㅇㄴㅇㄴㅇ<br> ㅇㅇㅇㅇㅇ<br> **********br 허용하기
-							</td>
-						</tr>
-					</table>
-				</div>
-			<hr id="mid_hr">
-				<div id="bad">
-					<table>
-						<tr>
-							<td id="b_icon"><img src="${pageContext.request.contextPath}/assets/img/bad.png"></td>
-							<td id="content">우아아아아아아아아아아아ㅏ아아앙ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ<br>
-								ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>
-								난ㅇ러ㅣㄴ얼ㄴ이ㅏㅇㄹㄴ<br> ㅇㄴ란어링너ㅣㄹㅇ닐ㅇㄴㅇㄴㅇㄴㅇ<br> ㅇㅇㅇㅇㅇ<br>
-								**********br 허용하기
-							</td>
-						</tr>
-					</table>
-				</div>
-			<hr id="mid_hr"> 
-				<div id="tip">
-					<table>
-						<tr>
-							<td id="t_icon"><img src="${pageContext.request.contextPath}/assets/img/tip.png"></td>
-							<td id="content">우아아아아아아아아아아아ㅏ아아앙<br> 난ㅇ러ㅣㄴ얼ㄴ이ㅏㅇㄹㄴ<br>
-								ㅇㄴ란어링너ㅣㄹㅇ닐ㅇㄴㅇㄴㅇㄴㅇ<br> ㅇㅇㅇㅇㅇ<br> **********br 허용하기
-							</td>
-						</tr>
-					</table>
-				</div>
-			<div id="photos">
-				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> <img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
-				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> <img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> 
-				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
-			</div>
-			<div id="like">   
-				<!-- <input type="button" value="좋아요">
-				<input type="button" value="댓글 달기" data-target="#modal01" data-toggle="modal">  -->
-				<ul>
-					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
-					<li class="like_re" data-num="2" data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png"> 댓글달기</li>
-				</ul>
-			</div>
-			</div>
-		<hr id="re_hr">
-		</div>
-		<!-- 리뷰 1개 끝 -->
-		<!-- 리뷰 1개 시작 -->
-		<div class="review">
-			<div id="writer">
-				<table>
-					<tr>
-						<td rowspan="3" id="w_profile"><img src="${pageContext.request.contextPath}/assets/img/user.png"></td>
-						<td id="nick">닉네임</td>
-					</tr>
-					<tr>
-						<td id="type">나이/피부타입</td>
-					</tr>
-				</table>
-			</div>
-			<!-- 별점, 작성일 시작 -->
-			<div id="re_rate">
-				<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-				<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-				<img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-				<span id="reg_date"> 2018.08.20</span>
+				<c:if test="${review.re_rate ==1 }">
+					<img src="${pageContext.request.contextPath}/assets/img/star.png">
+				</c:if>
+				<c:if test="${review.re_rate ==2 }">
+					<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png">
+				</c:if>
+				<c:if test="${review.re_rate ==3 }">
+					<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
+					<img src="${pageContext.request.contextPath}/assets/img/star.png">
+				</c:if>
+				<c:if test="${review.re_rate ==4 }">
+					<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
+					<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
+				</c:if>
+				<c:if test="${review.re_rate ==5 }">
+					<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png">
+					<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
+					<img src="${pageContext.request.contextPath}/assets/img/star.png">
+				</c:if>
+				<span id="reg_date"> ${review.re_regdate }</span>
 			</div>
 			<!-- 별점, 작성일 끝 -->
 			<!-- 리뷰1 시작 -->
@@ -271,9 +221,7 @@
 					<table>
 						<tr>
 							<td id="g_icon"><img src="${pageContext.request.contextPath}/assets/img/like.png" alt="좋았던 점"></td>
-							<td id="content">우아아아아아아아아아아아ㅏ아아앙<br> 난ㅇ러ㅣㄴ얼ㄴ이ㅏㅇㄹㄴ<br>
-							ㅇㄴ란어링너ㅣㄹㅇ닐ㅇㄴㅇㄴㅇㄴㅇ<br> ㅇㅇㅇㅇㅇ<br> **********br 허용하기
-							</td>
+							<td id="content">${review.re_good }</td>
 						</tr>
 					</table>
 				</div>
@@ -282,40 +230,46 @@
 					<table>
 						<tr>
 							<td id="b_icon"><img src="${pageContext.request.contextPath}/assets/img/bad.png"></td>
-							<td id="content">우아아아아아아아아아아아ㅏ아아앙ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ<br>
-								ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>ㅇ<br>
-								난ㅇ러ㅣㄴ얼ㄴ이ㅏㅇㄹㄴ<br> ㅇㄴ란어링너ㅣㄹㅇ닐ㅇㄴㅇㄴㅇㄴㅇ<br> ㅇㅇㅇㅇㅇ<br>
-								**********br 허용하기
-							</td>
+							<td id="content">${review.re_bad }</td>
 						</tr>
 					</table>
 				</div>
 			<hr id="mid_hr"> 
+			<c:if test="${empty review.re_tip}">
+			</c:if>
+			<c:if test="${!empty review.re_tip}">
 				<div id="tip">
 					<table>
 						<tr>
 							<td id="t_icon"><img src="${pageContext.request.contextPath}/assets/img/tip.png"></td>
-							<td id="content">우아아아아아아아아아아아ㅏ아아앙<br> 난ㅇ러ㅣㄴ얼ㄴ이ㅏㅇㄹㄴ<br>
-								ㅇㄴ란어링너ㅣㄹㅇ닐ㅇㄴㅇㄴㅇㄴㅇ<br> ㅇㅇㅇㅇㅇ<br> **********br 허용하기
-							</td>
+							<td id="content">${review.re_tip }</td>
 						</tr>
 					</table>
 				</div>
+				<hr id="mid_hr"> 
+			</c:if>
+			<c:if test="${empty review.re_filename1 && empty review.re_filename2 && empty review.re_filename3}">
+			</c:if>
+			<c:if test="${!empty review.re_filename1 || !empty review.re_filename2 || !empty review.re_filename3}">
 			<div id="photos">
 				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> <img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> <img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> 
 				<img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 			</div>
+			</c:if>
 			<div id="like">    
 				<!-- <input type="button" value="좋아요">
 				<input type="button" value="댓글 달기">  -->
 				<ul>
 					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
-					<li class="like_re"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
+					<li class="like_re" data-num=${review.re_num } data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
 				</ul>
 			</div>
 		</div>
 		</div>
+		<hr>
+		</c:forEach>
+		</c:if>
 		<!-- 리뷰 1개 끝 -->
 		</div>
 		<!-- 리뷰 전체 끝 -->
@@ -331,7 +285,7 @@
 					<span id="modalCategory"> <img src="${pageContext.request.contextPath}/assets/img/review/review.png">리뷰 상세보기 </span>
 					<button class="close" data-dismiss="modal">&times;</button>
 				</div>
-				<div class="modal-body pmodal_c" style="text-align: center;" data-num="2">
+				<div class="modal-body pmodal_c" style="text-align: center;">
 					<!-- 제품 사진 -->
 					<img class="plusThumbnail3" src="${pageContext.request.contextPath}/assets/img/sample.jpg">
 					<div class="brand">메이크업 포에버(MAKEUP FOREVER)</div>
@@ -364,7 +318,8 @@
 						<hr class="hr-md">
 					</div>
 					<!-- 리뷰 시작 -->
-					<div id="review">
+					<div id="review"></div><!-- 리뷰 1개를 붙일 곳 -->
+					<%-- <div id="review">
 						<div id="good">
 							<table>
 								<tr>
@@ -403,7 +358,7 @@
 							<img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> <img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 							<img src="${pageContext.request.contextPath}/assets/img/photo.PNG"> <img src="${pageContext.request.contextPath}/assets/img/photo.PNG">
 						</div>
-					</div>
+					</div> --%>
 					<div class="pmodal_ud">
 						<input type="button" value="수정"><input type="button" value="삭제">
 					</div>

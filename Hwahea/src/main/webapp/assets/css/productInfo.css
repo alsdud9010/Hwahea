@@ -374,7 +374,7 @@ hr{
 	padding-left:7px;
 }
 #re_rate{
-	margin-left:100px;
+	margin-left:105px;
 	margin-top:5px;
 }
 #re_rate img{
@@ -743,7 +743,12 @@ hr{
 
 .pmodal_rpro .plusGrade{font-size:12px;}
 
-.pmodal_wrere{font-size:14px; font-weight:bold; margin:0 3px 0 3px;}
+.pmodal_wrere{
+	font-size:14px; 
+	font-weight:bold; 
+	margin:0 3px 0 3px;
+	color:black;
+}
 
 .pmodal_drere{font-size:11px; color:#999da0; margin-left:3px;}
 
@@ -754,17 +759,28 @@ hr{
 	margin:12px 0 15px 80px; 
 	text-align:left;
 }
-.pmodal_same{margin-right:410px; cursor:pointer;}
+.pmodal_same{
+	float:left;
+	margin-left:40px;
+	margin-bottom:5px;
+	cursor:pointer;
+}
 .pmodal_diff{margin-right:501px; cursor:pointer;}
+
+.modify-btn, .delete-btn{
+	float:right;
+	margin-right:10px;
+	vertical-align:top;
+}
+
+
 
 /*È­ÇÃ ¸ð´Þ ´ë´ñ±Û*/
 /*´ë´ñ±Û Æû*/
 .pmodal_reback2{
-	background:#d9dcdd;
-	margin-left:24px;
-	margin-top:15px;
-	width:580px;
-	padding-bottom:39px;
+	margin-left:-30px;
+	margin-top:-35px;
+	width:600px;
 }
 
 .pmodal_rpro2 img{
@@ -772,18 +788,41 @@ hr{
 	height:30px;
 }
 
-.pmodal_rpro2{margin-right:400px; padding-top:13px;} .pmodal_rpro2 .plusGrade{font-size:11px;}
+.pmodal_rpro2{
+	margin-right:400px; 
+	padding-top:13px;
+} 
+.pmodal_rpro2 .plusGrade{
+	font-size:11px;
+}
 
 .pmodal_rtext2{
-	margin:15px 3px 15px 50px;
+	color:black;
+	margin:15px 3px 5px 50px;
 	float:left;
-	overflow-y:scroll;
 	resize:none;
 }
 
 #prere_first{
-	margin:18px 0 9px 0;
+	float:right;
+	margin-right:10px;
+	vertical-align:top;
 }
+#prere_first .letter-count{
+	font-color:black;
+	color:black;
+}
+#pre_second{
+	display:table;
+	float:right;
+	margin-top:20px;
+	margin-right:-60px;
+}
+#pre_second input{
+	color:black;
+}
+
+
 
 /*´ë´ñ±Û ¸ñ·ÏÆû*/
 

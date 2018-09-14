@@ -1,6 +1,7 @@
 package kr.spring.review.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -21,13 +22,15 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.review.domain.ReviewCommand;
 import kr.spring.review.service.ReviewService;
 import kr.spring.util.CipherTemplate;
-import kr.spring.util.StringUtil;
+import kr.spring.util.PagingUtil;
 
 @Controller
 public class ReviewController {
 	
 	//로그처리
 	private Logger log = Logger.getLogger(this.getClass());
+	private int rowCount = 10;
+	private int pageCount = 10;
 		
 	@Resource
 	private ReviewService reviewService;
@@ -41,11 +44,45 @@ public class ReviewController {
 		return new ReviewCommand();
 	}
 	
-	//==============================제품 상세보기 
+	//==============================목록 출력하기->****리뷰만!!!!****
 	@RequestMapping("/review/productInfo.do")
-	public String process(){
+	public ModelAndView getList(@RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
 		
-		return "productInfo";
+		if(log.isDebugEnabled()) {
+			log.debug("<<currentPage>> : "+currentPage);
+		}
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		
+		//총 리뷰의 갯수
+		int count = reviewService.selectRowCount(map);
+		
+		PagingUtil page = new PagingUtil(currentPage, count, rowCount, pageCount, "productInfo.do");
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+		
+		List<ReviewCommand> list = null;
+		List<ReviewCommand> member = null;
+		
+		if(count > 0) {
+			list = reviewService.selectList(map);
+			
+			/*member = reviewService.selectMember(map);*/
+			
+			if(log.isDebugEnabled()) {
+				log.debug("<<list>> : " + list);
+			}
+		}	
+		
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("productInfo");
+		mav.addObject("member",member);
+		mav.addObject("count",count);
+		mav.addObject("list", list);
+		mav.addObject("pagingHTML", page.getPagingHtml());
+		
+		return mav;
 	}
 	
 	//==============================리뷰 목록 출력 
@@ -53,21 +90,24 @@ public class ReviewController {
 	
 	
 	
-	
 	//==============================리뷰 1개 상세 보기 
-	@RequestMapping("/review/reviewDetail.do")
-	public ModelAndView process(@RequestParam("re_num") int re_num) {
-
+	@RequestMapping("/review/oneReview.do")
+	@ResponseBody
+	public Map<String,String> oneReview(@RequestParam("data-num") int re_num, ReviewCommand reviewCommand){
+		
 		if(log.isDebugEnabled()) {
-			log.debug("<<re_num>> : "+re_num);
+			log.debug("<<reviewCommand>> : "+reviewCommand);
 		}
+		
+		Map<String,String> map = new HashMap<String,String>();
+		
 
-		ReviewCommand review = reviewService.selectReview(re_num);
-		review.setRe_good(StringUtil.useBrNoHtml(review.getRe_good()));
-		review.setRe_bad(StringUtil.useBrNoHtml(review.getRe_bad()));
-		review.setRe_tip(StringUtil.useBrNoHtml(review.getRe_tip()));
+		//댓글 등록
+		reviewService.selectReview(re_num);
+		map.put("result", "success");
 
-		return new ModelAndView("reviewView","review",review);
+		
+		return map;
 	}
 	
 	
