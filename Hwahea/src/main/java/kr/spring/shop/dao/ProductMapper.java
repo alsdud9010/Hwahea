@@ -19,6 +19,8 @@ public interface ProductMapper {
 	public List<ProductCommand> selectGetSubCate(Integer category_num);
 	public int selectProductCnt(Map<String,Object> map);
 	public List<ProductCommand> selectShopProduct(Map<String,Object> map);
+	@Select("SELECT brand_num,brand_name FROM brand ORDER BY brand_name")
+	public List<ProductCommand> selectBrand();
 	
 	//shopProductView
 	@Select("SELECT p.*,b.* FROM product p, brand b WHERE p_num=#{p_num} AND b.brand_num=p.p_brand")

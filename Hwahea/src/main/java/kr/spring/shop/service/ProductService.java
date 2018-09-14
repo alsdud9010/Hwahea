@@ -16,6 +16,7 @@ public interface ProductService {
 	public List<ProductCommand> selectGetSubCate(Integer category_num);
 	public int selectProductCnt(Map<String,Object> map);
 	public List<ProductCommand> selectShopProduct(Map<String,Object> map);
+	public List<ProductCommand> selectBrand();
 	
 	//shopProductView
 	public ProductCommand selectProduct(Integer p_num);

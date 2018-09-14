@@ -46,6 +46,11 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
+	public List<ProductCommand> selectBrand() {
+		return productMapper.selectBrand();
+	}
+	
+	@Override
 	public ProductCommand selectProduct(Integer p_num) {
 		return productMapper.selectProduct(p_num);
 	}

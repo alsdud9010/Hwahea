@@ -76,6 +76,7 @@ public class ProductController {
 		List<ProductCommand> cate = null;
 		String cateName = null;
 		List<ProductCommand> productList = null;
+		List<ProductCommand> brand = null;
 		
 		//검색된 상품 개수
 		int productCnt =productService.selectProductCnt(map);
@@ -89,6 +90,7 @@ public class ProductController {
 
 		cateName = productService.selectGetCateName(category_num);
 		cate = productService.selectGetSubCate(category_num);
+		brand = productService.selectBrand();
 		
 		PagingUtil page = new PagingUtil(currentPage,productCnt,rowCount,pageCount,"/shop/shopProductView.do");
 		map.put("start", page.getStartCount());
@@ -110,6 +112,7 @@ public class ProductController {
 		mav.addObject("cateSubNum",category_detail_num);
 		mav.addObject("productCnt",productCnt);
 		mav.addObject("productList",productList);
+		mav.addObject("brand",brand);
 		mav.addObject("cate",cate);
 		mav.addObject("pagingHtml",page.getPagingHtml());
 		

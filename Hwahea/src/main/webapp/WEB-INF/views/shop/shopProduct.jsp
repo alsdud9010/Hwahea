@@ -33,13 +33,15 @@
 					<span>브랜드 별 검색 :)</span>
 				</div>
 				<ul class="shopList-search-content">
+					<c:forEach var="brand" items="${brand}">
 					<li class="ask-lock-area">
-						<input type="checkbox" id="aaa" name="shop-search-brand" value="건성"/>
-						<label for="aaa">건성</label>
+						<input type="checkbox" id="brand-${brand.brand_num}" name="shop-search-brand" value="${brand.brand_name}"/>
+						<label for="brand-${brand.brand_num}">${brand.brand_name}</label>
 					</li>
+					</c:forEach>
 				</ul>
-				<button class="shop-brand-more">더보기</button>
-				<div class="shopList-reset"><button id="onBrandReSet">선택 초기화</button></div>
+				<input type="button" class="shop-brand-more" value="더보기">
+				<div class="shopList-reset"><button id="onBrandReset">선택 초기화</button></div>
 		</div>
 		<p class="col-md-12 shopList-cateCnt"> <span>♥</span> 화해쇼핑에 <span> ${productCnt} </span>개의 상품이 등록되어 있습니다. <span>♥</span> </p>
 		<div class="col-md-12 shopList-cate-align">
