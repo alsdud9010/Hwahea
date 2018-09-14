@@ -214,9 +214,9 @@ $(document).ready(function() {
 						</div>
 						<div class="accordion_sub myq_txt">
 							<div>
-							<span class="myq-q"><strong>문의</strong></span>
-							탈퇴가 안되요... 도와주세요 ㅠㅠ<br>
-							<br>
+							<span class="myq-qtit"><strong>문의</strong></span>
+							탈퇴가 안되요... <br>
+							도와주세요 ㅠㅠ<br>
 							탈퇴는 어떻게 하나요?<br>
 							</div>
 						</div>
@@ -241,18 +241,36 @@ $(document).ready(function() {
 						</ul>
 						</div>
 						<div class="accordion_sub myq_txt">
-							<div>
-							<span class="myq-q"><strong>문의</strong></span>
-							탈퇴는 어떻게 하나요?<br>
-							알려주세요
-							</div>
-							<div class="myq-a">
-							<span class="myq-q">
-							<img src="${pageContext.request.contextPath}/assets/img/shop/answer-point.png">
-							<strong>답변</strong></span>
-							안녕하세요? dragon 고객님<br>
-							마이페이지에서 가능하십니다.
-							</div>
+							<ul style="margin-left: -40px;">
+								<li class="myq-q">
+									<span class="myq-qtit"><strong>문의</strong></span>
+									탈퇴는 어떻게 하나요?<br>
+									알려주세요
+								</li>
+								<li class="myq-a">
+									<span><strong>답변완료</strong></span>
+									<p>
+										반갑습니다. 고객님 <br>
+										화해 온라인몰 1:1 담당자 홍길동 입니다.<br>
+										<br>
+										화해를 이용해 주셔서 감사드립니다.<br>
+										<br>
+										고객님께서 남겨주신 문의글은 미 완성 상태로<br>
+										정확한 내용이 확인 되지 않습니다. <br>
+										<br>
+										다시한번, 본 공간을 통해 문의글을 남겨주시거나 <br>
+										화해 온라인몰 고객센터(1234-5678/평일09~18시)로 <br>
+										전화주시면 상담이 가능합니다. <br>
+										<br>
+										늘 화해와 함께 행복한 시간 되시기를 바랍니다. <br>
+										감사합니다. <br>
+									</p>
+									<div class="myq-phr">
+										문의에 대한 답변이 부족하거나 추가문의사항이 있으시면 새로운 문의사항으로 등록해주세요.
+										<a href="${pageContext.request.contextPath}/notice/my_questionWrite.do" class="go-ask-myq">새로운 문의하기</a>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 			</div>

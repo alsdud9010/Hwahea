@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.plus.dao.PlusMapper">
+	<!-- 목록 출력 -->
+	<select id="selectPlusList" parameterType="map" resultType="plusCommand">
+		SELECT
+			*
+		FROM (SELECT
+			a.*,
+			rownum rnum
+		FROM (SELECT 
+			b.*,
+			r.hpre_cnt
+		FROM plus_board b LEFT OUTER JOIN (SELECT hp_num, COUNT(*) hpre_cnt FROM plus_reply GROUP BY hp_num)r
+		ON b.hp_num = r.hp_num
+		ORDER BY b.hp_num DESC)a)
+		<![CDATA[
+			WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	
+	<!-- 페이징 처리 -->
+	<select id="selectRowCount" parameterType="map" resultType="integer">
+		SELECT
+			count(*)
+		FROM plus_board
+	</select>
+	
+	<!-- 댓글 목록 -->
+	<select id="selectPlusReply" parameterType="map" resultType="plusReplyCommand">
+		SELECT
+			*
+		FROM (SELECT
+				a.*,
+				rownum rnum
+				FROM (SELECT
+						*
+					  FROM plus_reply
+					  WHERE hp_num = #{hp_num}
+					  ORDER BY hp_num DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+			
+	</select>
+
+</mapper>

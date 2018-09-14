@@ -111,24 +111,152 @@ $(document).ready(function(){
 		
 	});
 	
+	
+/*============================ 댓글 ================================*/
+	
+	var currentPage;
+	var count;
+	var rowCount;
+	
 	//댓글쓰기 버튼 누르면 댓글창으로 커서 이동
 	$(document).on('click','.pmodal_re',function(){
 		$('.pmodal_rtext').val('');
 		$('.pmodal_rtext').focus();
 	});
-	//댓글쓰기 창 비우기
-	$(document).on('click','.pmodal_rtext',function(){
-		if($('.pmodal_rtext').val()=='내용을 입력해 주세요'){
-			$('.pmodal_rtext').val('');
-		}
-	});
-	//댓글쓰기 창 문구 다시 채우기
-	$(document).on('blur','.pmodal_rtext',function(){
-		if($('.pmodal_rtext').val()==''){
-			$('.pmodal_rtext').val('내용을 입력해 주세요');
-		}
+	
+	//댓글 목록
+	$(document).on('click','.click_pmodal',function(){
+		var hp_num = $(this).attr('data-num');
+		
+		//기존 목록 초기화
+		$('#prere_area').empty();
+		
+		//초기 데이터 목록 호출
+		selectData(1, hp_num);
 	});
 	
+	function selectData(pageNum, hp_num){
+		currentPage = pageNum;
+		
+		$.ajax({
+			type:'post',
+			data:{pageNum:pageNum,hp_num:hp_num},
+			url:'listReply.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				count = data.count;
+				rowCount = data.rowCount;
+				var output = '<div class="pmodal_reback" id="pmodal_reply"><div class="pre_total">전체('+count+')</div>';
+				output+='<div class="pmodal-bottom-10"><hr class="hr-md"></div>';
+				
+				if(count < 0 || data.list == null){
+					alert('댓글 목록 호출 오류!');
+					
+				}else if(count = 0){
+					output+='<div class="pmodal_rere">';
+					output+='	<div>댓글이 없습니다.</div></div></div>';
+				}else{
+					$(data.list).each(function(index,item){
+						if(hp_num == item.hp_num){
+								output+='	<div class="pmodal_rere">';
+								output+='		<div class="pmodal_rpro">';
+								output+='			<img src="../assets/img/plus/profile.png">';
+								output+='			<span class="pmodal_wrere">'+item.hpre_id+'</span>';
+								output+='			<span class="grade_vip"><input type="button" value="VIP"></span>';
+								output+='			<span class="pmodal_drere">'+item.hpre_date+'</span></div>';
+								output+='		<div class="pmodal_trere">'+item.hpre_content+'</div>';
+								output+='		<div class="pmodal_brere">';
+								output+='		<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
+								if($('#user_id').val()==item.hpre_id){
+									//로그인한 아이디가 댓글 작성자 아이디와 같을 때
+									output+='		<span><input type="button" value="수정">';
+									output+='			  <input type="button" value="삭제"></span>';
+								}
+								output+='<div id="pmodal_reform"></div>';
+								output+='<div class="margin-bottom-20"><hr class="hr-md"> </div>';
+								output+='</div></div>';
+						}
+					});
+					
+					output += '</div>';
+					
+					//문서 객체에 추가
+					$('#prere_area').append(output);
+					
+					/*//paging button 처리
+					if(currentPage>=Math.ceil(count/rowCount)){
+						//다음 페이지가 없음.
+						$('.paging-button').hide();
+					}else{
+						//다음페이지 존재
+						$('.paging-button').show();
+					}*/
+				}
+			},
+			error:function(){
+				//로딩 이미지 감추기
+				$('#loading').hide();
+				alert('네트워크 오류!');
+			}
+		});
+	}
+	
+	//댓글창 초기화
+	function initReply(){
+		$('#pmodal_reply').remove();
+	}
+	
+	//댓글창 유효성 체크 + 댓글 등록
+	$('#preply_form').submit(function(event){
+		if($('#hpre_content').val()==''){
+			alert('댓글 내용을 입력하세요!');
+			$('#hpre_content').focus();
+			return false;
+		}
+		
+		var data = $(this).serialize();
+		
+		//등록
+		$.ajax({
+			type:'post',
+			data:data,
+			url:'writeReply.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				if(data.result=='logout'){
+					alert('로그인해야 작성할 수 있습니다.');
+				}else if(data.result == 'success'){
+					//폼 초기화
+					initForm();
+					
+					//목록 호출
+					selectData(1,hp_num);
+					
+				}else{
+					alert('등록시 오류 발생!');
+				}
+			},
+			error:function(){
+				alert('등록시 네트워크 오류 발생!');
+			}
+		});
+		
+		//기본 이벤트 제거
+		event.preventDefault();
+		
+	});
+	
+	//댓글 작성 폼 초기화
+	function initForm(){
+		$('#hpre_content').val('');
+		$('.pmodal_rcount .letter-count').text('300/300');
+	}
+	
+/*=========================== 대댓글 ================================*/
 	//댓글달기 글씨 누르면 대댓글 폼 나타내기
 	$(document).on('click','#rere_write',function(){
 		//댓글쓰기 버튼 다시 눌렀을 때,대댓글 작성폼 초기화
@@ -137,19 +265,18 @@ $(document).ready(function(){
 			flag = 0;
 			return false;
 		}
-		//댓글 글번호
-		/*var re_num = $(this).attr('data-num');
 		//작성자 아이디
-		var id = $(this).attr('data-id');
-		//댓글 내용
-		var content = $(this).parent().find('p').text(); */
+		var user_id = $('#user_id').val();
+		//댓글 글번호
+		var hpre_num = $(this).attr('data-num');
+		//댓글 depth
+		var hpre_depth = $(this).attr('data-depth');
 		
 		//댓글쓰기폼 UI
 		var rereply = '<form id="pre_form">';
-		/*rereply += '	<input type="hidden" name="num" value="'+re_num+'" id="num">';
-		rereply += '	<input type="hidden" name="id" value="'+id+'" id="user_id">';
-		rereply += '';
-		rereply += $('#user_id').val(); */
+		rereply += '	<input type="hidden" name="hpre_num" value="'+hpre_num+'" id="hpre_num">';
+		rereply += '	<input type="hidden" name="id" value="'+user_id+'" id="user_id">';
+		rereply += '	<input type="hidden" name="hpre_depth" value="'+(Number(hpre_depth)+1)+'" id="hpre_depth">';
 		rereply += '<div class="pmodal_reback2">';
 		rereply += '<div class="pmodal_rpro2">';
 		rereply += '<img src="../assets/img/plus/profile.png">';
@@ -160,13 +287,54 @@ $(document).ready(function(){
 		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';
 		rereply += '</div>';
 		rereply += '</form>';
-		rereply += '<div class="margin-bottom-20"><hr class="hr-md"> </div> ';
 		
 		//문서 객체에 추가
 		/*$('#pmodal_reform').append(rereply);*/
 		$(this).parents('.pmodal_brere').append(rereply);
 
 		flag = 1
+	});
+	
+	//대댓글창 유효성 체크 + 대댓글 등록*********************************************************
+	$('#pre_form').submit(function(event){
+		if($('.pmodal_rtext2').val()==''){
+			alert('댓글 내용을 입력하세요!');
+			$('.pmodal_rtext2').focus();
+			return false;
+		}
+		
+		var data = $(this).serialize();
+		
+		//등록
+		$.ajax({
+			type:'post',
+			data:data,
+			url:'writeReply.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				if(data.result=='logout'){
+					alert('로그인해야 작성할 수 있습니다.');
+				}else if(data.result == 'success'){
+					//폼 초기화
+					initReForm();
+					
+					//목록 호출
+					selectData(1,hp_num);
+					
+				}else{
+					alert('등록시 오류 발생!');
+				}
+			},
+			error:function(){
+				alert('등록시 네트워크 오류 발생!');
+			}
+		});
+		
+		//기본 이벤트 제거
+		event.preventDefault();
+		
 	});
 	
 	$(document).on('keyup','textarea',function(){
@@ -202,4 +370,5 @@ $(document).ready(function(){
 	function initReForm(){
 		$('#pre_form').remove();
 	}
+	
 });

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/plus.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/plus.reply.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/plus.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		//모달 헤더 고정
@@ -275,86 +277,33 @@
           <div class="magazine-news">
             <div class="row">
             <div class="plusCategory"><h3><strong>인기템리뷰</strong></h3></div>
+              <c:if test="${count == 0}">
+              <!-- UI 수정할 것***************************************** -->
+              	<div class="col-md-2">등록된 게시물이 없습니다.</div>
+              </c:if>
+              <c:if test="${count > 0}">
+              <c:forEach var="plus" items="${list}">
               <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
+                <div class="pm_thumb">
+                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
                     <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
                   <span class="magazine-badge label-yellow">1</span>
                 </div>
-                <div class="pmain_tit best"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
+                <div class="pmain_tit best"><a href="#">${plus.hp_title}</a></div>
+                <span class="pm_lrs">
+                  <span>
                   <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
+                  <strong>${plus.hp_like}</strong></span>
+                  <span>
                   <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
+                  <strong>1234</strong></span>
+                  <span>
+                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
+                  <strong>${plus.hp_hit}</strong></span>
                 </span>
               </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">2</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">3</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">4</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">5</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
+              </c:forEach>
+              </c:if>
             </div>
           </div>
           <!-- 화해플러스 인기템리뷰 끝 -->
@@ -555,190 +504,9 @@
     <!-- End Content Part -->
 <!--====================== 화해플러스 모달 시작 =======================-->
 <div class="modal fade" id="plus_modal" tabindex="-1" role="dialog">
-    <!-- 모달 헤더 -->
-	<div id="fixed-header" class="fixed-header-noscroll">
-		<span class="pmodal_left"><img class="pmodal_close" src="${pageContext.request.contextPath}/assets/img/plus/modalLeft.png" data-dismiss="modal"></span>
-		<span class="pmodal_header">
-		<a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a>
-		</span>
-		<button class="close" data-dismiss="modal">&times;</button>
-	</div>
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-		<!-- 모달 바디 -->
-		<div class="modal-body pmodal_c ex-body" style="text-align: center;">
-		    <br><br>
-			<img class="plusThumbnail3" src="${pageContext.request.contextPath}/assets/img/plus/plusThumbnail.PNG" alt="">
-			<div class="pmodal_title">홀리카홀리카 2018 F/W 섀도우 전색상 발색</div>
-			<div class="pmodal_profile">
-				<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> dragon
-			</div>
-			<div class="pmodal_icon">
-				<span><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like"> 135</span> 
-				<span><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">56</span> 
-				<span><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">77</span>
-				<span><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">4631</span> 
-				<span class="pmodal_regDate">2018-08-25</span>
-			</div>
-			<div class="margin-bottom-35">
-				<hr class="hr-md">
-			</div>
-			<div>
-				<img class="plusModalimg" src="${pageContext.request.contextPath}/assets/img/plus/pmodal1.PNG"><br>
-				<br> 안녕하세요!<br> 지난 주 금요일 출시되었던 홀리카홀리카의 가을신상 스타러스터 컬렉션 발색
-				데려왔어요<br> 우주의 반짝임을 담아낸듯한 스파클섀도우와 웜,쿨 가리지않고 예쁘게 사용할 수 있는 가을
-				무드를 담아낸 섀도우 팔레트까지! <br> <br> 홀리카홀리카 스파클링 스모키 섀도우<br>
-				가격 : 9,500원<br> - 01 스파클링비너스<br> - 02 스파클링머큐리<br> -
-				03 스파클링새틴<br> - 04 스파클링마스<br> - 05 스파클링주피터<br> 
-				<img class="plusModalimg" src="${pageContext.request.contextPath}/assets/img/plus/pmodal2.PNG"><br><br> 
-				<img class="plusModalimg" src="${pageContext.request.contextPath}/assets/img/plus/pmodal3.PNG"><br><br> 
-				우선 제가 보여드릴 컬러는 다섯가지 중<br> 스파클링 주피터를 제외한 네가지 컬러입니다 :D<br><br> 
-				매장가서 직접 발색해보니 하나같이 다 영롱...<br> 
-				발림성도 부드럽고 굉장히 밀착력이 좋았어요.<br> <br>
-				스파클링비너스/스파클링머큐리/스파클링새틴/스파클링마스/스파클링주피터<br> 
-				순서로 보시면 될 것 같아요. <br><br> 
-				<img class="plusModalimg" src="${pageContext.request.contextPath}/assets/img/plus/pmodal4.PNG"><br><br> 
-				스파클링 스모키섀도우 컬러들을 전체적으로 발라보면서 느낀 게<br> 
-				컬러감이 베이스컬러들이 있는 편이라<br> 
-				부드럽게 음영감을 줘서<br> 
-				분위기있는 눈매표현이 가능했어요.<br><br> 
-				그리고 촉촉하게 발리는 수분이 있는<br> 
-				습식텍스쳐라서 밀착력도 좋다고 느꼈답니다.<br><br> 
-				01 스파클링비너스<br> <br> 
-				<img class="plusModalimg"src="${pageContext.request.contextPath}/assets/img/plus/pmodal5.PNG"><br><br> 
-				<img class="plusModalimg" src="${pageContext.request.contextPath}/assets/img/plus/pmodal6.PNG"><br><br> 
-				차분한 그레이베이지 컬러감에 실버펄감이 있어서 <br> 
-				투명해보이는 느낌의 컬러에요.<br><br> 
-				홀리카홀리카 18 F/W 피스매칭 12구 섀도우 팔레트<br> 
-				가격 : 35,000원<br><br> 
-				<img class="plusModalimg" src="${pageContext.request.contextPath}/assets/img/plus/pmodal7.PNG"><br>
-				<br> 총 12가지의 컬러로 구성이 되어있는데요<br> 진짜 버릴컬러 1도 없어...<br>
-				웜,쿨 가리지 않고 두루두루 쓸 수 있는 컬러들이라서<br> 이번 가을시즌 왠지 손이 자주 갈 거 같네요.<br>
-				특히 우측의 글리터들도 역시나 예쁜!<br> <br> 
-				<img class="plusModalimg" src="${pageContext.request.contextPath}/assets/img/plus/pmodal8.PNG"><br> <br> 이렇게
-				아이메이크업을 조금 붉게하는 날엔<br> 저 같은 경우엔 부드러우면서도 생기있는 MLBB컬러로 <br>
-				립메이크업을 연출해준답니다 :D<br> <br> 평소 붉은 느낌의 아이메이크업 좋아하시거나<br>
-				톤에 상관없이 사용하기 좋은<br> 팔레트 찾고계셨다면 이번 홀리카홀리카의 <br> 피스매칭
-				섀도우팔레트가 딱 좋을 거 같더라고요??? <br> <br> 여기까지 홀리카홀리카의 따끈한 신상 !<br>
-				스타러스터 피스매칭 12구 섀도우팔레트 &amp; <br> 스파클리 스모키섀도우 발색후기였습니다.. ♥
-			</div>
-			<div class="pmodal_ud">
-				<input type="button" value="수정"> <input type="button" value="삭제">
-			</div>
-			<div class="margin-bottom-20">
-				<hr class="hr-md">
-			</div>
-			<div class="pmodal_lrs">
-				<ul>
-					<li class="pmodal_like"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" id="pmodal_l"> 좋아요</li>
-					<li class="pmodal_scrap"><img src="${pageContext.request.contextPath}/assets/img/plus/scrap2.png" id="pmodal_s"> 스크랩</li>
-					<li class="pmodal_re"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png"> 댓글달기</li>
-				</ul>
-			</div>
-			<!-- 화해플러스 모달 댓글 시작-->
-			<div class="pmodal_reply">
-				<div class="pmodal_wpro">
-					<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>dragon
-				</div>
-				<div class="pmodal_rform">
-					<form>
-						<textarea class="pmodal_rtext" id="pre_content" cols="71" rows="4">내용을 입력해 주세요</textarea>
-						<input type="submit" value="댓글달기">
-					</form>
-				</div>
-					<div class="pmodal_rcount"><span class="letter-count">300 / 300</span></div>
-				<div style="margin-top:-23px;margin-bottom:5px;"><hr class="hr-lg"></div>
-				<div class="pmodal_reback">
-					<div class="pre_total">
-						전체(4)
-					</div>
-					<div class="pmodal-bottom-10">
-						<hr class="hr-md">
-					</div>
-					<div class="pmodal_rere">
-						<div class="pmodal_rpro">
-							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-							<span class="pmodal_wrere">blue</span>
-							<span class="grade_vip"><input type="button" value="VIP"></span>
-							<span class="pmodal_drere">2018-08-28</span>
-						</div>
-						<div class="pmodal_trere">전 무쌍같은 속쌍이라 하면 다 들어가서 살에 묻혀요ㅠ</div>
-						<div class="pmodal_brere">
-							<a class="pmodal_same" id="rere_write">댓글달기</a>
-							<span>
-							<input type="button" value="수정">
-							<input type="button" value="삭제"></span>
-							<div id="pmodal_reform"></div>
-							<div class="margin-bottom-20"><hr class="hr-md"> </div>
-						</div>
-					</div>
-				</div>
-				<div class="pmodal_reback">
-					<div class="pmodal_rere">
-						<div class="pmodal_rpro">
-							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-							<span class="pmodal_wrere">black</span>
-							<span class="grade_vvip"><input type="button" value="VVIP"></span>
-							<span class="pmodal_drere">1시간 전</span>
-						</div>
-						<div class="pmodal_trere">2</div>
-						<div class="pmodal_brere">
-							<a class="pmodal_same" id="rere_write">댓글달기</a>
-							<span>
-							<input type="button" value="수정">
-							<input type="button" value="삭제"></span>
-							<div id="pmodal_reform"></div>
-							<div class="margin-bottom-20"><hr class="hr-md"> </div>
-						</div>
-					</div>
-				</div>
-				<!-- 대댓글 -->
-				<div class="prere_back">
-					<div class="pmodal_rere">
-						<div class="pmodal_rpro">
-							<span class="prere_depth"><img src="${pageContext.request.contextPath}/assets/img/shop/answer-point.png"></span>
-							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-							<span class="pmodal_wrere">white</span>
-							<span class="grade_family"><input type="button" value="Family"></span>
-							<span class="prere_time">1시간 전</span>
-						</div>
-						<div class="prere_text">3</div>
-						<div class="pmodal_brere">
-							<a class="pmodal_same" id="rere_write">댓글달기</a>
-							<span>
-							<input type="button" value="수정">
-							<input type="button" value="삭제"></span>
-							<div id="pmodal_reform"></div>
-							<div class="margin-bottom-20"><hr class="hr-md"> </div>
-						</div>
-					</div>
-				</div>
-				<div class="prere_back">
-					<div class="pmodal_rere">
-						<div class="pmodal_rpro">
-							<span class="prere_depth"><img src="${pageContext.request.contextPath}/assets/img/shop/answer-point.png"></span>
-							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-							<span class="pmodal_wrere">red</span>
-							<span class="grade_welcome"><input type="button" value="Welcome"></span>
-							<span class="prere_time">1시간 전</span>
-						</div>
-						<div class="prere_text"><span class="rere_writer">white</span>4</div>
-						<div class="pmodal_brere">
-							<a class="pmodal_diff" id="rere_write">댓글달기</a>
-							<div class="pmodal_reform" data-num="1"></div>
-							<div class="margin-bottom-20"><hr class="hr-md"> </div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- 화해플러스 모달 댓글 끝-->
-		</div>
-		<!-- 모달 푸터 -->
-		<div class="modal-footer">
-			<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/plus/plusTrend.do'">
-			<input type="button" value="닫기" data-dismss="modal">				
-		</div>
-		</div>
-	</div>
+   <input type="hidden" name="id" value="${user_id}" id="user_id">
+   <div id="pmodal_append">
+   
+   </div>
 </div>
 <!-- ================ 화해플러스 모달 끝 ================ -->

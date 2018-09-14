@@ -676,7 +676,7 @@ select:disabled, input:disabled{
     line-height: 20px;
 }
 
-.myq-q{
+.myq-qtit{
 	color: #666;
 	display: block;
     font-size: 16px;
@@ -713,17 +713,51 @@ span.myq-date{
 	height:25px;
 }
 
-.myq-a{
-	background:#fff;
-	margin-top:10px;
-	padding:20px;
-	width:96%;
+.myq-q{
+	padding-bottom:15px;
 }
 
-.myq-a img{
-	width:20px;
-	height:15px;
+.myq-a{
+	margin-top:10px;
 }
+
+.myq-a span strong{
+	color: #83B14E;
+	display: block;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 25px;
+}
+
+.myq-phr{
+	position: relative;
+    margin: 25px 0 0;
+    padding: 28px 0 19px;
+    border-top: 1px dashed #e6e6e6;
+    color: #888;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+a.go-ask-myq{
+	display: inline-block;
+    position: absolute;
+    top: 17px;
+    right: 0;
+    width: 112px;
+    height: 38px;
+    padding: 4px 0 0;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: -1px;
+    background-color: #fff;
+    border: 1px solid #83B14E;
+	line-height: 28px;
+    color: #83B14E;
+    border-radius: 5px !important;
+    text-decoration:none;
+}
+
 /*1:1문의 끝*/
 /*1:1문의 작성폼 시작*/
 td{
