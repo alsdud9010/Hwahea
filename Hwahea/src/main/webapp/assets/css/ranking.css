@@ -226,3 +226,69 @@ li{
 	border-bottom: 1px solid #f4f4f4;
 	width: 103%; 
 }
+
+/*=========브랜드별===========*/
+.brand-search{
+	z-index: 1;
+	position: relative;
+    min-height: 75px;
+    margin: 30px 0;
+    border: 1px solid #ddd;
+    border-top: 2px solid #83b14e;
+}
+
+.brand-search-title{
+	float: left;
+    width: 168px;
+    padding: 15px 20px;
+}
+
+.brand-search-title strong{
+	display: block;
+    font-size: 20px;
+    color: #000;
+}
+
+.brand-search-title span{
+	display: block;
+    margin-top: 5px;
+    color: #83b14e;
+}
+
+.brand-search-content{
+    width: 850px;
+    min-height: 75px;
+    max-height: 118px;
+    padding: 5px 0 5px 15px;
+    border-left: 1px solid #ddd;
+    overflow: hidden;
+    list-style: none;
+}
+
+.brand-search-content li{
+	float: left;
+    width: 165px;
+    margin: 8px 0;
+}
+
+.brand-more{
+	z-index: 2;
+    position: absolute;
+    bottom: -30px;
+    left: -1px;
+    display: block;
+    width: 85px;
+    height:30px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-top:0;
+    color: #666;
+    font-size: 12px;
+    background:#fff;
+}
+.brand-search button{
+    padding: 0;
+    box-shadow: none;
+    cursor: pointer;
+}

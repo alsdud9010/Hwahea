@@ -44,7 +44,7 @@ public class DictionaryAjaxController {
 		
 		List<DictionaryCommand> list = null;
 		list = dictionaryService.selectAllergie();
-		
+				
 		Map<String,Object> map = new HashMap<String,Object>();
 		
 		map.put("list", list);

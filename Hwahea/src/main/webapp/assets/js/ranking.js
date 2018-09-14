@@ -25,5 +25,18 @@ $(document).ready(function(){
 	    var html = $(this).html();
 	    $('#example button.dropdown-toggle').html(html + ' <span class="caret"></span>');
 	});
+	
+	//브랜드 더보기-닫기
+	$('.brand-more').click(function(){
+		var more = $(this).val();
+		if(more == '더보기'){
+			$('.brand-search-content').css('max-height','none');
+			$(this).attr('value','닫기');
+		}else if(more == '닫기'){
+			$('.brand-search-content').css('max-height','117px');
+			$(this).attr('value','더보기');
+			
+		}
+	});
 
 });

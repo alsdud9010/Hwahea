@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/ranking.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/ranking_menu.css">
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/assets/js/ranking.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/ranking.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/ranking_menu.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/ranking.js"></script>
 <!--=== Title ===-->
 <div class="container-background">
 	<div class="container content r_title">
@@ -24,148 +22,7 @@
 		<!-- Begin Content -->
 		<div class="col-md-12">
 		
-			<div class="col-md-12 shopList-search">
-				<div class="shopList-search-title">
-					<strong>BRAND</strong>
-					<span>브랜드 별 검색 :)</span>
-				</div>
-				<ul class="shopList-search-content">
-					<%-- <c:forEach var="brand" items="${brand}">
-					<li class="ask-lock-area">
-						<input type="checkbox" id="brand-${brand.brand_num}" name="shop-search-brand" value="${brand.brand_name}"/>
-						<label for="brand-${brand.brand_num}">${brand.brand_name}</label>
-					</li>
-					</c:forEach> --%>
-				</ul>
-				<input type="button" class="shop-brand-more" value="더보기">
-				<div class="shopList-reset"><button id="onBrandReset">선택 초기화</button></div>
-			</div>
-		
-		
-			<!-- 카테고리별 top5 시작 -->
-			<div class="ranking-top5">
-				<div class="row">
-					<div class="col-md-12 margin-bottom-15">
-						<h2>
-							<b> 카테고리별 </b>
-						</h2>
-					</div>
-					<div class="col-md-2" onclick="location.href='${pageContext.request.contextPath}/review/productInfo.do'">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span>
-						 		<img class="thropy"
-									src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
-									alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-					
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span>
-						 		<img class="thropy"
-									src="${pageContext.request.contextPath}/assets/img/ranking/second.png"
-									alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span>
-						 		<img class="thropy"
-									src="${pageContext.request.contextPath}/assets/img/ranking/third.png"
-									alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div> 
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div> 
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span>
-						 		<img class="non_thorphy"
-									src="${pageContext.request.contextPath}/assets/img/ranking/four.jpg"
-									alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span>
-						 		<img class="non_thorphy"
-									src="${pageContext.request.contextPath}/assets/img/ranking/five.png"
-									alt="">
-							</span>
-						</div> 
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- 카테고리별별 top5 끝 -->
-
-
-
-			<div class="margin-bottom-15">
-				<hr class="hr-md">
-			</div>
-
+		<!-- 메뉴 리스트 -->
 			<div class="ranking-menus">
 				<div class="navbar nav-default mega-menu" role="navigation">
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
@@ -338,10 +195,29 @@
 					</div>
 				</div>
 			</div>
-			
+			<!-- 메뉴 리스트 -->
+		
 			<div class="margin-bottom-15">
-					<hr class="hr-md">
+				<hr class="hr-md">
+			</div>
+			
+			<div class="col-md-12 brand-search">
+				<div class="brand-search-title">
+					<strong>BRAND</strong>
+					<span>브랜드 별 검색 :)</span>
 				</div>
+				<ul class="brand-search-content">
+					<c:forEach var="brand" items="${brand}">
+					<li class="ask-lock-area">
+						<input type="checkbox" id="brand-${brand.brand_num}" name="shop-search-brand" value="${brand.brand_name}"/>
+						<label for="brand-${brand.brand_num}">${brand.brand_name}</label>
+					</li>
+					</c:forEach>
+				</ul>
+				<input type="button" class="brand-more" value="더보기">
+			</div>
+			
+			<div class="margin-bottom-25"></div>
 
 			<!-- 랭킹 리스트 시작 -->
 			<div class="col-md-12 ranking-list">
