@@ -11,6 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.member.service.MemberService;
@@ -84,6 +86,48 @@ public class MemberController {
 		
 		return "my_info";
 	}
+	//수정폼에 전송된 데이터 처리
+		@RequestMapping(value="/mypage/my_info.do",
+		        method=RequestMethod.POST)
+		public String submitUpdate(@ModelAttribute("command") 
+		                           @Valid MemberCommand memberCommand,
+		                           BindingResult result) {
+			
+			if(log.isDebugEnabled()) {
+				log.debug("<<memberCommand>> : " + memberCommand);
+			}
+			
+			/*if(result.hasErrors()) {
+				return "my_info";
+			}*/
+			
+			
+			
+			
+			//회원정보수정
+			memberService.update(memberCommand);
+			
+			return "redirect:/mypage/my_info.do";
+		}
+		
+		// 이미지 출력
+		@RequestMapping("/mypage/imageView.do")
+		public ModelAndView viewImage(@RequestParam("m_id") String m_id) {
+
+			MemberCommand member = memberService.selectMember(m_id);
+
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("imageView");
+			//				   속성명			속성값(byte[]의 데이터)
+			mav.addObject("imageFile",member.getM_profile());
+			mav.addObject("filename",member.getM_filename());
+
+			return mav;
+		}
+		
+		
+	
+	
 	//회원포인트  호출
 	@RequestMapping(value="/mypage/my_point.do")
 		public String my_point(String bc, HttpSession session, Model model) {
@@ -224,16 +268,16 @@ public class MemberController {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
-		return "my_QnA";
+		return "my_QnA"; 
 	}
 	//====================회원로그아웃=================//
-	/*@RequestMapping("/member/logout.do")
+	@RequestMapping("/template/logout.do")
 	public String processLogin(HttpSession session) {
 		//로그아웃
 		session.invalidate();
 		
 		return "redirect:/main/main.do";
-	}*/
+	}
 	//====================회원상세정보=================//
 	/*@RequestMapping("/mypage/my_info.do")
 	public String process(HttpSession session,
@@ -254,8 +298,8 @@ public class MemberController {
 		return "my_info";
 	}*/
 	//====================회원상세수정=================//
-	//수정폼
-	/*@RequestMapping(value="/mypage/my_info.do",
+	/*//수정폼
+	@RequestMapping(value="/mypage/my_info.do",
 	        method=RequestMethod.GET)
 	public String formUpdate(HttpSession session,
 			                 Model model) {
@@ -269,7 +313,7 @@ public class MemberController {
 		return "my_info";
 	}
 	//수정폼에 전송된 데이터 처리
-	@RequestMapping(value="/member/update.do",
+	@RequestMapping(value="/mypage/my_info.do",
 	        method=RequestMethod.POST)
 	public String submitUpdate(@ModelAttribute("command") 
 	                           @Valid MemberCommand memberCommand,

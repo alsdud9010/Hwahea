@@ -14,10 +14,36 @@
     }    
   }
   
+  window.onload=function(){
+		//파일을 선택할 때
+		document.getElementById('ex_file').onchange=function(){
+			readImage();	
+		};
+	};
+	function readImage(){
+		var file= document.getElementById('ex_file');
+		if(file.files && file.files[0]){
+			//선택한 파일의 정보 사용 가능
+			
+			var reader = new FileReader();
+			//선택한 이미지 읽기
+			reader.readAsDataURL(file.files[0]);
+			
+			//선택한 이미지 일기 작업이 완료되면 함수 호출
+			reader.onload = function(){
+				var image = document.getElementById('profile_image');
+				image.src = reader.result;//이미지 경로
+				//img 태그 노출
+				image.style.display='';
+				
+			};
+		}
+	};
+
+  
 </script>
 <style>
-.filebox {display:inline-block; margin-left: 30%;}
-
+.filebox {display:inline-block; float: right; margin-bottom: 32px;}
 
 .filebox label {
   display: inline-block;
@@ -31,6 +57,8 @@
   border: 1px solid #ebebeb;
   border-bottom-color: #e2e2e2;
   border-radius: .25em;
+  margin-top: 115px;
+  margin-right: -121px;
 }
 
 .filebox input[type="file"] {  /* 파일 필드 숨기기 */
@@ -59,7 +87,8 @@
 <div class="container content">
 	<div class="row magazine-page">
 		<div class="col-md-12" style="margin-left: 5%;">
-			<form:form action="my_info.do" commandName="command">
+			<form:form action="my_info.do" commandName="command" encType="multipart/form-data">
+			<form:hidden path="m_id"/>
 			<div class="ranking">
 				<b>내 등급  : ${command.m_grade} </b>
 			</div>
@@ -69,16 +98,18 @@
 			<div class="form_info">
 				<div class="myinfo_form">
 					<ul>
-						<li><div class="col-md-12"><label>이메일 : ${command.m_email}</label></div></li>
-						<li><div class="col-md-12"><label>닉네임 : ${command.m_nickname}</label><input type="submit" value="수정하기"></div></li>
+						<li><div class="col-md-121"><label>이메일 : </label><form:input path="m_email" placeholder="${command.m_email}" class="form-control getname1"/>						
+						</div></li>
+						<li><div class="col-md-122"><label>닉네임 : </label><form:input path="m_nickname" placeholder="${command.m_nickname}" class="form-control getname2"/>
+						</div></li>
 					</ul>
 				</div>
 				<div class="info_img">
 					<div class="filebox" style="font-style: right;">
-					<img alt="" src="${pageContext.request.contextPath}/assets/img/default_profile.png">
+					<img  id="profile_image" src="imageView.do?m_id=${command.m_id}">
+					
                           <label for="ex_file">프로필 업로드</label> 
-                          <input type="file" id="ex_file"> 
-                          
+                          <input type="file" name="upload" id="ex_file">                           
                     </div>
 				</div>
 				<div class="choose_me">
@@ -95,12 +126,12 @@
 						<li>
 							<div class="info_choice col-md-8">
 								<label>성별 : </label>
-							  <input name="gender" type="radio" id="woman" class="radio" value="0" <c:if test="${command.m_gender == 0}">checked</c:if>>
+							  <input name="gender" type="radio" id="woman" class="radio"  <c:if test="${command.m_gender == 0}">checked</c:if>>
 							  <label for="woman" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>여</span>
 							  </label>
-							  <input name="gender" type="radio" id="man" class="radio" value="1" <c:if test="${command.m_gender == 1}">checked</c:if>>
+							  <input name="gender" type="radio" id="man" class="radio"  <c:if test="${command.m_gender == 1}">checked</c:if>>
 							  <label for="man" class="radio-label">
 							    <i class="fa fa-check"></i>
 							    <span>남</span>
@@ -165,22 +196,22 @@
 						<li>
 							<div class="info_choice col-md-8">
 								<label>피부고민 : </label>
-							  <input name="trouble" type="checkbox" id="z" class="checkbox" value="0">
+							  <input name="trouble" type="checkbox" id="z" class="checkbox" value="0" >
 							  <label for="z" class="checkbox-label">
 							    <i class="fa fa-check"></i>
 							    <span>해당없음</span>
 							  </label>
-							  <input name="trouble" type="checkbox" id="atopic" class="checkbox" value="1">
+							  <input name="m_atopic" type="checkbox" id="atopic" class="checkbox" value="1">
 							  <label for="atopic" class="checkbox-label">
 							    <i class="fa fa-check"></i>
 							    <span>아토피</span>
 							  </label>
-							  <input name="trouble" type="checkbox" id="pimple" class="checkbox" value="1">
+							  <input name="m_pimple" type="checkbox" id="pimple" class="checkbox" value="1">
 							  <label for="pimple" class="checkbox-label">
 							    <i class="fa fa-check"></i>
 							    <span>여드름</span>
 							  </label>
-							  <input name="trouble" type="checkbox" id="susceptilbility" class="checkbox" value="1">
+							  <input name="m_susceptilbility" type="checkbox" id="susceptilbility" class="checkbox" value="1">
 							  <label for="susceptilbility" class="checkbox-label">
 							    <i class="fa fa-check"></i>
 							    <span>민감성</span>
@@ -201,39 +232,39 @@
 							<div class="info_choice col-md-12">
 								<label class="col-md-3">수령인 : </label>
 								<div class="col-md-9" style="margin-left: -7.5em; margin-top: -0.5em;">
-									<input type="text" name="address_name" placeholder="${command.m_name}" class="form-control getname">
+									<form:input path="m_name" name="address_name" placeholder="${command.m_name}" class="form-control getname"/>
 								</div>
 							</div>
 						</li>
 						<li class="col-md-12">
 							<div class="info_choice col-md-12">
 								<label class="col-md-3" style="margin-top:3px;">휴대전화 : </label>
-								<input type="number" name="phone1" placeholder="${command.m_phone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;">
-								<input type="number" name="phone2" placeholder="${command.m_phone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
-								<input type="number" name="phone3" placeholder="${command.m_phone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
+								<form:input path="m_phone1" name="m_phone1" placeholder="${command.m_phone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;"/>
+								<form:input path="m_phone2" name="m_phone2" placeholder="${command.m_phone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
+								<form:input path="m_phone3" name="m_phone3" placeholder="${command.m_phone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
 							</div>
 						</li>
 						<!-- null값 허용 -->
 						<li class="col-md-12">
 							<div class="info_choice col-md-12">
 								<label class="col-md-3" style="margin-top:3px;">일반전화 : </label>
-								<input type="number" name="num_phone" placeholder="${command.m_zipphone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;">
-								<input type="number" name="num_phone" placeholder="${command.m_zipphone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
-								<input type="number" name="num_phone" placeholder="${command.m_zipphone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)">
+								<form:input path="m_zipphone1" name="m_zipphone1" placeholder="${command.m_zipphone1}" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)" style="margin-left: -5em;"/>
+								<form:input path="m_zipphone2" name="m_zipphone2" placeholder="${command.m_zipphone2}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
+								<form:input path="m_zipphone3" name="m_zipphone3" placeholder="${command.m_zipphone3}" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
 							</div>
 						</li>
 						<li class="col-md-12" style="margin-left: 14px;">
 							<div class="info_choice col-md-12" style="margin-left: -1em;">
 								<label class="col-md-4">주소 : </label>
-								<input type="text" id="sample6_postcode" class="form-control col-md-4" style="width: 70px !important; margin-left: -8.4em;">
-								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="col-md-4" style="width: 110px !important; margin-left: -3em;">
+								<form:input path="m_zipcode" name="m_zipcode" id="sample6_postcode" placeholder="${command.m_zipcode}" class="form-control col-md-4"  style="width: 70px !important; margin-left: -8.4em;"/>
+								<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="zipcood-bt" style="width: 110px !important; margin-left: -3em;">
 							</div>
 							<div class="address col-md-12">
 								<div class="info_choice col-md-12">
-									<input type="text" id="sample6_address" placeholder="주소" class="form-control col-md-6">
+									<form:input path="m_address1" name="m_address1" id="sample6_address" placeholder="${command.m_address1}" class="form-control col-md-6"/>
 								</div>
 								<div class="info_choice col-md-12">
-									<input type="text" id="sample6_address2" placeholder="상세주소" class="form-control col-md-6">
+									<form:input path="m_address2" name="m_address2" id="sample6_address2" placeholder="${command.m_address2}" class="form-control col-md-6"/>
 								</div>
 							</div>
 						</li>
@@ -242,8 +273,8 @@
 			</div>
 			<div  class="form_top col-md-12">
 				<div class="bnt_set_last">
-					<input type="submit" value="수정하기">
-					<input type="button" value="탈퇴하기">
+					<input type="submit" value="수정하기" class="zipcood-bt">
+					<input type="button" value="탈퇴하기" class="zipcood-bt">
 				</div>
 			</div>
 			</form:form>
