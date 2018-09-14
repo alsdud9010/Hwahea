@@ -610,7 +610,7 @@ $(document).ready(function(){
           <h4 class="h4-m"><span class="glyphicon glyphicon-lock"></span>Login</h4>
         </div>
         <div class="body-m">
-          <form role="form" action="signup.do" method="post">
+          <form role="form" action="${pageContext.request.contextPath}/main/signup.do" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
               <input type="text" name="m_id" class="form-control" id="usrname" placeholder="아이디를 입력해주세요."/>
