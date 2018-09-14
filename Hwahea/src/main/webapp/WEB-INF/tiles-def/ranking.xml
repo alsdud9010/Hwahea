@@ -17,4 +17,8 @@
 		<put-attribute name="title" value="화해 - 화장품을 해석하다"/>
 		<put-attribute name="body" value="/WEB-INF/views/ranking/r_skinType.jsp"/>
 	</definition>
+	<definition name="r_brand" extends="main">
+		<put-attribute name="title" value="화해 - 화장품을 해석하다"/>
+		<put-attribute name="body" value="/WEB-INF/views/ranking/r_brand.jsp"/>
+	</definition>
 </tiles-definitions>
