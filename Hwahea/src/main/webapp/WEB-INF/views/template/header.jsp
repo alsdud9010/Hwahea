@@ -622,7 +622,7 @@ $(document).ready(function(){
               <button type="button" class="btn-m1 btn-success1 btn-block-m1" onclick = "location.href ='${pageContext.request.contextPath}/signin/service_agree.do'">회원가입</button>
               <button type="submit" class="btn-m2 btn-success2 btn-block-m2">로그인</button>
           </form>
-        </div>
+        </div> 
         <div class="footer-m">
          <a href="#" class="a-coler">아이디/비밀번호 찾기</a>
         </div>
