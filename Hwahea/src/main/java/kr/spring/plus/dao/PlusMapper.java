@@ -54,7 +54,7 @@ public interface PlusMapper {
 	public int selectRowCountReply(Map<String,Object> map);
 	
 	//화해플러스 댓글 등록
-	@Insert("INSERT INTO plus_reply (hpre_num,hpre_content,hpre_date,hpre_ip,hpre_depth,hpre_parent,hp_num,hpre_id) VALUES (plus_board_reply_seq.nextval,#{hpre_content},SYSDATE,#{hpre_ip},#{hpre_depth},#{hp_num},#{hp_num},#{hpre_id})") 
+	@Insert("INSERT INTO plus_reply (hpre_num,hpre_content,hpre_date,hpre_ip,hpre_depth,hpre_parent,hp_num,hpre_id) VALUES (plus_board_reply_seq.nextval,#{hpre_content},SYSDATE,#{hpre_ip},#{hpre_depth},#{hpre_num},#{hp_num},#{hpre_id})") 
 	public void insertReply(PlusReplyCommand plusReply);
 	
 	//화해플러스 댓글 수정

@@ -117,6 +117,7 @@ $(document).ready(function(){
 	var currentPage;
 	var count;
 	var rowCount;
+	var hp_num;
 	
 	//댓글쓰기 버튼 누르면 댓글창으로 커서 이동
 	$(document).on('click','.pmodal_re',function(){
@@ -126,7 +127,7 @@ $(document).ready(function(){
 	
 	//댓글 목록
 	$(document).on('click','.click_pmodal',function(){
-		var hp_num = $(this).attr('data-num');
+		hp_num = $(this).attr('data-num');
 		
 		//기존 목록 초기화
 		$('#prere_area').empty();
@@ -137,6 +138,10 @@ $(document).ready(function(){
 	
 	function selectData(pageNum, hp_num){
 		currentPage = pageNum;
+		
+		if(pageNum==1){
+			$('#prere_area').empty();
+		}
 		
 		$.ajax({
 			type:'post',
@@ -160,23 +165,73 @@ $(document).ready(function(){
 				}else{
 					$(data.list).each(function(index,item){
 						if(hp_num == item.hp_num){
-								output+='	<div class="pmodal_rere">';
-								output+='		<div class="pmodal_rpro">';
-								output+='			<img src="../assets/img/plus/profile.png">';
-								output+='			<span class="pmodal_wrere">'+item.hpre_id+'</span>';
-								output+='			<span class="grade_vip"><input type="button" value="VIP"></span>';
-								output+='			<span class="pmodal_drere">'+item.hpre_date+'</span></div>';
-								output+='		<div class="pmodal_trere">'+item.hpre_content+'</div>';
-								output+='		<div class="pmodal_brere">';
-								output+='		<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
-								if($('#user_id').val()==item.hpre_id){
-									//로그인한 아이디가 댓글 작성자 아이디와 같을 때
-									output+='		<span><input type="button" value="수정">';
-									output+='			  <input type="button" value="삭제"></span>';
+								if(item.hpre_depth == 0){
+									output+='	<div class="pmodal_rere">';
+									output+='		<div class="pmodal_rpro">';
+									output+='			<img src="../assets/img/plus/profile.png">';
+									output+='			<span class="pmodal_wrere">'+item.hpre_id+'</span>';
+									output+='			<span class="grade_vip"><input type="button" value="VIP"></span>';
+									output+='			<span class="pmodal_drere">'+item.hpre_date+'</span></div>';
+									output+='		<div class="pmodal_trere">'+item.hpre_content+'</div>';
+									output+='		<div class="pmodal_brere">';
+									output+='		<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
+									if($('#user_id').val()==item.hpre_id){
+										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
+										output+='		<span><input type="button" value="수정">';
+										output+='			  <input type="button" value="삭제"></span>';
+									}
+									output+='<div id="pmodal_reform"></div>';
+									output+='<div id="pmodal_'+item.hpre_num+'"></div>'
+									output+='<div class="margin-bottom-20"><hr class="hr-md"> </div>';
+									output+='</div></div>';
+									
+								}else if(item.hpre_depth == 1){
+									output+='<div class="prere_back">';
+									output+='<div class="pmodal_rere">';
+									output+='<div class="pmodal_rpro">';
+									output+='	<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
+									output+='	<img src="../assets/img/plus/profile.png">';
+									output+='	<span class="pmodal_wrere">'+item.hpre_id+'</span>';
+									output+='	<span class="grade_family"><input type="button" value="Family"></span>';
+									output+='	<span class="prere_time">'+item.hpre_date+'</span></div>';
+									output+='<div class="prere_text">'+item.hpre_content+'</div>';
+									output+='<div class="pmodal_brere">';
+									if($('#user_id').val()==item.hpre_id){
+										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
+										output+='	<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
+										output+='		<span><input type="button" value="수정">';
+										output+='			  <input type="button" value="삭제"></span>';
+									}else{
+										output+='	<a class="pmodal_diff" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
+									}
+									output+='<div id="pmodal_reform"></div>';
+									output+='<div class="margin-bottom-20"><hr class="hr-md"> </div>';
+									output+='</div></div></div>';
+									
+								}else if(item.hpre_depth >= 2){
+									output+='<div class="prere_back">';
+									output+='<div class="pmodal_rere">';
+									output+='<div class="pmodal_rpro">';
+									output+='	<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
+									output+='	<img src="../assets/img/plus/profile.png"> ';
+									output+='	<span class="pmodal_wrere">'+item.hpre_id+'</span>';
+									output+='	<span class="grade_welcome"><input type="button" value="Welcome"></span>';
+									output+='	<span class="prere_time">'+item.hpre_date+'</span></div>';
+									output+='<div class="prere_text"><span class="rere_writer">white</span>'+item.hpre_content+'</div>';
+									output+='<div class="pmodal_brere">';
+									if($('#user_id').val()==item.hpre_id){
+										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
+										output+='	<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
+										output+='		<span><input type="button" value="수정">';
+										output+='			  <input type="button" value="삭제"></span>';
+									}else{
+										output+='	<a class="pmodal_diff" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
+									}
+									output+='	<div class="pmodal_reform" data-num="1"></div>';
+									output+='	<div class="margin-bottom-20"><hr class="hr-md"> </div>';
+									output+='</div></div></div>';
 								}
-								output+='<div id="pmodal_reform"></div>';
-								output+='<div class="margin-bottom-20"><hr class="hr-md"> </div>';
-								output+='</div></div>';
+								
 						}
 					});
 					
@@ -209,7 +264,7 @@ $(document).ready(function(){
 	}
 	
 	//댓글창 유효성 체크 + 댓글 등록
-	$('#preply_form').submit(function(event){
+	$(document).on('submit','#preply_form',function(event){
 		if($('#hpre_content').val()==''){
 			alert('댓글 내용을 입력하세요!');
 			$('#hpre_content').focus();
@@ -274,15 +329,16 @@ $(document).ready(function(){
 		
 		//댓글쓰기폼 UI
 		var rereply = '<form id="pre_form">';
+		rereply += '	<input type="hidden" name="hp_num" value="'+hp_num+'" id="hp_num">';
 		rereply += '	<input type="hidden" name="hpre_num" value="'+hpre_num+'" id="hpre_num">';
 		rereply += '	<input type="hidden" name="id" value="'+user_id+'" id="user_id">';
 		rereply += '	<input type="hidden" name="hpre_depth" value="'+(Number(hpre_depth)+1)+'" id="hpre_depth">';
 		rereply += '<div class="pmodal_reback2">';
 		rereply += '<div class="pmodal_rpro2">';
 		rereply += '<img src="../assets/img/plus/profile.png">';
-		rereply += '<span class="pmodal_wrere">blue</span>';
+		rereply += '<span class="pmodal_wrere">'+user_id+'</span>';
 		rereply += '<span class="plusGrade"><input type="button" value="VIP"></span>';
-		rereply += '	<div id="pre_second"><textarea rows="4" cols="55" name="re_content" id="prere_content" class="pmodal_rtext2"></textarea>';
+		rereply += '	<div id="pre_second"><textarea rows="4" cols="55" name="hpre_content" id="prere_content" class="pmodal_rtext2"></textarea>';
 		rereply += '	<span class="prere_btn"><input type="submit" value="등록"> <input type="button" value="취소" class="prere_reset"></span></div>';
 		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';
 		rereply += '</div>';
@@ -296,7 +352,7 @@ $(document).ready(function(){
 	});
 	
 	//대댓글창 유효성 체크 + 대댓글 등록*********************************************************
-	$('#pre_form').submit(function(event){
+	$(document).on('submit','#pre_form',function(event){
 		if($('.pmodal_rtext2').val()==''){
 			alert('댓글 내용을 입력하세요!');
 			$('.pmodal_rtext2').focus();
@@ -304,7 +360,6 @@ $(document).ready(function(){
 		}
 		
 		var data = $(this).serialize();
-		
 		//등록
 		$.ajax({
 			type:'post',

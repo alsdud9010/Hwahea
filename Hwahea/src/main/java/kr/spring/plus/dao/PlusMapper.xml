@@ -38,8 +38,9 @@
 				FROM (SELECT
 						*
 					  FROM plus_reply
-					  WHERE hp_num = #{hp_num}
-					  ORDER BY hp_num DESC)a)
+					  START WITH hpre_depth = 0
+					  CONNECT BY PRIOR hpre_num = hpre_parent
+					  ORDER SIBLINGS BY hpre_num DESC)a)
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>

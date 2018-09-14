@@ -48,10 +48,10 @@ $(document).ready(function(){
 						output+='<div class="pmodal_reply">';
 						output+='	<div class="pmodal_wpro"><img src="../assets/img/plus/profile.png"><br>'+item.m_id+'</div>';
 						output+='	<div class="pmodal_rform">';
-						output+='		<form id="preply_form" action="writeReply.do">';
-						output+='		<input type="hidden" name="hp_num" value="2" id="hp_num">';
+						output+='		<form id="preply_form">';
+						output+='		<input type="hidden" name="hp_num" value="'+item.hp_num+'" id="hp_num">';
 						output+='		<input type="hidden" name="id" value="'+$('#user_id').val()+'" id="user_id">';
-						output+='		<textarea class="pmodal_rtext" name="hpre_content" id="hpre_content" cols="71" rows="4">내용을 입력해 주세요</textarea>';
+						output+='		<textarea class="pmodal_rtext" name="hpre_content" id="hpre_content" cols="71" rows="4" placeholder="내용을 입력해주세요"></textarea>';
 						output+='		<input type="submit" value="댓글달기"></form></div>';
 						output+='<div class="pmodal_rcount"><span class="letter-count">300 / 300</span></div>';
 						output+='<div style="margin-top:-23px;margin-bottom:5px;"><hr class="hr-lg"></div>';
