@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>     
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/shop.css">
-<script src="${pageContext.request.contextPath}/assets/js/shop.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/shop/shopMain.js"></script>
 <div class="container-background">
 	<div class="container content r_title">
 		<ul>
 			<li>
 				<p class="r_title1">SHOPPING</p>
 			</li>
-			<li><span class="r_title2">쇼핑</span> <span class="r_title3">꼭
-					갖고 싶은 그 상품들♥ 화해쇼핑에서 다양한 혜택받고 득템하자!</span></li>
+			<li><span class="r_title2">쇼핑</span> <span class="r_title3">
+			꼭 갖고 싶은 상품들♥ 화해쇼핑에서 다양한 혜택받고 득템하자!</span></li>
 		</ul>
 	</div>
 </div>
@@ -55,139 +56,19 @@
 			<!-- 화해유저 추천템 시작 -->
 			<div class="main_cate_wrap">
 			<ul class="main_cate_list">
-				<li class="first">
-					<a href="javascript:;" class="main_menu" data-id="skinCare">스킨케어</a>
-					<ul class="sub_cate_list sub_skinCare">
-						<li><a href="javascript:;" class="sub_menu">로션/에멀젼</a>	</li>
-						<li><a href="javascript:;" class="sub_menu">에센스/앰플/세럼</a></li>
-						<li><a href="javascript:;" class="sub_menu">페이스오일</a></li>
-						<li><a href="javascript:;" class="sub_menu">크림/젤</a></li>
-						<li><a href="javascript:;" class="sub_menu">아이케어</a></li>
-						<li><a href="javascript:;" class="sub_menu">미스트</a></li>
+				<c:forEach var="cate" items="${list}">
+				<li>
+					<a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=${cate.category_num}" 
+					class="main_menu" data-id="${cate.category_num}">${cate.category_name}</a>
+					<ul class="sub_cate_list sub_${cate.category_num}">
+						<c:forEach var="subCate" items="${list2}">
+						<c:if test="${subCate.head_category==cate.category_num}">
+						<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=${cate.category_num}&category_detail_num=${subCate.category_detail_num}" 
+						class="sub_menu">${subCate.category_detail_name}</a></li>
+						</c:if></c:forEach>
 					</ul>
 				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="cleansing">클렌징/필링</a>
-					<ul class="sub_cate_list sub_cleansing">
-						<li><a href="javascript:;" class="sub_menu">클렌징 폼</a></li>
-						<li><a href="javascript:;" class="sub_menu">클렌징 워터</a></li>
-						<li><a href="javascript:;" class="sub_menu">클렌징 젤</a></li>
-						<li><a href="javascript:;" class="sub_menu">클렌징 오일</a></li>
-						<li><a href="javascript:;" class="sub_menu">클렌징 로션/크림</a></li>
-						<li><a href="javascript:;" class="sub_menu">클렌징 비누</a></li>
-						<li><a href="javascript:;" class="sub_menu">립/아이 리무버</a></li>
-						<li><a href="javascript:;" class="sub_menu">스크럽/필링</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopMask">마스크팩</a>
-					<ul class="sub_cate_list sub_shopMask">
-						<li><a href="javascript:;" class="sub_menu">시트마스크</a></li>
-						<li><a href="javascript:;" class="sub_menu">부분마스크/팩</a></li>
-						<li><a href="javascript:;" class="sub_menu">워시오프 팩</a></li>
-						<li><a href="javascript:;" class="sub_menu">슬리핑 팩</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopSunCare">선케어</a>
-					<ul class="sub_cate_list sub_shopSunCare">
-						<li><a href="javascript:;" class="sub_menu">선크림/로션</a></li>
-						<li><a href="javascript:;" class="sub_menu">선케어 기타</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="baseMakeUp">베이스메이크업</a>
-					<ul class="sub_cate_list sub_baseMakeUp">
-						<li><a href="javascript:;" class="sub_menu">메이크업베이스</a></li>
-						<li><a href="javascript:;" class="sub_menu">프라이머</a></li>
-						<li><a href="javascript:;" class="sub_menu">BB/CC크림</a></li>
-						<li><a href="javascript:;" class="sub_menu">파운데이션</a></li>
-						<li><a href="javascript:;" class="sub_menu">쿠션</a></li>
-						<li><a href="javascript:;" class="sub_menu">파우더/팩트</a></li>
-						<li><a href="javascript:;" class="sub_menu">컨실러</a></li>
-						<li><a href="javascript:;" class="sub_menu">블러셔</a></li>
-						<li><a href="javascript:;" class="sub_menu">하이라이터/셰이딩</a></li>
-						<li><a href="javascript:;" class="sub_menu">메이크업픽서</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="eyeMakeUp">아이메이크업</a>
-					<ul class="sub_cate_list sub_eyeMakeUp">
-						<li><a href="javascript:;" class="sub_menu">아이섀도</a></li>
-						<li><a href="javascript:;" class="sub_menu">아이라이너</a></li>
-						<li><a href="javascript:;" class="sub_menu">아이브로우</a></li>
-						<li><a href="javascript:;" class="sub_menu">마스카라/픽서</a></li>
-						<li><a href="javascript:;" class="sub_menu">속눈썹영양제</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="lipMakeUp">립메이크업</a>
-					<ul class="sub_cate_list sub_lipMakeUp">
-						<li><a href="javascript:;" class="sub_menu">립스틱</a></li>
-						<li><a href="javascript:;" class="sub_menu">립틴트</a></li>
-						<li><a href="javascript:;" class="sub_menu">립케어/립밤</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopBody">바디</a>
-					<ul class="sub_cate_list sub_shopBody">
-						<li><a href="javascript:;" class="sub_menu">바디워시</a></li>
-						<li><a href="javascript:;" class="sub_menu">바디로션</a></li>
-						<li><a href="javascript:;" class="sub_menu">바디크림/젤</a></li>
-						<li><a href="javascript:;" class="sub_menu">바디오일/에센스</a></li>
-						<li><a href="javascript:;" class="sub_menu">바디미스트/샤워코롱</a></li>
-						<li><a href="javascript:;" class="sub_menu">핸드케어</a></li>
-						<li><a href="javascript:;" class="sub_menu">여성청결제</a></li>
-						<li><a href="javascript:;" class="sub_menu">데오드란트</a></li>
-						<li><a href="javascript:;" class="sub_menu">바디기타</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopHair">헤어</a>
-					<ul class="sub_cate_list sub_shopHair">
-						<li><a href="javascript:;" class="sub_menu">샴푸</a></li>
-						<li><a href="javascript:;" class="sub_menu">린스/트리트먼트/팩</a></li>
-						<li><a href="javascript:;" class="sub_menu">헤어에센스/오일</a></li>
-						<li><a href="javascript:;" class="sub_menu">헤어미스트</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopPerfume">향수</a>
-					<ul class="sub_cate_list sub_shopPerfume">
-						<li><a href="javascript:;" class="sub_menu">여성향수</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopEtc">기타</a>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopBaM">베이비&임산부</a>
-					<ul class="sub_cate_list sub_shopBaM">
-						<li><a href="javascript:;" class="sub_menu">클렌저/워시</a></li>
-						<li><a href="javascript:;" class="sub_menu">로션</a></li>
-						<li><a href="javascript:;" class="sub_menu">크림/젤</a></li>
-						<li><a href="javascript:;" class="sub_menu">오일</a></li>
-						<li><a href="javascript:;" class="sub_menu">파우더</a></li>
-						<li><a href="javascript:;" class="sub_menu">선크림/로션</a></li>
-						<li><a href="javascript:;" class="sub_menu">선케어 기타</a></li>
-						<li><a href="javascript:;" class="sub_menu">샴푸</a></li>
-						<li><a href="javascript:;" class="sub_menu">임산부화장품</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;" class="main_menu" data-id="shopForMan">남성</a>
-					<ul class="sub_cate_list sub_shopForMan">
-						<li><a href="javascript:;" class="sub_menu">클렌징/필링</a></li>
-						<li><a href="javascript:;" class="sub_menu">스킨/토너/미스트</a></li>
-						<li><a href="javascript:;" class="sub_menu">로션/에멀젼</a></li>
-						<li><a href="javascript:;" class="sub_menu">에센스/앰플/세럼</a></li>
-						<li><a href="javascript:;" class="sub_menu">크림/젤</a></li>
-						<li><a href="javascript:;" class="sub_menu">올인원</a></li>
-						<li><a href="javascript:;" class="sub_menu">선케어</a></li>
-						<li><a href="javascript:;" class="sub_menu">남성메이크업</a></li>
-						<li><a href="javascript:;" class="sub_menu">헤어스타일링</a></li>
-					</ul>
-				</li>
+				</c:forEach>
 			</ul>
 	</div>
 	<div class="row magazine-page">

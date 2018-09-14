@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	//shopMain 카테고리 목록 제어
 	$('.main_cate_wrap').mouseleave(function(){
 		$('.sub_cate_list').hide();
 	});

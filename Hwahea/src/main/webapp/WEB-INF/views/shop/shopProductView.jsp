@@ -1,34 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/shop.css">
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".accordion_banner .accordion_sub").hide();
-		$(".accordion_banner .accordion_title").click(function() {
-			if ($(this).next("div").is(":visible")) {
-				$(this).next("div").slideUp("fast");
-			} else {
-				$(".accordion_banner .accordion_sub").slideUp("fast");
-				$(this).next("div").slideToggle("fast");
-			}
-		});
-		
-		$("#go-ask-write").click(function(event){
-	        $("#product_board_form").modal();
-	    });
-	});
-</script>
+<script src="${pageContext.request.contextPath}/assets/js/shop/shopProductView.js"></script>
 <div class="container content">
+<c:set var="product" value="${product}"/>
 	<div class="col-md-12 shop-productView">
 		<div class="shop-productView-category">
 			<a href="${pageContext.request.contextPath}/shop/shopMain.do">쇼핑 홈 </a>> 
 			<a href="${pageContext.request.contextPath}/shop/shopProduct.do"> 스킨케어 </a>> 
-			<a href="#"> 스킨/토너</a>
+			<a href="#" onclick="history.go(0)"> 스킨/토너</a>
 		</div>
 		<form>
 			<div class="col-md-10 shop-productView-explain">
 				<!-- 제품 뷰 상단 시작 -->
+
 				<div class="productView-contents-top">
 					<div class="col-md-2 productView-img">
 						<img
@@ -38,10 +27,9 @@
 					<div class="col-md-8 productView-intro">
 						<div class="col-md-4 productView-item-top">
 							<div class="productView-item-title-explain">
-								<p class="productView-item-title-name">메이케이티드 위치하젤 아스트린젠트
-									355ml</p>
+								<p class="productView-item-title-name">${product.p_name} ${product.p_capacity}ml</p>
 								<p class="productView-item-title-brand">
-									세이어스&nbsp;<a href="#"><span>브랜드 바로가기></span></a>
+									${product.brand_name}&nbsp;<a href="#"><span>브랜드 바로가기></span></a>
 								</p>
 							</div>
 							<div class="productView-item-wish">
@@ -54,11 +42,12 @@
 						<div class="col-md-12 productView-item-middle">
 							<div class="productView-item-etc">
 								<div class="productView-item-seller">
-									<p>판매자 : 세이어스</p>
+									<p>판매자 : ${product.brand_name}</p>
 								</div>
 								<div class="productView-item-point">
 									<p>
-										화해포인트 : 최대 <span class="get-point">240p</span> 적립
+										화해포인트 : 최대 <span class="get-point">
+										<fmt:formatNumber value="${product.p_price*0.1}" pattern="0"/>P</span> 적립 가능
 									</p>
 								</div>
 								<div class="productView-item-ship">
@@ -69,19 +58,20 @@
 							</div>
 							<div class="productView-item-price">
 								<div class="productView-item-price-detail">
-									<span class="price-detail-sale">20%</span> <span
-										class="price-detail-payment">12,000원</span> <span
-										class="price-detail-original">15,000원</span>
+									<c:set var="discount" value="${((100-product.p_discount)/100)*product.p_price}"/>
+									<span class="price-detail-sale">${product.p_discount}%</span> 
+									<span class="price-detail-payment"><fmt:formatNumber value="${discount}" type="number"/>원</span> 
+									<span class="price-detail-original"><fmt:formatNumber value="${product.p_price}" type="number"/>원</span>
 								</div>
 							</div>
 							<div class="productView-item-shop-buttons">
-								<input class="item-quantity" type="number" min="1" value="1"
+								<input class="item-quantity" id="quantity" name="quantity" type="number" min="1" value="1"
 									required> <input class="shop-button item-buy"
-									type="button" value="구매하기"
-									onclick="location.href='${pageContext.request.contextPath}/shop/orderProduct.do'">
+									type="submit" value="구매하기"
+									onclick="location.href='${pageContext.request.contextPath}/shop/orderProduct.do?p_num=${product.p_num}'">
 								<input class="shop-button item-cart" type="button"
-									value="장바구니 담기"> <input class="shop-button item-review"
-									type="button" value="리뷰 보러가기">
+									value="장바구니 담기" onclick="#"> <input class="shop-button item-review"
+									type="button" value="리뷰 보러가기" onclick="#">
 							</div>
 						</div>
 					</div>
@@ -115,50 +105,46 @@
 					<div class="productView-middle-select">
 						<div class="middle-select-tab">
 							<ul>
-								<li class="select-tab-intro tab-selected"><a href="#">상품
-										소개</a></li>
-								<li class="select-tab-ask tab-unselected"><a
-									href="#">상품 문의 (212)</a></li>
-								<li class="select-tab-brand tab-unselected"><a href="#">
-									상품 정보</a></li>
+								<li class="select-tab-intro tab-selected" data-target="intro">상품 소개</li>
+								<li class="select-tab-ask"  data-target="ask">상품 문의</li>
+								<li class="select-tab-brand" data-target="brand">상품 정보</li>
 							</ul>
 						</div>
 					</div>
-					<div class="productView-middle-declare">
+					<div class="productView-middle-declare scorll-target" 
+					id="select-tab-intro" data-selected="intro">
 						<div class="middle-declare-title">필수 표기정보</div>
 						<div class="middle-declare-content">
 							<table class="declare-table">
 								<tr>
 									<th>용량 또는 중량</th>
-									<td>100ml</td>
+									<td>${product.p_capacity}ml</td>
 									<th>제품 주요 사항</th>
-									<td>모든 피부 타입</td>
+									<td>${product.p_main_spec}</td>
 								</tr>
 								<tr>
 									<th>사용 기한</th>
-									<td>2021.01.09 까지, 개봉 후 1년</td>
+									<td>${product.p_expiry_date}</td>
 									<th>사용 방법</th>
-									<td>세안 시 적당량을 취해 충분히 거품을 낸 다음 얼굴에 마사지하듯 가볍게 손놀림</td>
+									<td>${product.p_how_to}</td>
 								</tr>
 								<tr>
 									<th>제조자</th>
-									<td>㈜하나코스</td>
+									<td>${product.p_manufacturer}</td>
 									<th>제조국</th>
-									<td>대한민국</td>
+									<td>${product.p_made_in}</td>
 								</tr>
 								<tr>
 									<th>주요 성분</th>
-									<td>우유 단백질 추출물</td>
+									<td>${product.p_main_ingredient}</td>
 									<th>식품의약품안전청<br>심사 필 유무
 									</th>
-									<td>무</td>
+									<td><c:if test="${product.p_test_exist==0}">무</c:if>
+									<c:if test="${product.p_test_exist==1}">유</c:if></td>
 								</tr>
 								<tr>
 									<th>사용 시 주의사항</th>
-									<td>1) 화장품 사용 시 또는 사용 후 직사광선에 의하여 사용부위가 붉은 반점, 부어오름 또는
-										가려움증 등의 이상 증상이나 부작용이 있는 경우 전문의 등과 상담할 것 2) 상처가 있는 부위 등에는 사용을
-										자제할 것 3) 보관 및 취급 시의 주의사항 가) 어린이의 손이 닿지 않는 곳에 보관할 것 나) 직사광선을
-										피해서 보관할 것</td>
+									<td>${product.p_attention}</td>
 									<th>품질보증기준</th>
 									<td>본 제품 이상 시, 공정거래위원회 고시 '소비자분쟁해결기준'에 의거 보상합니다.</td>
 								</tr>
@@ -172,11 +158,12 @@
 					</div>
 					<div class="productView-middle-preview">
 						<div class="middle-preview-content">
-							<img
-								src="${pageContext.request.contextPath}/assets/img/shop/shoppingTest.jpg">
+							<img src="${pageContext.request.contextPath}/assets/img/shop/shoppingTest.jpg">
+							${product.content}
 						</div>
 					</div>
-					<div class="productView-middle-ask">
+					<div class="productView-middle-ask scorll-target" 
+					id="select-tab-ask" data-selected="ask">
 						<div class="middle-ask-content">
 							<div class="col-md-12 ask-content-top">
 								<div class="col-md-8 ask-content-top-left">
@@ -189,44 +176,118 @@
 								</div>
 							</div>
 							<div class="col-md-12 ask-content-middle">
-								<div class="col-md-12 ask-question-and-answer accordion_banner">
+							<c:forEach var="ask" items="${boardList}">									
+							<c:if test="${user_auth != 5}">
+								<div class="col-md-12 ask-question-and-answer accordion_banner"  data-private="${ask.pb_num}" >
 									<div class="col-md-12 ask-content-question accordion_title">
 										<div class="col-md-8 question-left">
 											<p style="margin-bottom: 15px;">
-												<span class="question-mark">질문</span> <span
-													class="question-date">2018/09/05 10:29</span> | <span
-													class="question-nickName">홍길동 님</span>
+												<c:if test="${ask.pbr_content eq null}"><span class="question-mark" style="background:#E89C0C;">답변대기</span></c:if>
+												<c:if test="${ask.pbr_content ne null}"><span class="question-mark">질문</span></c:if> 
+												<span class="question-date">
+												<fmt:formatDate value="${ask.pb_dateTime}" pattern="yy.MM.dd HH:mm:ss"/></span> | 
+												<span class="question-nickName">${ask.pb_id} 님</span>
 											</p>
+											<c:if test="${ask.pb_lock==0 || (ask.pb_lock==1&&(ask.pb_id==user_id))}">
 											<p>
-												<span class="question-kind">[배송문의]</span> <span
+												<span class="question-kind">[${ask.pb_kind}]</span> <span
+													class="question-content">${ask.pb_content} </span> 
+											</p>
+											</c:if>
+											<c:if test="${ask.pb_lock==1 && (ask.pb_id!=user_id)}">
+												<p id="private-content-${ask.pb_num}" class="private-content">
+												<span class="question-kind">[PRIVATE]</span> <span
 													class="question-content">비밀글입니다. </span> <img
 													src="${pageContext.request.contextPath}/assets/img/shop/board-lock.png">
-											</p>
+												</p>
+											</c:if>
 										</div>
 										<img class="question-right"
 											src="${pageContext.request.contextPath}/assets/img/shop/down-arrow.png">
 									</div>
-									<div class="col-md-12 ask-content-answer accordion_sub">
+									<div class="col-md-12 ask-content-answer accordion_sub private-${ask.pbr_head}" id="private-${ask.pbr_head}">
 										<div class="col-md-2 answer-left">
 											<img
 												src="${pageContext.request.contextPath}/assets/img/shop/answer-point.png">
 										</div>
 										<div class="answer-right">
-											<p style="margin-bottom: 15px;">
-												<span class="answer-mark">답변</span> <span
-													class="answer-date">2018/09/05 10:29</span>
-											</p>
-											<p class="answer-content">안녕하세요 길동님! 오늘 바로출고되었습니다 감사합니다</p>
+											<c:if test="${ask.pbr_content eq null}">
+												<p style="margin-bottom: 15px;" >
+													<span class="answer-mark" style="background:#aaa;">WAITING</span>
+												</p>
+												<p class="answer-content">답변 대기중 입니다.</p>
+											</c:if>
+											<c:if test="${ask.pbr_content ne null}">
+												<p style="margin-bottom: 15px;">
+													<span class="answer-mark">답변완료</span> <span
+													class="answer-date"><fmt:formatDate value="${ask.pbr_dateTime}" pattern="yy.MM.dd HH:mm:ss"/></span>
+												</p>
+												<p class="answer-content">${ask.pbr_content}</p>
+											</c:if>
 										</div>
 									</div>
 								</div>
+								</c:if>
+								<c:if test="${user_auth == 5}">
+									<div class="col-md-12 ask-question-and-answer accordion_banner"  data-private="${ask.pb_num}" >
+									<div class="col-md-12 ask-content-question accordion_title">
+										<div class="col-md-8 question-left">
+											<p style="margin-bottom: 15px;">
+												<c:if test="${ask.pbr_content eq null}"><span class="question-mark" style="background:#E89C0C;">답변대기</span></c:if>
+												<c:if test="${ask.pbr_content ne null}"><span class="question-mark">질문</span></c:if>  <span
+													class="question-date"><fmt:formatDate value="${ask.pb_dateTime}" pattern="yy.MM.dd HH:mm:ss"/></span> | <span
+													class="question-nickName">${ask.pb_id} 님</span>
+													<span class="question-buttons" style="margin-left:5px;">
+														<input type="button" value="삭제" class="question-remove" onclick="location.href='#'">
+													</span>	
+											</p>
+											<p>
+												<span class="question-kind">[<c:if test="${ask.pb_lock==1 && (ask.pb_id!=user_id)}">비밀글:</c:if>${ask.pb_kind}]</span>
+											<span class="question-content">${ask.pb_content} </span> 
+											</p>
+										</div>
+										<img class="question-right"
+											src="${pageContext.request.contextPath}/assets/img/shop/down-arrow.png">
+									</div>
+									<div class="col-md-12 ask-content-answer accordion_sub private-${ask.pbr_head}" id="private-${ask.pbr_head}">
+										<div class="col-md-2 answer-left">
+											<img
+												src="${pageContext.request.contextPath}/assets/img/shop/answer-point.png">
+										</div>
+										<div class="answer-right">
+											<c:if test="${ask.pbr_content eq null}">
+												<p style="margin-bottom: 15px;" class="question-buttons">
+													<span class="answer-mark" style="background:#aaa;">WAITING</span>
+													<c:if test="${user_id == 'admin'}">
+														<input type="button" value="답변등록" class="question-remove" onclick="location.href='#'">
+														<input type="button" value="수정" class="question-remove" onclick="location.href='#'">
+													</c:if>
+												</p>
+												<p class="answer-content">답변 대기중 입니다.</p>
+											</c:if>
+											<c:if test="${ask.pbr_content ne null}">
+												<p style="margin-bottom: 15px;" class="question-buttons">
+													<span class="answer-mark">답변완료</span> <span
+													class="answer-date"><fmt:formatDate value="${ask.pbr_dateTime}" pattern="yy.MM.dd HH:mm:ss"/></span>
+													<c:if test="${user_id == 'admin'}">
+														<input type="button" value="수정" class="question-remove" onclick="location.href='#'">
+													</c:if>
+												</p>
+												<p class="answer-content">${ask.pbr_content}</p>
+											</c:if>
+										</div>
+									</div>
+								</div>
+								</c:if>
+								</c:forEach>
 							</div>
 							<div class="col-md-12 ask-content-end">
-								페이징구역
+								${pagingHtml}
 							</div>
 						</div>
 					</div>
-					<div class="productView-middle-brand">
+					<div class="productView-middle-brand scorll-target" 
+					id="select-tab-brand" data-selected="brand">
 						<div class="brand-info-title">
 							<p class="brand-info-ENTitle">PRODUCT INFORMATION</p>
 							<p class="brand-info-KRTitle">브랜드 정보 및 교환/반품 안내</p>
@@ -234,20 +295,22 @@
 						<div class="brand-info-content">
 							<div class="brand-info"><a href="#">
 								<img src="${pageContext.request.contextPath}/assets/img/logo2.png"></a>
-								<p class="brand-info-name"><a href="#">세이어스</a></p>
+								<p class="brand-info-name"><a href="#">${product.brand_name}</a></p>
 							</div>
 							<div class="classified-brand-product">
 								<p>지금 구매 가능한 <span style="font-weight:bold;">브랜드 상품</span></p>
 								<div class="brand-products">
+									<c:forEach var="brand" items="${brandProduct}">
 									<div class="brand-product">
 										<ul>
 											<li>
 												<img src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg">
 											</li>
-											<li class="brand-product-name" style="font-weight:bold;">언센티드 위치하젤 토너</li>
-											<li class="brand-product-price">26,000원</li>
+											<li class="brand-product-name" style="font-weight:bold;">${brand.p_name}</li>
+											<li class="brand-product-price"><fmt:formatNumber value="${brand.p_price}" type="number"/>원</li>
 										</ul>
 									</div>
+									</c:forEach>
 									<div class="brand-add-product">
 										<ul>
 											<li class="brand-product-go">
@@ -315,31 +378,36 @@
           <h4 class="h4-m"><span class="glyphicon glyphicon-pencil"></span> 문의하기</h4>
         </div>
         <div class="body-m">
-          <form role="form">
-            <div class="form-group">
-            	<select class="form-control" id="select-ask-kind">
+          <form:form commandName="pbcommand" action="${pageContext.request.contextPath}/shop/pbWrite.do" 
+          id="pbWrite_form">
+	   	  <form:hidden path="pb_id" />
+	   	  <form:hidden path="p_num" value="${product.p_num}"/>
+	   	  <form:hidden path="brand_num" value="${product.brand_num}"/>
+	   	  <form:errors element="div" cssClass="error-color"/>	
+            <div class="form-group1">
+            	<form:select path="pb_kind" class="form-control" id="select-ask-kind">
 					  <option value="unselect" selected>문의 유형 선택</option>
-					  <option value="상품문의">상품문의</option>
-					  <option value="배송문의">배송문의</option>
-					  <option value="반품/취소">반품/취소</option>
-					  <option value="기타">기타</option>
-				</select>
+					  <form:option value="상품문의">상품문의</form:option>
+					  <form:option value="배송문의">배송문의</form:option>
+					  <form:option value="반품/취소">반품/취소</form:option>
+					  <form:option value="기타">기타</form:option>
+				</form:select>
+	   	  		<form:errors element="pb_kind" cssClass="error-color"/>	
             </div>
-            <div class="form-group">
-              <textarea class="form-control" id="product-ask-content" 
-              placeholder="※ 이메일, 연락처와 같은 개인정보 입력 또는 상품과 관련없는 글(비방,광고,도배 등)은 삭제 조치 될 수 있어요 :("></textarea>
+            <div class="form-group2">
+              <form:textarea path="pb_content" class="form-control" id="product-ask-content" 
+              placeholder="※ 이메일, 연락처와 같은 개인정보 입력 또는 상품과 관련없는 글(비방,광고,도배 등)은 삭제 조치 될 수 있어요 :("></form:textarea>
+	   	  	  <form:errors element="pb_content" cssClass="error-color"/>	
               <div class="ask-lock-area">
-              	<input type="checkbox" id="ask-lock" name="ask-lock" value="1">
-              	<label class="ask-lock-text" for="ask-lock">비밀글로 문의하기</label>
+              	<form:checkbox path="pb_lock" value="1" id="ask-lock" name="ask-lock" class="ask-lock-text" label="비밀글로 문의하기"/>
+	   	  		<form:errors element="pb_lock" cssClass="error-color"/>	
               </div>
             </div>
-              <button type="button" class="btn-m1 ask-cancle btn-block-m1">취소</button>
-              <button type="submit" class="btn-m2 ask-submit btn-block-m2">등록</button>
-          </form>
+              <input type="button" class="btn-m1 ask-cancle btn-block-m1" value="취소">
+              <input type="submit" class="btn-m2 ask-submit btn-block-m2" value="등록">
+          </form:form>
         </div>
-        <div class="footer-m">
-         	
-        </div>
+        <div class="footer-m"></div>
       </div>
     </div>
 </div> 
