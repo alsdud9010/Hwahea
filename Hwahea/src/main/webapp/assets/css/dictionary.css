@@ -120,6 +120,7 @@ li{
 .tab_left .left_content div > span{
     float: right;
     font-weight: bold;
+    line-height: 2.5;
 }
 .tab_left .left_content li{
 	margin-bottom:30px;
@@ -233,7 +234,7 @@ li{
 }
 
 .d_list_detail_content{
-	padding-left:-40px;
+	font-size: 14px;
 }
 
 .d_list_detail_li{
@@ -250,4 +251,16 @@ li{
 .d_list_detail_name{
 	display: inline-block;
 	width: 80%;
+}
+.text-bold{
+	font-weight: bold;
+}
+.text-bad{
+	color:#f23136;
+}
+.text-good{
+	color:#16bbcd;
+}
+.text-func{
+	color: #c8a575;
 }

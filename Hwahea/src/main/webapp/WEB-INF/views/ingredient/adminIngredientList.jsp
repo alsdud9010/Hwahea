@@ -52,7 +52,7 @@
 									<td><c:if test="${ingredient.i_oilly == 'Y' }">Y</c:if><c:if test="${ingredient.i_oilly == 'N' }">N</c:if><c:if test="${ingredient.i_oilly == null }">X</c:if></td>
 									<td><c:if test="${ingredient.i_dry == null }">X</c:if><c:if test="${ingredient.i_dry == 'Y' }">Y</c:if><c:if test="${ingredient.i_dry == 'N' }">N</c:if></td>
 									<td><c:if test="${ingredient.i_sensitive == null }">X</c:if><c:if test="${ingredient.i_sensitive == 'Y' }">Y</c:if><c:if test="${ingredient.i_sensitive == 'N' }">N</c:if></td>
-									<td><c:if test="${ingredient.i_func != null }">Y</c:if><c:if test="${ingredient.i_func == null }">X</c:if></td>
+									<td><c:if test="${ingredient.i_func == 'S'}">S</c:if><c:if test="${ingredient.i_func == 'W'}">W</c:if><c:if test="${ingredient.i_func == 'R'}">R</c:if><c:if test="${ingredient.i_func == null }">X</c:if></td>
 									<td><c:if test="${ingredient.i_allergie != null }">Y</c:if><c:if test="${ingredient.i_allergie == null }">X</c:if></td>
 								</tr>
 							</c:forEach>
@@ -144,7 +144,9 @@
 											<label class="control-label" for="i_func">기능성 여부</label>
 											<form:select type="text" path="i_func" class="form-control">
 												<form:option value="">해당 사항 없음</form:option>
-												<form:option value="Y">해당 됨</form:option>
+												<form:option value="S">자외선 차단</form:option>
+												<form:option value="R">주름 개선</form:option>
+												<form:option value="W">미백 기능</form:option>
 											</form:select>
 
 											<label class="control-label" for="i_allergie">알러지 성분 여부</label>

@@ -17,6 +17,6 @@ public interface DictionaryMapper {
 	public List<DictionaryCommand> selectDry(String dry);
 	@Select("SELECT * FROM INGREDIENT WHERE i_sensitive=#{sensitive}")
 	public List<DictionaryCommand> selectSensitive(String sensitive);
-	@Select("SELECT * FROM INGREDIENT WHERE i_func is not null")
-	public List<DictionaryCommand> selectFunc();
+	@Select("SELECT * FROM INGREDIENT WHERE i_func=#{func}")
+	public List<DictionaryCommand> selectFunc(String func);
 }

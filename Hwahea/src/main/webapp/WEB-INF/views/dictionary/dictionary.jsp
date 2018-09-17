@@ -42,10 +42,10 @@
 					<ul class="nav nav-tabs navbar-collapse aa">
 						<li class="nav-item"><a href="nav-link" id="warnings" class="active" data-num="1"
 							data-toggle="tab" data-target="#tabone">20가지 주의성분</a></li>
-						<li class="nav-item"><a class="nav-link" href="" id="allergie"
-							data-toggle="tab" data-target="#tabtwo">알레르기 주의성분</a></li>
 						<li class="nav-item"><a class="nav-link" href="" id="skinType"
-							data-toggle="tab" data-target="#tabthree">피부타입별 성분</a></li>
+							data-toggle="tab" data-target="#tabtwo">피부타입별 성분</a></li>
+						<li class="nav-item"><a class="nav-link" href="" id="allergie"
+							data-toggle="tab" data-target="#tabthree">알레르기 주의성분</a></li>
 						<li class="nav-item"><a class="nav-link" href="" id="function"
 							data-toggle="tab" data-target="#tabfour">기능성 성분</a></li>
 					</ul>
@@ -74,27 +74,6 @@
 							</div>
 						</div>
 						<div class="tab-pane fade" id="tabtwo" role="tabpanel">
-							<div class="tab-header">
-								<span>20가지 주의성분</span>은 화장품 계열 베스트 셀러 도서인<br> '대한민국 화장품의
-									비밀'에 수록되어 있는<br> <span>'가장 피해야할 20가지 성분'</span>의 목록입니다.
-							</div>
-							<div class="tab_left">
-								<div class="d_info">
-									<div class="notice">
-									성분을 선택하시면 정보를 확인하실 수 있습니다 :)
-									</div>
-									<img src="${pageContext.request.contextPath}/assets/img/dictionary/bear.png" class="bear">
-								</div>
-								<div class="detail"></div>
-							</div>
-							<div class="tap_right">
-								<div id="loading">
-									<img src="${pageContext.request.contextPath}/assets/img/ajax-loader.gif">
-								</div>
-								<ul class="d_list"></ul>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="tabthree" role="tabpanel">
 							<div class="tab-header col-md-12">
 								<span>피부타입별 성분</span>은 대한피부과 의사회에서 2008년 10월 23일에<br>
 								발표한 <span>'피부타입별 화장품 선택 가이드'</span>를 기준으로 하였습니다.
@@ -105,18 +84,36 @@
 									<ul>
 										<li> 
 											<span>[지성]</span>
-											<div class="oilly" data-type="Y">도움이 되는 성분<span>></span></div> 
-											<div class="oilly" data-type="N">주의해야 할 성분<span>></span></div>
-										</li>
+											<div class="oilly" data-type="Y">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_Y.png">
+												도움이 되는 성분<span>></span>
+											</div> 
+											<div class="oilly" data-type="N">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_N.png">
+												주의해야 할 성분<span>></span>
+											</div>
+										</li> 
 										<li>
 											<span>[건성]</span>
-											<div class="dry" data-type="Y">도움이 되는 성분<span>></span></div>
-											<div class="dry" data-type="N">주의해야 할 성분<span>></span></div>
+											<div class="dry" data-type="Y">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_Y.png">
+												도움이 되는 성분<span>></span>
+											</div> 
+											<div class="dry" data-type="N">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_N.png">
+												주의해야 할 성분<span>></span>
+											</div>
 										</li>
 										<li>
 											<span>[민감성]</span>
-											<div class="sensitive" data-type="Y">도움이 되는 성분<span>></span></div>
-											<div class="sensitive" data-type="N">주의해야 할 성분<span>></span></div>
+											<div class="sensitive" data-type="Y">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_Y.png">
+												도움이 되는 성분<span>></span>
+											</div>
+											<div class="sensitive" data-type="N">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_N.png">
+												주의해야 할 성분<span>></span>
+											</div>
 										</li>
 									</ul>
 								</div>
@@ -129,10 +126,10 @@
 								<ul class="d_list"></ul>
 							</div>
 						</div>
-						<div class="tab-pane fade" id="tabfour" role="tabpanel">
+						<div class="tab-pane fade" id="tabthree" role="tabpanel">
 							<div class="tab-header">
-									<span>20가지 주의성분</span>은 화장품 계열 베스트 셀러 도서인<br> '대한민국 화장품의
-									비밀'에 수록되어 있는<br> <span>'가장 피해야할 20가지 성분'</span>의 목록입니다.
+								<span>알레르기 주의성분</span>은 식약처가 고시한<br>
+								<span>'화장품 알러지 성분'</span>을 기준으로 하였습니다.
 							</div>
 							<div class="tab_left">
 								<div class="d_info">
@@ -140,6 +137,43 @@
 									성분을 선택하시면 정보를 확인하실 수 있습니다 :)
 									</div>
 									<img src="${pageContext.request.contextPath}/assets/img/dictionary/bear.png" class="bear">
+								</div>
+								<div class="detail"></div>
+							</div>
+							<div class="tap_right">
+								<div id="loading">
+									<img src="${pageContext.request.contextPath}/assets/img/ajax-loader.gif">
+								</div>
+								<ul class="d_list"></ul>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="tabfour" role="tabpanel">
+							<div class="tab-header">
+									<span>기능성 성분</span>은 식약처가 발표한<br>
+									<span>'기능성화장품등의 심사에 관한 규정'</span>을 기준으로 하였습니다.
+							</div>
+							<div class="tab_left">
+								<div class="left_content">
+									<ul>
+										<li> 
+											<div class="sunscreen" data-type="S">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/func_sun.png">
+												자외선 차단 기능 성분<span>></span>
+											</div>
+										</li>
+										<li>
+											<div class="wrinkle" data-type="R">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/func_wrinkle.png">
+												주름개선 기능 성분<span>></span>
+											</div>
+										</li>
+										<li>
+											<div class="white" data-type="W">
+												<img src="${pageContext.request.contextPath}/assets/img/dictionary/func_white.png">
+												미백 기능 성분<span>></span>
+											</div>
+										</li>
+									</ul>
 								</div>
 								<div class="detail"></div>
 							</div>

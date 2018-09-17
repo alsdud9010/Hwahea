@@ -40,7 +40,7 @@ public class DictionaryServiceImpl implements DictionaryService{
 	}
 
 	@Override
-	public List<DictionaryCommand> selectFunc() {
-		return dictionaryMapper.selectFunc();
+	public List<DictionaryCommand> selectFunc(String func) {
+		return dictionaryMapper.selectFunc(func);
 	}
 }

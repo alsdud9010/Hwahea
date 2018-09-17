@@ -53,61 +53,44 @@ public class DictionaryAjaxController {
 	}
 	
 	//스킨타입별 주의성분
-	//지성피부
-	@RequestMapping("/dictionary/dictionaryOillyAjax.do")
-	@ResponseBody //json문자열 생성
-	public Map<String, Object> selectOilly(@RequestParam("answer") String answer){
+		@RequestMapping("/dictionary/dictionarySkinTypeAjax.do")
+		@ResponseBody //json문자열 생성
+		public Map<String, Object> selectSkinType(@RequestParam("answer") String answer,
+												  @RequestParam("name") String name){
+			
+			List<DictionaryCommand> list = null;
+			if(name.equals("oilly")) {
+				list = dictionaryService.selectOilly(answer);
+			}
+			if(name.equals("dry")) {
+				list = dictionaryService.selectDry(answer);
+			}
+			if(name.equals("sensitive")) {
+				list = dictionaryService.selectSensitive(answer);
+			}
+			
+			Map<String,Object> map = new HashMap<String,Object>();
+			map.put("list", list);
+			
+			return map;
+		}
 		
-		List<DictionaryCommand> list = null;
-		list = dictionaryService.selectOilly(answer);
-		
-		
-		Map<String,Object> map = new HashMap<String,Object>();
-		map.put("list", list);
-		
-		return map;
-	}
-	//건성피부
-	@RequestMapping("/dictionary/dictionaryDryAjax.do")
-	@ResponseBody //json문자열 생성
-	public Map<String, Object> selectDry(@RequestParam("answer") String answer){
-		
-		List<DictionaryCommand> list = null;
-		list = dictionaryService.selectDry(answer);
-		
-		
-		Map<String,Object> map = new HashMap<String,Object>();
-		map.put("list", list);
-		
-		return map;
-	}
-	//민감성 피부
-	@RequestMapping("/dictionary/dictionarySensitiveAjax.do")
-	@ResponseBody //json문자열 생성
-	public Map<String, Object> selectSensitive(@RequestParam("answer") String answer){
-		
-		List<DictionaryCommand> list = null;
-		list = dictionaryService.selectSensitive(answer);
-		
-		
-		Map<String,Object> map = new HashMap<String,Object>();
-		map.put("list", list);
-		
-		return map;
-	}
-	
 	//기능성 성분
 	@RequestMapping("/dictionary/dictionaryFuncAjax.do")
 	@ResponseBody //json문자열 생성
-	public Map<String, Object> selectFunc(){
+	public Map<String, Object> selectFunc(@RequestParam("answer") String func){
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<func>> : "+func);
+		}
+		
 		
 		List<DictionaryCommand> list = null;
-		list = dictionaryService.selectFunc();
-		
+		list = dictionaryService.selectFunc(func);
 		
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("list", list);
 		
 		return map;
-	}
+	}	
 }

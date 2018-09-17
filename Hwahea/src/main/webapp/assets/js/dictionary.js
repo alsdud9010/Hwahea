@@ -34,33 +34,57 @@ $(document).ready(function(){
 		$('.oilly').click(function(){
 			$('#loading').show();
 			var answer = $(this).attr('data-type');
+			var skinType = $(this).attr('class');
 			
-			aJaxUrlAnswer('dictionaryOillyAjax.do',answer);
+			aJaxUrlAnswer('dictionarySkinTypeAjax.do',answer,skinType);
 		});
 		
 		//건성
 		$('.dry').click(function(){
 			$('#loading').show();
 			var answer = $(this).attr('data-type');
+			var skinType = $(this).attr('class');
 			
-			aJaxUrlAnswer('dictionaryDryAjax.do',answer);
+			aJaxUrlAnswer('dictionarySkinTypeAjax.do',answer,skinType);
 		});
 		
 		//민감성
 		$('.sensitive').click(function(){
 			$('#loading').show();
 			var answer = $(this).attr('data-type');
+			var skinType = $(this).attr('class');
 			
-			aJaxUrlAnswer('dictionarySensitiveAjax.do',answer);
+			aJaxUrlAnswer('dictionarySkinTypeAjax.do',answer,skinType);
 		});
 	})
 	//기능성 성분
 	$('#function').click(function(){
 		$('#EWG').hide();
+		$('.d_list').empty();
 		$('.detail').empty();
-		$('#loading').show();
+		$('.left_content').show();
 		
-		aJaxUrl('dictionaryFuncAjax.do');
+		//자외선
+		$('.sunscreen').click(function(){
+			$('#loading').show();
+			var func = $(this).attr('data-type');
+			
+			aJaxUrlAnswer('dictionaryFuncAjax.do',func);
+		});
+		//주름개선
+		$('.wrinkle').click(function(){
+			$('#loading').show();
+			var func = $(this).attr('data-type');
+			
+			aJaxUrlAnswer('dictionaryFuncAjax.do',func);
+		});
+		//미백기능
+		$('.white').click(function(){
+			$('#loading').show();
+			var func = $(this).attr('data-type');
+			
+			aJaxUrlAnswer('dictionaryFuncAjax.do',func);
+		});
 	});
 	
 	/*==========ajax==========*/
@@ -100,12 +124,14 @@ $(document).ready(function(){
 		});
 	}
 	
-	function aJaxUrlAnswer(url,answer){
+	function aJaxUrlAnswer(url,answer,name){
 		
 		$('.d_info').show();
 		$.ajax({
 			type:'post',
-			data:{answer:answer},
+			data:{answer:answer,
+				  name:name
+			},
 			url:url,
 			dataType:'json',
 			cache:false,
@@ -169,13 +195,7 @@ $(document).ready(function(){
 				output+='	</div>';
 				output+='</div>';
 				output+='<ul class="d_list_detail_content">';
-				output+='	<li>';
-				output+='		<div class="d_list_detail_li">';
-				output+='		<div class="d_list_detail_img">';
-				output+='			<img class="img-responsive" src="../assets/img/dictionary/level_'+ list[i].i_grade +'.png" alt="">';
-				output+='		</div>';
-				output+='		<div class="d_list_detail_name">';
-				output+='			<div>EWG등급</div>';
+	/*=================EWG 등급===================*/
 				var grade = null;
 				if(list[i].i_grade>=1 && list[i].i_grade<=2){
 					grade='낮은 위험도';
@@ -187,39 +207,119 @@ $(document).ready(function(){
 				else{
 					grade='높은 위험도';
 				}
+				output+='	<li>';
+				output+='		<div class="d_list_detail_li">';
+				output+='		<div class="d_list_detail_img">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/level_'+ list[i].i_grade +'.png" alt="">';
+				output+='		</div>';
+				output+='		<div class="d_list_detail_name">';
+				output+='			<div class="text-bold">EWG등급</div>';
 				output+='			<div>위험도 등급 : ' + grade + '</div>';
 				output+='			<div>데이터 등급 : ' + list[i].i_datagrade + '</div>';
 				output+='		</div>';
 				output+='	</div>';
 				output+='</li>';
+	/*=================20가지 주의성분===================*/
 				output+='<li>';
 				output+='	<div class="d_list_detail_li">';
 				output+='		<div class="d_list_detail_img">';
 				output+='			<img class="img-responsive" src="../assets/img/dictionary/warning.png" alt="">';
 				output+='		</div>';
 				output+='		<div class="d_list_detail_name">';
-				output+='			<div>20가지 주의성분</div>';
+				output+='			<div class="text-bold">20가지 주의성분</div>';
 				output+='			<div>' + list[i].i_warning + '</div>		';							
 				output+='		</div>';
 				output+='	</div>';
 				output+='</li>';
-				output+='<li>';
-				output+='	<div class="d_list_detail_li">';
-				output+='		<div class="d_list_detail_img">';
-				output+='			<img class="img-responsive" src="../assets/img/dictionary/allergie.png" alt="">';
-				output+='		</div>';
-				output+='		<div class="d_list_detail_name">';
-				output+='			<div>알레르기 피부타입</div>';
+	/*=================알레르기 피부타입===================*/
 				var allergie = null;
 				if(list[i].i_allergie == null){
 					allergie='해당없음';
 				}else{
 					allergie='식약처가 고시한 알레르기 유발 성분입니다.';
 				}
+				output+='<li>';
+				output+='	<div class="d_list_detail_li">';
+				output+='		<div class="d_list_detail_img">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/allergie.png" alt="">';
+				output+='		</div>';
+				output+='		<div class="d_list_detail_name">';
+				output+='			<div class="text-bold">알레르기 피부타입</div>';
 				output+='			<div>' + allergie + '</div>		';							
 				output+='		</div>';
 				output+='	</div>';
 				output+='</li>';
+	/*=================피부타입별 특이성분===================*/
+				var skinType = '';
+				var good = 0;
+				var bad = 0;
+				var skinimg = null;
+				if(list[i].i_oilly=='Y'){
+					 skinType += '<span class="text-good">지성피부에 좋아요!</span><br>';
+					 good += 1;
+				}else if(list[i].i_oilly=='N'){
+					skinType += '<span class="text-bad">지성피부는 피하세요!</span><br>';
+					bad += 1;
+				}
+				if(list[i].i_dry=='Y'){
+					skinType += '<span class="text-good">건성피부에 좋아요!</span><br>';	
+					good += 1;
+				}else if(list[i].i_oilly=='N'){
+					skinType += '<span class="text-bad">건성피부는 피하세요!</span><br>';
+					bad += 1;
+								}
+				if(list[i].i_sensitive=='Y'){
+					skinType += '<span class="text-good">민감성피부에 좋아요!</span><br>';
+					good += 1;
+				}else if(list[i].i_sensitive=='N'){
+					skinType += '<span class="text-bad">민감성피부는 피하세요!</span><br>';
+					bad += 1;
+				}
+				if(bad==0 && good >=1) {
+					skinimg = 'help_Y';
+				}else if(good==0 && bad>=1){
+					skinimg = 'help_N';
+				}else{
+					skinimg = 'help';
+				}
+				output+='<li>';
+				output+='	<div class="d_list_detail_li">';
+				output+='		<div class="d_list_detail_img">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + skinimg + '.png" alt="">';
+				output+='		</div>';
+				output+='		<div class="d_list_detail_name">';
+				output+='			<div class="text-bold">피부타입별 특이성분</div>';
+				output+='			<div>' + skinType + '</div>';							
+				output+='		</div>';
+				output+='	</div>';
+				output+='</li>';
+		/*=================기능성 성분 여부===================*/
+				var func = '';
+				var funcimg = null;
+				if(list[i].i_func=='S'){
+					func += '자외선 차단 성분입니다 :)';
+					funcimg = 'func_sun';
+				}
+				if(list[i].i_func=='W'){
+					func += '미백 개선에 도움이 돼요 :)';
+					funcimg = 'func_white';
+				}
+				if(list[i].i_func=='R'){
+					func += '주름 개선에 도움이 돼요 :)';
+					funcimg = 'func_wrinkle';
+				}
+				output+='<li>';
+				output+='	<div class="d_list_detail_li">';
+				output+='		<div class="d_list_detail_img">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + funcimg + '.png" alt="">';
+				output+='		</div>';
+				output+='		<div class="d_list_detail_name">';
+				output+='			<div class="text-bold">기능성 성분 여부</div>';
+				output+='			<div class="text-func">' + func + '</div>		';							
+				output+='		</div>';
+				output+='	</div>';
+				output+='</li>';
+				
 
 
 				$('.detail').append(output);
