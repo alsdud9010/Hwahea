@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -14,22 +15,25 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 public class MemberCommand {
+	@NotNull
 	@Pattern(regexp="^[A-Za-z0-9+]{4,12}$")
 	private String m_id;
 	private int m_auth;
-	@NotEmpty
+	@NotNull
 	private String m_name;
+	@NotNull
 	@Min(value=8)@Max(value=64)
 	@Pattern(regexp="^[A-Za-z0-9+]{8,16}$")
 	private String m_passwd;
 	private MultipartFile upload;
 	private byte[] m_profile;
-	@NotEmpty
+	@NotNull
 	private String m_nickname;
-	
+	@NotNull
 	private int m_gender;
-	
+	@NotNull
 	private int m_havechild;
+	@NotNull
 	@Range(min=1950,max=2018)
 	private int m_age;
 	
@@ -37,28 +41,28 @@ public class MemberCommand {
 	private int m_atopy;
 	private int m_pimple;
 	private int m_susceptilbility;
-	@NotEmpty
+	@NotNull
 	private String m_takename;
-	@NotEmpty
+	@NotNull
 	private String m_phone1;
-	@NotEmpty
+	@NotNull
 	private String m_phone2;
-	@NotEmpty
+	@NotNull
 	private String m_phone3;
 	private String m_zipphone1;
 	private String m_zipphone2;
 	private String m_zipphone3;
 	@Email
-	@NotEmpty
+	@NotNull
 	private String m_email;
+	@NotNull
 	@Range(min=5,max=5)
 	private String m_zipcode;
-	@NotEmpty
+	@NotNull
 	private String m_address1;
 	private String m_address2;
 	private int m_point;
 	private Date m_reg_date;
-	private String m_grade;
 	private String m_filename;
 	
 	
@@ -288,15 +292,7 @@ public class MemberCommand {
 	public void setM_reg_date(Date m_reg_date) {
 		this.m_reg_date = m_reg_date;
 	}
-
-	public String getM_grade() {
-		return m_grade;
-	}
-
-	public void setM_grade(String m_grade) {
-		this.m_grade = m_grade;
-	}
-
+	
 	public String getM_filename() {
 		return m_filename;
 	}
@@ -314,7 +310,7 @@ public class MemberCommand {
 				+ ", m_phone1=" + m_phone1 + ", m_phone2=" + m_phone2 + ", m_phone3=" + m_phone3 + ", m_zipphone1="
 				+ m_zipphone1 + ", m_zipphone2=" + m_zipphone2 + ", m_zipphone3=" + m_zipphone3 + ", m_email=" + m_email
 				+ ", m_zipcode=" + m_zipcode + ", m_address1=" + m_address1 + ", m_address2=" + m_address2
-				+ ", m_point=" + m_point + ", m_reg_date=" + m_reg_date + ", m_grade=" + m_grade + ", m_filename="
+				+ ", m_point=" + m_point + ", m_reg_date=" + m_reg_date + ", m_filename="
 				+ m_filename + "]";
 	}
 }

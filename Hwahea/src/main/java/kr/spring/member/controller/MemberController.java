@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.member.service.MemberService;
+import kr.spring.review.domain.ReviewCommand;
 import kr.spring.util.CipherTemplate;
 
 @Controller
@@ -46,29 +47,27 @@ public class MemberController {
 	}
 	//*******************************************************회원 가입 데이터 전송
 	@RequestMapping(value="/signin/m_signin.do",
-	        method=RequestMethod.POST)
-	public String m_signin(@ModelAttribute("command")
-						 MemberCommand memberCommand,
-	                     @Valid BindingResult result)throws Exception {
-		
-		if(log.isDebugEnabled()) {
-			log.debug("<<memberCommand>> : " + memberCommand);
-		}
-		
-		if(result.hasErrors()) {
-			return m_signin();
-		}
-		
-		
-		//CipherTemplate을 이용한 암호화
-		memberCommand.setM_passwd(
-				cipherAES.encrypt(
-						memberCommand.getM_passwd()));
-		//회원가입
-		memberService.insert(memberCommand);
-		
-		return "redirect:/main/main.do";
-	}
+	           method=RequestMethod.POST)
+	   public String m_signin(@ModelAttribute("command")
+	                   MemberCommand memberCommand,
+	                        @Valid BindingResult result) {
+	      
+	      if(log.isDebugEnabled()) {
+	         log.debug("<<memberCommand>> : " + memberCommand);
+	      }
+	      
+	      if(result.hasErrors()) {
+	         return m_signin();
+	      }
+	      //CipherTemplate을 이용한 암호화
+	      memberCommand.setM_passwd(
+	            cipherAES.encrypt(
+	                  memberCommand.getM_passwd()));
+	      //회원가입
+	      memberService.insert(memberCommand);
+	      
+	      return "redirect:/main/main.do";
+	   }
 	//회원수정 폼 호출
 	@RequestMapping(value="/mypage/my_info.do")
 		public String my_info(String bc, HttpSession session,Model model) {
@@ -100,9 +99,6 @@ public class MemberController {
 			/*if(result.hasErrors()) {
 				return "my_info";
 			}*/
-			
-			
-			
 			
 			//회원정보수정
 			memberService.update(memberCommand);
@@ -148,20 +144,44 @@ public class MemberController {
 			
 		return "my_point";
 	}
+	
 	//내리뷰/스트랩(내리뷰)  호출
 	@RequestMapping(value="/mypage/my_reviewmyreview.do")
 		public String my_reviewmyreview(String bc,HttpSession session, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
-		String m_id = (String)session.getAttribute("user_id");
-		MemberCommand member = memberService.selectMember(m_id);
-		if(log.isDebugEnabled()) {
-			log.debug("<<memberCommand>> : " + member);
-		}
-		model.addAttribute("member", member);
+		String re_id = (String)session.getAttribute("user_id");
+			ReviewCommand review = memberService.selectReview(re_id);
+			
+			if(log.isDebugEnabled()) {
+				log.debug("<<부처님 이 미개한 중생을 도와주소서>>" + review);
+			}
+			
+			model.addAttribute("review", review);
 		
 		return "my_reviewmyreview";
+	}
+	/*==============이미지출력=======================*/
+	@RequestMapping(value="/mypage/re_imageView.do")
+	public ModelAndView viewImage(@RequestParam("re_id") String re_id, @RequestParam("cnt") int cnt) {
+
+		ReviewCommand review = memberService.selectReview(re_id);
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");
+						//속성명	, 속성값(byte[]의 데이터)
+		if(cnt == 1) {
+			mav.addObject("imageFile",review.getRe_uploadbyte1());
+			mav.addObject("filename",review.getRe_filename1());
+		}else if(cnt == 2) {
+			mav.addObject("imageFile",review.getRe_uploadbyte2());
+			mav.addObject("filename",review.getRe_filename2());
+		}else if(cnt == 3) {
+			mav.addObject("imageFile",review.getRe_uploadbyte3());
+			mav.addObject("filename",review.getRe_filename3());
+		}
+		return mav;
 	}
 	//내리뷰/스트랩(스크랩)  호출
 	@RequestMapping(value="/mypage/my_reviewscrap.do",
@@ -216,6 +236,14 @@ public class MemberController {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
 		return "my_favoriteingredient";
+	}
+	//화해쇼핑(장바구니)  호출
+	@RequestMapping(value="/mypage/my_cart.do")
+		public String my_cart(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_cart";
 	}
 	//화해쇼핑(주문)  호출
 	@RequestMapping(value="/mypage/my_cartorder.do")

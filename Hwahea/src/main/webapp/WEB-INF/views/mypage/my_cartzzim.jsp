@@ -2,17 +2,23 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/shop.css">
 <div class="container content">
 	<div class="row magazine-page">
 		<div class="col-md-12" style="margin-left: 5%;">
 			<div class="mypage_form">
 				<div class="menu_bar">
 					<ul class="list-inline top-v1-contacts">
-						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_cartorder.do?bc=4">주문/배송</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_cart.do?bc=4">장바구니</a></li>
 						<li>|</li>
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_cartzzim.do?bc=4">찜한 상품</a></li>
+						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_cartorder.do?bc=4">주문/배송</a></li>
+						<li>|</li>
+						<li class="now_menu"><i>찜한 상품</i></li>
 					</ul>
 				</div>
+				<form action="">
+				<div class="table-responsive text-nowrap">
+				<div class="orderProduct-subTitle">찜한 상품</div>
 				<table class="table">
 				  <thead class="thead-light">
 				    <tr>
@@ -85,6 +91,8 @@
 				    </tr>
 				  </tbody>
 				</table>
+				</div>
+				</form>
 			</div>
 		</div>
 	</div>
