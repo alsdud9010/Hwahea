@@ -13,14 +13,14 @@ import kr.spring.admin.domain.AdminProductCommand;
 
 public interface AdminService {
 	//브랜드
-	public List<AdminBrandCommand> selectBrandList(Map<String, Object> map);
+	public List<AdminBrandCommand> selectBrandList();
 	public int selectBrandRowCount(Map<String, Object> map);
 	public void insertBrand(AdminBrandCommand brand);
 	public AdminBrandCommand selectBrand(Integer brand_num);
 	public void deleteBrand(Integer brand_num);
 	
 	//세부 카테고리
-	public List<AdminCategoryCommand> selectCateDetailList(Map<String, Object> map);
+	public List<AdminCategoryCommand> selectCateDetailList();
 	public int selectCateDetailRowCount(Map<String, Object> map);
 	public void insertCateDetail(AdminCategoryCommand categoryDetail);
 	

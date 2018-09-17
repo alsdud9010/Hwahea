@@ -43,9 +43,9 @@ public class AdminSerivceImpl implements AdminService {
 	}
 
 	@Override
-	public List<AdminBrandCommand> selectBrandList(Map<String, Object> map) {
+	public List<AdminBrandCommand> selectBrandList() {
 		
-		return adminBrandMapper.selectBrandList(map);
+		return adminBrandMapper.selectBrandList();
 	}
 
 	@Override
@@ -66,9 +66,9 @@ public class AdminSerivceImpl implements AdminService {
 	}
 
 	@Override
-	public List<AdminCategoryCommand> selectCateDetailList(Map<String, Object> map) {
+	public List<AdminCategoryCommand> selectCateDetailList() {
 		
-		return adminCategoryDetailMapper.selectCateDetailList(map);
+		return adminCategoryDetailMapper.selectCateDetailList();
 	}
 
 	@Override

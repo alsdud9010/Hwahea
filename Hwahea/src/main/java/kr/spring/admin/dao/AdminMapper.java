@@ -18,7 +18,7 @@ import kr.spring.admin.domain.AdminProductCommand;
 public interface AdminMapper {
 	
 	//브랜드
-	public List<AdminBrandCommand> selectBrandList(Map<String, Object> map);
+	public List<AdminBrandCommand> selectBrandList();
 	public int selectBrandRowCount(Map<String, Object> map);
 	@Insert("INSERT INTO brand(brand_num, brand_name, brand_reg_date, brand_image, image_name) VALUES(brand_seq.nextval, #{brand_name}, sysdate, #{brand_image}, #{image_name})")
 	public void insertBrand(AdminBrandCommand brand);
@@ -26,7 +26,8 @@ public interface AdminMapper {
 	public AdminBrandCommand selectBrand(Integer brand_num);
 	
 	//세부 카테고리
-	public List<AdminCategoryCommand> selectCateDetailList(Map<String, Object> map);
+	@Select("SELECT * FROM category_Detail")
+	public List<AdminCategoryCommand> selectCateDetailList();
 	public int selectCateDetailRowCount(Map<String, Object> map);
 	@Insert("INSERT INTO category_detail(category_detail_num, category_detail_name, head_category, shopping_exist)"
 			+ "VALUES(category_detail_seq.nextval, #{category_detail_name}, #{head_category}, #{shopping_exist})")
