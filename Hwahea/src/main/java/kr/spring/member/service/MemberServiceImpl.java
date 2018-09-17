@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.member.dao.MemberMapper;
 import kr.spring.member.domain.MemberCommand;
+import kr.spring.review.domain.ReviewCommand;
 
 @Service("memberService")
 public class MemberServiceImpl implements MemberService{
@@ -18,10 +19,15 @@ public class MemberServiceImpl implements MemberService{
 		memberMapper.insert(member);
 		memberMapper.insertDetail(member);
 	}
-
+	
 	@Override
 	public MemberCommand selectMember(String m_id) {
 		return memberMapper.selectMember(m_id);
+	}
+	
+	@Override
+	public ReviewCommand selectReview(String re_id) {
+		return memberMapper.selectReview(re_id);
 	}
 	
 	@Override
