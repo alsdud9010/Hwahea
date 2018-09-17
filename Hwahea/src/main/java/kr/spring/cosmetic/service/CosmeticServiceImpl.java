@@ -1,6 +1,7 @@
 package kr.spring.cosmetic.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.cosmetic.dao.CosmeticMapper;
 import kr.spring.cosmetic.domain.BrandCommand;
+import kr.spring.cosmetic.domain.CosmeticCommand;
 
 @Service("cosmeticService")
 public class CosmeticServiceImpl implements CosmeticService{
@@ -25,4 +27,8 @@ public class CosmeticServiceImpl implements CosmeticService{
 		return cosmeticMapper.getRowCount();
 	}
 
+	@Override
+	public List<CosmeticCommand> getCosmeticRank(Map<String, Object> map) {
+		return cosmeticMapper.getCosmeticRank(map);
+	}
 }

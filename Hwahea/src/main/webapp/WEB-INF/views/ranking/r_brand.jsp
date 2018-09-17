@@ -28,8 +28,9 @@
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<ul class="nav navbar-nav col-md-12">
 							<!-- 카테고리별 -->
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">카테고리별</a>
+							<li class="dropdown"><a href="#"
+								onclick="location.href='${pageContext.request.contextPath}/ranking/r_category.do'"
+								class="dropdown-toggle" data-toggle="dropdown">카테고리별</a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="#">스킨케어</a>
 										<ul class="dropdown-menu">
@@ -122,7 +123,7 @@
 							<!-- 카테고리별 끝 -->
 							<!-- 피부타입&고민별 -->
 							<li class="dropdown"><a href="#"
-								onclick="location.href='${pageContext.request.contextPath}/shop/shopMain.do'"
+								onclick="location.href='${pageContext.request.contextPath}/ranking/r_skinType.do'"
 								class="dropdown-toggle" data-toggle="dropdown">피부타입&고민별</a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a
@@ -140,7 +141,7 @@
 							<!-- 피부타입&고민별 -->
 							<!-- 브랜드별 -->
 							<li class="dropdown"><a href="#"
-								onclick="location.href='${pageContext.request.contextPath}/plus/plusMain.do'"
+								onclick="location.href='${pageContext.request.contextPath}/ranking/r_brand.do'"
 								class="dropdown-toggle" data-toggle="dropdown"> 브랜드별 </a>
 										<ul class="dropdown-menu">
 											<li><a href="index.hmtl">스킨/토너</a></li>
@@ -209,7 +210,7 @@
 				<ul class="brand-search-content">
 					<c:forEach var="brand" items="${brand}">
 					<li class="ask-lock-area">
-						<input type="checkbox" id="brand-${brand.brand_num}" name="shop-search-brand" value="${brand.brand_name}"/>
+						<input type="radio" name="brand-search-brand" value="${brand.brand_num}"/>
 						<label for="brand-${brand.brand_num}">${brand.brand_name}</label>
 					</li>
 					</c:forEach>
@@ -224,7 +225,7 @@
 				<div class="col-md-12">
 					<div class="r_second_title">
 						<h2>
-							<b> 스킨케어 랭킹 </b>
+							<b> 브랜드별 전체 랭킹 </b>
 						</h2>
 					</div>
 				</div>
@@ -256,9 +257,7 @@
 							<li class="ranking_shopping"> 
 								<ul>
 									<li class="buy">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
-										alt="">
+										<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/buy.png" alt="">
 									</li>
 									<li class="cart">
 										<img class="img-responsive"
@@ -266,111 +265,6 @@
 										alt="">
 									</li>
 								</ul>  
-							</li>
-						</ul>
-					</div>
-					<div class="row">
-						<ul>
-							<li class="ranking_num"><h1>2</h1></li>
-							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/isandtree.jpg"
-										alt="">
-								</a>
-							</li>
-							<li class="ranking_names">
-								<div class="ranking_brandName">이지앤트리</div>
-								<div class="ranking_productName">
-									<strong>히아루론산 토너</strong>
-								</div>
-								<div class="r_list_by-author">
-									<strong> 12,000원</strong> <span>/ 200ml</span>
-								</div>
-							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
-							<li class="ranking_shopping"> 
-								<ul>
-									<li class="buy">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
-										alt="">
-									</li>
-									<li class="cart">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
-										alt="">
-									</li>
-								</ul> 
-							</li>
-						</ul>
-					</div>
-					<div class="row">
-						<ul>
-							<li class="ranking_num"><h1>3</h1></li>
-							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/uriage.jpg"
-										alt="">
-								</a>
-							</li>
-							<li class="ranking_names">
-								<div class="ranking_brandName">유리아쥬</div>
-								<div class="ranking_productName">
-									<strong>제모스 토너</strong>
-								</div>
-								<div class="ranking_by-author">
-									<strong> 38,000원</strong> <span>/ 200ml</span>
-								</div>
-							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
-							<li class="ranking_shopping"> 
-								<ul>
-									<li class="buy">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
-										alt="">
-									</li>
-									<li class="cart">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
-										alt="">
-									</li>
-								</ul> 
-							</li>
-						</ul>
-					</div>
-					<div class="row">
-						<ul>
-							<li class="ranking_num"><h1>4</h1></li>
-							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cc.jpg"
-										alt="">
-								</a>
-							</li>
-							<li class="ranking_names">
-								<div class="ranking_brandName">정샘물</div>
-								<div class="ranking_productName">
-									<strong>컬러피스 아이섀도우 프리즘</strong>
-								</div>
-								<div class="r_list_by-author">
-									<strong> 22,000원</strong> <span>/ 2.6g</span>
-								</div>
-							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
-							<li class="ranking_shopping"> 
-								<ul>
-									<li class="buy">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
-										alt="">
-									</li>
-									<li class="cart">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
-										alt="">
-									</li>
-								</ul> 
 							</li>
 						</ul>
 					</div>

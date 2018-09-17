@@ -256,13 +256,13 @@ li{
 }
 
 .brand-search-content{
-    width: 850px;
+    width: 940px;
     min-height: 75px;
-    max-height: 118px;
-    padding: 5px 0 5px 15px;
+    max-height: 119px;
     border-left: 1px solid #ddd;
-    overflow: hidden;
+    overflow-y: auto;
     list-style: none;
+    margin-left: 183px;
 }
 
 .brand-search-content li{
@@ -275,7 +275,7 @@ li{
 	z-index: 2;
     position: absolute;
     bottom: -30px;
-    left: -1px;
+    left: 1054px;
     display: block;
     width: 85px;
     height:30px;

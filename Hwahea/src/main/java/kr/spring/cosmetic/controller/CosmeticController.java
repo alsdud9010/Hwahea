@@ -19,7 +19,7 @@ public class CosmeticController {
 	@Resource
 	private CosmeticService cosmeticService;
 	
-	//=======브랜드별 랭킹 호출
+	//=======브랜드 리스트 호출
 	@RequestMapping("/ranking/r_brand.do")
 	public ModelAndView getBrandList(){
 		int count = cosmeticService.getRowCount();
@@ -40,4 +40,5 @@ public class CosmeticController {
 		
 		return mav;
 	}
+	
 }

@@ -152,8 +152,9 @@
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<ul class="nav navbar-nav col-md-12">
 							<!-- 카테고리별 -->
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">카테고리별</a>
+							<li class="dropdown"><a href="#"
+								onclick="location.href='${pageContext.request.contextPath}/ranking/r_category.do'"
+								class="dropdown-toggle" data-toggle="dropdown">카테고리별</a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="#">스킨케어</a>
 										<ul class="dropdown-menu">
@@ -246,7 +247,7 @@
 							<!-- 카테고리별 끝 -->
 							<!-- 피부타입&고민별 -->
 							<li class="dropdown"><a href="#"
-								onclick="location.href='${pageContext.request.contextPath}/shop/shopMain.do'"
+								onclick="location.href='${pageContext.request.contextPath}/ranking/r_skinType.do'"
 								class="dropdown-toggle" data-toggle="dropdown">피부타입&고민별</a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a
@@ -264,7 +265,7 @@
 							<!-- 피부타입&고민별 -->
 							<!-- 브랜드별 -->
 							<li class="dropdown"><a href="#"
-								onclick="location.href='${pageContext.request.contextPath}/plus/plusMain.do'"
+								onclick="location.href='${pageContext.request.contextPath}/ranking/r_brand.do'"
 								class="dropdown-toggle" data-toggle="dropdown"> 브랜드별 </a>
 										<ul class="dropdown-menu">
 											<li><a href="index.hmtl">스킨/토너</a></li>
@@ -328,9 +329,7 @@
 			<div class="col-md-12 ranking-list">
 				<div class="col-md-12">
 					<div class="r_second_title">
-						<h2>
-							<b> 스킨케어 랭킹 </b>
-						</h2>
+						<h2><b> 카테고리별 전체 랭킹 </b></h2>
 					</div>
 				</div>
 
