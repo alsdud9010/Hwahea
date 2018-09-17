@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	<definition name="adminBrandList" extends="adminMain">
+		<put-attribute name="title" value="브랜드 목록"/>
+		<put-attribute name="page" value="/WEB-INF/views/brand/adminBrandList.jsp"/>
+	</definition>
+	
+	<definition name="adminCategoryList" extends="adminMain">
+		<put-attribute name="title" value="카테고리"/>
+		<put-attribute name="page" value="/WEB-INF/views/category/adminCategoryList.jsp"/>
+	</definition>
+	
+	<definition name="adminCosmeticList" extends="adminMain">
+		<put-attribute name="title" value="화장품 목록"/>
+		<put-attribute name="page" value="/WEB-INF/views/cosmetic/adminCosmeticList.jsp"/>
+	</definition>
+	<definition name="adminCosmeticDetail" extends="adminMain">
+		<put-attribute name="title" value="화장품 상세"/>
+		<put-attribute name="page" value="/WEB-INF/views/cosmetic/adminCosmeticDetail.jsp"/>
+	</definition>
+	
+	<definition name="adminEvent" extends="adminMain">
+		<put-attribute name="title" value="이벤트 관리"/>
+		<put-attribute name="page" value="/WEB-INF/views/event/adminEvent.jsp"/>
+	</definition>
+	
+	<definition name="adminIngredientList" extends="adminMain">
+		<put-attribute name="title" value="성분관리"/>
+		<put-attribute name="page" value="/WEB-INF/views/ingredient/adminIngredientList.jsp"/>
+	</definition>
+	
+	<definition name="adminNotice" extends="adminMain">
+		<put-attribute name="title" value="공지사항"/>
+		<put-attribute name="page" value="/WEB-INF/views/notice/adminNotice.jsp"/>
+	</definition>
+	<definition name="adminFAQ" extends="adminMain">
+		<put-attribute name="title" value="FAQ"/>
+		<put-attribute name="page" value="/WEB-INF/views/notice/adminFAQ.jsp"/>
+	</definition>
+	<definition name="adminFAQRegister" extends="adminMain">
+		<put-attribute name="title" value="FAQ 등록"/>
+		<put-attribute name="page" value="/WEB-INF/views/notice/adminFAQRegister.jsp"/>
+	</definition>
+	<definition name="inquiry" extends="adminMain">
+		<put-attribute name="title" value="문의"/>
+		<put-attribute name="page" value="/WEB-INF/views/notice/adminInquiry.jsp"/>
+	</definition>
+	
+	<definition name="adminProductList" extends="adminMain">
+		<put-attribute name="title" value="상품 목록"/>
+		<put-attribute name="page" value="/WEB-INF/views/product/adminProductList.jsp"/>
+	</definition>
+	<definition name="adminProductDetail" extends="adminMain">
+		<put-attribute name="title" value="상품 리스트"/>
+		<put-attribute name="page" value="/WEB-INF/views/product/adminProductDetail.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="reportReview" extends="adminMain">
+		<put-attribute name="title" value="신고한 리뷰"/>
+		<put-attribute name="page" value="/WEB-INF/views/report/reportReview.jsp"/>
+	</definition>
+	
+	<definition name="requiredRegister" extends="adminMain">
+		<put-attribute name="title" value="사용자 상품 등록 요청"/>
+		<put-attribute name="page" value="/WEB-INF/views/userRequired/requiredRegister.jsp"/>
+	</definition>
+	<definition name="requiredUpdate" extends="adminMain">
+		<put-attribute name="title" value="기존 제품 수정 요청"/>
+		<put-attribute name="page" value="/WEB-INF/views/userRequired/requiredUpdate.jsp"/>
+	</definition>
+	
+	<definition name="adminUser" extends="adminMain">
+		<put-attribute name="title" value="회원관리"/>
+		<put-attribute name="page" value="/WEB-INF/views/users/adminUser.jsp"/>
+	</definition>
+	<definition name="adminUserDetail" extends="adminMain">
+		<put-attribute name="title" value="회원정보"/>
+		<put-attribute name="page" value="/WEB-INF/views/users/adminUserDetail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

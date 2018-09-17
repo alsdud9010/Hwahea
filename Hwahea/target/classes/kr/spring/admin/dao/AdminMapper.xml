@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.admin.dao.AdminMapper">  
+  
+ 	<select id="selectBrandList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminBrandCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			*
+ 	                   FROM brand
+ 	                ORDER BY brand_num desc)a)               	
+ 	</select>
+
+ 	<select id="selectBrandRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM brand
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'num'">
+ 	    		brand_num like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select>
+ 	
+ 	<select id="selectCateList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminCategoryCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			*
+ 	                   FROM category
+ 	                ORDER BY category_num desc)a)               	
+ 	</select>
+
+ 	<select id="selectCateRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM category
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'num'">
+ 	    		category_num like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select>
+ 	
+ 	<select id="selectCosmeticList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminCosmeticCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			*
+ 	                   FROM cosmetic
+ 	                ORDER BY c_code desc)a)               	
+ 	</select>
+
+ 	<select id="selectCosmeticRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM cosmetic
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'name'">
+ 	    		c_name like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'code'">
+ 	    		c_code like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'all'">
+ 	    		c_name like '%' || #{keyword} || '%' or 	    	
+ 	    		c_code like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select>
+ 	
+ 	<select id="selectFAQList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminFAQCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			faq_num,
+ 	                   faq_title,
+ 	                   faq_content
+ 	                   FROM FAQ
+ 	                ORDER BY faq_num desc)a)               	
+ 	</select>
+
+ 	<select id="selectFAQRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM FAQ
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'title'">
+ 	    		faq_title like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'content'">
+ 	    		faq_content like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'all'">
+ 	    		faq_title like '%' || #{keyword} || '%' or 	    	
+ 	    		faq_content like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select>
+ 	
+ 	<select id="selectIngreList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminIngredientCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			*
+ 	                   FROM ingredient
+ 	                ORDER BY i_num desc)a)               	
+ 	</select>
+
+ 	<select id="selectIngreRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM ingredient
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'name'">
+ 	    		i_name like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select>
+ 	
+ 	<select id="selectProductList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminProductCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			*
+ 	                   FROM product
+ 	                ORDER BY p_num desc)a)               	
+ 	</select>
+
+ 	<select id="selectProductRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM product
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'name'">
+ 	    		p_name like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'brand'">
+ 	    		p_brand like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'all'">
+ 	    		p_name like '%' || #{keyword} || '%' or 	    	
+ 	    		p_brand like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select>
+ 	
+</mapper>
+
+
+
+
+
+
+
+
+

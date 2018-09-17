@@ -57,7 +57,7 @@ $(document).ready(function(){
 						</a></li>
 						</c:if>
 						<c:if test="${!empty user_id && user_auth==5}">
-						<li><a href="${pageContext.request.contextPath}/#"> <i class="fa fa-inbox"> 관리자페이지</i>
+						<li><a href="${pageContext.request.contextPath}/main/adminMain.do"> <i class="fa fa-inbox"> 관리자페이지</i>
 						</a></li>
 						</c:if>
 						<li><a href="${pageContext.request.contextPath}/notice/noticeList.do"> <i class="fa fa-bullhorn"> 공지사항</i>

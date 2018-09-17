@@ -17,6 +17,7 @@
 	<context:component-scan base-package="kr.spring.main.controller" />
 	<context:component-scan base-package="kr.spring.dictionary.controller" />
 	<context:component-scan base-package="kr.spring.cosmetic.controller" />
+	<context:component-scan base-package="kr.spring.admin.controller" />
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -42,6 +43,8 @@
 				<beans:value>/WEB-INF/tiles-def/review.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/event.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/notice.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/adminMain.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/admin.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -80,4 +83,5 @@
 	<view-controller path="/ranking/ranking_main.do" view-name="ranking_main"/>
 	<view-controller path="/ranking/r_category.do" view-name="r_category"/>
 	<view-controller path="/ranking/r_skinType.do" view-name="r_skinType"/>
+	<view-controller path="/main/adminMain.do" view-name="adminMain"/>
 </beans:beans>
