@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.member.domain.MemberCommand;
+import kr.spring.member.service.MemberService;
 import kr.spring.review.domain.ReviewCommand;
 import kr.spring.review.service.ReviewService;
 import kr.spring.util.CipherTemplate;
@@ -34,6 +36,8 @@ public class ReviewController {
 		
 	@Resource
 	private ReviewService reviewService;
+	@Resource
+	private MemberService memberService;
 		
 	@Resource
 	private CipherTemplate ciperAES;
@@ -46,7 +50,7 @@ public class ReviewController {
 	
 	//==============================목록 출력하기->****리뷰만!!!!****
 	@RequestMapping("/review/productInfo.do")
-	public ModelAndView getList(@RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
+	public ModelAndView getList(ReviewCommand reviewCommand, @RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<currentPage>> : "+currentPage);
@@ -62,30 +66,52 @@ public class ReviewController {
 		map.put("end", page.getEndCount());
 		
 		List<ReviewCommand> list = null;
-		List<ReviewCommand> member = null;
+		List<MemberCommand> member = null;
+		
 		
 		if(count > 0) {
 			list = reviewService.selectList(map);
 			
-			/*member = reviewService.selectMember(map);*/
+			member = memberService.memberDetail(reviewCommand.getRe_id());
 			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
+				log.debug("<<member>> : " + member);
 			}
 		}	
 		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("productInfo");
-		mav.addObject("member",member);
 		mav.addObject("count",count);
 		mav.addObject("list", list);
+		mav.addObject("member",member);
 		mav.addObject("pagingHTML", page.getPagingHtml());
 		
 		return mav;
 	}
 	
-	//==============================리뷰 목록 출력 
+	//=================================================================이미지 출력
+	@RequestMapping("/review/imageView.do")
+	public ModelAndView viewImage(@RequestParam("re_num") int re_num, @RequestParam("cnt") int cnt) {
+
+		ReviewCommand review = reviewService.selectReview2(re_num);
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");
+						//속성명	, 속성값(byte[]의 데이터)
+		if(cnt == 1) {
+			mav.addObject("imageFile",review.getRe_uploadbyte1());
+			mav.addObject("filename",review.getRe_filename1());
+		}else if(cnt == 2) {
+			mav.addObject("imageFile",review.getRe_uploadbyte2());
+			mav.addObject("filename",review.getRe_filename2());
+		}else if(cnt == 3) {
+			mav.addObject("imageFile",review.getRe_uploadbyte3());
+			mav.addObject("filename",review.getRe_filename3());
+		}
+		return mav;
+	}
 	
 	
 	
@@ -93,21 +119,20 @@ public class ReviewController {
 	//==============================리뷰 1개 상세 보기 
 	@RequestMapping("/review/oneReview.do")
 	@ResponseBody
-	public Map<String,String> oneReview(@RequestParam("data-num") int re_num, ReviewCommand reviewCommand){
+	public Map<String,Object> oneReview(@RequestParam("re_num") int re_num, ReviewCommand reviewCommand){
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<reviewCommand>> : "+reviewCommand);
 		}
 		
-		Map<String,String> map = new HashMap<String,String>();
 		
-
-		//댓글 등록
-		reviewService.selectReview(re_num);
-		map.put("result", "success");
-
+		List<ReviewCommand> list = null;
+		list = reviewService.selectReview(re_num);
 		
-		return map;
+		Map<String,Object> mapJson = new HashMap<String,Object>();
+		mapJson.put("list", list);
+		
+		return mapJson;
 	}
 	
 	

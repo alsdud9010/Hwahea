@@ -1,5 +1,7 @@
 package kr.spring.member.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -18,6 +20,10 @@ public interface MemberMapper {
 	
 	@Select("SELECT * FROM member m LEFT OUTER JOIN member_detail d ON m.m_id=d.m_id WHERE m.m_id=#{m_id}")
 	public MemberCommand selectMember(String m_id);
+	
+	@Select("SELECT * FROM (SELECT a.* FROM (SELECT b.*, r.re_id FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a)")
+	public List<MemberCommand> memberDetail(String m_id);
+	
 	/*³» ¸®ºä*/
 	@Select("SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM review re left join (SELECT re_num,COUNT(*) rere_num FROM review_reply GROUP BY re_num)r ON re.re_num = r.num WHERE re.re_id = ? ORDER BY re.re_num DESC)a) WHERE rnum >= ? AND rnum <= ?")
 	public ReviewCommand selectReview(String re_id);

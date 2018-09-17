@@ -1,5 +1,7 @@
 package kr.spring.member.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -26,6 +28,11 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	@Override
+	public List<MemberCommand> memberDetail(String m_id) {
+		return memberMapper.memberDetail(m_id);
+	}
+	
+	@Override
 	public ReviewCommand selectReview(String re_id) {
 		return memberMapper.selectReview(re_id);
 	}
@@ -45,5 +52,6 @@ public class MemberServiceImpl implements MemberService{
 		memberMapper.delete(m_id);
 		memberMapper.deleteDetail(m_id);
 	}
+
 
 }

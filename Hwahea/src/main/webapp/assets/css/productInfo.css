@@ -385,8 +385,11 @@ hr{
 	font-size:14px;
 	margin-left:20px;
 }
+
+/* 신고 모달 */
+
 #singo{
-	margin:1000px auto;
+	margin:800px auto;
 	width:400px;
 	text-align:left;
 }
@@ -402,8 +405,6 @@ hr{
 #sinbtn:focus{
 	outline:none;
 }
-
-/* 신고 모달 */
 #momo label{
 	margin-left:5px;
 }
@@ -431,6 +432,13 @@ hr{
 }
 #content{
 	width:750px;
+	font-size:14px;
+	padding-top:10px;
+	text-align:left;
+	vertical-align:top;
+}
+#mcontent{
+	width:600px;
 	font-size:14px;
 	padding-top:10px;
 	text-align:left;
@@ -679,9 +687,6 @@ hr{
 	margin-right:25px;
 	float:right;
 }
-
-
-/* 신고 모달 */
 
 .pmodal_rform{padding-top:15px;}
 

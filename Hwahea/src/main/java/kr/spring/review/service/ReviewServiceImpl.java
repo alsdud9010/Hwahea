@@ -39,8 +39,13 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public ReviewCommand selectReview(Integer re_num) {
+	public List<ReviewCommand> selectReview(Integer re_num) {
 		return reviewMapper.selectReview(re_num);
+	}
+	
+	@Override
+	public ReviewCommand selectReview2(Integer re_num) {
+		return reviewMapper.selectReview2(re_num);
 	}
 
 	@Override
