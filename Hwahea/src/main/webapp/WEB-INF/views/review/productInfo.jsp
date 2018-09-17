@@ -175,6 +175,7 @@
 		</c:if>
 		<c:if test="${count>0 }">
 		<div class="review">
+		<c:forEach var="review" items="${list }">
 		<c:forEach var="member" items="${member }">
 			<div id="writer">
 				<table>
@@ -183,12 +184,18 @@
 						<td id="nick">${member.m_id }</td>
 					</tr>
 					<tr>
-						<td id="type">${member.m_age }/피부타입</td>
+						<td id="type">${member.m_age } / 
+						<c:if test="${member.m_skintype==0 }">건성</c:if>
+						<c:if test="${member.m_skintype==1 }">중성</c:if>
+						<c:if test="${member.m_skintype==2 }">지성</c:if>
+						<c:if test="${member.m_skintype==3 }">복합성</c:if>
+						<c:if test="${member.m_atopy==1 }">/ 아토피</c:if>
+						<c:if test="${member.m_pimple==1 }">/ 여드름</c:if>
+						<c:if test="${member.m_susceptilbility==1 }">/ 민감성</c:if>
+						</td>
 					</tr>
 				</table>
 			</div>
-		<c:forEach var="review" items="${list }">
-			<%-- <c:forEach var="review" items="${list }"> --%>
 			<!-- 별점, 작성일 시작 -->
 			<div id="re_rate">
 				<c:if test="${review.re_rate ==1 }">
@@ -269,11 +276,10 @@
 				</ul>
 			</div>
 		</div>
+		</c:forEach><!-- member  -->
 		</c:forEach>
-		</c:forEach>
-		</div>
 		<hr>
-		<%-- </c:forEach> --%>
+		</div><!-- /review -->
 		</c:if>
 		<!-- 리뷰 1개 끝 -->
 		</div>
@@ -350,15 +356,6 @@
 							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>내 아이디
 						</div>
 						<div id="reply_append"></div>
-						<%-- <div class="pmodal_rform">
-							<form id="reply_form" action="writeReply.do">
-								<input type="hidden" name="re_num" value="${review.re_num }" id="re_num">
-								<input type="hidden" name="user_id" value="${user_id}" id="user_id">
-								<textarea name="rere_content" id="re_content" cols="70" rows="4" placeholder="내용을 입력해 주세요."></textarea>
-								<input type="submit" value="댓글달기" >
-							</form>
-							<div class="pmodal_rcount"><span class="letter-count">0 / 300</span></div> 
-						</div> --%>
 						<!-- 댓글 출력 시작 -->
 						<div class="pmodal_reback"></div> <!-- 댓글 출력하는 div -->
 						<div class="paging-button" style="display: none;">
