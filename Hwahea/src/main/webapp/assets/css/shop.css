@@ -1068,6 +1068,19 @@ p.none-product{
 	border:1px solid #717171;
 }
 
+.add-edit-form{
+    margin:5px 0;
+    width:800px;
+}
+
+.add-edit-form textarea{
+	width: 80%;
+    height: 100px;
+    resize: none;
+    margin-top: 5px;
+    padding: 8px;
+}
+
 .question-kind{
 	font-weight:bold;	
 	margin-right:5px;

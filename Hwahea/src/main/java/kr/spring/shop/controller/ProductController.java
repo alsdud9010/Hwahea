@@ -1,5 +1,6 @@
 package kr.spring.shop.controller;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,11 +15,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.member.domain.MemberCommand;
+import kr.spring.shop.domain.OrderCommand;
 import kr.spring.shop.domain.ProductBoardCommand;
 import kr.spring.shop.domain.ProductCommand;
 import kr.spring.shop.service.ProductBoardService;
@@ -72,6 +77,7 @@ public class ProductController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("category_num",category_num);
 		map.put("category_detail_num",category_detail_num);
+		map.put("results",null);
 		
 		List<ProductCommand> cate = null;
 		String cateName = null;
@@ -80,7 +86,6 @@ public class ProductController {
 		
 		//검색된 상품 개수
 		int productCnt =productService.selectProductCnt(map);
-		
 
 		if(log.isDebugEnabled()) {
 			log.debug("<<category_num>> : "+category_num);
@@ -95,6 +100,7 @@ public class ProductController {
 		PagingUtil page = new PagingUtil(currentPage,productCnt,rowCount,pageCount,"/shop/shopProductView.do");
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
+		
 		
 		if(productCnt>0) {
 			//map으로 만들어서 매개변수로 넘김
@@ -197,11 +203,38 @@ public class ProductController {
 	}
 	
 	//========= 주문하기
-	@RequestMapping("/shop/orderProduct.do")
-	public String processss() {
+	@RequestMapping(value="/shop/orderProduct.do", method=RequestMethod.GET)
+	public ModelAndView form(HttpSession session, Model model,
+			@RequestParam("p_num") int p_num,
+			@RequestParam("quantity") int quantity) {
 
-		return "orderProduct";
+		String user_id = (String) session.getAttribute("user_id");
+		
+		List<ProductCommand> productInfo = null;
+		MemberCommand memberInfo = null;
+
+		if(log.isDebugEnabled()) {
+			log.debug("<<p_num>> : "+p_num);
+			log.debug("<<user_id>> : "+user_id);
+		}
+
+		productInfo = productService.productInfo(p_num);
+		memberInfo = productService.memberInfo(user_id);
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<productInfo>> : "+productInfo);
+			log.debug("<<memberInfo>> : "+memberInfo);
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("orderProduct");
+		mav.addObject("productInfo",productInfo);
+		mav.addObject("memberInfo",memberInfo);
+		mav.addObject("quantity",quantity);
+		
+		return mav;
 	}
+
 
 	//========= 주문완료
 	@RequestMapping("/shop/orderComplete.do")
@@ -209,4 +242,120 @@ public class ProductController {
 
 		return "orderComplete";
 	}
+	
+	//=====================================AJAX //
+	@RequestMapping("/shop/shopBrandSearch.do")
+	@ResponseBody
+	public Map<String,Object> getList(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
+			@RequestParam("category_num") int category_num,
+			@RequestParam(value="category_detail_num", defaultValue="0") int category_detail_num
+			, @RequestParam(value="brandSearch", defaultValue="0") String brandSearch){
+		
+		String[] nums = brandSearch.split(",");
+		int[] results = null;
+		List<ProductCommand> list = null;
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<currentPage>> : "+currentPage);
+			log.debug("<<category_num>> : "+category_num);
+			log.debug("<<category_detail_num>> : "+category_detail_num);
+			log.debug("<<brandSearch>> : "+brandSearch);
+		}
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("category_num",category_num);
+		map.put("category_detail_num",category_detail_num);
+		
+		if(!brandSearch.equals("0")) { //선택된 브랜드가 있을 때 
+			results = new int[nums.length];
+			for(int i=0;i<nums.length;i++) {
+				results[i] = Integer.parseInt(nums[i]);
+			}
+		}
+		//선택된 브랜드가 없으면 results가  null 값
+		if(log.isDebugEnabled()) {
+			log.debug("<<results>> : "+ results);
+		}
+		map.put("results",results);
+		
+		//검색된 상품 개수
+		int productCnt =productService.selectProductCnt(map);
+		if(log.isDebugEnabled()) {
+			log.debug("<<productCnt>> : "+ productCnt);
+		}
+		
+		PagingUtil page = new PagingUtil(currentPage,productCnt,rowCount,pageCount,null);
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+		
+		if(productCnt>0) {
+			//map으로 만들어서 매개변수로 넘김
+			list =  productService.selectShopProduct(map);
+			
+			if(log.isDebugEnabled()) {
+				log.debug("<<list>> : "+list);
+			}
+		}else {
+			list = Collections.emptyList();
+		}
+		
+		Map<String,Object> mapJson = new HashMap<String,Object>();
+		mapJson.put("productCnt", productCnt);
+		mapJson.put("list", list);
+		mapJson.put("pagingHtml",page.getPagingHtml());
+			
+		return mapJson;
+	}
+	
+	//admin 답변 등록
+	@RequestMapping("/shop/writePBReply.do")
+	@ResponseBody
+	public Map<String,String> writePBReply(ProductBoardCommand productBoardCommand, 
+			HttpSession session, 
+			HttpServletRequest request){
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<productBoardCommand>> : "+productBoardCommand);
+		}
+
+		Map<String,String> map = new HashMap<String,String>();
+		String user_id = (String) session.getAttribute("user_id");
+		if(user_id == null) {
+			//로그인 안됨
+			map.put("result", "logout");
+		} else {
+			//댓글 등록
+			productBoardService.insertPBReply(productBoardCommand);
+			map.put("result", "success");
+		}
+		return map;
+	}
+	
+	//구매하기
+	@RequestMapping("/shop/productOrder.do")
+	@ResponseBody
+	public Map<String,String> productOrder(OrderCommand opcommand
+			,BindingResult result, HttpServletRequest request, HttpSession session,
+			@RequestParam("quantities") String[] quantities,
+			@RequestParam("products") String[] products) {
+
+		if(log.isDebugEnabled()) {
+			log.debug("<<opcommand>> : "+opcommand);
+			log.debug("<<quantities>> : "+quantities);
+			log.debug("<<products>> : "+products);
+		}
+		
+		Map<String,String> map = new HashMap<String,String>();
+		String user_id = (String) session.getAttribute("user_id");
+		if(user_id == null) {
+			//로그인 안됨
+			map.put("result", "logout");
+		} else {
+			//댓글 등록
+			//productBoardService.insertPBReply(productBoardCommand);
+			map.put("result", "success");
+		}
+		return map;
+	}
+
 }

@@ -21,7 +21,16 @@
   </select>
   <select id="selectProductCnt" parameterType="map" resultType="integer">
   	SELECT COUNT(*) product_cnt 
-  	FROM category_detail cd, product p
+  	FROM category_detail cd, 
+  	<if test="results == null">product</if>
+  	<if test="results != null">
+  		(SELECT pp.* FROM product pp, brand b <where>pp.p_brand=b.brand_num AND b.brand_num IN
+  		<foreach collection="results" item="item" index="index" separator="," open="(" close=")">
+             ${results[index]}
+   		</foreach>
+  		)
+  	</where></if>
+  	 p
 	<where>
 	    <if test="category_detail_num == 0">
 	    	cd.head_category=#{category_num} 
@@ -37,7 +46,14 @@
   <select id="selectShopProduct" parameterType="map" resultType="productCommand">
   	SELECT * FROM (SELECT a.*, rownum rnum FROM (
   	SELECT cd.*, pb.* 
-  	FROM (SELECT b.brand_name, b.brand_num, p.* FROM brand b, product p WHERE p.p_brand=b.brand_num) pb, category_detail cd 
+  	FROM (SELECT b.brand_name, b.brand_num, p.* FROM brand b, product p <where> p.p_brand=b.brand_num
+  	<if test="results != null">
+  		AND b.brand_num IN
+  		<foreach collection="results" item="item" index="index" separator="," open="(" close=")">
+             ${results[index]}
+   		</foreach>
+  	</if></where>
+  	) pb, category_detail cd 
 	<where>
 	    <if test="category_detail_num==0">
 	    	cd.head_category=#{category_num} 

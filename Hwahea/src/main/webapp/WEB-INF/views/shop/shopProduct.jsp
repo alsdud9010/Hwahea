@@ -11,7 +11,7 @@
 	<div class="productListArea">
 		<div class="shop-productView-category">
 			<a href="${pageContext.request.contextPath}/shop/shopMain.do">쇼핑
-				홈 </a> > <a onClick="history.go(0)" href="#">
+				홈 </a> > <a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=${cateNum}">
 				${cateName} </a>
 		</div>
 		<div class="shopProduct-title">
@@ -35,7 +35,7 @@
 				<ul class="shopList-search-content">
 					<c:forEach var="brand" items="${brand}">
 					<li class="ask-lock-area">
-						<input type="checkbox" id="brand-${brand.brand_num}" name="shop-search-brand" value="${brand.brand_name}"/>
+						<input type="checkbox" id="brand-${brand.brand_num}" class="brand-search" name="shop-search-brand" value="${brand.brand_num}"/>
 						<label for="brand-${brand.brand_num}">${brand.brand_name}</label>
 					</li>
 					</c:forEach>
@@ -43,7 +43,7 @@
 				<input type="button" class="shop-brand-more" value="더보기">
 				<div class="shopList-reset"><button id="onBrandReset">선택 초기화</button></div>
 		</div>
-		<p class="col-md-12 shopList-cateCnt"> <span>♥</span> 화해쇼핑에 <span> ${productCnt} </span>개의 상품이 등록되어 있습니다. <span>♥</span> </p>
+		<p class="col-md-12 shopList-cateCnt"> <span>♥</span> 화해쇼핑에 <span id="productCnt"> ${productCnt} </span>개의 상품이 등록되어 있습니다. <span>♥</span> </p>
 		<div class="col-md-12 shopList-cate-align">
 			<div class="align-sort">
 				<ul>

@@ -60,15 +60,17 @@
 								<div class="productView-item-price-detail">
 									<c:set var="discount" value="${((100-product.p_discount)/100)*product.p_price}"/>
 									<span class="price-detail-sale">${product.p_discount}%</span> 
-									<span class="price-detail-payment"><fmt:formatNumber value="${discount}" type="number"/>원</span> 
+									<span class="price-detail-payment"><fmt:formatNumber value="${discount}" type="number"/>원</span>
 									<span class="price-detail-original"><fmt:formatNumber value="${product.p_price}" type="number"/>원</span>
+									<!-- hidden -->
+									<input type="hidden" id="orderPrice" name="orderPrice" value="${discount}">
+									<input type="hidden" id="orderProduct" name="orderProduct" value="${product.p_num}">
 								</div>
 							</div>
 							<div class="productView-item-shop-buttons">
-								<input class="item-quantity" id="quantity" name="quantity" type="number" min="1" value="1"
-									required> <input class="shop-button item-buy"
-									type="submit" value="구매하기"
-									onclick="location.href='${pageContext.request.contextPath}/shop/orderProduct.do?p_num=${product.p_num}'">
+								<input type="number" class="item-quantity" id="quantity" name="quantity" min="1" value="1">
+								<input class="shop-button item-buy"
+									type="button" value="구매하기">
 								<input class="shop-button item-cart" type="button"
 									value="장바구니 담기" onclick="#"> <input class="shop-button item-review"
 									type="button" value="리뷰 보러가기" onclick="#">
@@ -187,6 +189,11 @@
 												<span class="question-date">
 												<fmt:formatDate value="${ask.pb_dateTime}" pattern="yy.MM.dd HH:mm:ss"/></span> | 
 												<span class="question-nickName">${ask.pb_id} 님</span>
+												<c:if test="${user_id == ask.pb_id}">
+													<span class="question-buttons" style="margin-left:5px;">
+														<input type="button" value="삭제" class="question-remove" onclick="location.href='#'">
+													</span>	
+												</c:if>
 											</p>
 											<c:if test="${ask.pb_lock==0 || (ask.pb_lock==1&&(ask.pb_id==user_id))}">
 											<p>
@@ -229,7 +236,7 @@
 								</div>
 								</c:if>
 								<c:if test="${user_auth == 5}">
-									<div class="col-md-12 ask-question-and-answer accordion_banner"  data-private="${ask.pb_num}" >
+									<div class="col-md-12 ask-question-and-answer accordion_banner" data-private="${ask.pb_num}" >
 									<div class="col-md-12 ask-content-question accordion_title">
 										<div class="col-md-8 question-left">
 											<p style="margin-bottom: 15px;">
@@ -256,14 +263,19 @@
 										</div>
 										<div class="answer-right">
 											<c:if test="${ask.pbr_content eq null}">
-												<p style="margin-bottom: 15px;" class="question-buttons">
-													<span class="answer-mark" style="background:#aaa;">WAITING</span>
-													<c:if test="${user_id == 'admin'}">
-														<input type="button" value="답변등록" class="question-remove" onclick="location.href='#'">
-														<input type="button" value="수정" class="question-remove" onclick="location.href='#'">
-													</c:if>
+												<input type="hidden" id="pbr_p_num_${ask.pb_num}" name="pbr_p_num_${ask.pb_num}" value="${product.p_num}">
+												<input type="hidden" id="pbr_brand_num_${ask.pb_num}" name="pbr_brand_num_${ask.pb_num}"  value="${product.brand_num}">
+												<input type="hidden" id="pbr_id_${ask.pb_num}" name="pbr_id_${ask.pb_num}"  value="${user_id}">
+												<input type="hidden" id="pbr_head_${ask.pb_num}" name="pbr_head_${ask.pb_num}"  value="${ask.pb_num}">
+												<span class="answer-mark" style="background:#aaa;">WAITING</span>
+												<p class="add-edit-form">
+													<textarea id="pbr_content_${ask.pb_num}" name="pbr_content_${ask.pb_num}" placeholder="답변 대기중인 문의글입니다."></textarea>
+													<span class="letter-count">400/400</span>
 												</p>
-												<p class="answer-content">답변 대기중 입니다.</p>
+												<p style="margin-bottom: 15px;" class="question-buttons">
+													<input type="button" value="답변등록" class="answer-add" data-private="${ask.pb_num}">
+													<input type="button" value="수정" class="answer-edit" onclick="location.href='#'" data-private="${ask.pb_num}" >
+												</p>
 											</c:if>
 											<c:if test="${ask.pbr_content ne null}">
 												<p style="margin-bottom: 15px;" class="question-buttons">
@@ -381,9 +393,10 @@
           <form:form commandName="pbcommand" action="${pageContext.request.contextPath}/shop/pbWrite.do" 
           id="pbWrite_form">
 	   	  <form:hidden path="pb_id" />
+	   	  <form:hidden path="pb_product" value="${product.p_num}"/>
 	   	  <form:hidden path="p_num" value="${product.p_num}"/>
 	   	  <form:hidden path="brand_num" value="${product.brand_num}"/>
-	   	  <form:errors element="div" cssClass="error-color"/>	
+	   	  <form:errors element="div" cssClass="error-color"/>
             <div class="form-group1">
             	<form:select path="pb_kind" class="form-control" id="select-ask-kind">
 					  <option value="unselect" selected>문의 유형 선택</option>

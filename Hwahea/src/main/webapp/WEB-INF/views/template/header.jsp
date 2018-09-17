@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/loginmodal.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/headers/header.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/grade.css">
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <script>
 $(document).ready(function(){
@@ -28,17 +29,35 @@ $(document).ready(function(){
 							<li><form:errors/><a href="#" id="myBtn"> <i class="fa fa-user"> 로그인</i>
 							</a></li>
 						</c:if>
-						<c:if test="${!empty user_id}">
-							<li><i style="font-style:normal;">[등급] ${user_id}회원 님</i>
+						<c:if test="${!empty user_id && user_auth!=5}">
+							<li><i style="font-style:normal;">
+							<c:choose>
+							  <c:when test="${user_auth==1}"><span class="grade_welcome"><input type="button"value="welcome"></span></c:when>
+							  <c:when test="${user_auth==2}"><span class="grade_family"><input type="button"value="family"></span></c:when>
+							  <c:when test="${user_auth==3}"><span class="grade_vip"><input type="button"value="vip"></span></c:when>
+							  <c:when test="${user_auth==4}"><span class="grade_vvip"><input type="button"value="vvip"></span></c:when>						  
+							</c:choose>   
+							 ${user_id} 님</i>
 							<li><a href="${pageContext.request.contextPath}/main/logout.do"> <i class="fa fa-user"> 로그아웃</i>
 							</a></li>
 						</c:if>
+						<c:if test="${!empty user_id && user_auth==5}">
+							<li><i class="fa fa-wrench">&nbsp;관리자(${user_id})로 접속중…</i></li>
+							<li><a href="${pageContext.request.contextPath}/main/logout.do"> <i class="fa fa-user"> 로그아웃</i>
+							</a></li>
+						</c:if>
+						<c:if test="${user_auth!=5}">
 						<li><a href="${pageContext.request.contextPath}/signin/service_agree.do"> <i class="fa fa-heart"> 회원가입</i>
 						</a></li>
+						</c:if>
 						<c:if test="${empty user_id}"><li><form:errors/><a href="#" id="myBtn"> <i class="fa fa-inbox"> 마이페이지</i>
 						</a></li></c:if>
-						<c:if test="${!empty user_id}">
+						<c:if test="${!empty user_id && user_auth!=5}">
 						<li><a href="${pageContext.request.contextPath}/mypage/my_info.do?bc=0"> <i class="fa fa-inbox"> 마이페이지</i>
+						</a></li>
+						</c:if>
+						<c:if test="${!empty user_id && user_auth==5}">
+						<li><a href="${pageContext.request.contextPath}/#"> <i class="fa fa-inbox"> 관리자페이지</i>
 						</a></li>
 						</c:if>
 						<li><a href="${pageContext.request.contextPath}/notice/noticeList.do"> <i class="fa fa-bullhorn"> 공지사항</i>
@@ -541,16 +560,6 @@ $(document).ready(function(){
 					<li><a href="#" onclick="location.href='${pageContext.request.contextPath}/event/eventMain.do'" 
 					class="dropdown-toggle dropdown-title" data-toggle="dropdown"> 이벤트</a></li>
 					<!-- 이벤트 끝 -->
-					<!-- 어워드 --> 
-					<li class="dropdown"><a href="javascript:void(0);"
-						class="dropdown-toggle dropdown-title" data-toggle="dropdown"> 어워드</a>
-						<ul class="dropdown-menu">
-							<li><a href="javascript:void(0);">2018</a>
-							<li><a href="javascript:void(0);">2017</a>
-							<li><a href="javascript:void(0);">2016</a>
-							<li><a href="javascript:void(0);">2015</a>
-						</ul></li>
-					<!-- 어워드 끝 -->
 					<!-- 성분사전 시작 -->
 					<!-- Misc Pages -->
 					<li class="dropdown">

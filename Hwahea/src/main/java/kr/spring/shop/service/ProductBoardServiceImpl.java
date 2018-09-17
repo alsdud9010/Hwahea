@@ -30,5 +30,11 @@ public class ProductBoardServiceImpl implements ProductBoardService{
 	public List<ProductBoardCommand> selectBoardList(Map<String, Object> map) {
 		return productBoardMapper.selectBoardList(map);
 	}
+
+	@Override
+	public void insertPBReply(ProductBoardCommand productBoardCommand) {
+		productBoardMapper.insertPBReply(productBoardCommand);
+		
+	}
 	
 }

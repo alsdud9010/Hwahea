@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.dao.ProductMapper;
 import kr.spring.shop.domain.ProductCommand;
 
@@ -57,6 +58,15 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<ProductCommand> selectBrandProduct(Integer brand_num) {
 		return productMapper.selectBrandProduct(brand_num);
+	}
+	@Override
+	public List<ProductCommand> productInfo(Integer p_num) {
+		return productMapper.productInfo(p_num);
+	}
+	
+	@Override
+	public MemberCommand memberInfo(String user_id) {
+		return productMapper.memberInfo(user_id);
 	}
 
 }

@@ -66,5 +66,79 @@ $(document).ready(function(){
 		}
 	});
 	
+	//=============== 상품문의 Admin
+	//답변등록
+	$('.answer-add').click(function(event){
+		var num = $(this).attr('data-private');
+		if($('#pbr_content_'+num).val()==''){
+			alert('답변 내용을 입력하세요');
+			$('#pbr_content_'+num).focus();
+			return false;
+		}
+		var pbr_id = document.getElementById('pbr_id_'+num).value;
+		var pbr_head = document.getElementById('pbr_head_'+num).value;
+		var pbr_content = document.getElementById('pbr_content_'+num).value;
+		var p_num = document.getElementById('pbr_p_num_'+num).value;
+		var brand_num = document.getElementById('pbr_brand_num_'+num).value;
+		
+		//등록
+		$.ajax({
+			type:'post',
+			data:{
+				p_num:p_num,
+				brand_num:brand_num,
+				pbr_id:pbr_id,
+				pbr_head:pbr_head,
+				pbr_content:pbr_content
+			},
+			url:'writePBReply.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				if(data.result=='logout'){
+					alert('로그인 해야 작성할 수 있습니다.');
+				}else if(data.result=='AdminLogin'){
+					alert('관리자만 작성할 수 있습니다.');
+				}else if(data.result=='success'){
+					alert('답변이 완료되었습니다!');
+					location.replace("/Hwahea/shop/shopProductView.do?p_num="+p_num+"&brand_num="+brand_num);
+				}else{
+					alert('등록시 오류 발생');
+				}
+			},
+			error:function(){
+				alert('등록시 네트워크 오류 발생!');
+			}
+		});
+		//기본 이벤트 제거
+		event.preventDefault();
+	});
 	
+	//textarea에 내용 입력시 글자수 체크
+	$(document).on('keyup','textarea',function(){
+		//입력한 글자수를 수함
+		var inputLength = $(this).val().length;
+		
+		if(inputLength>300){ //400자를 넘어선 경우
+			$(this).val($(this).val().substring(0,400));
+		}else{ //400자 이하인 경우
+			var remain = 400-inputLength;
+			remain += '/400';
+			if($(this).attr('id')=='re_content'){
+				//등록 폼 글자수 
+				$('.add-edit-form .letter-count').text(remain);
+			}else{
+				//수정 폼 글자수
+				$('.add-edit-form .letter-count').text(remain);
+			}
+		}
+	});
+	
+	//구매하기 클릭
+	$('input.item-buy').click(function(){
+		var quantity = document.getElementById('quantity').value;
+		var p_num = document.getElementById('orderProduct').value;
+		location.href="/Hwahea/shop/orderProduct.do?p_num="+p_num+"&quantity="+quantity;		
+	});
 });

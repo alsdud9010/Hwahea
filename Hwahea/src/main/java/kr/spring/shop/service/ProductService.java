@@ -3,6 +3,7 @@ package kr.spring.shop.service;
 import java.util.List;
 import java.util.Map;
 
+import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.domain.ProductCommand;
 
 public interface ProductService {
@@ -23,5 +24,9 @@ public interface ProductService {
 	public List<ProductCommand> selectBrandProduct(Integer brand_num);
 
 	//orderProduct
+	public List<ProductCommand> productInfo(Integer p_num);
+	public MemberCommand memberInfo(String user_id);
+	
 	//orderComplete
+	
 }

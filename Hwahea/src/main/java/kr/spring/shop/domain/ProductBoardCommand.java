@@ -19,6 +19,8 @@ public class ProductBoardCommand {
 	@NotEmpty
 	private String pb_content;
 	private int pb_lock;
+	@NotEmpty
+	private int pb_product;
 	
 	//´äº¯
 	private int pbr_num;
@@ -118,14 +120,19 @@ public class ProductBoardCommand {
 	public void setPb_cnt(int pb_cnt) {
 		this.pb_cnt = pb_cnt;
 	}
+	
+	public int getPb_product() {
+		return pb_product;
+	}
+	public void setPb_product(int pb_product) {
+		this.pb_product = pb_product;
+	}
 	@Override
 	public String toString() {
 		return "ProductBoardCommand [p_num=" + p_num + ", brand_num=" + brand_num + ", pb_num=" + pb_num + ", pb_id="
 				+ pb_id + ", pb_dateTime=" + pb_dateTime + ", pb_kind=" + pb_kind + ", pb_content=" + pb_content
-				+ ", pb_lock=" + pb_lock + ", pbr_num=" + pbr_num + ", pbr_id=" + pbr_id + ", pbr_dateTime="
-				+ pbr_dateTime + ", pbr_content=" + pbr_content + ", pbr_head=" + pbr_head + ", pb_cnt=" + pb_cnt + "]";
+				+ ", pb_lock=" + pb_lock + ", pb_product=" + pb_product + ", pbr_num=" + pbr_num + ", pbr_id=" + pbr_id
+				+ ", pbr_dateTime=" + pbr_dateTime + ", pbr_content=" + pbr_content + ", pbr_head=" + pbr_head
+				+ ", pb_cnt=" + pb_cnt + "]";
 	}
-	
-	
-	
 }

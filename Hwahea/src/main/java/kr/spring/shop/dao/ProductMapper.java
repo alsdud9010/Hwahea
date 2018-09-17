@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Select;
 
+import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.domain.ProductCommand;
 
 public interface ProductMapper {
@@ -27,4 +28,10 @@ public interface ProductMapper {
 	public ProductCommand selectProduct(Integer p_num);
 	@Select("SELECT b.brand_num, b.brand_name, p.* FROM brand b, product p WHERE ROWNUM<=3 AND p.p_brand=b.brand_num AND b.brand_num=#{brand_num}")
 	public List<ProductCommand> selectBrandProduct(Integer brand_num);
+	
+	//orderProduct
+	@Select("SELECT * FROM product WHERE p_num=#{p_num}")
+	public List<ProductCommand> productInfo(Integer p_num);
+	@Select("SELECT * FROM member_detail WHERE m_id=#{user_id}")
+	public MemberCommand memberInfo(String user_id);
 }

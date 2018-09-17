@@ -25,11 +25,11 @@
 				<div class="carousel-inner">
 					<div class="item active">
 						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/beauty_trap.jpg">
+							src="${pageContext.request.contextPath}/assets/img/shop/iope.jpg">
 					</div>
 					<div class="item">
 						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/lala.jpg">
+							src="${pageContext.request.contextPath}/assets/img/shop/ssock.jpg">
 					</div>
 					<div class="item">
 						<img alt=""
@@ -38,10 +38,6 @@
 					<div class="item">
 						<img alt=""
 							src="${pageContext.request.contextPath}/assets/img/shop/clio_event.jpg">
-					</div>
-					<div class="item">
-						<img alt=""
-							src="${pageContext.request.contextPath}/assets/img/shop/shop_sasim.jpg">
 					</div>
 				</div>
 				<div class="carousel-arrow">
@@ -82,7 +78,7 @@
 				<div class="shopping-recommend-detail">
 					<div>
 						<a href="#"><img class="shopping-recommend-img"
-							src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+							src="${pageContext.request.contextPath}/assets/img/shop/lip.jpg"
 							alt=""> </a>
 					</div>
 					<a href="#" class="recommend-title"># 발색</a>
@@ -93,7 +89,7 @@
 				<div class="shopping-recommend-detail">
 					<div>
 						<a href="#"><img class="shopping-recommend-img"
-							src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+							src="${pageContext.request.contextPath}/assets/img/shop/sleepingpack.jpg"
 							alt=""> </a>
 					</div>
 					<a href="#" class="recommend-title"># 트러블</a>
@@ -104,7 +100,7 @@
 				<div class="shopping-recommend-detail">
 					<div>
 						<a href="#"><img class="shopping-recommend-img"
-							src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+							src="${pageContext.request.contextPath}/assets/img/shop/shampoo.jpg"
 							alt=""> </a>
 					</div>
 					<a href="#" class="recommend-title"># 머릿결</a>
@@ -114,7 +110,7 @@
 				</div>
 				<div class="shopping-products-detail">
 					<a href="#"><img class="shopping-products-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/ahabaha.jpg"
 						alt=""> </a>
 					<div class="shopping-products-content">
 						<div class="shopping-products-title">
@@ -132,7 +128,7 @@
 				</div>
 				<div class="shopping-products-detail">
 					<a href="#"><img class="shopping-products-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/suncream.jpg"
 						alt=""> </a>
 					<div class="shopping-products-content">
 						<div class="shopping-products-title">
@@ -150,7 +146,7 @@
 				</div>
 				<div class="shopping-products-detail">
 					<a href="#"><img class="shopping-products-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/soothing.png"
 						alt=""> </a>
 					<div class="shopping-products-content">
 						<div class="shopping-products-title">
@@ -180,7 +176,7 @@
 					<span class="shopping-hot-explain"> <span>1</span> <a
 						href="#" class="shopping-hot-content">평점 4.2 믿고사는 아이소이 수딩 젤♥</a>
 					</span> <a href="#"><img class="shopping-hot-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/suding.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
@@ -188,7 +184,7 @@
 						href="#" class="shopping-hot-content">칙칙 잡티에 딱!민감성도 만족하는
 							비타민C에센스 60%!</a>
 					</span> <a href="#"><img class="shopping-hot-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/vita.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
@@ -196,7 +192,7 @@
 						href="#" class="shopping-hot-content">끈적임 없는 에센스 가-득! 진정효과 팩
 							10매 6000원♥</a>
 					</span> <a href="#"><img class="shopping-hot-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/pack.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
@@ -204,7 +200,7 @@
 						href="#" class="shopping-hot-content">3400명이 리뷰한 평점 4.1 리얼 진정
 							수딩 젤 단독특가!</a>
 					</span> <a href="#"><img class="shopping-hot-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/IMG_0115.jpg"
 						alt=""> </a>
 				</div>
 				<div class="shopping-hot-detail">
@@ -212,7 +208,7 @@
 						href="#" class="shopping-hot-content">평점 4.1 스테디셀러 에센스! 1+1
 							한정기간 추가 할인♥</a>
 					</span> <a href="#"><img class="shopping-hot-img"
-						src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"
+						src="${pageContext.request.contextPath}/assets/img/shop/oneplu.jpg"
 						alt=""> </a>
 				</div>
 			</div>

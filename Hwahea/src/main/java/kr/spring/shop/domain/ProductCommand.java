@@ -41,6 +41,7 @@ public class ProductCommand {
 	private int shopping_exist;
 	
 	private int product_cnt; //»óÇ° ¼ö
+	private String[] brandSearch;
 	
 	public int getCategory_num() {
 		return category_num;
@@ -209,6 +210,14 @@ public class ProductCommand {
 	}
 	public void setBrand_num(int brand_num) {
 		this.brand_num = brand_num;
+	}
+	
+	
+	public String[] getBrandSearch() {
+		return brandSearch;
+	}
+	public void setBrandSearch(String[] brandSearch) {
+		this.brandSearch = brandSearch;
 	}
 	@Override
 	public String toString() {

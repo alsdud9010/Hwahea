@@ -32,7 +32,7 @@
 
 /*Dotted Map*/
 .footer-v1 .footer .map-img {
-	background: url(../../img/map-img.png) 5px 60px no-repeat;
+	background: url(../../img/cosmetics.png) 185px 98px no-repeat
 }
 
 /*Copyright*/
@@ -66,4 +66,29 @@
 	.footer-v1 .footer-socials {
 		text-align: left;
 	}
+}
+
+/*ÇªÅÍ css Ãß°¡*/
+img.footer-logo{
+	width:150px;
+	height:90px;
+	margin:85px 0 0 0;
+}
+
+.img-text1{
+	font-size:14px;
+}
+
+.img-text2{
+	font-size:18px;
+	font-weight:bold;
+}
+
+.md-margin-bottom-40 p{
+	margin:0;
+	padding-left:20px;
+}
+
+.talk-content{
+	color:#eee;
 }

@@ -13,5 +13,6 @@ public interface ProductBoardService {
 	public List<ProductBoardCommand> selectBoardList(Map<String,Object> map);
 	public int selectBoardCount();
 
-	//문의답변
+	//답변등록
+	public void insertPBReply(ProductBoardCommand productBoardCommand);
 }

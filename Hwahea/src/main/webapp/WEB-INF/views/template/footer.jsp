@@ -8,12 +8,10 @@
 				<!-- About -->
 				<div class="col-md-3 md-margin-bottom-40">
 					<a href="index.html"> <img id="logo-footer" class="footer-logo"
-						src="${pageContext.request.contextPath}/assets/img/logo2-default.png" alt="">
+						src="${pageContext.request.contextPath}/assets/img/logo2.png" alt="">
 					</a>
-					<p>About Unify dolor sit amet, consectetur adipiscing elit.
-						Maecenas eget nisl id libero tincidunt sodales</p>
-					<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus,
-						dignissim sed adipiscing ut, placerat non arcu.</p>
+					<p class="img-text1">화장품, 똑똑하게 구매하자 </p>
+					<p class="img-text2">화장품을 해석하다, 화해</p>
 				</div>
 				<!--/col-md-3-->
 				<!-- End About -->
@@ -21,15 +19,12 @@
 				<div class="col-md-3 md-margin-bottom-40">
 					<div class="posts">
 						<div class="headline">
-							<h2>Latest Posts</h2>
+							<h2>Hwahea's TALK</h2>
 						</div>
 						<ul class="list-unstyled latest-list">
-							<li><a href="#">Incredible content</a> <small>May 8,
-									2014</small></li>
-							<li><a href="#">Best shoots</a> <small>June 23, 2014</small>
-							</li>
-							<li><a href="#">New Terms and Conditions</a> <small>September
-									15, 2014</small></li>
+							<li><span class="talk-content">새로 개편된 성분사전을 만나보세요!</span><small>2018.09.15</small></li>
+							<li><span class="talk-content">각종 이벤트에 참여해보세요!</span><small>2018.09.13</small></li>
+							<li><span class="talk-content">공지사항을 참고해주세요!</span><small>2018.09.10</small></li>
 						</ul>
 					</div>
 				</div>
@@ -41,15 +36,15 @@
 						<h2>Useful Links</h2>
 					</div>
 					<ul class="list-unstyled link-list">
-						<li><a href="#">About us</a> <i class="fa fa-angle-right"></i>
+						<li><a href="${pageContext.request.contextPath}/ranking/ranking_main.do">랭킹 RANKING</a> <i class="fa fa-angle-right"></i>
 						</li>
-						<li><a href="#">Portfolio</a> <i class="fa fa-angle-right"></i>
+						<li><a href="${pageContext.request.contextPath}/shop/shopMain.do">쇼핑 SHOPPING</a> <i class="fa fa-angle-right"></i>
 						</li>
-						<li><a href="#">Latest jobs</a> <i class="fa fa-angle-right"></i>
+						<li><a href="${pageContext.request.contextPath}/plus/plusMain.do">화플 HWAHEA PLUS+</a> <i class="fa fa-angle-right"></i>
 						</li>
-						<li><a href="#">Community</a> <i class="fa fa-angle-right"></i>
+						<li><a href="${pageContext.request.contextPath}/event/eventMain.do">이벤트 EVENT</a> <i class="fa fa-angle-right"></i>
 						</li>
-						<li><a href="#">Contact us</a> <i class="fa fa-angle-right"></i>
+						<li><a href="${pageContext.request.contextPath}/notice/noticeList.do">공지사항 NOTICE</a> <i class="fa fa-angle-right"></i>
 						</li>
 					</ul>
 				</div>
