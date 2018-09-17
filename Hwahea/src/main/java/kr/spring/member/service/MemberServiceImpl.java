@@ -33,6 +33,11 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	@Override
+	public List<MemberCommand> memberDetailList() {
+		return memberMapper.memberDetailList();
+	}
+	
+	@Override
 	public ReviewCommand selectReview(String re_id) {
 		return memberMapper.selectReview(re_id);
 	}
@@ -52,6 +57,8 @@ public class MemberServiceImpl implements MemberService{
 		memberMapper.delete(m_id);
 		memberMapper.deleteDetail(m_id);
 	}
+
+	
 
 
 }

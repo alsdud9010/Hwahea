@@ -9,6 +9,7 @@ public interface MemberService {
 	public void insert(MemberCommand member);
 	public MemberCommand selectMember(String m_id);
 	public List<MemberCommand> memberDetail(String m_id);
+	public List<MemberCommand> memberDetailList();
 	public ReviewCommand selectReview(String re_id);
 	public MemberCommand selectCart(String m_id);
 	public void update(MemberCommand member);

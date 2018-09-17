@@ -175,23 +175,22 @@
 		</c:if>
 		<c:if test="${count>0 }">
 		<div class="review">
-		<c:forEach var="review" items="${list }">
-		<c:forEach var="member" items="${member }">
+		<c:forEach var="review" items="${list }"  varStatus="status">
 			<div id="writer">
 				<table>
 					<tr>
 						<td rowspan="3" id="w_profile"><img src="${pageContext.request.contextPath}/assets/img/user.png"></td>
-						<td id="nick">${member.m_id }</td>
+						<td id="nick">${member[status.index].m_id }</td>
 					</tr>
 					<tr>
-						<td id="type">${member.m_age } / 
-						<c:if test="${member.m_skintype==0 }">건성</c:if>
-						<c:if test="${member.m_skintype==1 }">중성</c:if>
-						<c:if test="${member.m_skintype==2 }">지성</c:if>
-						<c:if test="${member.m_skintype==3 }">복합성</c:if>
-						<c:if test="${member.m_atopy==1 }">/ 아토피</c:if>
-						<c:if test="${member.m_pimple==1 }">/ 여드름</c:if>
-						<c:if test="${member.m_susceptilbility==1 }">/ 민감성</c:if>
+						<td id="type">${member[status.index].m_age } / 
+						<c:if test="${member[status.index].m_skintype==0 }">건성</c:if>
+						<c:if test="${member[status.index].m_skintype==1 }">중성</c:if>
+						<c:if test="${member[status.index].m_skintype==2 }">지성</c:if>
+						<c:if test="${member[status.index].m_skintype==3 }">복합성</c:if>
+						<c:if test="${member[status.index].m_atopy==1 }">/ 아토피</c:if>
+						<c:if test="${member[status.index].m_pimple==1 }">/ 여드름</c:if>
+						<c:if test="${member[status.index].m_susceptilbility==1 }">/ 민감성</c:if>
 						</td>
 					</tr>
 				</table>
@@ -272,14 +271,13 @@
 			<div id="like">    
 				<ul>
 					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
-					<li class="like_re" data-num=${review.re_num } data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
+					<li class="like_re" data-id=${member[status.index].m_id } data-num=${review.re_num } data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
 				</ul>
 			</div>
+			<hr>
 		</div>
-		</c:forEach><!-- member  -->
 		</c:forEach>
-		<hr>
-		</div><!-- /review -->
+		</div>
 		</c:if>
 		<!-- 리뷰 1개 끝 -->
 		</div>
@@ -305,7 +303,7 @@
 					<hr>
 					<!-- 작성자 정보 -->
 					<div class="writer">
-						<table>
+						<%-- <table>
 							<tr>
 								<td rowspan="3" id="w_profile"><img src="${pageContext.request.contextPath}/assets/img/user.png"></td>
 								<td id="nick">닉네임</td>
@@ -317,7 +315,7 @@
 								<td id="recnt">리뷰 xx개</td>
 								<td id="bookmark"><img src="${pageContext.request.contextPath}/assets/img/user_like.png"></td>
 							</tr> 
-						</table>
+						</table> --%>
 					</div>
 					<div id="review_append"></div><!-- 리뷰 1개를 붙일 곳 -->
 					<!-- 신고 모달 시작 -->
@@ -331,14 +329,14 @@
 								<form>
 								<div class="modal-body">
 									<div id="momo">
-									<div><input type="radio" name="radio"><label>광고, 홍보 / 거래 시도</label></div>
-									<div><input type="radio" name="radio"><label>과도한 오타, 반복적 표현 사용</label></div>
-									<div><input type="radio" name="radio"><label>욕설, 음란어 사용</label></div>
-									<div><input type="radio" name="radio"><label>제품 미사용 / 리뷰 내용과 다른 제품 선택</label></div>
-									<div><input type="radio" name="radio"><label>리뷰 내용과 무관한 사진 첨부</label></div>
-									<div><input type="radio" name="radio"><label>개인 정보 노출</label></div>
-									<div><input type="radio" name="radio"><label>명예훼손 / 저작권 침해</label></div>
-									<div><input type="radio" name="radio"><label>기타 (에티켓 위반 등)</label></div>
+									<div><input type="radio" name="radio" value="1"><label>광고, 홍보 / 거래 시도</label></div>
+									<div><input type="radio" name="radio" value="2"><label>과도한 오타, 반복적 표현 사용</label></div>
+									<div><input type="radio" name="radio" value="3"><label>욕설, 음란어 사용</label></div>
+									<div><input type="radio" name="radio" value="4"><label>제품 미사용 / 리뷰 내용과 다른 제품 선택</label></div>
+									<div><input type="radio" name="radio" value="5"><label>리뷰 내용과 무관한 사진 첨부</label></div>
+									<div><input type="radio" name="radio" value="6"><label>개인 정보 노출</label></div>
+									<div><input type="radio" name="radio" value="7"><label>명예훼손 / 저작권 침해</label></div>
+									<div><input type="radio" name="radio" value="8"><label>기타 (에티켓 위반 등)</label></div>
 									</div>
 								</div>
 								<div class="modal-footer"> 
@@ -366,7 +364,7 @@
 						</div>
 						<!-- 댓글 출력 끝 -->
 						<!-- 대댓글 -->
-						<div class="prere_back">
+						<%-- <div class="prere_back">
 							<div class="pmodal_rere">
 								<div class="pmodal_rpro">
 									<span class="prere_depth">┗</span>
@@ -405,7 +403,7 @@
 								</div>
 								<div class="margin-bottom-20"><hr class="hr-md"> </div>
 							</div>
-						</div>
+						</div> --%>
 					</div>
 					<!-- 화해플러스 모달 댓글 끝-->
 				</div>

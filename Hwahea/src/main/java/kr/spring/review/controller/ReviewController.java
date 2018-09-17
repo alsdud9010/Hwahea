@@ -50,7 +50,7 @@ public class ReviewController {
 	
 	//==============================목록 출력하기->****리뷰만!!!!****
 	@RequestMapping("/review/productInfo.do")
-	public ModelAndView getList(ReviewCommand reviewCommand, @RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
+	public ModelAndView getList(@RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<currentPage>> : "+currentPage);
@@ -72,7 +72,7 @@ public class ReviewController {
 		if(count > 0) {
 			list = reviewService.selectList(map);
 			
-			member = memberService.memberDetail(reviewCommand.getRe_id());
+			member = memberService.memberDetailList();
 			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
@@ -119,18 +119,27 @@ public class ReviewController {
 	//==============================리뷰 1개 상세 보기 
 	@RequestMapping("/review/oneReview.do")
 	@ResponseBody
-	public Map<String,Object> oneReview(@RequestParam("re_num") int re_num, ReviewCommand reviewCommand){
+	public Map<String,Object> oneReview(@RequestParam("re_num") int re_num, @RequestParam("re_id") String re_id){
 		
 		if(log.isDebugEnabled()) {
-			log.debug("<<reviewCommand>> : "+reviewCommand);
+			log.debug("<<re_num>> : "+re_num);
+			log.debug("<<re_id>> : "+re_id);
 		}
 		
 		
 		List<ReviewCommand> list = null;
+		List<MemberCommand> member = null;
+		
 		list = reviewService.selectReview(re_num);
+		member = memberService.memberDetail(re_id);
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>> : "+member);
+		}
 		
 		Map<String,Object> mapJson = new HashMap<String,Object>();
 		mapJson.put("list", list);
+		mapJson.put("member", member);
 		
 		return mapJson;
 	}
