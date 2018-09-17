@@ -587,7 +587,7 @@ $(document).ready(function(){
 					<li><i class="search fa fa-book search-btn"
 							onclick="location.href='${pageContext.request.contextPath}/dictionary/dictionary.do'">
 						 성분사전
-						</i></a>
+						</i>
 						</li>
 					<li><i class="search fa fa-search search-btn"> 검색</i>
 						<div class="search-open">
