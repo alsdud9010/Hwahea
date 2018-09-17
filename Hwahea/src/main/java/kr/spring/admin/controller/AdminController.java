@@ -98,7 +98,7 @@ public class AdminController {
 		List<AdminBrandCommand> list = null;
 		
 		if(count > 0) {
-			list = adminBrandService.selectBrandList(map);
+			list = adminBrandService.selectBrandList();
 			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
@@ -119,10 +119,10 @@ public class AdminController {
 	public ModelAndView viewImageBrand(@RequestParam("brand_num") int brand_num) {			
 		AdminBrandCommand brand = adminBrandService.selectBrand(brand_num);				
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("brandImageView");	//클래스호출
+		mav.setViewName("imageView");	//클래스호출
 		//속성명			속성값(byte[]의 데이터)
-		mav.addObject("brand_image",brand.getBrand_image());
-		mav.addObject("image_name",brand.getImage_name());
+		mav.addObject("imageFile",brand.getBrand_image());
+		mav.addObject("filename",brand.getImage_name());
 	
 		return mav;
 		
@@ -233,7 +233,7 @@ public class AdminController {
 		List<AdminCategoryCommand> list2 = null;
 		
 		if(count > 0) {
-			list2 = adminCategoryDetailService.selectCateDetailList(map);
+			list2 = adminCategoryDetailService.selectCateDetailList();
 			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list2>> : " + list2);
@@ -259,9 +259,25 @@ public class AdminController {
 	//화장품 등록 폼
 	@RequestMapping(value="/cosmetic/adminCosmeticRegister.do",
 					method=RequestMethod.GET)
-	public String formCosmeticRegister() {
+	public ModelAndView formProcessCosmetic() {
 		
-		return "cosmetic/adminCosmeticRegister";
+		List<AdminBrandCommand> brandList = null;
+		List<AdminCategoryCommand> categoryList  = null;
+		
+		brandList = adminCosmeticService.selectBrandList();
+		categoryList = adminCategoryDetailService.selectCateDetailList();
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<brandList>> : " + brandList);
+			log.debug("<<categoryList>> : " + categoryList);
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("adminCosmeticList");
+		mav.addObject("brandList", brandList);
+		mav.addObject("categoryList", categoryList);
+		
+		return mav;
 	}
 	
 	//화장품 등록 데이터 전송
@@ -675,11 +691,11 @@ public class AdminController {
 		public ModelAndView viewImageProduct(@RequestParam("p_num") int p_num) {
 			AdminProductCommand product = adminProductService.selectProduct(p_num);
 			ModelAndView mav = new ModelAndView();
-			mav.setViewName("productImageView");	//클래스호출
+			mav.setViewName("imageView");	//클래스호출
 			//속성명			속성값(byte[]의 데이터)
-			mav.addObject("p_image",product.getP_image());
-			mav.addObject("p_photo",product.getP_photo());
-
+			mav.addObject("imageFile",product.getP_image());
+			mav.addObject("filename",product.getP_photo());
+			
 			return mav;
 		}
 	

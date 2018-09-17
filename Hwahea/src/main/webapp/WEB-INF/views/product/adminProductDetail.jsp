@@ -31,19 +31,10 @@ table{
 			<div class="x_title">
 				<div class="clearfix"></div>
 			</div>
-			<div>
-			
-			<c:if test="${fn:endsWith(product.p_photo,'.jpg') || 
-	              fn:endsWith(product.p_photo,'.JPG') ||
-	              fn:endsWith(product.p_photo,'.gif') ||
-	              fn:endsWith(product.p_photo,'.GIF') ||
-	              fn:endsWith(product.p_photo,'.png') ||
-	              fn:endsWith(product.p_photo,'.PNG')}">
-				<img src="productImageView.do?p_num=${product.p_num }" class="col-md-6 col-sm-6 col-xs-6 size-select">
-				</c:if>
-	
+			<div class="col-md-6 col-sm-6">
+				<img src="productImageView.do?p_num=${product.p_num }" class="img-responsive">
 			</div>
-			<div class="col-md-6 col-sm-6 col-xs-6" style="text-align:center;">
+			<div class="col-md-6 col-sm-6" style="text-align:center;">
                     <table class="table table-bordered table-detail ">
                     <tbody> 
 	                   <tr> 
