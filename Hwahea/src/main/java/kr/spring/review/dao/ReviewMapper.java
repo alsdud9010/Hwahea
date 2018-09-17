@@ -26,9 +26,13 @@ public interface ReviewMapper {
 			+ "(review_seq.nextval, 1, #{re_id}, #{re_rate}, #{re_good}, #{re_bad}, #{re_tip}, #{re_uploadbyte1}, #{re_uploadbyte2}, #{re_uploadbyte3}, #{re_filename1}, #{re_filename2}, #{re_filename3}, #{re_ip}, SYSDATE)")
 	public void insert(ReviewCommand review);
 	
+	//리뷰 상세보기(리스트)
+	@Select("SELECT * FROM review WHERE re_num=#{re_num}")
+	public List<ReviewCommand> selectReview(Integer re_num);
+	
 	//리뷰 상세보기
-	@Select("SELECT * FROM review WHERE num=21")
-	public ReviewCommand selectReview(Integer re_num);
+	@Select("SELECT * FROM review WHERE re_num=#{re_num}")
+	public ReviewCommand selectReview2(Integer re_num);
 	
 	//리뷰 수정하기
 	public void update(ReviewCommand review);
@@ -49,7 +53,7 @@ public interface ReviewMapper {
 	
 	//댓글 달기
 	@Insert("INSERT INTO review_reply (rere_num, re_id, rere_ip, rere_content, rere_regdate, re_num) VALUES "
-			+ "(review_reply_seq.nextval, #{re_id}, #{rere_ip}, #{rere_content}, SYSDATE, 21)")
+			+ "(review_reply_seq.nextval, #{re_id}, #{rere_ip}, #{rere_content}, SYSDATE, #{re_num})")
 	public void insertReply(ReviewReplyCommand reviewReply);
 	
 	//댓글 수정

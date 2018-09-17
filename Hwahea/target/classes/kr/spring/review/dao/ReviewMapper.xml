@@ -27,7 +27,7 @@
 			b.*, 
 			r.re_id
 		FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a);
-	</select> 
+	</select>
 	
 	<select id="selectRowCount" parameterType="map" resultType="integer">
 		SELECT count(*) FROM review
@@ -49,7 +49,7 @@
 	<select id="selectListReply" parameterType="map" resultType="reviewReplyCommand">
 		SELECT rere_num, rere_content, TO_CHAR(rere_regdate,'YYYY-MM-DD HH24:MI:SS') rere_regdate, re_num, re_id FROM 
 			(SELECT a.*, rownum rnum FROM 
-			(SELECT * FROM review_reply WHERE re_num=21 ORDER BY rere_regdate DESC)a)
+			(SELECT * FROM review_reply WHERE re_num=#{re_num} ORDER BY rere_regdate DESC)a)
 			<![CDATA[WHERE rnum>=#{start} AND rnum<=#{end}]]>
 	</select>
 	

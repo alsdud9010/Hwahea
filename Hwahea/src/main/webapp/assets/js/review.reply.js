@@ -1,11 +1,22 @@
 $(document).ready(function(){
 	var flag=0;
-	
 
 	//=============================================================================리뷰 댓글 부분
 	var currentPage;
 	var count;
 	var rowCount;
+	var re_num;
+	
+	//모달창 클릭 시 
+	$(document).on('click','.like_re',function(){
+		re_num = $(this).attr('data-num');
+		
+		//기존 목록 초기화 
+		$('.pmodal_reback').empty();
+		
+		//초기 데이터 (목록) 호출
+		selectData(1,re_num);
+	});
 	
 	//댓글 목록
 	function selectData(pageNum, re_num){
@@ -17,8 +28,6 @@ $(document).ready(function(){
 		}
 		//로딩 이미지 노출
 		$('#loading').show();
-		
-		
 		
 		$.ajax({
 			type:'post',
@@ -34,12 +43,15 @@ $(document).ready(function(){
 				rowCount = data.rowCount;
 				var list = data.list;
 				
-				/*if(count < 0 || list == null){
+				if(count < 0 || list == null){
 					alert('목록 호출 오류 발생!');
-				}else{*/
-				if(re_num==21){
+				}else if(count = 0){
+					output+='<div class="pmodal_rere">';
+					output+='	<div>댓글이 없습니다.</div></div></div>';
+				}else{
 					$(list).each(function(index,item){
 						var output = '<div class="pmodal_rere"><div class="pmodal_rpro">';
+						output += '<input type="hidden" id="re_num" value="'+re_num+'">';
 						//이미지 변경하기!!!!!!!!!!!!!!!!!
 						output += '<img src="../assets/img/plus/profile.png">';
 						output += '<span class="pmodal_wrere">'+item.re_id+'</span>';
@@ -56,8 +68,6 @@ $(document).ready(function(){
 						output += '<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-id="'+item.re_id+'">답글달기</a>';
 						output += '</div></div><div class="margin-bottom-20"><hr class="hr-md"></div></div>';
 					
-						
-						
 						//문서 객체에 추가
 						$('.pmodal_reback').append(output);
 					});
@@ -89,7 +99,7 @@ $(document).ready(function(){
 	
 	
 	//댓글창 유효성 체크 + 댓글 등록
-	$('#reply_form').submit(function(event){
+	$(document).on('submit','#reply_form',function(event){
 		if($('#re_content').val()==''){
 			alert('댓글 내용을 입력해주세요!');
 			$('#re_content').focus();
@@ -113,13 +123,13 @@ $(document).ready(function(){
 					//폼 초기화
 					initForm();
 					//목록 호출
-					selectData(1, 21);
+					selectData(1,$('#re_num').val());
 				}else{
 					alert('등록시 오류 발생!');
 				}
 			},
 			error:function(){
-				alert('등록시 네트워크 오류 발생!');
+				alert('댓글 등록시 네트워크 오류 발생!');
 			}
 		});		
 		//기본 이벤트 제거
@@ -152,7 +162,7 @@ $(document).ready(function(){
 					alert('로그인해야 삭제할 수 있습니다.');
 				}else if(data.result=='success'){
 					alert('삭제 완료!');
-					selectData(1,21);
+					selectData(1,re_num);
 				}else if(data.result=='wrongAccess'){
 					alert('타인의 글은 삭제할 수 없습니다.');
 				}else{
@@ -182,7 +192,7 @@ $(document).ready(function(){
 		//부모댓글의 작성자 아이디
 		var id = $(this).attr('data-id');
 		
-		//댓글쓰기폼 UI
+		//답글쓰기폼 UI
 		var rereply = '<form id="pre_form">';
 		rereply += '<hr>';
 		rereply += '	<input type="hidden" name="re_num" value="'+re_num+'" id="re_num">';//부모 댓글 번호
@@ -193,7 +203,7 @@ $(document).ready(function(){
 		rereply += '<span class="pmodal_wrere">'+$('#user_id').val()+'</span>';
 		rereply += '<span class="plusGrade"><input type="button" value="VIP"></span>';
 		rereply += '</div>';
-		rereply += '	<textarea rows="3" cols="75" name="re_content" id="prere_content" class="pmodal_rtext2" placeholder="내용을 입력해주세요."></textarea>';
+		rereply += '	<textarea rows="3" cols="75" name="rere_content" id="prere_content" class="pmodal_rtext2" placeholder="내용을 입력해주세요."></textarea>';
 		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';
 		rereply += '	<div id="pre_second"><input type="submit" value="등록"> <input type="button" value="취소" class="prere_reset"></div>';
 		rereply += '</div>';
@@ -218,7 +228,7 @@ $(document).ready(function(){
 			var remain = 300 - inputLength;
 
 			remain += '/300';
-			if($(this).attr('id')=='pre_content'){
+			if($(this).attr('id')=='re_content'){
 				//등록폼 글자수
 				$('.letter-count').text(remain);
 			}else if($(this).attr('id')=='rere_content'){
@@ -261,7 +271,7 @@ $(document).ready(function(){
 		var modifyUI = '<form id="mre_form">';
 			modifyUI += '<input type="hidden" name="rere_num" id="rere_num" value="'+re_num+'">';
 			modifyUI += '<input type="hidden" name="re_id" id="re_id" value="'+re_id+'">';
-			modifyUI += '<textarea rows="3" cols="75" name="rere_content" id="rere_content" class="rep-content">'+content+'</textarea><br>';
+			modifyUI += '<textarea rows="3" cols="75" name="rere_content" id="mre_content" class="rep-content">'+content+'</textarea><br>';
 			modifyUI += '<div id="mre_first"><span class="letter-count">300/300</span></div><br>';
 			modifyUI += '<div id="mre_second">';
 			modifyUI += '	<input type="submit" value="수정" id="'+re_id+'">';
@@ -307,13 +317,11 @@ $(document).ready(function(){
 	
 	//댓글 수정하기
 	$(document).on('submit','#mre_form',function(event){
-		if($('#rere_content').val() == ''){
+		if($('#rere_content',this).val() == ''){
 			alert('내용을 입력하세요!');
-			$('#rere_content').focus();
+			$('#rere_content',this).focus();
 			return false;
 		}
-		
-		
 		//폼에 입력한 데이터 반환
 		var data = $(this).serialize();
 
@@ -332,7 +340,7 @@ $(document).ready(function(){
 					$('#mre_form').parent().find('p').text($('#rere_content').val());				
 					//수정폼 초기화
 					initModifyForm();
-					selectData(1,21);
+					selectData(1,re_num);
 					
 				}else if(data.result == 'wrongAccess'){
 					alert('타인의 글은 수정할 수 없습니다.');
@@ -345,11 +353,7 @@ $(document).ready(function(){
 		//기본이벤트 제거
 		event.preventDefault();
 	});
-	
-	
-	
-	//초기 데이터 (목록) 호출
-	selectData(1,21);
+
 	
 	
 });

@@ -20,7 +20,10 @@ public interface ReviewService {
 	public void insert(ReviewCommand review);
 	
 	//리뷰 상세보기
-	public ReviewCommand selectReview(Integer re_num);
+	public List<ReviewCommand> selectReview(Integer re_num);
+	
+	//리뷰 상세보기
+	public ReviewCommand selectReview2(Integer re_num);
 	
 	//리뷰 수정하기
 	public void update(ReviewCommand review);
