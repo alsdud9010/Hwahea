@@ -32,10 +32,10 @@ $(document).ready(function(){
 						<c:if test="${!empty user_id && user_auth!=5}">
 							<li><i style="font-style:normal;">
 							<c:choose>
-							  <c:when test="${user_auth==1}"><span class="grade_welcome"><input type="button"value="welcome"></span></c:when>
-							  <c:when test="${user_auth==2}"><span class="grade_family"><input type="button"value="family"></span></c:when>
-							  <c:when test="${user_auth==3}"><span class="grade_vip"><input type="button"value="vip"></span></c:when>
-							  <c:when test="${user_auth==4}"><span class="grade_vvip"><input type="button"value="vvip"></span></c:when>						  
+							  <c:when test="${user_auth==1}"><span class="grade_welcome"><input type="button" value="welcome"></span></c:when>
+							  <c:when test="${user_auth==2}"><span class="grade_family"><input type="button" value="family"></span></c:when>
+							  <c:when test="${user_auth==3}"><span class="grade_vip"><input type="button" value="vip"></span></c:when>
+							  <c:when test="${user_auth==4}"><span class="grade_vvip"><input type="button" value="vvip"></span></c:when>						  
 							</c:choose>   
 							 ${user_id} 님</i>
 							<li><a href="${pageContext.request.contextPath}/main/logout.do"> <i class="fa fa-user"> 로그아웃</i>
