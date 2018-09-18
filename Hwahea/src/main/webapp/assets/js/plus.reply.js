@@ -177,7 +177,7 @@ $(document).ready(function(){
 									output+='		<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
 									if($('#user_id').val()==item.hpre_id){
 										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
-										output+='		<span><input type="button" value="수정">';
+										output+='		<span class="pre_btn"><input type="button" value="수정">';
 										output+='			  <input type="button" value="삭제"></span>';
 									}
 									output+='<div id="pmodal_reform"></div>';
@@ -199,7 +199,7 @@ $(document).ready(function(){
 									if($('#user_id').val()==item.hpre_id){
 										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
 										output+='	<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
-										output+='		<span><input type="button" value="수정">';
+										output+='		<span class="pre_btn"><input type="button" value="수정">';
 										output+='			  <input type="button" value="삭제"></span>';
 									}else{
 										output+='	<a class="pmodal_diff" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
@@ -222,7 +222,7 @@ $(document).ready(function(){
 									if($('#user_id').val()==item.hpre_id){
 										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
 										output+='	<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
-										output+='		<span><input type="button" value="수정">';
+										output+='		<span class="pre_btn"><input type="button" value="수정">';
 										output+='			  <input type="button" value="삭제"></span>';
 									}else{
 										output+='	<a class="pmodal_diff" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';

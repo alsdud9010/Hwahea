@@ -61,7 +61,7 @@ li{
 	list-style:none;
 }
  
-.notice_kind li{
+.notice_menu li{
 	width:33.33333%;
     height: 55px;
     border-left: 1px solid #e6e6e6;
@@ -76,7 +76,7 @@ li{
     letter-spacing:-0.04em;
 }
 
-.notice_kind li:hover{
+.notice_menu li:hover{
    background: #555;
     color: #fff;
 }
@@ -86,7 +86,7 @@ li{
     color: #fff !important;
 }
 
-.notice_kind > li.notice_on:before {
+.notice_menu > li.notice_on:before {
     position: absolute;
     content: '';
     bottom: -5px;

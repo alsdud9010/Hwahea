@@ -398,6 +398,16 @@ li{
 }
 
 /*¸ð´Þ ´ñ±Û*/
+.pre_btn  input[type="button"], .modal-footer input[type="button"]{
+	margin:0px 3px 3px 3px;
+   padding:0px;
+   color:#ffffff !important;
+   background-color:#72c02c;
+   border:1px solid #72c02c;
+   border-radius:4px !important; 
+   padding:5px;
+}
+
 .pmodal_reply{
 	padding-bottom:17px;
 	margin-left:43px;

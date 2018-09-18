@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/notice.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/notice.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/notice.reply.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$(".accordion_banner .accordion_sub").hide();
@@ -34,7 +36,7 @@ $(document).ready(function() {
 			<!-- 공지사항 상단 메뉴바 시작-->
 			<div class="magazine-news">
 				<div class="col-md-12">
-					<ul class="notice_kind col-md-12 margin-bottom-20">
+					<ul class="notice_menu col-md-12 margin-bottom-20">
 						<li onclick="location.href='${pageContext.request.contextPath}/notice/noticeList.do'">공지사항</li>
 						<li onclick="location.href='${pageContext.request.contextPath}/notice/frequent_question.do'">FAQ</li>
 						<li class="notice_on" onclick="location.href='${pageContext.request.contextPath}/notice/my_question.do'">1:1문의</li>
@@ -190,89 +192,75 @@ $(document).ready(function() {
 			
 			<!-- 1:1문의 내용 시작-->
 			<div class="myq-list">
-				<!-- <ul>
-					<li class="myq-nodata">등록하신 1:1 문의가 없습니다.</li>
-				</ul> -->
-					<div class="accordion_banner">
-						<div class="accordion_title">
-						<ul class="faq_list">
-							<li>
-								<span class="myq_arrow">
-									<span class="faq_open"><img src="${pageContext.request.contextPath}/assets/img/shop/down-arrow.png"></span>
-								</span>
-								<span class="myq-date">
-									2018.09.12
-								</span>
-								<span class="myq-status" style="margin: auto 12px;">
-									<strong class="QS01">답변대기</strong>
-								</span>
-								<span class="myq_tit">
-										탈퇴가 안되요...
-								</span>
-							</li>
-						</ul>
-						</div>
-						<div class="accordion_sub myq_txt">
-							<div>
-							<span class="myq-qtit"><strong>문의</strong></span>
-							탈퇴가 안되요... <br>
-							도와주세요 ㅠㅠ<br>
-							탈퇴는 어떻게 하나요?<br>
-							</div>
-						</div>
-						<div class="accordion_title">
-						<ul class="faq_list">
-							<li>
-								<span class="myq_arrow">
-									<span class="myq_open"><img src="${pageContext.request.contextPath}/assets/img/shop/down-arrow.png"></span>
-								</span>
-								<span class="myq-date">
-									2018.09.10
-								</span>
-								<span class="myq-status" style="margin: auto 12px;">
+				<div class="accordion_banner">
+				<c:if test="${count < 0}">
+					<ul>
+						<li class="myq-nodata">등록하신 1:1 문의가 없습니다.</li>
+					</ul> 
+				</c:if>
+				<c:if test="${count > 0}">
+				<c:forEach var="one" items="${list}">
+					<div class="accordion_title" data-num="${one.one_num}">
+					<ul class="faq_list">
+						<li>
+							<span class="myq_arrow">
+								<span class="myq_open"><img src="${pageContext.request.contextPath}/assets/img/shop/down-arrow.png"></span>
+							</span>
+							<span class="myq-date">
+								${one.one_reg_date}
+							</span>
+							<span class="myq-status" style="margin: auto 12px;">
+								<c:if test="${one.reone_cnt > 0}">
 									<strong class="QS02">답변완료</strong>
+								</c:if>
+								<c:if test="${one.reone_cnt == 0}">
+									<strong class="QS01">답변대기</strong>
+								</c:if>
+							</span>
+							<span class="myq_tit">
+								<span>
+									${one.one_title}
 								</span>
-								<span class="myq_tit">
-									<span>
-										탈퇴는 어떻게 하나요?
-									</span>
-								</span>
-							</li>
-						</ul>
-						</div>
-						<div class="accordion_sub myq_txt">
-							<ul style="margin-left: -40px;">
-								<li class="myq-q">
-									<span class="myq-qtit"><strong>문의</strong></span>
-									탈퇴는 어떻게 하나요?<br>
-									알려주세요
-								</li>
-								<li class="myq-a">
-									<span><strong>답변완료</strong></span>
-									<p>
-										반갑습니다. 고객님 <br>
-										화해 온라인몰 1:1 담당자 홍길동 입니다.<br>
-										<br>
-										화해를 이용해 주셔서 감사드립니다.<br>
-										<br>
-										고객님께서 남겨주신 문의글은 미 완성 상태로<br>
-										정확한 내용이 확인 되지 않습니다. <br>
-										<br>
-										다시한번, 본 공간을 통해 문의글을 남겨주시거나 <br>
-										화해 온라인몰 고객센터(1234-5678/평일09~18시)로 <br>
-										전화주시면 상담이 가능합니다. <br>
-										<br>
-										늘 화해와 함께 행복한 시간 되시기를 바랍니다. <br>
-										감사합니다. <br>
-									</p>
-									<div class="myq-phr">
-										문의에 대한 답변이 부족하거나 추가문의사항이 있으시면 새로운 문의사항으로 등록해주세요.
-										<a href="${pageContext.request.contextPath}/notice/my_questionWrite.do" class="go-ask-myq">새로운 문의하기</a>
-									</div>
-								</li>
-							</ul>
-						</div>
+							</span>
+						</li>
+					</ul>
 					</div>
+					<div class="accordion_sub myq_txt">
+						<ul style="margin-left: -40px;">
+							<li class="myq-q">
+								<span class="myq-qtit"><strong>문의</strong></span>
+								${one.one_content}
+							</li>
+							<li class="one_reply">
+							</li>
+							<%-- <li class="myq-a">
+								<span><strong>답변완료</strong></span>
+								<p>
+									반갑습니다. 고객님 <br>
+									화해 온라인몰 1:1 담당자 홍길동 입니다.<br>
+									<br>
+									화해를 이용해 주셔서 감사드립니다.<br>
+									<br>
+									고객님께서 남겨주신 문의글은 미 완성 상태로<br>
+									정확한 내용이 확인 되지 않습니다. <br>
+									<br>
+									다시한번, 본 공간을 통해 문의글을 남겨주시거나 <br>
+									화해 온라인몰 고객센터(1234-5678/평일09~18시)로 <br>
+									전화주시면 상담이 가능합니다. <br>
+									<br>
+									늘 화해와 함께 행복한 시간 되시기를 바랍니다. <br>
+									감사합니다. <br>
+								</p>
+								<div class="myq-phr">
+									문의에 대한 답변이 부족하거나 추가문의사항이 있으시면 새로운 문의사항으로 등록해주세요.
+									<a href="${pageContext.request.contextPath}/notice/my_questionWrite.do" class="go-ask-myq">새로운 문의하기</a>
+								</div> 
+							</li>--%>
+						</ul>
+					</div>
+				</c:forEach>
+				</c:if>
+				</div><!-- End of accordion_banner -->
 			</div>
 			<!-- 1:1문의 내용 끝 -->
 			<div class="nv_btn">

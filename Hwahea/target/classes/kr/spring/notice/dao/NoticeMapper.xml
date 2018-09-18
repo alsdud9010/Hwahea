@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.notice.dao.NoticeMapper">
+	<!-- 공지사항 목록 -->
+	<select id="selectNoticeList" parameterType="map" resultType="noticeCommand">
+	 	SELECT 
+	 		* 
+	 	FROM (SELECT 
+	 		a.*, 
+	 		rownum rnum 
+	 	FROM (SELECT 
+	 		b.* 
+	 	FROM notice b 
+	 	ORDER BY b.notice_num)a)
+		<![CDATA[
+			WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	<!-- FAQ 목록 -->
+	<select id="selectFaqList" parameterType="map" resultType="faqCommand">
+	 	SELECT 
+	 		* 
+	 	FROM (SELECT 
+	 		a.*, 
+	 		rownum rnum 
+	 	FROM (SELECT 
+	 		b.* 
+	 	FROM faq b 
+	 	ORDER BY b.faq_num)a)
+		<![CDATA[
+			WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	<!-- 1:1문의 목록 -->
+	<select id="selectOnetooneList" parameterType="map" resultType="OnetooneCommand">
+	 	SELECT
+			*
+		FROM (SELECT
+			a.*,
+			rownum rnum
+		FROM (SELECT 
+			b.*,
+			r.reone_cnt
+		FROM onetoone b LEFT OUTER JOIN (SELECT one_num, COUNT(*) reone_cnt FROM onetoone_reply GROUP BY one_num)r
+		ON b.one_num = r.one_num
+		ORDER BY b.one_num DESC)a)
+		<![CDATA[
+			WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	
+	<!-- 페이징 처리 -->
+	<select id="selectRowCountNotice" parameterType="map" resultType="integer">
+		SELECT
+			count(*)
+		FROM notice
+	</select>
+	<select id="selectRowCountFaq" parameterType="map" resultType="integer">
+		SELECT
+			count(*)
+		FROM faq
+	</select>
+	<select id="selectRowCountOnetoone" parameterType="map" resultType="integer">
+		SELECT
+			count(*)
+		FROM onetoone
+	</select>
+	
+	<!-- 댓글 목록 -->
+	<select id="selectOnetooneReply" parameterType="map" resultType="onetooneReplyCommand">
+		SELECT
+	  		reone_num,
+	  		reone_content,
+	  		TO_CHAR(reone_date,'YYYY-MM-DD HH24:MI:SS') reone_date,
+	  		one_num,
+	  		m_id
+	  	FROM onetoone_reply
+	  	WHERE one_num = #{one_num}
+	  	ORDER BY reone_num DESC
+	</select>
+</mapper>

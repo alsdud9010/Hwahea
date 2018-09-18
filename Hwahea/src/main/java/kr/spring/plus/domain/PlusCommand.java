@@ -68,12 +68,6 @@ public class PlusCommand {
 	private int ranking;
 	private int hpre_cnt;
 	
-	public void setUpload1(MultipartFile hp_upload1) throws IOException {
-	
-		
-	}
-	
-	
 	public int getHp_num() {
 		return hp_num;
 	}
