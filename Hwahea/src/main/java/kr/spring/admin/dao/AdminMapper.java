@@ -44,9 +44,9 @@ public interface AdminMapper {
 	//»≠¿Â«∞
 	@Select("SELECT * FROM cosmetic")
 	public List<AdminCosmeticCommand> selectCosmeticList();
-	@Insert("INSERT INTO cosmetic(c_code, c_name, c_image, c_photo, c_capacity, c_price, c_ingre, c_rate, c_rank, c_shopping, sysdate)"
-			+ "VALUES(#{c_code}, #{c_name}, #{c_image}, #{c_photo}, #{c_capacity}, #{c_price}, #{c_ingre}, #{c_rate}, #{c_rank}, #{c_shopping}, sysdate)")
-	public void insert(AdminCosmeticCommand cosmetic);
+	@Insert("INSERT INTO cosmetic(c_code, c_name, c_image, c_photo, c_capacity, c_price, c_ingre, c_rate, c_rank, c_shopping, c_reg_date)"
+			+ "VALUES(#{c_code}, #{c_name}, #{c_image}, #{c_photo}, #{c_capacity}, #{c_price}, #{c_ingre}, #{c_rate,jdbcType=VARCHAR}, #{c_rank}, #{c_shopping}, sysdate)")
+	public void insertCosmetic(AdminCosmeticCommand cosmetic);
 	@Select("Select cosmetic_seq.nextval FROM dual")
 	public int selectCosmeticSeq();
 	@Select("SELECT * FROM cosmetic WHERE c_code=#{c_code}")
