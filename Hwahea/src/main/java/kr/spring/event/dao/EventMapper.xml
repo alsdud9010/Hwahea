@@ -47,7 +47,7 @@
 	  		  FROM (SELECT
 	  		  		  *
 	  		  		FROM event_reply
-	  		  		WHERE ere_num = #{ere_num}
+	  		  		WHERE event_num = #{event_num}
 	  		  		ORDER BY ere_num DESC)a)
 	  	<![CDATA[
 	  	WHERE rnum >= #{start} AND rnum <= #{end}

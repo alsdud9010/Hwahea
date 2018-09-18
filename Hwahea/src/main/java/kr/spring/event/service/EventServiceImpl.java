@@ -52,8 +52,7 @@ public class EventServiceImpl implements EventService{
 
 	@Override
 	public void insertReply(EventReplyCommand eventReply) {
-		// TODO Auto-generated method stub
-		
+		eventMapper.insertReply(eventReply);
 	}
 
 }

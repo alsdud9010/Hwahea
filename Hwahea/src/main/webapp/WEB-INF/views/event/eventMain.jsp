@@ -44,7 +44,7 @@
 	                <div class="tab-pane active" id="tabone" role="tabpanel">
 	                  	<ul class="event_list" id="eList">
 	                  	<c:forEach var="event" items="${list}">
-	                  		<c:if test="${event.event_status <= 3}" >
+	                  		<c:if test="${event.event_status <= 3 && event.event_over >= 0}" >
 			                  	<li>
 			                  		<div class="event_img">
 				                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb.PNG">

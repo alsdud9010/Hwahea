@@ -18,7 +18,6 @@ $(document).ready(function(){
    function selectData(pageNum, event_num){
       currentPage = pageNum;
       
-      
       //처음 호출시 해당 ID의 div 내부 내용물 제거
       if(pageNum == 1){
          $('#ere_list').empty();
@@ -35,21 +34,20 @@ $(document).ready(function(){
             count = data.count;
             rowCount = data.rowCount;
             var output = '';
-            
             if(count < 0 || data.list == null){
                alert('댓글 목록 호출 오류!');
                
-            }else if(count = 0){
+            }/*else if(count = 0){
                output+='<li>';
                output+='댓글이 없습니다. </li>';
-            }else{
+            }*/else{
                $(data.list).each(function(index,item){
                   if(event_num == item.event_num){
                      output+='<li>';
                      output+='<span class="ereply_no">'+item.ere_num+'</span>';
                      output+='<p class="ereply_txt">'+item.ere_content+'</p>';
                      output+='<span class="ereply_user">'+user_id+'</span>';
-                     output+='<span class="ereply_date">'+item.ere_reg_date+'</span>';
+                     output+='<span class="ereply_date">'+item.ere_date+'</span>';
                      output+='</li>';
                   }
                });
@@ -73,7 +71,7 @@ $(document).ready(function(){
       }
       
       var data = $(this).serialize();
-      
+     
       //등록
       $.ajax({
          type:'post',
@@ -86,7 +84,6 @@ $(document).ready(function(){
             if(data.result=='logout'){
                alert('로그인해야 작성할 수 있습니다.');
             }else if(data.result == 'success'){
-               
                //목록 호출
                selectData(1,event_num);
                

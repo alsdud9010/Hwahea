@@ -33,7 +33,7 @@ public interface EventMapper {
 	public int selectRowCountReply(Map<String,Object> map);
 	
 	//이벤트 댓글 등록
-	@Insert("INSERT INTO event_reply (ere_num,ere_content,ere_date,event_num,m_id) VALUES (event_reply_seq.nextval,#{ere_content},SYSDATE,#{event_num},#{user_id})")
+	@Insert("INSERT INTO event_reply (ere_num,ere_content,ere_date,event_num,m_id) VALUES (event_reply_seq.nextval,#{ere_content},SYSDATE,#{event_num},#{m_id})")
 	public void insertReply(EventReplyCommand eventReply);
 	
 	
