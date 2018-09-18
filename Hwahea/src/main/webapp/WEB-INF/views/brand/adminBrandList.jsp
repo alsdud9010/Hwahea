@@ -34,8 +34,7 @@
                       	<tr>
                       	<td colspan="4" style="text-align:center;"><h4>등록된 브랜드가 없습니다</h4>
                   		</tr>
-                      </c:if>
-                      <c:if test="${count > 0 }">
+                      </c:if>                
                       <c:forEach var="brand" items="${list }">
                       <tbody style="text-align:left;">
                         <tr>
@@ -47,7 +46,6 @@
 						</tr>
                       </tbody>
                       </c:forEach>
-                      </c:if>
                     </table>
                   </div>
                  
