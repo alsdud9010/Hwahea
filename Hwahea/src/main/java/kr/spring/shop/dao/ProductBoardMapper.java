@@ -11,8 +11,8 @@ import kr.spring.shop.domain.ProductBoardCommand;
 public interface ProductBoardMapper {
 	
 	//상품문의
-	@Insert("INSERT INTO product_board(pb_num,pb_product,pb_id,pb_dateTime,pb_kind,pb_content,pb_lock) "
-			+ "VALUES(product_board_seq.nextval,#{pb_product},#{pb_id},systimestamp,#{pb_kind},#{pb_content},#{pb_lock})")
+	@Insert("INSERT INTO product_board(pb_num,pb_id,pb_dateTime,pb_kind,pb_content,pb_lock) "
+			+ "VALUES(product_board_seq.nextval,#{pb_id},systimestamp,#{pb_kind},#{pb_content},#{pb_lock})")
 	public void insertProductBoard(ProductBoardCommand pbcommand);
 	
 	//문의목록

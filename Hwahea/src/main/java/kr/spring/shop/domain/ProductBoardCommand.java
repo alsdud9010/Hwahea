@@ -19,7 +19,6 @@ public class ProductBoardCommand {
 	@NotEmpty
 	private String pb_content;
 	private int pb_lock;
-	@NotEmpty
 	private int pb_product;
 	
 	//´äº¯

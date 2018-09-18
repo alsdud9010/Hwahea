@@ -70,6 +70,10 @@
 		WHERE rnum>=#{start} AND rnum<=#{end}
  	]]>
   </select>
+  <insert id="orderProductDetail" parameterType="map">
+            INSERT INTO order_detail (order_num,order_product,quantity) 
+            VALUES (#{seqNum},#{product},#{quantity})
+  </insert>
 </mapper>
 
 

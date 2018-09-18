@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.member.domain.MemberCommand;
+import kr.spring.shop.domain.CartCommand;
 import kr.spring.shop.domain.OrderCommand;
 import kr.spring.shop.domain.ProductBoardCommand;
 import kr.spring.shop.domain.ProductCommand;
@@ -238,12 +239,29 @@ public class ProductController {
 
 	//========= 주문완료
 	@RequestMapping("/shop/orderComplete.do")
-	public String processsss() {
+	public ModelAndView process(@RequestParam("order_num") int order_num) {
+		
+		OrderCommand orderInfo = null;
+		List<OrderCommand> orderProductInfo = null;
+		
+		orderInfo = productService.selectOrderInfo(order_num);
+		orderProductInfo = productService.orderProductInfo(order_num);
 
-		return "orderComplete";
+		if(log.isDebugEnabled()) {
+			log.debug("<<orderInfo>> : "+orderInfo);
+			log.debug("<<orderProductInfo>> : "+orderProductInfo);
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("orderComplete");
+		mav.addObject("orderInfo",orderInfo);
+		mav.addObject("orderProductInfo",orderProductInfo);
+
+		return mav;
 	}
 	
 	//=====================================AJAX //
+	//브랜드 검색
 	@RequestMapping("/shop/shopBrandSearch.do")
 	@ResponseBody
 	public Map<String,Object> getList(@RequestParam(value="pageNum",defaultValue="1") int currentPage,
@@ -334,28 +352,94 @@ public class ProductController {
 	//구매하기
 	@RequestMapping("/shop/productOrder.do")
 	@ResponseBody
-	public Map<String,String> productOrder(OrderCommand opcommand
-			,BindingResult result, HttpServletRequest request, HttpSession session,
-			@RequestParam("quantities") String[] quantities,
-			@RequestParam("products") String[] products) {
-
+	public Map<String,Object> productOrder(@ModelAttribute OrderCommand opcommand
+			,BindingResult result, HttpServletRequest request, HttpSession session) {
+				
 		if(log.isDebugEnabled()) {
 			log.debug("<<opcommand>> : "+opcommand);
-			log.debug("<<quantities>> : "+quantities);
-			log.debug("<<products>> : "+products);
+			log.debug("<<orderQuantity>> : "+opcommand.getOrderQuantity());
+			log.debug("<<orderProduct>> : "+opcommand.getOrderProduct());
 		}
 		
-		Map<String,String> map = new HashMap<String,String>();
+		Map<String,Object> map = new HashMap<String,Object>();
+		Map<String,Object> map2 = new HashMap<String,Object>();
+
+		Integer[] orderQuantity = opcommand.getOrderQuantity();
+		Integer[] orderProduct = opcommand.getOrderProduct();
+		
+		int product = 0;
+		int quantity = 0;
 		String user_id = (String) session.getAttribute("user_id");
 		if(user_id == null) {
 			//로그인 안됨
 			map.put("result", "logout");
 		} else {
-			//댓글 등록
-			//productBoardService.insertPBReply(productBoardCommand);
+			//구매하기
+			
+			int seqNum = productService.getSeqNumber();
+			opcommand.setSeqNum(seqNum);
+			productService.orderProduct(opcommand);
+			
+			for(int i=0;i<orderQuantity.length;i++) {
+				product = orderProduct[i];
+				quantity = orderQuantity[i];
+				
+				if(log.isDebugEnabled()) {
+					log.debug("<<product>> : "+product);
+					log.debug("<<quantity>> : "+quantity);
+				}
+
+				map2.put("seqNum", seqNum);
+				map2.put("product", product);
+				map2.put("quantity", quantity);
+				
+				productService.orderProductDetail(map2);
+			}
+
 			map.put("result", "success");
+			map.put("seqNum", seqNum);
 		}
 		return map;
 	}
 
+	//장바구니 등록
+	@RequestMapping("/shop/addCart.do")
+	@ResponseBody
+	public Map<String,Object> productCart(HttpSession session,
+			@RequestParam("quantity") int quantity,
+			@RequestParam("cart_product") int cart_product,
+			@RequestParam("cart_price")int cart_price) {
+				
+		if(log.isDebugEnabled()) {
+			log.debug("<<quantity>> : "+quantity);
+			log.debug("<<cart_product>> : "+cart_product);
+			log.debug("<<cart_price>> : "+cart_price);
+		}
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		int seqCartNum =0;
+		CartCommand cartcommand = null;
+		
+		String user_id = (String) session.getAttribute("user_id");
+		if(user_id == null) {
+			//로그인 안됨
+			map.put("result", "logout");
+		} else {
+			//장바구니 등록
+			cartcommand = new CartCommand();
+			cartcommand.setCart_id(user_id);
+			
+			seqCartNum = productService.getSeqCartNumber();
+			cartcommand.setSeqCartNum(seqCartNum);
+			cartcommand.setQuantity(quantity);
+			cartcommand.setCart_product(cart_product);
+			cartcommand.setCart_price(cart_price);
+			
+			productService.addCart(cartcommand);
+			
+			map.put("result", "success");
+		}
+		return map;
+	}
+	
 }

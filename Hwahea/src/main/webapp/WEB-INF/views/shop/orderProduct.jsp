@@ -25,18 +25,19 @@
 							</ul>
 						</div>
 						<div class="item-info-content">
+							<input type="hidden" name="order_id" value="${user_id}">
 							<c:forEach var="product" items="${productInfo}">
-							<input type="hidden" class="info-content-price" id="productPrice-${product.p_num}" value="${product.p_price}">
-							<input type="hidden" class="info-content-quantity" id="productQuantity-${product.p_num}" value="${quantity}">
-							<input type="hidden" class="info-content-num" id="productNum-${product.p_num}" value="${produt.p_num}">
 							<ul>
 								<li class="info-content-img"><img
 									src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"></li>
 								<li class="info-content-name">${product.p_name} ${product.p_capacity}ml</li>
 								<li class="info-content-quantity" id="productQuantity-${product.p_num}">${quantity}</li>
 								<li id="productPrice-${product.p_num}" style="padding-left:70px;">
-								<fmt:formatNumber value="${product.p_price}" type="number"/>원</li>
+								<fmt:formatNumber value="${product.discount_price}" type="number"/>원</li>
 							</ul>
+							<input type="hidden" class="info-content-price" id="productPrice-${product.p_num}" value="${product.discount_price}">
+							<input type="hidden" class="info-content-quantity2" id="productQuantity-${product.p_num}" value="${quantity}">
+							<input type="hidden" class="info-content-num" id="productNum-${product.p_num}" value="${product.p_num}">
 							</c:forEach>
 						</div>
 					</div>
@@ -47,15 +48,15 @@
 						<div class="buyer-info-head">
 							<ul>
 								<li class="buyer-head-name">이름 *<input
-									class="order-info-input" type="text" placeholder="주문자명" value="${member.m_name}"></li>
-								<li class="buyer-head-phone">휴대폰 *<input
+									class="order-info-input" type="text" id="order_name" placeholder="주문자명" value="${member.m_name}"></li>
+								<li class="buyer-head-phone">휴대폰 *<input id="order_phone1"
 									class="order-info-input buyer-phone-start" type="text"
 									placeholder="010" value="${member.m_phone1}"> - <input
-									class="order-info-input buyer-phone" type="text" value="${member.m_phone2}"> - <input
-									class="order-info-input buyer-phone" type="text" value="${member.m_phone3}">
+									class="order-info-input buyer-phone" id="order_phone2" type="text" value="${member.m_phone2}"> - <input
+									class="order-info-input buyer-phone" id="order_phone3" type="text" value="${member.m_phone3}">
 								</li>
 								<li class="buyer-head-email">이메일 *<input
-									class="order-info-input" type="email"
+									class="order-info-input" type="email" name="buyer_email" id="buyer_email"
 									placeholder="@hwahea.com" value="${member.m_email}"></li>
 							</ul>
 						</div>
@@ -67,24 +68,25 @@
 						<div class="destination-info-content">
 							<ul>
 								<li class="destination-content-name">받는 분 *<input
-									class="order-info-input" type="text" placeholder="주문자명" value="${member.m_takename}"/></li>
+									class="order-info-input" type="text" placeholder="주문자명" id="buyer_name" name="buyer_name" value="${member.m_takename}"/></li>
 								<li class="destination-content-phone">휴대폰 *<input
-									class="order-info-input destination-phone-start" type="text"
-									placeholder="010" value="${member.m_phone1}"/> - <input 
-									class="order-info-input destination-phone" type="text"
+									class="order-info-input destination-phone-start" name="buyer_phone1" type="text" id="buyer_phone1"
+									placeholder="010" value="${member.m_phone1}"/> - <input  
+									class="order-info-input destination-phone" name="buyer_phone2" type="text" id="buyer_phone2"
 									placeholder="1234" value="${member.m_phone2}"/> - <input 
-									class="order-info-input destination-phone" type="text"
+									class="order-info-input destination-phone" name="buyer_phone3" type="text" id="buyer_phone3"
 									placeholder="1234" value="${member.m_phone3}"/>
 								</li>
 								<li class="destination-content-zipcode">배송지* <input
 									class="order-info-input" type="button" class="zipcood-bt" value="우편번호 찾기" onclick="sample6_execDaumPostcode()"> 
-									<input class="order-info-input" id="sample6_postcode" type="text" placeholder="우편번호" value="${member.m_zipcode}"/></li>
+									<input class="order-info-input" id="sample6_postcode" type="text" placeholder="우편번호" id="buyer_zipcode"
+									name="buyer_zipcode" value="${member.m_zipcode}"/></li>
 								<li class="destination-content-address content-address1"><input 
-									class="order-info-input" type="text" id="sample6_address" placeholder="주소" value="${member.m_address1}"/></li>
+									class="order-info-input" type="text" id="sample6_address buyer_address1" name="buyer_address1" placeholder="주소" value="${member.m_address1}"/></li>
 								<li class="destination-content-address"><input 
-									class="order-info-input" type="text" id="sample6_address2" placeholder="상세주소" value="${member.m_address2}"/></li>
+									class="order-info-input" type="text" id="sample6_address2 buyer_address2" name="buyer_address2" placeholder="상세주소" value="${member.m_address2}"/></li>
 								<li class="destination-content-call">배송요청사항<input 
-									class="order-info-input" type="text" placeholder="배송요청사항"/></li>
+									class="order-info-input" type="text" name="order_msg" id="order_msg" value="배송 요청 메시지 없음" placeholder="배송시 요청 메시지 입력"/></li>
 							</ul>
 						</div>
 					</div>
@@ -122,6 +124,7 @@
 									<li style="border-bottom:1px solid #c9c9c9;" id="pointArea2"></li>
 									<li id="total_price" style="font-weight:bold;"></li>
 								</ul>
+							<input type="hidden" name="total_price" id="totalPriceArea" value="">
 							</div>
 						</div>
 					</div>
@@ -133,9 +136,9 @@
 							<%-- <form:radiobutton path="how" value="카드결제" label="카드 결제" checked="checked"/>
 							<form:radiobutton path="how" value="휴대폰결제" label="휴대폰 결제" />
 							<form:radiobutton path="how" value="실시간계좌이체" label="실시간 계좌이체" /> --%>
-							<input type="radio" name="paymentOption" value="카드 결제"><span>카드 결제</span>
-							<input type="radio" name="paymentOption" value="휴대폰 결제"><span>휴대폰 결제</span>
-							<input type="radio" name="paymentOption" value="실시간 계좌이체"><span>실시간 계좌이체</span>
+							<input type="radio" name="how" value="카드 결제"><span>카드 결제</span>
+							<input type="radio" name="how" value="휴대폰 결제"><span>휴대폰 결제</span>
+							<input type="radio" name="how" value="실시간 계좌이체"><span>실시간 계좌이체</span>
 						</div>
 					</div>
 					<div class="orderProduct-button">

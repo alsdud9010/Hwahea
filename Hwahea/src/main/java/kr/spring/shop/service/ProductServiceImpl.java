@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.dao.ProductMapper;
+import kr.spring.shop.domain.CartCommand;
+import kr.spring.shop.domain.OrderCommand;
 import kr.spring.shop.domain.ProductCommand;
 
 @Service("productService")
@@ -68,5 +70,37 @@ public class ProductServiceImpl implements ProductService{
 	public MemberCommand memberInfo(String user_id) {
 		return productMapper.memberInfo(user_id);
 	}
+	@Override
+	public void orderProduct(OrderCommand ordercommand) {
+		productMapper.orderProduct(ordercommand);
+	}
+	@Override
+	public void orderProductDetail(Map<String, Object> map) {
+		productMapper.orderProductDetail(map);
+	}
+	@Override
+	public int getSeqNumber() {
+		return productMapper.getSeqNumber();
+	}
+	@Override
+	public OrderCommand selectOrderInfo(Integer order_num) {
+		return productMapper.selectOrderInfo(order_num);
+	}
+	@Override
+	public List<OrderCommand> orderProductInfo(Integer order_num) {
+		return productMapper.orderProductInfo(order_num);
+	}
+	
+	@Override
+	public int getSeqCartNumber() {
+		return productMapper.getSeqCartNumber();
+	}
+	
+	@Override
+	public void addCart(CartCommand cartcommand) {
+		productMapper.addCart(cartcommand);
+		productMapper.addCartDetail(cartcommand);
+	}
+	
 
 }

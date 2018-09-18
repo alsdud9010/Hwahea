@@ -1,8 +1,11 @@
 package kr.spring.shop.domain;
 
+import java.io.IOException;
 import java.sql.Date;
+import java.util.Arrays;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 public class ProductCommand {
 	private int p_num; //상품번호
@@ -16,9 +19,9 @@ public class ProductCommand {
 	private String brand_name; //브랜드명, 출력 시 조인해서 String형으로 브랜드명 저장
 	@NotEmpty
 	private int brand_num;
-	@NotEmpty
-	private String p_photo1;
-	private String p_photo2;
+	private MultipartFile upload;//업로드 파일1
+	private byte[] p_image;//DB에 저장된 파일
+	private String p_photo;//파일 명
 	private Date p_reg_date;
 	private String p_main_spec; //상품 주요 사항
 	private String p_expiry_date; //사용기한
@@ -40,9 +43,17 @@ public class ProductCommand {
 	private int head_category;
 	private int shopping_exist;
 	
+	private int discount_price;
+	
 	private int product_cnt; //상품 수
 	private String[] brandSearch;
 	
+	public void setUpload(MultipartFile upload) throws IOException {
+	      this.upload = upload;
+	      setP_image(upload.getBytes());
+	      setP_photo(upload.getOriginalFilename());
+	}
+
 	public int getCategory_num() {
 		return category_num;
 	}
@@ -120,18 +131,6 @@ public class ProductCommand {
 	}
 	public void setBrand_name(String brand_name) {
 		this.brand_name = brand_name;
-	}
-	public String getP_photo1() {
-		return p_photo1;
-	}
-	public void setP_photo1(String p_photo1) {
-		this.p_photo1 = p_photo1;
-	}
-	public String getP_photo2() {
-		return p_photo2;
-	}
-	public void setP_photo2(String p_photo2) {
-		this.p_photo2 = p_photo2;
 	}
 	public Date getP_reg_date() {
 		return p_reg_date;
@@ -212,24 +211,54 @@ public class ProductCommand {
 		this.brand_num = brand_num;
 	}
 	
-	
+	public int getDiscount_price() {
+		return discount_price;
+	}
+	public void setDiscount_price(int discount_price) {
+		this.discount_price = discount_price;
+	}
 	public String[] getBrandSearch() {
 		return brandSearch;
 	}
 	public void setBrandSearch(String[] brandSearch) {
 		this.brandSearch = brandSearch;
 	}
+	
+	public byte[] getP_image() {
+		return p_image;
+	}
+
+	public void setP_image(byte[] p_image) {
+		this.p_image = p_image;
+	}
+
+	public String getP_photo() {
+		return p_photo;
+	}
+
+	public void setP_photo(String p_photo) {
+		this.p_photo = p_photo;
+	}
+
+	public MultipartFile getUpload() {
+		return upload;
+	}
+
 	@Override
 	public String toString() {
 		return "ProductCommand [p_num=" + p_num + ", p_name=" + p_name + ", p_price=" + p_price + ", p_capacity="
-				+ p_capacity + ", brand_name=" + brand_name + ", brand_num=" + brand_num + ", p_photo1=" + p_photo1
-				+ ", p_photo2=" + p_photo2 + ", p_reg_date=" + p_reg_date + ", p_main_spec=" + p_main_spec
-				+ ", p_expiry_date=" + p_expiry_date + ", p_how_to=" + p_how_to + ", p_manufacturer=" + p_manufacturer
-				+ ", p_made_in=" + p_made_in + ", p_main_ingredient=" + p_main_ingredient + ", p_test_exist="
-				+ p_test_exist + ", p_attention=" + p_attention + ", content=" + content + ", p_category=" + p_category
-				+ ", p_discount=" + p_discount + ", category_num=" + category_num + ", category_name=" + category_name
-				+ ", category_kind=" + category_kind + ", category_detail_name=" + category_detail_name
-				+ ", category_detail_num=" + category_detail_num + ", head_category=" + head_category
-				+ ", shopping_exist=" + shopping_exist + ", product_cnt=" + product_cnt + "]";
+				+ p_capacity + ", brand_name=" + brand_name + ", brand_num=" + brand_num + ", upload=" + upload
+				+ ", p_image=" + Arrays.toString(p_image) + ", p_photo=" + p_photo + ", p_reg_date=" + p_reg_date
+				+ ", p_main_spec=" + p_main_spec + ", p_expiry_date=" + p_expiry_date + ", p_how_to=" + p_how_to
+				+ ", p_manufacturer=" + p_manufacturer + ", p_made_in=" + p_made_in + ", p_main_ingredient="
+				+ p_main_ingredient + ", p_test_exist=" + p_test_exist + ", p_attention=" + p_attention + ", content="
+				+ content + ", p_category=" + p_category + ", p_discount=" + p_discount + ", category_num="
+				+ category_num + ", category_name=" + category_name + ", category_kind=" + category_kind
+				+ ", category_detail_name=" + category_detail_name + ", category_detail_num=" + category_detail_num
+				+ ", head_category=" + head_category + ", shopping_exist=" + shopping_exist + ", discount_price="
+				+ discount_price + ", product_cnt=" + product_cnt + ", brandSearch=" + Arrays.toString(brandSearch)
+				+ "]";
 	}
+
+	
 }

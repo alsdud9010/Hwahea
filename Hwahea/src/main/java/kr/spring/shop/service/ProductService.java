@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import kr.spring.member.domain.MemberCommand;
+import kr.spring.shop.domain.CartCommand;
+import kr.spring.shop.domain.OrderCommand;
 import kr.spring.shop.domain.ProductCommand;
 
 public interface ProductService {
@@ -26,7 +28,16 @@ public interface ProductService {
 	//orderProduct
 	public List<ProductCommand> productInfo(Integer p_num);
 	public MemberCommand memberInfo(String user_id);
+	public int getSeqNumber();
+	public void orderProduct(OrderCommand ordercommand);
+	public void orderProductDetail(Map<String,Object> map);
 	
 	//orderComplete
+	public OrderCommand selectOrderInfo(Integer order_num);
+	public List<OrderCommand> orderProductInfo(Integer order_num);
 	
+	//장바구니
+	public int getSeqCartNumber();
+	public void addCart(CartCommand cartcommand);
+
 }

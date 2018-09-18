@@ -137,8 +137,61 @@ $(document).ready(function(){
 	
 	//구매하기 클릭
 	$('input.item-buy').click(function(){
-		var quantity = document.getElementById('quantity').value;
-		var p_num = document.getElementById('orderProduct').value;
-		location.href="/Hwahea/shop/orderProduct.do?p_num="+p_num+"&quantity="+quantity;		
+		var user_id = document.getElementById('user_id').value;
+		if(user_id == ''){
+			alert('로그인 후 이용해주세요!');
+			return false;
+		}else{
+			var quantity = document.getElementById('quantity').value;
+			var p_num = document.getElementById('orderProduct').value;
+			location.href="/Hwahea/shop/orderProduct.do?p_num="+p_num+"&quantity="+quantity;		
+		}
 	});
+	
+	//장바구니 등록
+	$('input#item-cart').click(function(event){
+		var quantity = document.getElementById('quantity').value;
+		var cart_product = document.getElementById('orderProduct').value;
+		var price = document.getElementById('orderPrice').value;
+		alert(quantity);
+		alert(cart_product);
+		alert(price);
+		var cart_price = Math.floor(price);
+		alert(cart_price);
+		//등록
+		$.ajax({
+			type:'post',
+			data:{
+				quantity:quantity,
+				cart_product:cart_product,
+				cart_price:cart_price
+			},
+			url:'addCart.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				if(data.result=='logout'){
+					alert('로그인 후 이용해 주세요!');
+				}else if(data.result=='success'){
+					var save_confirm = function ()
+					{
+						if (confirm('장바구니 등록이 완료되었습니다! 쇼핑을 계속하시겠습니까?')) {
+							return false;
+						} else {
+							location.href="/Hwahea/shop/orderProduct.do?";
+						}
+					}
+				}else{
+					alert('장바구니 등록시 오류 발생');
+				}
+			},
+			error:function(){
+				alert('등록시 네트워크 오류 발생!');
+			}
+		});
+		//기본 이벤트 제거
+		event.preventDefault();
+	});
+	
 });

@@ -65,15 +65,14 @@
 									<!-- hidden -->
 									<input type="hidden" id="orderPrice" name="orderPrice" value="${discount}">
 									<input type="hidden" id="orderProduct" name="orderProduct" value="${product.p_num}">
+									<input type="hidden" id="user_id" value="${user_id}">
 								</div>
 							</div>
 							<div class="productView-item-shop-buttons">
 								<input type="number" class="item-quantity" id="quantity" name="quantity" min="1" value="1">
-								<input class="shop-button item-buy"
-									type="button" value="구매하기">
-								<input class="shop-button item-cart" type="button"
-									value="장바구니 담기" onclick="#"> <input class="shop-button item-review"
-									type="button" value="리뷰 보러가기" onclick="#">
+								<input class="shop-button item-buy" type="button" value="구매하기">
+								<input class="shop-button item-cart" id="item-cart" type="button" value="장바구니 담기"> 
+								<input class="shop-button item-review" type="button" value="리뷰 보러가기" onclick="#">
 							</div>
 						</div>
 					</div>
@@ -98,7 +97,7 @@
 							<img class="col-md-8"
 								src="${pageContext.request.contextPath}/assets/img/shop/all_ingredient.png">
 							<div class="col-md-4 shop-all-ingredient-title">
-								<a href="#"><p>
+								<a href="${pageContext.request.contextPath}/dictionary/dictionary.do"><p>
 										전 성분 확인 하기 <span>></span>
 									</p></a>
 							</div>
