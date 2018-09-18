@@ -29,7 +29,7 @@
 							<c:forEach var="product" items="${productInfo}">
 							<ul>
 								<li class="info-content-img"><img
-									src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"></li>
+									src="shopProductImageView.do?p_num=${product.p_num}"></li>
 								<li class="info-content-name">${product.p_name} ${product.p_capacity}ml</li>
 								<li class="info-content-quantity" id="productQuantity-${product.p_num}">${quantity}</li>
 								<li id="productPrice-${product.p_num}" style="padding-left:70px;">

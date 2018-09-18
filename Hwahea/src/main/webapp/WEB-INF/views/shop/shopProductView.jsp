@@ -21,8 +21,7 @@
 				<div class="productView-contents-top">
 					<div class="col-md-2 productView-img">
 						<img
-							src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg"
-							alt="">
+							src="shopProductImageView.do?p_num=${product.p_num}">
 					</div>
 					<div class="col-md-8 productView-intro">
 						<div class="col-md-4 productView-item-top">
@@ -33,8 +32,8 @@
 								</p>
 							</div>
 							<div class="productView-item-wish">
-								<button>
-									<img
+								<button class="wish">
+									<img id="like"
 										src="${pageContext.request.contextPath}/assets/img/shop/not_wish.png">
 								</button>
 							</div>
@@ -158,10 +157,9 @@
 						</div>
 					</div>
 					<div class="productView-middle-preview">
-						<div class="middle-preview-content">
-							<img src="${pageContext.request.contextPath}/assets/img/shop/shoppingTest.jpg">
-							${product.content}
-						</div>
+						<span class="middle-preview-content">
+							${product.p_content}
+						</span>
 					</div>
 					<div class="productView-middle-ask scorll-target" 
 					id="select-tab-ask" data-selected="ask">
@@ -305,7 +303,7 @@
 						</div>
 						<div class="brand-info-content">
 							<div class="brand-info"><a href="#">
-								<img src="${pageContext.request.contextPath}/assets/img/logo2.png"></a>
+								<img src="shopBrandImageView.do?brand_num=${product.brand_num}"></a>
 								<p class="brand-info-name"><a href="#">${product.brand_name}</a></p>
 							</div>
 							<div class="classified-brand-product">
@@ -315,7 +313,7 @@
 									<div class="brand-product">
 										<ul>
 											<li>
-												<img src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg">
+												<img src="shopProductImageView.do?p_num=${product.p_num}">
 											</li>
 											<li class="brand-product-name" style="font-weight:bold;">${brand.p_name}</li>
 											<li class="brand-product-price"><fmt:formatNumber value="${brand.p_price}" type="number"/>원</li>

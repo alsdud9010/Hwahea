@@ -3,6 +3,7 @@ package kr.spring.shop.service;
 import java.util.List;
 import java.util.Map;
 
+import kr.spring.admin.domain.AdminBrandCommand;
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.domain.CartCommand;
 import kr.spring.shop.domain.OrderCommand;
@@ -39,5 +40,8 @@ public interface ProductService {
 	//장바구니
 	public int getSeqCartNumber();
 	public void addCart(CartCommand cartcommand);
+	
+	//이미지
+	public AdminBrandCommand selectBrandImage(Integer brand_num);
 
 }

@@ -134,7 +134,7 @@ $(document).ready(function(){
 			output += '	<div class="pl-info">';
 			output += '	<a href="/Hwahea/shop/shopProductView.do?p_num='+list[i].p_num+'&brand_num='+list[i].brand_num+'"';
 			output += 'class="pl-thumb productsList">';
-			output += '<img src="../assets/img/shop/witch_hazel_astringent.jpg" onerror="common.errorImg(this);"></a>';
+			output += '<img src="/Hwahea/shop/shopProductImageView.do?p_num='+list[i].p_num+'" onerror="common.errorImg(this);"></a>';
 			output += '<div class="pl-name">';
 			output += '<a href="/Hwahea/shop/shopProductView.do?p_num='+list[i].p_num+'&brand_num='+list[i].brand_num+'" class="goodsList">';
 			output += '<span class="pl-brand">'+list[i].brand_name+'</span>';

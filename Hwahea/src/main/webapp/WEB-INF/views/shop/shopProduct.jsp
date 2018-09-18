@@ -64,7 +64,7 @@
 				<div class="pl-info">
 					<a href="${pageContext.request.contextPath}/shop/shopProductView.do?p_num=${productList.p_num}&brand_num=${productList.brand_num}" 
 						class="pl-thumb productsList">
-						<img src="${pageContext.request.contextPath}/assets/img/shop/witch_hazel_astringent.jpg" 
+						<img src="shopProductImageView.do?p_num=${productList.p_num}" 
 						onerror="common.errorImg(this);">
 					</a>
 					<div class="pl-name">

@@ -31,7 +31,7 @@ public class ProductCommand {
 	private String p_main_ingredient; // 주성분
 	private int p_test_exist; //테스트 유무
 	private String p_attention; // 사용시 주의사항
-	private String content; //상품소개글
+	private String p_content; //상품소개글
 	private int p_category; //세부카테고리 저장
 	private int p_discount; //할인율
 	
@@ -186,11 +186,11 @@ public class ProductCommand {
 	public void setP_attention(String p_attention) {
 		this.p_attention = p_attention;
 	}
-	public String getContent() {
-		return content;
+	public String getP_content() {
+		return p_content;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setP_content(String p_content) {
+		this.p_content = p_content;
 	}
 	public int getP_category() {
 		return p_category;
@@ -251,8 +251,8 @@ public class ProductCommand {
 				+ ", p_image=" + Arrays.toString(p_image) + ", p_photo=" + p_photo + ", p_reg_date=" + p_reg_date
 				+ ", p_main_spec=" + p_main_spec + ", p_expiry_date=" + p_expiry_date + ", p_how_to=" + p_how_to
 				+ ", p_manufacturer=" + p_manufacturer + ", p_made_in=" + p_made_in + ", p_main_ingredient="
-				+ p_main_ingredient + ", p_test_exist=" + p_test_exist + ", p_attention=" + p_attention + ", content="
-				+ content + ", p_category=" + p_category + ", p_discount=" + p_discount + ", category_num="
+				+ p_main_ingredient + ", p_test_exist=" + p_test_exist + ", p_attention=" + p_attention + ", p_content="
+				+ p_content + ", p_category=" + p_category + ", p_discount=" + p_discount + ", category_num="
 				+ category_num + ", category_name=" + category_name + ", category_kind=" + category_kind
 				+ ", category_detail_name=" + category_detail_name + ", category_detail_num=" + category_detail_num
 				+ ", head_category=" + head_category + ", shopping_exist=" + shopping_exist + ", discount_price="

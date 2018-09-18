@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import kr.spring.admin.domain.AdminBrandCommand;
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.dao.ProductMapper;
 import kr.spring.shop.domain.CartCommand;
@@ -102,5 +103,8 @@ public class ProductServiceImpl implements ProductService{
 		productMapper.addCartDetail(cartcommand);
 	}
 	
-
+	@Override
+	public AdminBrandCommand selectBrandImage(Integer brand_num) {
+		return productMapper.selectBrandImage(brand_num);
+	}
 }

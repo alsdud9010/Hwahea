@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.admin.domain.AdminBrandCommand;
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.domain.CartCommand;
 import kr.spring.shop.domain.OrderCommand;
@@ -47,6 +48,7 @@ public class ProductController {
 	@Resource
 	private ProductBoardService productBoardService;
 
+		
 	//========= 쇼핑 메인
 	@RequestMapping("/shop/shopMain.do")
 	public ModelAndView process() {
@@ -68,6 +70,7 @@ public class ProductController {
 
 		return mav;
 	}
+	
 	
 	//========= 쇼핑 목록
 	@RequestMapping("/shop/shopProduct.do")
@@ -125,6 +128,32 @@ public class ProductController {
 		
 		return mav;
 	}
+
+	//shopProduct 이미지 출력
+	@RequestMapping("/shop/shopProductImageView.do")
+	public ModelAndView viewImageProduct(@RequestParam("p_num") int p_num) {			
+		ProductCommand product = productService.selectProduct(p_num);				
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");	//클래스호출
+		//속성명			속성값(byte[]의 데이터)
+		mav.addObject("imageFile",product.getP_image());
+		mav.addObject("filename",product.getP_photo());
+
+		return mav;
+	}
+	//shopProduct 이미지 출력
+	@RequestMapping("/shop/shopBrandImageView.do")
+	public ModelAndView viewImageBrand(@RequestParam("brand_num") int brand_num) {			
+		AdminBrandCommand brand = productService.selectBrandImage(brand_num);				
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");	//클래스호출
+		//속성명			속성값(byte[]의 데이터)
+		mav.addObject("imageFile",brand.getBrand_image());
+		mav.addObject("filename",brand.getImage_name());
+
+		return mav;
+	}
+
 
 	//========= 쇼핑제품 상세
 	@RequestMapping("/shop/shopProductView.do")
@@ -186,6 +215,7 @@ public class ProductController {
 		
 		return mav;
 	}
+
 
 	//========= 상품문의 글쓰기 데이터처리
 	@RequestMapping(value="/shop/pbWrite.do", method=RequestMethod.POST)

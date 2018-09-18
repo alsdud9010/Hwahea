@@ -42,20 +42,46 @@ $(document).ready(function(){
 			}
 		});
 	});
-	
-	//문의하기 modal 유효성체크
-	$('#pbWrite_form').submit(function(){
-		var select = $('#select-ask-kind option:selected').val();
-		var lock = document.getElementById('ask-lock');
-	    
-		if(select == "unselect") {
-			alert("문의 유형을 선택해주세요!");
-		    return false;
-		}
+
+	//찜하기
+	//좋아요, 스크랩 누르면 사진 변화
+	var flag = 0;
+	$(document).on('click','.wish',function(event){
+		event.preventDefault();
+		var like = document.getElementById('like');
 		
-		if($('#product-ask-content').val() == ""){
-			alert("문의 내용을 입력해주세요!");
-		    return false;
+		if(flag == 1){
+			//좋아요 해제
+			alert('찜하기 해제!');
+			like.src = '../assets/img/shop/not_wish.png';
+			flag = 0;
+			return false;
+		}
+
+		alert('찜하기 완료!');
+		like.src = '../assets/img/shop/wish.png';
+		flag = 1;
+	});
+	
+	//문의하기 modal 로그인체크 + 유효성체크 
+	$('#pbWrite_form').submit(function(){
+		var user_id = document.getElementById('user_id').value;
+		if(user_id == ''){
+			alert('로그인 후 이용해주세요!');
+			return false;
+		}else{
+			var select = $('#select-ask-kind option:selected').val();
+			var lock = document.getElementById('ask-lock');
+		    
+			if(select == "unselect") {
+				alert("문의 유형을 선택해주세요!");
+			    return false;
+			}
+			
+			if($('#product-ask-content').val() == ""){
+				alert("문의 내용을 입력해주세요!");
+			    return false;
+			}
 		}
 	});
 	
@@ -153,11 +179,7 @@ $(document).ready(function(){
 		var quantity = document.getElementById('quantity').value;
 		var cart_product = document.getElementById('orderProduct').value;
 		var price = document.getElementById('orderPrice').value;
-		alert(quantity);
-		alert(cart_product);
-		alert(price);
 		var cart_price = Math.floor(price);
-		alert(cart_price);
 		//등록
 		$.ajax({
 			type:'post',

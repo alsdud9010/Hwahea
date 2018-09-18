@@ -693,6 +693,13 @@ p.none-product{
 	margin-left:20px;
 }
 
+button.wish{
+	width:100px;
+	height:100px;
+	border:1px solid #000;
+	background-image:url('/Hwahea/assets/img/shop/not_wish.png');
+}
+
 .productView-contents-top .productView-item-wish button{
 	border:0;
 	background:#ffffff;
@@ -1184,6 +1191,7 @@ p.none-product{
 	border-radius:75px !important;
 	border:2px solid #c9c9c9;
 	margin-top:25px;
+	padding:20px;
 }
 
 .brand-info-name{

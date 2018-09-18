@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
+import kr.spring.admin.domain.AdminBrandCommand;
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.shop.domain.CartCommand;
 import kr.spring.shop.domain.OrderCommand;
@@ -60,4 +61,8 @@ public interface ProductMapper {
 	@Insert("INSERT INTO cart_detail (cart_num,cart_product,quantity) "
 			+ "VALUES (#{seqCartNum},#{cart_product},#{quantity})")
 	public void addCartDetail(CartCommand cartcommand);
+	
+	//브랜드이미지
+	@Select("SELECT * FROM brand WHERE brand_num=#{brand_num}")
+	public AdminBrandCommand selectBrandImage(Integer brand_num);
 }
