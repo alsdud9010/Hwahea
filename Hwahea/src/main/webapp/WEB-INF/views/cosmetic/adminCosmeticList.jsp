@@ -47,7 +47,7 @@
 								<c:if test="${cosmetic.c_shopping == 1 }">
 								<td>유</td>
 								</c:if>
-								<td><i class="fa fa-sign-in" onclick="location.href='adminCosmeticDetail.do'"></i>
+								<td><i class="fa fa-sign-in" onclick="location.href='adminCosmeticDetail.do?c_code=${cosmetic.c_code}'"></i>
 								</td>
 							</tr>
 						</tbody>

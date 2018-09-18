@@ -94,6 +94,19 @@ public class AdminController {
 		return mav;
 	}
 	
+	//브랜드 삭제
+	@RequestMapping("/brand/adminBrandDelete.do")
+	public String submitBrandDelete(@RequestParam("brand_num") int brand_num) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<brand_num>> :  " + brand_num);
+		}
+		
+		adminBrandService.deleteBrand(brand_num);
+		
+		return "redirect:/brand/adminBrandList.do";
+	}
+	
 	//브랜드 이미지 출력
 	@RequestMapping("/brand/brandImageView.do")
 	public ModelAndView viewImageBrand(@RequestParam("brand_num") int brand_num) {			
@@ -264,12 +277,12 @@ public class AdminController {
 		
 		AdminCosmeticCommand cosmetic = adminCosmeticService.selectCosmetic(c_code);
 		
-		return new ModelAndView("adminCosmetic","cosmetic",cosmetic);
+		return new ModelAndView("adminCosmeticDetail","cosmetic",cosmetic);
 	}
 	
 	//화장품 삭제
-	@RequestMapping("/cosmetic/adminCosmeticDelete")
-	public String submit(@RequestParam("c_code") String c_code) {
+	@RequestMapping("/cosmetic/adminCosmeticDelete.do")
+	public String submitCosmeticDelete(@RequestParam("c_code") String c_code) {
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<c_code>> : " + c_code);
@@ -278,6 +291,19 @@ public class AdminController {
 		adminCosmeticService.deleteCosmetic(c_code);
 		
 		return "redirect:/cosmetic/adminCosmeticList.do";
+	}
+	
+	//화장품 이미지 출력
+	@RequestMapping("/cosmetic/cosmeticImageView.do")
+	public ModelAndView viewImageCosmetic(@RequestParam("c_code") String c_code) {
+		AdminCosmeticCommand cosmetic = adminCosmeticService.selectCosmetic(c_code);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");	//클래스호출
+		//속성명			속성값(byte[]의 데이터)
+		mav.addObject("imageFile",cosmetic.getC_image());
+		mav.addObject("filename",cosmetic.getC_photo());
+		
+		return mav;
 	}
 	
 	@Resource
@@ -332,17 +358,17 @@ public class AdminController {
 	}
 	
 	//이벤트 이미지 출력
-			@RequestMapping("/event/eventImageView.do")
-			public ModelAndView viewImageEvent(@RequestParam("event_num") int event_num) {
-				AdminEventCommand event = adminEventService.selectEvent(event_num);
-				ModelAndView mav = new ModelAndView();
-				mav.setViewName("imageView");	//클래스호출
-				//속성명			속성값(byte[]의 데이터)
-				mav.addObject("imageFile",event.getEvent_image1());
-				mav.addObject("filename",event.getEvent_filename1());
-				
-				return mav;
-			}
+	@RequestMapping("/event/eventImageView.do")
+	public ModelAndView viewImageEvent(@RequestParam("event_num") int event_num) {
+		AdminEventCommand event = adminEventService.selectEvent(event_num);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");	//클래스호출
+		//속성명			속성값(byte[]의 데이터)
+		mav.addObject("imageFile",event.getEvent_image1());
+		mav.addObject("filename",event.getEvent_filename1());
+
+		return mav;
+	}
 			
 	@Resource
 	private AdminService adminIngredientService;

@@ -32,7 +32,7 @@ public class AdminSerivceImpl implements AdminService {
 
 	@Override
 	public void deleteBrand(Integer brand_num) {
-		// TODO Auto-generated method stub
+		adminBrandMapper.deleteBrand(brand_num);
 		
 	}
 

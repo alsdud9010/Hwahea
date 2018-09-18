@@ -39,9 +39,14 @@
 			</li>
 			<li>
 				<a><i class="fa fa-suitcase"></i> 화장품(cosmetic) <span class="fa fa-chevron-down"></span></a>
-				<ul class="nav child_menu">
-                    <li><a href="${pageContext.request.contextPath }/cosmetic/adminCosmeticRegister.do">화장품 등록</a></li>                 
+				<ul class="nav child_menu">                 
 					<li><a href="${pageContext.request.contextPath }/cosmetic/adminCosmeticList.do">화장품 목록</a></li>
+				</ul>
+			</li>
+			<li>
+				<a><i class="fa fa-plus-circle"></i> 화해 플러스 <span class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">                 
+					<li><a href="#">화해 플러스</a></li>
 				</ul>
 			</li>
 			<li>

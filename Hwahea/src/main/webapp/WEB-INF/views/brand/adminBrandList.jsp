@@ -42,7 +42,9 @@
                           <td><img src="brandImageView.do?brand_num=${brand.brand_num }" class="size-select"></td>
                           <td style="padding-top:70px;">${brand.brand_name }</td>
                           <td style="padding-top:70px;">${brand.brand_reg_date }</td>
-                          <td style="padding-top:70px;"><button type="button" class="btn btn-success btn-xs" onclick="location.href='#'">삭제</button></td>
+                          <td style="padding-top:70px;">
+                          <input type="button" class="btn btn-success btn-xs" value="삭제" onclick="location.href='adminBrandDelete.do?brand_num=${brand.brand_num}'">
+                          </td>
 						</tr>
                       </tbody>
                       </c:forEach>

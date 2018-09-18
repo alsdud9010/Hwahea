@@ -24,9 +24,10 @@ table{
 <div class="right_col" role="main">
 	<div class="">
 	<div class="page-title">
-		<div class="title_left">
-			<h1>쇼핑 상품 상세</h1>
-		</div>
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="title_left">
+				<h1>쇼핑 상품 상세</h1>
+			</div>
 		
 			<div class="x_title">
 				<div class="clearfix"></div>
@@ -101,3 +102,4 @@ table{
              </div>
             </div>
            </div>
+          </div>

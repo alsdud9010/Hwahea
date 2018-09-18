@@ -24,6 +24,8 @@ public interface AdminMapper {
 	public void insertBrand(AdminBrandCommand brand);
 	@Select("SELECT * FROM brand WHERE brand_num=#{brand_num}")
 	public AdminBrandCommand selectBrand(Integer brand_num);
+	@Delete("DELETE FROM brand WHERE brand_num=#{brand_num}")
+	public void deleteBrand(Integer brand_num);
 	
 	//세부 카테고리
 	@Select("SELECT * FROM category_Detail")
