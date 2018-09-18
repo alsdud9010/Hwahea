@@ -257,7 +257,7 @@ public class MemberController {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
 		return "my_cart";
-	}
+	} 
 	//화해쇼핑(주문)  호출
 		@RequestMapping(value="/mypage/my_cartorder.do")
 		public String process(@RequestParam("bc") String bc, HttpSession session,Model model) {

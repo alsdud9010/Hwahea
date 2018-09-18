@@ -17,7 +17,7 @@ public interface MemberService {
 	public ScrapCommand selectScrap(String m_id);
 	public PlusCommand selectScrapPlus(String m_id);
 	/*public List<ReviewCommand> selectScrapReview(String m_id);
-	public List<MemberCommand> selectScrapUser(String re_id);*/
+	public List<MemberCommand> selectScrapUser(String re_id);*/  
 	public List<OrderCommand> selectCartOrder(String m_id);
 	public void update(MemberCommand member);
 	public void delete(String m_id);

@@ -55,7 +55,7 @@ public interface MemberMapper {
 	public List<MemberCommand> selectScrapUser(String re_id);
 	
 	/*주문한 상품 정보 출력*/
-	@Select("SELECT po.*,od.* FROM product_order po, order_detail od WHERE po.order_num=od.order_num AND po.order_id=#{m_id}")
+	@Select("SELECT po.*,od.* FROM product_order po, order_detail od WHERE po.order_num=od.order_num AND po.order_id=#{m_id}") 
 	public List<OrderCommand> selectCartOrder(String m_id);
 	
 	public void update(MemberCommand member);
