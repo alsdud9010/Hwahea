@@ -136,10 +136,7 @@ $(document).ready(function() {
 				<form:input type="number" class="form-control" path="p_discount"/>
 				
 				<label for="p_content">상품 정보</label>
-				<form:textarea class="form-control" path="p_content"/>
-				
-				<label for="snote">내용 입력</label>
-				<input type="text" class="form-control" id="content"/>
+				<form:textarea class="form-control" path="p_content" id="content"/>
 		
 		<div style="text-align:center;">
 			<input type="submit" class="btn btn-success btn-lg" value="전송">

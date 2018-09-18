@@ -77,39 +77,20 @@ public class AdminController {
 	
 	//브랜드 리스트
 	@RequestMapping("/brand/adminBrandList.do")
-	public ModelAndView processBrand(@RequestParam(value="pageNum", defaultValue="1") int currentPage,
-			@RequestParam(value="keyfield", defaultValue="") String keyfield,
-			@RequestParam(value="keyword", defaultValue="") String keyword) {
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("keyfield", keyfield);
-		map.put("keyword", keyword);
-		
-		int count = adminBrandService.selectBrandRowCount(map);
-		
-		if(log.isDebugEnabled()) {
-			log.debug("<<count>> : " + count);
-		}
-		
-		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount, pageCount, "list.do");
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
+	public ModelAndView processBrand() {
 		
 		List<AdminBrandCommand> list = null;
 		
-		if(count > 0) {
-			list = adminBrandService.selectBrandList();
+		list = adminBrandService.selectBrandList();
 			
-			if(log.isDebugEnabled()) {
-				log.debug("<<list>> : " + list);
-			}
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>> : " + list);
 		}
+		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("adminBrandList");
-		mav.addObject("count", count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
 		
 		return mav;
 	}
@@ -153,39 +134,19 @@ public class AdminController {
 	
 	//카테고리 목록
 	@RequestMapping("/category/adminCategoryList.do")
-	public ModelAndView processCategory(@RequestParam(value="pageNum", defaultValue="1") int currentPage,
-			@RequestParam(value="keyfield", defaultValue="") String keyfield,
-			@RequestParam(value="keyword", defaultValue="") String keyword) {
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("keyfield", keyfield);
-		map.put("keyword", keyword);
-		
-		int count = adminCategoryService.selectCateRowCount(map);
-		
-		if(log.isDebugEnabled()) {
-			log.debug("<<count>> : " + count);
-		}
-		
-		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"adminCategoryList.do");
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
+	public ModelAndView processCategory() {
 		
 		List<AdminCategoryCommand> list = null;
 		
-		if(count > 0) {
-			list = adminCategoryService.selectCateList(map);
+			list = adminCategoryService.selectCateList();
 			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
 			}
-		}
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("adminCategoryList");
-		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
 		
 		return mav;
 	}
@@ -257,28 +218,7 @@ public class AdminController {
 	}
 	
 	//화장품 등록 폼
-	@RequestMapping(value="/cosmetic/adminCosmeticRegister.do",
-					method=RequestMethod.GET)
-	public ModelAndView formProcessCosmetic() {
-		
-		List<AdminBrandCommand> brandList = null;
-		List<AdminCategoryCommand> categoryList  = null;
-		
-		brandList = adminCosmeticService.selectBrandList();
-		categoryList = adminCategoryDetailService.selectCateDetailList();
-		
-		if(log.isDebugEnabled()) {
-			log.debug("<<brandList>> : " + brandList);
-			log.debug("<<categoryList>> : " + categoryList);
-		}
-		
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("adminCosmeticList");
-		mav.addObject("brandList", brandList);
-		mav.addObject("categoryList", categoryList);
-		
-		return mav;
-	}
+	
 	
 	//화장품 등록 데이터 전송
 	@RequestMapping(value="/cosmetic/adminCosmeticRegister.do",
@@ -293,48 +233,27 @@ public class AdminController {
 		
 		int seqCount = adminCosmeticService.selectCosmeticSeq();
 		
-		cosmeticcommand.setC_code("B" + cosmeticcommand.getBrand_num() + "D" + cosmeticcommand.getCategory_detail_num()+ "C" + seqCount);
-		
 		adminCosmeticService.insertCosmetic(cosmeticcommand);
 		
 		return "redirect:/cosmetic/adminCosmeticList.do";
 	}
 	
-	//쇼핑 리스트
+	//화장품 리스트
 	@RequestMapping("/cosmetic/adminCosmeticList.do")
-	public ModelAndView processShopping(@RequestParam(value="pageNum", defaultValue="1") int currentPage,
-			@RequestParam(value="keyfield", defaultValue="") String keyfield,
-			@RequestParam(value="keyword", defaultValue="") String keyword)	{
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("keyfield", keyfield);
-		map.put("keyword", keyword);
-		
-		int count = adminCosmeticService.selectCosmeticRowCount(map);
-		
-		if(log.isDebugEnabled()) {
-			log.debug("<<count>> : " + count);
-		}
-		
-		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"list.do");
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
+	public ModelAndView processCosmetic()	{
 		
 		List<AdminCosmeticCommand> list = null;
 		
-		if(count > 0) {
-			list = adminCosmeticService.selectCosmeticList(map);
+			list = adminCosmeticService.selectCosmeticList();
 			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
 			}
-		}
+		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("adminCosmeticList");
-		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
 		
 		return mav;			
 	}
@@ -367,18 +286,9 @@ public class AdminController {
 	@Resource
 	private AdminService adminEventService;
 	
-	@ModelAttribute("command")
+	@ModelAttribute("eventcommand")
 	public AdminEventCommand initEvent() {
 		return new AdminEventCommand();
-	}
-	
-	
-	//이벤트 리스트 폼
-	@RequestMapping(value="/event/adminEvent.do",
-					method=RequestMethod.GET)
-	public String formAdminEvent() {
-		
-		return "adminEvent";
 	}
 	
 	//이벤트 등록 폼 호출
@@ -386,13 +296,13 @@ public class AdminController {
 					method=RequestMethod.GET)
 	public String formEventRegister() {
 		
-		return "/event/adminEventRegister";
+		return "adminEventRegister";
 	}
 	
 	//이벤트 등록 데이터 전송
 	@RequestMapping(value="/event/adminEventRegister.do",
 					method=RequestMethod.POST)
-	public String submit(@ModelAttribute("command")
+	public String submit(@ModelAttribute("eventcommand")
 						AdminEventCommand eventCommand,
 						BindingResult result) {
 		
@@ -405,34 +315,38 @@ public class AdminController {
 		return "redirect:/event/adminEvent.do";
 	}
 	
-	//============글쓰기 이미지 업로드 ===========//
-	@RequestMapping("/event/imageUploader.do")
-	public void uploadImageEvent(MultipartFile file, HttpSession session, HttpServletResponse response) throws Exception {
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-
-		// 업로드할 폴더 경로
-		String realFolder = session.getServletContext().getRealPath("resources/upload");
-
-		// 업로드할 파일 이름
-		String org_filename = file.getOriginalFilename();
-		String str_filename = System.currentTimeMillis() + org_filename;
-
-		System.out.println("원본 파일명 : " + org_filename);
-		System.out.println("저장할 파일명 : " + str_filename);
-
-		String filepath = realFolder + "\\" + session.getAttribute("user_id") + "\\" + str_filename;
-		System.out.println("파일경로 : " + filepath);
-
-		File f = new File(filepath);
-		if (!f.exists()) {
-			f.mkdirs();
+	//이벤트 리스트
+	@RequestMapping("/event/adminEvent.do")
+	public ModelAndView processEvent() {
+		
+		List<AdminEventCommand> list = null;
+		
+		list = adminEventService.selectEventList();
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>> : " + list);
 		}
-		file.transferTo(f);
-		out.println("../resources/upload/"+session.getAttribute("user_id")+"/"+str_filename);
-		out.close();
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("adminEvent");
+		mav.addObject("list",list);
+		
+		return mav;	
 	}
 	
+	//이벤트 이미지 출력
+			@RequestMapping("/event/eventImageView.do")
+			public ModelAndView viewImageEvent(@RequestParam("event_num") int event_num) {
+				AdminEventCommand event = adminEventService.selectEvent(event_num);
+				ModelAndView mav = new ModelAndView();
+				mav.setViewName("imageView");	//클래스호출
+				//속성명			속성값(byte[]의 데이터)
+				mav.addObject("imageFile",event.getEvent_image1());
+				mav.addObject("filename",event.getEvent_filename1());
+				
+				return mav;
+			}
+			
 	@Resource
 	private AdminService adminIngredientService;
 	
@@ -686,7 +600,7 @@ public class AdminController {
 		return "redirect:/product/adminProductList.do";
 	}
 	
-	//이미지 출력
+	//쇼핑 상품 이미지 출력
 		@RequestMapping("/product/productImageView.do")
 		public ModelAndView viewImageProduct(@RequestParam("p_num") int p_num) {
 			AdminProductCommand product = adminProductService.selectProduct(p_num);

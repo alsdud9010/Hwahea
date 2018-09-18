@@ -34,7 +34,6 @@
 							</tr>
 						</tbody>
 						</c:if>
-						<c:if test="${count > 0 }">
 						<c:forEach var="cosmetic" items="${list }">
 						<tbody style="text-align: left">
 							<tr>
@@ -53,7 +52,7 @@
 							</tr>
 						</tbody>
 						</c:forEach>
-						</c:if>
+
 					</table>
 					<div style="text-align:center;">${pagingHtml }</div>
 			</div>
@@ -84,19 +83,13 @@
 												</div>													
 												<div class="col-md-8 col-sm-8 col-xs-8" style="padding-left:250px;">
 											
-											
-											<label class="control-label" for="brand_num">브랜드</label>
-											<form:select type="text" path="brand_num" class="form-control">
-												<form:option value="1"></form:option>
-											</form:select>
-											
-											<label class="control-label" for="category_detail_num">세부 카테고리</label>
-											<form:input type="text" path="category_detail_num" class="form-control"/>
-											
+											<label class="control-label" for="c_code">화장품 코드명 </label>
+											<form:input type="text" path="c_code" class="form-control"/>			
+							
 											<label class="control-label" for="c_name">화장품 이름</label>
 											<form:input type="text" path="c_name" class="form-control"/>
 											
-											<label class="control-label" for="c_photo">화장품 사진</label>
+											<label class="control-label" for="upload">화장품 사진</label>
 											<input type="file" name="upload" class="form-control"/>
 											
 											<label class="control-label" for="c_capacity">화장품 용량</label>
@@ -108,6 +101,12 @@
 											<label class="control-label" for="c_ingre">화장품 성분</label>
 											<form:input type="text" path="c_ingre" class="form-control"/>
 											
+											<label class="control-label" for="c_shopping">쇼핑 페이지</label>
+											<form:select path="c_shopping" class="form-control">
+												<form:option value="0">X</form:option>
+												<form:option value="1">O</form:option>
+											</form:select>
+											
 											
 												</div>
 												
@@ -117,7 +116,6 @@
 											</div>
 											<div class="modal-footer">
 												<input type="submit" class="btn btn-primary" value="등록">
-												<button type="button" class="btn btn-primary">삭제</button>
 												<button type="button" class="btn btn-default"
 													data-dismiss="modal">닫기</button>
 											</div>

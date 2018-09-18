@@ -11,7 +11,7 @@
 				</div>
 			<div class="x_panel">
 				<div class="page-main-style">
-				<form:form commandName="command" action="cosmeticRegister.do"
+				<form:form commandName="cosmeticcommand" action="cosmeticRegister.do"
 	    		id="cosmeticRegister_form"
 	    		enctype="multipart/form-data">
 		

@@ -1,6 +1,7 @@
 package kr.spring.admin.domain;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.Arrays;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -8,32 +9,38 @@ import org.springframework.web.multipart.MultipartFile;
 public class AdminEventCommand {
 
 	private int event_num;
+	private int event_kind;
 	private String event_name;
-	private String event_status;
+	private int event_status;
+	private Date event_start;
+	private Date event_end;
 	private MultipartFile upload1;
 	private MultipartFile upload2;
 	private MultipartFile upload3;
-	private MultipartFile upload4;
-	private byte[] event_uploadfile1;
-	private byte[] event_uploadfile2;
-	private byte[] event_uploadfile3;
-	private byte[] event_uploadfile4;
-	private String event_image1;
-	private String event_image2;
-	private String event_image3;
-	private String event_image4;
-	private int event_hit;
+	private byte[] event_image1;
+	private byte[] event_image2;
+	private byte[] event_image3;
+	private String event_filename1;
+	private String event_filename2;
+	private String event_filename3;
+	private int event_like;
 	
 	public void setUpload1(MultipartFile upload1) throws IOException {
 		this.upload1 = upload1;
-		setEvent_uploadfile1(upload1.getBytes());
-		setEvent_image1(upload1.getOriginalFilename());
+		setEvent_image1(upload1.getBytes());
+		setEvent_filename1(upload1.getOriginalFilename());
 	}
 	
-	public void setUpload2(MultipartFile upload2) throws IOException{
+	public void setUpload2(MultipartFile upload2) throws IOException {
 		this.upload2 = upload2;
-		setEvent_uploadfile2(upload2.getBytes());;
-		setEvent_image2(upload2.getOriginalFilename());
+		setEvent_image2(upload2.getBytes());
+		setEvent_filename2(upload2.getOriginalFilename());
+	}
+	
+	public void setUpload3(MultipartFile upload3) throws IOException {
+		this.upload3 = upload3;
+		setEvent_image3(upload3.getBytes());
+		setEvent_filename3(upload3.getOriginalFilename());
 	}
 	
 	public int getEvent_num() {
@@ -42,17 +49,38 @@ public class AdminEventCommand {
 	public void setEvent_num(int event_num) {
 		this.event_num = event_num;
 	}
+	public int getEvent_kind() {
+		return event_kind;
+	}
+	public void setEvent_kind(int event_kind) {
+		this.event_kind = event_kind;
+	}
 	public String getEvent_name() {
 		return event_name;
 	}
 	public void setEvent_name(String event_name) {
 		this.event_name = event_name;
 	}
-	public String getEvent_status() {
+	public int getEvent_status() {
 		return event_status;
 	}
-	public void setEvent_status(String event_status) {
+	public void setEvent_status(int event_status) {
 		this.event_status = event_status;
+	}
+	public Date getEvent_start() {
+		return event_start;
+	}
+	public void setEvent_start(Date event_start) {
+		this.event_start = event_start;
+	}
+	public Date getEvent_end() {
+		return event_end;
+	}
+	public void setEvent_end(Date event_end) {
+		this.event_end = event_end;
+	}
+	public MultipartFile getUpload1() {
+		return upload1;
 	}
 	
 	public MultipartFile getUpload2() {
@@ -62,77 +90,50 @@ public class AdminEventCommand {
 	public MultipartFile getUpload3() {
 		return upload3;
 	}
-	public void setUpload3(MultipartFile upload3) {
-		this.upload3 = upload3;
-	}
-	public MultipartFile getUpload4() {
-		return upload4;
-	}
-	public void setUpload4(MultipartFile upload4) {
-		this.upload4 = upload4;
-	}
-	public byte[] getEvent_uploadfile1() {
-		return event_uploadfile1;
-	}
-	public void setEvent_uploadfile1(byte[] event_uploadfile1) {
-		this.event_uploadfile1 = event_uploadfile1;
-	}
-	public byte[] getEvent_uploadfile2() {
-		return event_uploadfile2;
-	}
-	public void setEvent_uploadfile2(byte[] event_uploadfile2) {
-		this.event_uploadfile2 = event_uploadfile2;
-	}
-	public byte[] getEvent_uploadfile3() {
-		return event_uploadfile3;
-	}
-	public void setEvent_uploadfile3(byte[] event_uploadfile3) {
-		this.event_uploadfile3 = event_uploadfile3;
-	}
-	public byte[] getEvent_uploadfile4() {
-		return event_uploadfile4;
-	}
-	public void setEvent_uploadfile4(byte[] event_uploadfile4) {
-		this.event_uploadfile4 = event_uploadfile4;
-	}
-	public String getEvent_image1() {
+	
+	public byte[] getEvent_image1() {
 		return event_image1;
 	}
-	public void setEvent_image1(String event_image1) {
+	public void setEvent_image1(byte[] event_image1) {
 		this.event_image1 = event_image1;
 	}
-	public String getEvent_image2() {
+	public byte[] getEvent_image2() {
 		return event_image2;
 	}
-	public void setEvent_image2(String event_image2) {
+	public void setEvent_image2(byte[] event_image2) {
 		this.event_image2 = event_image2;
 	}
-	public String getEvent_image3() {
+	public byte[] getEvent_image3() {
 		return event_image3;
 	}
-	public void setEvent_image3(String event_image3) {
+	public void setEvent_image3(byte[] event_image3) {
 		this.event_image3 = event_image3;
 	}
-	public String getEvent_image4() {
-		return event_image4;
+	public String getEvent_filename1() {
+		return event_filename1;
 	}
-	public void setEvent_image4(String event_image4) {
-		this.event_image4 = event_image4;
+	public void setEvent_filename1(String event_filename1) {
+		this.event_filename1 = event_filename1;
 	}
-	public int getEvent_hit() {
-		return event_hit;
+	public String getEvent_filename2() {
+		return event_filename2;
 	}
-	public void setEvent_hit(int event_hit) {
-		this.event_hit = event_hit;
+	public void setEvent_filename2(String event_filename2) {
+		this.event_filename2 = event_filename2;
+	}
+	public String getEvent_filename3() {
+		return event_filename3;
+	}
+	public void setEvent_filename3(String event_filename3) {
+		this.event_filename3 = event_filename3;
+	}
+	public int getEvent_like() {
+		return event_like;
+	}
+	public void setEvent_like(int event_like) {
+		this.event_like = event_like;
 	}
 	
-	//byte[]파일 제외
-	@Override
-	public String toString() {
-		return "AdminEventCommand [event_num=" + event_num + ", event_name=" + event_name + ", event_status="
-				+ event_status + ", upload1=" + upload1 + ", upload2=" + upload2 + ", upload3=" + upload3 + ", upload4="
-				+ upload4 + ", event_image1=" + event_image1 + ", event_image2=" + event_image2 + ", event_image3="
-				+ event_image3 + ", event_image4=" + event_image4 + ", event_hit=" + event_hit + "]";
-	}
+	
 	
 }

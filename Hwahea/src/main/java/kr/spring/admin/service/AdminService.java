@@ -14,7 +14,6 @@ import kr.spring.admin.domain.AdminProductCommand;
 public interface AdminService {
 	//브랜드
 	public List<AdminBrandCommand> selectBrandList();
-	public int selectBrandRowCount(Map<String, Object> map);
 	public void insertBrand(AdminBrandCommand brand);
 	public AdminBrandCommand selectBrand(Integer brand_num);
 	public void deleteBrand(Integer brand_num);
@@ -25,21 +24,20 @@ public interface AdminService {
 	public void insertCateDetail(AdminCategoryCommand categoryDetail);
 	
 	//카테고리
-		public List<AdminCategoryCommand> selectCateList(Map<String, Object> map);
-		public int selectCateRowCount(Map<String, Object> map);
+		public List<AdminCategoryCommand> selectCateList();
 		public void insertCategory(AdminCategoryCommand category);
 		public AdminCategoryCommand selectCategory(int category_num);
 		public void deleteCategory(int category_num);
 	
 	//화장품
-		public List<AdminCosmeticCommand> selectCosmeticList(Map<String, Object> map);
-		public int selectCosmeticRowCount(Map<String, Object> map);
+		public List<AdminCosmeticCommand> selectCosmeticList();
 		public void insertCosmetic(AdminCosmeticCommand cosmetic);
 		public AdminCosmeticCommand selectCosmetic(String c_code);
 		public void deleteCosmetic(String c_code);
 		public int selectCosmeticSeq();
 		
 	//이벤트
+		public List<AdminEventCommand> selectEventList();
 		public void insertEvent(AdminEventCommand event);
 		public AdminEventCommand selectEvent(int event_num);
 		public void deleteEvent(int event_num);

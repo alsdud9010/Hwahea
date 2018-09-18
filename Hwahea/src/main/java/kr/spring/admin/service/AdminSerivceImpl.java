@@ -48,13 +48,6 @@ public class AdminSerivceImpl implements AdminService {
 		return adminBrandMapper.selectBrandList();
 	}
 
-	@Override
-	public int selectBrandRowCount(Map<String, Object> map) {
-		
-		return adminBrandMapper.selectBrandRowCount(map);
-	}
-
-
 	//세부카테고리
 	@Resource
 	private AdminMapper adminCategoryDetailMapper;
@@ -82,15 +75,9 @@ public class AdminSerivceImpl implements AdminService {
 	private AdminMapper adminCategoryMapper;
 	
 	@Override
-	public List<AdminCategoryCommand> selectCateList(Map<String, Object> map) {
+	public List<AdminCategoryCommand> selectCateList() {
 	
-		return adminCategoryMapper.selectCateList(map);
-	}
-
-	@Override
-	public int selectCateRowCount(Map<String, Object> map) {
-		
-		return adminCategoryMapper.selectCateRowCount(map);
+		return adminCategoryMapper.selectCateList();
 	}
 
 	@Override
@@ -117,15 +104,9 @@ public class AdminSerivceImpl implements AdminService {
 	private AdminMapper adminCosmeticMapper;
 		
 	@Override
-	public List<AdminCosmeticCommand> selectCosmeticList(Map<String, Object> map) {
+	public List<AdminCosmeticCommand> selectCosmeticList() {
 		
-		return adminCosmeticMapper.selectCosmeticList(map);
-	}
-
-	@Override
-	public int selectCosmeticRowCount(Map<String, Object> map) {
-		
-		return adminCosmeticMapper.selectCosmeticRowCount(map);
+		return adminCosmeticMapper.selectCosmeticList();
 	}
 
 	@Override
@@ -155,6 +136,12 @@ public class AdminSerivceImpl implements AdminService {
 	private AdminMapper adminEventMapper;
 	
 	@Override
+	public List<AdminEventCommand> selectEventList() {
+		
+		return adminEventMapper.selectEventList();
+	}
+	
+	@Override
 	public void insertEvent(AdminEventCommand event) {
 		adminEventMapper.insertEvent(event);
 		
@@ -162,8 +149,8 @@ public class AdminSerivceImpl implements AdminService {
 
 	@Override
 	public AdminEventCommand selectEvent(int event_num) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return adminEventMapper.selectEvent(event_num);
 	}
 
 	@Override
@@ -273,4 +260,5 @@ public class AdminSerivceImpl implements AdminService {
 		
 		return adminProductMapper.selectProductRowCount(map);
 	}
+
 }

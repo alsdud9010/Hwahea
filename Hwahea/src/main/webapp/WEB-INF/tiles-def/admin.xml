@@ -28,6 +28,10 @@
 		<put-attribute name="title" value="이벤트 관리"/>
 		<put-attribute name="page" value="/WEB-INF/views/event/adminEvent.jsp"/>
 	</definition>
+	<definition name="adminEventRegister" extends="adminMain">
+		<put-attribute name="title" value="이벤트 등록"/>
+		<put-attribute name="page" value="/WEB-INF/views/event/adminEventRegister.jsp"/>
+	</definition>
 	
 	<definition name="adminIngredientList" extends="adminMain">
 		<put-attribute name="title" value="성분관리"/>

@@ -34,18 +34,18 @@
 					<div class="x_content">				
                           <select id="heard" class="form-control">  
                           	<optgroup label="카테고리"></optgroup>                     
-                            <option id="shop">스킨케어</option>
-                            <option id="event">클렌징/필링</option>
-                            <option id="service">마스크/팩</option>
-                            <option id="etc">선케어</option>
-                            <option id="idea">베이스메이크업</option>
-                            <option id="cooperate">아이메이크업</option>
-                            <option id="cooperate">립메이크업</option>
-                            <option id="cooperate">바디</option>
-                            <option id="cooperate">헤어</option>
-                            <option id="cooperate">네일</option>
-                            <option id="cooperate">향수</option>
-                            <option id="cooperate">기타</option>
+                            <option id="shop">1.스킨케어</option>
+                            <option id="event">2.클렌징/필링</option>
+                            <option id="service">3.마스크/팩</option>
+                            <option id="etc">4.선케어</option>
+                            <option id="idea">5.베이스메이크업</option>
+                            <option id="cooperate">6.아이메이크업</option>
+                            <option id="cooperate">7.립메이크업</option>
+                            <option id="cooperate">8.바디</option>
+                            <option id="cooperate">9.헤어</option>
+                            <option id="cooperate">10.네일</option>
+                            <option id="cooperate">11.향수</option>
+                            <option id="cooperate">12.기타</option>
                           </select>
 					</div>
                   </div>
@@ -62,7 +62,6 @@
 									<th>카테고리 종류</th>
 									<th>세부 카테고리 번호</th>
 									<th>세부 카테고리 이름</th>
-									<th>상위 카테고리 이름</th>
 									<th>쇼핑 카테고리 유무</th>
 								</tr>
 							</thead>
@@ -72,7 +71,6 @@
 									<td colspan="7" style="text-align:center;">등록된 카테고리가 없습니다</td>
 								</tr>
 							</c:if>
-							<c:if test="${count > 0 }">
 								
 							<c:forEach var="category" items="${list }">
 								<tr>
@@ -88,18 +86,18 @@
 								<c:if test="${category.category_kind == 2 }">
 									남성
 								</c:if>
+								<td>${category.category_detail_num }</td>
+								<td>${category.category_detail_name }</td>
+								<td>
+								<c:if test="${category.shopping_exist == 0 }">
+									X
+								</c:if>
+								<c:if test="${category.shopping_exist == 1 }">
+									O
+								</c:if>
 								</td>
 								</tr>
 							</c:forEach>
-							<c:forEach var="category_detail" items="${list2 }">
-								<tr>
-								<td>${category_detail.category_detail_num }</td>
-								<td>${category_detail.category_detail_name }</td>
-								<td>${category_detail.head_category }</td>
-								<td>${category_detail.shopping_exist }</td>
-								</tr>
-							</c:forEach>
-							</c:if>
 							</tbody> 
 						</table>
 					</div>

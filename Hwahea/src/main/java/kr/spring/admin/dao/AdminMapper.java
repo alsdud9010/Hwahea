@@ -18,8 +18,8 @@ import kr.spring.admin.domain.AdminProductCommand;
 public interface AdminMapper {
 	
 	//브랜드
+	@Select("SELECT * FROM brand")
 	public List<AdminBrandCommand> selectBrandList();
-	public int selectBrandRowCount(Map<String, Object> map);
 	@Insert("INSERT INTO brand(brand_num, brand_name, brand_reg_date, brand_image, image_name) VALUES(brand_seq.nextval, #{brand_name}, sysdate, #{brand_image}, #{image_name})")
 	public void insertBrand(AdminBrandCommand brand);
 	@Select("SELECT * FROM brand WHERE brand_num=#{brand_num}")
@@ -34,15 +34,16 @@ public interface AdminMapper {
 	public void insertCateDetail(AdminCategoryCommand categoryDetail);
 	
 	//카테고리
-	public List<AdminCategoryCommand> selectCateList(Map<String, Object> map);
+	@Select("SELECT * FROM category, category_detail WHERE category_num = head_category")
+	public List<AdminCategoryCommand> selectCateList();
 	public int selectCateRowCount(Map<String,Object> map);
 	@Insert("INSERT INTO category(category_num, category_name, category_kind)"
 			+ "VALUES(category_seq.nextval, #{category_name}, #{category_kind})")
 	public void insertCategory(AdminCategoryCommand category);
 	
 	//화장품
-	public List<AdminCosmeticCommand> selectCosmeticList(Map<String, Object> map);
-	public int selectCosmeticRowCount(Map<String, Object> map);
+	@Select("SELECT * FROM cosmetic")
+	public List<AdminCosmeticCommand> selectCosmeticList();
 	@Insert("INSERT INTO cosmetic(c_code, c_name, c_image, c_photo, c_capacity, c_price, c_ingre, c_rate, c_rank, c_shopping, sysdate)"
 			+ "VALUES(#{c_code}, #{c_name}, #{c_image}, #{c_photo}, #{c_capacity}, #{c_price}, #{c_ingre}, #{c_rate}, #{c_rank}, #{c_shopping}, sysdate)")
 	public void insert(AdminCosmeticCommand cosmetic);
@@ -54,8 +55,12 @@ public interface AdminMapper {
 	public void deleteCosmetic(String c_code);
 	
 	//이벤트
-	@Insert("INSERT INTO event (event_num, event_name, event_status, event_upload1 , event_image1, event_upload2, event_image2, event_upload3, event_image3, event_upload4, event_image4, event_hit)"
-			+ "VALUES(event_seq.nextval, #{event_name}, #{event_status}, #{event_upload1}, #{event_image1}, #{event_upload2}, #{event_image2}, #{event_upload3},#{event_image3}, #{event_upload4}, #{event_image4}, #{#{event_hit})")
+	@Select("SELECT * FROM event")
+	public List<AdminEventCommand> selectEventList();
+	@Select("SELECT * FROM event WHERE event_num=#{event_num}")
+	public AdminEventCommand selectEvent(int event_num);
+	@Insert("INSERT INTO event (event_num, event_kind, event_name, event_status, event_start, event_end, event_image1, event_image2, event_image3, event_filename1, event_filename2, event_filename3, event_like)"
+			+ "VALUES(event_seq.nextval, #{event_kind}, #{event_name}, #{event_status}, #{event_start}, #{event_end}, #{event_image1}, #{event_image2}, #{event_image3}, #{event_filename1}, #{event_filename2}, #{event_filename3}, #{event_like})")
 	public void insertEvent(AdminEventCommand event);
 	
 	//FAQ
