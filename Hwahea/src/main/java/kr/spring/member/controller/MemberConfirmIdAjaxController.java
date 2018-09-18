@@ -22,20 +22,20 @@ public class MemberConfirmIdAjaxController {
 	@Resource
 	private MemberService memberService;
 	
-	@RequestMapping("/member/confirmId.do")
+	@RequestMapping("/signin/confirmId.do")
 	@ResponseBody
 	public Map<String,String> process(
-			@RequestParam("id") String id){
+			@RequestParam("m_id") String m_id){
 		
 		if(log.isDebugEnabled()) {
-			log.debug("<<id>> : " + id);
+			log.debug("<<id>> : " + m_id);
 		}
 		
 		Map<String,String> map = 
 				new HashMap<String,String>();
 		
 		MemberCommand member = 
-				memberService.selectMember(id);
+				memberService.selectMember(m_id);
 		if(member!=null) {
 			//아이디 중복
 			map.put("result", "idDuplicated");
@@ -47,14 +47,4 @@ public class MemberConfirmIdAjaxController {
 		return map;
 	}
 }
-
-
-
-
-
-
-
-
-
-
 

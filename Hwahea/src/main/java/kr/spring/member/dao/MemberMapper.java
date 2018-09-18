@@ -8,7 +8,10 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import kr.spring.member.domain.MemberCommand;
+import kr.spring.member.domain.ScrapCommand;
+import kr.spring.plus.domain.PlusCommand;
 import kr.spring.review.domain.ReviewCommand;
+import kr.spring.shop.domain.OrderCommand;
 
 public interface MemberMapper {
 	@Insert("INSERT INTO member (m_id) VALUES(#{m_id})")
@@ -28,12 +31,34 @@ public interface MemberMapper {
 	public List<MemberCommand> memberDetailList();
 	
 	/*³» ¸®ºä*/
-	@Select("SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM review re left join (SELECT re_num,COUNT(*) rere_num FROM review_reply GROUP BY re_num)r ON re.re_num = r.num WHERE re.re_id = ? ORDER BY re.re_num DESC)a) WHERE rnum >= ? AND rnum <= ?")
+	@Select("SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM review re left join (SELECT re_num,COUNT(*) rere_num FROM review_reply GROUP BY re_num)r ON re.re_num = r.rere_num WHERE re.re_id = #{m_id} ORDER BY re.re_num DESC)a)")
 	public ReviewCommand selectReview(String re_id);
 	
+	/*½ºÅ©·¦*/
+	@Select("SELECT s.* FROM scrap s, member_detail m WHERE s.m_id=m.m_id AND s.scrap_kind=0")
+	public ScrapCommand selectScrap(String m_id);
+	
+	/*½ºÅ©·¦ È­ÇÃ*/
+	@Select("SELECT pb.* FROM scrap s, plus_board pb WHERE s.m_id=#{m_id} AND s.scrap_kind=0 AND s.scrap_object=pb.hp_num")
+	public PlusCommand selectScrapPlus(String m_id);
+	
+	/*½ºÅ©·¦*/
+	@Select("SELECT s.* FROM scrap s, member_detail m WHERE s.m_id = m.m_id AND s.scrap_kind=1")
+	public ScrapCommand selectScrapre(String m_id);
+	
+	/*½ºÅ©·¦ ¸®ºä*/
+	@Select("SELECT rv.* FROM scrap s, review rv WHERE s.m_id = #{m_id} AND s.scrap_kind = 1 AND s.scrap_object = rv.re_num")
+	public List<ReviewCommand> selectScrapReview(String m_id);
+	
+	/*½ºÅ©·¦µÈ ¸®ºä¸¦ ¾´ »ç¿ëÀÚÀÇ Á¤º¸*/
+	@Select("SELECT * FROM member_detail WHERE m_id=#{re_id}")
+	public List<MemberCommand> selectScrapUser(String re_id);
+	
 	/*ÁÖ¹®ÇÑ »óÇ° Á¤º¸ Ãâ·Â*/
-	@Select("SELECT * FROM CART INNER JOIN MEMBER ON CART.CART_ID = MEMBER.M_ID WHERE CART.CART_ID = #{m_id}")
-	public MemberCommand selectCart(String m_id);
+	@Select("SELECT * FROM product_order INNER JOIN MEMBER ON product_order.order_ID = MEMBER.M_ID")
+	public List<OrderCommand> selectCart();
+	@Select("SELECT * FROM product_order INNER JOIN MEMBER ON product_order.order_ID = MEMBER.M_ID WHERE product_order.order_id = #{m_id}")
+	public List<OrderCommand> selectCartOrder(String m_id);
 	
 	public void update(MemberCommand member);
 	

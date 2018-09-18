@@ -1,5 +1,7 @@
 package kr.spring.member.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -15,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.member.domain.MemberCommand;
+import kr.spring.member.domain.ScrapCommand;
 import kr.spring.member.service.MemberService;
+import kr.spring.plus.domain.PlusCommand;
 import kr.spring.review.domain.ReviewCommand;
+import kr.spring.shop.domain.OrderCommand;
 import kr.spring.util.CipherTemplate;
 
 @Controller
@@ -184,21 +189,29 @@ public class MemberController {
 		return mav;
 	}
 	//≥ª∏Æ∫‰/Ω∫∆Æ∑¶(Ω∫≈©∑¶)  »£√‚
-	@RequestMapping(value="/mypage/my_reviewscrap.do",
-	        method=RequestMethod.GET)
-		public String my_reviewscrap(String bc) {
+	@RequestMapping(value="/mypage/my_reviewscrap.do")
+		public String my_reviewscrap(String bc,HttpSession session, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		String m_id = (String)session.getAttribute("user_id");
+		PlusCommand scrap = memberService.selectScrapPlus(m_id);
+		if(log.isDebugEnabled()) {
+			log.debug("<<¡¶πﬂ µ«∂Û>>" + scrap);
+		}
+		model.addAttribute("scrap", scrap);
+		
 		return "my_reviewscrap";
 	}
 	//≥ª∏Æ∫‰/Ω∫∆Æ∑¶(≈∏¿Ø¿˙∏Æ∫‰)  »£√‚
 	@RequestMapping(value="/mypage/my_reviewreview.do",
 	        method=RequestMethod.GET)
-		public String my_reviewreview(String bc) {
+		public String my_reviewreview(String bc,HttpSession session) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		
+		
 		return "my_reviewreview";
 	}
 	//¡Ò∞‹√£±‚(∫Í∑£µÂ)  »£√‚
@@ -246,21 +259,24 @@ public class MemberController {
 		return "my_cart";
 	}
 	//»≠«ÿºÓ«Œ(¡÷πÆ)  »£√‚
-	@RequestMapping(value="/mypage/my_cartorder.do")
+		@RequestMapping(value="/mypage/my_cartorder.do")
+		public ModelAndView process(@RequestParam("m_id") String bc, String m_id) {
 		
-		public String my_cartorder(String bc, HttpSession session, Model model) {
-		
-		String m_id = (String)session.getAttribute("user_id");
-		MemberCommand member = memberService.selectCart(m_id);
-		if(log.isDebugEnabled()) {
-			log.debug("<<memberCommand>> : " + member);
-		}
-		model.addAttribute("member", member);
-		
-		if(bc == null || bc.equals("")) {
+		/*if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
-		}
-		return "my_cartorder";
+		}*/
+		List<OrderCommand> list = null;
+		List<OrderCommand> list2 = null;
+		
+		list = memberService.selectCart();
+		list2 = memberService.selectCartOrder(m_id);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("my_cartorder");
+		mav.addObject("member", list);
+		
+		return mav;
+		
 	}
 	//»≠«ÿºÓ«Œ(¬Ú)  »£√‚
 	@RequestMapping(value="/mypage/my_cartzzim.do",

@@ -25,7 +25,7 @@
 						<li>|</li>
 						<li><div class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewscrap.do?bc=2">스크랩</a></div></li>
 						<li>|</li>
-						<li><div class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewreview.do?bc=2">리뷰</a></div></li>
+						<li><div class="now_menu">리뷰</div></li>
 					</ul>
 				</div>
 				<div class="otherreview_form col-md-12" style="margin-left: 5%;">
