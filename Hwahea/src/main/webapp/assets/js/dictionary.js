@@ -220,28 +220,41 @@ $(document).ready(function(){
 				output+='	</div>';
 				output+='</li>';
 	/*=================20가지 주의성분===================*/
+				var w_img = '';
+				var warning = '';
+				if(list[i].i_warning==null){
+					warning = list[i].i_warning;
+					w_img = 'warning_null';
+				}else{
+					warning = '해당없음;'
+					w_img = 'warning';
+				}
 				output+='<li>';
 				output+='	<div class="d_list_detail_li">';
 				output+='		<div class="d_list_detail_img">';
-				output+='			<img class="img-responsive" src="../assets/img/dictionary/warning.png" alt="">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + w_img + '.png" alt="">';
 				output+='		</div>';
 				output+='		<div class="d_list_detail_name">';
 				output+='			<div class="text-bold">20가지 주의성분</div>';
-				output+='			<div>' + list[i].i_warning + '</div>		';							
+				output+='			<div>' + warning + '</div>		';							
 				output+='		</div>';
 				output+='	</div>';
 				output+='</li>';
 	/*=================알레르기 피부타입===================*/
 				var allergie = null;
-				if(list[i].i_allergie == null){
+				var a_img = '';
+				if(list[i].i_allergie==null){
 					allergie='해당없음';
-				}else{
+					a_img = 'allergie_null';
+				}
+				if(list[i].i_allergie=='Y'){
 					allergie='식약처가 고시한 알레르기 유발 성분입니다.';
+					a_img = 'allergie';
 				}
 				output+='<li>';
 				output+='	<div class="d_list_detail_li">';
 				output+='		<div class="d_list_detail_img">';
-				output+='			<img class="img-responsive" src="../assets/img/dictionary/allergie.png" alt="">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + a_img + '.png" alt="">';
 				output+='		</div>';
 				output+='		<div class="d_list_detail_name">';
 				output+='			<div class="text-bold">알레르기 피부타입</div>';
@@ -253,7 +266,7 @@ $(document).ready(function(){
 				var skinType = '';
 				var good = 0;
 				var bad = 0;
-				var skinimg = null;
+				var s_img = '';
 				if(list[i].i_oilly=='Y'){
 					 skinType += '<span class="text-good">지성피부에 좋아요!</span><br>';
 					 good += 1;
@@ -276,16 +289,19 @@ $(document).ready(function(){
 					bad += 1;
 				}
 				if(bad==0 && good >=1) {
-					skinimg = 'help_Y';
+					s_img = 'help_Y';
 				}else if(good==0 && bad>=1){
-					skinimg = 'help_N';
+					s_img = 'help_N';
+				}else if(good==0 && bad==0){
+					skinType += '해당없음';
+					s_img = 'help_null';
 				}else{
-					skinimg = 'help';
+					s_img = 'help';
 				}
 				output+='<li>';
 				output+='	<div class="d_list_detail_li">';
 				output+='		<div class="d_list_detail_img">';
-				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + skinimg + '.png" alt="">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + s_img + '.png" alt="">';
 				output+='		</div>';
 				output+='		<div class="d_list_detail_name">';
 				output+='			<div class="text-bold">피부타입별 특이성분</div>';
@@ -295,23 +311,27 @@ $(document).ready(function(){
 				output+='</li>';
 		/*=================기능성 성분 여부===================*/
 				var func = '';
-				var funcimg = null;
+				var f_img = '';
 				if(list[i].i_func=='S'){
 					func += '자외선 차단 성분입니다 :)';
-					funcimg = 'func_sun';
+					f_img = 'func_sun';
 				}
 				if(list[i].i_func=='W'){
 					func += '미백 개선에 도움이 돼요 :)';
-					funcimg = 'func_white';
+					f_img = 'func_white';
 				}
 				if(list[i].i_func=='R'){
 					func += '주름 개선에 도움이 돼요 :)';
-					funcimg = 'func_wrinkle';
+					f_img = 'func_wrinkle';
+				}
+				if(list[i].i_func==null){
+					func += '해당 없음';
+					f_img = 'func_null';
 				}
 				output+='<li>';
 				output+='	<div class="d_list_detail_li">';
 				output+='		<div class="d_list_detail_img">';
-				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + funcimg + '.png" alt="">';
+				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + f_img + '.png" alt="">';
 				output+='		</div>';
 				output+='		<div class="d_list_detail_name">';
 				output+='			<div class="text-bold">기능성 성분 여부</div>';
@@ -320,8 +340,6 @@ $(document).ready(function(){
 				output+='	</div>';
 				output+='</li>';
 				
-
-
 				$('.detail').append(output);
 				$('.d_list_detail').show()						
 				$('.tab_left').css({
@@ -341,7 +359,7 @@ $(document).ready(function(){
 			$('.left_content').show();
 		}
 		$('.tab_left').css({
-			backgroundColor :'#f4f4f4',
+			backgroundColor :'#f9f9f9',
 			boxShadow: 'none'
 		});
 	}

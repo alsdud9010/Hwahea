@@ -83,7 +83,7 @@
 								<div class="left_content">
 									<ul>
 										<li> 
-											<span>[지성]</span>
+											<span class="skin_title">[지성]</span>
 											<div class="oilly" data-type="Y">
 												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_Y.png">
 												도움이 되는 성분<span>></span>
@@ -94,7 +94,7 @@
 											</div>
 										</li> 
 										<li>
-											<span>[건성]</span>
+											<span class="skin_title">[건성]</span>
 											<div class="dry" data-type="Y">
 												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_Y.png">
 												도움이 되는 성분<span>></span>
@@ -105,7 +105,7 @@
 											</div>
 										</li>
 										<li>
-											<span>[민감성]</span>
+											<span class="skin_title">[민감성]</span>
 											<div class="sensitive" data-type="Y">
 												<img src="${pageContext.request.contextPath}/assets/img/dictionary/help_Y.png">
 												도움이 되는 성분<span>></span>

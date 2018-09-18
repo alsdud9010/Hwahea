@@ -84,7 +84,7 @@ li{
 	height: 650px;
 	padding-top:30px;
 	margin-right:5px;
-	background-color: #f4f4f4;
+    background-color: rgba(244, 244, 244, 0.57);
 }
 
 .tab_left .detail{
@@ -104,9 +104,10 @@ li{
 }
 .tab_left .left_content li > div{
 	cursor: pointer;
-	background-color: rgba(215, 215, 215, 0.8);
-	width:80%;
-	margin:10px 0 10px 0;
+	background-color: rgba(215, 215, 215, 0.36);
+	border: 1px solid #0000003d;
+    width: 80%;
+    margin: 10px 0 10px 20px;
 	padding:8px;
 	color:#333;
 	border-radius: 10px 10px 10px 10px !important;
@@ -143,7 +144,7 @@ li{
 	height: 650px;
 	padding-top:10px;
 	font-size:14px;
-	background-color: #f4f4f4;
+	    background-color: rgba(244, 244, 244, 0.57);
 	overflow-y: auto;
 }
 #loading{
@@ -216,7 +217,6 @@ li{
     background-color: white;
 }
 
-
 /*=======================리스트 팝업=======================*/
 .d_list_detail_title{
 	text-align: center;
@@ -263,4 +263,7 @@ li{
 }
 .text-func{
 	color: #c8a575;
+}
+.skin_title{
+	padding-left:20px;
 }
