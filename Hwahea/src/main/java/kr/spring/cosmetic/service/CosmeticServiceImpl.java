@@ -31,4 +31,9 @@ public class CosmeticServiceImpl implements CosmeticService{
 	public List<CosmeticCommand> getCosmeticRank(Map<String, Object> map) {
 		return cosmeticMapper.getCosmeticRank(map);
 	}
+
+	@Override
+	public List<CosmeticCommand> cosmeticDetail(Map<String, Object> map) {
+		return cosmeticMapper.cosmeticDetail(map);
+	}
 }

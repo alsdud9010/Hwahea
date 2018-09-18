@@ -3,6 +3,8 @@ package kr.spring.cosmetic.service;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Select;
+
 import kr.spring.cosmetic.domain.BrandCommand;
 import kr.spring.cosmetic.domain.CosmeticCommand;
 
@@ -13,4 +15,7 @@ public interface CosmeticService {
 	public List<BrandCommand> getBrandList();
 	//브랜드별 랭킹
 	public List<CosmeticCommand> getCosmeticRank(Map<String, Object> map);
+	
+	//화장품 상세정보 불러오기 
+	public List<CosmeticCommand> cosmeticDetail(Map<String, Object> map);
 }
