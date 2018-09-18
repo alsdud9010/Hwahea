@@ -80,6 +80,11 @@ public class AdminSerivceImpl implements AdminService {
 	private AdminMapper adminCategoryMapper;
 	
 	@Override
+	public List<AdminCategoryCommand> selectCategoryList() {
+		return adminCategoryMapper.selectCategoryList();
+	}
+	
+	@Override
 	public List<AdminCategoryCommand> selectCateList() {
 	
 		return adminCategoryMapper.selectCateList();
@@ -265,6 +270,5 @@ public class AdminSerivceImpl implements AdminService {
 		
 		return adminProductMapper.selectProductRowCount(map);
 	}
-
 
 }

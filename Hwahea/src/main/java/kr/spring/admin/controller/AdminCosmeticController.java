@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.admin.domain.AdminBrandCommand;
@@ -237,10 +238,11 @@ public class AdminCosmeticController {
 		
 		list = adminCosmeticService.selectCosmeticList();
 		brand = adminCosmeticService.selectBrandList();
-		category = adminCategoryService.selectC_DetailList();
+		category = adminCategoryService.selectCateDetailList();
 			
 		if(log.isDebugEnabled()) {
 			log.debug("<<list>> : " + list);
+			log.debug("<<category>> : " + category);
 		}
 		
 		ModelAndView mav = new ModelAndView();
@@ -251,6 +253,17 @@ public class AdminCosmeticController {
 		
 		return mav;			
 	}
+	
+	//등록 폼에서 세부카테고리 aJax 처리
+	@RequestMapping("/cosmetic/adminC_detail.do")
+	@ResponseBody
+	public Map<String,Object> getC_detail(@RequestParam("C_num") int C_num){
+		
+		
+		
+		return null;
+	}
+	
 	//화장품 상세 정보
 	@RequestMapping("/cosmetic/adminCosmeticDetail.do")
 	public ModelAndView process(@RequestParam("c_code") String c_code) {

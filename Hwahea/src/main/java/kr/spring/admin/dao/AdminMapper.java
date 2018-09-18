@@ -38,6 +38,8 @@ public interface AdminMapper {
 	public List<AdminCategoryCommand> selectC_DetailList();
 	
 	//카테고리
+	@Select("SELECT category_num,category_name FROM category")
+	public List<AdminCategoryCommand> selectCategoryList();
 	@Select("SELECT * FROM category, category_detail WHERE category_num = head_category")
 	public List<AdminCategoryCommand> selectCateList();
 	public int selectCateRowCount(Map<String,Object> map);

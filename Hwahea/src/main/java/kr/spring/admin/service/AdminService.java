@@ -25,6 +25,7 @@ public interface AdminService {
 	public List<AdminCategoryCommand> selectC_DetailList();
 	
 	//카테고리
+		public List<AdminCategoryCommand> selectCategoryList();
 		public List<AdminCategoryCommand> selectCateList();
 		public void insertCategory(AdminCategoryCommand category);
 		public AdminCategoryCommand selectCategory(int category_num);

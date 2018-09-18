@@ -92,8 +92,8 @@
 											
 											<label class="control-label" for="c_code">카테고리 명</label>
 											<form:select type="text" path="c_code" class="form-control">
-												<c:forEach var="b" items="${brand}"> 
-													<form:option value="${b.brand_num}">${b.brand_name}</form:option>
+												<c:forEach var="c" items="${category}"> 
+													<form:option value="${c.category_num}">${c.category_name}</form:option>
 												</c:forEach>
 											</form:select>
 							

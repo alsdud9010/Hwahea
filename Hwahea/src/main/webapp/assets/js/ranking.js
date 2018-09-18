@@ -1,4 +1,3 @@
-/* Write here your custom javascript codes */
 $(document).ready(function(){
 
 	//링크 연결
