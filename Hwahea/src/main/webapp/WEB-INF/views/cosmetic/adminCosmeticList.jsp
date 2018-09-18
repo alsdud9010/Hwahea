@@ -21,7 +21,7 @@
 							<tr>
 								<th>Code N.</th>
 								<th>화장품 명</th>
-								<th>브랜드</th>
+								<th>등록 일</th>
 								<th>가격</th>
 								<th>쇼핑 페이지 유무</th>
 								<th>상세보기</th>
@@ -39,7 +39,7 @@
 							<tr>
 								<td scope="row">${cosmetic.c_code }</td>
 								<td>${cosmetic.c_name}</td>
-								<td>${cosmetic.c_brand }</td>
+								<td>${cosmetic.c_reg_date }</td>
 								<td>${cosmetic.c_price }</td>
 								<c:if test="${cosmetic.c_shopping == 0 }">
 								<td>무</td>
@@ -89,7 +89,7 @@
 											<label class="control-label" for="c_name">화장품 이름</label>
 											<form:input type="text" path="c_name" class="form-control"/>
 											
-											<label class="control-label" for="upload">화장품 사진</label>
+											<label class="control-label" for="c_photo">화장품 사진</label>
 											<input type="file" name="upload" class="form-control"/>
 											
 											<label class="control-label" for="c_capacity">화장품 용량</label>

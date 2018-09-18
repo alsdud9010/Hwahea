@@ -18,8 +18,7 @@ public class AdminCosmeticCommand {
 	private int c_rank;
 	private int c_shopping;
 	private Date c_reg_date;
-	private int brand_num;
-	private int category_detail_num;
+	
 
 	public void setUpload(MultipartFile upload) throws IOException {
 		this.upload = upload;
@@ -97,29 +96,12 @@ public class AdminCosmeticCommand {
 		this.c_reg_date = c_reg_date;
 	}
 	
-	
-	public int getBrand_num() {
-		return brand_num;
-	}
-
-	public void setBrand_num(int brand_num) {
-		this.brand_num = brand_num;
-	}
-
-	public int getCategory_detail_num() {
-		return category_detail_num;
-	}
-
-	public void setCategory_detail_num(int category_detail_num) {
-		this.category_detail_num = category_detail_num;
-	}
 
 	@Override
 	public String toString() {
 		return "AdminCosmeticCommand [c_code=" + c_code + ", c_name=" + c_name + ", upload=" + upload + ", c_photo="
 				+ c_photo + ", c_capacity=" + c_capacity + ", c_price=" + c_price + ", c_ingre=" + c_ingre + ", c_rate="
-				+ c_rate + ", c_rank=" + c_rank + ", c_shopping=" + c_shopping + ", c_reg_date=" + c_reg_date
-				+ ", brand_num=" + brand_num + ", category_detail_num=" + category_detail_num + "]";
+				+ c_rate + ", c_rank=" + c_rank + ", c_shopping=" + c_shopping + ", c_reg_date=" + c_reg_date;
 	}
 	
 }

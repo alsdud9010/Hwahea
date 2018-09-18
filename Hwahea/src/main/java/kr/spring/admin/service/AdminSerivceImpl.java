@@ -111,7 +111,7 @@ public class AdminSerivceImpl implements AdminService {
 
 	@Override
 	public void insertCosmetic(AdminCosmeticCommand cosmetic) {
-		adminCosmeticMapper.insert(cosmetic);
+		adminCosmeticMapper.insertCosmetic(cosmetic);
 	}
 	
 	@Override

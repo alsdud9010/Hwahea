@@ -87,7 +87,6 @@ public class AdminController {
 			log.debug("<<list>> : " + list);
 		}
 		
-		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("adminBrandList");
 		mav.addObject("list",list);
@@ -230,8 +229,6 @@ public class AdminController {
 		if(log.isDebugEnabled()) {
 			log.debug("<<AdminCosmeticCommand>> : " + cosmeticcommand);
 		}
-		
-		int seqCount = adminCosmeticService.selectCosmeticSeq();
 		
 		adminCosmeticService.insertCosmetic(cosmeticcommand);
 		
