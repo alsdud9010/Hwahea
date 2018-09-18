@@ -22,7 +22,7 @@ import kr.spring.util.PagingUtil;
 public class PlusController {
 
 	private Logger log = Logger.getLogger(this.getClass());
-	private int rowCount = 10;
+	private int rowCount = 12;
 	private int pageCount = 10;
 
 	@Resource
@@ -31,7 +31,7 @@ public class PlusController {
 	//========= 플러스 메인 ============//
 	//글 목록
 	@RequestMapping("/plus/plusMain.do")
-	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword) {
+	public ModelAndView process(@RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword) {
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("keyfield", keyfield);
 		map.put("keyword", keyword);
@@ -42,15 +42,9 @@ public class PlusController {
 		if(log.isDebugEnabled()) {
 			log.debug("<<count>> : " + count);
 		}
-		
-		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount, pageCount, "plusMain.do");
-		
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
-		
 		List<PlusCommand> list = null;
 		if(count > 0) {
-			list = plusService.selectPlusList(map);
+			list = plusService.selectPlusMain(map);
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
 			}
@@ -60,7 +54,6 @@ public class PlusController {
 		mav.setViewName("plusMain");
 		mav.addObject("count",count);
 		mav.addObject("list", list);
-		mav.addObject("pagingHTML", page.getPagingHtml());
 		
 		return mav;
 	}
@@ -83,11 +76,42 @@ public class PlusController {
 		
 	}
 	
-	//========= 신상&트렌드
-	@RequestMapping("/plus/plusTrend.do")
-	public String process2() {
-
-		return "plusTrend";
+	//================== 카테고리 별 메인 페이지 ===================//
+	@RequestMapping(value="/plus/plusCategory.do",method=RequestMethod.GET)
+	public ModelAndView process(@RequestParam("hp_kind") int hp_kind, @RequestParam(value="pageNum",defaultValue="1") int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
+		if(log.isDebugEnabled()) {
+			log.debug("<<currentPage>> : " + currentPage);
+			log.debug("<<hp_kind>> : " + hp_kind);
+		}
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("hp_kind", hp_kind);
+		map.put("keyfield", keyfield);
+		map.put("keyword", keyword);
+		
+		//총 글의 갯수 또는 검색된 글의 갯수
+		int count = plusService.selectRowCount(map);
+		
+		PagingUtil page= new PagingUtil(keyfield, keyword, currentPage, count, rowCount, pageCount,"plusCategory.do");
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+		
+		List<PlusCommand> list = null;
+		if(count > 0) {
+			list = plusService.selectPlusList(map);
+			if(log.isDebugEnabled()) {
+				log.debug("<<list>> : " + list);
+			}
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("plusCategory");
+		mav.addObject("count",count);
+		mav.addObject("hp_kind",hp_kind);
+		mav.addObject("list",list);
+		mav.addObject("pagingHTML",page.getPagingHtml());
+		
+		return mav;
 	}
-	
 }

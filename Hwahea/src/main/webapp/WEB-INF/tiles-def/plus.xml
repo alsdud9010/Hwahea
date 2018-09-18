@@ -9,8 +9,8 @@
       <put-attribute name="title" value="화해 | 화해플러스"/>
       <put-attribute name="body" value="/WEB-INF/views/plus/plusMain.jsp"/>
    </definition>
-   <definition name="plusTrend" extends="main">
-      <put-attribute name="title" value="화해 | 신상&amp;트렌드"/>
-      <put-attribute name="body" value="/WEB-INF/views/plus/plusTrend.jsp"/>
+   <definition name="plusCategory" extends="main">
+      <put-attribute name="title" value="화해 | 세부카테고리"/>
+      <put-attribute name="body" value="/WEB-INF/views/plus/plusCategory.jsp"/>
    </definition>
 </tiles-definitions>

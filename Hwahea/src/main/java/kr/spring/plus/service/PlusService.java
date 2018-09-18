@@ -8,6 +8,8 @@ import kr.spring.plus.domain.PlusReplyCommand;
 
 public interface PlusService {
 	//ºÎ¸ð±Û
+	public List<PlusCommand> selectPlusMain(Map<String,Object> map);
+	
 	public List<PlusCommand> selectPlusList(Map<String,Object> map);
 	
 	public int selectRowCount (Map<String,Object> map);

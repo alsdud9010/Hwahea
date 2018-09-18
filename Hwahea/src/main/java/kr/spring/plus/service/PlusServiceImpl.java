@@ -17,10 +17,15 @@ public class PlusServiceImpl implements PlusService{
 	private PlusMapper plusMapper;
 
 	@Override
+	public List<PlusCommand> selectPlusMain(Map<String, Object> map) {
+		return plusMapper.selectPlusMain(map);
+	}
+
+	@Override
 	public List<PlusCommand> selectPlusList(Map<String, Object> map) {
 		return plusMapper.selectPlusList(map);
 	}
-
+	
 	@Override
 	public int selectRowCount(Map<String, Object> map) {
 		return plusMapper.selectRowCount(map);
@@ -92,4 +97,5 @@ public class PlusServiceImpl implements PlusService{
 		// TODO Auto-generated method stub
 		
 	}
+
 }

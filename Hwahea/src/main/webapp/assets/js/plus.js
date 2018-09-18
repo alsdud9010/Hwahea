@@ -75,4 +75,111 @@ $(document).ready(function(){
 		});
 	});
 	
+	
+	/*======================화해플러스 카테고리 별 메인페이지=======================*/
+	
+/*	var hp_kind = null;
+	//신상&트렌드
+	$(document).on('click','#plusTrend',function(){
+		$('#plusC_list').empty();
+		hp_kind = $(this).attr('data-num');
+		plusUrl('plusTrend.do',hp_kind);
+	});
+	//인기템리뷰
+	$(document).on('click','#plusReview',function(){
+		$('#plusC_list').empty();
+		hp_kind = $(this).attr('data-num');
+		plusUrl('plusReview.do',hp_kind);
+	});
+	//화장품팩트체크
+	$(document).on('click','#plusFactCheck',function(){
+		$('#plusC_list').empty();
+		hp_kind = $(this).attr('data-num');
+		plusUrl('plusFactCheck.do',hp_kind);
+	});
+	//뷰티팁
+	$(document).on('click','#plusBeauty',function(){
+		$('#plusC_list').empty();
+		hp_kind = $(this).attr('data-num');
+		plusUrl('plusBeauty.do',hp_kind);
+	});
+	//쇼핑팁
+	$(document).on('click','#plusShopping',function(){
+		$('#plusC_list').empty();
+		
+		plusUrl('plusShopping.do',hp_kind);
+	});
+	
+	function plusUrl(url,hp_kind){
+		$.ajax({
+			type:'post',
+			data:{hp_kind:hp_kind},
+			url:url,
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				$(document).on('click','.plusCategory',function(){
+					hp_kind = $(this).attr('data-num');
+					getCategory(data.list,hp_kind);
+				});
+			},
+			error:function(){
+				alert('네트워크 오류!');
+			}
+		});
+	}*/
+	
+/*	function getCategory(list,hp_kind){
+		var output = '<div class="row">';
+		output += '<div class="plusCategory">';
+		output += '<h2><strong>';
+		var plus_title = null;
+		if(hp_kind == 0){
+			plus_title = '신상&amp;트렌드';
+		}else if(hp_kind == 1){
+			plus_title = '인기템리뷰';
+		}else if(hp_kind == 2){
+			plus_title = '화장품 팩트체크';
+		}else if(hp_kind == 3){
+			plus_title ='뷰티팁';
+		}else if(hp_kind == 4){
+			plus_title = '쇼핑팁';
+		}
+		output += plus_title;
+		output += '</strong></h2></div>';End of plusCategory
+		output += '</div></div>';
+		
+		for(var i=0;i<list.length;i++){
+			if(list[i].hp_kind == hp_kind){
+				output += '<div class="magazine-news">';
+				output += '<div class="row">';
+				output += '	<div class="col-md-4">';
+				output += '		<div class="plusThumbnail">';
+				output += '			<a href="#" class="click_pmodal" data-num="'+list[i].hp_num+'" data-toggle="modal" data-target="#plus_modal">';
+				output += '			<img src="../assets/img/plus/plusThumbnail.PNG"></a>';
+				output += '		</div>';End of plusThumbnail
+				output += '		<div class="plusTitle">';
+				output += '			<a href="#" class="click_pmodal" data-num="'+list[i].hp_num+'" data-toggle="modal" data-target="#plus_modal">'+list[i].hp_title+'</a>';
+				output += '		</div>';End of plusTitle
+				output += '		<table class="plusTable">';
+				output += '			<tr><th><img class="plusLike" src="../assets/img/plus/heart.png" alt="like">'+list[i].hp_like+'</th>';
+				output += '				<th><img class="plusLike" src="../assets/img/plus/scrap.png" alt="scrap">'+list[i].hp_scrap+'</th>';
+				output += '				<th><img class="plusComments" src="../assets/img/plus/comments.png" alt="reply">'+list[i].hpre_cnt+'</th>';
+				output += '				<th><img class="plusComments" src="../assets/img/plus/hits.png" alt="hit">'+list[i].hp_hit+'</th></tr>';
+				output += '		</table>';End of plusTable
+				output += '		<div class="plusDetail">';
+				output += '			<hr class="hrinPlus">';
+				output += '			<span>'+plus_title+'</span> ';
+				output += '			<span class="plusUser">'+list[i].m_id+'&nbsp;&nbsp;'+list[i].hp_reg_date+'</span>';
+				output += '		</div>';End of plusDetail
+				output += '	</div>';End of col-md-4
+				output += '</div>';End of row
+				output +='<div class="margin-bottom-35"><hr class="hr-md"></div>';
+			}
+		}
+		
+		$('#plusC_list').append(output);
+	}*/
+	
 });

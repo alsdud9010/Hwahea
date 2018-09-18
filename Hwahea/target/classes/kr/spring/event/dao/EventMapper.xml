@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.event.dao.EventMapper">
+	<!-- 이벤트 목록 -->
+	<select id="selectEventList" parameterType="map" resultType="eventCommand">
+	 	SELECT
+			*
+		FROM (SELECT
+			a.*,
+			rownum rnum
+		FROM (SELECT 
+			b.*,
+			TRUNC(TRUNC(TRUNC(((b.event_end - SYSDATE)*(24*60*60))/60)/60)/24)||'일 '||
+            MOD(TRUNC(TRUNC(((b.event_end - SYSDATE)*(24*60*60))/60)/60),24) ||'시간 '||
+            MOD(TRUNC(((b.event_end - SYSDATE)*(24*60*60))/60),60) ||'분'
+            as "event_due",
+            MOD(TRUNC(((b.event_end - SYSDATE)*(24*60*60))),60) as "event_over",
+			r.ere_cnt
+		FROM event b LEFT OUTER JOIN (SELECT event_num, COUNT(*) ere_cnt FROM event_reply GROUP BY event_num)r
+		ON b.event_num = r.event_num
+		ORDER BY b.event_num DESC)a)
+		<![CDATA[
+			WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	
+	<!-- 페이징 처리 -->
+	<select id="selectRowCount" parameterType="map" resultType="integer">
+		SELECT
+			count(*)
+		FROM event
+	</select>
+	
+	<!-- 댓글 목록 -->
+	<select id="selectEventReply" parameterType="map" resultType="eventReplyCommand">
+		SELECT
+	  		ere_num,
+	  		ere_content,
+	  		TO_CHAR(ere_date,'YYYY-MM-DD HH24:MI:SS') ere_date,
+	  		event_num,
+	  		m_id
+	  	FROM (SELECT
+	  			a.*,
+	  			rownum rnum
+	  		  FROM (SELECT
+	  		  		  *
+	  		  		FROM event_reply
+	  		  		WHERE ere_num = #{ere_num}
+	  		  		ORDER BY ere_num DESC)a)
+	  	<![CDATA[
+	  	WHERE rnum >= #{start} AND rnum <= #{end}
+	  	]]>
+	</select>
+</mapper>

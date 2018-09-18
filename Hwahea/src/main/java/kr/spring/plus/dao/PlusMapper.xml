@@ -4,8 +4,36 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="kr.spring.plus.dao.PlusMapper">
 	<!-- 목록 출력 -->
+	<select id="selectPlusMain" parameterType="map" resultType="plusCommand">
+		SELECT p.*,
+			   m.*
+	    FROM (SELECT 
+	        DENSE_RANK() OVER(PARTITION BY pr.hp_kind ORDER BY pr.hp_like DESC, pr.hp_hit DESC) ranking, 
+	        pr.hp_kind, 
+	        pr.hp_num,
+	        pr.hp_title, 
+	        pr.hp_content,
+	        pr.hp_like,
+	        pr.hp_hit, 
+	        pr.hp_scrap, 
+	        pr.m_id,
+	        NVL(pr.hpre_cnt,0) hpre_cnt
+	    FROM (SELECT
+	            pb.*,
+	            r.hpre_cnt
+	        FROM plus_board pb LEFT OUTER JOIN (SELECT hp_num, COUNT(*) hpre_cnt
+	        FROM plus_reply GROUP BY hp_num)r
+	        ON pb.hp_num = r.hp_num)pr)p LEFT OUTER JOIN member_detail m 
+	    ON p.m_id = m.m_id
+	    <![CDATA[
+	    	WHERE p.ranking <= 5
+	    ]]>
+	    ORDER BY p.hp_kind ASC, p.ranking ASC
+	</select>
+	
+	<!-- 화해플러스 세부카테고리 -->
 	<select id="selectPlusList" parameterType="map" resultType="plusCommand">
-		SELECT
+	 	SELECT
 			*
 		FROM (SELECT
 			a.*,
@@ -15,6 +43,7 @@
 			r.hpre_cnt
 		FROM plus_board b LEFT OUTER JOIN (SELECT hp_num, COUNT(*) hpre_cnt FROM plus_reply GROUP BY hp_num)r
 		ON b.hp_num = r.hp_num
+		WHERE b.hp_kind = #{hp_kind}
 		ORDER BY b.hp_num DESC)a)
 		<![CDATA[
 			WHERE rnum >= #{start} AND rnum <= #{end}

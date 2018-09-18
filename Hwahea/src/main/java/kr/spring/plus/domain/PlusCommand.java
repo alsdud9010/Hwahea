@@ -31,6 +31,9 @@ public class PlusCommand {
 	  constraint plus_board_fk foreign key(m_id) references member(m_id)
 	 
 	  create sequence plus_board_seq;  
+	  
+	  사용자 등급 식별자(m_auth)
+	  0-welcome 1-family 2-vip 3-vvip 4-탈퇴회원 5-관리자
 	 */
 	
 	private int hp_num; //글 번호
@@ -61,6 +64,9 @@ public class PlusCommand {
 	
 	private String hp_ip; //작성자 ip주소
 	private String m_id; //작성자 id
+	
+	private int ranking;
+	private int hpre_cnt;
 	
 	public void setUpload1(MultipartFile hp_upload1) throws IOException {
 	
@@ -216,18 +222,27 @@ public class PlusCommand {
 	public void setM_id(String m_id) {
 		this.m_id = m_id;
 	}
+	public int getRanking() {
+		return ranking;
+	}
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
+	}
+	public int getHpre_cnt() {
+		return hpre_cnt;
+	}
+	public void setHpre_cnt(int hpre_cnt) {
+		this.hpre_cnt = hpre_cnt;
+	}
 
 
 	@Override
 	public String toString() {
-		return "PlusCommand [hp_num=" + hp_num + ", hp_kind=" + hp_kind + ", hp_tile=" + hp_title + ", hp_content="
+		return "PlusCommand [hp_num=" + hp_num + ", hp_kind=" + hp_kind + ", hp_title=" + hp_title + ", hp_content="
 				+ hp_content + ", hp_hit=" + hp_hit + ", hp_like=" + hp_like + ", hp_scrap=" + hp_scrap
 				+ ", hp_reg_date=" + hp_reg_date + ", hp_upload1=" + hp_upload1 + ", hp_upload2=" + hp_upload2
-				+ ", hp_upload3=" + hp_upload3 + ", hp_upload4=" + hp_upload4 + ", hp_uploadfile1="
-				+ Arrays.toString(hp_uploadfile1) + ", hp_uploadfile2=" + Arrays.toString(hp_uploadfile2)
-				+ ", hp_uploadfile3=" + Arrays.toString(hp_uploadfile3) + ", hp_uploadfile4="
-				+ Arrays.toString(hp_uploadfile4) + ", hp_filename1=" + hp_filename1 + ", hp_filename2=" + hp_filename2
-				+ ", hp_filename3=" + hp_filename3 + ", hp_filename4=" + hp_filename4 + ", hp_ip=" + hp_ip + ", m_id="
-				+ m_id + "]";
+				+ ", hp_upload3=" + hp_upload3 + ", hp_upload4=" + hp_upload4 + ", hp_filename1=" + hp_filename1
+				+ ", hp_filename2=" + hp_filename2 + ", hp_filename3=" + hp_filename3 + ", hp_filename4=" + hp_filename4
+				+ ", hp_ip=" + hp_ip + ", m_id=" + m_id + ", ranking=" + ranking + ", hpre_cnt" + hpre_cnt + "]";
 	}
 }

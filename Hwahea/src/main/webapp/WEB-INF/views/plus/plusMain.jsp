@@ -43,71 +43,8 @@
             <div class="carousel-inner">
               <div class="item active">
               	<div class="plusBanner">
-                	<a href="#" data-toggle="modal" data-target="#plus_modal"><img src="${pageContext.request.contextPath}/assets/img/plus/plusTrend.PNG"></a>
-                </div>
-                <div class="pBanner_con" >
-	                	<div class="plusMember">
-	                	<img class="plusProfile" src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>
-	                	<span class="grade_vip"><input type="button" value="VIP"></span>
-	                	</div>
-	                	<div class="plusBannerTitle text-right"><h3><a href="#" data-toggle="modal" data-target="#plus_modal"><strong>축축 쳐진 머리도 살려내는 기적의 헤어템!</strong></a></h3></div>
-	                	<div class="plusBannerDate text-right">2018-08-27 <strong>dragon</strong></div>
-                	<hr size="4" noshade style="margin-bottom:10px;margin-top: 15px;">
-	                	<div class="plusBannerText">
-	                	축축 쳐진 머리도 다시 살려내는 기적의 헤어템! #주간신상템<br>
-	                	#주간신상템#주간신상템#주간신상템#주간신상템#주간신상템#주간신상템#주간신상템#주간신상템#주간신상템#주간신상템
-	                	</div>
-	                	<div class="pBanner_more">
-	                		<a href="#" data-toggle="modal" data-target="#plus_modal">더보기</a>
-	                	</div>
-                	<hr size="4" noshade style="margin-bottom: 10px;margin-top: 5px;">
-                	<div>
-	                	<span class="bannerIcon"><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-			            	  <strong>285</strong></span>
-			            <span class="bannerIcon"><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">
-			            	  <strong>57</strong></span>
-			         	<span class="bannerIcon"><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-			           		  <strong>1850</strong></span>
-			            <span class="bannerIcon"><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
-			            	  <strong>65781</strong></span>
-                	</div>
-                </div>
-              </div>
-              <div class="item">
-              	<div class="plusBanner">
-                	<a href="#" data-toggle="modal" data-target="#plus_modal"><img src="${pageContext.request.contextPath}/assets/img/plus/plusBest.PNG"></a>
-                </div>
-                <div class="pBanner_con">
-	                	<div class="plusMember">
-	                		<img class="plusProfile" src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>
-	                	<span class="grade_family"><input type="button" value="Family"></span>
-	                	</div>
-	                	<div class="plusBannerTitle text-right"><h3><a href="#" data-toggle="modal" data-target="#plus_modal"><strong>트위드에 코랄 컬러를★ 지금 가장 핫한 네일 보기!</strong></a></h3></div>
-	                	<div class="plusBannerDate text-right">2018-08-31 <strong>blue</strong></div>
-                	<hr size="4" noshade style="margin-bottom:10px;margin-top: 15px;">
-	                	<div class="plusBannerText">
-	                	트위드에 코랄 컬러를★ 지금 가장 핫한 네일 보기! #인기템리뷰<br>
-	                	핫한 것만 골라 담은 젤라또픽 #인기템리뷰#인기템리뷰#인기템리뷰#인기템리뷰#인기템리뷰#인기템리뷰#인기템리뷰#인기템리뷰
-	                	</div>
-	                	<div class="pBanner_more">
-	                		<a href="#" data-toggle="modal" data-target="#plus_modal">더보기</a>
-	                	</div>
-                	<hr size="4" noshade style="margin-bottom: 10px;margin-top: 5px;">
-                	<div>
-	                	<span class="bannerIcon"><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-			            	  <strong>285</strong></span>
-			            <span class="bannerIcon"><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">
-			            	  <strong>57</strong></span>
-			         	<span class="bannerIcon"><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-			           		  <strong>1850</strong></span>
-			            <span class="bannerIcon"><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
-			            	  <strong>65781</strong></span>
-                	</div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="plusBanner">
-                	<a href="#" data-toggle="modal" data-target="#plus_modal"><img src="${pageContext.request.contextPath}/assets/img/plus/pmodal1.PNG"></a>
+                	<a href="#" data-toggle="modal" data-target="#plus_modal">
+                	<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/pmodal1.PNG"></a>
                 </div>
                 <div class="pBanner_con">
 	                	<div class="plusMember">
@@ -137,7 +74,46 @@
                 	</div>
                 </div>
               </div>
-              </div>
+              <c:forEach var="banner" items="${list}">
+              	<c:if test="${banner.ranking == 1}">
+	              <div class="item">
+	              	<div class="plusBanner">
+                	<a href="#" class="click_pmodal" data-num="${banner.hp_num}" data-toggle="modal" data-target="#plus_modal">
+                		<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/plusTrend.PNG"></a>
+                	</div>
+               	  <div class="pBanner_con" >
+                	<div class="plusMember">
+                		<img class="plusProfile" src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>
+                		<span class="grade_vip"><input type="button" value="VIP"></span>
+                	</div>
+                	<div class="plusBannerTitle text-right">
+                		<h3>
+                		<a href="#" class="click_pmodal" data-num="${banner.hp_num}" data-toggle="modal" data-target="#plus_modal">
+                		<strong>${banner.hp_title}</strong></a></h3></div>
+                	<div class="plusBannerDate text-right">${banner.hp_reg_date}<strong>${banner.m_id}</strong></div>
+                	<hr size="4" noshade style="margin-bottom:10px;margin-top: 15px;">
+	                	<div class="plusBannerText">
+	                	${banner.hp_content}
+	                	</div>
+	                	<div class="pBanner_more">
+	                		<a href="#" class="click_pmodal" data-num="${banner.hp_num}" data-toggle="modal" data-target="#plus_modal">더보기</a>
+	                	</div>
+                	<hr size="4" noshade style="margin-bottom: 10px;margin-top: 5px;">
+                	<div>
+	                	<span class="bannerIcon"><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
+			            	  <strong>${banner.hp_like}</strong></span>
+			            <span class="bannerIcon"><img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/scrap.png" alt="scrap">
+			            	  <strong>${banner.hp_scrap}</strong></span>
+			         	<span class="bannerIcon"><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
+			           		  <strong>${banner.hpre_cnt}</strong></span>
+			            <span class="bannerIcon"><img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
+			            	  <strong>${banner.hp_hit}</strong></span>
+                	</div>
+                </div>
+	              </div>
+	            </c:if>
+              </c:forEach>
+           </div>
               <div class="carousel-arrow">
 	              <a data-slide="prev" href="#myCarousel-1" class="left carousel-control">
 	                <i class="fa fa-angle-left"></i>
@@ -156,12 +132,17 @@
             <div class="margin-bottom-20"><hr class="hr-md"></div>
             <div class="col-md-12">
           <ul class="r_menu_2 col-md-12 margin-bottom-20">
-             <li class="r_thistap">화해플러스</li>
-             <li onclick="location.href='${pageContext.request.contextPath}/plus/plusTrend.do'">신상&amp;트렌드</li>
-             <li>인기템리뷰</li>
-             <li>화장품 팩트체크</li>
-             <li>뷰티팁</li>
-             <li>쇼핑팁</li>
+             <li class="r_thistap" onclick="location.href='${pageContext.request.contextPath}/plus/plusMain.do'">화해플러스</li>
+             <li class="plusCategory" id="kind_0" 
+	             	 onclick="location.href='${pageContext.request.contextPath}/plus/plusCategory.do?hp_kind=0'">신상&amp;트렌드</li>
+	         <li class="plusCategory" id="kind_1" 
+	             	 onclick="location.href='${pageContext.request.contextPath}/plus/plusCategory.do?hp_kind=1'">인기템리뷰</li>
+	         <li class="plusCategory" id="kind_2" 
+	             	 onclick="location.href='${pageContext.request.contextPath}/plus/plusCategory.do?hp_kind=2'">화장품 팩트체크</li>
+	         <li class="plusCategory" id="kind_3" 
+	             	 onclick="location.href='${pageContext.request.contextPath}/plus/plusCategory.do?hp_kind=3'">뷰티팁</li>
+	         <li class="plusCategory" id="kind_4" 
+	             	 onclick="location.href='${pageContext.request.contextPath}/plus/plusCategory.do?hp_kind=4'">쇼핑팁</li>
           </ul>
           </div>
           </div>
@@ -173,101 +154,38 @@
           <div class="magazine-news">
             <div class="row">
             <div class="plusCategory"><h3><strong>신상&amp;트렌드</strong></h3></div>
-              <div class="col-md-2">
-                <div class="pm_thumb">
-                  <a href="#" data-toggle="modal" data-target="#plus_modal">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/plusTrend.PNG" alt=""></a>
-                  <span class="magazine-badge label-yellow">1</span>
-                </div>
-                <div class="pmain_tit best"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span class="pm_lrs">
-               	  <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong></span>
-                </span>
-              </div>
-              <div class="col-md-2">
-              	<div class="pm_thumb">
-                  <a href="#" data-toggle="modal" data-target="#plus_modal">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/plusThumbnail.PNG" alt=""></a>
-                  <span class="magazine-badge label-red">2</span>
-                </div>
-                <div class="pmain_tit"><a href="#">축축 쳐진 머리도 살려내는 기적의 헤어템 #주간신상템</a></div>
-                <span class="pm_lrs">
-               	  <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong></span>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="pm_thumb">
-                  <a href="#" data-toggle="modal" data-target="#plus_modal">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/plusBest.PNG" alt=""> </a>
-                  <span class="magazine-badge label-red">3</span>
-                </div>
-                <div class="pmain_tit"><a href="#">트위드에 코랄 컬러를★ 지금 가장 핫한 네일 보기! #인기템리뷰</a></div>
-                <span class="pm_lrs">
-               	  <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong></span>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">4</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span class="pm_lrs">
-               	  <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong></span>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">5</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span class="pm_lrs">
-               	  <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong></span>
-                </span>
-              </div>
+              <c:if test="${count == 0}">
+              <!-- UI 수정할 것***************************************** -->
+              	<div class="col-md-2">등록된 게시물이 없습니다.</div>
+              </c:if>
+              <c:if test="${count > 0}">
+              <c:forEach var="plus" items="${list}">
+              <c:if test="${plus.hp_kind==0}">
+	              <div class="col-md-2">
+	                <div class="pm_thumb">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
+	                  <span class="magazine-badge 
+	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
+	                  		<c:if test="${plus.ranking!=1}">label-red</c:if>
+	                  		">${plus.ranking}</span>
+	                </div>
+	                <div class="pmain_tit best"><a href="#">${plus.hp_title}</a></div>
+	                <span class="pm_lrs">
+	                  <span>
+	                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
+	                  <strong>${plus.hp_like}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
+	                  <strong>${plus.hpre_cnt}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
+	                  <strong>${plus.hp_hit}</strong></span>
+	                </span>
+	              </div>
+              </c:if>
+              </c:forEach>
+              </c:if>
             </div>
           </div>
           <!-- 화해플러스 신상&트렌드 끝 -->
@@ -283,25 +201,30 @@
               </c:if>
               <c:if test="${count > 0}">
               <c:forEach var="plus" items="${list}">
-              <div class="col-md-2">
-                <div class="pm_thumb">
-                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-yellow">1</span>
-                </div>
-                <div class="pmain_tit best"><a href="#">${plus.hp_title}</a></div>
-                <span class="pm_lrs">
-                  <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>${plus.hp_like}</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>1234</strong></span>
-                  <span>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
-                  <strong>${plus.hp_hit}</strong></span>
-                </span>
-              </div>
+               <c:if test="${plus.hp_kind==1}">
+	              <div class="col-md-2">
+	                <div class="pm_thumb">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
+	                  <span class="magazine-badge 
+	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
+	                  		<c:if test="${plus.ranking!=1}">label-red</c:if>
+	                  		">${plus.ranking}</span>
+	                </div>
+	                <div class="pmain_tit best"><a href="#">${plus.hp_title}</a></div>
+	                <span class="pm_lrs">
+	                  <span>
+	                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
+	                  <strong>${plus.hp_like}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
+	                  <strong>${plus.hpre_cnt}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
+	                  <strong>${plus.hp_hit}</strong></span>
+	                </span>
+	              </div>
+              </c:if>
               </c:forEach>
               </c:if>
             </div>
@@ -309,90 +232,83 @@
           <!-- 화해플러스 인기템리뷰 끝 -->
           <div class="margin-bottom-35">
           <hr class="hr-md"> </div>
+          <!-- 화해플러스 화장품 팩트체크 시작-->
+          <div class="magazine-news">
+            <div class="row">
+            <div class="plusCategory"><h3><strong>화장품 팩트체크</strong></h3></div>
+              <c:if test="${count == 0}">
+              <!-- UI 수정할 것***************************************** -->
+              	<div class="col-md-2">등록된 게시물이 없습니다.</div>
+              </c:if>
+              <c:if test="${count > 0}">
+              <c:forEach var="plus" items="${list}">
+               <c:if test="${plus.hp_kind==2}">
+	              <div class="col-md-2">
+	                <div class="pm_thumb">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
+	                  <span class="magazine-badge 
+	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
+	                  		<c:if test="${plus.ranking!=1}">label-red</c:if>
+	                  		">${plus.ranking}</span>
+	                </div>
+	                <div class="pmain_tit best"><a href="#">${plus.hp_title}</a></div>
+	                <span class="pm_lrs">
+	                  <span>
+	                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
+	                  <strong>${plus.hp_like}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
+	                  <strong>${plus.hpre_cnt}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
+	                  <strong>${plus.hp_hit}</strong></span>
+	                </span>
+	              </div>
+              </c:if>
+              </c:forEach>
+              </c:if>
+            </div>
+          </div>
+          <!-- 화해플러스 화장품 팩트체크 끝 -->
+          <div class="margin-bottom-35">
+          <hr class="hr-md"> </div>
          <!-- 뷰티팁 시작 -->
          <div class="magazine-news">
             <div class="row">
             <div class="plusCategory"><h3><strong>뷰티팁</strong></h3></div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-yellow">1</span>
-                </div>
-                <div class="pmain_tit best"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">2</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">3</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">4</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">5</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
+              <c:if test="${count == 0}">
+              <!-- UI 수정할 것***************************************** -->
+              	<div class="col-md-2">등록된 게시물이 없습니다.</div>
+              </c:if>
+              <c:if test="${count > 0}">
+              <c:forEach var="plus" items="${list}">
+               <c:if test="${plus.hp_kind==3}">
+	              <div class="col-md-2">
+	                <div class="pm_thumb">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
+	                  <span class="magazine-badge 
+	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
+	                  		<c:if test="${plus.ranking!=1}">label-red</c:if>
+	                  		">${plus.ranking}</span>
+	                </div>
+	                <div class="pmain_tit best"><a href="#">${plus.hp_title}</a></div>
+	                <span class="pm_lrs">
+	                  <span>
+	                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
+	                  <strong>${plus.hp_like}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
+	                  <strong>${plus.hpre_cnt}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
+	                  <strong>${plus.hp_hit}</strong></span>
+	                </span>
+	              </div>
+              </c:if>
+              </c:forEach>
+              </c:if>
             </div>
           </div>
          <!-- 뷰티팁 끝 -->
@@ -402,86 +318,38 @@
          <div class="magazine-news">
             <div class="row">
             <div class="plusCategory"><h3><strong>쇼핑팁</strong></h3></div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-yellow">1</span>
-                </div>
-                <div class="pmain_tit best"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">2</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">3</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">4</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
-              <div class="col-md-2">
-                <div class="magazine-news-img">
-                  <a href="#">
-                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
-                  <span class="magazine-badge label-red">5</span>
-                </div>
-                <div class="pmain_tit"><a href="#">곰손도 이것만 있으면 트렌디함 UP #주간신상템</a></div>
-                <span>
-                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
-                  <strong>207</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
-                  <strong>130</strong>
-                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="reply">
-                  <strong>6789</strong>
-                </span>
-              </div>
+              <c:if test="${count == 0}">
+              <!-- UI 수정할 것***************************************** -->
+              	<div class="col-md-2">등록된 게시물이 없습니다.</div>
+              </c:if>
+              <c:if test="${count > 0}">
+              <c:forEach var="plus" items="${list}">
+               <c:if test="${plus.hp_kind==4}">
+	              <div class="col-md-2">
+	                <div class="pm_thumb">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
+	                  <span class="magazine-badge 
+	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
+	                  		<c:if test="${plus.ranking!=1}">label-red</c:if>
+	                  		">${plus.ranking}</span>
+	                </div>
+	                <div class="pmain_tit best"><a href="#">${plus.hp_title}</a></div>
+	                <span class="pm_lrs">
+	                  <span>
+	                  <img class="plusLike" src="${pageContext.request.contextPath}/assets/img/plus/heart.png" alt="like">
+	                  <strong>${plus.hp_like}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/comments.png" alt="reply">
+	                  <strong>${plus.hpre_cnt}</strong></span>
+	                  <span>
+	                  <img class="plusComments" src="${pageContext.request.contextPath}/assets/img/plus/hits.png" alt="hit">
+	                  <strong>${plus.hp_hit}</strong></span>
+	                </span>
+	              </div>
+              </c:if>
+              </c:forEach>
+              </c:if>
             </div>
           </div>
          <!-- 쇼핑팁 끝 -->

@@ -13,6 +13,9 @@ import kr.spring.plus.domain.PlusReplyCommand;
 public interface PlusMapper {
 	/*==================화해플러스=================*/
 	//화해플러스 목록
+	public List<PlusCommand> selectPlusMain(Map<String,Object> map);
+	
+	//화해플러스 세부 카테고리
 	public List<PlusCommand> selectPlusList(Map<String,Object> map);
 	
 	//화해플러스 페이징
