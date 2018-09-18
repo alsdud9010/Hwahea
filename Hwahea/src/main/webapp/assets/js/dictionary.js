@@ -197,7 +197,9 @@ $(document).ready(function(){
 				output+='<ul class="d_list_detail_content">';
 	/*=================EWG 등급===================*/
 				var grade = null;
-				if(list[i].i_grade>=1 && list[i].i_grade<=2){
+				if(list[i].i_grade==0){
+					grade='등급 미정';
+				}else if(list[i].i_grade>=1 && list[i].i_grade<=2){
 					grade='낮은 위험도';
 				}else if(list[i].i_grade>=3 && list[i].i_grade<=6){
 					grade='중간 위험도';
@@ -223,10 +225,10 @@ $(document).ready(function(){
 				var w_img = '';
 				var warning = '';
 				if(list[i].i_warning==null){
-					warning = list[i].i_warning;
+					warning = '해당없음';
 					w_img = 'warning_null';
 				}else{
-					warning = '해당없음;'
+					warning = list[i].i_warning;
 					w_img = 'warning';
 				}
 				output+='<li>';
@@ -257,7 +259,7 @@ $(document).ready(function(){
 				output+='			<img class="img-responsive" src="../assets/img/dictionary/' + a_img + '.png" alt="">';
 				output+='		</div>';
 				output+='		<div class="d_list_detail_name">';
-				output+='			<div class="text-bold">알레르기 피부타입</div>';
+				output+='			<div class="text-bold">알레르기 주의성분</div>';
 				output+='			<div>' + allergie + '</div>		';							
 				output+='		</div>';
 				output+='	</div>';
@@ -277,10 +279,11 @@ $(document).ready(function(){
 				if(list[i].i_dry=='Y'){
 					skinType += '<span class="text-good">건성피부에 좋아요!</span><br>';	
 					good += 1;
-				}else if(list[i].i_oilly=='N'){
+				}else if(list[i].i_dry=='N'){
 					skinType += '<span class="text-bad">건성피부는 피하세요!</span><br>';
 					bad += 1;
 								}
+				
 				if(list[i].i_sensitive=='Y'){
 					skinType += '<span class="text-good">민감성피부에 좋아요!</span><br>';
 					good += 1;

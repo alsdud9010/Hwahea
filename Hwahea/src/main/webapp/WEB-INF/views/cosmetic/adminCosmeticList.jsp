@@ -83,8 +83,19 @@
 												</div>													
 												<div class="col-md-8 col-sm-8 col-xs-8" style="padding-left:250px;">
 											
-											<label class="control-label" for="c_code">화장품 코드명 </label>
-											<form:input type="text" path="c_code" class="form-control"/>			
+											<label class="control-label" for="c_code">브랜드 명</label>
+											<form:select type="text" path="c_code" class="form-control">
+												<c:forEach var="b" items="${brand}"> 
+													<form:option value="${b.brand_num}">${b.brand_name}</form:option>
+												</c:forEach>
+											</form:select>
+											
+											<label class="control-label" for="c_code">카테고리 명</label>
+											<form:select type="text" path="c_code" class="form-control">
+												<c:forEach var="b" items="${brand}"> 
+													<form:option value="${b.brand_num}">${b.brand_name}</form:option>
+												</c:forEach>
+											</form:select>
 							
 											<label class="control-label" for="c_name">화장품 이름</label>
 											<form:input type="text" path="c_name" class="form-control"/>

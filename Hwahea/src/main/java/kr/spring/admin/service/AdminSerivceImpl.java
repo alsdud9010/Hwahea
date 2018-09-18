@@ -70,6 +70,11 @@ public class AdminSerivceImpl implements AdminService {
 		return adminCategoryDetailMapper.selectCateDetailRowCount(map);
 	}
 	
+	@Override
+	public List<AdminCategoryCommand> selectC_DetailList() {
+		return adminCategoryDetailMapper.selectC_DetailList();
+	}
+	
 	//카테고리
 	@Resource
 	private AdminMapper adminCategoryMapper;
@@ -260,5 +265,6 @@ public class AdminSerivceImpl implements AdminService {
 		
 		return adminProductMapper.selectProductRowCount(map);
 	}
+
 
 }

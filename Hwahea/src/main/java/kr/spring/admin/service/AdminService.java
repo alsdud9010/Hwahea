@@ -22,6 +22,7 @@ public interface AdminService {
 	public List<AdminCategoryCommand> selectCateDetailList();
 	public int selectCateDetailRowCount(Map<String, Object> map);
 	public void insertCateDetail(AdminCategoryCommand categoryDetail);
+	public List<AdminCategoryCommand> selectC_DetailList();
 	
 	//카테고리
 		public List<AdminCategoryCommand> selectCateList();

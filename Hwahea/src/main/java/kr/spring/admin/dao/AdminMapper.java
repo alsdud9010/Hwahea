@@ -34,6 +34,8 @@ public interface AdminMapper {
 	@Insert("INSERT INTO category_detail(category_detail_num, category_detail_name, head_category, shopping_exist)"
 			+ "VALUES(category_detail_seq.nextval, #{category_detail_name}, #{head_category}, #{shopping_exist})")
 	public void insertCateDetail(AdminCategoryCommand categoryDetail);
+	@Select("SELECT distinct (d.CATEGORY_DETAIL_NUM),d.CATEGORY_DETAIL_NAME FROM category c LEFT JOIN category_detail d ON 2=d.HEAD_CATEGORY ORDER BY d.CATEGORY_DETAIL_NUM")
+	public List<AdminCategoryCommand> selectC_DetailList();
 	
 	//카테고리
 	@Select("SELECT * FROM category, category_detail WHERE category_num = head_category")

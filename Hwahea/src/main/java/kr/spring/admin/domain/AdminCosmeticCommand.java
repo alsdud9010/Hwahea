@@ -2,6 +2,7 @@ package kr.spring.admin.domain;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Arrays;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,7 +12,7 @@ public class AdminCosmeticCommand {
 	private MultipartFile upload;//업로드 파일
 	private byte[] c_image;//DB에 저장된 파일
 	private String c_photo;//파일 명
-	private int c_capacity;
+	private String c_capacity;
 	private int c_price;
 	private String c_ingre;
 	private String c_rate;
@@ -53,10 +54,10 @@ public class AdminCosmeticCommand {
 	public void setC_photo(String c_photo) {
 		this.c_photo = c_photo;
 	}
-	public int getC_capacity() {
+	public String getC_capacity() {
 		return c_capacity;
 	}
-	public void setC_capacity(int c_capacity) {
+	public void setC_capacity(String c_capacity) {
 		this.c_capacity = c_capacity;
 	}
 	public int getC_price() {
@@ -95,13 +96,13 @@ public class AdminCosmeticCommand {
 	public void setC_reg_date(Date c_reg_date) {
 		this.c_reg_date = c_reg_date;
 	}
-	
 
 	@Override
 	public String toString() {
-		return "AdminCosmeticCommand [c_code=" + c_code + ", c_name=" + c_name + ", upload=" + upload + ", c_photo="
-				+ c_photo + ", c_capacity=" + c_capacity + ", c_price=" + c_price + ", c_ingre=" + c_ingre + ", c_rate="
-				+ c_rate + ", c_rank=" + c_rank + ", c_shopping=" + c_shopping + ", c_reg_date=" + c_reg_date;
+		return "AdminCosmeticCommand [c_code=" + c_code + ", c_name=" + c_name + ", upload=" + upload + ", c_image="
+				+ Arrays.toString(c_image) + ", c_photo=" + c_photo + ", c_capacity=" + c_capacity + ", c_price="
+				+ c_price + ", c_ingre=" + c_ingre + ", c_rate=" + c_rate + ", c_rank=" + c_rank + ", c_shopping="
+				+ c_shopping + ", c_reg_date=" + c_reg_date + "]";
 	}
 	
 }

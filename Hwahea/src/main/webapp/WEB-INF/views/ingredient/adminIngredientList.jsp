@@ -94,20 +94,30 @@
 
 
 											<label class="control-label" for="i_KName">한글성분 명</label>
-											<form:input type="text" path="i_KName" class="form-control" />
+											<form:textarea type="text" path="i_KName" class="form-control" />
 
 											<label class="control-label" for="i_EName">영문성분 명</label>
-											<form:input type="text" path="i_EName" class="form-control" />
+											<form:textarea type="text" path="i_EName" class="form-control" />
 
 											<label class="control-label" for="i_prop">배합 목적</label>
 											<form:input type="text" path="i_prop" class="form-control" />
 
 											<label class="control-label" for="i_grade">EWG 등급</label>
-											<form:input type="text" path="i_grade" class="form-control" />
+											<form:select type="text" path="i_grade" class="form-control">
+												<form:option value="0">미정</form:option>
+												<form:option value="1">1</form:option>
+												<form:option value="2">2</form:option>
+												<form:option value="3">3</form:option>
+												<form:option value="4">4</form:option>
+												<form:option value="5">5</form:option>
+												<form:option value="6">6</form:option>
+												<form:option value="7">7</form:option>
+												<form:option value="8">8</form:option>
+												<form:option value="9">9</form:option>
+											</form:select>
 
 											<label class="control-label" for="i_datagrade">데이터 등급</label>
-											<form:select type="text" path="i_datagrade"
-												class="form-control">
+											<form:select type="text" path="i_datagrade" class="form-control">
 												<form:option value="없음(None)">없음(None)</form:option>
 												<form:option value="적음(Limited)">적음(Limited)</form:option>
 												<form:option value="적당함(Fair)">적당함(Fair)</form:option>
