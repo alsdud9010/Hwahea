@@ -24,7 +24,7 @@ function maxLengthCheck(object){
 		    <label for="m_id" class="col-sm-2 control-label">아이디</label>
 		    <div class="col-sm-6">
 				<form:input path="m_id" class="form-control2" id="m_id" placeholder="아이디"/>
-				<input type="button" id="join-submit" value="ID중복체크" class="cfid"> <span id="message_id"></span>
+				<input type="button" id="confirmId" value="ID중복체크" class="cfid"> <span id="message_id"></span>
 		    </div>
 	    </div>
 	    <div class="form-group">
@@ -49,7 +49,7 @@ function maxLengthCheck(object){
 	    <div class="form-group">
 		    <label for="inputPasswordCheck" class="col-sm-2 control-label">비밀번호 확인</label>
 		    <div class="col-sm-6">
-		   		<input type="password" class="form-control" id="inputPasswordCheck" placeholder="비밀번호 확인" onkeyup="checkPwd()"/>
+		   		<input type="password" class="form-control" id="inputPasswordCheck" placeholder="비밀번호 확인"/>
 		      	<p class="help-block">비밀번호를 한번 더 입력해주세요.</p>
 		    </div>
 	    </div>
@@ -133,8 +133,8 @@ function maxLengthCheck(object){
 			    <i class="fa fa-check"></i>
 			    <span>해당없음</span>
 			  </label>
-			  <input type="checkbox" name="m_atopic" id="atopic" class="checkbox" value="1">
-			  <label for="atopic" class="checkbox-label">
+			  <input type="checkbox" name="m_atopy" id="atopy" class="checkbox" value="1">
+			  <label for="atopy" class="checkbox-label">
 			    <i class="fa fa-check"></i>
 			    <span>아토피</span>
 			  </label>
@@ -153,9 +153,9 @@ function maxLengthCheck(object){
 		<div class="form-group">
 			<label for="phone" class="col-sm-2 control-label">휴대전화</label>
 			<div class="col-sm-6">
-				<form:input path="m_phone1" type="number" id="inputMobile" placeholder="010" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)"/>
-				<form:input path="m_phone2" type="number" id="inputMobile" placeholder="1234" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
-				<form:input path="m_phone3" type="number" id="inputMobile" placeholder="5678" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
+				<form:input path="m_phone1" type="number" id="inputMobile1" placeholder="010" class="num_phone form-control col-md-3" maxlength="3" oninput="maxLengthCheck(this)"/>
+				<form:input path="m_phone2" type="number" id="inputMobile2" placeholder="1234" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
+				<form:input path="m_phone3" type="number" id="inputMobile3" placeholder="5678" class="num_phone form-control col-md-3" maxlength="4" oninput="maxLengthCheck(this)"/>
 			</div>
 		</div>
 		<div class="form-group">

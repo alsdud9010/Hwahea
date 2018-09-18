@@ -260,22 +260,18 @@ public class MemberController {
 	}
 	//»≠«ÿºÓ«Œ(¡÷πÆ)  »£√‚
 		@RequestMapping(value="/mypage/my_cartorder.do")
-		public ModelAndView process(@RequestParam("m_id") String bc, String m_id) {
+		public String process(@RequestParam("bc") String bc, HttpSession session,Model model) {
 		
-		/*if(bc == null || bc.equals("")) {
+		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
-		}*/
+		}
 		List<OrderCommand> list = null;
-		List<OrderCommand> list2 = null;
 		
-		list = memberService.selectCart();
-		list2 = memberService.selectCartOrder(m_id);
+		list = memberService.selectCartOrder((String)session.getAttribute("user_id"));
 		
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("my_cartorder");
-		mav.addObject("member", list);
+		model.addAttribute("list", list);
 		
-		return mav;
+		return "my_cartorder";
 		
 	}
 	//»≠«ÿºÓ«Œ(¬Ú)  »£√‚

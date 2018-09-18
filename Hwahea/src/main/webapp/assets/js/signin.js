@@ -1,13 +1,56 @@
 $(function(){
+	//아이디 중복 체크
+	$('#confirmId').click(function(){
+		if($('#m_id').val()==''){
+			alert('아이디를 입력하세요!');
+			$('#m_id').focus();
+			return;
+		}
+		
+		//var regMsg = new RegExp('^[A-Za-z0-9+]{4,12}$');
+		/*var regMsg=/^[A-Za-z0-9+]{4,12}$/;
+		if(!regMsg.test($('#id').val())){
+			alert('영문, 숫자 4자이상 12자 이하 입력');
+			$('#id').focus();
+			return;
+		}*/
+		
+		$('#message_id').text(''); //메시지 초기화
+		$('#error_id').text('');//유효성체크시 보여지는 메시지 초기화
+		$('#loading').show(); //로딩 이미지 노출
+		
+		$.ajax({
+			url:'confirmId.do',
+			type:'post',
+			data:{m_id:$('#m_id').val()},
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				$('#loading').hide();//로딩 이미지 감추기
+				
+				if(data.result == 'idNotFound'){
+					$('#message_id').css('color','#000')
+					                .text('등록가능ID');
+					checkId = 1;
+				}else if(data.result == 'idDuplicated'){
+					$('#message_id').css('color','red')
+	                                .text('중복된 ID');
+					$('#m_id').val('').focus();
+	                checkId = 0;
+				}else{
+					alert('ID중복체크 오류');
+				}
+			},
+			error:function(){
+				$('#loading').hide();//로딩 이미지 감추기
+				alert('네트워크 오류 발생');
+			}
+		});
+	});
     // 회원 가입 처리
-    $('#join-submit').click(function(e){
-        e.preventDefault();
-        if($("#m_id").val() ==''){
-            alert('아이디를 입력하세요');
-            $("#m_id").focus();
-            return false;
-        }
-        
+    $('#register_form').submit(function(){
+       
         var email = $('#m_email').val();
         if(email == ''){
             alert('이메일을 입력하세요');
@@ -68,35 +111,6 @@ $(function(){
             $("#inputMobile").focus();
             return false;
         }
-        $.ajax({
-            url: 'signin.do',
-            type: 'POST',
-            data: {
-                name:$("#m_nickname").val(),
-                userID:$('#m_id').val(),
-                email:$('#InputEmail').val(),
-                password:$('#m_passwd').val(),
-                telNO:$("#inputtelNO").val(),
-                mobileNO:$("#inputMobile").val()
-            },
-            dataType: "json",
-            success: function (response) {
-                if(response.result == 1){
-                    alert('가입 완료');
-                    location.replace('../main.do'); // 화면 갱신
-                } else if(response.result == 0){
-                    alert('이미 가입된 아이디입니다');
-                } else if(response.result == -2){
-                    alert('입력된 값이 없습니다');
-                } else {
-                    alert('등록중에 에러가 발생했습니다');
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown){
-                alert("arjax error : " + textStatus + "\n" + errorThrown);
-            }
-        });        
-        
     });
 
 });

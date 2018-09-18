@@ -63,10 +63,6 @@ public class MemberServiceImpl implements MemberService{
 	public List<MemberCommand> selectScrapUser(String re_id);{
 		return memberMapper.selectScrapUser(re_id);
 	}*/
-	@Override
-	public List<OrderCommand> selectCart() {
-		return memberMapper.selectCart();
-	}
 	
 	@Override
 	public List<OrderCommand> selectCartOrder(String m_id){
