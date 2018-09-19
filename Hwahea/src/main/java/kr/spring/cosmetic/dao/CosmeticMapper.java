@@ -21,7 +21,7 @@ public interface CosmeticMapper {
 	
 	//화장품 상세정보 불러오기 
 	@Select("SELECT * FROM cosmetic WHERE c_code=#{c_code}")
-	public List<CosmeticCommand> cosmeticDetail(Map<String, Object> map);
+	public CosmeticCommand cosmeticDetail(String c_code);
 	
 	
 }

@@ -47,66 +47,103 @@ $(document).ready(function(){
 					alert('목록 호출 오류 발생!');
 				}else if(count = 0){
 					output+='<div class="pmodal_rere">';
-					output+='	<div>댓글이 없습니다.</div></div></div>';
+					output+='	<div>댓글이 없습니다.</div></div>';
+					$('.pmodal_reback').append(output);
 				}else{
 					$(list).each(function(index,item){
 						var output = '';
-						if(item.rere_depth==0){
-							output = '<div class="pmodal_rere"><div class="pmodal_rpro">';
-							output += '<input type="hidden" id="re_num" value="'+re_num+'">';
-							//이미지 변경하기!!!!!!!!!!!!!!!!!
-							output += '<img src="../assets/img/plus/profile.png">';
-							output += '<span class="pmodal_wrere">'+item.re_id+'</span>';
-							//등급 변경하기!!!!!!!!!!!!!!!!!!!!!!!!!!!
-							output += '<span class="plusGrade"><input type="button" value="VIP"></span>';
-							output += '<span class="pmodal_drere">'+item.rere_regdate+'</span>';
-							output += '</div><div class="pmodal_brere"><div class="replyview">';
-							output += '<div class="pmodal_trere">'+item.rere_content+'</div>';
-							if($('#user_id').val()==item.re_id){
-								//로그인 한 아이디가 댓글 작성자 아이디와 같을 때
-								output += '<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="수정" class="modify-btn">';
-								output += '<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="삭제" class="delete-btn">';
-							}
-							output += '<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" data-depth="'+item.rere_depth+'">답글달기</a>';
-							output += '</div></div><div class="margin-bottom-20"><hr class="hr-md"></div></div>';
-						}else if(item.rere_depth==1){
-							output += '<div class="prere_back"><div class="pmodal_rere"><div class="pmodal_rpro">';
-							output += '<span class="prere_depth">┗</span>';
-							//프로필 사진!!!!!!!
-							output += '<img src="../assets/img/plus/profile.png">';
-							//등급!!!!
-							output += '<span class="pmodal_wrere">'+item.re_id+'</span>';
-							output += '<span class="prere_grade"><input type="button" value="Family"></span>';
-							output += '<span class="prere_time">'+item.re_regdate+'</span>';
-							output += '</div><div class="pmodal_brere"><div class="replyview">';
-							output += '<div class="pmodal_trere dadat">'+item.rere_content+'</div>';
-							if($('#user_id').val()==item.re_id){
+						if(re_num == item.re_num){
+							if(item.rere_depth==0){
+								output = '<div class="pmodal_rere">';
+								output += '<div class="pmodal_rpro">';
+								output += '		<input type="hidden" class="re_num" value="'+re_num+'">';
+								output += '		<img src="../assets/img/plus/profile.png">';//프로필 변경
+								output += '		<span class="pmodal_wrere">'+item.re_id+'</span>';
+								/*output += '		<span class="plusGrade"><input type="button" value="'+item.m_auth+'"></span>';//등급 변경*/		
+								if(item.m_auth==1){
+									output += '		<span class="grade_welcome"><input type="button" value="welcome"></span>';
+								}else if(item.m_auth==2){
+									output += '		<span class="grade_family"><input type="button" value="family"></span>';
+								}else if(item.m_auth==3){
+									output += '		<span class="grade_vip"><input type="button" value="vip"></span>';
+								}else if(item.m_auth==4){
+									output += '		<span class="grade_vvip"><input type="button" value="vvip"></span>';
+								}
+								output += '		<span class="prere_time">'+item.rere_regdate+'</span>';
+								output += '</div>';
+								output += '<div class="pmodal_brere">';
+								output += '		<div class="replyview">';
+								output += '			<div class="pmodal_trere">'+item.rere_content+'</div>';
+								output += '			<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" data-depth="'+item.rere_depth+'">답글달기</a>';
+								if($('#user_id').val()==item.re_id){//로그인 한 아이디가 댓글 작성자 아이디와 같을 때
+									output += '		<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="수정" class="modify-btn">';
+									output += '		<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="삭제" class="delete-btn">';
+								}
+								output += '		</div>';
+								output += '		<div id="pmodal_'+item.rere_num+'"></div>';
+								output += '	</div>';
+								output += '<div class="margin-bottom-20"><hr class="hr-md"></div>';
+								output += '</div>';
+							}else if(item.rere_depth==1){
+								output += '<div class="prere_back">';
+								output += '	<div class="pmodal_rere">';
+								output += '		<div class="pmodal_rpro">';
+								output += '			<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
+								output += '			<img src="../assets/img/plus/profile.png">';
+								output += '			<span class="pmodal_wrere">'+item.re_id+'</span>';
+								if(item.m_auth==1){
+									output += '		<span class="grade_welcome"><input type="button" value="welcome"></span>';
+								}else if(item.m_auth==2){
+									output += '		<span class="grade_family"><input type="button" value="family"></span>';
+								}else if(item.m_auth==3){
+									output += '		<span class="grade_vip"><input type="button" value="vip"></span>';
+								}else if(item.m_auth==4){
+									output += '		<span class="grade_vvip"><input type="button" value="vvip"></span>';
+								}
+								output += '			<span class="prere_time">'+item.rere_regdate+'</span>';
+								output += '		</div>';
+								output += '		<div class="pmodal_brere">';
+								output += '			<div class="replyview">';
+								output += '				<div class="pmodal_trere dadat">'+item.rere_content+'</div>';
+								output += '					<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-depth="'+item.rere_depth+'">답글달기</a>';
+								if($('#user_id').val()==item.re_id){
+									output += '				<input type="button" value="수정" class="modify-btn">';
+									output += '				<input type="button" value="삭제" class="delete-btn">';
+								}
+								output += '				</div>';
+								output += '			</div>';
+								output += '			<div class="margin-bottom-20"><hr class="hr-md"> </div>';
+								output += '		</div>';
+								output += '	</div>';
+								output += '</div>';
+							}else if(item.rere_depth>=2){
+								output += '<div class="prere_back"><div class="pmodal_rere"><div class="pmodal_rpro">';
+								output += '<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
+								output += '<img src="../assets/img/plus/profile.png">';
+								output += '<span class="pmodal_wrere">'+item.re_id+'</span>';
+								if(item.m_auth==1){
+									output += '		<span class="grade_welcome"><input type="button" value="welcome"></span>';
+								}else if(item.m_auth==2){
+									output += '		<span class="grade_family"><input type="button" value="family"></span>';
+								}else if(item.m_auth==3){
+									output += '		<span class="grade_vip"><input type="button" value="vip"></span>';
+								}else if(item.m_auth==4){
+									output += '		<span class="grade_vvip"><input type="button" value="vvip"></span>';
+								}
+								output += '<span class="prere_time">'+item.rere_regdate+'</span>';
+								output += '</div><div class="pmodal_brere"><div class="replyview">';
+								output += '<div class="pmodal_trere dadat">'+item.rere_content+'</div>';
 								output += '<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-depth="'+item.rere_depth+'">답글달기</a>';
-								output += '<input type="button" value="수정" class="modify-btn">';
-								output += '<input type="button" value="삭제">';
-							}else{
-								output+='	<a class="pmodal_diff" id="rere_write" data-num="'+item.rere_num+'" data-depth="'+item.rere_depth+'">답글달기</a>';
+								if($('#user_id').val()==item.re_id){
+									output += '<input type="button" value="수정" class="modify-btn">';
+									output += '<input type="button" value="삭제" class="delete-btn">';
+								}
+								output += '</div></div>';
+								output += '<div id="pmodal_reform" data-num="1"></div>';
+								output += '<div class="margin-bottom-20"><hr class="hr-md"> </div></div></div>';
 							}
-							output += '</div></div><div class="margin-bottom-20"><hr class="hr-md"> </div></div></div>';
-						}else if(item.rere_depth>=2){
-							output += '<div class="prere_back"><div class="pmodal_rere"><div class="pmodal_rpro">';
-							output += '<span class="prere_depth">┗</span>';
-							output += '<img src="../assets/img/plus/profile.png">';
-							output += '<span class="pmodal_wrere">'+item.re_id+'</span>';
-							output += '<span class="prere_grade"><input type="button" value="Family"></span>';
-							output += '<span class="prere_time">'+item.re_regdate+'</span>';
-							output += '</div><div class="pmodal_brere"><div class="replyview">';
-							output += '<div class="pmodal_trere dadat">'+item.rere_content+'</div>';
-							if($('#user_id').val()==item.re_id){
-								output += '<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-depth="'+item.rere_depth+'">답글달기</a>';
-								output += '<input type="button" value="수정" class="modify-btn">';
-								output += '<input type="button" value="삭제">';
-							}else{
-								output+='	<a class="pmodal_diff" id="rere_write" data-num="'+item.rere_num+'" data-depth="'+item.rere_depth+'">답글달기</a>';
-							}
-							output += '</div></div><div class="margin-bottom-20"><hr class="hr-md"> </div></div></div>';							
+							
 						}
-						
 						//문서 객체에 추가
 						$('.pmodal_reback').append(output);
 						
@@ -125,16 +162,17 @@ $(document).ready(function(){
 			error:function(){
 				//로딩 이미지 감추기
 				$('#loading').hide();
-				alert('네트워크 오류!');
+				alert('댓글 목록 호출 네트워크 오류!');
 			}			
 		});
 	}
 	
 	
+	
 	//댓글쓰기 버튼 누르면 댓글창으로 커서 이동
 	$(document).on('click','.pmodal_re',function(){
 		$('.pmodal_rtext').val('');
-		$('.pmodal_rtext').focus();
+		$('#rere_content').focus();
 	});
 	
 	
@@ -163,7 +201,7 @@ $(document).ready(function(){
 					//폼 초기화
 					initForm();
 					//목록 호출
-					selectData(1,$('#re_num').val());
+					selectData(1,$('.re_num').val());
 				}else{
 					alert('등록시 오류 발생!');
 				}
@@ -249,8 +287,8 @@ $(document).ready(function(){
 	
 	//댓글 수정 버튼 클릭시 수정폼 노출
 	$(document).on('click','.modify-btn',function(){
-		//댓글 글번호
-		var re_num = $(this).attr('data-num');
+		//댓글 번호
+		var rere_num = $(this).attr('data-num');
 		//작성자 아이디
 		var re_id = $(this).attr('data-id');
 		//댓글 내용
@@ -259,12 +297,12 @@ $(document).ready(function(){
 		
 		//댓글 수정폼 UI
 		var modifyUI = '<form id="mre_form">';
-			modifyUI += '<input type="hidden" name="rere_num" id="rere_num" value="'+re_num+'">';
+			modifyUI += '<input type="hidden" name="rere_num" id="rere_num" value="'+rere_num+'">';
 			modifyUI += '<input type="hidden" name="re_id" id="re_id" value="'+re_id+'">';
 			modifyUI += '<textarea rows="3" cols="75" name="rere_content" id="mre_content" class="rep-content">'+content+'</textarea><br>';
 			modifyUI += '<div id="mre_first"><span class="letter-count">300/300</span></div><br>';
 			modifyUI += '<div id="mre_second">';
-			modifyUI += '	<input type="submit" value="수정" id="'+re_id+'">';
+			modifyUI += '	<input type="submit" value="수정" class="modifyss" id="'+re_id+'">';
 			modifyUI += '	<input type="button" value="취소" class="re-reset">';
 			modifyUI += '</div>';
 			modifyUI += '</form>';
@@ -347,63 +385,110 @@ $(document).ready(function(){
 	
 	//*******************************대댓글***********************************
 	
+	//대댓글 작성폼 초기화
+	function initReForm(){
+		$('#pre_form').remove();
+	}
+	
+	
 	//답글달기 글씨 누르면 대댓글 폼 나타내기
 	$(document).on('click','#rere_write',function(){
 		
 		//답글쓰기 버튼 다시 눌렀을 때,대댓글 작성폼 초기화
 		if(flag == 1){
-			initReform();
+			initReForm();
 			flag = 0;
 			return false;
 		}
+		
 		//작성자 아이디
 		var user_id = $('#user_id').val();
 		//부모댓글 글번호
-		var re_num = $(this).attr('data-num');
+		var rere_num = $(this).attr('data-num');
 		//답글의 depth
 		var rere_depth = $(this).attr('data-depth');
 		
-		//답글쓰기폼 UI
-		var rereply = '<form id="pre_form">';
-		rereply += '<hr>';
-		rereply += '	<input type="hidden" name="re_num" value="'+re_num+'" id="re_num">';//부모 댓글 번호
-		rereply += '	<input type="hidden" name="user_id" value="'+$('#user_id').val()+'" id="user_id">';//현재 로그인된 아이디 (대댓글 쓰려는 아이디)
-		rereply += '<div class="pmodal_reback2">';
-		rereply += '<div class="pmodal_rpro2">';
-		rereply += '<img src="../assets/img/plus/profile.png">';
-		rereply += '<span class="pmodal_wrere">'+$('#user_id').val()+'</span>';
-		rereply += '<span class="plusGrade"><input type="button" value="VIP"></span>';
-		rereply += '</div>';
-		rereply += '	<textarea rows="3" cols="75" name="rere_content" id="prere_content" class="pmodal_rtext2" placeholder="내용을 입력해주세요."></textarea>';
-		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';
-		rereply += '	<div id="pre_second"><input type="submit" value="등록"> <input type="button" value="취소" class="prere_reset"></div>';
-		rereply += '</div>';
-		rereply += '</form>';
-		
-		$(this).text('');
-		//문서 객체에 추가
-		/*$('#pmodal_reform').append(rereply);*/
-		/*$(this).parents('.pmodal_brere').append(rereply);*/
-		$(this).append(rereply);
+		if(flag == 0){
+			//답글쓰기폼 UI
+			var rereply = '';
+			rereply += '<form id="pre_form">';
+			rereply += '		<hr>';
+			rereply += '		<input type="hidden" name="re_num" value="'+re_num+'">';//부모 댓글 번호
+			rereply += '		<input type="hidden" name="rere_num" value="'+rere_num+'" id="rere_num">';
+			rereply += '		<input type="hidden" name="user_id" value="'+$('#user_id').val()+'">';//현재 로그인된 아이디 (대댓글 쓰려는 아이디)
+			rereply += '		<input type="hidden" name="rere_depth" value="'+(Number(rere_depth)+1)+'" id="rere_depth">';
+			rereply += '	<div class="pmodal_reback2">';
+			rereply += '		<div class="pmodal_rpro2">';
+			rereply += '			<img src="../assets/img/plus/profile.png">';
+			rereply += '			<span class="pmodal_wrere">'+$('#user_id').val()+'</span>';
+			rereply += '			<span class="plusGrade"><input type="button" value="VIP"></span>';
+			rereply += '		</div>';
+			rereply += '		<textarea rows="3" cols="75" name="rere_content" id="prere_content" class="pmodal_rtext2" placeholder="내용을 입력해주세요."></textarea>';
+			rereply += '		<div id="prere_first"><span class="letter-count">300/300</span></div>';
+			rereply += '		<div id="pre_second"><input type="submit" value="등록" class="dadatbtn"> <input type="button" value="취소" class="prere_reset"></div>';
+			rereply += '	</div>';
+			rereply += '</form>';
+			
+			//문서 객체에 추가
+			/*$('#pmodal_reform').append(rereply);*/
+			/*$(this).parents('.pmodal_brere').append(rereply);*/
+			$(this).parents('.pmodal_brere').append(rereply);
 
-		flag = 1
+			flag = 1;
+		}
+		
 	});
-	
-	
-	
-	
-	
 	
 	//대댓글 작성폼 취소 버튼 클릭시 대댓글 작성폼 초기화
 	$(document).on('click','.prere_reset',function(){
 		initReForm();
-		$('.pmodal_same').text('답글달기');
 	});
 	
-	//대댓글 작성폼 초기화
-	function initReForm(){
-		$('#pre_form').remove();
-	}
+	
+	//대댓글 등록
+	$(document).on('submit','#pre_form',function(event){
+		if($('.pmodal_rtext2').val()==''){
+			alert('댓글 내용을 입력해주세요!');
+			$('.pmodal_rtext2').focus();
+			return false;
+		}
+		
+		var data = $(this).serialize();
+		var rere_depth = $(this).attr('data-depth');
+		
+		//등록
+		$.ajax({
+			type:'post',
+			data:data,
+			url:'writeReply.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				if(data.result=='logout'){
+					alert('로그인해야 작성할 수 있습니다.');
+				}else if(data.result == 'success'){
+					//폼 초기화
+					initReForm();
+					
+					//목록 호출
+					selectData(1,re_num);
+					
+				}else{
+					alert('등록시 오류 발생!');
+				}
+			},
+			error:function(){
+				alert('등록시 네트워크 오류 발생!');
+			}
+		});
+		
+		//기본 이벤트 제거
+		event.preventDefault();
+		
+	});
+	
+	
 
 	
 	

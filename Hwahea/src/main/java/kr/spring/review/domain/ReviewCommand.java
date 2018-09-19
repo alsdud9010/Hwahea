@@ -45,6 +45,30 @@ public class ReviewCommand {
 	private String m_id;
 	
 	
+	//-------------------------------------------------¸®ºä ½Å°í
+	private String report_cate;
+	private String report_content;
+	private Date report_date;
+	
+	
+	public Date getReport_date() {
+		return report_date;
+	}
+	public void setReport_date(Date report_date) {
+		this.report_date = report_date;
+	}
+	public String getReport_cate() {
+		return report_cate;
+	}
+	public void setReport_cate(String report_cate) {
+		this.report_cate = report_cate;
+	}
+	public String getReport_content() {
+		return report_content;
+	}
+	public void setReport_content(String report_content) {
+		this.report_content = report_content;
+	}
 	public String getEdit_cate() {
 		return edit_cate;
 	}
@@ -199,6 +223,7 @@ public class ReviewCommand {
 		this.re_filename3 = re_filename3;
 	}
 	
+	
 	@Override
 	public String toString() {
 		return "ReviewCommand [re_num=" + re_num + ", c_code=" + c_code + ", re_id=" + re_id + ", re_rate=" + re_rate
@@ -207,6 +232,7 @@ public class ReviewCommand {
 				+ ", re_filename1=" + re_filename1 + ", re_filename2=" + re_filename2 + ", re_filename3=" + re_filename3
 				+ ", re_report=" + re_report + ", re_like=" + re_like + ", re_ip=" + re_ip + ", re_regdate="
 				+ re_regdate + ", edit_cate=" + edit_cate + ", edit_content=" + edit_content + ", m_id=" + m_id
+				+ ", report_cate=" + report_cate + ", report_content=" + report_content + ", report_date=" + report_date
 				+ ", edit_date=" + edit_date + "]";
 	}
 	

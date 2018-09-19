@@ -17,5 +17,5 @@ public interface CosmeticService {
 	public List<CosmeticCommand> getCosmeticRank(Map<String, Object> map);
 	
 	//화장품 상세정보 불러오기 
-	public List<CosmeticCommand> cosmeticDetail(Map<String, Object> map);
+	public CosmeticCommand cosmeticDetail(String c_code);
 }

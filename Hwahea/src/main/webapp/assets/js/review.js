@@ -100,7 +100,21 @@ $(document).ready(function(){
 				$(data.list).each(function(index,item){
 						var review = '';
 						review += '<div id="r_rate">';
-						review += '<img src="../assets/img/star.png"> ';
+						if(item.re_rate==1){
+							review += '<img src="../assets/img/star.png"> ';
+						}else if(item.re_rate==2){
+							review += '<img src="../assets/img/star.png"> <img src="../assets/img/star.png">';
+						}else if(item.re_rate==3){
+							review += '<img src="../assets/img/star.png"> <img src="../assets/img/star.png"> ';
+							review += '<img src="../assets/img/star.png"> ';
+						}else if(item.re_rate==4){
+							review += '<img src="../assets/img/star.png"> <img src="../assets/img/star.png"> ';
+							review += '<img src="../assets/img/star.png"> <img src="../assets/img/star.png">';
+						}else if(item.re_rate==5){
+							review += '<img src="../assets/img/star.png"> <img src="../assets/img/star.png"> ';
+							review += '<img src="../assets/img/star.png"> <img src="../assets/img/star.png"> ';
+							review += '<img src="../assets/img/star.png"> ';
+						}
 						review += '<span class="reg_date"> '+item.re_regdate+'</span>';
 						review += '</div><div class="margin-bottom-35"><hr class="hr-md"></div>';
 						review += '<div id="review"><div id="good"><table><tr>';
@@ -116,29 +130,62 @@ $(document).ready(function(){
 							review += '<td id="t_icon"><img src="../assets/img/tip.png"></td>';
 							review += '<td id="mcontent">'+item.re_tip+'</td>';
 						}
-						review += '</tr></table></div>';
+						review += '</tr></table></div><div id="mphotodiv">';
 						if(item.re_filename1 || item.re_filename2 || item.re_filename3){
-							review += '<div id="photos"><img src="imageView.do?re_num='+re_num+'&cnt=3"></div></div>';
-							/*review += '<div id="photos"><img src="../assets/img/photo.PNG"></div></div>';*/
+							if(item.re_filename1){
+								review += '<span id="mphotos"><img src="imageView.do?re_num='+item.re_num+'&cnt=1"></span>';
+							}
+							if(item.re_filename2){
+								review += '<span id="mphotos"><img src="imageView.do?re_num='+item.re_num+'&cnt=2"></span>';
+							}
+							if(item.re_filename3){
+								review += '<span id="mphotos"><img src="imageView.do?re_num='+item.re_num+'&cnt=3"></span>';
+							}
 						}
+						review += '</div></div>';
 						//아이디 비교 하기 넣기!
 						if(re_id==$('#user_id').val()){
-							review += '<div class="pmodal_ud"><input type="button" value="수정"><input type="button" value="삭제"></div>';
+							review += '<div class="pmodal_ud"><input type="button" value="수정" id="re_modify" data-num="'+item.re_num+'" onclick="location.href=\'update.do?re_num='+item.re_num+'\'">';
+							review += '<input type="button" value="삭제" id="re_delete" onclick="location.href=\'delete.do?re_num='+item.re_num+'\'">';
 						}
 						review += '<div class="pmodal_lrs"><ul>';
-						review += '<li class="pmodal_like"><img src="../assets/img/plus/heart2.png" id="pmodal_l"> 좋아요</li>';
+						review += '<li class="pmodal_like"><img src="../assets/img/plus/heart2.png" id="pmodal_l"> 좋아요( '+item.re_like+' )</li>';
 						review += '<li class="pmodal_re"><img src="../assets/img/plus/comments.png"> 댓글달기</li>';
 						review += '<li class="pmodal_re" data-target="#myModal" data-toggle="modal"><img src="../assets/img/review/alarm.png"> 신고하기</li>';
 						review += '</ul></div>';
 						
 						$('#review_append').append(review);
 						
+						//신고하기
+						var report = '';
+						report += '<form id="report_form" action="report.do?re_num='+item.re_num+'">';
+						report += '<input type="hidden" name="re_num" value="'+item.re_num+'">';
+						report += '<input type="hidden" name="re_id" value="'+$('#user_id').val()+'">';
+						report += '<div class="modal-body">';
+						report += '<div id="momo">';
+						report += '<div><input type="radio" name="report_cate" value="1. 광고, 홍보 / 거래 시도"><label>광고, 홍보 / 거래 시도</label></div>';
+						report += '<div><input type="radio" name="report_cate" value="2. 과도한 오타, 반복적 표현 사용"><label>과도한 오타, 반복적 표현 사용</label></div>';
+						report += '<div><input type="radio" name="report_cate" value="3. 욕설, 음란어 사용"><label>욕설, 음란어 사용</label></div>';
+						report += '<div><input type="radio" name="report_cate" value="4. 제품 미사용 / 리뷰 내용과 다른 제품 선택"><label>제품 미사용 / 리뷰 내용과 다른 제품 선택</label></div>';
+						report += '<div><input type="radio" name="report_cate" value="5. 리뷰 내용과 무관한 사진 첨부"><label>리뷰 내용과 무관한 사진 첨부</label></div>';
+						report += '<div><input type="radio" name="report_cate" value="6. 개인 정보 노출"><label>개인 정보 노출</label></div>';
+						report += '<div><input type="radio" name="report_cate" value="7. 명예훼손 / 저작권 침해"><label>명예훼손 / 저작권 침해</label></div>';
+						report += '<div><input type="radio" name="report_cate" value="8. 기타 (에티켓 위반 등)"><label>기타 (에티켓 위반 등)</label></div>';
+						report += '<textarea id="report_content" name="report_content" rows="3" cols="50" placeholder="신고 내용을 입력해주세요."></textarea>';
+						report += '</div></div>';
+						report += '<div class="modal-footer">';
+						report += '<a href="#" data-dismiss="#MyModal" class="btn">취소</a> ';
+						report += '<input id="sinbtn" type="submit" value="신고하기"></div></form>';
+						
+						$('#report_append').empty();
+						$('#report_append').append(report);
+						
 						var reply ='';
 						
 						reply += '<div class="pmodal_rform">';
 						reply += '<form id="reply_form" action="writeReply.do">';
-						reply += '<input type="hidden" name="re_num" value="'+item.re_num+'" id="re_num">';
-						reply += '<input type="hidden" name="user_id" value="'+$('#user_id').val()+'" id="user_id">';
+						reply += '<input type="hidden" name="re_num" value="'+item.re_num+'">';
+						reply += '<input type="hidden" name="user_id" value="'+$('#user_id').val()+'">';
 						reply += '<textarea name="rere_content" id="rere_content" cols="70" rows="4" placeholder="내용을 입력해 주세요."></textarea>';
 						reply += '<input type="submit" value="댓글달기" ></form>';
 						reply += '<div class="pmodal_rcount"><span class="letter-count">0 / 300</span></div> </div>';
@@ -151,11 +198,13 @@ $(document).ready(function(){
 					
 					writer += '<table><tr>';
 					writer += '<td rowspan="3" id="w_profile"><img src="../assets/img/user.png"></td>';
-					writer += '<td id="nick">'+member.m_id+'</td>';
+					writer += '<td class="nick">'+member.m_nickname+'</td>';
 					writer += '</tr><tr>';
-					writer += '<td id="type">'+member.m_age;
+					writer += '<td class="type">'+member.m_age+'세';
 					if(member.m_skintype==0){
 						writer += ' / 건성';
+					}else if(member.m_skintype==1){
+						writer += ' / 중성';
 					}else if(member.m_skintype==2){
 						writer += ' / 지성';
 					}else if(member.m_skintype==3){
@@ -172,8 +221,8 @@ $(document).ready(function(){
 					}
 					writer += '</td>';
 					writer += '</tr><tr>';
-					writer += '<td id="recnt">리뷰 xx개</td>';
-					writer += '<td id="bookmark"><img src="../assets/img/user_like.png"></td>';
+					writer += '<td id="recnt"></td>'; 
+					/*writer += '<td id="bookmark"><img src="../assets/img/user_like.png"></td>';*/
 					writer += '</tr> </table>';
 					
 					$('.writer').empty();
@@ -188,5 +237,40 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
+	//-----------------------------------리뷰 삭제 알림창
+	$(document).on('click','#re_delete',function(){
+		alert('삭제가 완료되었습니다!');
+	});
+	
+	
+	//---------------------------------------신고 유효성 체크
+	$(document).on('submit','#report_form',function(){
+		var selected = $(":input:radio[name=report_cate]:checked").val();
+		var user_id = $('#user_id').val();
+		var re_num = $('#re_num').val();
+		
+		if(selected==null){
+			alert('항목을 선택해주세요!');
+			return false;
+		}
+		if(user_id==null){
+			alert('로그인 해주세요!');
+			return false;
+		}
+		if($('#report_content').val()==''){
+			alert('신고 내용을 작성해주세요!!');
+			$('#report_content').focus();
+			return false;
+		}
+	});
+	
+
+	
+	
+	
+	
+	
+	
 	
 });

@@ -29,9 +29,16 @@ public interface ReviewService {
 	public void update(ReviewCommand review);
 	
 	//리뷰 삭제하기
-	public void delete(Integer num);
+	public void delete(Integer re_num);
 	
+	//리뷰 신고하기(리뷰 테이블에 신고 컬럼 +1)
+	public void addReport(Integer re_num);
 	
+	//리뷰 신고하기(신고 테이블에 인서트)
+	public void addReportTable(ReviewCommand review);
+	
+	//리뷰 좋아요 누르기
+	public void likeReview(Integer re_num);
 	
 	
 	//------------------------------------댓글

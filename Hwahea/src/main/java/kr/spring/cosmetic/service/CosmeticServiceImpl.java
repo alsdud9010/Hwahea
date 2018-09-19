@@ -33,7 +33,7 @@ public class CosmeticServiceImpl implements CosmeticService{
 	}
 
 	@Override
-	public List<CosmeticCommand> cosmeticDetail(Map<String, Object> map) {
-		return cosmeticMapper.cosmeticDetail(map);
+	public CosmeticCommand cosmeticDetail(String c_code) {
+		return cosmeticMapper.cosmeticDetail(c_code);
 	}
 }

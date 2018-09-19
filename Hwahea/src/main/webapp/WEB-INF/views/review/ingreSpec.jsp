@@ -15,15 +15,12 @@
   <ul class="nav nav-tabs" role="tablist">
     <li class="active">
     	<a href="nav-link" data-target="#ingre" data-toggle="tab" class="ingrebtn">성분구성</a> 
-        <!-- <a href="#ingre" aria-controls="ingre" role="tab" data-toggle="tab">성분구성</a> -->   
     </li>
     <li>
     	<a href="nav-link" data-target="#pibu" data-toggle="tab" class="pibubtn">피부타입별 구성</a>
-        <!-- <a href="#pibu" aria-controls="pibu" role="tab" data-toggle="tab">피부타입별 구성</a> -->
     </li>
     <li>
     	<a href="nav-link" data-target="#ginung" data-toggle="tab" class="ginungbtn">기능성 성분 구성</a> 
-        <!-- <a href="#ginung" aria-controls="ginung" role="tab" data-toggle="tab">기능성성분 구성</a> --> 
     </li>
   </ul>
 </div>

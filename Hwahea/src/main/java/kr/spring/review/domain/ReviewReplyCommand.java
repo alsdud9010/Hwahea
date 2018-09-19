@@ -1,6 +1,5 @@
 package kr.spring.review.domain;
 
-import java.sql.Date;
 import kr.spring.util.DurationFromNow;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -15,6 +14,23 @@ public class ReviewReplyCommand {
 	private int rere_depth;//대댓글의 깊이(대댓글의 앞 여백)
 	private int rere_parentnum;//부모 댓글 번호, 부모 댓글일 경우 0
 	private int re_num;//해당 댓글의 부모 리뷰 글 번호
+	
+	private String m_id;
+	private String m_auth;
+	
+	
+	public String getM_id() {
+		return m_id;
+	}
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
+	public String getM_auth() {
+		return m_auth;
+	}
+	public void setM_auth(String m_auth) {
+		this.m_auth = m_auth;
+	}
 	public int getRere_num() {
 		return rere_num;
 	}
@@ -69,8 +85,8 @@ public class ReviewReplyCommand {
 	public String toString() {
 		return "ReviewReplyCommand [rere_num=" + rere_num + ", re_id=" + re_id + ", rere_ip=" + rere_ip
 				+ ", rere_content=" + rere_content + ", rere_regdate=" + rere_regdate + ", rere_depth=" + rere_depth
-				+ ", rere_parentnum=" + rere_parentnum + ", re_num=" + re_num + "]";
+				+ ", rere_parentnum=" + rere_parentnum + ", re_num=" + re_num + ", m_id=" + m_id + ", m_auth="
+				+ m_auth + "]";
 	}
-	
 	
 }

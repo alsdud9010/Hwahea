@@ -11,6 +11,7 @@ import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.cosmetic.domain.CosmeticCommand;
+import kr.spring.cosmetic.service.CosmeticService;
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.member.service.MemberService;
 import kr.spring.review.domain.ReviewCommand;
@@ -38,6 +41,8 @@ public class ReviewController {
 	private ReviewService reviewService;
 	@Resource
 	private MemberService memberService;
+	@Resource
+	private CosmeticService cosmeticService;
 		
 	@Resource
 	private CipherTemplate ciperAES;
@@ -48,7 +53,7 @@ public class ReviewController {
 		return new ReviewCommand();
 	}
 	
-	//==============================목록 출력하기->****리뷰만!!!!****
+	//==============================목록 출력하기
 	@RequestMapping("/review/productInfo.do")
 	public ModelAndView getList(@RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
 		
@@ -67,16 +72,23 @@ public class ReviewController {
 		
 		List<ReviewCommand> list = null;
 		List<MemberCommand> member = null;
+		CosmeticCommand cosmetic = null;
 		
 		
 		if(count > 0) {
+			
+			String c_code = "B38D1C3";
+			
 			list = reviewService.selectList(map);
 			
 			member = memberService.memberDetailList();
 			
+			cosmetic = cosmeticService.cosmeticDetail(c_code);
+			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
 				log.debug("<<member>> : " + member);
+				log.debug("<<cosmetic>> : " + cosmetic);
 			}
 		}	
 		
@@ -86,12 +98,13 @@ public class ReviewController {
 		mav.addObject("count",count);
 		mav.addObject("list", list);
 		mav.addObject("member",member);
+		mav.addObject("cosmetic",cosmetic);
 		mav.addObject("pagingHTML", page.getPagingHtml());
 		
 		return mav;
 	}
 	
-	//=================================================================이미지 출력
+	//=================================================================리뷰 이미지 출력
 	@RequestMapping("/review/imageView.do")
 	public ModelAndView viewImage(@RequestParam("re_num") int re_num, @RequestParam("cnt") int cnt) {
 
@@ -110,11 +123,9 @@ public class ReviewController {
 			mav.addObject("imageFile",review.getRe_uploadbyte3());
 			mav.addObject("filename",review.getRe_filename3());
 		}
+		
 		return mav;
 	}
-	
-	
-	
 	
 	//==============================리뷰 1개 상세 보기 
 	@RequestMapping("/review/oneReview.do")
@@ -144,14 +155,9 @@ public class ReviewController {
 		return mapJson;
 	}
 	
-	
-	
 	//==============================리뷰 작성 폼
 	@RequestMapping(value="/review/writeReview.do",method=RequestMethod.GET)
 	public String form() {
-		/*String id = (String)session.getAttribute("user_id");
-		ReviewCommand command = new ReviewCommand();
-		command.setRe_id(id);*/
 		
 		return "writeReview";
 	}
@@ -176,6 +182,76 @@ public class ReviewController {
 		//리뷰 작성
 		reviewService.insert(reviewCommand);
 		
+		return "redirect:/review/productInfo.do";
+	}
+	
+	//=================================================================리뷰 삭제
+	@RequestMapping("/review/delete.do")
+	public String submit(@RequestParam("re_num")int re_num) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<re_num>> : "+re_num);
+		}
+		
+		//리뷰 삭제
+		reviewService.delete(re_num);
+		
+		return "redirect:/review/productInfo.do";
+	}
+	
+	//=================================================================리뷰 수정
+	//수정 폼
+	@RequestMapping(value="/review/update.do",method=RequestMethod.GET)
+	public String form(@RequestParam("re_num") int re_num, Model model) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<re_num>> : "+re_num);
+		}
+		
+		ReviewCommand reviewCommand = reviewService.selectReview2(re_num);
+		
+		model.addAttribute("review",reviewCommand);
+		
+		return "modifyReview";
+	}
+	//수정 폼에서 전송된 데이터 처리
+	@RequestMapping(value="/review/update.do",method=RequestMethod.POST)
+	public String updateSubmit(@RequestParam("re_num") int re_num, ReviewCommand reviewCommand, HttpSession session, HttpServletRequest request) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<re_num>> : "+re_num);
+			log.debug("<<reviewCommand>> : "+reviewCommand);
+		}
+		
+		reviewCommand.setRe_num(re_num);
+		
+		//ip셋팅
+		reviewCommand.setRe_ip(request.getRemoteAddr());
+		
+		//글 수정
+		reviewService.update(reviewCommand);
+			
+		return "redirect:/review/productInfo.do";
+	}
+	
+	//==============================리뷰 신고하기
+	@RequestMapping(value="/review/report.do",method=RequestMethod.GET)
+	public String report(@RequestParam("re_num") int re_num, ReviewCommand reviewCommand, HttpSession session) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<re_num>> : "+re_num);
+		}
+		
+		//신고 등록(리뷰 테이블)
+		reviewService.addReport(re_num);
+		
+		//신고 등록(리포트 테이블)
+		reviewCommand.setRe_num(re_num);
+		String user_id = (String)session.getAttribute("user_id");
+		reviewCommand.setRe_id(user_id);
+		reviewService.addReportTable(reviewCommand);
+		
+			
 		return "redirect:/review/productInfo.do";
 	}
 	
@@ -211,6 +287,23 @@ public class ReviewController {
 		
 		return map;
 	}
+	
+	//=============================리뷰 좋아요누르기
+	@RequestMapping(value="/review/reviewLike.do",method=RequestMethod.GET)
+	public String like(@RequestParam("re_num") int re_num) {
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<re_num>> : "+re_num);
+		}
+		
+		//신고 등록(리뷰 테이블)
+		reviewService.likeReview(re_num);
+			
+		return "redirect:/review/productInfo.do";
+	}
+	
+	
+	
 	
 	//==============================성분 팝업
 	@RequestMapping("/review/ingreSpec.do")

@@ -50,13 +50,30 @@ public class ReviewServiceImpl implements ReviewService{
 
 	@Override
 	public void update(ReviewCommand review) {
-		// TODO Auto-generated method stub
+		reviewMapper.update(review);
 		
 	}
 
 	@Override
-	public void delete(Integer num) {
-		// TODO Auto-generated method stub
+	public void delete(Integer re_num) {
+		reviewMapper.delete(re_num);
+		
+	}
+	
+	@Override
+	public void addReport(Integer re_num) {
+		reviewMapper.addReport(re_num);
+		
+	}
+
+	@Override
+	public void addReportTable(ReviewCommand review) {
+		reviewMapper.addReportTable(review);
+	}
+	
+	@Override
+	public void likeReview(Integer re_num) {
+		reviewMapper.likeReview(re_num);
 		
 	}
 
@@ -99,6 +116,8 @@ public class ReviewServiceImpl implements ReviewService{
 		reviewMapper.insertEdit(review);
 		
 	}
+
+	
 
 
 }

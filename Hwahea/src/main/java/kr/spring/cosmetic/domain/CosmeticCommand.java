@@ -18,7 +18,7 @@ public class CosmeticCommand {
 	@NotEmpty
 	private String c_photoname; //업로드한 파일명 DB에 저장된다.  
 	@NotEmpty
-	private int c_capacity;
+	private String c_capacity;
 	@NotEmpty
 	private int c_price;
 	@NotEmpty
@@ -69,10 +69,11 @@ public class CosmeticCommand {
 	public void setC_photoname(String c_photoname) {
 		this.c_photoname = c_photoname;
 	}
-	public int getC_capacity() {
+	
+	public String getC_capacity() {
 		return c_capacity;
 	}
-	public void setC_capacity(int c_capacity) {
+	public void setC_capacity(String c_capacity) {
 		this.c_capacity = c_capacity;
 	}
 	public int getC_price() {
@@ -111,6 +112,8 @@ public class CosmeticCommand {
 	public void setC_reg_date(Date c_reg_date) {
 		this.c_reg_date = c_reg_date;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "CosmeticCommand [brand=" + brand + ", c_code=" + c_code + ", c_name=" + c_name + ", c_uploadfile="
@@ -118,8 +121,5 @@ public class CosmeticCommand {
 				+ ", c_ingre=" + c_ingre + ", c_rate=" + c_rate + ", c_rank=" + c_rank + ", c_shopping=" + c_shopping
 				+ ", c_reg_date=" + c_reg_date + "]";
 	}
-	
-	
-	
 
 }

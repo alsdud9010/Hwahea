@@ -58,6 +58,11 @@
 	display:table;
 	margin:0 auto;
 }
+#original{
+	display:table;
+	margin:0 auto;
+	font-size:17px;
+}
 #startext{
 	display:table;
 	margin:0 auto;
@@ -216,7 +221,6 @@ input:focus{
 	padding:10px;
 	font-size:20px;
 }
-
 .error-color{
 	color:red;
 }

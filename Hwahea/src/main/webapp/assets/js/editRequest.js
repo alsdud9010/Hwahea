@@ -21,7 +21,7 @@ $(document).ready(function(){
 	$('#edit_form').submit(function(){
 		var select = $('#edit_cate option:selected').val();
 		
-		if(select<1){
+		if(select==0){
 			alert('카테고리를 선택해주세요!');
 			return false;
 		}

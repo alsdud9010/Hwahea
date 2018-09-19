@@ -33,7 +33,7 @@
 			<!-- 제품 사진 끝 -->
 			<!-- 제품 정보 시작 -->
 			<div id="proinfo">
-				<div id="name">HD 프레스드 파우더</div>
+				<div id="name">${cosmetic.c_name }</div>
 				<div id="brand">
 					메이크업 포에버(MAKEUP FOREVER) <input type="button" value="브랜드관">
 				</div>
@@ -49,7 +49,7 @@
 					</div>
 					<div> 
 						<span id="title">정가 </span> 
-						<span> 30g / 35,000원</span>
+						<span> ${cosmetic.c_capacity } / ${cosmetic.c_price }원</span>
 					</div>
 					<div>
 						<span id="title">랭킹 </span> 
@@ -60,35 +60,9 @@
 				<hr>
 				<div id="buttons">
 					<input type="button" value="즐겨찾기">
-					<input type="button" value="비교함 담기" data-target="#comModal" data-toggle="modal">
+					<!-- <input type="button" value="비교함 담기" data-target="#comModal" data-toggle="modal"> -->
 					<input type="button" value="쇼핑">
 				</div>
-				<!-- 비교함 모달 시작 -->
-				<div class="modal fade" id="comModal" tabindex="-1">
-						<div class="modal-dialog">
-							<div class="modal-content" id="compare">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-									<h4 class="modal-title comtitle">						
-										<img src="${pageContext.request.contextPath}/assets/img/review/searcher.png">
-										<strong>제품 비교하기</strong> 
-									</h4>
-								</div>
-								<div class="modal-body">
-									<div id="cimg">
-										<div id="com_img"><img src="${pageContext.request.contextPath}/assets/img/photo.PNG"><div>제품 이름</div></div>
-										<div id="com_img"><img src="${pageContext.request.contextPath}/assets/img/photo.PNG"><div>제품 이름</div></div>
-										<div id="com_img"><img src="${pageContext.request.contextPath}/assets/img/photo.PNG"><div>제품 이름</div></div>
-									</div>
-								</div>
-								<div class="modal-footer"> 
-									<a href="#" data-dismiss="modal" class="btn">취소</a> 
-									<input id="sinbtn" type="button" value="비교하기">
-								</div>
-							</div>
-						</div>
-					</div>
-				<!-- 비교함 모달 끝 -->
 			</div>
 			<!-- 제품 정보 끝 -->
 		</div>
@@ -171,7 +145,8 @@
 		<!-- 리뷰 전체 시작 -->
 		<div id="review_list">
 		<c:if test="${count == 0 }">
-			<div class="review">등록된 게시물이 없습니다.</div>
+			<div class="noreview">현재 등록된 리뷰가 없습니다ㅠㅠ</div>
+			<div class="no_guide">리뷰를 작성해주세요♡</div>
 		</c:if>
 		<c:if test="${count>0 }">
 		<div class="review">
@@ -180,10 +155,10 @@
 				<table>
 					<tr>
 						<td rowspan="3" id="w_profile"><img src="${pageContext.request.contextPath}/assets/img/user.png"></td>
-						<td id="nick">${member[status.index].m_id }</td>
+						<td id="nick">${member[status.index].m_nickname }</td>
 					</tr>
 					<tr>
-						<td id="type">${member[status.index].m_age } / 
+						<td id="type">${member[status.index].m_age }세 / 
 						<c:if test="${member[status.index].m_skintype==0 }">건성</c:if>
 						<c:if test="${member[status.index].m_skintype==1 }">중성</c:if>
 						<c:if test="${member[status.index].m_skintype==2 }">지성</c:if>
@@ -270,7 +245,7 @@
 			</c:if>
 			<div id="like">    
 				<ul>
-					<li class="like_like" data-num="1"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요</li>
+					<li class="like_like" data-num="1" onclick="location.href='reviewLike.do?re_num=${review.re_num}'"><img src="${pageContext.request.contextPath}/assets/img/plus/heart2.png" class="ll"> 좋아요( ${review.re_like } )</li>
 					<li class="like_re" data-id=${member[status.index].m_id } data-num=${review.re_num } data-target="#modal01" data-toggle="modal"><img src="${pageContext.request.contextPath}/assets/img/plus/comments.png">댓글달기</li>
 				</ul>
 			</div>
@@ -303,19 +278,6 @@
 					<hr>
 					<!-- 작성자 정보 -->
 					<div class="writer">
-						<%-- <table>
-							<tr>
-								<td rowspan="3" id="w_profile"><img src="${pageContext.request.contextPath}/assets/img/user.png"></td>
-								<td id="nick">닉네임</td>
-							</tr> 
-							<tr>
-								<td id="type">나이/피부타입</td>
-							</tr>
-							<tr>
-								<td id="recnt">리뷰 xx개</td>
-								<td id="bookmark"><img src="${pageContext.request.contextPath}/assets/img/user_like.png"></td>
-							</tr> 
-						</table> --%>
 					</div>
 					<div id="review_append"></div><!-- 리뷰 1개를 붙일 곳 -->
 					<!-- 신고 모달 시작 -->
@@ -326,24 +288,7 @@
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 									<h4 class="modal-title"><strong>리뷰 신고하기</strong> </h4>
 								</div>
-								<form>
-								<div class="modal-body">
-									<div id="momo">
-									<div><input type="radio" name="radio" value="1"><label>광고, 홍보 / 거래 시도</label></div>
-									<div><input type="radio" name="radio" value="2"><label>과도한 오타, 반복적 표현 사용</label></div>
-									<div><input type="radio" name="radio" value="3"><label>욕설, 음란어 사용</label></div>
-									<div><input type="radio" name="radio" value="4"><label>제품 미사용 / 리뷰 내용과 다른 제품 선택</label></div>
-									<div><input type="radio" name="radio" value="5"><label>리뷰 내용과 무관한 사진 첨부</label></div>
-									<div><input type="radio" name="radio" value="6"><label>개인 정보 노출</label></div>
-									<div><input type="radio" name="radio" value="7"><label>명예훼손 / 저작권 침해</label></div>
-									<div><input type="radio" name="radio" value="8"><label>기타 (에티켓 위반 등)</label></div>
-									</div>
-								</div>
-								<div class="modal-footer"> 
-									<a href="#" data-dismiss="modal" class="btn">취소</a> 
-									<input id="sinbtn" type="submit" value="신고하기">
-								</div>
-								</form>
+								<div id="report_append"></div>
 							</div>
 						</div>
 					</div>
@@ -351,7 +296,7 @@
 					<!-- 화해플러스 모달 댓글 시작-->
 					<div class="pmodal_reply">
 						<div class="pmodal_wpro">
-							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>내 아이디
+							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>${user_id }
 						</div>
 						<div id="reply_append"></div>
 						<!-- 댓글 출력 시작 -->
@@ -363,47 +308,6 @@
 							<img src="${pageContext.request.contextPath}/assets/img/review/ajax-loader.gif">
 						</div>
 						<!-- 댓글 출력 끝 -->
-						<!-- 대댓글 -->
-						<%-- <div class="prere_back">
-							<div class="pmodal_rere">
-								<div class="pmodal_rpro">
-									<span class="prere_depth">┗</span>
-									<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-									<span class="pmodal_wrere">white</span>
-									<span class="prere_grade"><input type="button" value="Family"></span>
-									<span class="prere_time">1시간 전</span>
-								</div>
-								<div class="pmodal_brere">
-									<div class="replyview">
-										<div class="pmodal_trere dadat">대댓글~~~~~~~~~~~~1</div>
-										<a class="pmodal_same" id="rere_write">댓글달기</a>
-										<input type="button" value="수정" class="modify-btn">
-										<input type="button" value="삭제">
-									</div>
-								</div>
-								<div class="margin-bottom-20"><hr class="hr-md"> </div>
-							</div>
-						</div>
-						<div class="prere_back">
-							<div class="pmodal_rere">
-								<div class="pmodal_rpro">
-									<span class="prere_depth">┗</span>
-									<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"> 
-									<span class="pmodal_wrere">red</span>
-									<span class="prere_grade2"><input type="button" value="Welcome"></span>
-									<span class="prere_time">1시간 전</span>
-								</div>
-								<div class="pmodal_brere">
-									<div class="replyview">
-										<div class="pmodal_trere dadat">대댓글~~~2222</div>
-										<a class="pmodal_same" id="rere_write">댓글달기</a>
-										<input type="button" value="수정" class="modify-btn">
-										<input type="button" value="삭제">
-									</div>
-								</div>
-								<div class="margin-bottom-20"><hr class="hr-md"> </div>
-							</div>
-						</div> --%>
 					</div>
 					<!-- 화해플러스 모달 댓글 끝-->
 				</div>

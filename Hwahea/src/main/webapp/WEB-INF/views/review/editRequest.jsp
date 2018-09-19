@@ -37,15 +37,15 @@
 	<div id="selectbox">
 		<select id="edit_cate">
 			<option value="0" selected="selected">카테고리를 선택해주세요.</option>
-			<option value="1">1. 단종됐어요!</option>
-			<option value="2">2. 브랜드명 수정해주세요!</option>
-			<option value="3">3. 카테고리명 수정해주세요!</option>
-			<option value="4">4. 제품명 수정해주세요!</option>
-			<option value="5">5. 가격정보 수정해주세요!</option>
-			<option value="6">6. 용량정보 수정해주세요!!</option>
-			<option value="7">7. 전성분 목록 수정해주세요!</option>
-			<option value="8">8. 이미지 수정해주세요!!</option>
-			<option value="9">9. 기타
+			<option value="1. 단종됐어요!">1. 단종됐어요!</option>
+			<option value="2. 브랜드명 수정해주세요!">2. 브랜드명 수정해주세요!</option>
+			<option value="3. 카테고리명 수정해주세요!">3. 카테고리명 수정해주세요!</option>
+			<option value="4. 제품명 수정해주세요!">4. 제품명 수정해주세요!</option>
+			<option value="5. 가격정보 수정해주세요!">5. 가격정보 수정해주세요!</option>
+			<option value="6. 용량정보 수정해주세요!!">6. 용량정보 수정해주세요!!</option>
+			<option value="7. 전성분 목록 수정해주세요!">7. 전성분 목록 수정해주세요!</option>
+			<option value="8. 이미지 수정해주세요!!">8. 이미지 수정해주세요!!</option>
+			<option value="9. 기타">9. 기타</option>
 		</select>
 	</div>
 	<div id="txtarea">

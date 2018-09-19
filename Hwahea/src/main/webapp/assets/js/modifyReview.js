@@ -22,6 +22,24 @@ $(document).ready(function(){
 			}
 		}
 	});
+	//입력한 글자수 셋팅
+	var inputLength1 = $('#re_good').val().length;
+	var remain1 = 5000-inputLength1;
+	remain1 += '/5000';
+	$('#gcount #g_count').text(remain1);
+	
+	var inputLength2 = $('#re_bad').val().length;
+	var remain2 = 5000-inputLength2;
+	remain2 += '/5000';
+	$('#bcount #b_count').text(remain2);
+	
+	var inputLength3 = $('#re_tip').val().length;
+	var remain3 = 5000-inputLength3;
+	remain3 += '/5000';
+	$('#tcount #t_count').text(remain3);
+	
+	
+	
 	
 	
 	//--------------------------------별점 매기기
@@ -174,6 +192,34 @@ $(document).ready(function(){
         });
     })
     
-
+    $('#oridelete1').on('click',function(){
+    	$('#photos1').empty();
+    });
+    $('#oridelete2').on('click',function(){
+    	$('#photos2').empty();
+    });
+    $('#oridelete3').on('click',function(){
+    	$('#photos3').empty();
+    });
+    
+    
+    $('#modify_form').on('submit',function(){
+    	/*if($('#re_good').val()==''){
+    		alert('좋았던 점을 작성해주세요!');
+    		$('#re_good').focus();
+    		return false;
+    	}*/
+    	/*if($('#re_bad').val()==''){
+    		alert('아쉬운 점을 작성해주세요!');
+    		$('#re_bad').focus();
+    		return false;
+    	}*/
+    	
+    	
+    	
+    });
+    
+    
+    
 
 });

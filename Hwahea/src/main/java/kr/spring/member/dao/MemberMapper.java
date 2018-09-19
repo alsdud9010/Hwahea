@@ -27,7 +27,7 @@ public interface MemberMapper {
 	@Select("SELECT * FROM (SELECT a.* FROM (SELECT b.*, r.re_id FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a) WHERE m_id=#{m_id}")
 	public List<MemberCommand> memberDetail(String m_id);
 	
-	@Select("SELECT * FROM (SELECT a.* FROM (SELECT b.*, r.re_id FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a)")
+	@Select("SELECT b.*, r.re_id FROM member_detail b INNER JOIN (SELECT re_num, re_id FROM review)r ON b.m_id=r.re_id ORDER BY r.re_num DESC")
 	public List<MemberCommand> memberDetailList();
 	
 	/*³» ¸®ºä*/

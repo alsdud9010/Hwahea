@@ -350,6 +350,20 @@ hr{
 	margin-top:30px;
 	border:1px solid #efefef;
 }
+.noreview{
+	display:table;
+	margin:0 auto;
+	font-size:40px;
+	font-weight:bold;
+}
+.no_guide{
+	display:table;
+	margin:0 auto;
+	font-size:25px;
+	font-weight:bold;
+}
+
+
 #writer{
 	width:40%;
 	margin-top:20px;
@@ -365,7 +379,7 @@ hr{
 }
 #nick{
 	font-size:21px;
-	width:200px;
+	width:600px;
 	font-weight:bold;
 	padding-left:7px;
 }
@@ -445,6 +459,15 @@ hr{
 	vertical-align:top;
 }
 #photos img{
+	width:150px;
+	align:left;
+}
+#mphotodiv{
+	width:100%;
+}
+#mphotos img{
+	margin-bottom:30px;
+	margin-right:10px;
 	width:150px;
 	align:left;
 }
@@ -546,21 +569,23 @@ hr{
 	margin:0 auto;
 	border-collapse: collapse;
 }
+.writer .nick {
+	width:50px !important;
+}
 #w_profile img{
 	padding-top:0;
 	margin:0 auto;
 	width:70px;
 }
-#nick{
+.nick{
 	font-size:21px;
-	width:150px;
 	font-weight:bold;
-	padding-left:7px;
+	padding-left:-30px;
 }
-#type{
+.type{
 	width:300px;
 	font-size:15px;
-	padding-left:7px;
+	padding-left:-30px;
 }
 #recnt{
 	font-size:15px;
@@ -569,7 +594,7 @@ hr{
 	vertical-align:top;
 }
 #bookmark{
-	width:500px;
+	width:100px;
 }
 #bookmark img{
 	float:right;
@@ -748,12 +773,17 @@ hr{
 
 .pmodal_rpro .plusGrade{font-size:12px;}
 
+
 .pmodal_wrere{
 	font-size:14px; 
 	font-weight:bold; 
 	margin:0 3px 0 3px;
 	color:black;
 }
+.replyview{
+	margin-bottom:20px;
+}
+
 
 .pmodal_drere{font-size:11px; color:#999da0; margin-left:3px;}
 
@@ -772,10 +802,26 @@ hr{
 }
 .pmodal_diff{margin-right:501px; cursor:pointer;}
 
-.modify-btn, .delete-btn{
+.modify-btn, .delete-btn, .modifyss{
 	float:right;
 	margin-right:10px;
 	vertical-align:top;
+	margin:0px 3px 3px 3px;
+	padding:0px;
+	color:#ffffff;
+	background-color:#72c02c;
+	border:1px solid #72c02c;
+	border-radius:4px !important; 
+	padding:5px;
+}
+.re-reset, .submitbtn, .prere_reset, .dadatbtn{
+	margin:0px 3px 3px 3px;
+	padding:0px;
+	color:#ffffff !important;
+	background-color:#72c02c;
+	border:1px solid #72c02c;
+	border-radius:4px !important; 
+	padding:5px;
 }
 
 
@@ -783,11 +829,10 @@ hr{
 /*È­ÇÃ ¸ð´Þ ´ë´ñ±Û*/
 /*´ë´ñ±Û Æû*/
 .pmodal_reback2{
-	margin-left:-30px;
-	margin-top:-35px;
+	margin-left:5px;
+	margin-top:-20px;
 	width:600px;
 }
-
 .pmodal_rpro2 img{
 	width:30px;
 	height:30px;
@@ -830,46 +875,20 @@ hr{
 
 
 /*´ë´ñ±Û ¸ñ·ÏÆû*/
-
 .prere_back{
 	background:#f7fffb;
-	margin-left:65px;
+	/* margin-left:65px; */
 	margin-top:-20px;
 	width:630px;
 }
 
 .prere_depth{
 	margin-left:25px;
-}
-
-.plusGrade input[type="button"]{
-	width:40px;
+} 
+.prere_depth img{
+	width:15px;
 	height:20px;
-	margin-top:5px;
-	border-radius:10px !important;
-	text-decoration:center;
-	background-color:#f0ad4e;
-	color:#fff;
-	border:none;
-	outline:none;
-	cursor:default;
 }
-
-
-.prere_grade input[type="button"]{
-	width:46px;
-	height:20px;
-	margin-top:5px;
-	border-radius:10px !important;
-	text-decoration:center;
-	font-size:12px;
-	background-color:#00c63c;
-	color:#fff;
-	border:none;
-	outline:none;
-	cursor:default;
-}
-
 .prere_time{
 	font-size:11px; color:#999da0; width:30px;
 }
@@ -878,18 +897,63 @@ hr{
 
 .rere_writer{font-size:14px; font-weight:bold; color:#ff7280; margin:0 13px 0 10px;}
 
-.prere_grade2 input[type="button"]{
-	width:61px;
-	height:20px;
+.grade_welcome input[type="button"]{
+	font-size:12px;
 	margin-top:5px;
 	border-radius:10px !important;
 	text-decoration:center;
-	font-size:12px;
-	background-color:#3881ff;
 	color:#fff;
 	border:none;
 	outline:none;
 	cursor:default;
+	width:61px;
+	height:20px;
+	background-color:#3881ff;
+}
+
+/*family*/
+.grade_family input[type="button"]{
+	font-size:12px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+	width:46px;
+	height:20px;
+	background-color:#00c63c;
+}
+
+/*vip*/
+.grade_vip input[type="button"]{
+	font-size:12px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+	width:40px;
+	height:20px;
+	background-color:#f0ad4e;
+}
+
+/*vvip*/
+.grade_vvip input[type="button"]{
+	font-size:12px;
+	margin-top:5px;
+	border-radius:10px !important;
+	text-decoration:center;
+	color:#fff;
+	border:none;
+	outline:none;
+	cursor:default;
+	width:43px;
+	height:20px;
+	background-color:#f20d29;
 }
 
 

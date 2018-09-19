@@ -23,7 +23,7 @@ public interface ReviewMapper {
 	
 	//리뷰 작성
 	@Insert("INSERT INTO review (re_num, c_code, re_id, re_rate, re_good, re_bad, re_tip, re_uploadbyte1, re_uploadbyte2, re_uploadbyte3, re_filename1,re_filename2,re_filename3, re_ip, re_regdate) VALUES "
-			+ "(review_seq.nextval, 1, #{re_id}, #{re_rate}, #{re_good}, #{re_bad}, #{re_tip}, #{re_uploadbyte1}, #{re_uploadbyte2}, #{re_uploadbyte3}, #{re_filename1}, #{re_filename2}, #{re_filename3}, #{re_ip}, SYSDATE)")
+			+ "(review_seq.nextval, 'B38D1C3', #{re_id}, #{re_rate}, #{re_good}, #{re_bad}, #{re_tip}, #{re_uploadbyte1}, #{re_uploadbyte2}, #{re_uploadbyte3}, #{re_filename1}, #{re_filename2}, #{re_filename3}, #{re_ip}, SYSDATE)")
 	public void insert(ReviewCommand review);
 	
 	//리뷰 상세보기(리스트)
@@ -35,10 +35,26 @@ public interface ReviewMapper {
 	public ReviewCommand selectReview2(Integer re_num);
 	
 	//리뷰 수정하기
+	@Update("UPDATE review SET re_rate=#{re_rate}, re_good=#{re_good}, re_bad=#{re_bad}, re_tip=#{re_tip}, re_uploadbyte1=#{re_uploadbyte1}, re_uploadbyte2=#{re_uploadbyte2}, re_uploadbyte3=#{re_uploadbyte3}, "
+			+ "re_filename1=#{re_filename1}, re_filename2=#{re_filename2}, re_filename3=#{re_filename3}, re_ip=#{re_ip}, re_regdate=SYSDATE WHERE re_num=#{re_num}")
 	public void update(ReviewCommand review);
 	
 	//리뷰 삭제하기
-	public void delete(Integer num);
+	@Delete("DELETE FROM review WHERE re_num=#{re_num}")
+	public void delete(Integer re_num);
+	
+	//리뷰 신고하기
+	@Update("UPDATE review SET re_report=re_report+1 WHERE re_num=#{re_num}")
+	public void addReport(Integer re_num);
+	
+	//리뷰 신고 테이블에 신고 내용 저장 
+	@Insert("INSERT INTO review_report (re_num, report_cate, report_content, re_id, report_date) VALUES "
+			+ "(#{re_num}, #{report_cate}, #{report_content}, #{re_id}, SYSDATE)")
+	public void addReportTable(ReviewCommand review);
+	
+	//리뷰 좋아요 누르기 
+	@Update("UPDATE review SET re_like=re_like+1 WHERE re_num=#{re_num}")
+	public void likeReview(Integer re_num);
 	
 	
 	
@@ -52,8 +68,8 @@ public interface ReviewMapper {
 	public int selectRowCountReply(Map<String,Object> map);
 	
 	//댓글 달기
-	@Insert("INSERT INTO review_reply (rere_num, re_id, rere_ip, rere_content, rere_regdate, re_num) VALUES "
-			+ "(review_reply_seq.nextval, #{re_id}, #{rere_ip}, #{rere_content}, SYSDATE, #{re_num})")
+	@Insert("INSERT INTO review_reply (rere_num, re_id, rere_ip, rere_content, rere_regdate, re_num, rere_depth, rere_parentnum) VALUES "
+			+ "(review_reply_seq.nextval, #{re_id}, #{rere_ip}, #{rere_content}, SYSDATE, #{re_num}, #{rere_depth}, #{rere_num})")
 	public void insertReply(ReviewReplyCommand reviewReply);
 	
 	//댓글 수정
