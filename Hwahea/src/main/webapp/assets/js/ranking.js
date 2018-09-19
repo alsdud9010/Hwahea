@@ -53,7 +53,7 @@ $(document).ready(function(){
 					cache:false,
 					timeout:30000,
 					success:function(data){
-						var list = data.list;
+						var list = data.list; 
 						$('.ranking').empty();
 						$(list).each(function(index,item){
 						
