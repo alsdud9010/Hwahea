@@ -9,9 +9,9 @@ import org.springframework.web.multipart.MultipartFile;
 public class AdminCosmeticCommand {
 	private String c_code;
 	private String c_name;
-	private MultipartFile upload;//업로드 파일
-	private byte[] c_image;//DB에 저장된 파일
-	private String c_photo;//파일 명
+	private MultipartFile c_uploadfile; //화장품사진
+    private byte[] c_uploadbyte; 
+    private String c_photoname; //업로드한 파일명 DB에 저장된다.  
 	private String c_capacity;
 	private int c_price;
 	private String c_ingre;
@@ -19,13 +19,6 @@ public class AdminCosmeticCommand {
 	private int c_rank;
 	private int c_shopping;
 	private Date c_reg_date;
-	
-
-	public void setUpload(MultipartFile upload) throws IOException {
-		this.upload = upload;
-		setC_image(upload.getBytes());
-		setC_photo(upload.getOriginalFilename());
-	}
 	
 	public String getC_code() {
 		return c_code;
@@ -39,20 +32,25 @@ public class AdminCosmeticCommand {
 	public void setC_name(String c_name) {
 		this.c_name = c_name;
 	}
-	public MultipartFile getUpload() {
-		return upload;
+	public MultipartFile getC_uploadfile() {
+		return c_uploadfile;
 	}
-	public byte[] getC_image() {
-		return c_image;
+	public void setC_uploadfile(MultipartFile c_uploadfile) throws IOException {
+	      this.c_uploadfile = c_uploadfile;
+	      setC_uploadbyte(c_uploadfile.getBytes());
+	      setC_photoname(c_uploadfile.getOriginalFilename());
 	}
-	public void setC_image(byte[] c_image) {
-		this.c_image = c_image;
+	public byte[] getC_uploadbyte() {
+		return c_uploadbyte;
 	}
-	public String getC_photo() {
-		return c_photo;
+	public void setC_uploadbyte(byte[] c_uploadbyte) {
+		this.c_uploadbyte = c_uploadbyte;
 	}
-	public void setC_photo(String c_photo) {
-		this.c_photo = c_photo;
+	public String getC_photoname() {
+		return c_photoname;
+	}
+	public void setC_photoname(String c_photoname) {
+		this.c_photoname = c_photoname;
 	}
 	public String getC_capacity() {
 		return c_capacity;
@@ -96,13 +94,12 @@ public class AdminCosmeticCommand {
 	public void setC_reg_date(Date c_reg_date) {
 		this.c_reg_date = c_reg_date;
 	}
-
 	@Override
 	public String toString() {
-		return "AdminCosmeticCommand [c_code=" + c_code + ", c_name=" + c_name + ", upload=" + upload + ", c_image="
-				+ Arrays.toString(c_image) + ", c_photo=" + c_photo + ", c_capacity=" + c_capacity + ", c_price="
-				+ c_price + ", c_ingre=" + c_ingre + ", c_rate=" + c_rate + ", c_rank=" + c_rank + ", c_shopping="
-				+ c_shopping + ", c_reg_date=" + c_reg_date + "]";
+		return "AdminCosmeticCommand [c_code=" + c_code + ", c_name=" + c_name + ", c_uploadfile=" + c_uploadfile
+				+ ", c_photoname=" + c_photoname + ", c_capacity=" + c_capacity + ", c_price=" + c_price + ", c_ingre="
+				+ c_ingre + ", c_rate=" + c_rate + ", c_rank=" + c_rank + ", c_shopping=" + c_shopping + ", c_reg_date="
+				+ c_reg_date + "]";
 	}
 	
 }

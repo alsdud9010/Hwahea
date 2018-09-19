@@ -71,8 +71,8 @@ public class AdminSerivceImpl implements AdminService {
 	}
 	
 	@Override
-	public List<AdminCategoryCommand> selectC_DetailList() {
-		return adminCategoryDetailMapper.selectC_DetailList();
+	public List<AdminCategoryCommand> selectC_DetailList(int category_num) {
+		return adminCategoryDetailMapper.selectC_DetailList(category_num);
 	}
 	
 	//카테고리

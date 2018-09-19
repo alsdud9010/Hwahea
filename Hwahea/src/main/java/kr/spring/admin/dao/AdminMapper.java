@@ -34,8 +34,8 @@ public interface AdminMapper {
 	@Insert("INSERT INTO category_detail(category_detail_num, category_detail_name, head_category, shopping_exist)"
 			+ "VALUES(category_detail_seq.nextval, #{category_detail_name}, #{head_category}, #{shopping_exist})")
 	public void insertCateDetail(AdminCategoryCommand categoryDetail);
-	@Select("SELECT distinct (d.CATEGORY_DETAIL_NUM),d.CATEGORY_DETAIL_NAME FROM category c LEFT JOIN category_detail d ON 2=d.HEAD_CATEGORY ORDER BY d.CATEGORY_DETAIL_NUM")
-	public List<AdminCategoryCommand> selectC_DetailList();
+	@Select("SELECT distinct (d.CATEGORY_DETAIL_NUM),d.CATEGORY_DETAIL_NAME FROM category c LEFT JOIN category_detail d ON d.HEAD_CATEGORY=#{category_num} ORDER BY d.CATEGORY_DETAIL_NUM")
+	public List<AdminCategoryCommand> selectC_DetailList(int category_num);
 	
 	//카테고리
 	@Select("SELECT category_num,category_name FROM category")
@@ -50,8 +50,8 @@ public interface AdminMapper {
 	//화장품
 	@Select("SELECT * FROM cosmetic")
 	public List<AdminCosmeticCommand> selectCosmeticList();
-	@Insert("INSERT INTO cosmetic(c_code, c_name, c_image, c_photo, c_capacity, c_price, c_ingre, c_rate, c_rank, c_shopping, c_reg_date)"
-			+ "VALUES(#{c_code}, #{c_name}, #{c_image}, #{c_photo}, #{c_capacity}, #{c_price}, #{c_ingre}, #{c_rate,jdbcType=VARCHAR}, #{c_rank}, #{c_shopping}, sysdate)")
+	@Insert("INSERT INTO cosmetic(c_code, c_name, c_uploadbyte, c_photoname, c_capacity, c_price, c_ingre, c_rate, c_rank, c_shopping, c_reg_date)"
+			+ "VALUES(#{c_code}, #{c_name}, #{c_uploadbyte}, #{c_photoname}, #{c_capacity}, #{c_price}, #{c_ingre}, #{c_rate,jdbcType=VARCHAR}, #{c_rank}, #{c_shopping}, sysdate)")
 	public void insertCosmetic(AdminCosmeticCommand cosmetic);
 	@Select("Select cosmetic_seq.nextval FROM dual")
 	public int selectCosmeticSeq();

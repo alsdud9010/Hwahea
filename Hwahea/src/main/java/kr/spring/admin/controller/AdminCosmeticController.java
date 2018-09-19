@@ -219,6 +219,9 @@ public class AdminCosmeticController {
 						AdminCosmeticCommand cosmeticcommand,
 						BindingResult result) {
 		
+		int seqNum = adminCosmeticService.selectCosmeticSeq();
+		cosmeticcommand.setC_code(cosmeticcommand.getC_code()+"C"+seqNum);
+		
 		if(log.isDebugEnabled()) {
 			log.debug("<<AdminCosmeticCommand>> : " + cosmeticcommand);
 		}
@@ -238,7 +241,7 @@ public class AdminCosmeticController {
 		
 		list = adminCosmeticService.selectCosmeticList();
 		brand = adminCosmeticService.selectBrandList();
-		category = adminCategoryService.selectCateDetailList();
+		category = adminCategoryService.selectCategoryList();
 			
 		if(log.isDebugEnabled()) {
 			log.debug("<<list>> : " + list);
@@ -251,17 +254,26 @@ public class AdminCosmeticController {
 		mav.addObject("brand", brand);
 		mav.addObject("category", category);
 		
-		return mav;			
+		return mav;
 	}
 	
 	//등록 폼에서 세부카테고리 aJax 처리
 	@RequestMapping("/cosmetic/adminC_detail.do")
 	@ResponseBody
-	public Map<String,Object> getC_detail(@RequestParam("C_num") int C_num){
+	public Map<String,Object> getC_detail(@RequestParam("category_num") int category_num){
 		
+		List<AdminCategoryCommand> category_detail = null;
+		category_detail = adminCategoryDetailService.selectC_DetailList(category_num);
 		
+		if(log.isDebugEnabled()) {
+			log.debug("<<category_num>> : " + category_num);
+			log.debug("<<category_num>> : " + category_num);
+		}
 		
-		return null;
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("category_detail", category_detail);
+		
+		return map;
 	}
 	
 	//화장품 상세 정보
@@ -297,8 +309,8 @@ public class AdminCosmeticController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("imageView");	//클래스호출
 		//속성명			속성값(byte[]의 데이터)
-		mav.addObject("imageFile",cosmetic.getC_image());
-		mav.addObject("filename",cosmetic.getC_photo());
+		mav.addObject("imageFile",cosmetic.getC_uploadbyte());
+		mav.addObject("filename",cosmetic.getC_photoname());
 		
 		return mav;
 	}
