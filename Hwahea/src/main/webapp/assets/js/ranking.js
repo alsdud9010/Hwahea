@@ -113,7 +113,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('.skin').click(function(){
+	$('.cate').click(function(){
 		var num = $(this).attr('data-value');
 		var title = '<h2><b>' + $(this).attr('data-name') + ' 랭킹</b></h2>';
 		$('.r_second_title').empty();

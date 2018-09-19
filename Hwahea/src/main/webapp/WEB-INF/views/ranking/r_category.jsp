@@ -32,11 +32,11 @@
 							<b> 카테고리별 </b>
 						</h2>
 					</div>
-					<div class="col-md-2" onclick="location.href='${pageContext.request.contextPath}/review/productInfo.do'">
+					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/c_top1.jpg"
 									alt="">
 							</div>
 							<span>
@@ -45,12 +45,12 @@
 									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">라운드랩</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>1025 독도 토너</strong>
 						</div>
 						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.8 ★★★★★</strong>
 						</div>
 					</div>
 					
@@ -58,7 +58,7 @@
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/c_top2.jpg"
 									alt="">
 							</div>
 							<span>
@@ -67,19 +67,19 @@
 									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">피지오겔</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>AI 리페어 로션</strong>
 						</div>
 						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.77 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/c_top3.jpg"
 									alt="">
 							</div>
 							<span>
@@ -88,19 +88,19 @@
 									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div> 
+						<div class="r_brandName">이니스프리</div> 
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>그린티 씨드 세럼</strong>
 						</div>
 						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.77 ★★★★★</strong>
 						</div>
 					</div> 
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/c_top4.jpg"
 									alt="">
 							</div>
 							<span>
@@ -109,19 +109,19 @@
 									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">아벤느</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>젠틀토닝로션(로씨옹토니끄두쎄르)</strong>
 						</div>
 						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.74 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/c_top5.jpg"
 									alt="">
 							</div>
 							<span>
@@ -130,12 +130,12 @@
 									alt="">
 							</span>
 						</div> 
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">마몽드</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>플로랄 하이드로 에멀젼</strong>
 						</div>
 						<div class="r_by-author">
-		                	<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.36 ★★★★★</strong>
 						</div>
 					</div>
 				</div>
@@ -159,24 +159,25 @@
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="#">스킨케어</a>
 										<ul class="dropdown-menu">
-											<li><a href="#" class="skin" data-value="1" data-name="스킨/토너">스킨/토너</a></li>
-											<li><a href="#" class="skin" data-value="2" data-name="로션/에멀젼">로션/에멀젼</a></li>
-											<li><a href="#" class="skin" data-value="3" data-name="에센스/앰플/세럼">에센스/앰플/세럼</a></li>
-											<li><a href="#" class="skin" data-value="4" data-name="페이스 오일">페이스 오일</a></li>
-											<li><a href="#" class="skin" data-value="5" data-name="크림/젤">크림/젤</a></li>
-											<li><a href="#" class="skin" data-value="6" data-name="아이케어">아이케어</a></li>
-											<li><a href="#" class="skin" data-value="7" data-name="미스트">미스트</a></li>
+											<li><a href="#" class="cate" data-value="1" data-name="스킨/토너">스킨/토너</a></li>
+											<li><a href="#" class="cate" data-value="2" data-name="로션/에멀젼">로션/에멀젼</a></li>
+											<li><a href="#" class="cate" data-value="3" data-name="에센스/앰플/세럼">에센스/앰플/세럼</a></li>
+											<li><a href="#" class="cate" data-value="4" data-name="페이스 오일">페이스 오일</a></li>
+											<li><a href="#" class="cate" data-value="5" data-name="크림/젤">크림/젤</a></li>
+											<li><a href="#" class="cate" data-value="6" data-name="아이케어">아이케어</a></li>
+											<li><a href="#" class="cate" data-value="7" data-name="미스트">미스트</a></li>
 										</ul></li>
 									<li class="dropdown-submenu"><a href="javascript:void(0);">클렌징/필링</a>
 										<ul class="dropdown-menu">
-											<li><a href="index.hmtl">클렌징 폼</a></li>
-											<li><a href="index.hmtl">클렌징 워터</a></li>
-											<li><a href="index.hmtl">클렌징 젤</a></li>
-											<li><a href="index.hmtl">클렌징 오일</a></li>
-											<li><a href="index.hmtl">클렌징 로션/크림</a></li>
-											<li><a href="index.hmtl">클렌징 비누</a></li>
-											<li><a href="index.hmtl">립/아이 리무버</a></li>
-											<li><a href="index.hmtl">스크럽/필링</a></li>
+											<li><a href="#" class="cate" data-value="8" data-name="클렌징 폼">클렌징 폼</a></li>
+											<li><a href="#" class="cate" data-value="9" data-name="클렌징 워터">클렌징 워터</a></li>
+											<li><a href="#" class="cate" data-value="10" data-name="클렌징 젤">클렌징 젤</a></li>
+											<li><a href="#" class="cate" data-value="11" data-name="클렌징 오일">클렌징 오일</a></li>
+											<li><a href="#" class="cate" data-value="12" data-name="클렌징 로션/크림">클렌징 로션/크림</a></li>
+											<li><a href="#" class="cate" data-value="13" data-name="클렌징 비누">클렌징 비누</a></li>
+											<li><a href="#" class="cate" data-value="14" data-name="클렌징 티슈">클렌징 티슈</a></li>
+											<li><a href="#" class="cate" data-value="15" data-name="립/아이 리무버">립/아이 리무버</a></li>
+											<li><a href="#" class="cate" data-value="16ㅋ" data-name="스크럽/필링">스크럽/필링</a></li>
 										</ul></li>
 									<li class="dropdown-submenu"><a href="javascript:void(0);">마스크/팩</a>
 										<ul class="dropdown-menu">

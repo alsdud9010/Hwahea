@@ -38,47 +38,21 @@ public class CosmeticController {
 		return mav;
 	}
 	
-	//카테고리 하위 메뉴 호출
-	@RequestMapping("/ranking/c_downmenu.do")
-	@ResponseBody
-	public Map<String, Object> getC_downmenu1(@RequestParam("num") String num){
-		
-		String c_code = "%D" + num + "C%";
-		
-
-		if(log.isDebugEnabled()) {
-			log.debug("<<c_code>> : " + c_code);
-		}
-		
-		List<CosmeticCommand> list = null;
-		list = cosmeticService.getCategoryList(c_code);
-		
-		Map<String, Object> map = new HashMap<String,Object>();
-		map.put("list", list);
-		
-		return map;
-	}
-	
-	//=======브랜드 리스트 호출
+	//브랜드별 메인 호출
 	@RequestMapping("/ranking/r_brand.do")
 	public ModelAndView getBrandList(){
-		int count = cosmeticService.getRowCount();
 		
 		List<BrandCommand> brand = null;
-		if(count>0) {
-			brand = cosmeticService.getBrandList();
-		}		
+		List<CosmeticCommand> mainList = null;
 		
-		if(log.isDebugEnabled()) {
-			log.debug("<<brand>> : " + brand);
-			log.debug("<<count>> : " + count);
-		}
+		brand = cosmeticService.getBrandList();
+		mainList = cosmeticService.getAllCosmetic();
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("r_brand");
 		mav.addObject("brand", brand);
+		mav.addObject("mainList", mainList);
 		
 		return mav;
 	}
-	
 }

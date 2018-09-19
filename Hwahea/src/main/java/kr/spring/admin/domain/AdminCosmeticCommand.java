@@ -2,7 +2,6 @@ package kr.spring.admin.domain;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.util.Arrays;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,7 +18,14 @@ public class AdminCosmeticCommand {
 	private int c_rank;
 	private int c_shopping;
 	private Date c_reg_date;
+	private String c_brand_num;
 	
+	public String getC_brand_num() {
+		return c_brand_num;
+	}
+	public void setC_brand_num(String c_brand_num) {
+		this.c_brand_num = c_brand_num;
+	}
 	public String getC_code() {
 		return c_code;
 	}
@@ -99,7 +105,6 @@ public class AdminCosmeticCommand {
 		return "AdminCosmeticCommand [c_code=" + c_code + ", c_name=" + c_name + ", c_uploadfile=" + c_uploadfile
 				+ ", c_photoname=" + c_photoname + ", c_capacity=" + c_capacity + ", c_price=" + c_price + ", c_ingre="
 				+ c_ingre + ", c_rate=" + c_rate + ", c_rank=" + c_rank + ", c_shopping=" + c_shopping + ", c_reg_date="
-				+ c_reg_date + "]";
+				+ c_reg_date + ", c_brand_num=" + c_brand_num + "]";
 	}
-	
 }

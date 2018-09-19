@@ -58,4 +58,25 @@ public class CosmeticAjaxController {
 
 	      return mav;
 	   }
+	
+	//카테고리 하위 메뉴 호출
+		@RequestMapping("/ranking/c_downmenu.do")
+		@ResponseBody
+		public Map<String, Object> getC_downmenu1(@RequestParam("num") String num){
+			
+			String c_code = "%D" + num + "C%";
+			
+
+			if(log.isDebugEnabled()) {
+				log.debug("<<c_code>> : " + c_code);
+			}
+			
+			List<CosmeticCommand> list = null;
+			list = cosmeticService.getCategoryList(c_code);
+			
+			Map<String, Object> map = new HashMap<String,Object>();
+			map.put("list", list);
+			
+			return map;
+		}
 }

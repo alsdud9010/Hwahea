@@ -126,6 +126,7 @@ li{
 .ranking-top5 .r_productName{
 	width:100%;
 	font-size:14px;
+	height: 35px;
 	text-align:center;
 	font-weight: bold;
 	margin: 5px 0 10px;

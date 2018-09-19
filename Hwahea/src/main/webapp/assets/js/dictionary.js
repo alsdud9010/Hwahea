@@ -316,19 +316,19 @@ $(document).ready(function(){
 				var func = '';
 				var f_img = '';
 				if(list[i].i_func=='S'){
-					func += '자외선 차단 성분입니다 :)';
+					func += '<div class="text-func">자외선 차단 성분입니다 :)</div>';
 					f_img = 'func_sun';
 				}
 				if(list[i].i_func=='W'){
-					func += '미백 개선에 도움이 돼요 :)';
+					func += '<div class="text-func">미백 개선에 도움이 돼요 :)</div>';
 					f_img = 'func_white';
 				}
 				if(list[i].i_func=='R'){
-					func += '주름 개선에 도움이 돼요 :)';
+					func += '<div class="text-func">주름 개선에 도움이 돼요 :)</div>';
 					f_img = 'func_wrinkle';
 				}
 				if(list[i].i_func==null){
-					func += '해당 없음';
+					func += '<div>해당 없음</div>';
 					f_img = 'func_null';
 				}
 				output+='<li>';
@@ -338,7 +338,7 @@ $(document).ready(function(){
 				output+='		</div>';
 				output+='		<div class="d_list_detail_name">';
 				output+='			<div class="text-bold">기능성 성분 여부</div>';
-				output+='			<div class="text-func">' + func + '</div>		';							
+				output+=func;							
 				output+='		</div>';
 				output+='	</div>';
 				output+='</li>';

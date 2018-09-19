@@ -225,7 +225,7 @@
 				<div class="col-md-12">
 					<div class="r_second_title">
 						<h2>
-							<b> 브랜드별 전체 랭킹 </b>
+							<b> 화해 전체 랭킹 </b>
 						</h2>
 					</div>
 				</div>
@@ -235,29 +235,29 @@
 				</div>
 				
 				<div class="ranking col-md-12">
+					<c:forEach var="m" items="${mainList}" varStatus="status">
 					<div class="row">
 						<ul>
-							<li class="ranking_num"><h1>1</h1></li>
+							<li class="ranking_num"><h1>${status.count}</h1></li>
 							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/ausome.jpg"
-										alt="">
-								</a>
+								<a href="#"><img src="imageView.do?c_code=${m.c_code}" width="100px"></a>
 							</li>
 							<li class="ranking_names">
-								<div class="ranking_brandName">오우썸 </div>
+								<div class="ranking_brandName">${m.brand}</div>
 								<div class="ranking_productName">
-									<strong>오가닉 딥모이스처라이징 더블미스트 기획세트</strong>
+									<strong>${m.c_name}</strong>
 								</div>
 								<div class="r_list_by-author">
-									<strong> 18,500원</strong> <span>/ 2.6g</span>
+									<strong>${m.c_price}</strong> <span>/ ${m.c_capacity}</span>
 								</div>
 							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
+							<li class="ranking_stars">${m.c_rate}★★★★★ (4,000)</li>
 							<li class="ranking_shopping"> 
 								<ul>
 									<li class="buy">
-										<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/ranking/buy.png" alt="">
+										<img class="img-responsive"
+										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
+										alt="">
 									</li>
 									<li class="cart">
 										<img class="img-responsive"
@@ -267,6 +267,8 @@
 								</ul>  
 							</li>
 						</ul>
+					</div>
+					</c:forEach>
 					</div>
 				</div>
 				<!-- 랭킹 리스트 끝 -->

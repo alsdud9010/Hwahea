@@ -46,12 +46,16 @@ $(document).ready(function(){
 	
 	$(document).on('change','#d_category',function(){
 		
+		var brand_num = $('#c_brand option:selected').val();
+		
 		var c_code = 'B';
-		c_code += $('#c_brand option:selected').val();
+		c_code += brand_num;
 		c_code += 'D';
 		c_code += $('#d_category option:selected').val();
 		
 		$('#c_code').attr('value',c_code);
+		$('#c_brand_num').attr('value',brand_num)
+
 	});
 });
 </script>
@@ -152,6 +156,7 @@ $(document).ready(function(){
 											</select>
 											
 											<form:input type="hidden" path="c_code" id="c_code"/>
+											<form:input type="hidden" path="c_brand_num" id="c_brand_num"/>
 											
 											<div id="append"></div>		
 																		

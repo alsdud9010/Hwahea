@@ -224,7 +224,6 @@ public class AdminCosmeticController {
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<AdminCosmeticCommand>> : " + cosmeticcommand);
-			log.debug("<<C_CODE>> : " + cosmeticcommand);
 		}
 		
 		adminCosmeticService.insertCosmetic(cosmeticcommand);
