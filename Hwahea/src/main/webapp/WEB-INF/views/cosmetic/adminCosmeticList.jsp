@@ -2,6 +2,59 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/plugins/jquery/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	$('#cosmeticRegister_form').on('submit',function(){
+		var sel = $('#c_category option:selected').val();
+		if(sel == 0){
+			alert('카테고리명을 선택하세요');
+			return false;
+		}
+	});
+	
+	$('#c_category').change(function(){
+		var sel = $('#c_category option:selected').val();
+		
+		$.ajax({
+			type:'post',
+			data:{category_num:sel},
+			url:'adminC_detail.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				$('#d_category').empty();
+				
+				 var output = '<label class="control-label" class="d_category" for="d_category">세부 카테고리 명</label>';
+				 output += '<select name="c_category" id="d_category" class="form-control">';
+				 output += '<option value="0" selected="selected">카테고리 명 선택</option>';
+				
+				$(data.category_detail).each(function(index,item){
+					 output += '<option id="D' + item.category_detail_num + '" value="' + item.category_detail_num + '">' + item.category_detail_name + '</option>';
+					
+				});
+				 output += '</select>';
+				 $('#append').append(output);
+			},
+			error:function(){
+				alert('네트워크 오류');
+			}
+		});
+	});
+	
+	$(document).on('change','#d_category',function(){
+		
+		var c_code = 'B';
+		c_code += $('#c_brand option:selected').val();
+		c_code += 'D';
+		c_code += $('#d_category option:selected').val();
+		
+		$('#c_code').attr('value',c_code);
+	});
+});
+</script>
 <style>
 .table-detail th {
 	background: #ededed;
@@ -73,7 +126,7 @@
 												</h4>
 											</div>
 											<form:form commandName="cosmeticcommand" action="adminCosmeticRegister.do"
-											id="cosmeticRegister_form" enctype="multipart/form-data">
+											id="cosmeticRegister_form"  encType="multipart/form-data">
 											<div class="modal-body">
 												<div class="title_left">
 													<h1>화장품 등록</h1>
@@ -83,28 +136,33 @@
 												</div>													
 												<div class="col-md-8 col-sm-8 col-xs-8" style="padding-left:250px;">
 											
-											<label class="control-label" for="c_code">브랜드 명</label>
-											<form:select type="text" path="c_code" class="form-control">
+											<label class="control-label" for="c_brand">브랜드 명</label>
+											<select id="c_brand" class="form-control">
 												<c:forEach var="b" items="${brand}"> 
-													<form:option value="${b.brand_num}">${b.brand_name}</form:option>
+													<option id="B${b.brand_num}" value="${b.brand_num}">${b.brand_name}</option>
 												</c:forEach>
-											</form:select>
+											</select>
 											
-											<label class="control-label" for="c_code">카테고리 명</label>
-											<form:select type="text" path="c_code" class="form-control">
+											<label class="control-label" for="c_category">카테고리 명</label>
+											<select name="c_category" id="c_category" class="form-control">
+													<option value="0" selected="selected">카테고리 명 선택</option>
 												<c:forEach var="c" items="${category}"> 
-													<form:option value="${c.category_num}">${c.category_name}</form:option>
+													<option value="${c.category_num}">${c.category_name}</option>
 												</c:forEach>
-											</form:select>
-							
+											</select>
+											
+											<form:input type="hidden" path="c_code" id="c_code"/>
+											
+											<div id="append"></div>		
+																		
 											<label class="control-label" for="c_name">화장품 이름</label>
 											<form:input type="text" path="c_name" class="form-control"/>
 											
 											<label class="control-label" for="c_photo">화장품 사진</label>
-											<input type="file" name="upload" class="form-control"/>
+											<input type="file" name="c_uploadfile" class="form-control"/>
 											
 											<label class="control-label" for="c_capacity">화장품 용량</label>
-											<form:input type="number" path="c_capacity" class="form-control"/>
+											<form:input type="text" path="c_capacity" class="form-control"/>
 											
 											<label class="control-label" for="c_price">화장품 가격</label>
 											<form:input type="number" path="c_price" class="form-control"/>
@@ -114,13 +172,10 @@
 											
 											<label class="control-label" for="c_shopping">쇼핑 페이지</label>
 											<form:select path="c_shopping" class="form-control">
-												<form:option value="0">X</form:option>
 												<form:option value="1">O</form:option>
+												<form:option value="0">X</form:option>
 											</form:select>
-											
-											
 												</div>
-												
 												<div class="x_title">
 													<div class="clearfix"></div>
 												</div>
@@ -134,9 +189,7 @@
 										</div>
 								</div>
 					</div>
-					
 				</div>
-			
 		</div>
 	</div>
 </div>
