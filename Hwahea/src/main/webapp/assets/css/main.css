@@ -822,4 +822,12 @@ a:hover {
 	color:#72c02c;
 	font-size: 17px;
 }
-
+.more_review{
+	position: absolute;
+    top: 3px;
+    right: 14px;
+    color: #888;
+    padding-right: 15px;
+    background: url(/Hwahea/assets/img/main/more_view.png) no-repeat 100% 50%;
+    font-weight: 700;
+}
