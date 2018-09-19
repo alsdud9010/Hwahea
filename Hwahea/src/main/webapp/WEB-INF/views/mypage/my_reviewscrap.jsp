@@ -16,7 +16,7 @@
 						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewreview.do?bc=2">리뷰</a></li>
 					</ul>
 				</div>
-				<div class="card mb-3" style="margin-left: 8%;">
+				<div class="card mb-3" style="margin-left: 8%;"> 
 				<c:if test="${empty scrap.hp_num}">
 					<div class="review">등록된 게시물이 없습니다.</div>
 				</c:if>

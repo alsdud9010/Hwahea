@@ -10,7 +10,7 @@
 					<ul class="list-inline top-v1-contacts">
 						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_eventdoing.do?bc=5">내가 참여한 이벤트</a></li>
 						<li>|</li>
-						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_eventnotyet.do?bc=5">찜한 이벤트</a></li>
+						<li class="now_menu">찜한 이벤트</li>
 					</ul>
 				</div>
 				

@@ -31,7 +31,7 @@ public class MainController {
 	private MemberService memberService;
 
 	@Resource
-	private CipherTemplate cipherAES;
+	private CipherTemplate cipherAES; 
 	//자바빈 초기화
 	@ModelAttribute("command")
 	public MemberCommand initCommand() {

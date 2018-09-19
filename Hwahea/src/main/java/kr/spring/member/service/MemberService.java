@@ -21,7 +21,7 @@ public interface MemberService {
 	/*public List<ReviewCommand> selectScrapReview(String m_id);
 	public List<MemberCommand> selectScrapUser(String re_id);*/  
 	public List<OrderCommand> selectCartOrder(String m_id);
-	public List<CartCommand> selectCart(String m_id);
+	public List<CartCommand> selectCart(String m_id); 
 	public List<EventCommand> selectEvent(String m_id);
 	public List<EventCommand> selectZzimEvent(String m_id);
 	public EventCommand selectEvent2(String m_id);

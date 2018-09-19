@@ -61,7 +61,7 @@
   margin-right: -121px;
 }
 
-.filebox input[type="file"] {  /* 파일 필드 숨기기 */
+.filebox input[type="file"] {  /* 파일 필드 숨기기 */ 
   position: absolute;
   width: 1px;
   height: 1px;

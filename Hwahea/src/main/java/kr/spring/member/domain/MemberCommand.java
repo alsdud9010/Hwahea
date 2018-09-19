@@ -21,7 +21,7 @@ public class MemberCommand {
 	private String m_id;
 	private int m_auth;
 	@NotNull
-	private String m_name;
+	private String m_name; 
 	@NotNull
 	@Min(value=8)@Max(value=64)
 	@Pattern(regexp="^[A-Za-z0-9+]{8,16}$")

@@ -4,16 +4,15 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/shop.css">
 <div class="container content">
-	<div class="row magazine-page">
+	<div class="row magazine-page"> 
 		<div class="col-md-12" style="margin-left: 5%;">
 			<div class="mypage_form">
 				<div class="menu_bar">
 					<ul class="list-inline top-v1-contacts">
-						<li class="now_menu"><a href="${pageContext.request.contextPath}/mypage/my_cart.do?bc=4">장바구니</a></li>
+						<li class="now_menu">장바구니</li>
 						<li>|</li>
 						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_cartorder.do?bc=4">주문/배송</a></li>
-						<li>|</li>
-						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_cartzzim.do?bc=4">찜한 상품</a></li>
+						
 					</ul>
 				</div>
 				<div class="container">

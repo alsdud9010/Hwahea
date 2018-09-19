@@ -23,7 +23,7 @@ public class MemberServiceImpl implements MemberService{
 	
 	@Override
 	public void insert(MemberCommand member) {
-		memberMapper.insert(member);
+		memberMapper.insert(member); 
 		memberMapper.insertDetail(member);
 	}
 	

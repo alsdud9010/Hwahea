@@ -10,7 +10,7 @@
 			<div class="mypage_form">
 				<div class="menu_bar">
 					<ul class="list-inline top-v1-contacts">
-						<li class="now_menu">내 리뷰</li>
+						<li class="now_menu">내 리뷰</li> 
 						<li>|</li>
 						<li class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewscrap.do?bc=2">스크랩</a></li>
 						<li>|</li>

@@ -20,7 +20,7 @@
 				              <div class="panel-heading" id="head">
 				                <div class="panel-title" id="title">
 				                    <i class="fa fa-github fa-2x"></i>
-				                    <span class="hidden-xs">리뷰 100건 달성</span>
+				                    <span class="hidden-xs">리뷰 100건 달성</span> 
 				                </div>
 				              </div>
 				              <div class="panel-body">

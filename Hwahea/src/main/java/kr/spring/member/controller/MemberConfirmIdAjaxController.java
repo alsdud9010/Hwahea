@@ -22,7 +22,7 @@ public class MemberConfirmIdAjaxController {
 	@Resource
 	private MemberService memberService;
 	
-	@RequestMapping("/signin/confirmId.do")
+	@RequestMapping("/signin/confirmId.do") 
 	@ResponseBody
 	public Map<String,String> process(
 			@RequestParam("m_id") String m_id){

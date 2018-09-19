@@ -24,7 +24,7 @@ public interface MemberMapper {
 	public void insertDetail(MemberCommand member);
 	
 	@Select("SELECT * FROM member m LEFT OUTER JOIN member_detail d ON m.m_id=d.m_id WHERE m.m_id=#{m_id}")
-	public MemberCommand selectMember(String m_id);
+	public MemberCommand selectMember(String m_id); 
 	
 	@Select("SELECT * FROM (SELECT a.* FROM (SELECT b.*, r.re_id FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a) WHERE m_id=#{m_id}")
 	public List<MemberCommand> memberDetail(String m_id);

@@ -54,7 +54,7 @@ function maxLengthCheck(object){
 		    </div>
 	    </div>
 	    <div class="form-group">
-		    <label for="inputName" class="col-sm-2 control-label">이름</label>
+		    <label for="inputName" class="col-sm-2 control-label">이름</label> 
 		    <div class="col-sm-6">
 		    	<form:input type="text" path="m_name" class="form-control" id="inputName" placeholder="이름"/>
 		    </div>

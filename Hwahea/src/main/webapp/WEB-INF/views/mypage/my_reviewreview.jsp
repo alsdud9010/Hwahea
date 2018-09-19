@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage/mypage.css">
 <div class="container content">
 	<div class="row magazine-page">
-		<div class="col-md-12" style="margin-left: 5%;">
+		<div class="col-md-12" style="margin-left: 5%;"> 
 				<div class="menu_bar">
 					<ul class="list-inline top-v1-contacts">
 						<li><div class="other_menu"><a href="${pageContext.request.contextPath}/mypage/my_reviewmyreview.do?bc=2">내 리뷰</a></div></li>

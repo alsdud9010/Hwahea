@@ -36,7 +36,7 @@ public class MemberController {
 	@Resource
 	
 	private CipherTemplate cipherAES;
-	//자바빈 초기화
+	//자바빈 초기화 
 	@ModelAttribute("command")
 	public MemberCommand initCommand() {
 		return new MemberCommand();
