@@ -10,6 +10,22 @@ $(document).ready(function(){
     $("#myBtn").click(function(event){
         $("#loginform").modal();
     });
+    $('#login_btn').click(function(){
+    	var id = document.getElementById("usrname");
+		var passwd = document.getElementById("psw");
+		
+		if(id.value == ''){
+			$('#id').css('color','red')
+            .text('아이디를 입력하세요.');
+			return;
+		}
+		if(passwd.value == ''){
+			$('#pw').css('color','red')
+            .text('비밀번호를 입력하세요.');
+			return;
+		}
+		$('#login_form').submit();
+    });
 });
 </script>
 <!--=== Header v4 ===-->
@@ -619,17 +635,19 @@ $(document).ready(function(){
           <h4 class="h4-m"><span class="glyphicon glyphicon-lock"></span>Login</h4>
         </div>
         <div class="body-m">
-          <form role="form" action="${pageContext.request.contextPath}/main/signup.do" method="post">
+          <form role="form" id="login_form" action="${pageContext.request.contextPath}/main/signup.do" method="post">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
               <input type="text" name="m_id" class="form-control" id="usrname" placeholder="아이디를 입력해주세요."/>
+              <span id="id"></span>
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> 비밀번호</label>
               <input type="password" name="m_passwd" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요."/>
+              <span id="pw"></span><span id="ck_pw"></span>
             </div>
               <button type="button" class="btn-m1 btn-success1 btn-block-m1" onclick = "location.href ='${pageContext.request.contextPath}/signin/service_agree.do'">회원가입</button>
-              <button type="submit" class="btn-m2 btn-success2 btn-block-m2">로그인</button>
+              <input type="button" class="btn-m2 btn-success2 btn-block-m2" id="login_btn" value="로그인">
           </form>
         </div>
         <div class="footer-m">
@@ -637,4 +655,4 @@ $(document).ready(function(){
         </div>
       </div>
     </div>
-  </div> 
+  </div>
