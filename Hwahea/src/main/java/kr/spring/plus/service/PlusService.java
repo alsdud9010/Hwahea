@@ -3,11 +3,13 @@ package kr.spring.plus.service;
 import java.util.List;
 import java.util.Map;
 
+import kr.spring.member.domain.MemberCommand;
 import kr.spring.plus.domain.PlusCommand;
 import kr.spring.plus.domain.PlusReplyCommand;
 
 public interface PlusService {
 	//ºÎ¸ð±Û
+	
 	public List<PlusCommand> selectPlusMain(Map<String,Object> map);
 	
 	public List<PlusCommand> selectPlusList(Map<String,Object> map);

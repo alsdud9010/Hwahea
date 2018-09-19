@@ -118,6 +118,7 @@ $(document).ready(function(){
 	var count;
 	var rowCount;
 	var hp_num;
+	var m_auth;
 	
 	//댓글쓰기 버튼 누르면 댓글창으로 커서 이동
 	$(document).on('click','.pmodal_re',function(){
@@ -128,10 +129,8 @@ $(document).ready(function(){
 	//댓글 목록
 	$(document).on('click','.click_pmodal',function(){
 		hp_num = $(this).attr('data-num');
-		
-		//기존 목록 초기화
-		$('#prere_area').empty();
-		
+		m_auth = $(this).attr('data-auth');
+		alert(m_auth);
 		//초기 데이터 목록 호출
 		selectData(1, hp_num);
 	});
@@ -170,7 +169,15 @@ $(document).ready(function(){
 									output+='		<div class="pmodal_rpro">';
 									output+='			<img src="../assets/img/plus/profile.png">';
 									output+='			<span class="pmodal_wrere">'+item.hpre_id+'</span>';
-									output+='			<span class="grade_vip"><input type="button" value="VIP"></span>';
+									if(m_auth==1){
+										output+='	<span class="grade_welcome"><input type="button" value="Welcome"></span>';
+									}else if(m_auth==2){
+										output+='	<span class="grade_family"><input type="button" value="Family"></span>';
+									}else if(m_auth==3){
+										output+='	<span class="grade_vip"><input type="button" value="VIP"></span>';
+									}else if(m_auth==4){
+										output+='	<span class="grade_vvip"><input type="button" value="VVIP"></span>';
+									}
 									output+='			<span class="pmodal_drere">'+item.hpre_date+'</span></div>';
 									output+='		<div class="pmodal_trere">'+item.hpre_content+'</div>';
 									output+='		<div class="pmodal_brere">';
@@ -192,7 +199,15 @@ $(document).ready(function(){
 									output+='	<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
 									output+='	<img src="../assets/img/plus/profile.png">';
 									output+='	<span class="pmodal_wrere">'+item.hpre_id+'</span>';
-									output+='	<span class="grade_family"><input type="button" value="Family"></span>';
+									if(m_auth==1){
+										output+='	<span class="grade_welcome"><input type="button" value="Welcome"></span>';
+									}else if(m_auth==2){
+										output+='	<span class="grade_family"><input type="button" value="Family"></span>';
+									}else if(m_auth==3){
+										output+='	<span class="grade_vip"><input type="button" value="VIP"></span>';
+									}else if(m_auth==4){
+										output+='	<span class="grade_vvip"><input type="button" value="VVIP"></span>';
+									}
 									output+='	<span class="prere_time">'+item.hpre_date+'</span></div>';
 									output+='<div class="prere_text">'+item.hpre_content+'</div>';
 									output+='<div class="pmodal_brere">';
@@ -215,7 +230,15 @@ $(document).ready(function(){
 									output+='	<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
 									output+='	<img src="../assets/img/plus/profile.png"> ';
 									output+='	<span class="pmodal_wrere">'+item.hpre_id+'</span>';
-									output+='	<span class="grade_welcome"><input type="button" value="Welcome"></span>';
+									if(item.m_auth==1){
+										output+='	<span class="grade_welcome"><input type="button" value="Welcome"></span>';
+									}else if(item.m_auth==2){
+										output+='	<span class="grade_family"><input type="button" value="Family"></span>';
+									}else if(item.m_auth==3){
+										output+='	<span class="grade_vip"><input type="button" value="VIP"></span>';
+									}else if(item.m_auth==4){
+										output+='	<span class="grade_vvip"><input type="button" value="VVIP"></span>';
+									}
 									output+='	<span class="prere_time">'+item.hpre_date+'</span></div>';
 									output+='<div class="prere_text"><span class="rere_writer">white</span>'+item.hpre_content+'</div>';
 									output+='<div class="pmodal_brere">';
@@ -337,7 +360,15 @@ $(document).ready(function(){
 		rereply += '<div class="pmodal_rpro2">';
 		rereply += '<img src="../assets/img/plus/profile.png">';
 		rereply += '<span class="pmodal_wrere">'+user_id+'</span>';
-		rereply += '<span class="plusGrade"><input type="button" value="VIP"></span>';
+		if(m_auth==1){
+			rereply+='	<span class="grade_welcome"><input type="button" value="Welcome"></span>';
+		}else if(m_auth==2){
+			rereply+='	<span class="grade_family"><input type="button" value="Family"></span>';
+		}else if(m_auth==3){
+			rereply+='	<span class="grade_vip"><input type="button" value="VIP"></span>';
+		}else if(m_auth==4){
+			rereply+='	<span class="grade_vvip"><input type="button" value="VVIP"></span>';
+		}
 		rereply += '	<div id="pre_second"><textarea rows="4" cols="55" name="hpre_content" id="prere_content" class="pmodal_rtext2"></textarea>';
 		rereply += '	<span class="prere_btn"><input type="submit" value="등록"> <input type="button" value="취소" class="prere_reset"></span></div>';
 		rereply += '	<div id="prere_first"><span class="letter-count">300/300</span></div>';

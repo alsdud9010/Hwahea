@@ -122,11 +122,11 @@
 					<c:if test="${count > 0}">
 						<div class="col-md-4">
 							<div class="plusThumbnail">
-								<a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+								<a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${plus.m_auth}" data-toggle="modal" data-target="#plus_modal">
 								<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"></a>
 							</div>
 							<div class="plusTitle">
-								<a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+								<a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${plus.m_auth}" data-toggle="modal" data-target="#plus_modal">
 								${plus.hp_title}</a>
 							</div>
 							<table class="plusTable">

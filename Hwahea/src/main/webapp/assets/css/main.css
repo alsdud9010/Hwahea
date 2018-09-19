@@ -1,9 +1,191 @@
 /*메인*/
-.carousel-inner {
+body {
+    word-spacing: -1px;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'montserrat', 'noto', 'Roboto', sans-serif;
+    letter-spacing: -0.04em;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+img, input, select, textarea, button {
+    border: 0;
+    vertical-align: top;
+    color: #666;
+}
+
+/*메인배너*/
+/* .carousel-inner {
 	height:400px;
 }
 
 .carousel-inner .item img{
 	height:400px;
 	width:100%;
+} */
+
+
+.main_full_banner {
+    width: 100%;
+    height: 450px;
 }
+
+.main_full_banner .banner_link {
+    display: block;
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.main_full_banner .banner_link img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 0;
+}
+
+.main_full_banner .banner_link .banner_desc {
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    font-size: 18px;
+    color: #666;
+    z-index: 1;
+    margin-left: -290px;
+    font-weight: 700;
+}
+
+.main_full_banner .banner_wrap {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: #f5f5f5;
+    z-index: 0;
+    height: 450px;
+    min-width: 1020px;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+}
+
+.slick-track:before, .slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.main_full_banner .banner_wrap .slick-list {
+    min-width: 1020px;
+}
+
+
+/*배너 버튼 시작*/
+.main_full_banner .banner_wrap .slick-arrow.slick-prev {
+    left: 50%;
+    margin-left: -290px;
+}
+
+.main_full_banner .banner_wrap .slick-arrow.slick-next {
+    left: 50%;
+    margin-left: -200px;
+}
+
+.slick-arrow.slick-next {
+    background-position: -40px 0;
+}
+
+.main_full_banner .banner_wrap .slick-arrow {
+    position: absolute;
+    bottom: 30px;
+    z-index: 2;
+}
+
+.slick-arrow.slick-prev {
+    background-position: 0 0;
+}
+
+.slick-arrow {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('/Hwahea/assets/img/main/mainBannerArrow.png') no-repeat 0 0;
+    text-indent: -9999px;
+}
+
+button {
+    text-align: center;
+    color: #fff;
+}
+
+input[type="submit"], button {
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    cursor: pointer;
+}
+/*배너 버튼 끝*/
+
+/*메인 mid 배너*/
+.main_mid_banner {
+    margin: 50px 0 0;
+}
+
+.main_mid_banner > a {
+    display: block;
+    width: 1020px;
+    vertical-align: bottom;
+}
+
+/*메인 쇼핑*/

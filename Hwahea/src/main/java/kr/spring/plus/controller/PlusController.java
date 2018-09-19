@@ -39,9 +39,11 @@ public class PlusController {
 		//총 글의 갯수 또는 검색된 글의 갯수
 		int count = plusService.selectRowCount(map);
 		
+		
 		if(log.isDebugEnabled()) {
 			log.debug("<<count>> : " + count);
 		}
+		
 		List<PlusCommand> list = null;
 		if(count > 0) {
 			list = plusService.selectPlusMain(map);

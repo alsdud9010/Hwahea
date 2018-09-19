@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import kr.spring.member.domain.MemberCommand;
 import kr.spring.plus.dao.PlusMapper;
 import kr.spring.plus.domain.PlusCommand;
 import kr.spring.plus.domain.PlusReplyCommand;

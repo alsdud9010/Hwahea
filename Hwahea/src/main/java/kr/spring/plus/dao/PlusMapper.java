@@ -7,11 +7,13 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import kr.spring.member.domain.MemberCommand;
 import kr.spring.plus.domain.PlusCommand;
 import kr.spring.plus.domain.PlusReplyCommand;
 
 public interface PlusMapper {
 	/*==================화해플러스=================*/
+	
 	//화해플러스 목록
 	public List<PlusCommand> selectPlusMain(Map<String,Object> map);
 	

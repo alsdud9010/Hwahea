@@ -22,8 +22,9 @@
 	            pb.*,
 	            r.hpre_cnt
 	        FROM plus_board pb LEFT OUTER JOIN (SELECT hp_num, COUNT(*) hpre_cnt
-	        FROM plus_reply GROUP BY hp_num)r
-	        ON pb.hp_num = r.hp_num)pr)p LEFT OUTER JOIN member_detail m 
+	       	 FROM plus_reply GROUP BY hp_num)r
+	       	 ON pb.hp_num = r.hp_num)pr)p LEFT OUTER JOIN (SELECT md.*, mb.m_auth 
+	        	FROM member_detail md LEFT OUTER JOIN member mb ON md.m_id = mb.m_id)m
 	    ON p.m_id = m.m_id
 	    <![CDATA[
 	    	WHERE p.ranking <= 5
@@ -63,13 +64,17 @@
 			*
 		FROM (SELECT
 				a.*,
+				m.*,
 				rownum rnum
 				FROM (SELECT
 						*
 					  FROM plus_reply
 					  START WITH hpre_depth = 0
 					  CONNECT BY PRIOR hpre_num = hpre_parent
-					  ORDER SIBLINGS BY hpre_num DESC)a)
+					  ORDER SIBLINGS BY hpre_num DESC)a
+					  LEFT OUTER JOIN (SELECT md.*, mb.m_auth FROM member_detail md
+            				LEFT OUTER JOIN member mb ON md.m_id = mb.m_id)m
+            	ON a.hpre_id = m.m_id)
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>

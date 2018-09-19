@@ -84,7 +84,20 @@
                	  <div class="pBanner_con" >
                 	<div class="plusMember">
                 		<img class="plusProfile" src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>
-                		<span class="grade_vip"><input type="button" value="VIP"></span>
+                		<c:choose>
+	                		<c:when test="${banner.m_auth==0}">
+	                			<span class="grade_welcome"><input type="button" value="Welcome"></span>
+	                		</c:when>
+	                		<c:when test="${banner.m_auth==1}">
+	                			<span class="grade_family"><input type="button" value="Family"></span>
+	                		</c:when>
+	                		<c:when test="${banner.m_auth==2}">
+	                			<span class="grade_vip"><input type="button" value="VIP"></span>
+	                		</c:when>
+	                		<c:otherwise>
+	                			<span class="grade_vvip"><input type="button" value="VVIP"></span>
+	                		</c:otherwise>
+                		</c:choose>
                 	</div>
                 	<div class="plusBannerTitle text-right">
                 		<h3>
@@ -163,7 +176,7 @@
               <c:if test="${plus.hp_kind==0}">
 	              <div class="col-md-2">
 	                <div class="pm_thumb">
-	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${plus.m_auth}" data-toggle="modal" data-target="#plus_modal">
 	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
 	                  <span class="magazine-badge 
 	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
@@ -204,7 +217,7 @@
                <c:if test="${plus.hp_kind==1}">
 	              <div class="col-md-2">
 	                <div class="pm_thumb">
-	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${grade}" data-toggle="modal" data-target="#plus_modal">
 	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
 	                  <span class="magazine-badge 
 	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
@@ -245,7 +258,7 @@
                <c:if test="${plus.hp_kind==2}">
 	              <div class="col-md-2">
 	                <div class="pm_thumb">
-	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${grade}" data-toggle="modal" data-target="#plus_modal">
 	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
 	                  <span class="magazine-badge 
 	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
@@ -286,7 +299,7 @@
                <c:if test="${plus.hp_kind==3}">
 	              <div class="col-md-2">
 	                <div class="pm_thumb">
-	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${grade}" data-toggle="modal" data-target="#plus_modal">
 	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
 	                  <span class="magazine-badge 
 	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>
@@ -327,7 +340,7 @@
                <c:if test="${plus.hp_kind==4}">
 	              <div class="col-md-2">
 	                <div class="pm_thumb">
-	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-toggle="modal" data-target="#plus_modal">
+	                  <a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${grade}" data-toggle="modal" data-target="#plus_modal">
 	                    <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg" alt=""> </a>
 	                  <span class="magazine-badge 
 	                  		<c:if test="${plus.ranking==1}">label-yellow</c:if>

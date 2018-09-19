@@ -30,7 +30,15 @@ public class PlusReplyCommand {
 	private int hpre_parent;//´ñ±Û ºÎ¸ð(´ñ±Û-´ë´ñ±Û, ºÎ¸ð´ñ±ÛÀÏ °æ¿ì 0)
 	private int hp_num;//ºÎ¸ð±Û ¹øÈ£
 	private String hpre_id;//´ñ±Û ÀÛ¼ºÀÚ ID
+	private int m_auth;
 	
+		
+	public int getM_auth() {
+		return m_auth;
+	}
+	public void setM_auth(int m_auth) {
+		this.m_auth = m_auth;
+	}
 	public int getHpre_num() {
 		return hpre_num;
 	}
@@ -84,6 +92,6 @@ public class PlusReplyCommand {
 	public String toString() {
 		return "PlusReplyCommand [hpre_num=" + hpre_num + ", hpre_content=" + hpre_content + ", hpre_date=" + hpre_date
 				+ ", hpre_ip=" + hpre_ip + ", hpre_depth=" + hpre_depth + ", hpre_parent=" + hpre_parent + ", hp_num="
-				+ hp_num + ", hpre_id=" + hpre_id + "]";
-	}
+				+ hp_num + ", hpre_id=" + hpre_id + ", m_auth=" + m_auth + "]";
+	}	
 }

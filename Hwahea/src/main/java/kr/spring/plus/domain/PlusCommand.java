@@ -64,10 +64,17 @@ public class PlusCommand {
 	
 	private String hp_ip; //작성자 ip주소
 	private String m_id; //작성자 id
+	private int m_auth; //작성자 등급 0welcome 1family 2vip 3vvip 4탈퇴회원 5관리자
 	
 	private int ranking;
 	private int hpre_cnt;
 	
+	public int getM_auth() {
+		return m_auth;
+	}
+	public void setM_auth(int m_auth) {
+		this.m_auth = m_auth;
+	}
 	public int getHp_num() {
 		return hp_num;
 	}
@@ -228,8 +235,7 @@ public class PlusCommand {
 	public void setHpre_cnt(int hpre_cnt) {
 		this.hpre_cnt = hpre_cnt;
 	}
-
-
+	
 	@Override
 	public String toString() {
 		return "PlusCommand [hp_num=" + hp_num + ", hp_kind=" + hp_kind + ", hp_title=" + hp_title + ", hp_content="
@@ -237,6 +243,7 @@ public class PlusCommand {
 				+ ", hp_reg_date=" + hp_reg_date + ", hp_upload1=" + hp_upload1 + ", hp_upload2=" + hp_upload2
 				+ ", hp_upload3=" + hp_upload3 + ", hp_upload4=" + hp_upload4 + ", hp_filename1=" + hp_filename1
 				+ ", hp_filename2=" + hp_filename2 + ", hp_filename3=" + hp_filename3 + ", hp_filename4=" + hp_filename4
-				+ ", hp_ip=" + hp_ip + ", m_id=" + m_id + ", ranking=" + ranking + ", hpre_cnt" + hpre_cnt + "]";
+				+ ", hp_ip=" + hp_ip + ", m_id=" + m_id + ", m_auth=" + m_auth + ", ranking=" + ranking + ", hpre_cnt="
+				+ hpre_cnt + "]";
 	}
 }
