@@ -23,7 +23,7 @@
                       <c:forEach var="FAQ" items="${list }">
                       	<div class="panel">
                         <a class="panel-heading" role="tab" id="headingOne1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne${FAQ.faq_num }" aria-expanded="false" aria-controls="collapseOne">
-                          <h4 class="panel-title"><small>${FAQ.faq_title }</small><input style="text-align:right;" type="button" value="삭제" class="btn btn-success btn-xs" onclick="location.href='adminFAQDelete.do'"></h4>
+                          <h4 class="panel-title"><small>${FAQ.faq_title }</small></h4>
                         </a>
                         <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                           <div class="panel-body">
@@ -33,7 +33,7 @@
                         </div>
                       </div>
                       </c:forEach>
-                      	<div style="text-align:center;" class="align-center">${pagingHtml}</div>
+                      	
                       </c:if>
                     </div>
 				</div>

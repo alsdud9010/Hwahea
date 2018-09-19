@@ -35,14 +35,8 @@ public class AdminIngredientServiceImpl implements AdminIngredientService{
 		}
 
 		@Override
-		public List<AdminIngredientCommand> selectIngreList(Map<String, Object> map) {
+		public List<AdminIngredientCommand> selectIngreList() {
 			
-			return adminIngredientMapper.selectIngreList(map);
-		}
-
-		@Override
-		public int selectIngreRowCount(Map<String, Object> map) {
-			
-			return adminIngredientMapper.selectIngreRowCount(map);
+			return adminIngredientMapper.selectIngreList();
 		}
 }

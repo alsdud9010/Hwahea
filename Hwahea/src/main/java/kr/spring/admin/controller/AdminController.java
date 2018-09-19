@@ -68,18 +68,4 @@ public class AdminController {
 			
 			return "requiredUpdate";
 		}
-		
-		//È¸¿ø°ü¸® Æû
-		@RequestMapping("users/adminUser.do")
-		public String formUser() {
-			
-			return "adminUser";
-		}
-		
-		@RequestMapping("users/adminUserDetail.do")
-		public String formUserDetail() {
-			
-			return "adminUserDetail";
-		}
-		
 }

@@ -41,7 +41,7 @@
 								</tr>
 							</tbody>
 						</c:if>
-						<c:if test="${count > 0 }">
+						
 							<c:forEach var="ingredient" items="${list }">
 								<tr class="text-center">
 									<td class="text-left">${ingredient.i_KName }(${ingredient.i_EName })</td>
@@ -56,7 +56,7 @@
 									<td><c:if test="${ingredient.i_allergie != null }">Y</c:if><c:if test="${ingredient.i_allergie == null }">X</c:if></td>
 								</tr>
 							</c:forEach>
-						</c:if>
+						
 					</table>
 					<div style="text-align: center;"></div>
 				</div>
@@ -173,7 +173,6 @@
 									</div>
 									<div class="modal-footer">
 										<input type="submit" class="btn btn-primary" value="등록">
-										<button type="button" class="btn btn-primary">삭제</button>
 										<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 									</div>
 								</form:form>

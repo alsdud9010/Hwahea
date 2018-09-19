@@ -59,6 +59,7 @@
 			</li>
 			<li><a><i class="fa fa-edit"></i> 공지사항 <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
+					<li><a href="${pageContext.request.contextPath }/notice/adminNoticeRegister.do">공지사항 등록</a></li>
 					<li><a href="${pageContext.request.contextPath }/notice/adminNotice.do">공지사항</a></li>
 					<li><a href="${pageContext.request.contextPath }/notice/adminFAQ.do">FAQ</a></li>
 					<li><a href="${pageContext.request.contextPath }/notice/inquiry.do">받은 문의</a></li>
@@ -66,7 +67,7 @@
 			<li><a><i class="fa fa-desktop"></i> 회원관리 <span
 					class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
-					<li><a href="${pageContext.request.contextPath }/users/adminUser.do">회원관리</a></li>
+					<li><a href="${pageContext.request.contextPath }/users/adminUserList.do">회원관리</a></li>
 				</ul></li>
 			<li><a><i class="fa fa-table"></i> 신고한 리뷰 <span
 					class="fa fa-chevron-down"></span></a>

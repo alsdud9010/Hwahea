@@ -30,7 +30,7 @@ public class AdminFAQServiceImpl implements AdminFAQService{
 
 		@Override
 		public void deleteFAQ(int faq_num) {
-			// TODO Auto-generated method stub
+			adminFAQMapper.deleteFAQ(faq_num);
 			
 		}
 

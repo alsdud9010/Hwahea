@@ -58,54 +58,6 @@
 									<td>test@test.com</td>
 									<td>dkfwfkf</td>
 								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>2.이벤트 문의</td>
-									<td>안 댐 ㅠㅠ</td>
-									<td>2018.09.06</td>
-									<td>test@test.com</td>
-									<td>dkfwfkf</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>3.서비스 불편, 오류 제보</td>
-									<td>안 댐 ㅠㅠ</td>
-									<td>2018.09.06</td>
-									<td>test@test.com</td>
-									<td>dkfwfkf</td>
-								</tr>
-								<tr>
-									<th scope="row">4</th>
-									<td>4.사용 방법, 기타 문의</td>
-									<td>안 댐 ㅠㅠ</td>
-									<td>2018.09.06</td>
-									<td>test@test.com</td>
-									<td>dkfwfkf</td>
-								</tr>
-								<tr>
-									<th scope="row">5</th>
-									<td>5.아이디어 제안, 칭찬</td>
-									<td>안 댐 ㅠㅠ</td>
-									<td>2018.09.06</td>
-									<td>test@test.com</td>
-									<td>dkfwfkf</td>
-								</tr>
-								<tr>
-									<th scope="row">6</th>
-									<td>6.제휴 문의</td>
-									<td>안 댐 ㅠㅠ</td>
-									<td>2018.09.06</td>
-									<td>test@test.com</td>
-									<td>dkfwfkf</td>
-								</tr>
-								<tr>
-									<th scope="row">7</th>
-									<td>1.화해 쇼핑 문의</td>
-									<td>안 댐 ㅠㅠ</td>
-									<td>2018.09.06</td>
-									<td>test@test.com</td>
-									<td>dkfwfkf</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>

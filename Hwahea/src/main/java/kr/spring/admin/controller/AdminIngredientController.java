@@ -61,39 +61,20 @@ public class AdminIngredientController {
 	}
 	
 	@RequestMapping("/ingredient/adminIngredientList.do")
-	public ModelAndView processIngre(@RequestParam(value="pageNum", defaultValue="1") int currentPage,
-		@RequestParam(value="keyfield", defaultValue="") String keyfield,
-		@RequestParam(value="keyword", defaultValue="") String keyword) {
-			
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("keyfield", keyfield);
-		map.put("keyword", keyword);
-		
-		int count = adminIngredientService.selectIngreRowCount(map);
-		
-		if(log.isDebugEnabled()) {
-			log.debug("<<count>> : " + count);
-		}
-		
-		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount, pageCount, "list.do");
-		map.put("start", page.getStartCount());
-		map.put("end", page.getEndCount());
+	public ModelAndView processIngre() {
 		
 		List<AdminIngredientCommand> list = null;
 		
-		if(count > 0) {
-			list = adminIngredientService.selectIngreList(map);
+			list = adminIngredientService.selectIngreList();
 			
 			if(log.isDebugEnabled()) {
 				log.debug("<<list>> : " + list);
 			}
-		}
+	
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("adminIngredientList");
-		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtml",page.getPagingHtml());
 		
 		return mav;
 	}

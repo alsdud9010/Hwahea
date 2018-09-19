@@ -42,6 +42,10 @@
 		<put-attribute name="title" value="공지사항"/>
 		<put-attribute name="page" value="/WEB-INF/views/notice/adminNotice.jsp"/>
 	</definition>
+	<definition name="adminNoticeRegister" extends="adminMain">
+		<put-attribute name="title" value="공지사항 등록"/>
+		<put-attribute name="page" value="/WEB-INF/views/notice/adminNoticeRegister.jsp"/>
+	</definition>
 	<definition name="adminFAQ" extends="adminMain">
 		<put-attribute name="title" value="FAQ"/>
 		<put-attribute name="page" value="/WEB-INF/views/notice/adminFAQ.jsp"/>
@@ -78,9 +82,9 @@
 		<put-attribute name="page" value="/WEB-INF/views/userRequired/requiredUpdate.jsp"/>
 	</definition>
 	
-	<definition name="adminUser" extends="adminMain">
+	<definition name="adminUserList" extends="adminMain">
 		<put-attribute name="title" value="회원관리"/>
-		<put-attribute name="page" value="/WEB-INF/views/users/adminUser.jsp"/>
+		<put-attribute name="page" value="/WEB-INF/views/users/adminUserList.jsp"/>
 	</definition>
 	<definition name="adminUserDetail" extends="adminMain">
 		<put-attribute name="title" value="회원정보"/>
