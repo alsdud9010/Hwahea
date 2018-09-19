@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.admin.dao.AdminMapper">  
+ 	
+ 	<select id="selectIngreList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminIngredientCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			*
+ 	                   FROM ingredient
+ 	                ORDER BY i_num desc)a)               	
+ 	</select>
+
+ 	<select id="selectIngreRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM ingredient
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'name'">
+ 	    		i_name like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select> 	
+ 	
+</mapper>

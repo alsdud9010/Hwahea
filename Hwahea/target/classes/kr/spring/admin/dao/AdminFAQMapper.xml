@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.admin.dao.AdminFAQMapper">  
+ 	
+ 	<select id="selectFAQList" 
+ 	                   parameterType="map" 
+ 	                     resultType="AdminFAQCommand">
+ 	    SELECT
+ 	    	*
+ 	    FROM (SELECT 
+ 	             a.*,
+ 	             rownum rnum
+ 	          FROM (SELECT 
+ 	          			faq_num,
+ 	                   faq_title,
+ 	                   faq_content
+ 	                   FROM FAQ
+ 	                ORDER BY faq_num desc)a)               	
+ 	</select>
+
+ 	<select id="selectFAQRowCount" parameterType="map" 
+ 	                          resultType="integer">
+ 	    SELECT
+ 	    	count(*)
+ 	    FROM FAQ
+ 	    <where>
+ 	    	<if test="keyword != '' and keyfield == 'title'">
+ 	    		faq_title like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'content'">
+ 	    		faq_content like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    	<if test="keyword != '' and keyfield == 'all'">
+ 	    		faq_title like '%' || #{keyword} || '%' or 	    	
+ 	    		faq_content like '%' || #{keyword} || '%'
+ 	    	</if>
+ 	    </where>	
+ 	</select>
+</mapper>

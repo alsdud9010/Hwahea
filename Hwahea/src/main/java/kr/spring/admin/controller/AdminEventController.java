@@ -1,8 +1,6 @@
 package kr.spring.admin.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -15,21 +13,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.spring.admin.domain.AdminBrandCommand;
-import kr.spring.admin.domain.AdminCategoryCommand;
-import kr.spring.admin.domain.AdminCosmeticCommand;
 import kr.spring.admin.domain.AdminEventCommand;
-import kr.spring.admin.service.AdminService;
+import kr.spring.admin.service.AdminEventService;
 
 @Controller
 public class AdminEventController {
 
 	private Logger log = Logger.getLogger(this.getClass());
-	private int rowCount = 10;
-	private int pageCount = 10;
 	
 	@Resource
-	private AdminService adminEventService;
+	private AdminEventService adminEventService;
 	
 	@ModelAttribute("eventcommand")
 	public AdminEventCommand initEvent() {

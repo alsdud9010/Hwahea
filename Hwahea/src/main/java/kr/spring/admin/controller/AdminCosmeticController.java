@@ -19,17 +19,17 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.admin.domain.AdminBrandCommand;
 import kr.spring.admin.domain.AdminCategoryCommand;
 import kr.spring.admin.domain.AdminCosmeticCommand;
-import kr.spring.admin.service.AdminService;
+import kr.spring.admin.service.AdminBrandService;
+import kr.spring.admin.service.AdminCategoryService;
+import kr.spring.admin.service.AdminCosmeticService;
 
 @Controller
 public class AdminCosmeticController {
 
 	private Logger log = Logger.getLogger(this.getClass());
-	private int rowCount = 10;
-	private int pageCount = 10;
 	
 	@Resource
-	private AdminService adminBrandService;
+	private AdminBrandService adminBrandService;
 	
 	@ModelAttribute("brandcommand")
 	public AdminBrandCommand initBrand() {
@@ -105,7 +105,7 @@ public class AdminCosmeticController {
 	}
 	
 	@Resource
-	private AdminService adminCategoryService;
+	private AdminCategoryService adminCategoryService;
 	
 	@ModelAttribute("categorycommand")
 	public AdminCategoryCommand initCategory() {
@@ -147,7 +147,7 @@ public class AdminCosmeticController {
 	}
 	
 	@Resource
-	private AdminService adminCategoryDetailService;
+	private AdminCategoryService adminCategoryDetailService;
 	
 	@ModelAttribute("categorydetailcommand")
 	public AdminCategoryCommand initCategoryDetail() {
@@ -205,7 +205,7 @@ public class AdminCosmeticController {
 	}
 	
 	@Resource
-	private AdminService adminCosmeticService;
+	private AdminCosmeticService adminCosmeticService;
 	
 	@ModelAttribute("cosmeticcommand")
 	public AdminCosmeticCommand initCosmetic() {
@@ -240,7 +240,7 @@ public class AdminCosmeticController {
 		List<AdminCategoryCommand> category = null;
 		
 		list = adminCosmeticService.selectCosmeticList();
-		brand = adminCosmeticService.selectBrandList();
+		brand = adminBrandService.selectBrandList();
 		category = adminCategoryService.selectCategoryList();
 			
 		if(log.isDebugEnabled()) {

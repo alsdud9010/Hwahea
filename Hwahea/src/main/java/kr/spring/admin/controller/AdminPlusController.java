@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.admin.domain.AdminPlusCommand;
 import kr.spring.admin.service.AdminPlusService;
 
+@Controller
 public class AdminPlusController {
 	
 	private Logger log = Logger.getLogger(this.getClass());

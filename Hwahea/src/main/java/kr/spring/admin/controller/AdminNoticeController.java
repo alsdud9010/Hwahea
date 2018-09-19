@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.admin.domain.AdminFAQCommand;
-import kr.spring.admin.service.AdminService;
+import kr.spring.admin.service.AdminFAQService;
 import kr.spring.util.PagingUtil;
 
 @Controller
@@ -27,7 +27,7 @@ public class AdminNoticeController {
 	private int pageCount = 10;
 	
 	@Resource
-	private AdminService adminFAQService;
+	private AdminFAQService adminFAQService;
 	
 	@ModelAttribute("commandfaq")
 	public AdminFAQCommand init() {

@@ -2,12 +2,15 @@ package kr.spring.admin.service;
 
 import java.util.List;
 
-import kr.spring.admin.dao.AdminMapper;
+import org.springframework.stereotype.Service;
+
+import kr.spring.admin.dao.AdminPlusMapper;
 import kr.spring.admin.domain.AdminPlusCommand;
 
+@Service("adminPlusService")
 public class AdminPlusServiceImpl implements AdminPlusService{
 
-	private AdminMapper adminPlusMapper;
+	private AdminPlusMapper adminPlusMapper;
 	
 	@Override
 	public List<AdminPlusCommand> selectPlusList() {
