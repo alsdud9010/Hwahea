@@ -15,7 +15,7 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                   <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                   <li><a href="${pageContext.request.contextPath }/main/main.do"><i class="fa fa-sign-out pull-right"></i> 메인 페이지 돌아가기</a></li>
                   </ul>
                 </li>
               </ul>

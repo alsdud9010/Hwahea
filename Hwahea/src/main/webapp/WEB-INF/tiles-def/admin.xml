@@ -84,7 +84,16 @@
 	</definition>
 	<definition name="adminUserDetail" extends="adminMain">
 		<put-attribute name="title" value="회원정보"/>
-		<put-attribute name="page" value="/WEB-INF/views/users/adminUserDetail.jsp"></put-attribute>
+		<put-attribute name="page" value="/WEB-INF/views/users/adminUserDetail.jsp"/>
+	</definition>
+	
+	<definition name="adminPlusList" extends="adminMain">
+		<put-attribute name="title" value="화해 플러스 리스트"/>
+		<put-attribute name="page" value="/WEB-INF/views/plus/adminPlusList.jsp"/>
+	</definition>
+	<definition name="adminPlusRegister" extends="adminMain">
+		<put-attribute name="title" value="화해 플러스 등록"/>
+		<put-attribute name="page" value="/WEB-INF/views/plus/adminPlusRegister.jsp"/>
 	</definition>
 	
 </tiles-definitions>

@@ -46,7 +46,7 @@
 			<li>
 				<a><i class="fa fa-plus-circle"></i> 화해 플러스 <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">                 
-					<li><a href="#">화해 플러스</a></li>
+					<li><a href="${pageContext.request.contextPath }/plus/adminPlusList.do">화해 플러스</a></li>
 				</ul>
 			</li>
 			<li>

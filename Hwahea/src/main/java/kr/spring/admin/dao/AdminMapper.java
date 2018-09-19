@@ -12,6 +12,7 @@ import kr.spring.admin.domain.AdminCategoryCommand;
 import kr.spring.admin.domain.AdminCosmeticCommand;
 import kr.spring.admin.domain.AdminEventCommand;
 import kr.spring.admin.domain.AdminIngredientCommand;
+import kr.spring.admin.domain.AdminPlusCommand;
 import kr.spring.admin.domain.AdminFAQCommand;
 import kr.spring.admin.domain.AdminProductCommand;
 
@@ -92,4 +93,12 @@ public interface AdminMapper {
 	public AdminProductCommand selectProduct(Integer p_num);
 	@Delete("DELETE FROM product WHERE p_num=#{p_num}")
 	public void deleteProduct(Integer num);
+	
+	//화해 플러스
+	public List<AdminPlusCommand> selectPlusList();
+	@Insert("INSERT INTO plus_board(hp_num, hp_kind, hp_title, hp_content, hp_hit, hp_like, hp_scrap, hp_reg_date, hp_uploadfile1, hp_uploadfile2, hp_uploadfile3, hp_uploadfile4, hp_filename1, hp_filename2, hp_filename3, hp_filename4, hp_ip)"
+			+ "VALUES(plus_board_seq.nextval, #{hp_kind}, #{hp_title}, #{hp_content}, #{hp_hit}, #{hp_like}, #{hp_scrap}, sysdate, #{hp_uploadfile1}, #{hp_uploadfile2}, #{hp_uploadfile3}, #{hp_uploadfile4}, #{hp_filename1}, #{hp_filename2}, #{hp_filename3}, #{hp_filename4}, #{hp_id}")
+	public void insertPlus(AdminPlusCommand plus);
+	
+	
 }
