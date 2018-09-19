@@ -18,6 +18,7 @@
 	<context:component-scan base-package="kr.spring.dictionary.controller" />
 	<context:component-scan base-package="kr.spring.cosmetic.controller" />
 	<context:component-scan base-package="kr.spring.admin.controller" />
+	<context:component-scan base-package="kr.spring.bookmark.controller" />
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->

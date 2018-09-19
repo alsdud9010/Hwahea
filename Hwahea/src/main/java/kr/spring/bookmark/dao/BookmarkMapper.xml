@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.bookmark.dao.BookmarkMapper">  			<!--  전달되는 값 					결과 값(하나의 레코드) -->
+
+  	<!-- <select id="selectBrandBm_List" parameterType="map" resultType="brandCommand">
+  		SELECT 
+  		   * 
+  		FROM (SELECT 
+  		         a.*,
+  		          rownum rnum 
+  		       FROM (SELECT * FROM brand b INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 0)c 
+  		                                     ON b.brand_num = c.bookmark_detail
+  		             ORDER BY brand_num desc)a)
+  	CDATA XML문법을 쓰지안을때 특히 비교연산자를 사용할 때
+  	<![CDATA[
+  	WHERE rnum >= #{start} AND rnum <=#{end}
+  	]]>
+  	</select> -->
+  	
+  	<!-- <select	id="selectBrandBm_Count" resultType="int">
+  		SELECT 
+  		  COUNT(*)
+         FROM (SELECT * FROM brand b INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 0)c 
+  		                                     ON b.brand_num = c.bookmark_detail)
+  	</select> -->
+
+  	<select id="selectProductBm_List" parameterType="map" resultType="productCommand">
+  		SELECT 
+  		   * 
+  		FROM (SELECT 
+  		         a.*,
+  		          rownum rnum 
+  		       FROM (SELECT * FROM product p INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 1)b 
+  		                                     ON p.p_num = b.bookmark_detail
+  		             ORDER BY p_num desc)a)
+  	<!-- CDATA XML문법을 쓰지안을때 특히 비교연산자를 사용할 때 -->
+  	<![CDATA[
+  	WHERE rnum >= #{start} AND rnum <=#{end}
+  	]]>
+  	</select>
+  	
+  	<select	id="selectProductBm_Count" resultType="int">
+  		SELECT 
+  		  COUNT(*)
+         FROM (SELECT * FROM product p INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 1)b 
+  		                                     ON p.p_num = b.bookmark_detail)
+  	</select>
+  	
+  	<select id="selectMamberBm_List" parameterType="map" resultType="memberCommand">
+  		SELECT 
+  		   * 
+  		FROM (SELECT 
+  		         a.*,
+  		          rownum rnum 
+  		       FROM (SELECT * FROM member_detail m INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 2)b 
+  		                                     ON m.m_id = b.bookmark_detail
+  		             ORDER BY m.m_id desc)a)
+  	<!-- CDATA XML문법을 쓰지안을때 특히 비교연산자를 사용할 때 -->
+  	<![CDATA[
+  	WHERE rnum >= #{start} AND rnum <=#{end}
+  	]]>
+  	</select>
+  	
+  	<select	id="selectMamberBm_Count" resultType="int">
+  		SELECT 
+  		  COUNT(*)
+         FROM (SELECT * FROM member_detail m INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 2)b 
+  		                                     ON m.m_id = b.bookmark_detail)
+  	</select>
+  	
+  	<select id="selectIngredientBm_List" parameterType="map" resultType="adminingredientCommand">
+  		SELECT 
+  		   * 
+  		FROM (SELECT 
+  		         a.*,
+  		          rownum rnum 
+  		       FROM (SELECT * FROM ingredient i INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 3)b 
+  		                                     ON i.i_num = b.bookmark_detail
+  		             ORDER BY i.i_num desc)a)
+  	<!-- CDATA XML문법을 쓰지안을때 특히 비교연산자를 사용할 때 -->
+  	<![CDATA[
+  	WHERE rnum >= #{start} AND rnum <=#{end}
+  	]]>
+  	</select>
+  	
+  	<select	id="selectIngredientBm_Count" resultType="int">
+  		SELECT 
+  		  COUNT(*)
+         FROM (SELECT * FROM ingredient i INNER JOIN (SELECT * FROM bookmark WHERE bookmark_kind = 3)b 
+  		                                     ON i.i_num = b.bookmark_detail)
+  	</select>
+  	
+  	
+</mapper>
+
+
+
+
+
+

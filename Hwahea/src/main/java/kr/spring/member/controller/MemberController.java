@@ -216,7 +216,7 @@ public class MemberController {
 		
 		return "my_reviewreview";
 	}
-	//즐겨찾기(브랜드)  호출
+	/*//즐겨찾기(브랜드)  호출
 	@RequestMapping(value="/mypage/my_favoritebrand.do",
 	        method=RequestMethod.GET)
 		public String my_favoritebrand(String bc) {
@@ -251,7 +251,7 @@ public class MemberController {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
 		return "my_favoriteingredient";
-	}
+	}*/
 	//화해쇼핑(장바구니)  호출
 	@RequestMapping(value="/mypage/my_cart.do")
 		public String cart(@RequestParam("bc") String bc, HttpSession session, Model model) {

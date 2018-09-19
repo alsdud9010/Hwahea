@@ -25,7 +25,7 @@
 			           </a>
 			       </li>
 			       <li id = "my_favoritebrand">
-			           <a href="${pageContext.request.contextPath}/mypage/my_favoritebrand.do?bc=3" class="link_tab">
+			           <a href="${pageContext.request.contextPath}/mypage/my_favoriteproduct.do?bc=3" class="link_tab">
 			                <span class="txt_menu">즐겨찾기</span>
 			           </a>
 			       </li>
