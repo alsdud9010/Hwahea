@@ -654,7 +654,7 @@
 .header-fixed .ranking-menus.header-fixed-shrink {
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100%;  
 	height: 95px;
 	position: fixed;
 	margin-top: -35px;
