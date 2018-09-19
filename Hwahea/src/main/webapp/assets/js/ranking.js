@@ -115,6 +115,9 @@ $(document).ready(function(){
 	
 	$('.skin').click(function(){
 		var num = $(this).attr('data-value');
+		var title = '<h2><b>' + $(this).attr('data-name') + ' 랭킹</b></h2>';
+		$('.r_second_title').empty();
+		$('.r_second_title').append(title);
 		
 		$.ajax({
 			type:'post',
@@ -126,9 +129,10 @@ $(document).ready(function(){
 			success:function(data){
 				var list = data.list; 
 				$('.ranking').empty();
+				
 				$(list).each(function(index,item){
 				
-					var output = '<div class="row">';
+					output = '<div class="row">';
 					output+='<ul>';
 					output+='<input type="hidden" id="c_code" name="c_code" value="' + item.c_code + '">';
 					output+='	<li class="ranking_num"><h1>' + (index+1) + '</h1></li>';

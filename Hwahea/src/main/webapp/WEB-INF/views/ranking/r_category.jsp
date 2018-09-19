@@ -159,13 +159,13 @@
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="#">스킨케어</a>
 										<ul class="dropdown-menu">
-											<li><a href="#" class="skin" data-value="1">스킨/토너</a></li>
-											<li><a href="#" class="skin" data-value="2">로션/에멀젼</a></li>
-											<li><a href="#" class="skin" data-value="3">에센스/앰플/세럼</a></li>
-											<li><a href="#" class="skin" data-value="4">페이스 오일</a></li>
-											<li><a href="#" class="skin" data-value="5">크림/젤</a></li>
-											<li><a href="#" class="skin" data-value="6">아이케어</a></li>
-											<li><a href="#" class="skin" data-value="7">미스트</a></li>
+											<li><a href="#" class="skin" data-value="1" data-name="스킨/토너">스킨/토너</a></li>
+											<li><a href="#" class="skin" data-value="2" data-name="로션/에멀젼">로션/에멀젼</a></li>
+											<li><a href="#" class="skin" data-value="3" data-name="에센스/앰플/세럼">에센스/앰플/세럼</a></li>
+											<li><a href="#" class="skin" data-value="4" data-name="페이스 오일">페이스 오일</a></li>
+											<li><a href="#" class="skin" data-value="5" data-name="크림/젤">크림/젤</a></li>
+											<li><a href="#" class="skin" data-value="6" data-name="아이케어">아이케어</a></li>
+											<li><a href="#" class="skin" data-value="7" data-name="미스트">미스트</a></li>
 										</ul></li>
 									<li class="dropdown-submenu"><a href="javascript:void(0);">클렌징/필링</a>
 										<ul class="dropdown-menu">
