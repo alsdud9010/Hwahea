@@ -18,9 +18,6 @@
 				<div class="container">
 					<div class="orderProduct-item-info" style="width:93%; margin-left: -2em;">
 						<div class="orderProduct-subTitle">장바구니</div>
-						<c:if test="${empty cart.cart_num}">
-							장바구니가 비었습니다.
-						</c:if>
 						<c:forEach items="${list}" var="cart">
 						<div class="item-info-head">
 							<ul>
