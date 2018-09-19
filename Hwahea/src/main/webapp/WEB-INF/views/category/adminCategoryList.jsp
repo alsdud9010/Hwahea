@@ -10,7 +10,7 @@
 			
 			$('#tbf tr').filter(function(){
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-			});
+			}); 
 		});
 	});
 	
@@ -34,18 +34,18 @@
 					<div class="x_content">				
                           <select id="heard" class="form-control">  
                           	<optgroup label="카테고리"></optgroup>                     
-                            <option id="shop">1.스킨케어</option>
-                            <option id="event">2.클렌징/필링</option>
-                            <option id="service">3.마스크/팩</option>
-                            <option id="etc">4.선케어</option>
-                            <option id="idea">5.베이스메이크업</option>
-                            <option id="cooperate">6.아이메이크업</option>
-                            <option id="cooperate">7.립메이크업</option>
-                            <option id="cooperate">8.바디</option>
-                            <option id="cooperate">9.헤어</option>
-                            <option id="cooperate">10.네일</option>
-                            <option id="cooperate">11.향수</option>
-                            <option id="cooperate">12.기타</option>
+                            <option id="shop">스킨케어</option>
+                            <option id="event">클렌징/필링</option>
+                            <option id="service">마스크/팩</option>
+                            <option id="etc">선케어</option>
+                            <option id="idea">베이스메이크업</option>
+                            <option id="cooperate">아이메이크업</option>
+                            <option id="cooperate">립메이크업</option>
+                            <option id="cooperate">바디</option>
+                            <option id="cooperate">헤어</option>
+                            <option id="cooperate">네일</option>
+                            <option id="cooperate">향수</option>
+                            <option id="cooperate">기타</option>
                           </select>
 					</div>
                   </div>
