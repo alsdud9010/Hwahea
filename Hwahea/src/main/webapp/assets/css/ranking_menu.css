@@ -15,7 +15,6 @@
 
 /*Navbar*/
 .ranking-menus {
-	z-index: 99;
 	position: relative;
 }
 
@@ -40,7 +39,6 @@
 
 /*Navbar Brand*/
 .ranking-menus .navbar-brand {
-	z-index: 1;
 	display: block;
 	margin: 10px 0;
 }
@@ -320,7 +318,6 @@
 		border: none;
 		min-width: 200px;
 		border-radius: 0;
-		z-index: 9999 !important;
 		border-bottom: solid 2px #687074;
 		border-top: solid 1px transparent;
 	}
@@ -659,7 +656,6 @@
 	left: 0;
 	width: 100%;
 	height: 95px;
-	z-index: 9999;
 	position: fixed;
 	margin-top: -35px;
 	border-bottom: none;
@@ -673,7 +669,6 @@
 /*Brand*/
 .header-fixed .ranking-menus.header-fixed-shrink .navbar-brand {
 	top: 11px;
-	z-index: 1;
 	position: relative;
 	padding: 0 10px 10px;
 }
