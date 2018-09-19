@@ -349,7 +349,7 @@ input[type="submit"], button {
     right: 0;
     color: #888;
     padding-right: 15px;
-    background: url(http://www.oliveyoung.co.kr/pc-static-root/image/comm/ico_arrow7x11_2.png) no-repeat 100% 50%;
+    background: url('/Hwahea/assets/img/main/more_view.png') no-repeat 100% 50%;
     font-weight: 700;
 }
 
@@ -358,7 +358,7 @@ input[type="submit"], button {
     overflow: hidden;
     position: relative;
     width: 640px;
-    padding-top: 35px;
+    padding-top: 20px;
     border-top: 1px solid #e5e5e5;
     line-height: 24px;
 }
@@ -408,7 +408,6 @@ input[type="submit"], button {
     width: 140px;
     height: 60px;
     background: #aaa;
-    margin-top: 15px;
     color: #fff;
     font-size: 14px;
     letter-spacing: -0.02em;
@@ -416,6 +415,32 @@ input[type="submit"], button {
 
 .main_customer_box .customer_area .online_info button.btnFaqTop {
     margin-left: 10px;
+}
+
+.main_customer_box .customer_area .online_info button.btnInquiry > span {
+    width: 22px;
+    height: 27px;
+    background-position: 0 0;
+    vertical-align: middle;
+}
+
+.main_customer_box .customer_area .online_info button.btnFaqTop > span {
+    width: 25px;
+    height: 23px;
+    background-position: 0 -27px;
+    vertical-align: middle;
+}
+
+.main_customer_box .customer_area .online_info button > span {
+    display: inline-block;
+    margin-right: 10px;
+    background: url('/Hwahea/assets/img/main/ico_customer.png') no-repeat 0 0;
+}
+
+.main_customer_box .customer_area .online_info button > span {
+    display: inline-block;
+    margin-right: 10px;
+    background: url('/Hwahea/assets/img/main/ico_customer.png') no-repeat 0 0;
 }
 
 
@@ -634,7 +659,7 @@ input[type="submit"], button {
 .boon-list li .detail-link .area .tit {
     display: block;
     color: #222;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 30px;
 }
 
@@ -687,7 +712,7 @@ input[type="submit"], button {
     display: inline-block;
     width: 14px;
     height: 16px;
-    background: url(http://www.oliveyoung.co.kr/pc-static-root/image/comm/ico_arrow7x11_2.png) no-repeat 100% 50%;
+    background: url('/Hwahea/assets/img/main/more_view.png') no-repeat 100% 50%;
     vertical-align: -1px;
 }
 
@@ -713,6 +738,12 @@ input[type="submit"], button {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
+
+a:hover {
+	text-decoration:none !important;
+	cursor:pointer !important;
+}
+
 .review-list li {
     float: left;
     padding: 15px 14px;
@@ -730,6 +761,7 @@ input[type="submit"], button {
 
 .review-list li .detail-link .back{
 	background-color:#ddd;
+	height: 280px;
 }
 
 .review-list li .detail-link .image {
@@ -783,9 +815,11 @@ input[type="submit"], button {
 .review-detail{
 	border:1px solid #72c02c;
 	border-radius:5px !important;
+	padding: 25px;
 }
 
 .review-nickname{
 	color:#72c02c;
+	font-size: 17px;
 }
 

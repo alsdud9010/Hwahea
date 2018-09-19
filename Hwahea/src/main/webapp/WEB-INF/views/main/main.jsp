@@ -6,7 +6,7 @@
 				id="myCarousel-1">
 				<div class="carousel-inner">
 					<div class="item active">
-						<img alt=""
+						<img class="img-responsive" alt=""
 							src="${pageContext.request.contextPath}/assets/img/main/mainBanner1.jpg">
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
@@ -17,7 +17,7 @@
 						</a>
 					</div>
 					<div class="item">
-						<img alt=""
+						<img class="img-responsive" alt=""
 							src="${pageContext.request.contextPath}/assets/img/main/mainBanner2.jpg">
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
@@ -28,7 +28,7 @@
 						</a>
 					</div>
 					<div class="item">
-						<img alt=""
+						<img class="img-responsive" alt=""
 							src="${pageContext.request.contextPath}/assets/img/main/mainBanner3.jpg">
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
@@ -39,7 +39,7 @@
 						</a>
 					</div>
 					<div class="item">
-						<img alt=""
+						<img class="img-responsive" alt=""
 							src="${pageContext.request.contextPath}/assets/img/main/mainBanner4.jpg">
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
@@ -50,7 +50,7 @@
 						</a>
 					</div>
 					<div class="item">
-						<img alt=""
+						<img class="img-responsive" alt=""
 							src="${pageContext.request.contextPath}/assets/img/main/mainBanner5.jpg">
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
@@ -80,19 +80,19 @@
 <ul class="review-list" id="cardcoPntInfo">
 				<li>
 					<a class="detail-link" href="javascript:;" style="cursor:text">
-						<span class="image back"><img src="${pageContext.request.contextPath}/assets/img/main/mainImg001.png" alt=""></span>
+						<span class="image back"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/mainImg001.png" alt=""></span>
 					</a>
 				</li>
 				<li>
 					<a class="detail-link" href="javascript:;" style="cursor:text">
-						<p class="review-detail" >
-						<span class="review-nickname"><strong>김드래곤 ★★★★★</strong></span>
+						<p class="review-detail">
+						<span class="review-nickname"><strong>만드래곤  ★★★★★</strong></span><br>
 						<span>무슨 화장품 사야 하나 이것저것 후기만 봤는데 성분, 피부 타입, 후기 품목별 순위까지 다 있어서 믿고 화장품 사게 됐어요!</span>
 						</p>
 					</a>
 					<a class="detail-link">
 						<p class="review-detail">
-						<span class="review-nickname">토레타<strong class="review-star">★★★★★</strong></span>
+						<span class="review-nickname"><strong>토레타  ★★★★★</strong></span><br>
 						<span>저와 맞는 사람들 리뷰를 찾지 않고 볼 수 있어 너무 편하고요. 뭔지도 모르고 썼던 성분을 꼼꼼히 확인 가능해서 그게 제일 좋네요.</span>
 						</p>
 					</a>
@@ -101,7 +101,7 @@
 </ul>
 	<div class="main_mid_banner home_banner_top">
 		<a href="#">
-		<img src="${pageContext.request.contextPath}/assets/img/main/mainShopping1.jpg"></a>
+		<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/mainShopping1.jpg"></a>
 	</div >
 	
 	<!-- 화해 추천상품 시작 -->
@@ -114,7 +114,7 @@
 				<li class="flag">
 					<div class="prd_info">
 						<a href="javascript:;" class="prd_thumb goodsList" data-ref-goodsno="A000000114518" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
-							<img src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0011/A00000011451801ko.jpg?l=ko" alt="[온라인단독] 클렌슈어 미세진동 클렌징기 (스탠드 증정)" onerror="common.errorImg(this);">
+							<img class="img-responsive" src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0011/A00000011451801ko.jpg?l=ko" alt="[온라인단독] 클렌슈어 미세진동 클렌징기 (스탠드 증정)" onerror="common.errorImg(this);">
 						</a>
 						<div class="prd_name">
 							<a href="javascript:;" class="goodsList" data-ref-goodsno="A000000114518" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
@@ -151,7 +151,7 @@
 					<div class="prd_info ">
 						<a href="javascript:;" class="prd_thumb goodsList" data-ref-goodsno="A000000007348" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
 							<span class="thumb_flag best">베스트</span>
-							<img src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0000/A00000000734801ko.jpg?l=ko" alt="마죠리카 마죠르카 프레스트 포어 커버" onerror="common.errorImg(this);">
+							<img class="img-responsive" src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0000/A00000000734801ko.jpg?l=ko" alt="마죠리카 마죠르카 프레스트 포어 커버" onerror="common.errorImg(this);">
 						</a>
 						<div class="prd_name">
 							<a href="javascript:;" class="goodsList" data-ref-goodsno="A000000007348" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
@@ -188,7 +188,7 @@
 					<div class="prd_info ">
 					<a href="javascript:;" class="prd_thumb goodsList" data-ref-goodsno="A000000107897" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
 						<span class="thumb_flag best">베스트</span>
-						<img src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0010/A00000010789701ko.jpg?l=ko" alt="[온라인단독] 아비브 껌딱지 시트 마스크 어성초 스티커 10P" onerror="common.errorImg(this);">
+						<img class="img-responsive" src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0010/A00000010789701ko.jpg?l=ko" alt="[온라인단독] 아비브 껌딱지 시트 마스크 어성초 스티커 10P" onerror="common.errorImg(this);">
 					</a>
 					<div class="prd_name">
 						<a href="javascript:;" class="goodsList" data-ref-goodsno="A000000107897" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
@@ -223,7 +223,7 @@
 				<li class="flag">
 					<div class="prd_info">
 						<a href="javascript:;" class="prd_thumb goodsList" data-ref-goodsno="A000000117241" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
-						<img src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0011/A00000011724102ko.jpg?l=ko" alt="[온라인단독] 스트라이덱스 센시티브 패드 90매 트리플기획" onerror="common.errorImg(this);">
+						<img class="img-responsive" src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0011/A00000011724102ko.jpg?l=ko" alt="[온라인단독] 스트라이덱스 센시티브 패드 90매 트리플기획" onerror="common.errorImg(this);">
 						</a>
 					<div class="prd_name">
 						<a href="javascript:;" class="goodsList" data-ref-goodsno="A000000117241" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
@@ -260,7 +260,7 @@
 		<!-- 화해 추천상품 끝 -->
 	<div class="main_mid_banner home_banner_top">
 	<a href="#">
-	<img src="${pageContext.request.contextPath}/assets/img/main/mainShopping2.jpg"></a>
+	<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/mainShopping2.jpg"></a>
 	</div >
 
 <!--=================================== 브랜드 ================================================-->
@@ -278,11 +278,11 @@
                      </ul>
                   </div>
                </div>
-               <ul class="cate_prd_list no_line">
+               <ul class="cate_prd_list" style="border-bottom: 1px solid #ddd;">
 				<li class="flag">
 					<div class="prd_info">
 						<a href="javascript:;" class="prd_thumb goodsList" data-ref-goodsno="A000000114518" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
-							<img src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0011/A00000011451801ko.jpg?l=ko" alt="[온라인단독] 클렌슈어 미세진동 클렌징기 (스탠드 증정)" onerror="common.errorImg(this);">
+							<img class="img-responsive" src="http://image.oliveyoung.co.kr/uploads/images/goods/400/10/0000/0011/A00000011451801ko.jpg?l=ko" alt="[온라인단독] 클렌슈어 미세진동 클렌징기 (스탠드 증정)" onerror="common.errorImg(this);">
 						</a>
 						<div class="prd_name">
 							<a href="javascript:;" class="goodsList" data-ref-goodsno="A000000114518" data-ref-dispcatno="90000010001" data-ref-itemno="001" tabindex="-1">
@@ -424,7 +424,6 @@
 					</div>
 				</li>
 			</ul>
-			<hr>
             </div>
          </div>
 <!--=================================== 브랜드 ================================================-->
@@ -437,17 +436,17 @@
                   <div class="slick-list">
                      <ul class="slick-slide slick-ul">
                         <li><a href="#" class="onlyone_box">
-                           <img src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
+                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
                            <p><span class="tx_num">올리브영 S A L E</span> 대용량 G E T !</p>
                         </a>
                         </li>
                         <li><a href="#" class="onlyone_box">
-                           <img src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
+                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
                            <p><span class="tx_num">올리브영 S A L E</span> 대용량 G E T !</p>
                         </a>
                         </li>
                         <li><a href="#" class="onlyone_box">
-                           <img src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
+                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
                            <p><span class="tx_num">올리브영 S A L E</span> 대용량 G E T !</p>
                         </a>
                         </li>
@@ -457,14 +456,14 @@
                </div>
                </div>
             </div>
-</div>
+<!-- </div> -->
 <!--=================================== 랭킹 ================================================-->
 <!-- =================================== 화플 ============================================ -->
 <h3 class="main_sub_tit" style="margin-top:35px;"><strong>화해플러스</strong></h3>
 <ul class="boon-list" id="cardcoPntInfo">
 				<li>
 					<a class="detail-link" href="javascript:;" style="cursor:text">
-						<span class="image"><img src="${pageContext.request.contextPath}/assets/img/plus/pmodal1.PNG" alt=""></span>
+						<span class="image"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/pmodal1.PNG" alt=""></span>
 						<span class="area">
 							<strong class="tit">#주간신상템</strong>
 							<span class="txt">곰손도 이것만 있으면 트렌디함 UP</span>
@@ -474,7 +473,7 @@
 				</li>
 				<li>
 					<a class="detail-link" href="javascript:;" style="cursor:text">
-						<span class="image"><img src="${pageContext.request.contextPath}/assets/img/plus/plusTrend.PNG" alt=""></span>
+						<span class="image"><img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/plusTrend.PNG" alt=""></span>
 						<span class="area">
 							<strong class="tit">#신상&amp;트렌드</strong>
 							<span class="txt">가을 신상컬렉션, 이번 신상도 깔별로 소장 각</span>
@@ -494,7 +493,7 @@
 				<div class="notice_area">
 					<h4>공지사항</h4>
 					<p class="notice_cont"><a>최근 등록된 공지가 없습니다.</a></p><a>
-					</a><a href="http://www.oliveyoung.co.kr/store/counsel/getNoticeList.do" class="more_view" title="공지사항 더보기">더보기</a>
+					</a><a href="${pageContext.request.contextPath}/notice/noticeList.do" class="more_view" title="공지사항 더보기">더보기</a>
 				</div>
 				<div class="customer_area">
 					<h4>고객센터 <br>이용안내</h4>
@@ -502,11 +501,11 @@
 						<ul>
 							<li>
 								<strong>온라인몰 고객센터</strong>
-								<img src="http://image.oliveyoung.co.kr/pc-static-root/image/main/img_online_tel.png" alt="1522-0882">
+								<img class="img-responsive" src="http://image.oliveyoung.co.kr/pc-static-root/image/main/img_online_tel.png" alt="1522-0882">
 							</li>
 							<li>
 								<strong>매장 고객센터</strong>
-								<img src="http://image.oliveyoung.co.kr/pc-static-root/image/main/img_offline_tel.png" alt="1577-4887">
+								<img class="img-responsive" src="http://image.oliveyoung.co.kr/pc-static-root/image/main/img_offline_tel.png" alt="1577-4887">
 							</li>
 							<li><a href="mailto:oliveweb@cj.net" class="email_addr">oliveweb@cj.net</a></li>
 						</ul>
@@ -518,7 +517,9 @@
 						<button class="btnFaqTop" onclick="javascript:common.link.moveFaqList();"><span></span>FAQ TOP 10</button>
 					</div>
 				</div>
-	<a href="#" class="app_down_link"><img src="${pageContext.request.contextPath}/assets/img/event/event_thumb2.PNG"></a>
+	<a href="${pageContext.request.contextPath}/event/eventList.do" class="app_down_link">
+		<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/event/event_thumb2.PNG">
+	</a>
 </div>
 <!--================================ 공지사항 & 이벤트 안내======================================= -->
 </div>
