@@ -25,13 +25,18 @@ $(document).ready(function(){
 			cache:false,
 			timeout:30000,
 			success:function(data){
-				$('.d_category').empty();
+				$('#d_category').empty();
+				
+				 var output = '<label class="control-label" class="d_category" for="d_category">세부 카테고리 명</label>';
+				 output += '<select name="c_category" id="d_category" class="form-control">';
+				 output += '<option value="0" selected="selected">카테고리 명 선택</option>';
 				
 				$(data.category_detail).each(function(index,item){
-					var output = '	<option id="D' + item.category_detail_num + '" value="' + item.category_detail_num + '">' + item.category_detail_name + '</option>';
-				
-					$('#d_category').append(output);
+					 output += '<option id="D' + item.category_detail_num + '" value="' + item.category_detail_num + '">' + item.category_detail_name + '</option>';
+					
 				});
+				 output += '</select>';
+				 $('#append').append(output);
 			},
 			error:function(){
 				alert('네트워크 오류');
@@ -39,7 +44,7 @@ $(document).ready(function(){
 		});
 	});
 	
-	$('#d_category').change(function(){
+	$(document).on('change','#d_category',function(){
 		
 		var c_code = 'B';
 		c_code += $('#c_brand option:selected').val();
@@ -147,10 +152,8 @@ $(document).ready(function(){
 											</select>
 											
 											<form:input type="hidden" path="c_code" id="c_code"/>
-																						
-											<label class="control-label" class="d_category" for="d_category">세부 카테고리 명</label>
-											<select name="c_category" id="d_category" class="form-control">
-											</select>
+											
+											<div id="append"></div>		
 																		
 											<label class="control-label" for="c_name">화장품 이름</label>
 											<form:input type="text" path="c_name" class="form-control"/>
