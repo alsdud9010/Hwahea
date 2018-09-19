@@ -33,7 +33,7 @@
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
 								<span class="tit">단 7일간, </span>
-								<strong>최대 50%<br>올리브영<br>세일!</strong>
+								<strong>최대 50%<br>화해<br>세일!</strong>
 								<span>다양한 혜택 및 이벤트를 확인하세요!</span>
 							</p>
 						</a>
@@ -44,7 +44,7 @@
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
 								<span class="tit">단 7일간, </span>
-								<strong>최대 50%<br>올리브영<br>세일!</strong>
+								<strong>최대 50%<br>화해<br>세일!</strong>
 								<span>다양한 혜택 및 이벤트를 확인하세요!</span>
 							</p>
 						</a>
@@ -55,7 +55,7 @@
 						<a href="#" class="banner_link" tabindex="3">
 							<p class="banner_desc">
 								<span class="tit">단 7일간, </span>
-								<strong>최대 50%<br>올리브영<br>세일!</strong>
+								<strong>최대 50%<br>화해<br>세일!</strong>
 								<span>다양한 혜택 및 이벤트를 확인하세요!</span>
 							</p>
 						</a>
@@ -73,9 +73,6 @@
 <!--=== Content Part ===-->
 <div class="container content">
 	<div class="row magazine-page align-center" >
-	
-	
-	
 	<h3 class="review_sub_tit"><strong>화해 이용자 <span>생생후기</span></strong></h3>
 <ul class="review-list" id="cardcoPntInfo">
 				<li>
@@ -84,6 +81,7 @@
 					</a>
 				</li>
 				<li>
+					<a href="${pageContext.request.contextPath}/review/writeReview.do" class="more_review" title="공지사항 더보기">리뷰 작성하기</a>
 					<a class="detail-link" href="javascript:;" style="cursor:text">
 						<p class="review-detail">
 						<span class="review-nickname"><strong>만드래곤  ★★★★★</strong></span><br>
@@ -513,8 +511,8 @@
 					<div class="online_info">
 						<p class="time_info">고객센터 운영시간 [평일 09:00 - 18:00]</p>
 						<p>주말 및 공휴일은 1:1문의하기를 이용해주세요.<br>업무가 시작되면 바로 처리해드립니다.</p>
-						<button class="btnInquiry" onclick="javascript:common.link.moveQnaList();"><span></span>1:1문의</button>
-						<button class="btnFaqTop" onclick="javascript:common.link.moveFaqList();"><span></span>FAQ TOP 10</button>
+						<button class="btnInquiry" onclick="location.href='${pageContext.request.contextPath}/notice/my_question.do'"><span></span>1:1문의</button>
+						<button class="btnFaqTop" onclick="location.href='${pageContext.request.contextPath}/notice/frequent_question.do'"><span></span>FAQ TOP 10</button>
 					</div>
 				</div>
 	<a href="${pageContext.request.contextPath}/event/eventList.do" class="app_down_link">
