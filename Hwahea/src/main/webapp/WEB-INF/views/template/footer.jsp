@@ -7,7 +7,7 @@
 			<div class="row">
 				<!-- About -->
 				<div class="col-md-3 md-margin-bottom-40">
-					<a href="index.html"> <img id="logo-footer" class="footer-logo"
+					<a href="index.html"> <img id="logo-footer" class="footer-logo img-responsive" 
 						src="${pageContext.request.contextPath}/assets/img/logo2.png" alt="">
 					</a>
 					<p class="img-text1">화장품, 똑똑하게 구매하자 </p>

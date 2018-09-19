@@ -470,92 +470,92 @@ $(document).ready(function(){
 						onclick="location.href='${pageContext.request.contextPath}/shop/shopMain.do'"
 						class="dropdown-toggle dropdown-title" data-toggle="dropdown">쇼핑</a>
 						<ul class="dropdown-menu">
-							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do">스킨케어</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1">스킨케어</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">스킨/토너</a></li>
-									<li><a href="index.hmtl">로션/에멀젼</a></li>
-									<li><a href="index.hmtl">에센스/앰플/세럼</a></li>
-									<li><a href="index.hmtl">페이스 오일</a></li>
-									<li><a href="index.hmtl">크림/젤</a></li>
-									<li><a href="index.hmtl">아이케어</a></li>
-									<li><a href="index.hmtl">미스트</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1&category_detail_num=1">스킨/토너</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1&category_detail_num=2">로션/에멀젼</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1&category_detail_num=3">에센스/앰플/세럼</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1&category_detail_num=4">페이스 오일</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1&category_detail_num=5">크림/젤</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1&category_detail_num=6">아이케어</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=1&category_detail_num=7">미스트</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">클렌징/필링</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2">클렌징/필링</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">클렌징 폼</a></li>
-									<li><a href="index.hmtl">클렌징 워터</a></li>
-									<li><a href="index.hmtl">클렌징 젤</a></li>
-									<li><a href="index.hmtl">클렌징 오일</a></li>
-									<li><a href="index.hmtl">클렌징 로션/크림</a></li>
-									<li><a href="index.hmtl">클렌징 비누</a></li>
-									<li><a href="index.hmtl">립/아이 리무버</a></li>
-									<li><a href="index.hmtl">스크럽/필링</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=8">클렌징 폼</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=9">클렌징 워터</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=10">클렌징 젤</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=11">클렌징 오일</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=12">클렌징 로션/크림</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=13">클렌징 비누</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=15">립/아이 리무버</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=2&category_detail_num=16">스크럽/필링</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">마스크/팩</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=3">마스크/팩</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">시트마스크</a></li>
-									<li><a href="index.hmtl">부분마스크/팩</a></li>
-									<li><a href="index.hmtl">워시오프 팩</a></li>
-									<li><a href="index.hmtl">슬리핑팩</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=3&category_detail_num=17">시트마스크</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=3&category_detail_num=18">부분마스크/팩</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=3&category_detail_num=19">워시오프 팩</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=3&category_detail_num=21">슬리핑팩</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">선케어</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=4">선케어</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">선크림/로션</a></li>
-									<li><a href="index.hmtl">선케어 기타</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=4&category_detail_num=21">선크림/로션</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=4&category_detail_num=24">선케어 기타</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">베이스메이크업</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5">베이스메이크업</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">메이크업베이스</a></li>
-									<li><a href="index.hmtl">프라이머</a></li>
-									<li><a href="index.hmtl">BB/CC크림</a></li>
-									<li><a href="index.hmtl">파운데이션</a></li>
-									<li><a href="index.hmtl">쿠션</a></li>
-									<li><a href="index.hmtl">파우더/팩트</a></li>
-									<li><a href="index.hmtl">컨실러</a></li>
-									<li><a href="index.hmtl">블러셔</a></li>
-									<li><a href="index.hmtl">하이타이터/셰이딩</a></li>
-									<li><a href="index.hmtl">메이크업픽서</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=25">메이크업베이스</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=26">프라이머</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=27">BB/CC크림</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=28">파운데이션</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=29">쿠션</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=30">파우더/팩트</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=31">컨실러</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=32">블러셔</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=33">하이타이터/셰이딩</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=5&category_detail_num=34">메이크업픽서</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">아이메이크업</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=6">아이메이크업</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">아이섀도</a></li>
-									<li><a href="index.hmtl">아이라이너</a></li>
-									<li><a href="index.hmtl">아이브로우</a></li>
-									<li><a href="index.hmtl">마스카라/픽서</a></li>
-									<li><a href="index.hmtl">속눈썹영양제</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=6&category_detail_num=35">아이섀도</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=6&category_detail_num=36">아이라이너</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=6&category_detail_num=37">아이브로우</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=6&category_detail_num=38">마스카라/픽서</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=6&category_detail_num=39">속눈썹영양제</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">립메이크업</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=7">립메이크업</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">립스틱</a></li>
-									<li><a href="index.hmtl">립틴트</a></li>
-									<li><a href="index.hmtl">립케어/립밤</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=7&category_detail_num=40">립스틱</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=7&category_detail_num=41">립틴트</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=7&category_detail_num=43">립케어/립밤</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">바디</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8">바디</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">바디워시</a></li>
-									<li><a href="index.hmtl">바디로션</a></li>
-									<li><a href="index.hmtl">바디크림/젤</a></li>
-									<li><a href="index.hmtl">바디오일/에센스</a></li>
-									<li><a href="index.hmtl">바디미스트/샤워코롱</a></li>
-									<li><a href="index.hmtl">핸드케어</a></li>
-									<li><a href="index.hmtl">여성청결제</a></li>
-									<li><a href="index.hmtl">데오드란트</a></li>
-									<li><a href="index.hmtl">바디 기타</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=44">바디워시</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=45">바디로션</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=46">바디크림/젤</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=47">바디오일/에센스</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=49">바디미스트/샤워코롱</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=50">핸드케어</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=53">여성청결제</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=54">데오드란트</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=8&category_detail_num=55">바디 기타</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">헤어</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=9">헤어</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">샴푸</a></li>
-									<li><a href="index.hmtl">린스/트리트먼트/팩</a></li>
-									<li><a href="index.hmtl">헤어에센스/오일</a></li>
-									<li><a href="index.hmtl">헤어미스트</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=9&category_detail_num=56">샴푸</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=9&category_detail_num=57">린스/트리트먼트/팩</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=9&category_detail_num=58">헤어에센스/오일</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=9&category_detail_num=59">헤어미스트</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">향수</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=11">향수</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">여성향수</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=11&category_detail_num=65">여성향수</a></li>
 								</ul></li>
-							<li class="dropdown-submenu"><a href="javascript:void(0);">기타</a>
+							<li class="dropdown-submenu"><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=12">기타</a>
 								<ul class="dropdown-menu">
-									<li><a href="index.hmtl">기타</a></li>
+									<li><a href="${pageContext.request.contextPath}/shop/shopProduct.do?category_num=12&category_detail_num=69">기타</a></li>
 								</ul></li>
 						</ul></li>
 					<!-- 쇼핑 끝 -->
