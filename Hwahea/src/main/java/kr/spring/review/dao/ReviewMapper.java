@@ -23,7 +23,7 @@ public interface ReviewMapper {
 	
 	//리뷰 작성
 	@Insert("INSERT INTO review (re_num, c_code, re_id, re_rate, re_good, re_bad, re_tip, re_uploadbyte1, re_uploadbyte2, re_uploadbyte3, re_filename1,re_filename2,re_filename3, re_ip, re_regdate) VALUES "
-			+ "(review_seq.nextval, 'B38D1C3', #{re_id}, #{re_rate}, #{re_good}, #{re_bad}, #{re_tip}, #{re_uploadbyte1}, #{re_uploadbyte2}, #{re_uploadbyte3}, #{re_filename1}, #{re_filename2}, #{re_filename3}, #{re_ip}, SYSDATE)")
+			+ "(review_seq.nextval, #{c_code}, #{re_id}, #{re_rate}, #{re_good}, #{re_bad}, #{re_tip}, #{re_uploadbyte1}, #{re_uploadbyte2}, #{re_uploadbyte3}, #{re_filename1}, #{re_filename2}, #{re_filename3}, #{re_ip}, SYSDATE)")
 	public void insert(ReviewCommand review);
 	
 	//리뷰 상세보기(리스트)
@@ -32,6 +32,7 @@ public interface ReviewMapper {
 	
 	//리뷰 상세보기
 	@Select("SELECT * FROM review WHERE re_num=#{re_num}")
+	/*@Select("SELECT r.*, p.c_uploadbyte, p.c_photoname FROM cosmetic p INNER JOIN (SELECT * FROM review WHERE re_num=#{re_num})r ON r.c_code=p.c_code;")*/
 	public ReviewCommand selectReview2(Integer re_num);
 	
 	//리뷰 수정하기
@@ -88,7 +89,7 @@ public interface ReviewMapper {
 	//------------------------------------정보 수정 요청
 	//정보 수정 요청 작성 
 	@Insert("INSERT INTO review_edit (c_code, edit_cate, edit_content, m_id, edit_date) VALUES "
-			+ "(1, #{edit_cate}, #{edit_content}, #{m_id}, SYSDATE)")
+			+ "(#{c_code}, #{edit_cate}, #{edit_content}, #{m_id}, SYSDATE)")
 	public void insertEdit(ReviewCommand review);
 	
 }

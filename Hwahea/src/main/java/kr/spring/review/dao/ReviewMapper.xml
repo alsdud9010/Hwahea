@@ -15,7 +15,7 @@
 		FROM review b LEFT OUTER JOIN (SELECT re_num, COUNT(*) re_cnt FROM review_reply GROUP BY re_num)r
 		ON b.re_num = r.re_num
 		ORDER BY b.re_num DESC)a)
-	<![CDATA[WHERE rnum >= #{start} AND rnum <= #{end}]]>
+	<![CDATA[WHERE rnum >= #{start} AND rnum <= #{end} AND c_code= #{c_code}]]>
 	</select> 
 	
 	<select id="selectMember" parameterType="map" resultType="reviewCommand">

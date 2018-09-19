@@ -159,13 +159,13 @@
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="#">스킨케어</a>
 										<ul class="dropdown-menu">
-											<li><a href="index.hmtl">스킨/토너</a></li>
-											<li><a href="index.hmtl">로션/에멀젼</a></li>
-											<li><a href="index.hmtl">에센스/앰플/세럼</a></li>
-											<li><a href="index.hmtl">페이스 오일</a></li>
-											<li><a href="index.hmtl">크림/젤</a></li>
-											<li><a href="index.hmtl">아이케어</a></li>
-											<li><a href="index.hmtl">미스트</a></li>
+											<li><a href="#" class="skin" data-value="1" data-name="스킨/토너">스킨/토너</a></li>
+											<li><a href="#" class="skin" data-value="2" data-name="로션/에멀젼">로션/에멀젼</a></li>
+											<li><a href="#" class="skin" data-value="3" data-name="에센스/앰플/세럼">에센스/앰플/세럼</a></li>
+											<li><a href="#" class="skin" data-value="4" data-name="페이스 오일">페이스 오일</a></li>
+											<li><a href="#" class="skin" data-value="5" data-name="크림/젤">크림/젤</a></li>
+											<li><a href="#" class="skin" data-value="6" data-name="아이케어">아이케어</a></li>
+											<li><a href="#" class="skin" data-value="7" data-name="미스트">미스트</a></li>
 										</ul></li>
 									<li class="dropdown-submenu"><a href="javascript:void(0);">클렌징/필링</a>
 										<ul class="dropdown-menu">
@@ -251,16 +251,110 @@
 								onclick="location.href='${pageContext.request.contextPath}/ranking/r_skinType.do'"
 								class="dropdown-toggle" data-toggle="dropdown">피부타입&고민별</a>
 								<ul class="dropdown-menu">
-									<li class="dropdown-submenu"><a
-										href="${pageContext.request.contextPath}/shop/shopProduct.do">스킨케어</a>
+									<li class="dropdown-submenu"><a href="javascript:void(0);">복합성</a>
 										<ul class="dropdown-menu">
-											<li><a href="index.hmtl">스킨/토너</a></li>
-											<li><a href="index.hmtl">로션/에멀젼</a></li>
-											<li><a href="index.hmtl">에센스/앰플/세럼</a></li>
-											<li><a href="index.hmtl">페이스 오일</a></li>
-											<li><a href="index.hmtl">크림/젤</a></li>
-											<li><a href="index.hmtl">아이케어</a></li>
-											<li><a href="index.hmtl">미스트</a></li>
+											<li><a href="index.hmtl">스킨케어</a></li>
+											<li><a href="index.hmtl">클렌징/필링</a></li>
+											<li><a href="index.hmtl">마스크/팩</a></li>
+											<li><a href="index.hmtl">선케어</a></li>
+											<li><a href="index.hmtl">베이스</a></li>
+											<li><a href="index.hmtl">아이</a></li>
+											<li><a href="index.hmtl">립</a></li>
+											<li><a href="index.hmtl">바디</a></li>
+											<li><a href="index.hmtl">헤어</a></li>
+											<li><a href="index.hmtl">네일</a></li>
+											<li><a href="index.hmtl">향수</a></li>
+											<li><a href="index.hmtl">기타</a></li>
+										</ul></li>
+									<li class="dropdown-submenu"><a href="javascript:void(0);">건성</a>
+										<ul class="dropdown-menu">
+											<li><a href="index.hmtl">스킨케어</a></li>
+											<li><a href="index.hmtl">클렌징/필링</a></li>
+											<li><a href="index.hmtl">마스크/팩</a></li>
+											<li><a href="index.hmtl">선케어</a></li>
+											<li><a href="index.hmtl">베이스</a></li>
+											<li><a href="index.hmtl">아이</a></li>
+											<li><a href="index.hmtl">립</a></li>
+											<li><a href="index.hmtl">바디</a></li>
+											<li><a href="index.hmtl">헤어</a></li>
+											<li><a href="index.hmtl">네일</a></li>
+											<li><a href="index.hmtl">향수</a></li>
+											<li><a href="index.hmtl">기타</a></li>
+										</ul></li>
+									<li class="dropdown-submenu"><a href="javascript:void(0);">지성</a>
+										<ul class="dropdown-menu">
+											<li><a href="index.hmtl">스킨케어</a></li>
+											<li><a href="index.hmtl">클렌징/필링</a></li>
+											<li><a href="index.hmtl">마스크/팩</a></li>
+											<li><a href="index.hmtl">선케어</a></li>
+											<li><a href="index.hmtl">베이스</a></li>
+											<li><a href="index.hmtl">아이</a></li>
+											<li><a href="index.hmtl">립</a></li>
+											<li><a href="index.hmtl">바디</a></li>
+											<li><a href="index.hmtl">헤어</a></li>
+											<li><a href="index.hmtl">네일</a></li>
+											<li><a href="index.hmtl">향수</a></li>
+											<li><a href="index.hmtl">기타</a></li>
+										</ul></li>
+									<li class="dropdown-submenu"><a href="javascript:void(0);">중성</a>
+										<ul class="dropdown-menu">
+											<li><a href="index.hmtl">스킨케어</a></li>
+											<li><a href="index.hmtl">클렌징/필링</a></li>
+											<li><a href="index.hmtl">마스크/팩</a></li>
+											<li><a href="index.hmtl">선케어</a></li>
+											<li><a href="index.hmtl">베이스</a></li>
+											<li><a href="index.hmtl">아이</a></li>
+											<li><a href="index.hmtl">립</a></li>
+											<li><a href="index.hmtl">바디</a></li>
+											<li><a href="index.hmtl">헤어</a></li>
+											<li><a href="index.hmtl">네일</a></li>
+											<li><a href="index.hmtl">향수</a></li>
+											<li><a href="index.hmtl">기타</a></li>
+										</ul></li>
+									<li class="dropdown-submenu"><a href="javascript:void(0);">민감성</a>
+										<ul class="dropdown-menu">
+											<li><a href="index.hmtl">스킨케어</a></li>
+											<li><a href="index.hmtl">클렌징/필링</a></li>
+											<li><a href="index.hmtl">마스크/팩</a></li>
+											<li><a href="index.hmtl">선케어</a></li>
+											<li><a href="index.hmtl">베이스</a></li>
+											<li><a href="index.hmtl">아이</a></li>
+											<li><a href="index.hmtl">립</a></li>
+											<li><a href="index.hmtl">바디</a></li>
+											<li><a href="index.hmtl">헤어</a></li>
+											<li><a href="index.hmtl">네일</a></li>
+											<li><a href="index.hmtl">향수</a></li>
+											<li><a href="index.hmtl">기타</a></li>
+										</ul></li>
+									<li class="dropdown-submenu"><a href="javascript:void(0);">여드름</a>
+										<ul class="dropdown-menu">
+											<li><a href="index.hmtl">스킨케어</a></li>
+											<li><a href="index.hmtl">클렌징/필링</a></li>
+											<li><a href="index.hmtl">마스크/팩</a></li>
+											<li><a href="index.hmtl">선케어</a></li>
+											<li><a href="index.hmtl">베이스</a></li>
+											<li><a href="index.hmtl">아이</a></li>
+											<li><a href="index.hmtl">립</a></li>
+											<li><a href="index.hmtl">바디</a></li>
+											<li><a href="index.hmtl">헤어</a></li>
+											<li><a href="index.hmtl">네일</a></li>
+											<li><a href="index.hmtl">향수</a></li>
+											<li><a href="index.hmtl">기타</a></li>
+										</ul></li>
+									<li class="dropdown-submenu"><a href="javascript:void(0);">아토피</a>
+										<ul class="dropdown-menu">
+											<li><a href="index.hmtl">스킨케어</a></li>
+											<li><a href="index.hmtl">클렌징/필링</a></li>
+											<li><a href="index.hmtl">마스크/팩</a></li>
+											<li><a href="index.hmtl">선케어</a></li>
+											<li><a href="index.hmtl">베이스</a></li>
+											<li><a href="index.hmtl">아이</a></li>
+											<li><a href="index.hmtl">립</a></li>
+											<li><a href="index.hmtl">바디</a></li>
+											<li><a href="index.hmtl">헤어</a></li>
+											<li><a href="index.hmtl">네일</a></li>
+											<li><a href="index.hmtl">향수</a></li>
+											<li><a href="index.hmtl">기타</a></li>
 										</ul></li>
 								</ul></li>
 							<!-- 피부타입&고민별 -->
@@ -347,7 +441,7 @@
 								<a href="#"><img src="imageView.do?c_code=${c.c_code}" width="100px"></a>
 							</li>
 							<li class="ranking_names">
-								<div class="ranking_brandName">브랜드출력해야함!!!!!!!</div>
+								<div class="ranking_brandName">${c.brand}</div>
 								<div class="ranking_productName">
 									<strong>${c.c_name}</strong>
 								</div>

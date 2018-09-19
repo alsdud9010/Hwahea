@@ -10,6 +10,7 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/graph2.js"></script>
 <div id="wrap">
+<input type="hidden" name="c_code" value="${cosmetic.c_code }">
 <div id="navs">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">

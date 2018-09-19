@@ -20,4 +20,6 @@ public interface CosmeticService {
 	public CosmeticCommand cosmeticDetail(String c_code);
 	//화장품 전체목록 불러오기
 	public List<CosmeticCommand> getAllCosmetic();
+	
+	public List<CosmeticCommand> getCategoryList(String c_code);
 }

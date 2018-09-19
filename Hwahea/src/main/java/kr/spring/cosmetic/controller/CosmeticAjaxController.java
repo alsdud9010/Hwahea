@@ -34,7 +34,7 @@ public class CosmeticAjaxController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("brand_num", brand_num);
-		map.put("c_code", "B"+brand_num+"%");
+		map.put("c_code", "B"+brand_num+"D%");
 		
 		List<CosmeticCommand> list = null;
 		list = cosmeticService.getCosmeticRank(map);

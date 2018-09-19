@@ -59,7 +59,7 @@ $(document).ready(function(){
 						
 							var output = '<div class="row">';
 							output+='<ul>';
-							output+='<input type="hidden" id="c_code" name="c_code" value="' + item.c_code + '"';
+							output+='<input type="hidden" id="c_code" name="c_code" value="' + item.c_code + '">';
 							output+='	<li class="ranking_num"><h1>' + (index+1) + '</h1></li>';
 							output+='	<li class="col-md-2 ranking-img" onclick="location.href=\'../review/productInfo.do?c_code='+item.c_code+'\'">'; 
 							output+='		<a href="#"><img src="imageView.do?c_code='+item.c_code+'" width="100px" ></a>';
@@ -112,5 +112,76 @@ $(document).ready(function(){
 			} 
 		}
 	});
+	
+	$('.skin').click(function(){
+		var num = $(this).attr('data-value');
+		var title = '<h2><b>' + $(this).attr('data-name') + ' 랭킹</b></h2>';
+		$('.r_second_title').empty();
+		$('.r_second_title').append(title);
+		
+		$.ajax({
+			type:'post',
+			data:{num:num},
+			url:'c_downmenu.do',
+			dataType:'json',
+			cache:false,
+			timeout:30000,
+			success:function(data){
+				var list = data.list; 
+				$('.ranking').empty();
+				
+				$(list).each(function(index,item){
+				
+					output = '<div class="row">';
+					output+='<ul>';
+					output+='<input type="hidden" id="c_code" name="c_code" value="' + item.c_code + '">';
+					output+='	<li class="ranking_num"><h1>' + (index+1) + '</h1></li>';
+					output+='	<li class="col-md-2 ranking-img" onclick="location.href=\'../review/productInfo.do?c_code='+item.c_code+'\'">'; 
+					output+='		<a href="#"><img src="imageView.do?c_code='+item.c_code+'" width="100px" ></a>';
+					output+='	</li>';
+					output+='	<li class="ranking_names">';
+					output+='		<div class="ranking_brandName">' + item.brand + ' </div>';
+					output+='		<div class="ranking_productName">';
+					output+='			<strong> ' + item.c_name + '</strong>';
+					output+='		</div>';
+					output+='		<div class="r_list_by-author">';
+					output+='			<strong>' + item.c_price + '원</strong> <span>/ ' + item.c_capacity + '</span>';
+					output+='		</div>';
+					output+='	</li>';
+					var rate = item.c_rate;
+					var star = null;
+					if(rate>=0 && rate<=1){
+						star="★☆☆☆☆";
+					}else if(rate>1 && rate<=2){
+						star="★★☆☆☆";
+					}else if(rate>2 && rate<=3){
+						star="★★★☆☆";
+					}else if(rate>3 && rate<=4){
+						star="★★★★☆";
+					}else{
+						star="★★★★★";
+					}
+					output+='	<li class="ranking_stars">' + item.c_rate + star + '</li>';
+					output+='	<li class="ranking_shopping"> ';
+					output+='		<ul>';
+					output+='			<li class="buy">';
+					output+='				<img class="img-responsive" src="../assets/img/ranking/buy.png" alt="">';
+					output+='			</li>';
+					output+='			<li class="cart">';
+					output+='				<img class="img-responsive" src="../assets/img/ranking/cart.png" alt="">';
+					output+='			</li>';
+					output+='		</ul> ';
+					output+='	</li>';
+					output+='</ul>';
+					output+='</div>';
+					
+					$('.ranking').append(output);
+				});
+			},
+			error:function(){
+				alert('네트워크 오류 발생!'); 
+			}
+		});	
+	})
 		
 });
