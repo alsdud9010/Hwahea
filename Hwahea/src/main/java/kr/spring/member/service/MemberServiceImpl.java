@@ -6,11 +6,13 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import kr.spring.event.domain.EventCommand;
 import kr.spring.member.dao.MemberMapper;
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.member.domain.ScrapCommand;
 import kr.spring.plus.domain.PlusCommand;
 import kr.spring.review.domain.ReviewCommand;
+import kr.spring.shop.domain.CartCommand;
 import kr.spring.shop.domain.OrderCommand;
 
 @Service("memberService")
@@ -50,7 +52,7 @@ public class MemberServiceImpl implements MemberService{
 		return memberMapper.selectReview(re_id);
 	}
 	@Override
-	public PlusCommand selectScrapPlus(String m_id) {
+	public List<PlusCommand> selectScrapPlus(String m_id) {
 		return memberMapper.selectScrapPlus(m_id);
 	}
 	/*===================================¸®ºä ½ºÅ©·¦==================================================
@@ -67,6 +69,24 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public List<OrderCommand> selectCartOrder(String m_id){
 		return memberMapper.selectCartOrder(m_id);
+	}
+	
+	@Override
+	public List<CartCommand> selectCart(String m_id){
+		return memberMapper.selectCart(m_id);
+	}
+	
+	@Override
+	public List<EventCommand> selectEvent(String m_id){
+		return memberMapper.selectEvent(m_id);
+	}
+	@Override
+	public EventCommand selectEvent2(String m_id) {
+		return memberMapper.selectEvent2(m_id);
+	}
+	@Override
+	public List<EventCommand> selectZzimEvent(String m_id){
+		return memberMapper.selectZzimEvent(m_id);
 	}
 	
 	@Override

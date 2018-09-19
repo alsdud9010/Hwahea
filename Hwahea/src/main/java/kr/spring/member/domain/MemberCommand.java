@@ -3,6 +3,7 @@ package kr.spring.member.domain;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.Arrays;
+import java.util.Map;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -313,6 +314,7 @@ public class MemberCommand {
 				+ ", m_point=" + m_point + ", m_reg_date=" + m_reg_date + ", m_filename="
 				+ m_filename + "]";
 	}
+
 }
 
 

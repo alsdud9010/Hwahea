@@ -17,9 +17,12 @@
 					</ul>
 				</div>
 				<div class="container">
-				<form action="">
 					<div class="orderProduct-item-info" style="width:93%; margin-left: -2em;">
 						<div class="orderProduct-subTitle">장바구니</div>
+						<c:if test="${empty cart.cart_num}">
+							장바구니가 비었습니다.
+						</c:if>
+						<c:forEach items="${list}" var="cart">
 						<div class="item-info-head">
 							<ul>
 								<li class="info-head-name">상품명</li>
@@ -31,20 +34,14 @@
 							<ul>
 								<li class="info-content-img"><img
 									src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"></li>
-								<li class="info-content-name">메이케이티드 위치하젤 아스트린젠트 355ml</li>
-								<li class="info-content-quantity">{product_order.quantity}</li>
-								<li class="info-content-price">{product_order.total_price}</li>
+								<li class="info-content-name">${cart.cart_product }</li>
+								<li class="info-content-quantity">${cart.quantity}</li>
+								<li class="info-content-price">${cart.cart_price}</li>
 							</ul>
-							<ul>
-								<li class="info-content-img"><img
-									src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"></li>
-								<li class="info-content-name">메이케이티드 위치하젤 아스트린젠트 355ml</li>
-								<li class="info-content-quantity">{CART.quantity}</li>
-								<li class="info-content-price">{cart.total_price}</li>
-							</ul>
+							
 						</div>
+						</c:forEach>
 					</div>
-					</form>
 				</div>
 			</div>
 		</div>

@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.spring.event.domain.EventCommand;
 import kr.spring.member.domain.MemberCommand;
 import kr.spring.member.domain.ScrapCommand;
 import kr.spring.member.service.MemberService;
 import kr.spring.plus.domain.PlusCommand;
 import kr.spring.review.domain.ReviewCommand;
+import kr.spring.shop.domain.CartCommand;
 import kr.spring.shop.domain.OrderCommand;
 import kr.spring.util.CipherTemplate;
 
@@ -190,16 +192,16 @@ public class MemberController {
 	}
 	//내리뷰/스트랩(스크랩)  호출
 	@RequestMapping(value="/mypage/my_reviewscrap.do")
-		public String my_reviewscrap(String bc,HttpSession session, Model model) {
+		public String my_reviewscrap(@RequestParam("bc") String bc,HttpSession session, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
-		String m_id = (String)session.getAttribute("user_id");
-		PlusCommand scrap = memberService.selectScrapPlus(m_id);
+		List<PlusCommand> list = null;
+		list = memberService.selectScrapPlus((String)session.getAttribute("user_id"));
 		if(log.isDebugEnabled()) {
-			log.debug("<<제발 되라>>" + scrap);
+			log.debug("<<list>>"+list);
 		}
-		model.addAttribute("scrap", scrap);
+		model.addAttribute("list", list);
 		
 		return "my_reviewscrap";
 	}
@@ -252,12 +254,31 @@ public class MemberController {
 	}
 	//화해쇼핑(장바구니)  호출
 	@RequestMapping(value="/mypage/my_cart.do")
-		public String my_cart(String bc) {
+		public String cart(@RequestParam("bc") String bc, HttpSession session, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		
+		List<CartCommand> list = null;
+		
+		list = memberService.selectCart((String)session.getAttribute("user_id"));
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>>" + list);
+		}
+		model.addAttribute("list", list);
+		
 		return "my_cart";
 	} 
+	//화해쇼핑(찜)  호출
+	@RequestMapping(value="/mypage/my_cartzzim.do",
+	        method=RequestMethod.GET)
+		public String my_cartzzim(String bc) {
+		if(bc == null || bc.equals("")) {
+			return "redirect:/mypage/my_info.do?bc=0";
+		}
+		return "my_cartzzim";
+	}
 	//화해쇼핑(주문)  호출
 		@RequestMapping(value="/mypage/my_cartorder.do")
 		public String process(@RequestParam("bc") String bc, HttpSession session,Model model) {
@@ -269,36 +290,68 @@ public class MemberController {
 		
 		list = memberService.selectCartOrder((String)session.getAttribute("user_id"));
 		
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>>" + list);
+		}
+		
 		model.addAttribute("list", list);
 		
 		return "my_cartorder";
-		
-	}
-	//화해쇼핑(찜)  호출
-	@RequestMapping(value="/mypage/my_cartzzim.do",
-	        method=RequestMethod.GET)
-		public String my_cartzzim(String bc) {
-		if(bc == null || bc.equals("")) {
-			return "redirect:/mypage/my_info.do?bc=0";
-		}
-		return "my_cartzzim";
 	}
 	//이벤트(참여)  호출
-	@RequestMapping(value="/mypage/my_eventdoing.do",
-	        method=RequestMethod.GET)
-		public String my_eventdoing(String bc) {
+	@RequestMapping(value="/mypage/my_eventdoing.do")
+		public String my_eventdoing(@RequestParam("bc") String bc, HttpSession sesstion, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		List<EventCommand> list = null;
+		
+		list = memberService.selectEvent((String)sesstion.getAttribute("user_id"));
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>>" + list);
+		}
+		
+		model.addAttribute("list", list);
 		return "my_eventdoing";
 	}
-	//이벤트(참여)  호출
-	@RequestMapping(value="/mypage/my_eventnotyet.do",
-	        method=RequestMethod.GET)
-		public String my_eventnotyet(String bc) {
+	/*==============이미지출력=======================*/
+	@RequestMapping(value="/mypage/event_imageView.do")
+	public ModelAndView EventviewImage(@RequestParam("m_id") String m_id, @RequestParam("cnt") int cnt) {
+
+		EventCommand event = memberService.selectEvent2(m_id);
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");
+						//속성명	, 속성값(byte[]의 데이터)
+		if(cnt == 1) {
+			mav.addObject("imageFile",event.getEvent_image1());
+			mav.addObject("filename",event.getEvent_filename1());
+		}else if(cnt == 2) {
+			mav.addObject("imageFile",event.getEvent_image2());
+			mav.addObject("filename",event.getEvent_filename2());
+		}else if(cnt == 3) {
+			mav.addObject("imageFile",event.getEvent_image3());
+			mav.addObject("filename",event.getEvent_filename2());
+		}
+		return mav;
+	}
+	//이벤트(찜)  호출
+	@RequestMapping(value="/mypage/my_eventnotyet.do")
+		public String my_eventnotyet(@RequestParam("bc") String bc, HttpSession session, Model model) {
 		if(bc == null || bc.equals("")) {
 			return "redirect:/mypage/my_info.do?bc=0";
 		}
+		
+		List<EventCommand> list = null;
+		
+		list = memberService.selectZzimEvent((String)session.getAttribute("user_id"));
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<list>>" + list);
+		}
+		
+		model.addAttribute("list",list);
+		
 		return "my_eventnotyet";
 	}
 	//문의하기  호출
@@ -376,72 +429,23 @@ public class MemberController {
 		
 		return "redirect:/mypage/my_info.do";
 	}*/
-	//====================회원삭제=================//
-	//회원 삭제 폼
-	/*@RequestMapping(value="/member/delete.do",
-	        method=RequestMethod.GET)
-	public String formDelete(HttpSession session,
-			                 Model model) {
-		String id = 
-			(String)session.getAttribute("user_id");
-		MemberCommand member = new MemberCommand();
-		member.setM_id(id);
-		
-		model.addAttribute("command",member);
-		
-		return "memberDelete";
-	}*/
 	//회원 데이터 삭제
-	/*@RequestMapping(value="/member/delete.do",
-	        method=RequestMethod.POST)
-	public String submitDelete(@ModelAttribute("command")
-	                           @Valid MemberCommand memberCommand,
-	                           BindingResult result,
-	                           HttpSession session) {
+	@RequestMapping("/mypage/my_delete.do")
+	public String submitDelete(HttpSession session) {
+		
+		String m_id = (String)session.getAttribute("user_id");
 		
 		if(log.isDebugEnabled()) {
-			log.debug("<<memberCommand>> : " + memberCommand);
+			log.debug("<m_id>> : " + m_id);
 		}
 		
-		//passwd 필드의 에러만 체크
-		if(result.hasFieldErrors("passwd")) {
-			return "memberDelete";
-		}
 		
-		//비밀번호 일치 여부 체크
-		try {
-			MemberCommand member = 
-					memberService.selectMember(
-							memberCommand.getM_id());
-			boolean check = false;
-			
-			if(member!=null) {
-				//비밀번호 일치 여부 체크
-				check = member.isCheckedPasswd(
-						cipherAES.encrypt(
-								memberCommand.getM_passwd()));
-			}
-			if(check) {
-				//인증성공, 회원정보 삭제
-				memberService.delete(memberCommand.getM_id());
-				//로그아웃
-				session.invalidate();
-				return "redirect:/main/main.do";
-			}else {
-				//인증 실패
-				throw new Exception();
-			}
-		}catch(Exception e) {
-			result.rejectValue("passwd", "invalidPassword");
-			return "memberDelete";
-		}*/
+		memberService.delete(m_id);
+		
+		
+		return "redirect:/main/main.do";
 	}
-
-
-
-
-
-
+}
 
 
 

@@ -113,14 +113,15 @@
             </div>
             <div class="info_img">
                <div class="filebox" style="font-style: right;">
-               <img  id="profile_image" src="imageView.do?m_id=${command.m_id}">
-               
+               <c:if test="${command.m_filename eq null}">
+               	<img  id="profile_image" name="upload" src="${pageContext.request.contextPath}/assets/img/mypage/none_profile.png">
+               </c:if>
+               <c:if test="${command.m_filename ne null}">
+               	<img  id="profile_image" src="imageView.do?m_id=${command.m_id}">
+               </c:if>
                           <label for="ex_file">프로필 업로드</label> 
                           <input type="file" name="upload" id="ex_file">                           
                     </div>
-            </div>
-            <div class="choose_me">
-               나를 즐겨찾기한 사용자 : 58명
             </div>
          </div>
          <hr width="90%" class="hrtag">
@@ -243,7 +244,8 @@
                      <div class="info_choice col-md-12">
                         <label class="col-md-3">수령인 : </label>
                         <div class="col-md-9" style="margin-left: -7.5em; margin-top: -0.5em;">
-                           <form:input path="m_takename" name="address_name" placeholder="${command.m_name}" class="form-control getname"/>
+                        	
+                           <form:input path="m_takename" placeholder="${command.m_name}" class="form-control getname"/>
                         </div>
                      </div>
                   </li>
@@ -285,7 +287,7 @@
          <div  class="form_top col-md-12">
             <div class="bnt_set_last">
                <input type="submit" value="수정하기" class="zipcood-bt">
-               <input type="button" value="탈퇴하기" class="zipcood-bt">
+               <input type="button" value="탈퇴하기" class="zipcood-bt" onclick="location.href='my_delete.do'">
             </div>
          </div>
          </form:form>

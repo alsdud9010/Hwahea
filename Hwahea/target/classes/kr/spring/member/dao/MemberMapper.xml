@@ -5,10 +5,10 @@
 <mapper namespace="kr.spring.member.dao.MemberMapper">
 <update id="update">
   		<if test="m_filename==''">
-  			UPDATE member_detail SET m_id=#{m_id},m_nickname=#{m_nickname},m_gender=#{m_gender},m_havechild=#{m_havechild},m_age=#{m_age},m_skintype=#{m_skintype},m_atopy=#{m_atopy},m_pimple=#{m_pimple},m_susceptilbility=#{m_susceptilbility},m_phone1=#{m_phone1},m_phone2=#{m_phone2},m_phone3=#{m_phone3},m_zipphone1=#{m_zipphone1},m_zipphone2=#{m_zipphone2},m_zipphone3=#{m_zipphone3},m_zipcode=#{m_zipcode},m_address1=#{m_address1},m_address2=#{m_address2} WHERE m_id=#{m_id}
+  			UPDATE member_detail SET m_id=#{m_id},m_nickname=#{m_nickname},m_gender=#{m_gender},m_havechild=#{m_havechild},m_age=#{m_age},m_skintype=#{m_skintype},m_atopy=#{m_atopy},m_pimple=#{m_pimple},m_susceptilbility=#{m_susceptilbility}, m_takename=#{m_takename},m_phone1=#{m_phone1},m_phone2=#{m_phone2},m_phone3=#{m_phone3},m_zipphone1=#{m_zipphone1},m_zipphone2=#{m_zipphone2},m_zipphone3=#{m_zipphone3},m_zipcode=#{m_zipcode},m_address1=#{m_address1},m_address2=#{m_address2} WHERE m_id=#{m_id}
   		</if>
   		<if test="m_filename !=''">
-  			UPDATE member_detail SET m_id=#{m_id},m_profile=#{m_profile},m_filename=#{m_filename},m_nickname=#{m_nickname},m_gender=#{m_gender},m_havechild=#{m_havechild},m_age=#{m_age},m_skintype=#{m_skintype},m_atopy=#{m_atopy},m_pimple=#{m_pimple},m_susceptilbility=#{m_susceptilbility},m_phone1=#{m_phone1},m_phone2=#{m_phone2},m_phone3=#{m_phone3},m_zipphone1=#{m_zipphone1},m_zipphone2=#{m_zipphone2},m_zipphone3=#{m_zipphone3},m_zipcode=#{m_zipcode},m_address1=#{m_address1},m_address2=#{m_address2} WHERE m_id=#{m_id}
+  			UPDATE member_detail SET m_id=#{m_id},m_profile=#{m_profile},m_filename=#{m_filename},m_nickname=#{m_nickname},m_gender=#{m_gender},m_havechild=#{m_havechild},m_age=#{m_age},m_skintype=#{m_skintype},m_atopy=#{m_atopy},m_pimple=#{m_pimple},m_susceptilbility=#{m_susceptilbility},m_takename=#{m_takename},m_phone1=#{m_phone1},m_phone2=#{m_phone2},m_phone3=#{m_phone3},m_zipphone1=#{m_zipphone1},m_zipphone2=#{m_zipphone2},m_zipphone3=#{m_zipphone3},m_zipcode=#{m_zipcode},m_address1=#{m_address1},m_address2=#{m_address2} WHERE m_id=#{m_id}
   		</if>
   	</update>
 </mapper>

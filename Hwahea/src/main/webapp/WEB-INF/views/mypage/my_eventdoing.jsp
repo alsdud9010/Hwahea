@@ -14,32 +14,45 @@
 					</ul>
 				</div>
 					<div class="col-md-12"  style="margin-left: 3%;">
+					<c:forEach items="${list}" var="event">
+					<c:if test="${empty event.event_num}">
+							<h2>참여한 이벤트가 없습니다.</h2>
+						</c:if>
 						<div class="event_doing col-md-6">
 					         <div class="card flex-md-row mb-4 shadow-sm h-md-250">
 					            <div class="card-body d-flex flex-column align-items-start">
-					               <strong class="eventtitle d-inline-block mb-2 text-success">재구매 이벤트</strong>
+					               <strong class="eventtitle d-inline-block mb-2 text-success">${event.event_name}</strong>
 					               <h6 class="mb-0">
-					                  <a class="text-dark" href="#">매일 저녁 6시 화육대! 선착순 5000포인트</a>
+					                  <a class="text-dark" href="#">
+					                  <c:choose>
+					                  		<c:when test="${event.event_kind == 0}">
+			                  				 첫구매지원
+			                  				</c:when>
+			                  				<c:when test="${event.event_kind == 1}">
+			                  				 꼼꼼한 뷰티평가단
+			                  				</c:when>
+			                  				<c:when test="${event.event_kind == 2}">
+			                  				 화장품 설문회
+			                  				</c:when>
+			                  				<c:when test="${event.event_kind == 3}">
+			                  				 화장품 유목민
+			                  				</c:when>
+			                  			</c:choose>
+			                  			</a>
 					               </h6>
-					               <div class="mb-1 text-muted small">남은 시간22시간41분</div>
-					               <a class="btn btn-outline-success btn-sm" href="#">자세히 보기</a>
+					               <div class="mb-1 text-muted small">이벤트 시작일 : ${event.event_start}</div>
+					               <div class="mb-1 text-muted small">이벤트 종료일 : ${event.event_end}</div>
+					               <a class="btn btn-outline-success btn-sm" href="${pageContext.request.contextPath}/event/eventView.do?num=${event.event_num}" class="event_hover"><span>상세 보기</span></a>
 					            </div>
 					            <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="//placeimg.com/250/250/nature" style="width: 100%; height: 250px; margin-bottom: 4%;">
+					            <c:if test="${!empty event.event_image2}">
+									<span id="photos">
+										<img class="card-img-right flex-auto d-none d-lg-block" src="event_imageView.do?event_id=${event.event_id }&cnt=2" style="width: 100%; height: 250px; margin-bottom: 4%;">
+									</span>
+								</c:if>
 					         </div>
 					     </div>
-					     <div class="event_doing col-md-6">
-					         <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-					            <div class="card-body d-flex flex-column align-items-start">
-					               <strong class="eventtitle d-inline-block mb-2 text-success">화해 전액기부 마스크팩</strong>
-					               <h6 class="mb-0">
-					                  <a class="text-dark" href="#">위탁아동을 응원하는 특별한 마스크 팩</a>
-					               </h6>
-					               <div class="mb-1 text-muted small">남은 시간22시간41분</div>
-					               <a class="btn btn-outline-success btn-sm" href="#">자세히 보기</a>
-					            </div>
-					            <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="//placeimg.com/250/250/nature" style="width: 100%; height: 250px; margin-bottom: 4%;">
-					         </div>
-					     </div>
+					</c:forEach>
 			     	</div>
 			     </div>
 					<nav aria-label="Page navigation example" style="margin-left: 35%;">
