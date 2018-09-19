@@ -14,7 +14,7 @@ public interface MemberService {
 	public void insert(MemberCommand member);
 	public MemberCommand selectMember(String m_id);
 	public List<MemberCommand> memberDetail(String m_id);
-	public List<MemberCommand> memberDetailList();
+	public List<MemberCommand> memberDetailList(String c_code);
 	public ReviewCommand selectReview(String re_id);
 	public ScrapCommand selectScrap(String m_id);
 	public List<PlusCommand> selectScrapPlus(String m_id);

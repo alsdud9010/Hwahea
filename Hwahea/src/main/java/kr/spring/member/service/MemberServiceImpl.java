@@ -38,8 +38,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	@Override
-	public List<MemberCommand> memberDetailList() {
-		return memberMapper.memberDetailList();
+	public List<MemberCommand> memberDetailList(String c_code) {
+		return memberMapper.memberDetailList(c_code);
 	}
 	
 	@Override

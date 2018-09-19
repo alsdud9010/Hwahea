@@ -64,13 +64,17 @@ hr{
  	padding:0 20px;
 }
 #name{
+	display:table;
+	margin:0 auto;
 	font-weight:bold;
 	font-size:30px;
 	padding-top:30px;
 }
 #brand{
+	display:table;
+	margin:0 auto;
 	font-size:17px;
-	padding-top:-5px;
+	margin-top:-5px;
 	margin-bottom:20px;
 }
 #brand input{
@@ -97,6 +101,7 @@ hr{
 }
 #title{
 	margin-right:10px;
+	font-weight:bold;
 }
 
 #spec_rate img{
@@ -459,7 +464,7 @@ hr{
 	vertical-align:top;
 }
 #photos img{
-	width:150px;
+	width:250px;
 	align:left;
 }
 #mphotodiv{

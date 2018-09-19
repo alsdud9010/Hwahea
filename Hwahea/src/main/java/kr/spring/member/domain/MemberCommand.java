@@ -66,7 +66,17 @@ public class MemberCommand {
 	private Date m_reg_date;
 	private String m_filename;
 	
+	private String c_code;
 	
+	
+
+	public String getC_code() {
+		return c_code;
+	}
+
+	public void setC_code(String c_code) {
+		this.c_code = c_code;
+	}
 
 	//비밀번호 일치 여부 체크
 	public boolean isCheckedPasswd(String userPasswd) {

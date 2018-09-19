@@ -9,6 +9,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/review.reply.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="${pageContext.request.contextPath}/assets/js/rating.js"></script>
+	<input type="hidden" name="c_code" id="c_code" value="${cosmetic.c_code }">
 	<div id="wrap">
 	<div>
 		<div class="r_title">
@@ -27,25 +28,46 @@
 			<!-- 제품 사진 시작 -->
 			<div id="propic">
 				<div>
-				<img src="${pageContext.request.contextPath}/assets/img/sample.jpg">
+				<img src="imageView2.do?c_code=${cosmetic.c_code }" style="max-width: 500px">
+				<%-- <img src="${pageContext.request.contextPath}/assets/img/sample.jpg"> --%>
 				</div>
 			</div>
 			<!-- 제품 사진 끝 -->
 			<!-- 제품 정보 시작 -->
 			<div id="proinfo">
 				<div id="name">${cosmetic.c_name }</div>
-				<div id="brand">
-					메이크업 포에버(MAKEUP FOREVER) <input type="button" value="브랜드관">
-				</div>
+				<div id="brand">${cosmetic.brand_name }</div>
 				<hr>
 				<div id="spec">
 					<div>
-						<span id="title">평점</span> 
-						<span id="spec_rate"> 
-							<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-							<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
+						<span id="title">평점</span>
+					<span id="spec_rate"> 
+						<c:if test="${cosmetic.c_rate <2 }">
 							<img src="${pageContext.request.contextPath}/assets/img/star.png">
-						</span> 
+						</c:if>
+						<c:if test="${cosmetic.c_rate < 3 && cosmetic.c_rate >= 2 }">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
+						<c:if test="${cosmetic.c_rate < 4 && cosmetic.c_rate >= 3 }">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
+						<c:if test="${cosmetic.c_rate < 5 && cosmetic.c_rate >= 4 }">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
+						<c:if test="${cosmetic.c_rate == 5}">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if> ( ${cosmetic.c_rate } 점 )
+					</span> 
 					</div>
 					<div> 
 						<span id="title">정가 </span> 
@@ -59,7 +81,7 @@
 				</div>
 				<hr>
 				<div id="buttons">
-					<input type="button" value="즐겨찾기">
+					<input type="button" value="즐겨찾기"onclick="location.href='${pageContext.request.contextPath}/mypage/my_favoritewrite.do?bookmark_kind=1&bookmark_detail=5'">
 					<!-- <input type="button" value="비교함 담기" data-target="#comModal" data-toggle="modal"> -->
 					<input type="button" value="쇼핑">
 				</div>
@@ -78,12 +100,12 @@
 			<div>
 				<span id="twenty"><img src="${pageContext.request.contextPath}/assets/img/review/20.PNG"> 20가지 주의성분 </span>
 				<span id="how">3<span>개</span></span>
-				<span id="more"><img id="ingreimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span>
+				<%-- <span id="more"><img id="ingreimg" data-num="${cosmetic.c_code }" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span> --%>
 			</div> 
 			<div>
 				<span id="allergy"><img src="${pageContext.request.contextPath}/assets/img/review/allergyon.PNG"> 알러지 주의성분 </span>
 				<span id="how">1<span>개</span></span>
-				<span id="more"><img id="ingreimg2" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span>
+				<%-- <span id="more"><img id="ingreimg2" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span> --%>
 			</div> 
 			<hr>
 			<div id="subhead">
@@ -91,7 +113,7 @@
 			</div>
 			<div id="tchart">
 				<span id="type_chart_div"></span>
-				<span id="tmore"><img id="pibuimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span> 
+				<%-- <span id="tmore"><img id="pibuimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span>  --%>
 			</div>
 			<hr>
 			<div id="subhead">
@@ -101,7 +123,7 @@
 				<img src="${pageContext.request.contextPath}/assets/img/sun.png"> 자외선 차단
 				<img src="${pageContext.request.contextPath}/assets/img/bulb.png"> 미백 개선
 				<img src="${pageContext.request.contextPath}/assets/img/cancel.png"> 주름 개선
-				<span id="dmore"><img id="giimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span> 
+				<%-- <span id="dmore"><img id="giimg" src="${pageContext.request.contextPath}/assets/img/review/more.png"></span>  --%>
 			</div>
 			<div id="detail_option">
 				<span>
@@ -116,7 +138,7 @@
 			</div>
 			<div id="edit">
 				<div>
-					<a href="${pageContext.request.contextPath}/review/editRequest.do"><input type="button" value="정보 수정 요청하기"></a>
+					<a href="${pageContext.request.contextPath}/review/editRequest.do?c_code=${cosmetic.c_code}"><input type="button" value="정보 수정 요청하기"></a>
 				</div>
 			</div>
 		</div>
@@ -126,17 +148,39 @@
 		<div id="review_stat">
 			<div id="head"><img src="${pageContext.request.contextPath}/assets/img/review.png">리뷰</div>
 			<div id="all_rate">
-				<div id="score">3.88</div> 
+				<div id="score">${cosmetic.c_rate }</div> 
 					<div id="rate">
-						<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-						<img src="${pageContext.request.contextPath}/assets/img/star.png"> <img src="${pageContext.request.contextPath}/assets/img/star.png"> 
-						<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						<c:if test="${cosmetic.c_rate <2 }">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
+						<c:if test="${cosmetic.c_rate < 3 && cosmetic.c_rate >= 2 }">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
+						<c:if test="${cosmetic.c_rate < 4 && cosmetic.c_rate >= 3 }">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
+						<c:if test="${cosmetic.c_rate < 5 && cosmetic.c_rate >= 4 }">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
+						<c:if test="${cosmetic.c_rate == 5}">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+							<img src="${pageContext.request.contextPath}/assets/img/star.png">
+						</c:if>
 					</div>  
 			</div>
 			<div id="review_chart"></div>
 			<div id="write">
 				<div>
-					<a href="${pageContext.request.contextPath}/review/writeReview.do"><input type="button" value="리뷰 작성하기"></a>
+					<a href="${pageContext.request.contextPath}/review/writeReview.do?c_code=${cosmetic.c_code}"><input type="button" value="리뷰 작성하기"></a>
 					<!-- <input type="button" value="모든 리뷰 보기"> -->
 				</div>
 			</div>
@@ -274,7 +318,7 @@
 					<!-- 제품 사진 -->
 					<img class="plusThumbnail3" src="${pageContext.request.contextPath}/assets/img/sample.jpg">
 					<div class="brand">메이크업 포에버(MAKEUP FOREVER)</div>
-					<div class="pmodal_product">HD 프레스드 파우더</div>
+					<div class="pmodal_product">${cosmetic.c_name }</div>
 					<hr>
 					<!-- 작성자 정보 -->
 					<div class="writer">

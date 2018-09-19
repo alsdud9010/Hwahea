@@ -81,7 +81,7 @@ public class ReviewController {
 			
 			list = reviewService.selectList(map);
 			
-			member = memberService.memberDetailList();
+			member = memberService.memberDetailList(c_code);
 			
 			cosmetic = cosmeticService.cosmeticDetail(c_code);
 			

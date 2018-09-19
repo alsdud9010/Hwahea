@@ -29,8 +29,10 @@ public interface MemberMapper {
 	@Select("SELECT * FROM (SELECT a.* FROM (SELECT b.*, r.re_id FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a) WHERE m_id=#{m_id}")
 	public List<MemberCommand> memberDetail(String m_id);
 	
-	@Select("SELECT * FROM (SELECT a.* FROM (SELECT b.*, r.re_id FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a)")
-	public List<MemberCommand> memberDetailList();
+	/*@Select("SELECT * FROM (SELECT a.* FROM (SELECT b.*, r.re_id FROM member_detail b LEFT JOIN (SELECT re_id FROM review)r ON b.m_id = r.re_id)a)")*/
+	/*@Select("SELECT b.*, r.* FROM member_detail b INNER JOIN (SELECT * FROM review)r ON b.m_id = r.re_id ORDER BY r.re_num DESC")*/
+	@Select("SELECT b.*, r.* FROM member_detail b INNER JOIN (SELECT * FROM review)r ON b.m_id = r.re_id WHERE r.c_code=#{c_code} ORDER BY r.re_num DESC")
+	public List<MemberCommand> memberDetailList(String c_code);
 	
 	/*³» ¸®ºä*/
 	@Select("SELECT * FROM (SELECT a.*, rownum rnum FROM (SELECT * FROM review re left join (SELECT re_num,COUNT(*) rere_num FROM review_reply GROUP BY re_num)r ON re.re_num = r.rere_num WHERE re.re_id = #{m_id} ORDER BY re.re_num DESC)a)")
