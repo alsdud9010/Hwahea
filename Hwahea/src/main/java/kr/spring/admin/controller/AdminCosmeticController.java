@@ -218,12 +218,13 @@ public class AdminCosmeticController {
 	public String submit(@ModelAttribute("cosmeticcommand")
 						AdminCosmeticCommand cosmeticcommand,
 						BindingResult result) {
-		
+				
 		int seqNum = adminCosmeticService.selectCosmeticSeq();
 		cosmeticcommand.setC_code(cosmeticcommand.getC_code()+"C"+seqNum);
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<AdminCosmeticCommand>> : " + cosmeticcommand);
+			log.debug("<<C_CODE>> : " + cosmeticcommand);
 		}
 		
 		adminCosmeticService.insertCosmetic(cosmeticcommand);

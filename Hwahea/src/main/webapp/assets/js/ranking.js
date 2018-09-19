@@ -58,10 +58,11 @@ $(document).ready(function(){
 						$(list).each(function(index,item){
 						
 							var output = '<div class="row">';
+							output+='<input type="hidden" id="c_code" name="c_code" value="' + item.c_code + '"';
 							output+='<ul>';
 							output+='	<li class="ranking_num"><h1>' + (index+1) + '</h1></li>';
 							output+='	<li class="col-md-2 ranking-img">';
-							output+='		<a href="#"> <img class="img-responsive" src="../assets/img/ranking/'+ item.c_photo +'" alt=""></a>';
+							output+='		<a href="#"><img src="imageView.do?c_code='+item.c_code+'" width="100px" ></a>';
 							output+='	</li>';
 							output+='	<li class="ranking_names">';
 							output+='		<div class="ranking_brandName">' + item.brand + ' </div>';
@@ -69,7 +70,7 @@ $(document).ready(function(){
 							output+='			<strong> ' + item.c_name + '</strong>';
 							output+='		</div>';
 							output+='		<div class="r_list_by-author">';
-							output+='			<strong>' + item.c_price + '원</strong> <span>/ ' + item.c_capacity + 'g</span>';
+							output+='			<strong>' + item.c_price + '원</strong> <span>/ ' + item.c_capacity + '</span>';
 							output+='		</div>';
 							output+='	</li>';
 							var rate = item.c_rate;

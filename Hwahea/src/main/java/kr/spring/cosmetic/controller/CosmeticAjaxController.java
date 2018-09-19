@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.cosmetic.domain.CosmeticCommand;
 import kr.spring.cosmetic.service.CosmeticService;
@@ -43,4 +44,18 @@ public class CosmeticAjaxController {
 		return map;
 	}
 	
+	@RequestMapping("/ranking/imageView.do")
+	   public ModelAndView cosmeticImage(@RequestParam("c_code") String c_code) {
+
+	      CosmeticCommand cosmetic = cosmeticService.cosmeticDetail(c_code);
+
+	      ModelAndView mav = new ModelAndView();
+	      mav.setViewName("imageView");
+
+	      mav.addObject("imageFile",cosmetic.getC_uploadbyte());
+	      mav.addObject("filename",cosmetic.getC_photoname());
+	      
+
+	      return mav;
+	   }
 }
