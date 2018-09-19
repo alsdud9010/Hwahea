@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/ranking.css">
 <link rel="stylesheet"
@@ -338,25 +339,23 @@
 				</div>
 				
 				<div class="ranking col-md-12">
+				<c:forEach var="c" items="${category}" varStatus="status">
 					<div class="row">
 						<ul>
-							<li class="ranking_num"><h1>1</h1></li>
+							<li class="ranking_num"><h1>${status.count}</h1></li>
 							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/ausome.jpg"
-										alt="">
-								</a>
+								<a href="#"><img src="imageView.do?c_code=${c.c_code}" width="100px"></a>
 							</li>
 							<li class="ranking_names">
-								<div class="ranking_brandName">오우썸 </div>
+								<div class="ranking_brandName">브랜드출력해야함!!!!!!!</div>
 								<div class="ranking_productName">
-									<strong>오가닉 딥모이스처라이징 더블미스트 기획세트</strong>
+									<strong>${c.c_name}</strong>
 								</div>
 								<div class="r_list_by-author">
-									<strong> 18,500원</strong> <span>/ 2.6g</span>
+									<strong>${c.c_price}</strong> <span>/ ${c.c_capacity}</span>
 								</div>
 							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
+							<li class="ranking_stars">${c.c_rate}★★★★★ (4,000)</li>
 							<li class="ranking_shopping"> 
 								<ul>
 									<li class="buy">
@@ -373,117 +372,13 @@
 							</li>
 						</ul>
 					</div>
-					<div class="row">
-						<ul>
-							<li class="ranking_num"><h1>2</h1></li>
-							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/isandtree.jpg"
-										alt="">
-								</a>
-							</li>
-							<li class="ranking_names">
-								<div class="ranking_brandName">이지앤트리</div>
-								<div class="ranking_productName">
-									<strong>히아루론산 토너</strong>
-								</div>
-								<div class="r_list_by-author">
-									<strong> 12,000원</strong> <span>/ 200ml</span>
-								</div>
-							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
-							<li class="ranking_shopping"> 
-								<ul>
-									<li class="buy">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
-										alt="">
-									</li>
-									<li class="cart">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
-										alt="">
-									</li>
-								</ul> 
-							</li>
-						</ul>
-					</div>
-					<div class="row">
-						<ul>
-							<li class="ranking_num"><h1>3</h1></li>
-							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/uriage.jpg"
-										alt="">
-								</a>
-							</li>
-							<li class="ranking_names">
-								<div class="ranking_brandName">유리아쥬</div>
-								<div class="ranking_productName">
-									<strong>제모스 토너</strong>
-								</div>
-								<div class="ranking_by-author">
-									<strong> 38,000원</strong> <span>/ 200ml</span>
-								</div>
-							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
-							<li class="ranking_shopping"> 
-								<ul>
-									<li class="buy">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
-										alt="">
-									</li>
-									<li class="cart">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
-										alt="">
-									</li>
-								</ul> 
-							</li>
-						</ul>
-					</div>
-					<div class="row">
-						<ul>
-							<li class="ranking_num"><h1>4</h1></li>
-							<li class="col-md-2 ranking-img">
-								<a href="#"> <img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cc.jpg"
-										alt="">
-								</a>
-							</li>
-							<li class="ranking_names">
-								<div class="ranking_brandName">정샘물</div>
-								<div class="ranking_productName">
-									<strong>컬러피스 아이섀도우 프리즘</strong>
-								</div>
-								<div class="r_list_by-author">
-									<strong> 22,000원</strong> <span>/ 2.6g</span>
-								</div>
-							</li>
-							<li class="ranking_stars">5.0 ★★★★★ (4,000)</li>
-							<li class="ranking_shopping"> 
-								<ul>
-									<li class="buy">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/buy.png"
-										alt="">
-									</li>
-									<li class="cart">
-										<img class="img-responsive"
-										src="${pageContext.request.contextPath}/assets/img/ranking/cart.png"
-										alt="">
-									</li>
-								</ul> 
-							</li>
-						</ul>
+					</c:forEach>
 					</div>
 				</div>
 				<!-- 랭킹 리스트 끝 -->
 			</div>
 			<!-- End Content -->
 		</div>
-	</div>
 	</div>
 <!--/container-->
 <!-- End Content Part -->

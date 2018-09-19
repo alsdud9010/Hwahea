@@ -36,4 +36,9 @@ public class CosmeticServiceImpl implements CosmeticService{
 	public CosmeticCommand cosmeticDetail(String c_code) {
 		return cosmeticMapper.cosmeticDetail(c_code);
 	}
+
+	@Override
+	public List<CosmeticCommand> getAllCosmetic() {
+		return cosmeticMapper.getAllCosmetic();
+	}
 }

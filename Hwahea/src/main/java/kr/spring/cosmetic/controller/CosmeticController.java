@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.cosmetic.domain.BrandCommand;
+import kr.spring.cosmetic.domain.CosmeticCommand;
 import kr.spring.cosmetic.service.CosmeticService;
 
 @Controller
@@ -18,6 +19,24 @@ public class CosmeticController {
 	
 	@Resource
 	private CosmeticService cosmeticService;
+	
+	//카테고리별 메인 호출
+	@RequestMapping("/ranking/r_category.do")
+	public ModelAndView getCategoryList(){
+		
+		List<CosmeticCommand> category = null;
+		category = cosmeticService.getAllCosmetic();
+		
+		if(log.isDebugEnabled()) {
+			log.debug("<<category>> : " + category);
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("r_category");
+		mav.addObject("category", category);
+		
+		return mav;
+	}
 	
 	//=======브랜드 리스트 호출
 	@RequestMapping("/ranking/r_brand.do")

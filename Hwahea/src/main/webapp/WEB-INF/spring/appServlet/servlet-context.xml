@@ -81,7 +81,6 @@
 	<view-controller path="/signin/m_signin.do" view-name="m_signin"/>
 	<view-controller path="/shop/shopMain.do" view-name="shopMain"/>
 	<view-controller path="/ranking/ranking_main.do" view-name="ranking_main"/>
-	<view-controller path="/ranking/r_category.do" view-name="r_category"/>
 	<view-controller path="/ranking/r_skinType.do" view-name="r_skinType"/>
 	<view-controller path="/main/adminMain.do" view-name="adminMain"/>
 </beans:beans>
