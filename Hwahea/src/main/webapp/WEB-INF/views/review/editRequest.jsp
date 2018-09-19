@@ -17,10 +17,11 @@
 	</div>
 	<!-- 제품 정보 -->
 	<div id="propic">
-		<img src="${pageContext.request.contextPath}/assets/img/sample.jpg">
+		<img src="imageView2.do?c_code=${cosmetic.c_code }" style="max-width: 500px">
+		<%-- <img src="${pageContext.request.contextPath}/assets/img/sample.jpg"> --%>
 	</div>
-	<div id="brand">메이크업 포에버(MAKEUP FOREVER)</div>
-	<div id="name">HD 프레스드 파우더</div>
+	<div id="name">${cosmetic.c_name }</div>
+	<div id="brand">${cosmetic.brand_name }</div>
 	<hr id="re_hr">
 	<!-- 정보 수정 가이드 -->
 	<div id="guide">
@@ -34,6 +35,7 @@
 	</div>
 	<hr id="re_hr"> 
 	<form action="editSuccess.do" id="edit_form">
+	<input type="hidden" name="c_code" value="${cosmetic.c_code }">
 	<div id="selectbox">
 		<select id="edit_cate">
 			<option value="0" selected="selected">카테고리를 선택해주세요.</option>

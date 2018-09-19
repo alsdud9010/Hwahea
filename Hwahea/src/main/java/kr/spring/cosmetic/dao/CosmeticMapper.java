@@ -20,8 +20,11 @@ public interface CosmeticMapper {
 	
 	
 	//화장품 상세정보 불러오기 
-	@Select("SELECT * FROM cosmetic WHERE c_code=#{c_code}")
-	public CosmeticCommand cosmeticDetail(String c_code);
+	/*@Select("SELECT * FROM cosmetic WHERE c_code=#{c_code}")*/
+	@Select("SELECT pc.*, b.brand_name FROM brand b INNER JOIN (SELECT p.p_brand, c.* FROM product p INNER JOIN "
+				+ "(SELECT * FROM cosmetic)c ON c.c_photoname=p.p_photo WHERE c.c_code=#{c_code})pc ON pc.p_brand=b.brand_num")
+	public CosmeticCommand cosmeticDetail(String c_code);	
+	
 	//화장품 전체 목록
 	@Select("SELECT b.brand_name brand, c.* FROM cosmetic c INNER JOIN brand b ON b.brand_num=c.c_brand_num ORDER BY c_rate DESC")
 	public List<CosmeticCommand> getAllCosmetic();

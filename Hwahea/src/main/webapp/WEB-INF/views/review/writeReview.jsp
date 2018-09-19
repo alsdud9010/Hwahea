@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/writeReview.css">
-<link rel="stylesheet" type="text/css" href="https://bootswatch.com/superhero/bootstrap.min.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="https://bootswatch.com/superhero/bootstrap.min.css"/> -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/rating.css"/>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="http://www.jqueryscript.net/css/jquerysctipttop.css" >
@@ -25,15 +25,16 @@
 	</div>
 	<!-- 제품 정보 -->
 	<div id="propic">
-		<img src="${pageContext.request.contextPath}/assets/img/sample.jpg">
+		<img src="imageView2.do?c_code=${cosmetic.c_code }" style="max-width: 500px">
+		<%-- <img src="${pageContext.request.contextPath}/assets/img/sample.jpg"> --%>
 	</div>
-	<div id="brand">메이크업 포에버(MAKEUP FOREVER)</div>
-	<div id="name">HD 프레스드 파우더</div>
+	<div id="name">${cosmetic.c_name }</div>
+	<div id="brand">${cosmetic.brand_name }</div>
 	<hr id="re_hr">
 	<form:form commandName="reviewcommand" action="reviewSuccess.do" id="review_form" encType="multipart/form-data">
 	<form:errors element="div" cssClass="error-color"/>	
-	<%-- <input type="hidden" name="c_code" value="${}" id="c_code">
-	<input type="hidden" name="re_id" value="${re_id}" id="user_id"> --%>
+	<input type="hidden" name="c_code" value="${cosmetic.c_code}" id="c_code">
+	<input type="hidden" name="re_id" value="${re_id}" id="user_id">
 	<div id="rate">
 		<div id="help">
 		평점을 선택해주세요.

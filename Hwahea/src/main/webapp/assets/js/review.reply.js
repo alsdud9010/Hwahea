@@ -56,7 +56,7 @@ $(document).ready(function(){
 							if(item.rere_depth==0){
 								output = '<div class="pmodal_rere">';
 								output += '<div class="pmodal_rpro">';
-								output += '		<input type="hidden" class="re_num" value="'+re_num+'">';
+								output += '		<input type="hidden" class="re_num" name="re_num" value="'+re_num+'">';
 								output += '		<img src="../assets/img/plus/profile.png">';//프로필 변경
 								output += '		<span class="pmodal_wrere">'+item.re_id+'</span>';
 								/*output += '		<span class="plusGrade"><input type="button" value="'+item.m_auth+'"></span>';//등급 변경*/		
@@ -88,6 +88,7 @@ $(document).ready(function(){
 								output += '<div class="prere_back">';
 								output += '	<div class="pmodal_rere">';
 								output += '		<div class="pmodal_rpro">';
+								output += '			<input type="hidden" class="re_num" name="re_num" value="'+re_num+'">';
 								output += '			<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
 								output += '			<img src="../assets/img/plus/profile.png">';
 								output += '			<span class="pmodal_wrere">'+item.re_id+'</span>';
@@ -107,8 +108,8 @@ $(document).ready(function(){
 								output += '				<div class="pmodal_trere dadat">'+item.rere_content+'</div>';
 								output += '					<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-depth="'+item.rere_depth+'">답글달기</a>';
 								if($('#user_id').val()==item.re_id){
-									output += '				<input type="button" value="수정" class="modify-btn">';
-									output += '				<input type="button" value="삭제" class="delete-btn">';
+									output += '				<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="수정" class="modify-btn">';
+									output += '				<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="삭제" class="delete-btn">';
 								}
 								output += '				</div>';
 								output += '			</div>';
@@ -135,8 +136,8 @@ $(document).ready(function(){
 								output += '<div class="pmodal_trere dadat">'+item.rere_content+'</div>';
 								output += '<a class="pmodal_same" id="rere_write" data-num="'+item.rere_num+'" data-depth="'+item.rere_depth+'">답글달기</a>';
 								if($('#user_id').val()==item.re_id){
-									output += '<input type="button" value="수정" class="modify-btn">';
-									output += '<input type="button" value="삭제" class="delete-btn">';
+									output += '<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="수정" class="modify-btn">';
+									output += '<input type="button" data-num="'+item.rere_num+'" data-id="'+item.re_id+'" value="삭제" class="delete-btn">';
 								}
 								output += '</div></div>';
 								output += '<div id="pmodal_reform" data-num="1"></div>';
@@ -421,7 +422,7 @@ $(document).ready(function(){
 			rereply += '		<div class="pmodal_rpro2">';
 			rereply += '			<img src="../assets/img/plus/profile.png">';
 			rereply += '			<span class="pmodal_wrere">'+$('#user_id').val()+'</span>';
-			rereply += '			<span class="plusGrade"><input type="button" value="VIP"></span>';
+			rereply += '			<span class="plusGrade"></span>';
 			rereply += '		</div>';
 			rereply += '		<textarea rows="3" cols="75" name="rere_content" id="prere_content" class="pmodal_rtext2" placeholder="내용을 입력해주세요."></textarea>';
 			rereply += '		<div id="prere_first"><span class="letter-count">300/300</span></div>';

@@ -55,10 +55,11 @@ public class ReviewController {
 	
 	//==============================목록 출력하기
 	@RequestMapping("/review/productInfo.do")
-	public ModelAndView getList(@RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
+	public ModelAndView getList(@RequestParam("c_code") String c_code, @RequestParam(value="pageNum",defaultValue="1")int currentPage, @RequestParam(value="keyfield",defaultValue="") String keyfield, @RequestParam(value="keyword",defaultValue="") String keyword){
 		
 		if(log.isDebugEnabled()) {
 			log.debug("<<currentPage>> : "+currentPage);
+			log.debug("<<c_code>> : "+c_code);
 		}
 		
 		Map<String,Object> map = new HashMap<String,Object>();
@@ -69,6 +70,7 @@ public class ReviewController {
 		PagingUtil page = new PagingUtil(currentPage, count, rowCount, pageCount, "productInfo.do");
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
+		map.put("c_code", c_code);
 		
 		List<ReviewCommand> list = null;
 		List<MemberCommand> member = null;
@@ -76,8 +78,6 @@ public class ReviewController {
 		
 		
 		if(count > 0) {
-			
-			String c_code = "B38D1C3";
 			
 			list = reviewService.selectList(map);
 			
@@ -91,7 +91,6 @@ public class ReviewController {
 				log.debug("<<cosmetic>> : " + cosmetic);
 			}
 		}	
-		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("productInfo");
@@ -109,7 +108,7 @@ public class ReviewController {
 	public ModelAndView viewImage(@RequestParam("re_num") int re_num, @RequestParam("cnt") int cnt) {
 
 		ReviewCommand review = reviewService.selectReview2(re_num);
-
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("imageView");
 						//속성명	, 속성값(byte[]의 데이터)
@@ -124,6 +123,20 @@ public class ReviewController {
 			mav.addObject("filename",review.getRe_filename3());
 		}
 		
+		return mav;
+	}
+	
+	//=================================================================리뷰 이미지 출력
+	@RequestMapping("/review/imageView2.do")
+	public ModelAndView cosmeticImage(@RequestParam("c_code") String c_code) {
+
+		CosmeticCommand cosmetic = cosmeticService.cosmeticDetail(c_code);
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");
+		mav.addObject("imageFile",cosmetic.getC_uploadbyte());
+		mav.addObject("filename",cosmetic.getC_photoname());
+
 		return mav;
 	}
 	
@@ -157,10 +170,23 @@ public class ReviewController {
 	
 	//==============================리뷰 작성 폼
 	@RequestMapping(value="/review/writeReview.do",method=RequestMethod.GET)
-	public String form() {
+	public ModelAndView writeForm(@RequestParam("c_code") String c_code, Model model) {
 		
-		return "writeReview";
+		if(log.isDebugEnabled()) {
+			log.debug("<<c_code>> : "+c_code);
+		}
+		
+		CosmeticCommand cosmetic = null;
+		cosmetic = cosmeticService.cosmeticDetail(c_code);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("writeReview");
+		mav.addObject("cosmetic",cosmetic);
+		
+		return mav;
 	}
+	
+	
 	//==============================리뷰 데이터 전송
 	@RequestMapping(value="/review/reviewSuccess.do",method=RequestMethod.POST)
 	public String submit(@ModelAttribute("reviewcommand") @Valid ReviewCommand reviewCommand, BindingResult result, HttpSession session, HttpServletRequest request) {
@@ -182,7 +208,7 @@ public class ReviewController {
 		//리뷰 작성
 		reviewService.insert(reviewCommand);
 		
-		return "redirect:/review/productInfo.do";
+		return "redirect:/main/main.do";
 	}
 	
 	//=================================================================리뷰 삭제
@@ -235,7 +261,7 @@ public class ReviewController {
 	}
 	
 	//==============================리뷰 신고하기
-	@RequestMapping(value="/review/report.do",method=RequestMethod.GET)
+	@RequestMapping(value="/review/report.do",method=RequestMethod.POST)
 	public String report(@RequestParam("re_num") int re_num, ReviewCommand reviewCommand, HttpSession session) {
 		
 		if(log.isDebugEnabled()) {
@@ -249,18 +275,29 @@ public class ReviewController {
 		reviewCommand.setRe_num(re_num);
 		String user_id = (String)session.getAttribute("user_id");
 		reviewCommand.setRe_id(user_id);
+		
 		reviewService.addReportTable(reviewCommand);
 		
-			
-		return "redirect:/review/productInfo.do";
+		return "redirect:/main/main.do";
 	}
 	
 	
 	//==============================정보 수정요청 폼
-	@RequestMapping("/review/editRequest.do")
-	public String editForm() {
+	@RequestMapping(value="/review/editRequest.do",method=RequestMethod.GET)
+	public ModelAndView editForm(@RequestParam("c_code") String c_code, Model model) {
 		
-		return "editRequest";
+		if(log.isDebugEnabled()) {
+			log.debug("<<c_code>> : "+c_code);
+		}
+		
+		CosmeticCommand cosmetic = null;
+		cosmetic = cosmeticService.cosmeticDetail(c_code);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("editRequest");
+		mav.addObject("cosmetic",cosmetic);
+		
+		return mav;
 	}
 	
 	//==============================정보 수정요청 데이터 전송
@@ -307,9 +344,19 @@ public class ReviewController {
 	
 	//==============================성분 팝업
 	@RequestMapping("/review/ingreSpec.do")
-	public String ingreProcess() {
+	public ModelAndView ingreProcess(@RequestParam("c_code") String c_code) {
 		
-		return "/review/ingreSpec";
+		if(log.isDebugEnabled()) {
+			log.debug("<<c_code>> : "+c_code);
+		}
+		
+		CosmeticCommand cosmetic = cosmeticService.cosmeticDetail(c_code);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("ingreSpec");
+		mav.addObject("cosmetic",cosmetic);
+		
+		return mav;
 	}
 	
 	

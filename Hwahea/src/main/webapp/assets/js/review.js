@@ -58,7 +58,12 @@ $(document).ready(function(){
 	var win;
 	
 	$('#ingreimg').on('click',function(){
-		win = window.open('ingreSpec.do','성분','width=950,height=1000,toolbar=no,location=no');
+		
+		var c_code= $(this).attr('data-num');
+		var url = 'ingreSpec.do?c_code=';
+		url += c_code;
+		
+		win = window.open(url,'성분','width=950,height=1000,toolbar=no,location=no');
 		win.moveTo(200, 200);
 	});
 	
@@ -158,7 +163,7 @@ $(document).ready(function(){
 						
 						//신고하기
 						var report = '';
-						report += '<form id="report_form" action="report.do?re_num='+item.re_num+'">';
+						report += '<form id="report_form" action="report.do?re_num='+item.re_num+'" method="post">';
 						report += '<input type="hidden" name="re_num" value="'+item.re_num+'">';
 						report += '<input type="hidden" name="re_id" value="'+$('#user_id').val()+'">';
 						report += '<div class="modal-body">';
@@ -183,11 +188,11 @@ $(document).ready(function(){
 						var reply ='';
 						
 						reply += '<div class="pmodal_rform">';
-						reply += '<form id="reply_form" action="writeReply.do">';
+						reply += '<form id="reply_form" action="writeReply.do" method="post">';
 						reply += '<input type="hidden" name="re_num" value="'+item.re_num+'">';
 						reply += '<input type="hidden" name="user_id" value="'+$('#user_id').val()+'">';
 						reply += '<textarea name="rere_content" id="rere_content" cols="70" rows="4" placeholder="내용을 입력해 주세요."></textarea>';
-						reply += '<input type="submit" value="댓글달기" ></form>';
+						reply += '<input type="submit" value="댓글달기" name="re_num"></form>';
 						reply += '<div class="pmodal_rcount"><span class="letter-count">0 / 300</span></div> </div>';
 						
 						$('#reply_append').empty();
