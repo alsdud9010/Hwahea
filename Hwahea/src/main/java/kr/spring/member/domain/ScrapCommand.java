@@ -10,7 +10,7 @@ public class ScrapCommand {
 	public void setM_id(String m_id) {
 		this.m_id = m_id;
 	}
-	public int getScrap_kind() {
+	public int getScrap_kind() { 
 		return scrap_kind;
 	}
 	@Override
