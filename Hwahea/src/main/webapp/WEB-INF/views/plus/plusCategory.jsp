@@ -123,7 +123,7 @@
 						<div class="col-md-4">
 							<div class="plusThumbnail">
 								<a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${plus.m_auth}" data-toggle="modal" data-target="#plus_modal">
-								<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/img1.jpg"></a>
+								<img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/plus/trendThumb_${plus.hp_num}.png"></a>
 							</div>
 							<div class="plusTitle">
 								<a href="#" class="click_pmodal" data-num="${plus.hp_num}" data-auth="${plus.m_auth}" data-toggle="modal" data-target="#plus_modal">
@@ -158,8 +158,8 @@
 										</c:otherwise>
 									</c:choose>
 								</span> 
-								<span class="plusUser">dragon
-									&nbsp;&nbsp;2시간 전</span>
+								<span class="plusUser">화해플러스
+									${plus.hp_reg_date}</span>
 							</div>
 						</div>
 						<c:if test="${status.index == 2 || status.index == 5 || status.index == 8 }">

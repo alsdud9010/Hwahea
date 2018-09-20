@@ -5,31 +5,19 @@
 <mapper namespace="kr.spring.plus.dao.PlusMapper">
 	<!-- 목록 출력 -->
 	<select id="selectPlusMain" parameterType="map" resultType="plusCommand">
-		SELECT p.*,
-			   m.*
-	    FROM (SELECT 
-	        DENSE_RANK() OVER(PARTITION BY pr.hp_kind ORDER BY pr.hp_like DESC, pr.hp_hit DESC) ranking, 
-	        pr.hp_kind, 
-	        pr.hp_num,
-	        pr.hp_title, 
-	        pr.hp_content,
-	        pr.hp_like,
-	        pr.hp_hit, 
-	        pr.hp_scrap, 
-	        pr.m_id,
-	        NVL(pr.hpre_cnt,0) hpre_cnt
-	    FROM (SELECT
-	            pb.*,
-	            r.hpre_cnt
-	        FROM plus_board pb LEFT OUTER JOIN (SELECT hp_num, COUNT(*) hpre_cnt
-	       	 FROM plus_reply GROUP BY hp_num)r
-	       	 ON pb.hp_num = r.hp_num)pr)p LEFT OUTER JOIN (SELECT md.*, mb.m_auth 
-	        	FROM member_detail md LEFT OUTER JOIN member mb ON md.m_id = mb.m_id)m
-	    ON p.m_id = m.m_id
-	    <![CDATA[
-	    	WHERE p.ranking <= 5
-	    ]]>
-	    ORDER BY p.hp_kind ASC, p.ranking ASC
+		SELECT m.*, p.* FROM (SELECT mb.m_auth, md.* FROM member mb LEFT OUTER JOIN member_detail md ON mb.m_id = md.m_id)m LEFT OUTER JOIN 
+   		 (SELECT DENSE_RANK() OVER(PARTITION BY pb.hp_kind ORDER BY pb.hp_like DESC, pb.hp_hit DESC) ranking, 
+           pb.hp_kind, 
+           pb.hp_num,
+           pb.hp_title, 
+           pb.hp_content,
+           pb.hp_like,
+           pb.hp_hit, 
+           pb.hp_scrap, 
+           pb.m_id,
+           NVL(r.hpre_cnt,0) hpre_cnt FROM plus_board pb 
+           LEFT OUTER JOIN (SELECT hp_num, COUNT(*) hpre_cnt FROM plus_reply GROUP BY hp_num)r ON pb.hp_num = r.hp_num)p ON m.m_id = p.m_id
+       ORDER BY p.hp_kind ASC, p.ranking ASC
 	</select>
 	
 	<!-- 화해플러스 세부카테고리 -->
@@ -60,7 +48,7 @@
 	
 	<!-- 댓글 목록 -->
 	<select id="selectPlusReply" parameterType="map" resultType="plusReplyCommand">
-		SELECT
+		<!-- SELECT
 			*
 		FROM (SELECT
 				a.*,
@@ -77,8 +65,12 @@
             	ON a.hpre_id = m.m_id)
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
-		]]>
-			
+		]]> -->
+		
+		SELECT c.* FROM (SELECT * FROM plus_reply a LEFT OUTER JOIN member b ON a.hpre_id = b.m_id)c 
+		START WITH c.hpre_depth = 0
+		CONNECT BY PRIOR c.hpre_num = c.hpre_parent
+		ORDER SIBLINGS BY c.hpre_num DESC
 	</select>
 
 </mapper>

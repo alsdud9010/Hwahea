@@ -20,16 +20,28 @@ $(document).ready(function(){
 						output+='	<span class="pmodal_left">';
 						output+='		<img class="pmodal_close" src="../assets/img/plus/modalLeft.png" data-dismiss="modal"></span>';
 						output+='	<span class="pmodal_header">';
-						output+='		<a href="${pageContext.request.contextPath}/plus/plusTrend.do">신상&amp;트렌드</a></span>';
+						output+='		<a href="${pageContext.request.contextPath}/plus/plusCategory.do?num='+item.hp_num+'">'
+						if(item.hp_kind==0){
+							output+='신상&amp;트렌드';
+						}else if(item.hp_kind==1){
+							output+='인기템리뷰';
+						}else if(item.hp_kind==2){
+							output+='화장품 팩트체크';
+						}else if(item.hp_kind==3){
+							output+='뷰티팁';
+						}else if(item.hp_kind==4){
+							output+='쇼핑팁';
+						}
+						output+='</a></span>';
 						output+='		<button class="close" data-dismiss="modal">&times;</button>';
 						output+='</div>';
 						output+='<div class="modal-dialog modal-lg">';
 						output+='<div class="modal-content">';
 						output+='<div class="modal-body pmodal_c ex-body" style="text-align: center;"><br><br>';
-						output+='	<img class="plusThumbnail3" src="../assets/img/plus/plusThumbnail.PNG" alt="">';
+						output+='	<img class="plusThumbnail3" src="../assets/img/plus/trendThumb_'+item.hp_num+'.png" alt="">';
 						output+='	<div class="pmodal_title">'+item.hp_title+'</div>';
 						output+='	<div class="pmodal_profile">';
-						output+='		<img src="../assets/img/plus/profile.png">'+item.m_id+'</div>';
+						output+='		<img src="../assets/img/plus/trend_logo_'+item.hp_kind+'.png"></div>';
 						output+='	<div class="pmodal_icon">';
 						output+='		<span><img class="plusLike" src="../assets/img/plus/heart.png" alt="like">'+item.hp_like+'</span>';
 						output+='		<span><img class="plusLike" src="../assets/img/plus/scrap.png" alt="scrap">'+item.hp_scrap+'</span>';
@@ -37,7 +49,7 @@ $(document).ready(function(){
 						output+='		<span><img class="plusComments" src="../assets/img/plus/hits.png" alt="reply">'+item.hp_hit+'</span> ';
 						output+='		<span class="pmodal_regDate">'+item.hp_reg_date+'</span></div>';
 						output+='	<div class="margin-bottom-35"><hr class="hr-md"></div>';
-						output+='	<div>'+item.hp_content+'</div>';
+						output+='	<div class="plus_content"><img src="../assets/img/plus/trendContent_'+item.hp_num+'.png"></div>';
 						output+='	<div class="pmodal_ud">';
 						output+='		<input type="button" value="수정"> <input type="button" value="삭제"></div>';
 						output+='	<div class="margin-bottom-20"><hr class="hr-md"></div>';
@@ -46,7 +58,7 @@ $(document).ready(function(){
 						output+='		<li class="pmodal_scrap"><img src="../assets/img/plus/scrap2.png" id="pmodal_s">스크랩</li>';
 						output+='		<li class="pmodal_re"><img src="../assets/img/plus/comments.png">댓글달기</li></ul></div>';
 						output+='<div class="pmodal_reply">';
-						output+='	<div class="pmodal_wpro"><img src="../assets/img/plus/profile.png"><br>'+item.m_id+'</div>';
+						output+='	<div class="pmodal_wpro"><img src="../assets/img/plus/profile.png"><br>dragon</div>';
 						output+='	<div class="pmodal_rform">';
 						output+='		<form id="preply_form">';
 						output+='		<input type="hidden" name="hp_num" value="'+item.hp_num+'" id="hp_num">';
@@ -60,7 +72,7 @@ $(document).ready(function(){
 						output+='	<img src="${pageContext.request.contextPath}/assets/img/review/ajax-loader.gif"></div>';
 						output+='</div></div>';
 						output+='<div class="modal-footer">';
-						output+='	<input type="button" value="목록" onclick="location.href="../plus/plusTrend.do"">';
+						output+='	<input type="button" value="목록" onclick="location.href="../plus/plusMain.do"">';
 						output+='	<input type="button" value="닫기" data-dismss="modal">';
 						output+='</div>';
 						output+='</div></div>';

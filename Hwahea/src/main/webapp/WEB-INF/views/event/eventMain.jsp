@@ -47,7 +47,18 @@
 	                  		<c:if test="${event.event_status <= 3 && event.event_over >= 0}" >
 			                  	<li>
 			                  		<div class="event_img">
+			                  			<c:if test="${event.event_num==1}">
+				                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb1.PNG">
+				                  		</c:if>
+				                  		<c:if test="${event.event_num==2}">
+				                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb3.PNG">
+				                  		</c:if>
+				                  		<c:if test="${event.event_num==3}">
 				                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb.PNG">
+				                  		</c:if>
+				                  		<c:if test="${event.event_num==4}">
+				                  		<img src="${pageContext.request.contextPath}/assets/img/event/event_thumb5.png">
+				                  		</c:if>
 				                  		<a href="${pageContext.request.contextPath}/event/eventView.do?num=${event.event_num}" class="event_hover"><span>상세 보기</span></a>
 			                  		</div>
 			                  		<span class="event_wish">
