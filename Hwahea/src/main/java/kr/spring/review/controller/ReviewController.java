@@ -236,7 +236,7 @@ public class ReviewController {
 		//¸®ºä »èÁ¦
 		reviewService.delete(re_num);
 		
-		return "redirect:/review/productInfo.do";
+		return "redirect:/main/main.do";
 	}
 	
 	//=================================================================¸®ºä ¼öÁ¤

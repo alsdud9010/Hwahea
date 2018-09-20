@@ -76,8 +76,8 @@
 					</div>
 					<div>
 						<span id="title">랭킹 </span> 
-						<span>파우더/팩트 </span> 
-						<span>1위</span> 
+						<span>스킨케어/스킨/토너 </span> 
+						<span>57위</span> 
 					</div>
 				</div>
 				<hr>

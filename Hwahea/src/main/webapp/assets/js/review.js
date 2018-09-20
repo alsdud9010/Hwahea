@@ -151,8 +151,8 @@ $(document).ready(function(){
 						review += '</div></div>';
 						//아이디 비교 하기 넣기!
 						if(re_id==$('#user_id').val()){
-							review += '<div class="pmodal_ud"><input type="button" value="수정" id="re_modify" data-num="'+item.re_num+'" onclick="location.href=\'update.do?re_num='+item.re_num+'\'">';
-							review += '<input type="button" value="삭제" id="re_delete" onclick="location.href=\'delete.do?re_num='+item.re_num+'\'">';
+							/*review += '<input type="button" value="수정" id="re_modify" data-num="'+item.re_num+'" onclick="location.href=\'update.do?re_num='+item.re_num+'\'">';*/
+							review += '<div class="pmodal_ud"><input type="button" value="삭제" id="re_delete" onclick="location.href=\'delete.do?re_num='+item.re_num+'\'"></div>';
 						}
 						review += '<div class="pmodal_lrs"><ul>';
 						review += '<li class="pmodal_like"><img src="../assets/img/plus/heart2.png" id="pmodal_l"> 좋아요( '+item.re_like+' )</li>';

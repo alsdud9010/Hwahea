@@ -54,12 +54,19 @@
 					  ORDER SIBLINGS BY rere_num DESC)a)
 			<![CDATA[WHERE rnum>=#{start} AND rnum<=#{end}]]> -->
 			
-			SELECT b.*, c.m_id, c.m_auth FROM (SELECT rere_num, rere_content, TO_CHAR(rere_regdate,'YYYY-MM-DD HH24:MI:SS') rere_regdate, re_num, re_id, rere_depth, rere_parentnum FROM 
+			<!-- SELECT b.*, c.m_id, c.m_auth FROM (SELECT rere_num, rere_content, TO_CHAR(rere_regdate,'YYYY-MM-DD HH24:MI:SS') rere_regdate, re_num, re_id, rere_depth, rere_parentnum FROM 
 			(SELECT a.*, rownum rnum FROM 
 			(SELECT * FROM review_reply START WITH rere_depth = 0
 					  CONNECT BY PRIOR rere_num = rere_parentnum
-					  ORDER SIBLINGS BY rere_num DESC)a))b LEFT JOIN member c ON b.re_id=c.m_id
+					  ORDER SIBLINGS BY rere_num DESC)a))b LEFT JOIN member c ON b.re_id=c.m_id -->
 			<!-- <![CDATA[WHERE rnum>=#{start} AND rnum<=#{end}]]> -->
+			
+			
+			SELECT b.*, c.m_id, c.m_filename, c.m_profile FROM (SELECT rere_num, rere_content, TO_CHAR(rere_regdate,'YYYY-MM-DD HH24:MI:SS') rere_regdate, re_num, re_id, rere_depth, rere_parentnum FROM 
+			(SELECT a.*, rownum rnum FROM 
+			(SELECT * FROM review_reply START WITH rere_depth = 0
+					  CONNECT BY PRIOR rere_num = rere_parentnum
+					  ORDER SIBLINGS BY rere_num DESC)a))b LEFT JOIN member_detail c ON b.re_id=c.m_id
 			
 			
 	</select>

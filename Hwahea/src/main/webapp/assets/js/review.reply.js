@@ -57,7 +57,7 @@ $(document).ready(function(){
 								output = '<div class="pmodal_rere">';
 								output += '<div class="pmodal_rpro">';
 								output += '		<input type="hidden" class="re_num" name="re_num" value="'+re_num+'">';
-								output += '		<img src="../assets/img/mypage/none_profile.png">';//프로필 변경
+								output += '		<img src="imageView3.do?m_id='+item.re_id+'">';
 								output += '		<span class="pmodal_wrere">'+item.re_id+'</span>';
 								/*output += '		<span class="plusGrade"><input type="button" value="'+item.m_auth+'"></span>';//등급 변경*/		
 								if(item.m_auth==1){
@@ -90,7 +90,7 @@ $(document).ready(function(){
 								output += '		<div class="pmodal_rpro">';
 								output += '			<input type="hidden" class="re_num" name="re_num" value="'+re_num+'">';
 								output += '			<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
-								output += '			<img src="../assets/img/mypage/none_profile.png">';
+								output += '			<img src="imageView3.do?m_id='+item.re_id+'">';
 								output += '			<span class="pmodal_wrere">'+item.re_id+'</span>';
 								if(item.m_auth==1){
 									output += '		<span class="grade_welcome"><input type="button" value="welcome"></span>';
@@ -120,7 +120,7 @@ $(document).ready(function(){
 							}else if(item.rere_depth>=2){
 								output += '<div class="prere_back"><div class="pmodal_rere"><div class="pmodal_rpro">';
 								output += '<span class="prere_depth"><img src="../assets/img/shop/answer-point.png"></span>';
-								output += '<img src="../assets/img/mypage/none_profile.png">';
+								output += '		<img src="imageView3.do?m_id='+item.re_id+'">';
 								output += '<span class="pmodal_wrere">'+item.re_id+'</span>';
 								if(item.m_auth==1){
 									output += '		<span class="grade_welcome"><input type="button" value="welcome"></span>';
