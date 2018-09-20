@@ -130,7 +130,7 @@ $(document).ready(function(){
 	$(document).on('click','.click_pmodal',function(){
 		hp_num = $(this).attr('data-num');
 		m_auth = $(this).attr('data-auth');
-		alert(m_auth);
+		
 		//초기 데이터 목록 호출
 		selectData(1, hp_num);
 	});
@@ -169,23 +169,26 @@ $(document).ready(function(){
 									output+='		<div class="pmodal_rpro">';
 									output+='			<img src="../assets/img/plus/profile.png">';
 									output+='			<span class="pmodal_wrere">'+item.hpre_id+'</span>';
-									if(m_auth==1){
+									if(item.m_auth==1){
 										output+='	<span class="grade_welcome"><input type="button" value="Welcome"></span>';
-									}else if(m_auth==2){
+									}else if(item.m_auth==2){
 										output+='	<span class="grade_family"><input type="button" value="Family"></span>';
-									}else if(m_auth==3){
+									}else if(item.m_auth==3){
 										output+='	<span class="grade_vip"><input type="button" value="VIP"></span>';
-									}else if(m_auth==4){
+									}else if(item.m_auth==4){
 										output+='	<span class="grade_vvip"><input type="button" value="VVIP"></span>';
 									}
 									output+='			<span class="pmodal_drere">'+item.hpre_date+'</span></div>';
 									output+='		<div class="pmodal_trere">'+item.hpre_content+'</div>';
 									output+='		<div class="pmodal_brere">';
-									output+='		<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
+									
 									if($('#user_id').val()==item.hpre_id){
 										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
+										output+='		<a class="pmodal_same" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
 										output+='		<span class="pre_btn"><input type="button" value="수정">';
 										output+='			  <input type="button" value="삭제"></span>';
+									}else{
+										output+='		<a class="pmodal_diff" id="rere_write" data-num="'+item.hpre_num+'" data-depth="'+item.hpre_depth+'">댓글달기</a>';
 									}
 									output+='<div id="pmodal_reform"></div>';
 									output+='<div id="pmodal_'+item.hpre_num+'"></div>'
@@ -240,7 +243,7 @@ $(document).ready(function(){
 										output+='	<span class="grade_vvip"><input type="button" value="VVIP"></span>';
 									}
 									output+='	<span class="prere_time">'+item.hpre_date+'</span></div>';
-									output+='<div class="prere_text"><span class="rere_writer">white</span>'+item.hpre_content+'</div>';
+									output+='<div class="prere_text"><span class="rere_writer">dragon</span>'+item.hpre_content+'</div>';
 									output+='<div class="pmodal_brere">';
 									if($('#user_id').val()==item.hpre_id){
 										//로그인한 아이디가 댓글 작성자 아이디와 같을 때
