@@ -442,7 +442,22 @@
 									<strong>${c.c_price}</strong> <span>/ ${c.c_capacity}</span>
 								</div>
 							</li>
-							<li class="ranking_stars">${c.c_rate}★★★★★ (4,000)</li>
+							<li class="ranking_stars">${c.c_rate}
+									<c:if test="${c.c_rate>=0 && c.c_rate<1}">   
+									★☆☆☆☆
+									</c:if>
+									<c:if test="${c.c_rate>=1 && c.c_rate<2}">    
+									★★☆☆☆
+									</c:if>
+									<c:if test="${c.c_rate>=2 && c.c_rate<3}">    
+									★★★☆☆
+									</c:if>
+									<c:if test="${c.c_rate>=3 && c.c_rate<4}">    
+									★★★★☆
+									</c:if>
+									<c:if test="${c.c_rate>=4}"> 
+									★★★★★
+									</c:if>
 							<li class="ranking_shopping"> 
 								<ul>
 									<li class="buy">
