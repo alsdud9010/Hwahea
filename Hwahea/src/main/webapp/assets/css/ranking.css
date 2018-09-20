@@ -88,6 +88,15 @@ li{
 	cursor: pointer;
 	height:300px;
 }
+.ranking-top5 .title{
+	float:left;
+}
+.ranking-top5 .title_sub{
+    margin-left: 150px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #008200;
+}
 
 .ranking-top5-img div{
 	margin: auto;

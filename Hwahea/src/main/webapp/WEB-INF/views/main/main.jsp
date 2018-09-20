@@ -434,17 +434,17 @@
                   <div class="slick-list">
                      <ul class="slick-slide slick-ul">
                         <li><a href="#" class="onlyone_box">
-                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
+                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/c_big1.jpg"/>
                            <p><span class="tx_num">올리브영 S A L E</span> 대용량 G E T !</p>
                         </a>
                         </li>
                         <li><a href="#" class="onlyone_box">
-                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
+                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/c_big2.jpg"/>
                            <p><span class="tx_num">올리브영 S A L E</span> 대용량 G E T !</p>
                         </a>
                         </li>
                         <li><a href="#" class="onlyone_box">
-                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/photo.PNG"/>
+                           <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/main/c_big3.jpg"/>
                            <p><span class="tx_num">올리브영 S A L E</span> 대용량 G E T !</p>
                         </a>
                         </li>

@@ -34,24 +34,25 @@
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu"><a href="#">스킨케어</a>
 										<ul class="dropdown-menu">
-											<li><a href="index.hmtl">스킨/토너</a></li>
-											<li><a href="index.hmtl">로션/에멀젼</a></li>
-											<li><a href="index.hmtl">에센스/앰플/세럼</a></li>
-											<li><a href="index.hmtl">페이스 오일</a></li>
-											<li><a href="index.hmtl">크림/젤</a></li>
-											<li><a href="index.hmtl">아이케어</a></li>
-											<li><a href="index.hmtl">미스트</a></li>
+											<li><a href="#" class="cate" data-value="1" data-name="스킨/토너">스킨/토너</a></li>
+											<li><a href="#" class="cate" data-value="2" data-name="로션/에멀젼">로션/에멀젼</a></li>
+											<li><a href="#" class="cate" data-value="3" data-name="에센스/앰플/세럼">에센스/앰플/세럼</a></li>
+											<li><a href="#" class="cate" data-value="4" data-name="페이스 오일">페이스 오일</a></li>
+											<li><a href="#" class="cate" data-value="5" data-name="크림/젤">크림/젤</a></li>
+											<li><a href="#" class="cate" data-value="6" data-name="아이케어">아이케어</a></li>
+											<li><a href="#" class="cate" data-value="7" data-name="미스트">미스트</a></li>
 										</ul></li>
 									<li class="dropdown-submenu"><a href="javascript:void(0);">클렌징/필링</a>
 										<ul class="dropdown-menu">
-											<li><a href="index.hmtl">클렌징 폼</a></li>
-											<li><a href="index.hmtl">클렌징 워터</a></li>
-											<li><a href="index.hmtl">클렌징 젤</a></li>
-											<li><a href="index.hmtl">클렌징 오일</a></li>
-											<li><a href="index.hmtl">클렌징 로션/크림</a></li>
-											<li><a href="index.hmtl">클렌징 비누</a></li>
-											<li><a href="index.hmtl">립/아이 리무버</a></li>
-											<li><a href="index.hmtl">스크럽/필링</a></li>
+											<li><a href="#" class="cate" data-value="8" data-name="클렌징 폼">클렌징 폼</a></li>
+											<li><a href="#" class="cate" data-value="9" data-name="클렌징 워터">클렌징 워터</a></li>
+											<li><a href="#" class="cate" data-value="10" data-name="클렌징 젤">클렌징 젤</a></li>
+											<li><a href="#" class="cate" data-value="11" data-name="클렌징 오일">클렌징 오일</a></li>
+											<li><a href="#" class="cate" data-value="12" data-name="클렌징 로션/크림">클렌징 로션/크림</a></li>
+											<li><a href="#" class="cate" data-value="13" data-name="클렌징 비누">클렌징 비누</a></li>
+											<li><a href="#" class="cate" data-value="14" data-name="클렌징 티슈">클렌징 티슈</a></li>
+											<li><a href="#" class="cate" data-value="15" data-name="립/아이 리무버">립/아이 리무버</a></li>
+											<li><a href="#" class="cate" data-value="16ㅋ" data-name="스크럽/필링">스크럽/필링</a></li>
 										</ul></li>
 									<li class="dropdown-submenu"><a href="javascript:void(0);">마스크/팩</a>
 										<ul class="dropdown-menu">
@@ -354,9 +355,8 @@
 			<div class="ranking-top5">
 				<div class="row">
 					<div class="col-md-12 margin-bottom-15">
-						<h2>
-							<b> 카테고리별 </b>
-						</h2>
+						<h2 class="title"><b> 카테고리별 </b></h2>
+						<h3 class="title_sub">스킨케어 전체 랭킹</h3>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
@@ -466,7 +466,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- 카테고리별별 top5 끝 -->
+			<!-- 카테고리별 top5 끝 -->
 
 			<div class="margin-bottom-35">
 				<hr class="hr-md">
@@ -475,28 +475,50 @@
 			<!-- 피부타입&고민별 top5 시작 -->
 			<div class="ranking-top5">
 				<div class="row">
-					<div class="col-md-12 margin-bottom-15">
-						<h2><b> 피부타입&고민별 </b></h2>
-					</div>
-					<div class="col-md-2"
-						onclick="location.href='${pageContext.request.contextPath}/review/productInfo.do'">
+				<div class="col-md-12 margin-bottom-15">
+						<h2 class="title"><b> 피부타입별 </b></h2>
+						<h3 class="title_sub">복합성 유저들이 뽑은 랭킹</h3>
+				</div>
+				<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/skin1.png"
 									alt="">
 							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
+							<span>
+							<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
+									alt="">
+							</span>
+						</div>
+						<div class="r_brandName">다자연</div>
+						<div class="r_productName">
+							<strong>어성초 유기농 마스크팩</strong>
+						</div>
+						<div class="r_by-author">
+							<strong>4.36 ★★★★★</strong>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="ranking-top5-img">
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/c_top1.jpg"
+									alt="">
+							</div>
+							<span>
+						 		<img class="thropy"
+								src="${pageContext.request.contextPath}/assets/img/ranking/second.png"
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">라운드랩</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>1025 독도 토너</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.8 ★★★★★</strong>
 						</div>
 					</div>
 
@@ -504,27 +526,7 @@
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/second.png"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/skin2.png"
 									alt="">
 							</div>
 							<span> <img class="thropy"
@@ -532,19 +534,19 @@
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">메이크 프렘</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>세이프 미 릴리프 모이스처 클렌징 폼</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.30 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/skin3.png"
 									alt="">
 							</div>
 							<span> <img class="non_thorphy"
@@ -552,19 +554,19 @@
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">싸이닉</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>더 심플 카밍 토너</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.18 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/skin4.png"
 									alt="">
 							</div>
 							<span> <img class="non_thorphy"
@@ -572,12 +574,12 @@
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">SRB</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>쌀뜨물 미강 효소 세안제</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.35 ★★★★★</strong>
 						</div>
 					</div>
 				</div>
@@ -587,180 +589,40 @@
 			<div class="margin-bottom-35">
 				<hr class="hr-md">
 			</div>
-
-			<!-- 브랜드별 top5 시작 -->
-			<div class="ranking-top5">
-				<div class="row">
-					<div class="col-md-12 margin-bottom-15">
-						<h2>
-							<b> 브랜드별 </b>
-						</h2>
-					</div>
-					<div class="col-md-2"
-						onclick="location.href='${pageContext.request.contextPath}/review/productInfo.do'">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/second.png"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/third.png"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="non_thorphy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/four.jpg"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="non_thorphy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/five.png"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- 브랜드별 top5 끝 -->
-
-			<div class="margin-bottom-35">
-				<hr class="hr-md">
-			</div>
-
+			
 			<!-- 연령별 top5 시작 -->
 			<div class="ranking-top5">
 				<div class="row">
 					<div class="col-md-12 margin-bottom-15">
-						<h2>
-							<b> 연령별 </b>
-						</h2>
+						<h2 class="title"><b> 연령대별 </b></h2>
+						<h3 class="title_sub">20대 유저들이 뽑은 랭킹</h3>
 					</div>
-					<div class="col-md-2"
-						onclick="location.href='${pageContext.request.contextPath}/review/productInfo.do'">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/baby1.png"
 									alt="">
 							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/second.png"
-								alt="">
+							<span>
+							<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
+									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">아토팜</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>수딩 젤 로션</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.15 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/baby2.jpg"
 									alt="">
 							</div>
 							<span> <img class="thropy"
@@ -768,19 +630,40 @@
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">쁘리마쥬</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>유기농 고농축 세럼(젠틀베이비세럼)</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.24 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/baby3.jpg"
+									alt="">
+							</div>
+							<span>
+						 		<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
+									alt="">
+							</span>
+						</div>
+						<div class="r_brandName">아토엔비</div>
+						<div class="r_productName">
+							<strong>크림</strong>
+						</div>
+						<div class="r_by-author">
+		                	<strong>4.32 ★★★★★</strong>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="ranking-top5-img">
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/baby4.png"
 									alt="">
 							</div>
 							<span> <img class="non_thorphy"
@@ -788,32 +671,33 @@
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">아토팜</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>매터니티 케어 타이트닝 크림</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.07 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/baby5.png"
 									alt="">
 							</div>
-							<span> <img class="non_thorphy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/five.png"
-								alt="">
+							<span>
+						 		<img class="non_thorphy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/four.jpg"
+									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">아토팜</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>MLE 크림</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.07 ★★★★★</strong>
 						</div>
 					</div>
 				</div>
@@ -828,57 +712,35 @@
 			<div class="ranking-top5">
 				<div class="row">
 					<div class="col-md-12 margin-bottom-15">
-						<h2>
-							<b> 베이비&임산부별 </b>
-						</h2>
+						<h2 class="title"><b> 연령대별 </b></h2>
+						<h3 class="title_sub">20대 유저들이 뽑은 랭킹</h3>
 					</div>
-					<div class="col-md-2"
-						onclick="location.href='${pageContext.request.contextPath}/review/productInfo.do'">
-						<div class="ranking-top5-img">
-							<div>
-								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
-									alt="">
-							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
-								alt="">
-							</span>
-						</div>
-						<div class="r_brandName">정샘물</div>
-						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
-						</div>
-						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
-						</div>
-					</div>
-
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/skin1.png"
 									alt="">
 							</div>
-							<span> <img class="thropy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/second.png"
-								alt="">
+							<span>
+							<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
+									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">다자연</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>어성초 유기농 마스크팩</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.37 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/skin2.png"
 									alt="">
 							</div>
 							<span> <img class="thropy"
@@ -886,19 +748,40 @@
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">메이크 프렘</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>세이프 미 릴리프 모이스처 클렌징 폼</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.29 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/c_top1.jpg"
+									alt="">
+							</div>
+							<span>
+						 		<img class="thropy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/first.png"
+									alt="">
+							</span>
+						</div>
+						<div class="r_brandName">라운드랩</div>
+						<div class="r_productName">
+							<strong>1025 독도 토너</strong>
+						</div>
+						<div class="r_by-author">
+		                	<strong>4.32 ★★★★★</strong>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="ranking-top5-img">
+							<div>
+								<img class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/skin3.png"
 									alt="">
 							</div>
 							<span> <img class="non_thorphy"
@@ -906,32 +789,33 @@
 								alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">싸이닉</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>더 심플 카밍 토너</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+							<strong>4.20 ★★★★★</strong>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="ranking-top5-img">
 							<div>
 								<img class="img-responsive"
-									src="${pageContext.request.contextPath}/assets/img/ranking/shadow.jpg"
+									src="${pageContext.request.contextPath}/assets/img/ranking_images/age5.png"
 									alt="">
 							</div>
-							<span> <img class="non_thorphy"
-								src="${pageContext.request.contextPath}/assets/img/ranking/five.png"
-								alt="">
+							<span>
+						 		<img class="non_thorphy"
+									src="${pageContext.request.contextPath}/assets/img/ranking/four.jpg"
+									alt="">
 							</span>
 						</div>
-						<div class="r_brandName">정샘물</div>
+						<div class="r_brandName">에이트루</div>
 						<div class="r_productName">
-							<strong>컬러피스 아이섀도우 프리즘</strong>
+							<strong>퓨어 밸런싱 클렌징 오일</strong>
 						</div>
 						<div class="r_by-author">
-							<strong>5.0 ★★★★★</strong><span>(4,000)</span>
+		                	<strong>4.23 ★★★★★</strong>
 						</div>
 					</div>
 				</div>

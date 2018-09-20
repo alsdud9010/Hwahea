@@ -573,7 +573,8 @@ input[type="submit"], button {
 }
 
 .onlyone_box img {
-    width: 310px;
+   width: 250px;
+   margin-left: 30px;
 }
 
 .onlyone_box > p {
@@ -581,14 +582,14 @@ input[type="submit"], button {
     overflow: hidden;
     width: 240px;
     height: 72px;
-    margin: -45px auto 0;
+    margin: -4px auto 0;
     padding: 18px 0 0;
     font-size: 16px;
     line-height: 28px;
-    background: #fff;
+    background: #fff0;
     letter-spacing: -0.02em;
     color: #888;
-    border-radius:3px !important;
+    border-radius: 3px !important;
 }
 
 .onlyone_box > p > span.tx_num {

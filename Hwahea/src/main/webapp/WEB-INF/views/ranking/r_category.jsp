@@ -360,18 +360,10 @@
 								</ul></li>
 							<!-- 피부타입&고민별 -->
 							<!-- 브랜드별 -->
-							<li class="dropdown"><a href="#"
+							<li><a href="#"
 								onclick="location.href='${pageContext.request.contextPath}/ranking/r_brand.do'"
 								class="dropdown-toggle" data-toggle="dropdown"> 브랜드별 </a>
-										<ul class="dropdown-menu">
-											<li><a href="index.hmtl">스킨/토너</a></li>
-											<li><a href="index.hmtl">로션/에멀젼</a></li>
-											<li><a href="index.hmtl">에센스/앰플/세럼</a></li>
-											<li><a href="index.hmtl">페이스 오일</a></li>
-											<li><a href="index.hmtl">크림/젤</a></li>
-											<li><a href="index.hmtl">아이케어</a></li>
-											<li><a href="index.hmtl">미스트</a></li>
-								</ul></li>
+							</li>
 							<!-- 브랜드별 끝 -->
 							<!-- 연령별 -->
 							<li class="dropdown"><a href="javascript:void(0);"
