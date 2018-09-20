@@ -140,6 +140,20 @@ public class ReviewController {
 		return mav;
 	}
 	
+	//=================================================================프로필 이미지 출력
+	@RequestMapping("/review/imageView3.do")
+	public ModelAndView profileImage(@RequestParam("m_id") String m_id) {
+
+		MemberCommand member = memberService.selectMember(m_id);
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("imageView");
+		mav.addObject("imageFile",member.getM_profile());
+		mav.addObject("filename",member.getM_filename());
+
+		return mav;
+	}
+	
 	//==============================리뷰 1개 상세 보기 
 	@RequestMapping("/review/oneReview.do")
 	@ResponseBody
@@ -336,7 +350,7 @@ public class ReviewController {
 		//신고 등록(리뷰 테이블)
 		reviewService.likeReview(re_num);
 			
-		return "redirect:/review/productInfo.do";
+		return "redirect:/main/main.do";
 	}
 	
 	

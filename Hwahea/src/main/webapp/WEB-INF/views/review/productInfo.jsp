@@ -10,6 +10,7 @@
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="${pageContext.request.contextPath}/assets/js/rating.js"></script>
 	<input type="hidden" name="c_code" id="c_code" value="${cosmetic.c_code }">
+	<input type="hidden" name="user_id" value="${user_id}" id="user_id">
 	<div id="wrap">
 	<div>
 		<div class="r_title">
@@ -81,7 +82,7 @@
 				</div>
 				<hr>
 				<div id="buttons">
-					<input type="button" value="즐겨찾기"onclick="location.href='${pageContext.request.contextPath}/mypage/my_favoritewrite.do?bookmark_kind=1&bookmark_detail=5'">
+					<input type="button" value="즐겨찾기" onclick="location.href='${pageContext.request.contextPath}/mypage/my_favoritewrite.do?bookmark_kind=1&bookmark_detail=5'">
 					<!-- <input type="button" value="비교함 담기" data-target="#comModal" data-toggle="modal"> -->
 					<input type="button" value="쇼핑">
 				</div>
@@ -179,9 +180,9 @@
 			</div>
 			<div id="review_chart"></div>
 			<div id="write">
-				<div>
-					<a href="${pageContext.request.contextPath}/review/writeReview.do?c_code=${cosmetic.c_code}"><input type="button" value="리뷰 작성하기"></a>
-					<!-- <input type="button" value="모든 리뷰 보기"> -->
+				<div id="www">
+					<div id="login" style="display: none;">로그인 후 리뷰를 작성해주세요 ♡ </div>
+					<a href="${pageContext.request.contextPath}/review/writeReview.do?c_code=${cosmetic.c_code}"><input type="button" value="리뷰 작성하기" id="wrtbtn"></a>
 				</div>
 			</div>
 		</div>
@@ -198,7 +199,10 @@
 			<div id="writer">
 				<table>
 					<tr>
-						<td rowspan="3" id="w_profile"><img src="${pageContext.request.contextPath}/assets/img/user.png"></td>
+						<td rowspan="3" id="w_profile"><%-- <img src="${pageContext.request.contextPath}/assets/img/user.png"> --%>
+						<c:if test="${!empty member[status.index].m_filename}"><img src="imageView3.do?m_id=${member[status.index].m_id }" style="max-width: 500px"></c:if>
+						<c:if test="${empty member[status.index].m_filename}"><img src="${pageContext.request.contextPath}/assets/img/user.png"></c:if>
+						</td>
 						<td id="nick">${member[status.index].m_nickname }</td>
 					</tr>
 					<tr>
@@ -316,9 +320,9 @@
 				</div>
 				<div class="modal-body pmodal_c" style="text-align: center;">
 					<!-- 제품 사진 -->
-					<img class="plusThumbnail3" src="${pageContext.request.contextPath}/assets/img/sample.jpg">
-					<div class="brand">메이크업 포에버(MAKEUP FOREVER)</div>
+					<img class="plusThumbnail3" src="imageView2.do?c_code=${cosmetic.c_code }" style="max-width: 500px">
 					<div class="pmodal_product">${cosmetic.c_name }</div>
+					<div class="brand">${cosmetic.brand_name }</div>
 					<hr>
 					<!-- 작성자 정보 -->
 					<div class="writer">
@@ -340,7 +344,7 @@
 					<!-- 화해플러스 모달 댓글 시작-->
 					<div class="pmodal_reply">
 						<div class="pmodal_wpro">
-							<img src="${pageContext.request.contextPath}/assets/img/plus/profile.png"><br>${user_id }
+							<img src="imageView3.do?m_id=${user_id }" style="max-width: 500px"><br>${user_id }
 						</div>
 						<div id="reply_append"></div>
 						<!-- 댓글 출력 시작 -->

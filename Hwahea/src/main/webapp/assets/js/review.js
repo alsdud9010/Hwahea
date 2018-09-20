@@ -10,6 +10,7 @@ $(document).ready(function(){
 				$('img',this).attr('src','../assets/img/plus/heart2.png');
 				
 				$(this).attr('data-num','1');
+
 				flag=0;
 				return false;
 			}else{
@@ -202,7 +203,12 @@ $(document).ready(function(){
 					var writer = '';
 					
 					writer += '<table><tr>';
-					writer += '<td rowspan="3" id="w_profile"><img src="../assets/img/user.png"></td>';
+					if(member.m_filename){
+						writer += '<td rowspan="3" id="w_profile"><img src="imageView3.do?m_id='+member.m_id+'"></td>';
+					}else {
+						writer += '<td rowspan="3" id="w_profile"><img src="../assets/img/user.png"></td>';
+					}
+					
 					writer += '<td class="nick">'+member.m_nickname+'</td>';
 					writer += '</tr><tr>';
 					writer += '<td class="type">'+member.m_age+'세';
@@ -271,11 +277,16 @@ $(document).ready(function(){
 	});
 	
 
+	function noId(){
+		if ($('#user_id').val()==''){
+			$('#wrtbtn').attr('disabled',true);
+			$('#wrtbtn').css('background-color','gray');
+			$('#login').show();
+		}
+	}
 	
+	noId();
 	
-	
-	
-	
-	
+
 	
 });
