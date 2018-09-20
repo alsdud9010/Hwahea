@@ -62,7 +62,7 @@ $(document).ready(function(){
 							output+='<input type="hidden" id="c_code" name="c_code" value="' + item.c_code + '">';
 							output+='	<li class="ranking_num"><h1>' + (index+1) + '</h1></li>';
 							output+='	<li class="col-md-2 ranking-img" onclick="location.href=\'../review/productInfo.do?c_code='+item.c_code+'\'">'; 
-							output+='		<a href="#"><img src="imageView.do?c_code='+item.c_code+'" width="100px" ></a>';
+							output+='		<a href="#"><img src="../cosmetic/cosmeticImageView.do?c_code='+item.c_code+'" width="100px" ></a>';
 							output+='	</li>';
 							output+='	<li class="ranking_names">';
 							output+='		<div class="ranking_brandName">' + item.brand + ' </div>';
@@ -137,7 +137,7 @@ $(document).ready(function(){
 					output+='<input type="hidden" id="c_code" name="c_code" value="' + item.c_code + '">';
 					output+='	<li class="ranking_num"><h1>' + (index+1) + '</h1></li>';
 					output+='	<li class="col-md-2 ranking-img" onclick="location.href=\'../review/productInfo.do?c_code='+item.c_code+'\'">'; 
-					output+='		<a href="#"><img src="imageView.do?c_code='+item.c_code+'" width="100px" ></a>';
+					output+='		<a href="#"><img src="../cosmetic/cosmeticImageView.do?c_code='+item.c_code+'" width="100px" ></a>';
 					output+='	</li>';
 					output+='	<li class="ranking_names">';
 					output+='		<div class="ranking_brandName">' + item.brand + ' </div>';
