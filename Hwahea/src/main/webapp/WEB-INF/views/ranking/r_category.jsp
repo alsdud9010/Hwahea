@@ -432,7 +432,7 @@
 							<li class="ranking_num"><h1>${status.count}</h1></li>
 							<li class="col-md-2 ranking-img">
 								<a href="#"><img src="${pageContext.request.contextPath}/cosmetic/cosmeticImageView.do?c_code=${c.c_code}" width="100px"></a>
-							</li>
+	 						</li>
 							<li class="ranking_names">
 								<div class="ranking_brandName">${c.brand}</div>
 								<div class="ranking_productName">
