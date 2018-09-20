@@ -654,7 +654,7 @@
 						<div class="r_brandName">아토엔비</div>
 						<div class="r_productName">
 							<strong>크림</strong>
-						</div>
+						</div> 
 						<div class="r_by-author">
 		                	<strong>4.32 ★★★★★</strong>
 						</div>
