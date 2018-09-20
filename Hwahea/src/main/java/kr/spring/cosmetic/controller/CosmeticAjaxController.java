@@ -43,21 +43,7 @@ public class CosmeticAjaxController {
 		
 		return map;
 	}
-	
-	@RequestMapping("/ranking/imageView.do")
-	   public ModelAndView cosmeticImage(@RequestParam("c_code") String c_code) {
 
-	      CosmeticCommand cosmetic = cosmeticService.cosmeticDetail(c_code);
-
-	      ModelAndView mav = new ModelAndView();
-	      mav.setViewName("imageView");
-
-	      mav.addObject("imageFile",cosmetic.getC_uploadbyte());
-	      mav.addObject("filename",cosmetic.getC_photoname());
-	      
-
-	      return mav;
-	   }
 	
 	//카테고리 하위 메뉴 호출
 		@RequestMapping("/ranking/c_downmenu.do")
