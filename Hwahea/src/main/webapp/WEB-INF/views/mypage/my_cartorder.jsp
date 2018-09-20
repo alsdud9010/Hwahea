@@ -37,13 +37,6 @@ $(document).ready(function(){
 				      </tr>
 				    </thead>
 				    <tbody>
-				     <c:if test="${empty order.order_num}">
-					    <tr>
-					    	<th colspan="6">
-					    	주문한 거래가 없습니다.
-					    	</th>
-					    </tr>
-				    </c:if>
 				    <c:forEach var="order" items="${list}">
 				      <tr>
 				        <th scope="row">${order.order_num}</th>
